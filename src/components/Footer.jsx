@@ -29,13 +29,13 @@ const Footer = () => {
           <Link to="/">Logo</Link>
           <div className="social-list">
             <Link to="/" className="social-list__item">
-              <img src="./img/svg/instagram.svg" alt="instagram icon" />
+              <img src="/img/svg/instagram.svg" alt="instagram icon" />
             </Link>
             <Link to="/" className="social-list__item">
-              <img src="./img/svg/facebook.svg" alt="facebook icon" />
+              <img src="/img/svg/facebook.svg" alt="facebook icon" />
             </Link>
             <Link to="/" className="social-list__item">
-              <img src="./img/svg/tik-tok.svg" alt="tik-tok icon" />
+              <img src="/img/svg/tik-tok.svg" alt="tik-tok icon" />
             </Link>
           </div>
         </div>
@@ -45,9 +45,9 @@ const Footer = () => {
           <p>© 2023 Bavovna | All Rights Reserved</p>
         </div>
         <div className="footer-bottom__right">
-          <img src="./img/svg/liqpay.png" alt="liqpay" />
-          <img src="./img/svg/mastercard.svg" alt="mastercard" />
-          <img src="./img/svg/visa.svg" alt="visa" />
+          <img src="/img/svg/liqpay.png" alt="liqpay" />
+          <img src="/img/svg/mastercard.svg" alt="mastercard" />
+          <img src="/img/svg/visa.svg" alt="visa" />
         </div>
       </div>
     </footer>

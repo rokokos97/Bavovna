@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Salepage = () => {
+const SalePage = () => {
   return <div>Sale</div>;
 };
 
-export { Salepage };
+export {SalePage};

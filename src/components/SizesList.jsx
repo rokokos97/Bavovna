@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React from 'react';
+import {useState} from 'react';
 
-const SizesList = ({ sizes }) => {
+const SizesList = ({sizes}) => {
   let [selectedSize, setSelectedSize] = useState('');
 
   const handleChange = (event) => {
@@ -28,4 +29,4 @@ const SizesList = ({ sizes }) => {
   );
 };
 
-export { SizesList };
+export {SizesList};

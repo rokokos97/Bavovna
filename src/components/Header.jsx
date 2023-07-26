@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -19,10 +19,10 @@ const Header = () => {
         <Link to="">
           <span className="material-symbols-outlined">shopping_cart</span>
         </Link>
-        <Link>
+        <Link to="">
           <span className="material-symbols-outlined">person</span>
         </Link>
-        <Link>
+        <Link to="">
           <div className="header-lang">
             <span className="material-symbols-outlined">language</span>
             <span>Eng</span>
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export { Header };
+export {Header};

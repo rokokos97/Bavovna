@@ -1,10 +1,10 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 
-import {Salepage} from './pages/Salepage';
-import {Notfoundpage} from './pages/Notfoundpage';
-import {Aboutuspage} from './pages/Aboutuspage';
-import {Shoppage} from './pages/Shoppage';
+import {SalePage} from './pages/salePage';
+import {NotFoundPage} from './pages/notFoundPage';
+import {AboutUsPage} from './pages/AboutUsPage';
+import {ShopPage} from './pages/shopPage';
 import {Card} from './pages/Card';
 
 import {Layout} from './components/Layout';
@@ -19,11 +19,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Salepage />} />
-          <Route path="shop" element={<Shoppage />} />
-          <Route path="aboutus" element={<Aboutuspage />} />
+          <Route index element={<SalePage />} />
+          <Route path="shop" element={<ShopPage />} />
+          <Route path="aboutus" element={<AboutUsPage />} />
           <Route path="card" element={<Card />} />
-          <Route path="*" element={<Notfoundpage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </div>
