@@ -1,10 +1,10 @@
 import React from 'react';
-import {NotFoundPage} from './notFoundPage';
-import {SizesList} from '../components/SizesList';
+import {NotFoundPage} from '../notFoundPage/notFoundPage';
+import {SizesList} from '../../components/sizeList/SizesList';
 
-import {searchItem} from '../logic/searchItem';
+import {searchItem} from '../../logic/searchItem';
 
-import things from '../things.json';
+import things from '../../api/things.json';
 
 const Card = ({searching_id = 1}) => {
   const thing = searchItem(things, searching_id);
