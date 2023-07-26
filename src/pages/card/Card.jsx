@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {NotFoundPage} from '../notFoundPage/notFoundPage';
 import {SizesList} from '../../components/sizeList/SizesList';
 
@@ -6,8 +7,8 @@ import {searchItem} from '../../logic/searchItem';
 
 import things from '../../api/things.json';
 
-const Card = ({searching_id = 1}) => {
-  const thing = searchItem(things, searching_id);
+const Card = ({searchingId = 1}) => {
+  const thing = searchItem(things, searchingId);
   if (thing) {
     const {id, name, price, sizes} = thing;
     return (
@@ -46,6 +47,9 @@ const Card = ({searching_id = 1}) => {
   } else {
     return <NotFoundPage />;
   }
+};
+Card.propTypes = {
+  searchingId: PropTypes.number.isRequired,
 };
 
 export {Card};

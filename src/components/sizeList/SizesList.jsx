@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {useState} from 'react';
 
 const SizesList = ({sizes}) => {
@@ -27,6 +28,9 @@ const SizesList = ({sizes}) => {
       <div>Selected size: {selectedSize}</div>
     </>
   );
+};
+SizesList.propTypes = {
+  sizes: PropTypes.array.isRequired,
 };
 
 export {SizesList};
