@@ -1,12 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
 
-import { Salepage } from './pages/Salepage';
-import { Notfoundpage } from './pages/Notfoundpage';
-import { Aboutuspage } from './pages/Aboutuspage';
-import { Shoppage } from './pages/Shoppage';
-import { Card } from './pages/Card';
+import {Salepage} from './pages/Salepage';
+import {Notfoundpage} from './pages/Notfoundpage';
+import {Aboutuspage} from './pages/Aboutuspage';
+import {Shoppage} from './pages/Shoppage';
+import {Card} from './pages/Card';
 
-import { Layout } from './components/Layout';
+import {Layout} from './components/Layout';
 
 import './styles/App.css';
 import './styles/Header.css';
