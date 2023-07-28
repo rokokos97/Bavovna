@@ -1,0 +1,222 @@
+[
+  {
+    "_id": "abc123def456ghi789jkl0",
+    "name": "Blue Cotton T-Shirt",
+    "price": 19.99,
+    "description": "A comfortable and breathable cotton t-shirt in blue.",
+    "category": "64c429d991b5170270b80a0f",
+    "images": ["path_to_image_1_1.jpg", "path_to_image_1_2.jpg"],
+    "color": "blue",
+    "size": ["s", "m", "l"],
+    "composition": ["100% cotton"]
+  },
+  {
+    "_id": "mno456pqr789stu012vwx3yz",
+    "name": "Black Denim Jeans",
+    "price": 39.99,
+    "description": "Classic black denim jeans for a stylish look.",
+    "category": "64c429d991b5170270b80a0d",
+    "images": ["path_to_image_2_1.jpg", "path_to_image_2_2.jpg"],
+    "color": "black",
+    "size": ["s", "m", "l", "xl"],
+    "composition": ["98% cotton", "2% elastane"]
+  },
+  {
+    "_id": "efg789hij012klm345nopqrs",
+    "name": "Leather Jacket",
+    "price": 99.99,
+    "description": "Genuine leather jacket for a fashionable outfit.",
+    "category": "64c429d991b5170270b80a10",
+    "images": ["path_to_image_3_1.jpg"],
+    "color": "brown",
+    "size": ["s", "m", "l"],
+    "composition": ["Genuine leather"]
+  },
+  {
+    "_id": "tuv456wxy789zab0cdefghij",
+    "name": "White Linen Shirt",
+    "price": 29.99,
+    "description": "Light and breathable white linen shirt.",
+    "category": "64c429d991b5170270b80a0a",
+    "images": ["path_to_image_4_1.jpg"],
+    "color": "white",
+    "size": ["m", "l"],
+    "composition": ["100% linen"]
+  },
+  {
+    "_id": "klm123nop456qrs789tu0vwx",
+    "name": "Pla_id Flannel Shirt",
+    "price": 34.99,
+    "description": "Cozy and stylish pla_id flannel shirt.",
+    "category": "64c429d991b5170270b80a0a",
+    "images": ["path_to_image_5_1.jpg"],
+    "color": "red",
+    "size": ["s", "m", "l"],
+    "composition": ["100% cotton"]
+  },
+  {
+    "_id": "xyz123456789abcdefgihklm",
+    "name": "Striped Knit Sweater",
+    "price": 49.99,
+    "description": "Warm and trendy striped knit sweater.",
+    "category": "64c429d991b5170270b80a10",
+    "images": ["path_to_image_6_1.jpg", "path_to_image_6_2.jpg"],
+    "color": "gray",
+    "size": ["s", "m", "l"],
+    "composition": ["80% acrylic", "20% wool"]
+  },
+  {
+    "_id": "nop234qrs567tuw890vxyabc",
+    "name": "Ripped Skinny Jeans",
+    "price": 44.99,
+    "description": "Fashionable ripped skinny jeans for a bold look.",
+    "category": "64c429d991b5170270b80a0d",
+    "images": ["path_to_image_7_1.jpg"],
+    "color": "blue",
+    "size": ["s", "m", "l"],
+    "composition": ["98% cotton", "2% elastane"]
+  },
+  {
+    "_id": "def456ghi789jkl012mno345",
+    "name": "Casual Jogger Pants",
+    "price": 29.99,
+    "description": "Comfy and versatile casual jogger pants.",
+    "category": "64c429d991b5170270b80a0d",
+    "images": ["path_to_image_8_1.jpg", "path_to_image_8_2.jpg"],
+    "color": "olive",
+    "size": ["s", "m", "l"],
+    "composition": ["95% polyester", "5% spandex"]
+  },
+  {
+    "_id": "pqr678stu901vwxyz234abcd",
+    "name": "Button-Down Oxford Shirt",
+    "price": 39.99,
+    "description": "Classic button-down oxford shirt for a smart look.",
+    "category": "64c429d991b5170270b80a0a",
+    "images": ["path_to_image_9_1.jpg"],
+    "color": "light blue",
+    "size": ["s", "m", "l"],
+    "composition": ["100% cotton"]
+  },
+  {
+    "_id": "efg789hij012klm345nopqrs",
+    "name": "V-Neck Sweater",
+    "price": 32.99,
+    "description": "Stylish v-neck sweater for a sophisticated outfit.",
+    "category": "64c429d991b5170270b80a10",
+    "images": ["path_to_image_10_1.jpg"],
+    "color": "navy",
+    "size": ["s", "m", "l"],
+    "composition": ["60% cotton", "40% acrylic"]
+  },
+  {
+    "_id": "tuv456wxy789zab0cdefghij",
+    "name": "Chino Shorts",
+    "price": 24.99,
+    "description": "Versatile chino shorts for a casual summer look.",
+    "category": "64c429d991b5170270b80a0e",
+    "images": ["path_to_image_11_1.jpg"],
+    "color": "khaki",
+    "size": ["s", "m", "l"],
+    "composition": ["98% cotton", "2% elastane"]
+  },
+  {
+    "_id": "klm123nop456qrs789tu0vwx",
+    "name": "Striped M_idi Dress",
+    "price": 54.99,
+    "description": "Elegant striped m_idi dress for special occasions.",
+    "category": "64c429d991b5170270b80a0b",
+    "images": ["path_to_image_12_1.jpg", "path_to_image_12_2.jpg"],
+    "color": "black/white",
+    "size": ["s", "m", "l"],
+    "composition": ["95% polyester", "5% spandex"]
+  },
+  {
+    "_id": "xyz123456789abcdefgihklm",
+    "name": "Crew Neck Sweatshirt",
+    "price": 29.99,
+    "description": "Casual crew neck sweatshirt for a relaxed look.",
+    "category": "64c429d991b5170270b80a0a",
+    "images": ["path_to_image_13_1.jpg"],
+    "color": "gray",
+    "size": ["s", "m", "l"],
+    "composition": ["80% cotton", "20% polyester"]
+  },
+  {
+    "_id": "nop234qrs567tuw890vxyabc",
+    "name": "Pleated M_idi Skirt",
+    "price": 34.99,
+    "description": "Chic pleated m_idi skirt for a feminine style.",
+    "category": "64c429d991b5170270b80a0c",
+    "images": ["path_to_image_14_1.jpg", "path_to_image_14_2.jpg"],
+    "color": "blush pink",
+    "size": ["s", "m", "l"],
+    "composition": ["100% polyester"]
+  },
+  {
+    "_id": "def456ghi789jkl012mno345",
+    "name": "Hooded Parka Jacket",
+    "price": 69.99,
+    "description": "Warm hooded parka jacket for cold weather.",
+    "category": "64c429d991b5170270b80a10",
+    "images": ["path_to_image_15_1.jpg"],
+    "color": "olive",
+    "size": ["s", "m", "l"],
+    "composition": ["100% polyester"]
+  },
+  {
+    "_id": "pqr678stu901vwxyz234abcd",
+    "name": "Printed Maxi Dress",
+    "price": 49.99,
+    "description": "Stunning printed maxi dress for a boho look.",
+    "category": "64c429d991b5170270b80a0b",
+    "images": ["path_to_image_16_1.jpg", "path_to_image_16_2.jpg"],
+    "color": "multicolor",
+    "size": ["s", "m", "l"],
+    "composition": ["100% polyester"]
+  },
+  {
+    "_id": "efg789hij012klm345nopqrs",
+    "name": "Cropped W_ide-Leg Pants",
+    "price": 34.99,
+    "description": "Fashion-forward cropped w_ide-leg pants.",
+    "category": "64c429d991b5170270b80a0d",
+    "images": ["path_to_image_17_1.jpg"],
+    "color": "beige",
+    "size": ["s", "m", "l"],
+    "composition": ["98% polyester", "2% elastane"]
+  },
+  {
+    "_id": "tuv456wxy789zab0cdefghij",
+    "name": "Belted Wrap Dress",
+    "price": 44.99,
+    "description": "Elegant belted wrap dress for a sophisticated look.",
+    "category": "64c429d991b5170270b80a0b",
+    "images": ["path_to_image_18_1.jpg", "path_to_image_18_2.jpg"],
+    "color": "navy",
+    "size": ["s", "m", "l"],
+    "composition": ["95% polyester", "5% spandex"]
+  },
+  {
+    "_id": "klm123nop456qrs789tu0vwx",
+    "name": "Ribbed Knit Sweater",
+    "price": 39.99,
+    "description": "Cozy ribbed knit sweater for a warm outfit.",
+    "category": "64c429d991b5170270b80a10",
+    "images": ["path_to_image_19_1.jpg"],
+    "color": "burgundy",
+    "size": ["s", "m", "l"],
+    "composition": ["80% acrylic", "20% wool"]
+  },
+  {
+    "_id": "xyz123456789abcdefgihklm",
+    "name": "Distressed Boyfriend Jeans",
+    "price": 44.99,
+    "description": "Trendy distressed boyfriend jeans for a la_id-back look.",
+    "category": "64c429d991b5170270b80a0d",
+    "images": ["path_to_image_20_1.jpg"],
+    "color": "light blue",
+    "size": ["s", "m", "l"],
+    "composition": ["100% cotton"]
+  }
+]
