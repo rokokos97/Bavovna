@@ -27,6 +27,7 @@ export const uploadItemList = () => async (dispatch) => {
   dispatch(itemsRequested());
   try {
     const {data} = await itemService.get();
+    console.log(data);
     dispatch(itemsReceived(data));
   } catch (error) {
     dispatch(itemsRequestFailed(error));

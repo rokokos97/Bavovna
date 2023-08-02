@@ -10,19 +10,22 @@ import '../components/header/Header.css';
 import '../pages/card/Card.css';
 import '../components/footer/Footer.css';
 import {AboutUsPage} from '../pages/aboutUs';
+import AppLoader from '../hoc/appLoader';
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<SalePage />} />
-          <Route path="shop" element={<ShopPage />} />
-          <Route path="aboutus" element={<AboutUsPage/>} />
-          <Route path="card" element={<Card />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <AppLoader>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<SalePage />} />
+            <Route path="shop" element={<ShopPage />} />
+            <Route path="aboutus" element={<AboutUsPage/>} />
+            <Route path="card" element={<Card />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </AppLoader>
     </div>
   );
 }
