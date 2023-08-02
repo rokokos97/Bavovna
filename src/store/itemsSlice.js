@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import itemService from '../services/http.service';
+import itemService from '../services/item.service';
 
 const itemsSlice = createSlice({
   name: 'items',
