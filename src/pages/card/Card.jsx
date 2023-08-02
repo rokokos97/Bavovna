@@ -5,7 +5,7 @@ import {SizesList} from '../../components/sizeList/SizesList';
 
 import {searchItem} from '../../logic/searchItem';
 
-import things from '../../api/things.json';
+import things from '../../things.json';
 
 const Card = ({searchingId = 1}) => {
   const thing = searchItem(things, searchingId);
