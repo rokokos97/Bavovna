@@ -26,14 +26,14 @@ const itemsSlice = createSlice({
 export const uploadItemList = () => async (dispatch) => {
   dispatch(itemsRequested());
   try {
-    const {data} = await itemService.get();
-    console.log(data);
+    const data = await itemService.get();
     dispatch(itemsReceived(data));
   } catch (error) {
     dispatch(itemsRequestFailed(error));
   }
 };
-
+export const getItems = () => (state) => state.items.entities;
+export const getItemsLoadingStatus = () => (state) => state.items.isLoading;
 export const {
   itemsRequested,
   itemsReceived,

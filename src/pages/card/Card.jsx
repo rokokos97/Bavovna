@@ -3,14 +3,19 @@ import PropTypes from 'prop-types';
 import {NotFoundPage} from '../notFoundPage/notFoundPage';
 import {SizesList} from '../../components/sizeList/SizesList';
 
-import {searchItem} from '../../logic/searchItem';
+// import {searchItem} from '../../logic/searchItem';
 
-import things from '../../things.json';
+// import things from '../../things.json';
+import {useSelector} from 'react-redux';
+import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 
 const Card = ({searchingId = 1}) => {
-  const thing = searchItem(things, searchingId);
-  if (thing) {
-    const {id, name, price, sizes} = thing;
+  const items = useSelector(getItems());
+  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  //  const thing = searchItem(things, searchingId);
+  if (!isItemsLoading) {
+    console.log(items);
+    const {name, price, size} = items[searchingId];
     return (
       <section className="card">
         <div className="imgs">
@@ -35,7 +40,7 @@ const Card = ({searchingId = 1}) => {
             <span className="buy-form__price">${price}</span>
             <div className="size">
               <span>Size</span>
-              <SizesList sizes={sizes} />
+              <SizesList sizes={size} />
             </div>
             <div className="form-bag">
               <button>ADD TO BAG</button>

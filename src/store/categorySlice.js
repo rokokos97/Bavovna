@@ -26,14 +26,15 @@ const categoriesSlice = createSlice({
 export const uploadCategoriesList = () => async (dispatch) => {
   dispatch(categoriesRequested());
   try {
-    const {data} = await categoryService.get();
-    console.log(data);
+    const data = await categoryService.get();
     dispatch(categoriesReceived(data));
   } catch (error) {
     dispatch(categoriesRequestFailed(error));
   }
 };
 
+export const getCategories = () => (state) => state.categories.entities;
+export const getCategoriesLoadingStatus = (state) => state.categories.isLoading;
 export const {
   categoriesRequested,
   categoriesReceived,
