@@ -55,6 +55,25 @@ export const uploadItemList = () => async (dispatch) => {
     dispatch(itemsRequestFailed(error));
   }
 };
+export const createItem = (payload) => async (dispatch) => {
+  dispatch(itemCreatRequested());
+  try {
+    const data = await itemService.create(payload);
+    await dispatch(itemCreateReceived(data));
+  } catch (error) {
+    dispatch(itemCreateFailed(error));
+  }
+};
+export const deleteItem = (id) => async (dispatch) => {
+  dispatch(itemDeleteRequested());
+  try {
+    await itemService.delete(id);
+    dispatch(itemDeleteReceived(id));
+  } catch (error) {
+    dispatch(itemDeleteFailed(error));
+  }
+};
+
 export const getItems = () => (state) => state.items.entities;
 export const getItemsLoadingStatus = () => (state) => state.items.isLoading;
 export const {
