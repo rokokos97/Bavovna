@@ -20,6 +20,29 @@ const itemsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    itemCreatRequested: (state) => {
+      state.isLoading = true;
+    },
+    itemCreateReceived: (state, action) => {
+      state.isLoading = false;
+      state.entities.push(action.payload);
+    },
+    itemCreateFailed: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    itemDeleteRequested: (state) => {
+      state.isLoading = true;
+    },
+    itemDeleteReceived: (state, action) => {
+      state.isLoading = false;
+      state.entities = state
+          .entities.filter((item)=> item._id !== action.payload);
+    },
+    itemDeleteFailed: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 
@@ -38,6 +61,12 @@ export const {
   itemsRequested,
   itemsReceived,
   itemsRequestFailed,
+  itemCreatRequested,
+  itemCreateReceived,
+  itemCreateFailed,
+  itemDeleteRequested,
+  itemDeleteReceived,
+  itemDeleteFailed,
 } = itemsSlice.actions;
 
 export default itemsSlice.reducer;
