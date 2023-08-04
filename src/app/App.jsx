@@ -11,6 +11,7 @@ import '../pages/card/Card.css';
 import '../components/footer/Footer.css';
 import {AboutUsPage} from '../pages/aboutUs';
 import AppLoader from '../hoc/appLoader';
+import LoginLayout from '../components/LoginLayout/LoginLayout';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <Route index element={<SalePage />} />
             <Route path="shop" element={<ShopPage />} />
             <Route path="aboutus" element={<AboutUsPage/>} />
-            <Route path="card" element={<Card />} />
+            <Route path="card" element={<Card searchingId='1'/>} />
+            <Route path="login/*" element={<LoginLayout /> } />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

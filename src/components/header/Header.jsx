@@ -19,7 +19,7 @@ const Header = () => {
         <Link to="">
           <span className="material-symbols-outlined">shopping_cart</span>
         </Link>
-        <Link to="">
+        <Link to="/login">
           <span className="material-symbols-outlined">person</span>
         </Link>
         <Link to="">
