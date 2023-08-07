@@ -5,4 +5,13 @@
   border: black 1px solid;
 }
 
+.field {
+  text-align: start;
+  margin: 10px 0;
+}
+
+.error {
+  color: red;
+}
+
 /*# sourceMappingURL=LoginForm.module.css.map */
