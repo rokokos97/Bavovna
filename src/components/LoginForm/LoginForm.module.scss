@@ -5,9 +5,37 @@
   border: black 1px solid;
 }
 .field {
+  position: relative;
   text-align: start;
   margin: 10px 0;
 }
 .error {
   color: red;
 }
+/* Styles for Show Password button */
+.showPasswordBtn {
+  background-color: transparent; // Transparent background
+  border: 1px solid #007BFF;     // Blue border
+  color: #007BFF;               // Blue text color
+  padding: 5px 10px;            // Padding for top/bottom and left/right
+  font-size: 14px;              // Font size
+  cursor: pointer;              // Hand cursor on hover
+  transition: color 0.3s ease, border-color 0.3s ease; // Smooth transition for hover effect
+  position: absolute;           // Absolute positioning
+  right: 10px;                  // Positioned to the right of the password input
+  top: 50%;                     // Centered vertically
+  transform: translateY(-50%);  // Adjusting for perfect centering
+
+  // Hover effect for the Show Password button
+  &:hover {
+    color: #0056b3;             // A darker shade of blue for text
+    border-color: #0056b3;     // A darker shade of blue for border
+  }
+
+  // Active state (when button is pressed)
+  &:active {
+    color: #004085;             // Even darker shade of blue for text
+    border-color: #004085;     // Even darker shade of blue for border
+  }
+}
+

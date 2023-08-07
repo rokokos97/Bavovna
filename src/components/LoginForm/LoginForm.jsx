@@ -50,6 +50,7 @@ const LoginForm = () => {
             value={formik.values.password}
           />
           <button
+            className={styles.showPasswordBtn}
             type='button'
             onClick={toggleShowPassword}
           >
