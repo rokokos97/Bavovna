@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {validationSchema} from '../../utils/validationSchema';
 
 const RegisterForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -17,6 +18,9 @@ const RegisterForm = () => {
       console.log(JSON.stringify(values, null, 2));
     },
   });
+  const toggleShowPassword = () => {
+    setShowPassword((prevState) => !prevState);
+  };
   return (
     <div className={styles.card}>
       <form onSubmit={formik.handleSubmit}>
@@ -39,11 +43,17 @@ const RegisterForm = () => {
           <input
             id="password"
             name="password"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
           />
+          <button
+            type='button'
+            onClick={toggleShowPassword}
+          >
+            show password
+          </button>
           {formik.errors.password ? (
           <div className={styles.error}>{formik.errors.password}</div>
         ) : null}
@@ -53,11 +63,17 @@ const RegisterForm = () => {
           <input
             id="confirmPassword"
             name="confirmPassword"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.confirmPassword}
           />
+          <button
+            type='button'
+            onClick={toggleShowPassword}
+          >
+            show password
+          </button>
           {formik.errors.confirmPassword ? (
           <div className={styles.error}>
             {formik.errors.confirmPassword}
