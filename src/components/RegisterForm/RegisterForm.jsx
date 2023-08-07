@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {validationSchema} from '../../utils/validationSchema';
+import {NavLink} from 'react-router-dom';
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,7 +50,7 @@ const RegisterForm = () => {
             value={formik.values.password}
           />
           <button
-            className='showPasswordBtn'
+            className={styles.showPasswordBtn}
             type='button'
             onClick={toggleShowPassword}
           >
@@ -70,6 +71,7 @@ const RegisterForm = () => {
             value={formik.values.confirmPassword}
           />
           <button
+            className={styles.showPasswordBtn}
             type='button'
             onClick={toggleShowPassword}
           >
@@ -113,8 +115,19 @@ const RegisterForm = () => {
           </div>
         ) : null}
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Register</button>
       </form>
+      <p>
+        Already have account?{'  '}
+        <NavLink
+          to="login"
+          role="button"
+          className="link-dark"
+        >
+          {' '}
+          Sign In
+        </NavLink>
+      </p>
     </div>
   );
 };
