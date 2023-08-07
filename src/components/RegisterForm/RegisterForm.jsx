@@ -3,6 +3,8 @@ import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {validationSchema} from '../../utils/validationSchema';
 import {NavLink} from 'react-router-dom';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +15,7 @@ const RegisterForm = () => {
       confirmPassword: '',
       name: '',
       familyName: '',
+      phoneNumber: '',
       city: '',
       street: '',
       houseNumber: '',
@@ -122,6 +125,24 @@ const RegisterForm = () => {
             {formik.errors.familyName}
           </div>
         ) : null}
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="phoneNumber">Phone Number</label>
+          <PhoneInput
+            international
+            countryCallingCodeEditable={false}
+            defaultCountry="UA"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formik.values.phoneNumber}
+            onChange={(value) => formik.setFieldValue('phoneNumber', value)}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+            <div className={styles.error}>
+              {formik.errors.phoneNumber}
+            </div>
+          ) : null}
         </div>
         <button type="submit">Register</button>
       </form>

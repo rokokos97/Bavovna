@@ -32,4 +32,6 @@ export const validationSchema = Yup.object({
           'The name must begin with a capital' +
         ' letter and consist only of letters')
       .max(15, 'Name must be at most 15 characters long'),
+  phoneNumber: Yup.string()
+      .required('Phone number is required'),
 });
