@@ -54,7 +54,7 @@ const Card = ({searchingId = 1}) => {
   }
 };
 Card.propTypes = {
-  searchingId: PropTypes.number.isRequired,
+  searchingId: PropTypes.string.isRequired,
 };
 
 export {Card};
