@@ -49,6 +49,7 @@ const RegisterForm = () => {
             value={formik.values.password}
           />
           <button
+            className='showPasswordBtn'
             type='button'
             onClick={toggleShowPassword}
           >
