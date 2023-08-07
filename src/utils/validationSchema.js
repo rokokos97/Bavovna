@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import {isValidNumber} from 'libphonenumber-js';
 
 export const validationSchema = Yup.object({
   email: Yup.string()
@@ -33,5 +34,9 @@ export const validationSchema = Yup.object({
         ' letter and consist only of letters')
       .max(15, 'Name must be at most 15 characters long'),
   phoneNumber: Yup.string()
+      .test('is-valid-number', 'Invalid phone number', (value) => {
+        if (!value) return true;
+        return isValidNumber(value);
+      })
       .required('Phone number is required'),
 });
