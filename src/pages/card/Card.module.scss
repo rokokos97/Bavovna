@@ -1,5 +1,7 @@
+@import "../../styles/variables.module.scss";
+
 .card {
-  background-color: var(--second-color);
+  background-color: $second-color;
   height: 100%;
   display: flex;
   gap: 24px;
@@ -83,7 +85,7 @@
   justify-content: center;
   width: 45px;
   height: 40px;
-  background-color: var(--white-color);
+  background-color: $white-color;
   border: 1px solid #adb5bd;
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -91,8 +93,8 @@
 }
 
 .size-list__item input:checked + label {
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: $black-color;
+  color: $white-color;
 }
 
 .form-bag {
@@ -105,6 +107,6 @@
   max-width: 410px;
   width: 100%;
   padding: 12px 0;
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: $black-color;
+  color: $white-color;
 }
