@@ -1,4 +1,4 @@
-@import "../../styles/variables.module.scss";
+@import '../../styles/variables.module.scss';
 
 .header {
   position: fixed;
@@ -15,49 +15,49 @@
   z-index: 10;
 }
 
-.header-nav {
+.headerNav {
   display: flex;
   gap: 16px;
   text-transform: uppercase;
 }
 
-.header-menuBar {
+.headerMenuBar {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.header-menuBar a {
+.headerMenuBar a {
   display: flex;
   align-items: center;
 }
 
-.header-menuBar a span {
+.headerMenuBar a span {
   transition: color 0.3s ease;
 }
 
-.header-menuBar a:hover span {
+.headerMenuBar a:hover span {
   color: $active-color;
 }
 
-.header-search {
+.headerSearch {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.header-search input {
+.headerSearch input {
   border: none;
   outline: none;
   height: 24px;
 }
 
-.header-search span {
+.headerSearch span {
   position: absolute;
   right: 1px;
 }
 
-.header-lang {
+.headerLang {
   display: flex;
   align-items: center;
 }

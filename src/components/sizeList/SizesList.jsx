@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useState} from 'react';
 
+import styles from './SizeList.module.scss';
+
 const SizesList = ({sizes}) => {
   let [selectedSize, setSelectedSize] = useState('');
 
@@ -11,9 +13,9 @@ const SizesList = ({sizes}) => {
 
   return (
     <>
-      <ul className="size-list">
+      <ul className={styles.sizeList}>
         {sizes.map((size) => (
-          <li key={size} className="size-list__item">
+          <li key={size} className={styles.sizeListItem}>
             <input
               type="radio"
               name="size"
