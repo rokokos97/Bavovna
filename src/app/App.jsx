@@ -18,7 +18,7 @@ function App() {
             <Route index element={<SalePage />} />
             <Route path="shop" element={<ShopPage />} />
             <Route path="aboutus" element={<AboutUsPage />} />
-            <Route path="card" element={<Card searchingId="1" />} />
+            <Route path="card" element={<Card searchingId={9} />} />
             <Route path="login/*" element={<LoginLayout />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
