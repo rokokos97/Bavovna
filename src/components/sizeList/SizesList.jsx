@@ -4,20 +4,10 @@ import {useState} from 'react';
 
 import styles from './SizeList.module.scss';
 
-const allSizes = [
-  {size: 'xs', available: false},
-  {size: 's', available: false},
-  {size: 'm', available: false},
-  {size: 'l', available: false},
-  {size: 'xl', available: false},
-];
+const allSizes = ['xs', 's', 'm', 'l', 'xl'];
 
 const SizesList = ({sizes}) => {
   let [selectedSize, setSelectedSize] = useState('');
-
-  const correctSizes = allSizes.map((item) =>
-    sizes.includes(item.size) ? {...item, available: true} : item,
-  );
 
   const handleChange = (event) => {
     setSelectedSize((selectedSize = event.target.value));
@@ -27,17 +17,17 @@ const SizesList = ({sizes}) => {
     <>
       <span>Size: {selectedSize}</span>
       <ul className={styles.sizeList}>
-        {correctSizes.map((item) => (
-          <li key={item.size} className={styles.sizeListItem}>
+        {allSizes.map((size) => (
+          <li key={size} className={styles.sizeListItem}>
             <input
               type="radio"
               name="size"
-              value={item.size}
-              id={item.size}
+              value={size}
+              id={size}
               onChange={handleChange}
-              disabled={!item.available}
+              disabled={!sizes.includes(size)}
             />
-            <label htmlFor={item.size}>{item.size}</label>
+            <label htmlFor={size}>{size}</label>
           </li>
         ))}
       </ul>
