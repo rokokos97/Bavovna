@@ -6,7 +6,7 @@
     "description": "A comfortable and breathable cotton t-shirt in blue.",
     "category": "64c429d991b5170270b80a0f",
     "images": ["path_to_image_1_1.jpg", "path_to_image_1_2.jpg"],
-    "color": "blue",
+    "color": ["#0000FF", "#00FF00", "#FF0000"],
     "size": ["s", "m", "l"],
     "composition": ["100% cotton"]
   },
@@ -17,7 +17,7 @@
     "description": "Classic black denim jeans for a stylish look.",
     "category": "64c429d991b5170270b80a0d",
     "images": ["path_to_image_2_1.jpg", "path_to_image_2_2.jpg"],
-    "color": "black",
+    "color": ["#000000", "#333333"],
     "size": ["s", "m", "l", "xl"],
     "composition": ["98% cotton", "2% elastane"]
   },
@@ -28,7 +28,7 @@
     "description": "Genuine leather jacket for a fashionable outfit.",
     "category": "64c429d991b5170270b80a10",
     "images": ["path_to_image_3_1.jpg"],
-    "color": "brown",
+    "color": ["#8B4513"],
     "size": ["s", "m", "l"],
     "composition": ["Genuine leather"]
   },
@@ -39,7 +39,7 @@
     "description": "Light and breathable white linen shirt.",
     "category": "64c429d991b5170270b80a0a",
     "images": ["path_to_image_4_1.jpg"],
-    "color": "white",
+    "color": ["#FFFFFF"],
     "size": ["m", "l"],
     "composition": ["100% linen"]
   },
@@ -50,7 +50,7 @@
     "description": "Cozy and stylish pla_id flannel shirt.",
     "category": "64c429d991b5170270b80a0a",
     "images": ["path_to_image_5_1.jpg"],
-    "color": "red",
+    "color": ["#FF0000", "#FFFF00"],
     "size": ["s", "m", "l"],
     "composition": ["100% cotton"]
   },
@@ -61,7 +61,7 @@
     "description": "Warm and trendy striped knit sweater.",
     "category": "64c429d991b5170270b80a10",
     "images": ["path_to_image_6_1.jpg", "path_to_image_6_2.jpg"],
-    "color": "gray",
+    "color": ["#808080"],
     "size": ["s", "m", "l"],
     "composition": ["80% acrylic", "20% wool"]
   },
@@ -72,7 +72,7 @@
     "description": "Fashionable ripped skinny jeans for a bold look.",
     "category": "64c429d991b5170270b80a0d",
     "images": ["path_to_image_7_1.jpg"],
-    "color": "blue",
+    "color": ["#0000FF"],
     "size": ["s", "m", "l"],
     "composition": ["98% cotton", "2% elastane"]
   },
@@ -83,7 +83,7 @@
     "description": "Comfy and versatile casual jogger pants.",
     "category": "64c429d991b5170270b80a0d",
     "images": ["path_to_image_8_1.jpg", "path_to_image_8_2.jpg"],
-    "color": "olive",
+    "color": ["#808000"],
     "size": ["s", "m", "l"],
     "composition": ["95% polyester", "5% spandex"]
   },
@@ -94,7 +94,7 @@
     "description": "Classic button-down oxford shirt for a smart look.",
     "category": "64c429d991b5170270b80a0a",
     "images": ["path_to_image_9_1.jpg"],
-    "color": "light blue",
+    "color": ["#ADD8E6"],
     "size": ["s", "m", "l"],
     "composition": ["100% cotton"]
   },
@@ -105,7 +105,7 @@
     "description": "Stylish v-neck sweater for a sophisticated outfit.",
     "category": "64c429d991b5170270b80a10",
     "images": ["path_to_image_10_1.jpg"],
-    "color": "navy",
+    "color": ["#000080"],
     "size": ["s", "m", "l"],
     "composition": ["60% cotton", "40% acrylic"]
   },
@@ -116,7 +116,7 @@
     "description": "Versatile chino shorts for a casual summer look.",
     "category": "64c429d991b5170270b80a0e",
     "images": ["path_to_image_11_1.jpg"],
-    "color": "khaki",
+    "color": ["#F0E68C"],
     "size": ["s", "m", "l"],
     "composition": ["98% cotton", "2% elastane"]
   },
@@ -127,7 +127,7 @@
     "description": "Elegant striped m_idi dress for special occasions.",
     "category": "64c429d991b5170270b80a0b",
     "images": ["path_to_image_12_1.jpg", "path_to_image_12_2.jpg"],
-    "color": "black/white",
+    "color": ["#000000", "#FFFFFF"],
     "size": ["s", "m", "l"],
     "composition": ["95% polyester", "5% spandex"]
   },
@@ -138,7 +138,7 @@
     "description": "Casual crew neck sweatshirt for a relaxed look.",
     "category": "64c429d991b5170270b80a0a",
     "images": ["path_to_image_13_1.jpg"],
-    "color": "gray",
+    "color": ["#808080"],
     "size": ["s", "m", "l"],
     "composition": ["80% cotton", "20% polyester"]
   },
@@ -149,7 +149,7 @@
     "description": "Chic pleated m_idi skirt for a feminine style.",
     "category": "64c429d991b5170270b80a0c",
     "images": ["path_to_image_14_1.jpg", "path_to_image_14_2.jpg"],
-    "color": "blush pink",
+    "color": ["#FF69B4", "#FFFF00"],
     "size": ["s", "m", "l"],
     "composition": ["100% polyester"]
   },
@@ -160,7 +160,7 @@
     "description": "Warm hooded parka jacket for cold weather.",
     "category": "64c429d991b5170270b80a10",
     "images": ["path_to_image_15_1.jpg"],
-    "color": "olive",
+    "color": ["#808000"],
     "size": ["s", "m", "l"],
     "composition": ["100% polyester"]
   },
@@ -171,7 +171,7 @@
     "description": "Stunning printed maxi dress for a boho look.",
     "category": "64c429d991b5170270b80a0b",
     "images": ["path_to_image_16_1.jpg", "path_to_image_16_2.jpg"],
-    "color": "multicolor",
+    "color": ["#FF0000", "#008000"],
     "size": ["s", "m", "l"],
     "composition": ["100% polyester"]
   },
@@ -182,7 +182,7 @@
     "description": "Fashion-forward cropped w_ide-leg pants.",
     "category": "64c429d991b5170270b80a0d",
     "images": ["path_to_image_17_1.jpg"],
-    "color": "beige",
+    "color": ["#F5DEB3"],
     "size": ["s", "m", "l"],
     "composition": ["98% polyester", "2% elastane"]
   },
@@ -193,7 +193,7 @@
     "description": "Elegant belted wrap dress for a sophisticated look.",
     "category": "64c429d991b5170270b80a0b",
     "images": ["path_to_image_18_1.jpg", "path_to_image_18_2.jpg"],
-    "color": "navy",
+    "color": ["#000080", "#0000FF"],
     "size": ["s", "m", "l"],
     "composition": ["95% polyester", "5% spandex"]
   },
@@ -204,7 +204,7 @@
     "description": "Cozy ribbed knit sweater for a warm outfit.",
     "category": "64c429d991b5170270b80a10",
     "images": ["path_to_image_19_1.jpg"],
-    "color": "burgundy",
+    "color": ["#800000", "#800080"],
     "size": ["s", "m", "l"],
     "composition": ["80% acrylic", "20% wool"]
   },
@@ -215,7 +215,7 @@
     "description": "Trendy distressed boyfriend jeans for a la_id-back look.",
     "category": "64c429d991b5170270b80a0d",
     "images": ["path_to_image_20_1.jpg"],
-    "color": "light blue",
+    "color": ["#ADD8E6", "#FFD700"],
     "size": ["s", "m", "l"],
     "composition": ["100% cotton"]
   }
