@@ -59,20 +59,7 @@
 
   & span {
     display: inline-block;
-  }
-}
-
-.formBag {
-  display: flex;
-  padding-top: 32px;
-  width: 100%;
-
-  & button {
-    // max-width: 410px;
-    width: 100%;
-    padding: 12px 0;
-    background-color: $black-color;
-    color: $white-color;
+    text-transform: uppercase;
   }
 }
 
@@ -80,4 +67,19 @@
   border: none;
   text-transform: uppercase;
   text-decoration: underline;
+  margin-top: 16px;
+  background-color: inherit;
+}
+
+.formBag {
+  display: flex;
+  padding-top: 16px;
+  width: 100%;
+
+  & button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: $black-color;
+    color: $white-color;
+  }
 }

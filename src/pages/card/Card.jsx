@@ -46,7 +46,6 @@ const Card = ({searchingId = 1}) => {
               <h2 className={styles.buyFormTitle}>{name}</h2>
               <span className={styles.buyFormPrice}>${price}</span>
               <div className={styles.size}>
-                <span>Size</span>
                 <SizesList sizes={size} />
                 <button
                   className={styles.btnGuide}
