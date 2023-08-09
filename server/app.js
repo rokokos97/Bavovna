@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const config = require('config');
 const chalk = require('chalk');
 const cors = require('cors');
-const initDatabase = require('./startUp/initDatabase');
-const routes = require('./routes');
+const initDatabase = require(
+    './startUp/initDatabase'); // Ініціалізація бази даних
+const routes = require('./routes'); // Роутинг
 const path = require('path');
 const app = express();
 mongoose.set('strictQuery', false);
@@ -12,16 +13,19 @@ mongoose.set('strictQuery', false);
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
-app.use('/api/upload', express.static('uploads'));
-app.use('/api', routes);
+app.use('/api/upload', express.static(
+    'uploads')); // Статичні файли для завантаження
+app.use('/api', routes); // Використання роутів
 
 const PORT = config.get('port') ?? 8080;
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static(path.join(__dirname, 'client')));
+  app.use('/', express.static(
+      path.join(__dirname, 'client'))); // Статичні файли клієнта
 
   const indexPath = path.join(__dirname, 'client', 'index.html');
 
+  // Запити на інші URL перенаправляють на index.html
   app.get('*', (req, res)=>{
     res.sendFile(indexPath);
   });
@@ -33,9 +37,12 @@ async function start() {
       initDatabase();
     });
     await mongoose.connect(config.get('mongoUri'));
-    console.log(chalk.green(`MongoDB connected.`));
+    console.log(chalk.green(
+        `MongoDB підключено.`)); // Вивід підтвердження підключення до MongoDB
     app.listen(PORT, () =>
-      console.log(chalk.green(`Server has been started on port ${PORT}...`)),
+      console.log(chalk.green(
+          `Сервер запущено на порту ${PORT}...`,
+      )), // Вивід підтвердження запуску сервера
     );
   } catch (e) {
     console.log(chalk.red(e.message));
@@ -44,4 +51,3 @@ async function start() {
 }
 
 start();
-
