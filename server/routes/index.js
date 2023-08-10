@@ -13,6 +13,6 @@ router.use('/item', require('./item.routes'));
 // Використання маршрутів для користувачів
 router.use('/user', require('./user.routes'));
 // Використання маршрутів для завантаження файлів
-router.use('/upload', require('./upload.routes'));
+router.use('/uploads', require('./upload.routes'));
 
 module.exports = router; // Експорт роутера для використання у головному файлі
