@@ -13,7 +13,7 @@ mongoose.set('strictQuery', false);
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
-app.use('/api/upload', express.static(
+app.use('/api/uploads', express.static(
     'uploads')); // Статичні файли для завантаження
 app.use('/api', routes); // Використання роутів
 
