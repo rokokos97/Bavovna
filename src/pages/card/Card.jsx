@@ -13,33 +13,43 @@ import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 
 import styles from './Card.module.scss';
 
-const Card = ({searchingId = 1}) => {
-  const [modalOpen, setModalOpen] = useState(true);
+const Card = ({searchingId = '1'}) => {
+  const [modalOpen, setModalOpen] = useState(false);
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
+  const changeImage = (imgUrl) => {
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = imgUrl;
+  };
+
   if (!isItemsLoading) {
     console.log(items);
-    const {name, price, size} = items[searchingId];
+    const {name, price, size, images} = items[searchingId];
 
     return (
       <>
         <section className={styles.card}>
           <div className={styles.imgs}>
             <ul className={styles.imgsList}>
-              <li className={styles.imgsListItem}>
-                <img src="/img/models/model_1/img_1.jpg" alt="img_1" />
-              </li>
-              <li className={styles.imgsListItem}>
-                <img src="/img/models/model_1/img_2.jpg" alt="img_2" />
-              </li>
-              <li className={styles.imgsListItem}>
-                <img src="/img/models/model_1/img_3.jpg" alt="img_3" />
-              </li>
+              {images.map((image) => (
+                <li
+                  key={image}
+                  onClick={() =>
+                    changeImage(`http://localhost:8000/api/${image}`)
+                  }
+                >
+                  <img src={`http://localhost:8000/api/${image}`} alt="img" />
+                </li>
+              ))}
             </ul>
           </div>
           <div className={styles.mainImg}>
-            <img src="/img/models/model_1/img_1_main.jpg" alt="" />
+            <img
+              id="mainImage"
+              src={`http://localhost:8000/api/${images[0]}`}
+              alt="img"
+            />
           </div>
           <div className={styles.about}>
             <form className={styles.buyForm}>
@@ -70,7 +80,7 @@ const Card = ({searchingId = 1}) => {
   }
 };
 Card.propTypes = {
-  searchingId: PropTypes.number.isRequired,
+  searchingId: PropTypes.string.isRequired,
 };
 
 export {Card};

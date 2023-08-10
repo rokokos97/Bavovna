@@ -6,9 +6,12 @@ const schema = new Schema({
   description: {type: String},
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
   images: [{type: String}],
-  color: {type: String},
+  color: [{type: String}],
   size: [{type: String}],
   composition: [{type: String}],
+  modelParams: {type: String},
+  sale: {type: Number},
+  favorite: {type: Boolean},
 }, {
   timestamps: true,
 });

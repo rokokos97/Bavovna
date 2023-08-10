@@ -1,1 +1,68 @@
-.registerForm {}
+.card {
+  margin: 30px auto;
+  padding: 20px;
+  width: 50%;
+  border: black 1px solid;
+  //text-align: start;
+}
+.field {
+  position: relative;
+  text-align: start;
+  margin: 10px 0;
+}
+.error {
+  color: red;
+}
+/* Styles for Submit button */
+button[type="submit"] {
+  background-color: #007BFF; // Primary blue color
+  color: #FFFFFF;           // White text color
+  padding: 10px 20px;       // Padding for top/bottom and left/right
+  border: none;             // Removing the default border
+  border-radius: 5px;       // Rounded corners
+  font-size: 16px;          // Font size
+  cursor: pointer;          // Hand cursor on hover
+  transition: background-color 0.3s ease; // Smooth transition for hover effect
+
+  // Hover effect for the Submit button
+  &:hover {
+    background-color: #0056b3; // A darker shade of blue
+  }
+
+  // Active state (when button is pressed)
+  &:active {
+    background-color: #004085; // Even darker shade of blue
+  }
+
+  // Optional: if you want to disable the button for some reason (e.g., while waiting for a response)
+  &:disabled {
+    background-color: #CCCCCC; // Gray background
+    cursor: not-allowed;       // Indicator that the button is disabled
+  }
+}
+/* Styles for Show Password button */
+.showPasswordBtn {
+  background-color: transparent; // Transparent background
+  border: 1px solid #007BFF;     // Blue border
+  color: #007BFF;               // Blue text color
+  padding: 5px 10px;            // Padding for top/bottom and left/right
+  font-size: 14px;              // Font size
+  cursor: pointer;              // Hand cursor on hover
+  transition: color 0.3s ease, border-color 0.3s ease; // Smooth transition for hover effect
+  position: absolute;           // Absolute positioning
+  right: 10px;                  // Positioned to the right of the password input
+  top: 50%;                     // Centered vertically
+  transform: translateY(-50%);  // Adjusting for perfect centering
+
+  // Hover effect for the Show Password button
+  &:hover {
+    color: #0056b3;             // A darker shade of blue for text
+    border-color: #0056b3;     // A darker shade of blue for border
+  }
+
+  // Active state (when button is pressed)
+  &:active {
+    color: #004085;             // Even darker shade of blue for text
+    border-color: #004085;     // Even darker shade of blue for border
+  }
+}
