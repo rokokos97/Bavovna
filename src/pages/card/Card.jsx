@@ -1,17 +1,15 @@
 import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
 import {NotFoundPage} from '../notFoundPage/NotFoundPage';
 import {SizesList} from '../../components/sizeList/SizesList';
 import {Modal} from '../../components/modal';
+import {Dropdown} from '../../components/dropdown/Dropdown';
 import {SizeGuide} from '../../components/modal/modalContent/SizeGuide';
-
-// import {searchItem} from '../../logic/searchItem';
-
-// import things from '../../things.json';
-import {useSelector} from 'react-redux';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 
 import styles from './Card.module.scss';
+// import '../../services/dropdown.service';
 
 const Card = ({searchingId = '1'}) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,7 +23,8 @@ const Card = ({searchingId = '1'}) => {
 
   if (!isItemsLoading) {
     console.log(items);
-    const {name, price, size, images} = items[searchingId];
+    const {name, price, size, images, description, modelParams, composition} =
+      items[searchingId];
 
     return (
       <>
@@ -68,6 +67,32 @@ const Card = ({searchingId = '1'}) => {
                 <button>ADD TO BAG</button>
               </div>
             </form>
+            <div className={styles.descriptions}>
+              <Dropdown
+                id="dropdownToggle"
+                label="Details"
+                name="details"
+                inner={description}
+              />
+              <Dropdown
+                id="dropdownToggle"
+                label="Model parameters"
+                name="parameters"
+                inner={modelParams}
+              />
+              <Dropdown
+                id="dropdownToggle"
+                label="Composition and care"
+                name="composition"
+                inner={composition.join()}
+              />
+              <Dropdown
+                id="dropdownToggle"
+                label="Shipping and returns"
+                name="shipping"
+                inner="Lorem ipsum dolor sit amen consectetur"
+              />
+            </div>
           </div>
           <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
             <SizeGuide />
