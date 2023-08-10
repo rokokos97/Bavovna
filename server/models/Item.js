@@ -9,6 +9,9 @@ const schema = new Schema({
   color: [{type: String}],
   size: [{type: String}],
   composition: [{type: String}],
+  modelParams: {type: String},
+  sale: {type: Number},
+  favorite: {type: Boolean},
 }, {
   timestamps: true,
 });

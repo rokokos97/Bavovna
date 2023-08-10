@@ -38,10 +38,10 @@ async function start() {
     });
     await mongoose.connect(config.get('mongoUri'));
     console.log(chalk.green(
-        `MongoDB підключено.`)); // Вивід підтвердження підключення до MongoDB
+        `MongoDB is connected.`)); // Вивід підтвердження підключення до MongoDB
     app.listen(PORT, () =>
       console.log(chalk.green(
-          `Сервер запущено на порту ${PORT}...`,
+          `The server is started on the port ${PORT}...`,
       )), // Вивід підтвердження запуску сервера
     );
   } catch (e) {
