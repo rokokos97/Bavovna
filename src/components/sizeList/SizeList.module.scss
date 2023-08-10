@@ -1,0 +1,53 @@
+@import '../../styles/variables.module.scss';
+
+.sizeList {
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.sizeListItem {
+  width: 45px;
+  height: 40px;
+
+  & input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  & label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background-color: $white-color;
+    border: 1px solid #adb5bd;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  input:disabled + label {
+    color: #d9d9d9;
+    border-color: #d9d9d9;
+    position: relative;
+    cursor: default;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -7px;
+      right: -7px;
+      height: 0.5px;
+      background-color: #d9d9d9;
+      transform: rotate(42deg);
+    }
+  }
+
+  & input:checked + label {
+    background-color: $black-color;
+    color: $white-color;
+  }
+}

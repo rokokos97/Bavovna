@@ -1,4 +1,4 @@
-@import 'styles/variables.css';
+@import-normalize;
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,5 +18,6 @@ a {
 }
 
 a:hover {
-  color: var(--active-color);
+  color: #ad1f00;
+  opacity: 1;
 }
