@@ -1,0 +1,63 @@
+.header {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* font-size: calc(10px + 2vmin); */
+  color: #212a2f;
+  padding: 0 40px;
+  border-bottom: 1px solid #e2e2e4;
+  z-index: 10;
+}
+
+.headerNav {
+  display: flex;
+  gap: 16px;
+  text-transform: uppercase;
+}
+
+.headerMenuBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerMenuBar a {
+  display: flex;
+  align-items: center;
+}
+
+.headerMenuBar a span {
+  transition: color 0.3s ease;
+}
+
+.headerMenuBar a:hover span {
+  color: #ad1f00;
+}
+
+.headerSearch {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.headerSearch input {
+  border: none;
+  outline: none;
+  height: 24px;
+}
+
+.headerSearch span {
+  position: absolute;
+  right: 1px;
+}
+
+.headerLang {
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

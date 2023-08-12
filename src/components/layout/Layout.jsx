@@ -1,14 +1,14 @@
 import React from 'react';
-import {Outlet} from 'react-router-dom';
 import {Header} from '../header';
-import {Footer} from '../footer/Footer';
+import {Footer} from '../footer';
+import MainPage from '../../pages/MainPage/MainPage';
 
 const Layout = () => {
   return (
     <>
       <Header />
       <main className="container">
-        <Outlet />
+        <MainPage />
       </main>
       <Footer />
     </>
