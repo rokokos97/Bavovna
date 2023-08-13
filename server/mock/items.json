@@ -11,7 +11,8 @@
     "composition": ["100% cotton"],
     "sale": 40,
     "modelParams": "Classic short-sleeve cotton t-shirt in blue.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "mno456pqr789stu012vwx3yz",
@@ -25,7 +26,8 @@
     "composition": ["98% cotton", "2% elastane"],
     "sale": 80,
     "modelParams": "Timeless black denim jeans with a stylish look.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "efg789hij012klm345nopqrs",
@@ -39,7 +41,8 @@
     "composition": ["Genuine leather"],
     "sale": 0,
     "modelParams": "Elegant genuine leather jacket for a fashionable outfit.",
-    "favorite": false
+    "favorite": false,
+    "status": "new"
   },
   {
     "_id": "tuv456wxy789zab0cdefghij",
@@ -53,7 +56,8 @@
     "composition": ["100% linen"],
     "sale": 20,
     "modelParams": "Light and breathable white linen shirt.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "klm123nop456qrs789tu0vwx",
@@ -67,7 +71,8 @@
     "composition": ["100% cotton"],
     "sale": 0,
     "modelParams": "Cozy and stylish pla_id flannel shirt.",
-    "favorite": false
+    "favorite": false,
+    "status": "new"
   },
   {
     "_id": "xyz123456789abcdefgihklm",
@@ -81,7 +86,8 @@
     "composition": ["80% acrylic", "20% wool"],
     "sale": 0,
     "modelParams": "Warm and trendy striped knit sweater.",
-    "favorite": false
+    "favorite": false,
+    "status": "new"
   },
   {
     "_id": "nop234qrs567tuw890vxyabc",
@@ -95,7 +101,8 @@
     "composition": ["98% cotton", "2% elastane"],
     "sale": 10,
     "modelParams": "Fashionable ripped skinny jeans for a bold look.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "def456ghi789jkl012mno345",
@@ -109,7 +116,8 @@
     "composition": ["95% polyester", "5% spandex"],
     "sale": 70,
     "modelParams": "Comfy and versatile casual jogger pants.",
-    "favorite": false
+    "favorite": false,
+    "status": "sold-out"
   },
   {
     "_id": "pqr678stu901vwxyz234abcd",
@@ -123,7 +131,8 @@
     "composition": ["100% cotton"],
     "sale": 50,
     "modelParams": "Classic button-down oxford shirt for a smart look.",
-    "favorite": false
+    "favorite": false,
+    "status": "sold-out"
   },
   {
     "_id": "efg789hij012klm345nopqrs",
@@ -137,7 +146,8 @@
     "composition": ["60% cotton", "40% acrylic"],
     "sale": 90,
     "modelParams": "Stylish v-neck sweater for a sophisticated outfit.",
-    "favorite": false
+    "favorite": false,
+    "status": "sold-out"
   },
   {
     "_id": "tuv456wxy789zab0cdefghij",
@@ -151,7 +161,8 @@
     "composition": ["98% cotton", "2% elastane"],
     "sale": 0,
     "modelParams": "Versatile chino shorts for a casual summer look.",
-    "favorite": false
+    "favorite": false,
+    "status": ""
   },
   {
     "_id": "klm123nop456qrs789tu0vwx",
@@ -165,7 +176,8 @@
     "composition": ["95% polyester", "5% spandex"],
     "sale": 0,
     "modelParams": "Elegant striped m_idi dress for special occasions.",
-    "favorite": false
+    "favorite": false,
+    "status": "new"
   },
   {
     "_id": "xyz123456789abcdefgihklm",
@@ -179,7 +191,8 @@
     "composition": ["80% cotton", "20% polyester"],
     "sale": 10,
     "modelParams": "Casual crew neck sweatshirt for a relaxed look.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "nop234qrs567tuw890vxyabc",
@@ -193,7 +206,8 @@
     "composition": ["100% polyester"],
     "sale": 0,
     "modelParams": "Chic pleated m_idi skirt for a feminine style.",
-    "favorite": false
+    "favorite": false,
+    "status": ""
   },
   {
     "_id": "def456ghi789jkl012mno345",
@@ -207,7 +221,8 @@
     "composition": ["100% polyester"],
     "sale": 0,
     "modelParams": "Warm hooded parka jacket for cold weather.",
-    "favorite": false
+    "favorite": false,
+    "status": ""
   },
   {
     "_id": "pqr678stu901vwxyz234abcd",
@@ -221,7 +236,8 @@
     "composition": ["100% polyester"],
     "sale": 0,
     "modelParams": "Stunning printed maxi dress for a boho look.",
-    "favorite": false
+    "favorite": false,
+    "status": "new"
   },
   {
     "_id": "efg789hij012klm345nopqrs",
@@ -235,7 +251,8 @@
     "composition": ["98% polyester", "2% elastane"],
     "sale": 30,
     "modelParams": "Fashion-forward cropped w_ide-leg pants.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "tuv456wxy789zab0cdefghij",
@@ -249,7 +266,8 @@
     "composition": ["95% polyester", "5% spandex"],
     "sale": 20,
     "modelParams": "Elegant belted wrap dress for a sophisticated look.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "klm123nop456qrs789tu0vwx",
@@ -263,7 +281,8 @@
     "composition": ["80% acrylic", "20% wool"],
     "sale": 90,
     "modelParams": "Cozy ribbed knit sweater for a warm outfit.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   },
   {
     "_id": "xyz123456789abcdefgihklm",
@@ -277,6 +296,7 @@
     "composition": ["100% cotton"],
     "sale": 60,
     "modelParams": "Trendy distressed boyfriend jeans for a la_id-back look.",
-    "favorite": false
+    "favorite": false,
+    "status": "sale"
   }
 ]

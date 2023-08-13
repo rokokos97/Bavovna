@@ -12,6 +12,7 @@ const schema = new Schema({
   modelParams: {type: String},
   sale: {type: Number},
   favorite: {type: Boolean},
+  status: {type: String},
 }, {
   timestamps: true,
 });
