@@ -1,0 +1,49 @@
+.newArrivalsBlock {
+  border: red solid 0.1rem;
+  margin: 10rem auto;
+  display: flex;
+  width: 128rem;
+  height: 66.2rem;
+  padding: 10rem 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.newArrivalsBlock__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.newArrivalsBlock__title span {
+  color: #000;
+  font-family: Fixel Display, serif;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.newArrivalsBlock__arrows {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.newArrivalsBlock__arrows div {
+  display: flex;
+  height: 4.4rem;
+  padding: 0.94rem 0.84rem 0.94rem 1.04rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.newArrivalsBlock__box {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4rem;
+}
+
+/*# sourceMappingURL=NewArrivalsBlock.module.css.map */
