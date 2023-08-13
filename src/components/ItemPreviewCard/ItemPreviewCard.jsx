@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './ItemPreviewCard.module.scss';
 import PropTypes from 'prop-types';
+import config from '../../config.json';
 
 const ItemPreviewCard = ({item}) => {
   console.log(item);
   return (
     <div className={styles.itemPreviewCard} data-testid="ItemPreviewCard">
-      <div className={styles.itemPreviewCard__image}/>
+      <div className={styles.itemPreviewCard__image}>
+        <img
+          src={`${config.apiEndpoint}${item.images[0]}`}
+          alt="item image"
+        />
+      </div>
       {
         item.status !== '' &&
         <div className={styles.itemPreviewCard__status}>
