@@ -23,7 +23,7 @@ const MainPage = () => {
           </button>
         </div>
       </div>
-      {!isLoading && <ItemPreviewCard item={items[0]}/>}
+      {!isLoading && <ItemPreviewCard item={items[8]}/>}
     </>
   );
 };

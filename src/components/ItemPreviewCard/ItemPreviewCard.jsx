@@ -7,11 +7,14 @@ const ItemPreviewCard = ({item}) => {
   return (
     <div className={styles.itemPreviewCard} data-testid="ItemPreviewCard">
       <div className={styles.itemPreviewCard__image}/>
-      <div className={styles.itemPreviewCard__status}>
-        <div className={styles.itemPreviewCard__statusText}>
-          new
+      {
+        item.status !== '' &&
+        <div className={styles.itemPreviewCard__status}>
+          <div className={styles.itemPreviewCard__statusText}>
+            {item.status}
+          </div>
         </div>
-      </div>
+      }
       <div className={styles.itemPreviewCard__heart}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           {/* eslint-disable-next-line max-len */}
