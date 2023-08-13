@@ -1,4 +1,11 @@
 .newCollectionBlock {
+  border: black solid 0.1rem;
+  width: 128rem;
+  height: 84.1rem;
+  margin: 0 auto;
+}
+.newCollectionBlock__wrapper {
+  border: black solid 0.1rem;
   display: inline-flex;
   width: 57.8rem;
   height: 26.3rem;

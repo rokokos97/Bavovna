@@ -2,6 +2,7 @@
   font-family: Fixel Display, serif;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=MainPage.module.css.map */
