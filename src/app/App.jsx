@@ -3,6 +3,10 @@ import {Routes, Route} from 'react-router-dom';
 import {SalePage} from '../pages/salePage/salePage';
 import {NotFoundPage} from '../pages/notFoundPage/notFoundPage';
 import {ShopPage} from '../pages/shopPage/shopPage';
+import {Layout} from '../components/layout/Layout';
+import {SalePage} from '../pages/salePage';
+import {NotFoundPage} from '../pages/notFoundPage';
+import {ShopPage} from '../pages/shopPage';
 import {Card} from '../pages/card';
 import './App.css';
 import '../components/header/Header.css';
@@ -21,9 +25,9 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<SalePage />} />
             <Route path="shop" element={<ShopPage />} />
-            <Route path="aboutus" element={<AboutUsPage/>} />
-            <Route path="card" element={<Card searchingId='1'/>} />
-            <Route path="login/*" element={<LoginLayout /> } />
+            <Route path="aboutus" element={<AboutUsPage />} />
+            <Route path="card" element={<Card searchingId={'1'} />} />
+            <Route path="login/*" element={<LoginLayout />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

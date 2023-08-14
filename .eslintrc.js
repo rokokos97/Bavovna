@@ -1,7 +1,13 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: ['plugin:react/recommended', 'google'],
+  overrides: [],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   'extends': [
     'plugin:react/recommended',
@@ -29,5 +35,20 @@ module.exports = {
     'max-len': ['error', {
       'code': 120,
     }],
+  plugins: ['react'],
+  rules: {
+    'linebreak-style': 0,
+    'require-jsdoc': [
+      'error',
+      {
+        require: {
+          FunctionDeclaration: false,
+          MethodDefinition: false,
+          ClassDeclaration: false,
+          ArrowFunctionExpression: false,
+          FunctionExpression: false,
+        },
+      },
+    ],
   },
 };
