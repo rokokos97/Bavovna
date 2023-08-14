@@ -1,7 +1,7 @@
 .itemPreviewCard {
   position: relative;
-  width: 41rem;
-  height: 57.8rem;
+  max-width: 41rem;
+  max-height: 57.8rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;

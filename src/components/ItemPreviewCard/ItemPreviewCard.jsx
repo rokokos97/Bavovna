@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import config from '../../config.json';
 
 const ItemPreviewCard = ({item}) => {
-  console.log(item);
   return (
     <div className={styles.itemPreviewCard} data-testid="ItemPreviewCard">
       <div className={styles.itemPreviewCard__image}>
@@ -14,7 +13,7 @@ const ItemPreviewCard = ({item}) => {
         />
       </div>
       {
-        item.status !== '' &&
+        item.status &&
         <div className={styles.itemPreviewCard__status}>
           <div className={styles.itemPreviewCard__statusText}>
             {item.status}

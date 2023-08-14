@@ -32,7 +32,8 @@
   justify-content: flex-end;
   align-items: flex-end;
 }
-.newArrivalsBlock__arrows div {
+.newArrivalsBlock__arrows button {
+  background-color: transparent;
   display: flex;
   height: 4.4rem;
   padding: 0.94rem 0.84rem 0.94rem 1.04rem;
@@ -41,9 +42,11 @@
 }
 
 .newArrivalsBlock__box {
+  width: 128rem;
   display: flex;
   align-items: flex-start;
   gap: 2.4rem;
+  margin-left: 0.5rem;
 }
 
 /*# sourceMappingURL=NewArrivalsBlock.module.css.map */
