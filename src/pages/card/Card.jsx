@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import {NotFoundPage} from '../notFoundPage/NotFoundPage';
+
 import {SizesList} from '../../components/sizeList/SizesList';
 import {Modal} from '../../components/modal';
 import {Dropdown} from '../../components/dropdown/Dropdown';
-import {SizeGuide} from '../../components/modal/modalContent/SizeGuide';
+import {SizeGuide} from '../../components/modal/modalContent';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 
 import styles from './Card.module.scss';
+import NotFoundPage from '../notFoundPage/notFoundPage';
 // import '../../services/dropdown.service';
 
 const Card = ({searchingId = '1'}) => {

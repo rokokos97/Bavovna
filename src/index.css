@@ -1,4 +1,4 @@
-@import 'styles/variables.css';
+@import 'styles/variables.module.scss';
 @font-face {
   font-family: "Fixel Display";
   src: url('../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2') format('woff2');

@@ -1,21 +1,17 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import {SalePage} from '../pages/salePage/salePage';
-import {NotFoundPage} from '../pages/notFoundPage/notFoundPage';
-import {ShopPage} from '../pages/shopPage/shopPage';
-import {Layout} from '../components/layout/Layout';
 import {SalePage} from '../pages/salePage';
-import {NotFoundPage} from '../pages/notFoundPage';
 import {ShopPage} from '../pages/shopPage';
+import {Layout} from '../components/layout/Layout';
 import {Card} from '../pages/card';
-import './App.css';
-import '../components/header/Header.css';
-import '../pages/card/Card.css';
-import '../components/footer/Footer.css';
 import {AboutUsPage} from '../pages/aboutUs';
+import './App.module.css';
+import '../components/header/Header.module.css';
+import '../pages/card/Card.module.css';
+import '../components/footer/Footer.module.css';
 import AppLoader from '../hoc/appLoader';
 import LoginLayout from '../components/LoginLayout/LoginLayout';
-import {Layout} from '../components/layout';
+import NotFoundPage from '../pages/notFoundPage/notFoundPage';
 
 function App() {
   return (
