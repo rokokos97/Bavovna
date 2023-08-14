@@ -11,6 +11,7 @@ const Header = () => {
         <Link to="/shop">Shop</Link>
         <Link to="/aboutus">About us</Link>
         <Link to="/card">Card</Link>
+        <Link to="/main">MainPageDevelop</Link>
       </div>
       <div className={styles.headerLogo}>Logo</div>
       <div className={styles.headerMenuBar}>

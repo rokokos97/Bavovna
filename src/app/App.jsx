@@ -12,6 +12,7 @@ import '../components/footer/Footer.module.css';
 import AppLoader from '../hoc/appLoader';
 import LoginLayout from '../components/LoginLayout/LoginLayout';
 import NotFoundPage from '../pages/notFoundPage/notFoundPage';
+import MainPage from '../pages/mainPage/MainPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="aboutus" element={<AboutUsPage />} />
             <Route path="card" element={<Card searchingId={'1'} />} />
             <Route path="login/*" element={<LoginLayout />} />
+            <Route path='main' element={<MainPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

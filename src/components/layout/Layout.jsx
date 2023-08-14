@@ -1,6 +1,5 @@
 import React from 'react';
 import {Header} from '../header';
-import MainPage from '../../pages/mainPage/MainPage';
 import {Footer} from '../footer';
 
 import styles from './Layout.module.scss';
@@ -12,7 +11,6 @@ const Layout = () => {
       <Header />
       <main className={styles.container}>
         <Outlet />
-        <MainPage />
       </main>
       <Footer />
     </>
