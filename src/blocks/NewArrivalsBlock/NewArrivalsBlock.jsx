@@ -50,10 +50,10 @@ const NewArrivalsBlock = () => {
             <div className={styles.newArrivalsBlock__box}>
               {/* Swiper для відображення елементів */}
               <Swiper
-                onSwiper={(swiper)=> swiperRef.current = swiper}
+                onSwiper={(swiper) => swiperRef.current = swiper}
                 slidesPerView={3}
                 spaceBetween={3}
-                loop={true}
+                //                loop={true}
                 modules={[Navigation]}
                 navigation={{
                   // Відключаємо вбудовану навігацію swiper
