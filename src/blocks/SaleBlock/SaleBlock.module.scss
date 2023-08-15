@@ -1,1 +1,43 @@
-.saleBlock {}
+.saleBlock {
+  display: flex;
+  flex-direction: column;
+  border: #007BFF 0.1rem solid;
+  width: 144rem;
+  height: 37.6rem;
+}
+.contentBlock {
+  margin: 12.6rem auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.title {
+  margin: 0 auto;
+  color: #000;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.button {
+  margin: 0 auto;
+  background: #222;
+  display: flex;
+  width: 19.5rem;
+  padding: 2.1rem 3.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+
+  span {
+    color: #FFF;
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 2.4rem */
+    text-transform: uppercase;
+  }
+}
