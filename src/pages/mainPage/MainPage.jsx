@@ -13,6 +13,7 @@ const MainPage = () => {
         <NewArrivalsBlock />
         <SaleBlock />
         <BavovnaBlock />
+        <NewArrivalsBlock />
       </div>
     </>
   );
