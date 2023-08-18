@@ -8,7 +8,7 @@ import BavovnaBlock from '../../blocks/BavovnaBlock/BavovnaBlock';
 const MainPage = () => {
   return (
     <>
-      <div className={styles.mainPage} data-testid="MainPage">
+      <div className={styles.mainPage} data-testid='MainPage'>
         <NewCollectionBlock />
         <NewArrivalsBlock />
         <SaleBlock />

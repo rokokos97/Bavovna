@@ -3,4 +3,5 @@ const ShopPage = () => {
   return <div>Shop</div>;
 };
 
-export {ShopPage};
+export default ShopPage;
+

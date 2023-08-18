@@ -4,4 +4,5 @@ const AboutUsPage = () => {
   return <div>About us</div>;
 };
 
-export {AboutUsPage};
+export default AboutUsPage;
+

@@ -4,4 +4,5 @@ const SalePage = () => {
   return <div>Sale</div>;
 };
 
-export {SalePage};
+export default SalePage;
+
