@@ -10,7 +10,14 @@ const NewsLettersBlock = () => (
         SIGN UP TO GET 10% OFF ON YOUR FIRST ORDER, RELEASE NOTIFICATIONS
         AND EXCLUSIVE ACCESS BEFORE EVERYONE ELSE
     </span>
-    <input />
+    <div className={styles.input}>
+      <input placeholder={'Enter your e-mail'}/>
+    </div>
+    <button className={styles.button} >
+      <span>
+        subscribe
+      </span>
+    </button>
   </div>
 );
 
