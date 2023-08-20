@@ -39,16 +39,16 @@ const Card = ({searchingId = '1'}) => {
                     changeImage(`http://localhost:8000/api/${image}`)
                   }
                 >
-                  <img src={`http://localhost:8000/api/${image}`} alt="img" />
+                  <img src={`http://localhost:8000/api/${image}`} alt='img' />
                 </li>
               ))}
             </ul>
           </div>
           <div className={styles.mainImg}>
             <img
-              id="mainImage"
+              id='mainImage'
               src={`http://localhost:8000/api/${images[0]}`}
-              alt="img"
+              alt='img'
             />
           </div>
           <div className={styles.about}>
@@ -70,28 +70,28 @@ const Card = ({searchingId = '1'}) => {
             </form>
             <div className={styles.descriptions}>
               <Dropdown
-                id="dropdownToggle"
-                label="Details"
-                name="details"
+                id='dropdownToggle'
+                label='Details'
+                name='details'
                 inner={description}
               />
               <Dropdown
-                id="dropdownToggle"
-                label="Model parameters"
-                name="parameters"
+                id='dropdownToggle'
+                label='Model parameters'
+                name='parameters'
                 inner={modelParams}
               />
               <Dropdown
-                id="dropdownToggle"
-                label="Composition and care"
-                name="composition"
+                id='dropdownToggle'
+                label='Composition and care'
+                name='composition'
                 inner={composition.join()}
               />
               <Dropdown
-                id="dropdownToggle"
-                label="Shipping and returns"
-                name="shipping"
-                inner="Lorem ipsum dolor sit amen consectetur"
+                id='dropdownToggle'
+                label='Shipping and returns'
+                name='shipping'
+                inner='Lorem ipsum dolor sit amen consectetur'
               />
             </div>
           </div>
@@ -109,4 +109,4 @@ Card.propTypes = {
   searchingId: PropTypes.string.isRequired,
 };
 
-export {Card};
+export default Card;

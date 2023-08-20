@@ -9,7 +9,7 @@ import NewsLettersBlock from '../../blocks/NewsLettersBlock/NewsLettersBlock';
 const MainPage = () => {
   return (
     <>
-      <div className={styles.mainPage} data-testid="MainPage">
+      <div className={styles.mainPage} data-testid='MainPage'>
         <NewCollectionBlock />
         <NewArrivalsBlock />
         <SaleBlock />
