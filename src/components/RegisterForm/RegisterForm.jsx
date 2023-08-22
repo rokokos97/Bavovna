@@ -8,6 +8,7 @@ import PhoneInput from 'react-phone-number-input';
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error] = useState('');
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -35,9 +36,25 @@ const RegisterForm = () => {
   };
   return (
     <div className={styles.card}>
-      <form onSubmit={formik.handleSubmit}>
+      <div className={styles.title}>
+        Sign up
+        <span>
+          Welcome back! Please enter your details
+        </span>
+      </div>
+      <form
+        className={styles.form}
+        onSubmit={formik.handleSubmit}
+      >
         <div className={styles.field}>
-          <label htmlFor="email">Email address </label>
+          <label htmlFor="email">
+            <span>
+              Email *
+            </span>
+            <span className={styles.error}>
+              {error ? error : null}
+            </span>
+          </label>
           <input
             id="email"
             name="email"
@@ -51,7 +68,14 @@ const RegisterForm = () => {
         ) : null}
         </div>
         <div className={styles.field}>
-          <label htmlFor="password">Password </label>
+          <label htmlFor="password">
+            <span>
+              Password *
+            </span>
+            <span className={styles.error}>
+              {error ? error : null}
+            </span>
+          </label>
           <input
             id="password"
             name="password"
@@ -72,7 +96,11 @@ const RegisterForm = () => {
         ) : null}
         </div>
         <div className={styles.field}>
-          <label htmlFor="confirmPassword">Confirm password </label>
+          <label htmlFor="confirmPassword">
+            <span>
+              Confirm password *
+            </span>
+          </label>
           <input
             id="confirmPassword"
             name="confirmPassword"
@@ -95,55 +123,30 @@ const RegisterForm = () => {
         ) : null}
         </div>
         <div className={styles.field}>
-          <label htmlFor="name">Name </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-          />
-          {formik.touched.name && formik.errors.name ? (
-          <div className={styles.error}>
-            {formik.errors.name}
+          <label htmlFor="phoneNumber">
+            <span>
+              Phone Number *
+            </span>
+          </label>
+          <div>
+            <PhoneInput
+              international
+              countryCallingCodeEditable={false}
+              defaultCountry="UA"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={formik.values.phoneNumber}
+              onChange={(value) => formik.setFieldValue('phoneNumber', value)}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+              <div className={styles.error}>
+                {formik.errors.phoneNumber}
+              </div>
+            ) : null}
           </div>
-        ) : null}
         </div>
-        <div className={styles.field}>
-          <label htmlFor="familyName">Family name </label>
-          <input
-            id="familyName"
-            name="familyName"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.familyName}
-          />
-          {formik.touched.familyName && formik.errors.familyName ? (
-          <div className={styles.error}>
-            {formik.errors.familyName}
-          </div>
-        ) : null}
-        </div>
-        <div className={styles.field}>
-          <label htmlFor="phoneNumber">Phone Number</label>
-          <PhoneInput
-            international
-            countryCallingCodeEditable={false}
-            defaultCountry="UA"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={formik.values.phoneNumber}
-            onChange={(value) => formik.setFieldValue('phoneNumber', value)}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-            <div className={styles.error}>
-              {formik.errors.phoneNumber}
-            </div>
-          ) : null}
-        </div>
+
         <button type="submit">Register</button>
       </form>
       <p>
