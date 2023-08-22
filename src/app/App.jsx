@@ -1,7 +1,5 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import SalePage from '../pages/salePage/SalePage';
-import ShopPage from '../pages/shopPage/ShopPage';
 import Layout from '../components/layout/Layout';
 import Card from '../pages/card/Card';
 import AboutUsPage from '../pages/aboutUs/AboutUsPage';
@@ -10,6 +8,8 @@ import AppLoader from '../hoc/appLoader';
 import LoginLayout from '../components/LoginLayout/LoginLayout';
 import NotFoundPage from '../pages/notFoundPage/notFoundPage';
 import MainPage from '../pages/mainPage/MainPage';
+import SalePage from '../pages/salePage/salePage';
+import ShopPage from '../pages/shopPage/shopPage';
 
 function App() {
   return (
