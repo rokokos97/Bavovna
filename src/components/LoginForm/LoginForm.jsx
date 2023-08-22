@@ -3,6 +3,8 @@ import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
+import AppleIcon from '../svg/appleIcon/appleIcon';
+import GoogleIcon from '../svg/googleIcon/googleIcon';
 
 
 const LoginForm = () => {
@@ -82,14 +84,17 @@ const LoginForm = () => {
         </form>
         <div className={styles.socialButtonsBlock}>
           <div className={styles.divider}>
+            <div></div>
+            <span>or</span>
+            <div></div>
           </div>
           <div className={styles.socialButton}>
+            <GoogleIcon />
             <span>Sign in with Google</span>
           </div>
           <div className={styles.socialButton}>
-            <div>
-              <span>Sign in with Apple</span>
-            </div>
+            <AppleIcon />
+            <span>Sign in with Apple</span>
           </div>
         </div>
       </div>

@@ -77,12 +77,55 @@
   line-height: normal;
 }
 
+.error {
+  color: var(--error, #EA001B);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .socialButtonsBlock {
   display: flex;
   width: 40.9rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6rem;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+}
+.divider span {
+  color: #000;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem; /* 150% */
+}
+
+.socialButton {
+  display: flex;
+  width: 40.9rem;
+  padding: 1rem 1.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  border: 1px solid var(--gray-300, #D0D5DD);
+  background: var(--white, #FFF);
+  /* Shadow/xs */
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+.socialButton span {
+  color: var(--gray-700, #344054);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.4rem; /* 150% */
 }
 
 .button {
@@ -102,14 +145,6 @@
   font-weight: 500;
   line-height: 2rem; /* 111.111% */
   text-transform: uppercase;
-}
-
-.error {
-  color: var(--error, #EA001B);
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 /*# sourceMappingURL=LoginForm.module.css.map */
