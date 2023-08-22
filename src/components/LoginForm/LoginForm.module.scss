@@ -1,41 +1,111 @@
-.card {
-  margin: 30px auto;
-  padding: 20px;
-  width: 50%;
-  border: black 1px solid;
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 4rem auto 0;
+  width: 30%;
+  border: #040404 1px solid;
 }
-.field {
-  position: relative;
-  text-align: start;
-  margin: 10px 0;
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  color: #000000;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem; /* 62.5% */
+
+  span {
+      color: var(--gray-gray-10, #4A4A4A);
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2rem; /* 111.111% */
+    }
+}
+.inputsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.2rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.socialButtonsBlock {
+  display: flex;
+  width: 40.9rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.input {
+  display: flex;
+  width: 40.9rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: stretch;
+    color: #040404;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    span {
+      color: var(--gray-gray-10, #4A4A4A);
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  input {
+    display: flex;
+    padding: 1.6rem;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    align-self: stretch;
+
+    color: var(--gray-gray-2, #878D99);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem; /* 150% */
+  }
+}
+.button {
+  background-color: #040404;
+  display: flex;
+  width: 41rem;
+  padding: 2.1rem 3.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+
+  span {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 111.111% */
+    text-transform: uppercase;
+  }
 }
 .error {
   color: red;
-}
-/* Styles for Show Password button */
-.showPasswordBtn {
-  background-color: transparent; // Transparent background
-  border: 1px solid #007BFF;     // Blue border
-  color: #007BFF;               // Blue text color
-  padding: 5px 10px;            // Padding for top/bottom and left/right
-  font-size: 14px;              // Font size
-  cursor: pointer;              // Hand cursor on hover
-  transition: color 0.3s ease, border-color 0.3s ease; // Smooth transition for hover effect
-  position: absolute;           // Absolute positioning
-  right: 10px;                  // Positioned to the right of the password input
-  top: 50%;                     // Centered vertically
-  transform: translateY(-50%);  // Adjusting for perfect centering
-
-  // Hover effect for the Show Password button
-  &:hover {
-    color: #0056b3;             // A darker shade of blue for text
-    border-color: #0056b3;     // A darker shade of blue for border
-  }
-
-  // Active state (when button is pressed)
-  &:active {
-    color: #004085;             // Even darker shade of blue for text
-    border-color: #004085;     // Even darker shade of blue for border
-  }
 }
 
