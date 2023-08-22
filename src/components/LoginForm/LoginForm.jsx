@@ -107,7 +107,6 @@ const LoginForm = () => {
           <span>Sign Up</span>
         </NavLink>
       </p>
-
     </div>
   );
 };
