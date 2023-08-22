@@ -99,12 +99,12 @@ const LoginForm = () => {
         </div>
       </div>
       <p>
-      Dont have account?{'  '}
+        Don’t have an account?{'  '}
         <NavLink to="signUp"
           role="button"
         >
           {' '}
-        Sign Up
+          <span>Sign Up</span>
         </NavLink>
       </p>
 
