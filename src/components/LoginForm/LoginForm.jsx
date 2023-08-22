@@ -12,9 +12,12 @@ const LoginForm = () => {
       email: '',
       password: '',
     },
-    validationSchema: Yup.object({
-      email: Yup.string().required('Email is required'),
-      password: Yup.string().required('Password is required'),
+    validationSchema: Yup.object().shape({
+      password: Yup.string()
+          .required('Password is required'),
+      email: Yup.string()
+          .matches( /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Email format is not valid')
+          .required('Email is required'),
     }),
     onSubmit: (values) => {
       console.log(JSON.stringify(values, null, 2));
