@@ -1,1 +1,1 @@
-export * from './SalePage';
+export * from './salePage';
