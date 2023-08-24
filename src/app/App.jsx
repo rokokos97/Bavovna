@@ -17,7 +17,8 @@ function App() {
       <AppLoader>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route index element={<SalePage />} />
+            <Route index element={<MainPage />} />
+            <Route path='sale' element={<SalePage />} />
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
             <Route path='card' element={<Card searchingId={'1'} />} />

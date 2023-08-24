@@ -7,11 +7,10 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerNav}>
-        <Link to="/">Sale</Link>
+        <Link to="/sale">Sale</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/aboutus">About us</Link>
         <Link to="/card">Card</Link>
-        <Link to="/main">MainPageDevelop</Link>
       </div>
       <div className={styles.headerLogo}>Logo</div>
       <div className={styles.headerMenuBar}>
