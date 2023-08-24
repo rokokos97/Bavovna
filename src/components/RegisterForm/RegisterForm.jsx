@@ -15,7 +15,6 @@ const RegisterForm = () => {
       password: '',
       confirmPassword: '',
       name: '',
-      familyName: '',
       phoneNumber: '',
       city: '',
       street: '',
@@ -28,9 +27,12 @@ const RegisterForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      if (!isValid) return;
       console.log(JSON.stringify(values, null, 2));
     },
   });
+  const isValid = Object.keys(formik.errors).length === 0;
+  console.log(isValid);
   return (
     <div className={styles.registerForm}>
       <div className={styles.titleBlock}>
@@ -59,10 +61,10 @@ const RegisterForm = () => {
               type="name"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.email}
+              value={formik.values.name}
             />
-            {formik.touched.email && formik.errors.email ? (
-              <div className={styles.error}>{formik.errors.email}</div>
+            {formik.errors.name ? (
+              <div className={styles.error}>{formik.errors.name}</div>
             ) : null}
           </div>
           <div className={styles.input}>
@@ -82,7 +84,7 @@ const RegisterForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.touched.email && formik.errors.email ? (
+            {formik.errors.email ? (
             <div className={styles.error}>{formik.errors.email}</div>
           ) : null}
           </div>
@@ -99,6 +101,7 @@ const RegisterForm = () => {
               id="password"
               name="password"
               type="password"
+              autoComplete='new password'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
@@ -117,6 +120,7 @@ const RegisterForm = () => {
               id="confirmPassword"
               name="confirmPassword"
               type="password"
+              autoComplete='new password'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.confirmPassword}
@@ -127,7 +131,11 @@ const RegisterForm = () => {
             </div>
           ) : null}
           </div>
-          <button className={styles.button}>
+          <button
+            type="submit"
+            className={styles.button}
+            disabled={!isValid}
+          >
             <span>
               Sign up
             </span>
