@@ -18,6 +18,19 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 24px;
+  width: 100%;
+
+  & li {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
 }
 
 .mainImg,
@@ -25,12 +38,12 @@
   width: 40%;
 }
 
-.imgs img {
-  width: 193px;
-  height: 193px;
-  object-fit: cover;
-  cursor: pointer;
-}
+// .imgs img {
+//   width: 193px;
+//   height: 193px;
+//   object-fit: cover;
+//   cursor: pointer;
+// }
 
 .mainImg {
   img {
@@ -63,7 +76,8 @@
   text-align: start;
   font-size: 18px;
 
-  & span {
+  & pre,
+  span {
     display: inline-block;
     text-transform: uppercase;
   }
