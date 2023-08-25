@@ -47,3 +47,4 @@ export const signUp = (payload) =>
       dispatch(authRequestFailed(error.message));
     }
   };
+export default usersReducer;

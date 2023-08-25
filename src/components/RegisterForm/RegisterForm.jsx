@@ -6,8 +6,11 @@ import {NavLink} from 'react-router-dom';
 import 'react-phone-number-input/style.css';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import AppleIcon from '../svg/appleIcon/appleIcon';
+import {useDispatch} from 'react-redux';
+import {signUp} from '../../store/userSlice';
 
 const RegisterForm = () => {
+  const dispatch = useDispatch();
   const [error] = useState('');
   const formik = useFormik({
     initialValues: {
@@ -29,6 +32,7 @@ const RegisterForm = () => {
     onSubmit: (values) => {
       if (!isValid) return;
       console.log(JSON.stringify(values, null, 2));
+      dispatch(signUp(values));
     },
   });
   const isValid = Object.keys(formik.errors).length === 0;
