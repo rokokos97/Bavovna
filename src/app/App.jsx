@@ -6,10 +6,10 @@ import AboutUsPage from '../pages/aboutUs/AboutUsPage';
 import './App.module.css';
 import AppLoader from '../hoc/appLoader';
 import LoginLayout from '../components/LoginLayout/LoginLayout';
-import NotFoundPage from '../pages/notFoundPage/NotFoundPage';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';
+import NotFoundPage from '../pages/notFoundPage/notFoundPage';
 
 function App() {
   return (

@@ -6,16 +6,20 @@ import {NavLink} from 'react-router-dom';
 import 'react-phone-number-input/style.css';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import AppleIcon from '../svg/appleIcon/appleIcon';
-import {useDispatch} from 'react-redux';
-import {signUp} from '../../store/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {getAuthErrors, getUser, signUp} from '../../store/userSlice';
+
 
 const RegisterForm = () => {
+  const registerError = useSelector(getAuthErrors());
+  const user = useSelector(getUser());
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       name: '',
       email: '',
       password: '',
+      confirmPassword: '',
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -33,11 +37,12 @@ const RegisterForm = () => {
           Welcome! Please enter your details
         </span>
       </div>
-      <div className={styles.conformationBlock}>
+      {registerError && <div className={styles.registerError}><span>{registerError}</span></div> }
+      {user && <div className={styles.conformationBlock}>
         <span>
-          We have sent an email to viktoria97502@ gmail.com. Please click on the link to confirm your email address.
+          We have sent an email to {user.email}. Please click on the link to confirm your email address.
         </span>
-      </div>
+      </div>}
       <div className={styles.inputsBlock}>
         <form
           className={styles.form}

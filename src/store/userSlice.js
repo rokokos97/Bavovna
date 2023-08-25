@@ -1,6 +1,9 @@
 import {createSlice, createAction} from '@reduxjs/toolkit';
 import localStorageService from '../services/localStorage.service';
 import authService from '../services/auth.service';
+import {toast} from 'react-toastify';
+import {generateAuthError} from '../utils/generateAuthError';
+import userService from '../services/user.service';
 
 const initialState = localStorageService.getAccessToken() ?
 {
@@ -30,6 +33,8 @@ const usersSlice = createSlice({
       state.error = null;
     },
     authRequestFailed: (state, action) => {
+      state.entities = null;
+      state.auth = null;
       state.error = action.payload;
     },
     userCreated: (state, action) => {
@@ -54,7 +59,7 @@ const usersSlice = createSlice({
     },
   },
 });
-const {reducer: usersReducer, actions} = usersSlice;
+const {reducer: userReducer, actions} = usersSlice;
 const {
   authRequestFailed,
   authRequestSuccess,
@@ -87,10 +92,6 @@ export const login = ({payload, redirect}) => async (dispatch) => {
     const data = await authService.login({email, password});
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
-    toast.dark('You are logged in', {
-      position: toast.POSITION.BOTTOM_RIGHT,
-      hideProgressBar: true,
-    });
     history.push(redirect);
   } catch (error) {
     const {code, message} = error.response.data.errors;
@@ -137,4 +138,4 @@ export const getUser = () => (state) => state.user.entities;
 export const getIsLoadingUser = () => (state) => state.user.isLoading;
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getAuthErrors = () => (state) => state.user.error;
-export default usersReducer;
+export default userReducer;
