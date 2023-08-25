@@ -6,7 +6,7 @@ import AboutUsPage from '../pages/aboutUs/AboutUsPage';
 import './App.module.css';
 import AppLoader from '../hoc/appLoader';
 import LoginLayout from '../components/LoginLayout/LoginLayout';
-import NotFoundPage from '../pages/notFoundPage/notFoundPage';
+import NotFoundPage from '../pages/notFoundPage/NotFoundPage';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';
@@ -21,7 +21,7 @@ function App() {
             <Route path='sale' element={<SalePage />} />
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
-            <Route path='card' element={<Card searchingId={'1'} />} />
+            <Route path='card' element={<Card searchingId={'0'} />} />
             <Route path='login/*' element={<LoginLayout />} />
             <Route path='main' element={<MainPage />} />
             <Route path='*' element={<NotFoundPage />} />

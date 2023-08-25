@@ -5,6 +5,7 @@ import {useState} from 'react';
 import styles from './SizeList.module.scss';
 
 const allSizes = ['xs', 's', 'm', 'l', 'xl'];
+const noSize = 'Choose a size';
 
 const SizesList = ({sizes}) => {
   let [selectedSize, setSelectedSize] = useState('');
@@ -15,13 +16,20 @@ const SizesList = ({sizes}) => {
 
   return (
     <>
-      <span>Size: {selectedSize}</span>
+      <pre>
+        Size:&nbsp;
+        {!selectedSize ? (
+          <span style={{color: 'rgb(255, 0, 0)'}}>{noSize}</span>
+        ) : (
+          <span>{selectedSize}</span>
+        )}
+      </pre>
       <ul className={styles.sizeList}>
         {allSizes.map((size) => (
           <li key={size} className={styles.sizeListItem}>
             <input
-              type="radio"
-              name="size"
+              type='radio'
+              name='size'
               value={size}
               id={size}
               onChange={handleChange}
