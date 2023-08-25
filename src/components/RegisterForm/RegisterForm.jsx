@@ -33,6 +33,11 @@ const RegisterForm = () => {
           Welcome! Please enter your details
         </span>
       </div>
+      <div className={styles.conformationBlock}>
+        <span>
+          We have sent an email to viktoria97502@ gmail.com. Please click on the link to confirm your email address.
+        </span>
+      </div>
       <div className={styles.inputsBlock}>
         <form
           className={styles.form}

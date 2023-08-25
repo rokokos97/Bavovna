@@ -43,6 +43,23 @@
     line-height: 2rem; /* 111.111% */
   }
 }
+.conformationBlock {
+  display: flex;
+  padding: 0.8rem;
+  align-items: center;
+  gap: 1rem;
+
+  background: var(--success, #2AB66A);
+
+  span {
+    color: var(--gray-gray-90, #F5F5F5);
+    text-align: center;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; /* 142.857% */
+  }
+}
 .inputsBlock {
   display: flex;
   flex-direction: column;
