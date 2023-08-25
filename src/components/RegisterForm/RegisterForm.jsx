@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {validationSchema} from '../../utils/validationSchema';
@@ -11,22 +11,11 @@ import {signUp} from '../../store/userSlice';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const [error] = useState('');
   const formik = useFormik({
     initialValues: {
+      name: '',
       email: '',
       password: '',
-      confirmPassword: '',
-      name: '',
-      phoneNumber: '',
-      city: '',
-      street: '',
-      houseNumber: '',
-      apartmentNumber: '',
-      postalCode: '',
-      novaPoshtaCity: '',
-      novaPoshtaOffice: '',
-      favorite: [],
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -36,7 +25,6 @@ const RegisterForm = () => {
     },
   });
   const isValid = Object.keys(formik.errors).length === 0;
-  console.log(isValid);
   return (
     <div className={styles.registerForm}>
       <div className={styles.titleBlock}>
@@ -54,9 +42,6 @@ const RegisterForm = () => {
             <label htmlFor="name">
               <span>
                 Full name *
-              </span>
-              <span className={styles.error}>
-                {error ? error : null}
               </span>
             </label>
             <input
@@ -76,9 +61,6 @@ const RegisterForm = () => {
               <span>
                 Email *
               </span>
-              <span className={styles.error}>
-                {error ? error : null}
-              </span>
             </label>
             <input
               id="email"
@@ -96,9 +78,6 @@ const RegisterForm = () => {
             <label htmlFor="password">
               <span>
                 Password *
-              </span>
-              <span className={styles.error}>
-                {error ? error : null}
               </span>
             </label>
             <input
