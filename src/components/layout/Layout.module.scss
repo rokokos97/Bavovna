@@ -2,4 +2,6 @@
 
 .container {
   padding-top: $headerHeight;
+  max-width: $max-width;
+  margin: auto;
 }
