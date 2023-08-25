@@ -1,12 +1,20 @@
 @import '../../styles/variables.module.scss';
 
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $black-color;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
+  max-width: $max-width;
   width: 100%;
-  background-color: $black-color;
   color: $white-color;
-  padding: 70px 40px 40px;
+  padding: 70px 80px 40px;
+  margin: auto;
 }
 
 .footerTop {
