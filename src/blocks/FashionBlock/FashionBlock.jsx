@@ -25,15 +25,15 @@ const FashionBlock = () => {
           is in constant motion, causes huge damage to the environment. Such
           rapid production leads to a large amount of waste and pollution of
           water and air. In addition, constant pressure on manufacturers leads
-          to the exploitation of labor resources and violations of
-          workers`&#39;` rights. In turn, slow fashion is aimed at producing
-          high-quality and durable items that can last for many years. This
-          means that slow fashion manufacturers use quality materials and favor
-          handmade work, further reducing the environmental footprint. In
-          conclusion, instead of following fashion trends and buying a lot of
-          clothes that quickly go out of style and wear out quickly, we should
-          consider investing in quality and durable items that will look stylish
-          and modern for many years to come.
+          to the exploitation of labor resources and violations of workers&#39;
+          rights. In turn, slow fashion is aimed at producing high-quality and
+          durable items that can last for many years. This means that slow
+          fashion manufacturers use quality materials and favor handmade work,
+          further reducing the environmental footprint. In conclusion, instead
+          of following fashion trends and buying a lot of clothes that quickly
+          go out of style and wear out quickly, we should consider investing in
+          quality and durable items that will look stylish and modern for many
+          years to come.
         </p>
       </div>
     </div>
