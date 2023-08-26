@@ -1,14 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
 import AppleIcon from '../svg/appleIcon/appleIcon';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
+import {useDispatch, useSelector} from 'react-redux';
+import {getAuthErrors, getUser, login} from '../../store/userSlice';
 
 
 const LoginForm = () => {
-  const [showPassword] = useState(false);
+  const user = useSelector(getUser());
+  const loginError = useSelector(getAuthErrors());
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -22,12 +26,13 @@ const LoginForm = () => {
           .required('Email is required'),
     }),
     onSubmit: (values) => {
+      if (!isValid) return;
       console.log(JSON.stringify(values, null, 2));
+      const redirect = '/';
+      dispatch(login({payload: values, redirect}));
     },
   });
-  //  const toggleShowPassword = () => {
-  //    setShowPassword((prevState) => !prevState);
-  //  };
+  const isValid = Object.keys(formik.errors).length === 0;
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -36,6 +41,12 @@ const LoginForm = () => {
             Welcome back! Please enter your details
         </span>
       </div>
+      {loginError && <div className={styles.registerError}><span>{loginError}</span></div> }
+      {user && <div className={styles.conformationBlock}>
+        <span>
+          You are logged in
+        </span>
+      </div>}
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
           <div className={styles.input}>
@@ -65,7 +76,7 @@ const LoginForm = () => {
             <input
               id="password"
               name="password"
-              type={showPassword ? 'text' : 'password'}
+              type="password"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
