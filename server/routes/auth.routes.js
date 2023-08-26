@@ -59,15 +59,6 @@ router.post('/signInWithPassword', [
   check('email', 'email is not correct')
       .normalizeEmail()
       .isEmail(),
-  check('password', 'password is not strong enough')
-      .exists()
-      .isStrongPassword({
-        minLength: 8,
-        minNumbers: 1,
-        minSymbols: 1,
-        minLowercase: 1,
-        minUppercase: 1,
-      }),
   async (req, res) => {
     try {
       const errors = validationResult(req);
