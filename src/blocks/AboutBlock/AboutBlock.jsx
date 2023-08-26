@@ -18,7 +18,7 @@ const AboutBlock = () => {
           bavovna
         </h2>
         <p className={styles.text}>
-          BAVOVNA is a women`&#39;`s clothing brand that cares about the health
+          BAVOVNA is a women&#39;s clothing brand that cares about the health
           and comfort of its customers. All products of this brand are made from
           organic cotton, which is grown without chemical fertilizers and
           pesticides. Thus, BAVOVNA clothes are environmentally friendly and
