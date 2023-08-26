@@ -85,14 +85,13 @@ export const signUp = (payload) =>
       dispatch(authRequestFailed(error.message));
     }
   };
-export const login = ({payload, redirect}) => async (dispatch) => {
+export const login = ({payload}) => async (dispatch) => {
   const {email, password} = payload;
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
-    history.push(redirect);
   } catch (error) {
     const {code, message} = error.response.data.errors;
     if (code === 400) {
