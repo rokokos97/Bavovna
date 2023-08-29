@@ -6,54 +6,47 @@ const tokenService = require('../services/token.service');
 // eslint-disable-next-line new-cap
 const router = express.Router({mergeParams: true});
 
-router.post('/signUp', [
-  check('email', 'email is not correct')
-      .isEmail(),
-  check('password', 'password have be more secure')
-      .isStrongPassword({
-        minLength: 8,
-        minSymbols: 1,
-        minUppercase: 1,
-        minLowercase: 1,
-        minNumbers: 1,
-      }),
-  async (req, res) => {
-    try {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({
-          error: {
-            message: 'INVALID_DATA',
-            code: 400,
-            errors: errors.array(),
-          },
-        });
-      }
-      const {email, password} = req.body;
-      const existingUser = await User.findOne({email});
-      if (existingUser) {
-        return res.status(400).json({
-          error: {
-            message: 'EMAIL_EXIST',
-            code: 400,
-          },
-        });
-      }
-      const hashedPassword = await bcrypt.hash(password, 12);
-      const newUser = await User.create({
-        ...req.body,
-        password: hashedPassword,
-      });
-      const tokens = tokenService.generate({_id: newUser._id});
-      await tokenService.save(newUser._id, tokens.refreshToken);
-      res.status(201).send({...tokens, userId: newUser._id, user: newUser});
-    } catch (e) {
-      console.log(e.message);
-      res.status(500).json({
-        message: 'Server error. Please repeat latter...',
-      });
-    }
-  }],
+router.post('/signUp',
+    [
+      check('email', 'email is not correct')
+          .isEmail(),
+      async (req, res) => {
+        try {
+          const errors = validationResult(req);
+          if (!errors.isEmpty()) {
+            return res.status(400).json({
+              error: {
+                message: 'INVALID_DATA',
+                code: 400,
+                errors: errors.array(),
+              },
+            });
+          }
+          const {email, password} = req.body;
+          const existingUser = await User.findOne({email});
+          if (existingUser) {
+            return res.status(400).json({
+              error: {
+                message: 'EMAIL_EXIST',
+                code: 400,
+              },
+            });
+          }
+          const hashedPassword = await bcrypt.hash(password, 12);
+          const newUser = await User.create({
+            ...req.body,
+            password: hashedPassword,
+          });
+          const tokens = tokenService.generate({_id: newUser._id});
+          await tokenService.save(newUser._id, tokens.refreshToken);
+          res.status(201).send({...tokens, userId: newUser._id, user: newUser});
+        } catch (e) {
+          console.log(e.message);
+          res.status(500).json({
+            message: 'Server error. Please repeat latter...',
+          });
+        }
+      }],
 );
 router.post('/signInWithPassword', [
   check('email', 'email is not correct')
@@ -71,11 +64,12 @@ router.post('/signInWithPassword', [
           },
         });
       }
+
       const {email, password} = req.body;
       const existingUser = await User.findOne({email});
       if (!existingUser) {
         return res.status(400).json({
-          errors: {
+          error: {
             message: 'EMAIL_NOT_FOUND',
             code: 400,
           },
@@ -85,7 +79,7 @@ router.post('/signInWithPassword', [
           password, existingUser.password);
       if (!isPasswordEqual) {
         return res.status(400).json({
-          errors: {
+          error: {
             message: 'INVALID_PASSWORD',
             code: 400,
           },
