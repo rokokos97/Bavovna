@@ -42,7 +42,10 @@ router.post('/signUp',
           res.status(201).send({...tokens, userId: newUser._id, user: newUser});
         } catch (e) {
           res.status(500).json({
-            message: 'Server error. Please repeat latter...',
+            error: {
+              code: 500,
+              message: 'Server error. Please repeat latter...',
+            },
           });
         }
       }],
