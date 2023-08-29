@@ -82,7 +82,13 @@ export const signUp = (payload) =>
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
     } catch (error) {
-      dispatch(authRequestFailed(error.message));
+      const {code, message} = error.response.data.error;
+      if (code === 400) {
+        const errorMessage = generateAuthError(message);
+        dispatch(authRequestFailed(errorMessage));
+      } else if (code === 500) {
+        dispatch(authRequestFailed('Server error. Please repeat latter...'));
+      }
     }
   };
 export const login = ({payload}) => async (dispatch) => {
@@ -93,7 +99,7 @@ export const login = ({payload}) => async (dispatch) => {
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    const {code, message} = error.response.data.errors;
+    const {code, message} = error.response.data.error;
     if (code === 400) {
       const errorMessage = generateAuthError(message);
       dispatch(authRequestFailed(errorMessage));

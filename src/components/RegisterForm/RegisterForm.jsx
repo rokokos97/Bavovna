@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {validationSchema} from '../../utils/validationSchema';
 import {NavLink} from 'react-router-dom';
 import 'react-phone-number-input/style.css';
-import GoogleIcon from '../svg/googleIcon/googleIcon';
+// import GoogleIcon from '../svg/googleIcon/googleIcon';
 import AppleIcon from '../svg/appleIcon/appleIcon';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, getUser, signUp} from '../../store/userSlice';
+import config from '../../config.json';
+import jwtDecode from 'jwt-decode';
 
 
 const RegisterForm = () => {
@@ -29,6 +31,28 @@ const RegisterForm = () => {
     },
   });
   const isValid = Object.keys(formik.errors).length === 0;
+  const handleCallbackResponse = (response) => {
+    const userInfo = jwtDecode(response.credential);
+    const googleUser = {
+      email: userInfo.email,
+      name: userInfo.name,
+      sub: userInfo.sub,
+    };
+    dispatch(signUp(googleUser));
+  };
+  useEffect(() => {
+    /* google global */
+    google.accounts.id.initialize({
+      client_id: config.googleClientId,
+      callback: handleCallbackResponse,
+    });
+    window.google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
+      theme: 'online',
+      width: '400px',
+      locale: 'en',
+      border_radius: 0,
+    });
+  }, []);
   return (
     <div className={styles.registerForm}>
       <div className={styles.titleBlock}>
@@ -140,9 +164,11 @@ const RegisterForm = () => {
             <span>or</span>
             <div></div>
           </div>
-          <div className={styles.socialButton}>
-            <GoogleIcon />
-            <span>Sign up with Google</span>
+          <div
+            //            className={styles.socialButton}
+            id='signUpDiv'>
+            {/* <GoogleIcon />*/}
+            {/* <span>Sign up with Google</span>*/}
           </div>
           <div className={styles.socialButton}>
             <AppleIcon />
