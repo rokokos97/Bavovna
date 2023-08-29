@@ -1,0 +1,29 @@
+@import '../../styles/variables.module.scss';
+
+.hero {
+  width: 100%;
+  background-color: $bg-color;
+  text-align: center;
+  padding: 54px;
+}
+
+.heroTitle {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.heroBtn {
+  padding: 21px 36px;
+  background-color: $btn-bg-color;
+  color: $white-color;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: uppercase;
+  cursor: pointer;
+}
