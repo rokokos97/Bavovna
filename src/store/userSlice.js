@@ -86,6 +86,8 @@ export const signUp = (payload) =>
       if (code === 400) {
         const errorMessage = generateAuthError(message);
         dispatch(authRequestFailed(errorMessage));
+      } else if (code === 500) {
+        dispatch(authRequestFailed('Server error. Please repeat latter...'));
       }
     }
   };
