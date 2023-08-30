@@ -9,7 +9,8 @@ import {SizeGuide} from '../../components/modal/modalContent';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 
 import styles from './Card.module.scss';
-import NotFoundPage from '../notFoundPage/NotFoundPage';
+import NotFoundPage from '../notFoundPage/notFoundPage';
+
 // import '../../services/dropdown.service';
 
 const Card = ({searchingId = '1'}) => {
