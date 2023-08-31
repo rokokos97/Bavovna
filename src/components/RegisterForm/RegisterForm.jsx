@@ -165,10 +165,7 @@ const RegisterForm = () => {
             <div></div>
           </div>
           <div
-            //            className={styles.socialButton}
             id='signUpDiv'>
-            {/* <GoogleIcon />*/}
-            {/* <span>Sign up with Google</span>*/}
           </div>
           <div className={styles.socialButton}>
             <AppleIcon />
