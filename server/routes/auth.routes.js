@@ -66,7 +66,6 @@ router.post('/signInWithPassword', [
           },
         });
       }
-
       const {email, password} = req.body;
       const existingUser = await User.findOne({email});
       if (!existingUser) {
@@ -83,6 +82,43 @@ router.post('/signInWithPassword', [
         return res.status(400).json({
           error: {
             message: 'INVALID_PASSWORD',
+            code: 400,
+          },
+        });
+      }
+      const tokens = tokenService.generate({_id: existingUser._id});
+      await tokenService.save(existingUser._id, tokens.refreshToken);
+      res.status(201).send(
+          {...tokens, userId: existingUser._id, user: existingUser});
+    } catch (e) {
+      res.status(500).json({
+        message: 'Server error. Please repeat latter...',
+      });
+    }
+  },
+]);
+router.post('/signInWithGoogle', [
+  check('email', 'email is not correct')
+      .normalizeEmail()
+      .isEmail(),
+  async (req, res) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({
+          error: {
+            message: 'INVALID_DATA',
+            code: 400,
+            errors: errors.array(),
+          },
+        });
+      }
+      const {email} = req.body;
+      const existingUser = await User.findOne({email});
+      if (!existingUser) {
+        return res.status(400).json({
+          error: {
+            message: 'EMAIL_NOT_FOUND',
             code: 400,
           },
         });

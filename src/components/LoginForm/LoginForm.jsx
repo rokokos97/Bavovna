@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
 import AppleIcon from '../svg/appleIcon/appleIcon';
-import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, getUser, login} from '../../store/userSlice';
+import jwtDecode from 'jwt-decode';
+import config from '../../config.json';
 
 
 const LoginForm = () => {
@@ -33,6 +34,28 @@ const LoginForm = () => {
     },
   });
   const isValid = Object.keys(formik.errors).length === 0;
+  const handleCallbackResponse = (response) => {
+    const userInfo = jwtDecode(response.credential);
+    const googleUser = {
+      email: userInfo.email,
+      name: userInfo.name,
+      sub: userInfo.sub,
+    };
+    dispatch(login({payload: googleUser}));
+  };
+  useEffect(() => {
+    /* google global */
+    google.accounts.id.initialize({
+      client_id: config.googleClientId,
+      callback: handleCallbackResponse,
+    });
+    window.google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
+      theme: 'online',
+      width: '400px',
+      locale: 'en',
+      border_radius: 0,
+    });
+  }, []);
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -99,9 +122,8 @@ const LoginForm = () => {
             <span>or</span>
             <div></div>
           </div>
-          <div className={styles.socialButton}>
-            <GoogleIcon />
-            <span>Sign in with Google</span>
+          <div
+            id='signUpDiv'>
           </div>
           <div className={styles.socialButton}>
             <AppleIcon />
