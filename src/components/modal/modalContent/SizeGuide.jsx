@@ -1,11 +1,14 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
+import CloseIcon from '../../svg/closeIcon/CloseIcon';
 import styles from './SizeGuide.module.scss';
 
-const SizeGuide = () => {
+const SizeGuide = ({onClose}) => {
   return (
     <section className={styles.guideContainer}>
-      <img src="./img/svg/close.svg" alt="close" />
+      <div className={styles.closeIcon} onClick={()=>onClose(false)}>
+        <CloseIcon />
+      </div>
       <h2>Size Guide</h2>
       <div className={styles.guideContent}>
         <p>
@@ -59,6 +62,10 @@ const SizeGuide = () => {
       </table>
     </section>
   );
+};
+
+SizeGuide.propTypes = {
+  onClose: PropTypes.func,
 };
 
 export {SizeGuide};

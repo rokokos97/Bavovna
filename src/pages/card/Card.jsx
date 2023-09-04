@@ -13,7 +13,7 @@ import NotFoundPage from '../notFoundPage/notFoundPage';
 // import '../../services/dropdown.service';
 
 const Card = ({searchingId = '1'}) => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(true);
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
@@ -59,7 +59,7 @@ const Card = ({searchingId = '1'}) => {
                 <SizesList sizes={size} />
                 <button
                   className={styles.btnGuide}
-                  onClick={() => setModalOpen(true)}
+                  onClick={() => setOpenModal(true)}
                 >
                   Size guide
                 </button>
@@ -95,8 +95,8 @@ const Card = ({searchingId = '1'}) => {
               />
             </div>
           </div>
-          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-            <SizeGuide />
+          <Modal isOpen={openModal} onClose={setOpenModal}>
+            <SizeGuide onClose={setOpenModal} />
           </Modal>
         </section>
       </>

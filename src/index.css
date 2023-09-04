@@ -32,3 +32,13 @@ a:hover {
   color: #ad1f00;
   opacity: 1;
 }
+
+.pageButton {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.pageButton.active {
+  text-decoration: underline;
+}
