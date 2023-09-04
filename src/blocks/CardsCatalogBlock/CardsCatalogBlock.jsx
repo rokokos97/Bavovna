@@ -9,7 +9,7 @@ import ArrowForwardIcon from '../../components/svg/arrowForwardIcon/arrowForward
 import styles from './CardsCatalogBlock.module.scss';
 
 const CardsCatalogBlock = ({isFilter, setIsFilter}) => {
-  const itemsPerPage = 6;
+  const itemsPerPage = 12;
   let totalPages = null;
   let totalItems = null;
   let startIndex = null;
