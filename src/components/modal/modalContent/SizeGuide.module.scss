@@ -1,13 +1,15 @@
+@import '../../../styles/variables.module';
+
 .guideContainer {
   width: 100%;
   padding: 40px 80px 80px;
   position: relative;
 
-  img {
+  .closeIcon{
     position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 16px;
+    top: 2.4rem;
+    right: 2.4rem;
+    cursor: pointer;
   }
 
   h2 {
@@ -44,6 +46,7 @@
   letter-spacing: 0.144px;
   text-transform: uppercase;
   border: 1px solid #000;
+  border-right: none;
   border-spacing: 0;
   text-align: center;
 

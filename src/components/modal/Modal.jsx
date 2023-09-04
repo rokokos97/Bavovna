@@ -5,11 +5,11 @@ import {createPortal} from 'react-dom';
 
 const modalRootElement = document.querySelector('#modal');
 
-const Modal = ({open, onClose, children}) => {
+const Modal = ({isOpen, onClose, children}) => {
   const element = useMemo(() => document.createElement('div'), []);
 
   useEffect(() => {
-    if (open) {
+    if (isOpen) {
       modalRootElement.appendChild(element);
 
       return () => {
@@ -18,10 +18,11 @@ const Modal = ({open, onClose, children}) => {
     }
   });
 
-  if (open) {
+  if (isOpen) {
     return createPortal(
-        <div className={styles.modal} onClick={onClose}>
-          <div className={styles.modalContent}>{children}</div>
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            {children}</div>
         </div>,
         element,
     );
@@ -31,7 +32,7 @@ const Modal = ({open, onClose, children}) => {
 };
 
 Modal.propTypes = {
-  open: PropTypes.bool,
+  isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   children: PropTypes.node,
 };
