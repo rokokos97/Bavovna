@@ -5,13 +5,12 @@ import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
 import AppleIcon from '../svg/appleIcon/appleIcon';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, getUser, login} from '../../store/userSlice';
+import {getAuthErrors, login} from '../../store/userSlice';
 import jwtDecode from 'jwt-decode';
 import config from '../../config.json';
 
 
 const LoginForm = () => {
-  const user = useSelector(getUser());
   const loginError = useSelector(getAuthErrors());
   const dispatch = useDispatch();
   const formik = useFormik({
@@ -49,7 +48,7 @@ const LoginForm = () => {
       client_id: config.googleClientId,
       callback: handleCallbackResponse,
     });
-    window.google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
+    google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
       theme: 'online',
       width: '400px',
       locale: 'en',
@@ -65,11 +64,6 @@ const LoginForm = () => {
         </span>
       </div>
       {loginError && <div className={styles.registerError}><span>{loginError}</span></div> }
-      {user && <div className={styles.conformationBlock}>
-        <span>
-          You are logged in
-        </span>
-      </div>}
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
           <div className={styles.input}>
@@ -100,6 +94,7 @@ const LoginForm = () => {
               id="password"
               name="password"
               type="password"
+              autoComplete='off'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
