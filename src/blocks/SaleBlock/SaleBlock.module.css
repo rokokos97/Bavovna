@@ -1,9 +1,10 @@
 .saleBlock {
   display: flex;
   flex-direction: column;
-  border: #007BFF 0.1rem solid;
-  width: 144rem;
+  flex-shrink: 0;
+  width: 100%;
   height: 37.6rem;
+  background: url("../../../public/img/images/Sale/Rectangle 27.png"), lightgray 50%/cover no-repeat;
 }
 
 .contentBlock {
