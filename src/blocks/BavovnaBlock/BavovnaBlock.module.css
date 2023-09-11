@@ -1,12 +1,10 @@
 .bavovnaBlock {
-  border: chartreuse 0.1rem solid;
   display: flex;
   width: 143.4rem;
   padding: 10rem 0;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  font-family: Fixel, sans-serif;
 }
 
 .title {
