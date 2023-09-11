@@ -5,6 +5,7 @@ import styles from './Header.module.scss';
 import AccountIcon from '../svg/accountIcon/accountIcon';
 import ShoppingCartIcon from '../svg/shoppingCartIcon/shoppingCartIcon';
 import FavoriteIcon from '../svg/favoriteIcon/favoriteIcon';
+import SearchIcon from '../svg/searchIcon/searchIcon';
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
         <div className={styles.headerMenuBar}>
           <div className={styles.headerSearch}>
             <input></input>
-            <span className='material-symbols-outlined'>search</span>
+            <SearchIcon/>
           </div>
           <Link to='/favorite'>
             <FavoriteIcon/>
