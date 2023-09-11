@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import AccountIcon from '../svg/accountIcon/accountIcon';
+import ShoppingCartIcon from '../svg/shoppingCartIcon/shoppingCartIcon';
 
 const Header = () => {
   return (
@@ -22,7 +23,8 @@ const Header = () => {
             <span className='material-symbols-outlined'>search</span>
           </div>
           <Link to=''>
-            <span className='material-symbols-outlined'>shopping_cart</span>
+            <ShoppingCartIcon/>
+            <span>(0)</span>
           </Link>
           <Link to='/login'>
             <AccountIcon/>
