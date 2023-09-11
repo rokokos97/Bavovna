@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import styles from './Header.module.scss';
+import AccountIcon from '../svg/accountIcon/accountIcon';
 
 const Header = () => {
   return (
@@ -24,7 +25,10 @@ const Header = () => {
             <span className='material-symbols-outlined'>shopping_cart</span>
           </Link>
           <Link to='/login'>
-            <span className='material-symbols-outlined'>person</span>
+            <AccountIcon/>
+            <span>
+              Account
+            </span>
           </Link>
           <Link to=''>
             <div className={styles.headerLang}>
