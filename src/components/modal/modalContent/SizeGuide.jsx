@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import CloseIcon from '../../svg/closeIcon/CloseIcon';
 import styles from './SizeGuide.module.scss';
 
-const SizeGuide = ({onClose}) => {
+const SizeGuide = ({handleCloseModal}) => {
   return (
     <section className={styles.guideContainer}>
-      <div className={styles.closeIcon} onClick={()=>onClose(false)}>
+      <div className={styles.closeIcon} onClick={handleCloseModal}>
         <CloseIcon />
       </div>
       <h2>Size Guide</h2>
@@ -65,7 +65,7 @@ const SizeGuide = ({onClose}) => {
 };
 
 SizeGuide.propTypes = {
-  onClose: PropTypes.func,
+  handleCloseModal: PropTypes.func,
 };
 
 export {SizeGuide};

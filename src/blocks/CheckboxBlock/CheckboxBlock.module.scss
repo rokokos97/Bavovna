@@ -1,0 +1,39 @@
+@import '../../styles/variables.module';
+
+.checkbox {
+  display: inline-flex;
+}
+
+.checkboxInput {
+  display: none;
+
+  &:checked + .checkboxLabel::after {
+    transform: scale(1);
+  }
+}
+
+.checkboxLabel {
+  position: relative;
+  font-family: Fixel Text;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+
+  &::before {
+    content: '';
+    flex: 0 0 1.6rem;
+    height: 1.6rem;
+    border: 1px solid $black-color;
+    margin: 0rem 0.8rem 0rem 0rem;
+  }
+
+  &::after {
+    content: 'x';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease 0s;
+  }
+}

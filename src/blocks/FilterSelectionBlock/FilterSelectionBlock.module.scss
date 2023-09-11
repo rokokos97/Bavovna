@@ -10,8 +10,8 @@
   top: 0;
   left: 0;
   bottom: 0;
-  max-width: 41rem;
-  padding: 4rem 7.2rem;
+  width: 41rem;
+  padding: 7.2rem 4rem;
   background-color: $section-bg-color;
   border-right: 1px solid $black-color;
   z-index: 99;
@@ -22,4 +22,24 @@
   top: 16px;
   right: 16px;
   cursor: pointer;
+}
+
+.selectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.filterSelect {
+  padding: 1.6rem;
+}
+
+.selectTitle {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 2.4rem;
+  padding-bottom: 0.8rem;
+  margin-left: 0.2rem;
 }

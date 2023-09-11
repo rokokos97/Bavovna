@@ -8,7 +8,7 @@ import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
 import ArrowForwardIcon from '../../components/svg/arrowForwardIcon/arrowForwardIcon';
 import styles from './CardsCatalogBlock.module.scss';
 
-const CardsCatalogBlock = ({isFilter, setIsFilter}) => {
+const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
   const itemsPerPage = 12;
   let totalPages = null;
   let totalItems = null;
@@ -42,7 +42,7 @@ const CardsCatalogBlock = ({isFilter, setIsFilter}) => {
   return (
     <>
       <div className={styles.catalog}>
-        {isFilter ? <FilterSelectionBlock setIsFilter={setIsFilter} /> : null}
+        {isFilter ? <FilterSelectionBlock handlerIsFilter={handlerIsFilter} /> : null}
         <ul className={styles.cards}>
           {visibleItems.map((item, index) => (
             <li key={index}>
@@ -83,7 +83,7 @@ const CardsCatalogBlock = ({isFilter, setIsFilter}) => {
 
 CardsCatalogBlock.propTypes = {
   isFilter: PropTypes.bool,
-  setIsFilter: PropTypes.func,
+  handlerIsFilter: PropTypes.func,
 };
 
 export default CardsCatalogBlock;

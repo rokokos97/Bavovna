@@ -1,44 +1,43 @@
 import React, {useState} from 'react';
-import {BiChevronDown, BiChevronUp} from 'react-icons/bi';
 import PropTypes from 'prop-types';
-// import {useClickOutside} from '../../services/useClickOutside';
+import ChevronUp from '../svg/chevronUp/ChevronUp';
+import ChevronDown from '../svg/chevronDown/ChevronDown';
 import styles from './Dropdown.module.scss';
 
-const Dropdown = ({id, label, name, inner}) => {
+const Dropdown = ({id, placeholder, name, inner}) => {
   const [isOpen, setIsOpen] = useState(false);
-  // const dropdownRef = useRef(null);
-  // useClickOutside(dropdownRef, () => {
-  //   setIsOpen(false);
-  // });
+
+  console.log(isOpen);
+
+  const toggleIsOpen = () => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
 
   return (
-    <div className="dropdown">
+    <div className='dropdown'>
       <button
         data-path={name}
         id={id}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleIsOpen}
         className={styles.dropdownBtn}
       >
-        {label}
-        {!isOpen ? (
-          <BiChevronDown className={styles.icon} />
-        ) : (
-          <BiChevronUp className={styles.icon} />
-        )}
+        {placeholder}
+        {!isOpen ? <ChevronDown /> : <ChevronUp />}
       </button>
       {isOpen && (
         <div data-target={name} className={styles.description}>
-          <p>{inner}</p>
+          {inner}
         </div>
       )}
     </div>
   );
 };
+
 Dropdown.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  inner: PropTypes.string.isRequired,
+  inner: PropTypes.any,
 };
 
 export {Dropdown};

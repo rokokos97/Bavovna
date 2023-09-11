@@ -6,6 +6,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Fixel Text';
+  src: url('../public/fonts/fixelText/FixelText-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
   font-size: 10px;

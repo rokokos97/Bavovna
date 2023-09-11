@@ -1,18 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import TopHeader from './TopHeader';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
   return (
     <header className={styles.container}>
+      <TopHeader />
       <div className={styles.header}>
         <div className={styles.headerNav}>
-          <Link to='/sale'>Sale</Link>
-          <Link to='/shop'>Shop</Link>
-          <Link to='/aboutus'>About us</Link>
-          <Link to='/card'>Card</Link>
-          <Link to='/catalogue'>Catalogue</Link>
+          <Link to='/sale'>
+            <span>Sale</span>
+          </Link>
+          <Link to='/shop'>
+            <span>Shop</span>
+          </Link>
+          <Link to='/aboutus'>
+            <span>About us</span>
+          </Link>
+          <Link to='/card'>
+            <span>Card</span>
+          </Link>
+          <Link to='/catalogue'>
+            <span>Catalogue</span>
+          </Link>
         </div>
         <div className={styles.headerLogo}>Logo</div>
         <div className={styles.headerMenuBar}>
