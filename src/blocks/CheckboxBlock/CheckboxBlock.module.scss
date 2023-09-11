@@ -14,7 +14,7 @@
 
 .checkboxLabel {
   position: relative;
-  font-family: Fixel Text;
+  display: inline-flex;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -22,6 +22,7 @@
 
   &::before {
     content: '';
+    align-self: flex-start;
     flex: 0 0 1.6rem;
     height: 1.6rem;
     border: 1px solid $black-color;
@@ -31,8 +32,8 @@
   &::after {
     content: 'x';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -0.2rem;
+    left: 0.6rem;
     transform: scale(0);
     transition: transform 0.5s ease 0s;
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CloseIcon from '../../components/svg/closeIcon/CloseIcon';
 import {Dropdown} from '../../components/dropdown/Dropdown';
-// import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
+import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
 import styles from './FilterSelectionBlock.module.scss';
 import {filtersValues} from '../../services/filtersValues.service';
 
@@ -44,32 +44,56 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
           <h3 className={styles.selectTitle}>Availability</h3>
           <CastomSelect options={availabilityOptions} />
         </form> */}
-        <form className={styles.selectsContainer}>
+        <div className={styles.selectsContainer}>
           <Dropdown
             id='category'
             placeholder='Category'
             name='category'
-            inner={categoryValues}
+            inner={categoryValues.map((categoryValue, index) => (
+              <CheckboxBlock
+                key={index}
+                value={categoryValue.value}
+                label={categoryValue.label}
+              />
+            ))}
           />
           <Dropdown
             id='size'
             placeholder='Size'
             name='size'
-            inner={sizeValues}
+            inner={sizeValues.map((sizeValue, index) => (
+              <CheckboxBlock
+                key={index}
+                value={sizeValue.value}
+                label={sizeValue.label}
+              />
+            ))}
           />
           <Dropdown
             id='color'
             placeholder='Color'
             name='color'
-            inner={colorValues}
+            inner={colorValues.map((colorValue, index) => (
+              <CheckboxBlock
+                key={index}
+                value={colorValue.value}
+                label={colorValue.label}
+              />
+            ))}
           />
           <Dropdown
             id='availability'
             placeholder='Availability'
             name='availability'
-            inner={availabilityValues}
+            inner={availabilityValues.map((availabilityValue, index) => (
+              <CheckboxBlock
+                key={index}
+                value={availabilityValue.value}
+                label={availabilityValue.label}
+              />
+            ))}
           />
-        </form>
+        </div>
         <div className={styles.filtersBlock}></div>
       </div>
     </div>

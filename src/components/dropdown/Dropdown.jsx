@@ -7,8 +7,6 @@ import styles from './Dropdown.module.scss';
 const Dropdown = ({id, placeholder, name, inner}) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(isOpen);
-
   const toggleIsOpen = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
