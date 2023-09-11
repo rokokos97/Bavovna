@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import styles from './Header.module.scss';
 import AccountIcon from '../svg/accountIcon/accountIcon';
 import ShoppingCartIcon from '../svg/shoppingCartIcon/shoppingCartIcon';
+import FavoriteIcon from '../svg/favoriteIcon/favoriteIcon';
 
 const Header = () => {
   return (
@@ -22,6 +23,9 @@ const Header = () => {
             <input></input>
             <span className='material-symbols-outlined'>search</span>
           </div>
+          <Link to='/favorite'>
+            <FavoriteIcon/>
+          </Link>
           <Link to=''>
             <ShoppingCartIcon/>
             <span>(0)</span>
