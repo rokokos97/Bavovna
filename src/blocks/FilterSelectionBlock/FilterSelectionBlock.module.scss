@@ -1,0 +1,25 @@
+@import '../../styles/variables.module.scss';
+
+.filterContainer {
+  // position: relative;
+  background-color: $section-bg-color;
+  height: 100%;
+}
+.filterSelection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 41rem;
+  padding: 4rem 7.2rem;
+  background-color: $section-bg-color;
+  border-right: 1px solid $black-color;
+  z-index: 99;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
