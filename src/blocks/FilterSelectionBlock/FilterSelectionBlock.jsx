@@ -34,16 +34,6 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
         <div className={styles.closeIcon} onClick={handlerIsFilter}>
           <CloseIcon />
         </div>
-        {/* <form className={styles.selectsContainer}>
-          <h3 className={styles.selectTitle}>Category</h3>
-          <CastomSelect options={categoryOptions} />
-          <h3 className={styles.selectTitle}>Size</h3>
-          <CastomSelect options={sizeOptions} />
-          <h3 className={styles.selectTitle}>Color</h3>
-          <CastomSelect options={colorOptions} />
-          <h3 className={styles.selectTitle}>Availability</h3>
-          <CastomSelect options={availabilityOptions} />
-        </form> */}
         <div className={styles.selectsContainer}>
           <Dropdown
             id='category'

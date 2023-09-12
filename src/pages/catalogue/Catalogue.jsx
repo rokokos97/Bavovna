@@ -16,7 +16,10 @@ const Catalogue = () => {
       <div className={styles.block}>
         <HeadCatalogBlock />
         <SelectionBlock handlerIsFilter={changeIsFilter} />
-        <CardsCatalogBlock isFilter={isFilter} handlerIsFilter={changeIsFilter} />
+        <CardsCatalogBlock
+          isFilter={isFilter}
+          handlerIsFilter={changeIsFilter}
+        />
       </div>
     </section>
   );

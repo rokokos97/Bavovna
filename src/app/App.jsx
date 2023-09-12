@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Card from '../pages/card/Card';
 import AboutUsPage from '../pages/aboutUsPage/AboutUsPage';
-import './App.module.css';
+import styles from './App.module.scss';
 import AppLoader from '../hoc/appLoader';
 import LoginLayout from '../components/LoginLayout/LoginLayout';
 import MainPage from '../pages/mainPage/MainPage';
@@ -14,7 +14,7 @@ import Catalogue from '../pages/catalogue/Catalogue';
 
 function App() {
   return (
-    <div className='App'>
+    <div className={styles.App}>
       <AppLoader>
         <Routes>
           <Route path='/' element={<Layout />}>
