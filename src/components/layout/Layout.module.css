@@ -1,5 +1,7 @@
 .container {
   padding-top: 56px;
+  max-width: 1440px;
+  margin: auto;
 }
 
 /*# sourceMappingURL=Layout.module.css.map */

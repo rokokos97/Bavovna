@@ -1,0 +1,31 @@
+.catalog {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  padding-top: 2.4rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.4rem;
+  padding-top: 3rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  min-width: 2.4rem;
+}
+
+/*# sourceMappingURL=CardsCatalogBlock.module.css.map */
