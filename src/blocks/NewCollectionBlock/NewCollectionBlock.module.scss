@@ -43,11 +43,17 @@
   gap: 0.2rem;
   display: inline-flex
 }
+.buttons:hover {
+  background: var(--accent-a-3, #5A9B83);
+}
+.buttons:active {
+  background: var(--accent-a-5, #1A6449);
+}
 .buttonText {
   text-align: center;
   color: white;
   font-size: 2rem;
-  font-family: Fixel, serif;
+  font-family: Fixel, sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 2.4rem;
