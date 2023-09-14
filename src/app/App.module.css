@@ -6,4 +6,17 @@
   padding-top: 56px;
 }
 
+a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: var(--accent-a-7, #103C2C);
+  text-decoration: underline;
+}
+a:disabled {
+  color: #c0c0c0;
+  pointer-events: none;
+}
+
 /*# sourceMappingURL=App.module.css.map */
