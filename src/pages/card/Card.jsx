@@ -1,26 +1,27 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-
+import NotFoundPage from '../notFoundPage/notFoundPage';
 import {SizesList} from '../../components/sizeList/SizesList';
 import {Modal} from '../../components/modal';
 import {Dropdown} from '../../components/dropdown/Dropdown';
 import {SizeGuide} from '../../components/modal/modalContent';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
-
 import styles from './Card.module.scss';
-import NotFoundPage from '../notFoundPage/notFoundPage';
-
 // import '../../services/dropdown.service';
 
 const Card = ({searchingId = '1'}) => {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
   const changeImage = (imgUrl) => {
     const mainImage = document.getElementById('mainImage');
     mainImage.src = imgUrl;
+  };
+
+  const closeModal = () => {
+    setOpenModal(false);
   };
 
   if (!isItemsLoading) {
@@ -59,45 +60,48 @@ const Card = ({searchingId = '1'}) => {
               <div className={styles.size}>
                 <SizesList sizes={size} />
                 <button
+                  type='button'
                   className={styles.btnGuide}
-                  onClick={() => setOpenModal(true)}
+                  onClick={() => {
+                    setOpenModal(true);
+                  }}
                 >
                   Size guide
                 </button>
               </div>
               <div className={styles.formBag}>
-                <button>ADD TO BAG</button>
+                <button type='button'>ADD TO BAG</button>
               </div>
             </form>
             <div className={styles.descriptions}>
               <Dropdown
                 id='dropdownToggle'
-                label='Details'
+                placeholder='Details'
                 name='details'
                 inner={description}
               />
               <Dropdown
                 id='dropdownToggle'
-                label='Model parameters'
+                placeholder='Model parameters'
                 name='parameters'
                 inner={modelParams}
               />
               <Dropdown
                 id='dropdownToggle'
-                label='Composition and care'
+                placeholder='Composition and care'
                 name='composition'
                 inner={composition.join()}
               />
               <Dropdown
                 id='dropdownToggle'
-                label='Shipping and returns'
+                placeholder='Shipping and returns'
                 name='shipping'
                 inner='Lorem ipsum dolor sit amen consectetur'
               />
             </div>
           </div>
-          <Modal isOpen={openModal} onClose={setOpenModal}>
-            <SizeGuide onClose={setOpenModal} />
+          <Modal isOpen={openModal} handleCloseModal={closeModal}>
+            <SizeGuide handleCloseModal={closeModal} />
           </Modal>
         </section>
       </>
