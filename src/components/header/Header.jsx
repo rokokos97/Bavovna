@@ -10,6 +10,13 @@ import SearchIcon from '../svg/searchIcon/searchIcon';
 const Header = () => {
   return (
     <header className={styles.container}>
+      <div className={styles.banner}>
+        <Link to='/'>
+          <span>
+            10% discount on the summer collection
+          </span>
+        </Link>
+      </div>
       <div className={styles.header}>
         <div className={styles.headerNav}>
           <Link to='/sale'>Sale</Link>
