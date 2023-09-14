@@ -1,0 +1,55 @@
+.proposeBlock {
+  display: flex;
+  gap: 40px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 50% 1 1;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.title span {
+  font-weight: 700;
+}
+
+.innerText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+}
+
+.img {
+  display: block;
+  aspect-ratio: 4/3;
+  max-width: 23.5%;
+  width: 100%;
+}
+.img img {
+  display: block;
+  width: 100%;
+}
+
+.lastChild {
+  order: 2;
+}
+
+/*# sourceMappingURL=ProposeBlock.module.css.map */

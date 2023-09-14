@@ -82,25 +82,46 @@ export const signUp = (payload) =>
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
     } catch (error) {
-      dispatch(authRequestFailed(error.message));
+      const {code, message} = error.response.data.error;
+      if (code === 400) {
+        const errorMessage = generateAuthError(message);
+        dispatch(authRequestFailed(errorMessage));
+      } else if (code === 500) {
+        dispatch(authRequestFailed('Server error. Please repeat latter...'));
+      }
     }
   };
 export const login = ({payload}) => async (dispatch) => {
-  const {email, password} = payload;
-  dispatch(authRequested());
-  try {
-    const data = await authService.login({email, password});
-    localStorageService.setTokens(data);
-    dispatch(authRequestSuccess(data.user));
-  } catch (error) {
-    const {code, message} = error.response.data.errors;
-    if (code === 400) {
-      const errorMessage = generateAuthError(message);
-      dispatch(authRequestFailed(errorMessage));
-    } else {
-      toast.dark(error, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
+  const {sub} = payload;
+  if (sub) {
+    const {email} = payload;
+    dispatch(authRequested());
+    try {
+      const data = await authService.loginWithGoogle({email});
+      localStorageService.setTokens(data);
+      dispatch(authRequestSuccess(data.user));
+    } catch (error) {
+      const {code, message} = error.response.data.error;
+      if (code === 400) {
+        const errorMessage = generateAuthError(message);
+        dispatch(authRequestFailed(errorMessage));
+      } else if (code === 500) {
+        dispatch(authRequestFailed('Server error. Please repeat latter...'));
+      }
+    }
+  } else {
+    const {email, password} = payload;
+    dispatch(authRequested());
+    try {
+      const data = await authService.login({email, password});
+      localStorageService.setTokens(data);
+      dispatch(authRequestSuccess(data.user));
+    } catch (error) {
+      const {code, message} = error.response.data.error;
+      if (code === 400) {
+        const errorMessage = generateAuthError(message);
+        dispatch(authRequestFailed(errorMessage));
+      }
     }
   }
 };
@@ -137,4 +158,7 @@ export const getUser = () => (state) => state.user.entities;
 export const getIsLoadingUser = () => (state) => state.user.isLoading;
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getAuthErrors = () => (state) => state.user.error;
+export const resetAuthErrors = () => async (dispatch) => {
+  dispatch(authRequested());
+};
 export default userReducer;

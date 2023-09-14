@@ -1,11 +1,14 @@
 .newCollectionBlock {
-  border: black solid 0.1rem;
-  width: 128rem;
+  background:
+          linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
+          url("../../../public/img/images/NewCollection/Rectangle 25.png"),
+          lightgray 50% / cover no-repeat;
+;
+  width: 100%;
   height: 84.1rem;
   margin: 0 auto;
 }
 .newCollectionBlock__wrapper {
-  border: black solid 0.1rem;
   display: inline-flex;
   width: 57.8rem;
   height: 26.3rem;
@@ -40,11 +43,17 @@
   gap: 0.2rem;
   display: inline-flex
 }
+.buttons:hover {
+  background: var(--accent-a-3, #5A9B83);
+}
+.buttons:active {
+  background: var(--accent-a-5, #1A6449);
+}
 .buttonText {
   text-align: center;
   color: white;
   font-size: 2rem;
-  font-family: Fixel, serif;
+  font-family: Fixel, sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 2.4rem;

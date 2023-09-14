@@ -4,7 +4,7 @@
   display: flex;
 }
 
-.cardsContainer{
+.cardsContainer {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -16,13 +16,17 @@
   gap: 2.4rem;
   flex-wrap: wrap;
   padding-top: 2.4rem;
+
+  &.cardsPadding {
+    padding-left: 2.4rem;
+  }
 }
 
 .pagination {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
-  padding-top: 1.6rem;
+  padding: 1.6rem 2.4rem 3.6rem;
   padding-bottom: 3.6rem;
   font-size: 2rem;
   font-style: normal;
@@ -42,7 +46,7 @@
   line-height: 110%;
   cursor: pointer;
 
-  &.arrowDisable{
+  &.arrowDisable {
     color: $gray-50;
     fill: $gray-50;
     cursor: not-allowed;

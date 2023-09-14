@@ -7,7 +7,13 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel Text';
+  font-family: 'Fixel';
+  src: url('../public/fonts/fixelVariable/FixelVariable.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fixel-Test';
   src: url('../public/fonts/fixelText/FixelText-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
@@ -19,11 +25,10 @@ html {
 }
 
 body {
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    /* font-family: Fixel Display; */
+  font-family: Fixel, Fixel Display, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  /* font-family: Fixel Display; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom';
 import TopHeader from './TopHeader';
 
 import styles from './Header.module.scss';
+import AccountIcon from '../svg/accountIcon/accountIcon';
+import ShoppingCartIcon from '../svg/shoppingCartIcon/shoppingCartIcon';
+import FavoriteIcon from '../svg/favoriteIcon/favoriteIcon';
+import SearchIcon from '../svg/searchIcon/searchIcon';
 
 const Header = () => {
   return (
@@ -30,13 +34,20 @@ const Header = () => {
         <div className={styles.headerMenuBar}>
           <div className={styles.headerSearch}>
             <input></input>
-            <span className='material-symbols-outlined'>search</span>
+            <SearchIcon/>
           </div>
+          <Link to='/favorite'>
+            <FavoriteIcon/>
+          </Link>
           <Link to=''>
-            <span className='material-symbols-outlined'>shopping_cart</span>
+            <ShoppingCartIcon/>
+            <span>(0)</span>
           </Link>
           <Link to='/login'>
-            <span className='material-symbols-outlined'>person</span>
+            <AccountIcon/>
+            <span>
+              Account
+            </span>
           </Link>
           <Link to=''>
             <div className={styles.headerLang}>

@@ -21,6 +21,13 @@ const authService = {
     });
     return data;
   },
+  loginWithGoogle: async ({email}) => {
+    const {data} = await httpAuth.post('signInWithGoogle', {
+      email,
+      returnSecureToken: true,
+    });
+    return data;
+  },
   refresh: async () => {
     const {data} = await httpAuth.post('token', {
       grant_type: 'refresh_token',

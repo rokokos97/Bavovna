@@ -1,0 +1,25 @@
+.filterContainer {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.filterSelection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 41rem;
+  padding: 4rem 7.2rem;
+  background-color: #f1f1f1;
+  border-right: 1px solid #000000;
+  z-index: 99;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=FilterSelectionBlock.module.css.map */

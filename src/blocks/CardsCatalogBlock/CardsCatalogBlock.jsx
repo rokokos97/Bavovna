@@ -45,8 +45,14 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
         {isFilter ? (
           <FilterSelectionBlock handlerIsFilter={handlerIsFilter} />
         ) : null}
-        <div className={styles.cardsContainer}>
-          <ul className={styles.cards}>
+        <div
+          className={styles.cardsContainer}
+        >
+          <ul className={
+            !isFilter ?
+            styles.cards :
+            `${styles.cards} ${styles.cardsPadding}`
+          }>
             {visibleItems.map((item, index) => (
               <li key={index}>
                 <ItemPreviewCard item={item} />
@@ -55,7 +61,11 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
           </ul>
           <div className={styles.pagination}>
             <div
-              className={currentPage !== 1 ? styles.arrow : `${styles.arrow} ${styles.arrowDisable}`}
+              className={
+                currentPage !== 1 ?
+                  styles.arrow :
+                  `${styles.arrow} ${styles.arrowDisable}`
+              }
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(currentPage - 1)}
             >
@@ -67,9 +77,9 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
                 <button
                   key={index}
                   className={
-                    index + 1 === currentPage?
-                     `${styles.pageButton} ${styles.activeBtn}`:
-                     styles.pageButton
+                    index + 1 === currentPage ?
+                      `${styles.pageButton} ${styles.activeBtn}` :
+                      styles.pageButton
                   }
                   onClick={handlePageChange}
                 >
@@ -78,7 +88,11 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
               ))}
             </div>
             <div
-              className={currentPage !== totalPages ? styles.arrow : `${styles.arrow} ${styles.arrowDisable}`}
+              className={
+                currentPage !== totalPages ?
+                  styles.arrow :
+                  `${styles.arrow} ${styles.arrowDisable}`
+              }
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage(currentPage + 1)}
             >

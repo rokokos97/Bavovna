@@ -70,7 +70,7 @@ const Card = ({searchingId = '1'}) => {
                 </button>
               </div>
               <div className={styles.formBag}>
-                <button>ADD TO BAG</button>
+                <button type='button'>ADD TO BAG</button>
               </div>
             </form>
             <div className={styles.descriptions}>
