@@ -28,6 +28,7 @@ const ProposeBlock = () => {
             environment and emphasize your style and elegance.
           </p>
         </div>
+        <button type='button'>View new</button>
       </div>
     </div>
   );

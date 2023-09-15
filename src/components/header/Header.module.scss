@@ -40,8 +40,8 @@
   padding: 1.6rem 8rem;
   margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   max-width: $max-width;
   color: $header-text-color;
 }
@@ -82,7 +82,7 @@
 }
 
 .headerMenuBar a:hover span {
-  color: $active-color;
+  color: $accent_4;
 }
 
 .headerSearch {
@@ -94,12 +94,12 @@
 .headerSearch input {
   border: none;
   outline: none;
-  height: 24px;
+  height: 2.4rem;
 }
 
 .headerSearch span {
   position: absolute;
-  right: 1px;
+  right: 0.1rem;
 }
 
 .headerLang {

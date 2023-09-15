@@ -6,12 +6,20 @@ import styles from './Catalogue.module.scss';
 
 const Catalogue = () => {
   const [isFilter, setIsFilter] = useState(false);
+
+  const changeIsFilter = () => {
+    setIsFilter((prevValue) => !prevValue);
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.block}>
         <HeadCatalogBlock />
-        <SelectionBlock isFilter={isFilter} setIsFilter={setIsFilter} />
-        <CardsCatalogBlock isFilter={isFilter} setIsFilter={setIsFilter} />
+        <SelectionBlock handlerIsFilter={changeIsFilter} />
+        <CardsCatalogBlock
+          isFilter={isFilter}
+          handlerIsFilter={changeIsFilter}
+        />
       </div>
     </section>
   );
