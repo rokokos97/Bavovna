@@ -16,12 +16,20 @@ export const validationSchema = Yup.object().shape({
   email: Yup.string()
       .required('Email is required')
       .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Invalid email address'),
-  name: Yup.string()
-      .required('Name is required')
-      .min(2, 'Name has to be longer than 2 characters')
+  surname: Yup.string()
+      .required('Last name is required')
+      .min(2, 'Last name has to be longer than 2 characters')
       .matches(
-          /^[A-Z][a-z]+ [A-Z][a-z]+$/,
-          'The name must begin with a capital' +
+          /^[A-Z][a-z]+$/,
+          'The Last name must begin with a capital' +
+      ' letter and consist only of letters')
+      .max(20, 'First name must be at most 15 characters long'),
+  name: Yup.string()
+      .required('First name is required')
+      .min(2, 'First name has to be longer than 2 characters')
+      .matches(
+          /^[A-Z][a-z]$/,
+          'The First name must begin with a capital' +
         ' letter and consist only of letters')
-      .max(20, 'Name must be at most 15 characters long'),
+      .max(20, 'First name must be at most 15 characters long'),
 });

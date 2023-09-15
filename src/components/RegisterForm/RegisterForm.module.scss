@@ -4,8 +4,7 @@
   align-items: center;
   gap: 2.4rem;
   margin: 4rem auto 17rem;
-  width: 30%;
-  //border: #040404 1px solid;
+  width: 40rem;
 
   p {
     color: #000;
@@ -46,19 +45,20 @@
 .registerError {
   width: 100%;
   display: flex;
-  padding: 0.8rem;
+  padding: 1.2rem;
   align-items: center;
   gap: 1rem;
 
-  background: var(--error, #EA001B);
+  background: var(--error, #DFC5C5);
 
   span {
-    color: var(--gray-gray-90, #F5F5F5);
+    font-family: Fixel, sans-serif;
+    color: #BB3B34;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 2rem; /* 142.857% */
+    line-height: 110%; /* 142.857% */
   }
 }
 .conformationBlock {
@@ -140,7 +140,7 @@
 
 .socialButtonsBlock {
   display: flex;
-  width: 40.9rem;
+  width: 40rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6rem;
@@ -167,26 +167,6 @@
   }
 }
 
-.socialButton {
-  display: flex;
-  width: 40rem;
-  padding: 1rem 1.6rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-
-  border: 1px solid var(--gray-300, #D0D5DD);
-  background: var(--white, #FFF);
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-
-  span {
-    color: var(--gray-700, #344054);
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 2.4rem; /* 150% */
-  }
-}
 .button {
   background-color: #040404;
   display: flex;
@@ -205,6 +185,12 @@
     line-height: 2rem; /* 111.111% */
     text-transform: uppercase;
   }
+}
+.button:hover {
+  background: var(--accent-a-3, #5A9B83);
+}
+.button:active {
+  background: var(--accent-a-5, #1A6449);
 }
 
 

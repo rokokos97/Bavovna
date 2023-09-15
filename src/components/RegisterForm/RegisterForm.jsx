@@ -4,8 +4,6 @@ import {useFormik} from 'formik';
 import {validationSchema} from '../../utils/validationSchema';
 import {NavLink} from 'react-router-dom';
 import 'react-phone-number-input/style.css';
-// import GoogleIcon from '../svg/googleIcon/googleIcon';
-import AppleIcon from '../svg/appleIcon/appleIcon';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, getUser, signUp} from '../../store/userSlice';
 import config from '../../config.json';
@@ -61,7 +59,12 @@ const RegisterForm = () => {
           Welcome! Please enter your details
         </span>
       </div>
-      {registerError && <div className={styles.registerError}><span>{registerError}</span></div> }
+      {registerError &&
+        <div className={styles.registerError}>
+          <span>
+            {registerError}
+          </span>
+        </div> }
       {user && <div className={styles.conformationBlock}>
         <span>
           We have sent an email to {user.email}. Please click on the link to confirm your email address.
@@ -75,19 +78,39 @@ const RegisterForm = () => {
           <div className={styles.input}>
             <label htmlFor="name">
               <span>
-                Full name *
+                First name *
               </span>
             </label>
             <input
               id="name"
               name="name"
               type="name"
+              placeholder="Enter your first name"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
             />
             {formik.errors.name ? (
               <div className={styles.error}>{formik.errors.name}</div>
+            ) : null}
+          </div>
+          <div className={styles.input}>
+            <label htmlFor="surname">
+              <span>
+                Last name *
+              </span>
+            </label>
+            <input
+              id="surname"
+              name="surname"
+              type="name"
+              placeholder="Enter your last name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.surname}
+            />
+            {formik.errors.name ? (
+              <div className={styles.error}>{formik.errors.surname}</div>
             ) : null}
           </div>
           <div className={styles.input}>
@@ -100,6 +123,7 @@ const RegisterForm = () => {
               id="email"
               name="email"
               type="email"
+              placeholder="example@ex.com"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
@@ -118,6 +142,7 @@ const RegisterForm = () => {
               id="password"
               name="password"
               type="password"
+              placeholder="**********"
               autoComplete='new password'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -137,6 +162,7 @@ const RegisterForm = () => {
               id="confirmPassword"
               name="confirmPassword"
               type="password"
+              placeholder="**********"
               autoComplete='new password'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -166,10 +192,6 @@ const RegisterForm = () => {
           </div>
           <div
             id='signUpDiv'>
-          </div>
-          <div className={styles.socialButton}>
-            <AppleIcon />
-            <span>Sign up with Apple</span>
           </div>
         </div>
       </div>

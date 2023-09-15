@@ -3,7 +3,6 @@ import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
-import AppleIcon from '../svg/appleIcon/appleIcon';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, login} from '../../store/userSlice';
 import jwtDecode from 'jwt-decode';
@@ -63,7 +62,12 @@ const LoginForm = () => {
             Welcome back! Please enter your details
         </span>
       </div>
-      {loginError && <div className={styles.registerError}><span>{loginError}</span></div> }
+      {loginError &&
+        <div className={styles.registerError}>
+          <span>
+            {loginError}
+          </span>
+        </div> }
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
           <div className={styles.input}>
@@ -76,6 +80,7 @@ const LoginForm = () => {
               id="email"
               name="email"
               type="email"
+              placeholder="example@ex.com"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
@@ -94,6 +99,7 @@ const LoginForm = () => {
               id="password"
               name="password"
               type="password"
+              placeholder="**********"
               autoComplete='off'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -117,12 +123,9 @@ const LoginForm = () => {
             <span>or</span>
             <div></div>
           </div>
+
           <div
             id='signUpDiv'>
-          </div>
-          <div className={styles.socialButton}>
-            <AppleIcon />
-            <span>Sign in with Apple</span>
           </div>
         </div>
       </div>
