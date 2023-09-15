@@ -24,7 +24,8 @@
 }
 .button {
   margin: 0 auto;
-  background: #222;
+  border: 1px solid var(--Black, #040404);
+  background: var(--TR30-Gray90, rgba(245, 245, 245, 0.30));
   display: flex;
   width: 19.5rem;
   padding: 2.1rem 3.6rem;
@@ -33,7 +34,7 @@
   gap: 0.2rem;
 
   span {
-    color: #FFF;
+    color: 1px solid var(--Black, #040404);
     text-align: center;
     font-size: 2rem;
     font-style: normal;
@@ -41,4 +42,12 @@
     line-height: 120%; /* 2.4rem */
     text-transform: uppercase;
   }
+}
+.button:hover {
+  border: 1px solid var(--Black, #040404);
+  background: var(--transparent-30-a-05, rgba(169, 223, 203, 0.30));
+}
+.button:active {
+  border: 1px solid var(--Black, #040404);
+  background: var(--accent-a-05, #A9DFCB);
 }

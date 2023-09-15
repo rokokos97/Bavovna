@@ -30,22 +30,34 @@
 }
 
 .button {
+  margin: 0 auto;
+  border: 1px solid var(--Black, #040404);
+  background: var(--TR30-Gray90, rgba(245, 245, 245, 0.3));
   display: flex;
   width: 19.5rem;
   padding: 2.1rem 3.6rem;
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-  border: 1px solid var(--black, #040404);
 }
 .button span {
-  color: var(--black, #040404);
+  color: 1px solid var(--Black, #040404);
   text-align: center;
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 2.4rem */
   text-transform: uppercase;
+}
+
+.button:hover {
+  border: 1px solid var(--Black, #040404);
+  background: var(--transparent-30-a-05, rgba(169, 223, 203, 0.3));
+}
+
+.button:active {
+  border: 1px solid var(--Black, #040404);
+  background: var(--accent-a-05, #A9DFCB);
 }
 
 /*# sourceMappingURL=BavovnaBlock.module.css.map */

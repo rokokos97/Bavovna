@@ -5,7 +5,6 @@ import NewCollectionBlock from '../../blocks/NewCollectionBlock/NewCollectionBlo
 import SaleBlock from '../../blocks/SaleBlock/SaleBlock';
 import BavovnaBlock from '../../blocks/BavovnaBlock/BavovnaBlock';
 import NewsLettersBlock from '../../blocks/NewsLettersBlock/NewsLettersBlock';
-import BavovnaImgBlock from '../../blocks/BavovnaImgBlock/BavovnaImgBlock';
 
 const MainPage = () => {
   return (
@@ -15,7 +14,6 @@ const MainPage = () => {
         <NewArrivalsBlock />
         <SaleBlock />
         <BavovnaBlock />
-        <BavovnaImgBlock/>
         <NewArrivalsBlock />
         <NewsLettersBlock />
       </div>
