@@ -37,9 +37,9 @@
   padding: 1.6rem 8rem;
   margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
+  align-items: center;
+  max-width: 144rem;
   color: #212a2f;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .headerMenuBar a:hover span {
-  color: #ad1f00;
+  color: #3a7f66;
 }
 
 .headerSearch {
@@ -91,12 +91,12 @@
 .headerSearch input {
   border: none;
   outline: none;
-  height: 24px;
+  height: 2.4rem;
 }
 
 .headerSearch span {
   position: absolute;
-  right: 1px;
+  right: 0.1rem;
 }
 
 .headerLang {
