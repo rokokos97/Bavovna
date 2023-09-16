@@ -1,16 +1,21 @@
 @import '../../styles/variables.module.scss';
 
-.card {
+.cardSection {
+  width: 100%;
   background-color: $second-color;
+  padding: 4rem 8rem 8rem;
+}
+
+.card {
   display: flex;
   flex-grow: 1;
   gap: 2.4rem;
-  padding: 4rem 8rem;
+  padding-bottom: 4rem;
 }
 
 .imgs {
   width: 20%;
-  max-width: 19.3rem;
+  max-width: 8.5rem;
   max-height: 62.7rem;
   overflow: auto;
   -ms-overflow-style: none;
@@ -43,9 +48,15 @@
   }
 }
 
-.mainImg,
 .about {
-  width: 40%;
+  max-width: 62.7rem;
+  width: 100%;
+}
+
+.mainImg,
+.aboutInner {
+  max-width: 52rem;
+  width: 100%;
 }
 
 .mainImg {
@@ -76,15 +87,20 @@
   padding-bottom: 3.2rem;
 }
 
+.color {
+  margin-bottom: 3.2rem;
+}
+
+.color,
 .size {
   text-align: start;
   font-size: 1.8rem;
-
-  & pre,
-  span {
-    display: inline-block;
-    text-transform: uppercase;
-  }
+  display: inline-block;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
 }
 
 .btnGuide {
@@ -106,6 +122,11 @@
     background-color: $black-color;
     color: $white-color;
     text-align: center;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    text-transform: uppercase;
   }
 }
 

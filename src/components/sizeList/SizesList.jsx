@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 import styles from './SizeList.module.scss';
 
-const allSizes = ['xs', 's', 'm', 'l', 'xl'];
+const allSizes = ['xs', 's', 'm', 'l'];
 const noSize = 'Choose a size';
 
 const SizesList = ({sizes}) => {
@@ -42,6 +42,7 @@ const SizesList = ({sizes}) => {
     </>
   );
 };
+
 SizesList.propTypes = {
   sizes: PropTypes.array.isRequired,
 };
