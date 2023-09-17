@@ -40,26 +40,22 @@ export const filtersValues = {
       value: 'l',
       label: 'L',
     },
-    {
-      value: 'xl',
-      label: 'XL',
-    },
   ],
   colorValues: [
     {
-      value: 'black',
+      value: '#000000',
       label: 'Black',
     },
     {
-      value: 'indigo',
+      value: '#4B0082',
       label: 'Indigo',
     },
     {
-      value: 'vanilla',
+      value: '#F3E5AB',
       label: 'Vanilla',
     },
     {
-      value: 'white',
+      value: '#ffffff',
       label: 'White',
     },
   ],

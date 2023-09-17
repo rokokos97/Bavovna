@@ -66,6 +66,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
             inner={colorValues.map((colorValue, index) => (
               <CheckboxBlock
                 key={index}
+                id='isColor'
                 value={colorValue.value}
                 label={colorValue.label}
               />
@@ -84,7 +85,13 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
             ))}
           />
         </div>
-        <div className={styles.filtersBlock}></div>
+        <div className={styles.checkboxBlock}>
+          <CheckboxBlock value='new' label='NEW' />
+          <CheckboxBlock value='sale' label='SALE' />
+        </div>
+        <button type='button' className={styles.filterBtn}>
+          Clean filter
+        </button>
       </div>
     </div>
   );
