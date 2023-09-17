@@ -147,7 +147,7 @@ export const updateUser = (payload) => async (dispatch) => {
 export const loadUser = () => async (dispatch) => {
   dispatch(userLoadRequested());
   try {
-    const {content} = await userService.getCurrentUser();
+    const content = await userService.getCurrentUser();
     dispatch(userLoadRequestSuccess({...content}));
   } catch (error) {
     console.log(error);
@@ -158,7 +158,5 @@ export const getUser = () => (state) => state.user.entities;
 export const getIsLoadingUser = () => (state) => state.user.isLoading;
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getAuthErrors = () => (state) => state.user.error;
-export const resetAuthErrors = () => async (dispatch) => {
-  dispatch(authRequested());
-};
+
 export default userReducer;

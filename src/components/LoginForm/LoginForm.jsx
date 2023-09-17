@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
@@ -10,7 +10,8 @@ import config from '../../config.json';
 
 
 const LoginForm = () => {
-  const loginError = useSelector(getAuthErrors());
+  const [loginError, setLoginError] = useState();
+  const authError = useSelector(getAuthErrors());
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -54,6 +55,11 @@ const LoginForm = () => {
       border_radius: 0,
     });
   }, []);
+  useEffect(()=>{
+    if (authError) {
+      setLoginError(authError);
+    }
+  }, [authError]);
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
