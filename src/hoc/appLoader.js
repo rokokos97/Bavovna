@@ -1,12 +1,20 @@
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {uploadItemList} from '../store/itemsSlice';
 import PropTypes from 'prop-types';
 import {uploadCategoriesList} from '../store/categorySlice';
+import {getIsLoggedIn, loadUser} from '../store/userSlice';
+import {useEffect} from 'react';
 
 const AppLoader = ({children}) => {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(getIsLoggedIn());
   dispatch(uploadItemList());
   dispatch(uploadCategoriesList());
+  useEffect(()=>{
+    if (isLoggedIn) {
+      dispatch(loadUser());
+    }
+  }, [isLoggedIn]);
   return children;
 };
 AppLoader.propTypes = {

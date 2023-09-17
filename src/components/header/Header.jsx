@@ -6,8 +6,12 @@ import AccountIcon from '../svg/accountIcon/accountIcon';
 import ShoppingCartIcon from '../svg/shoppingCartIcon/shoppingCartIcon';
 import FavoriteIcon from '../svg/favoriteIcon/favoriteIcon';
 import SearchIcon from '../svg/searchIcon/searchIcon';
+import {useSelector} from 'react-redux';
+import {getIsLoggedIn, getUser} from '../../store/userSlice';
 
 const Header = () => {
+  const user = useSelector(getUser());
+  const isLoggedIn = useSelector(getIsLoggedIn());
   return (
     <header className={styles.container}>
       <div className={styles.banner}>
@@ -41,7 +45,7 @@ const Header = () => {
           <Link to='/login'>
             <AccountIcon/>
             <span>
-              Account
+              {isLoggedIn && user ? user.name : ''}
             </span>
           </Link>
           <Link to=''>
