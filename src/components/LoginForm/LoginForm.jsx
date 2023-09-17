@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, login} from '../../store/userSlice';
 import jwtDecode from 'jwt-decode';
 import config from '../../config.json';
+import GoogleIcon from '../svg/googleIcon/googleIcon';
 
 
 const LoginForm = () => {
@@ -49,11 +50,13 @@ const LoginForm = () => {
       callback: handleCallbackResponse,
     });
     google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
-      theme: 'online',
+      theme: 'outline',
       width: '400px',
-      locale: 'en',
+      height: '40px',
       border_radius: 0,
+      locale: 'en',
     });
+    google.accounts.id.prompt();
   }, []);
   useEffect(()=>{
     if (authError) {
@@ -129,9 +132,17 @@ const LoginForm = () => {
             <span>or</span>
             <div></div>
           </div>
-
-          <div
-            id='signUpDiv'>
+          <div className={styles.googleButton}>
+            <div
+              id='signUpDiv'>
+            </div>
+            <button
+            >
+              <GoogleIcon />
+              <span>
+                Sign in with Google
+              </span>
+            </button>
           </div>
         </div>
       </div>
