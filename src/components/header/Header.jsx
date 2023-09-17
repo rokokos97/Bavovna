@@ -10,8 +10,8 @@ import {useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../store/userSlice';
 
 const Header = () => {
-  const isLoggedIn = useSelector(getIsLoggedIn());
   const user = useSelector(getUser());
+  const isLoggedIn = useSelector(getIsLoggedIn());
   return (
     <header className={styles.container}>
       <div className={styles.banner}>
@@ -45,7 +45,7 @@ const Header = () => {
           <Link to='/login'>
             <AccountIcon/>
             <span>
-              {isLoggedIn && user.name}
+              {isLoggedIn && user ? user.name : ''}
             </span>
           </Link>
           <Link to=''>

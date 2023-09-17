@@ -16,7 +16,7 @@ router.patch('/:userId', auth, async (req, res) => {
     });
   }
 });
-router.get('/:userId', auth, async (req, res) => {
+router.get('/:userId', async (req, res) => {
   try {
     const {userId} = req.params;
     const user = await User.findById(userId);
