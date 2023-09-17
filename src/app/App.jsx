@@ -12,6 +12,7 @@ import ShopPage from '../pages/shopPage/shopPage';
 import NotFoundPage from '../pages/notFoundPage/notFoundPage';
 import Catalogue from '../pages/catalogue/Catalogue';
 
+
 function App() {
   return (
     <div className={styles.App}>

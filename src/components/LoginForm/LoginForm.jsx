@@ -1,18 +1,39 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, login} from '../../store/userSlice';
-import jwtDecode from 'jwt-decode';
-import config from '../../config.json';
+import {useDispatch} from 'react-redux';
+import {login, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
-
+import {useGoogleLogin} from '@react-oauth/google';
 
 const LoginForm = () => {
-  const [loginError, setLoginError] = useState();
-  const authError = useSelector(getAuthErrors());
+  const fetchUserData = async (accessToken) => {
+    const endpoint = 'https://www.googleapis.com/oauth2/v2/userinfo';
+
+    try {
+      const response = await fetch(endpoint, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      const data = await response.json();
+      console.log(data); // тут ви побачите дані користувача
+      return data;
+    } catch (error) {
+      console.error('Error fetching user data', error);
+    }
+  };
+  const googleLogin = useGoogleLogin(
+      {
+        onSuccess: (tokenResponse) => {
+          const accessToken = tokenResponse.access_token;
+          fetchUserData(accessToken).then((userInfo) => dispatch(loginWithGoogle(userInfo)));
+        },
+      },
+  );
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -34,35 +55,15 @@ const LoginForm = () => {
     },
   });
   const isValid = Object.keys(formik.errors).length === 0;
-  const handleCallbackResponse = (response) => {
-    const userInfo = jwtDecode(response.credential);
-    const googleUser = {
-      email: userInfo.email,
-      name: userInfo.name,
-      sub: userInfo.sub,
-    };
-    dispatch(login({payload: googleUser}));
-  };
-  useEffect(() => {
-    /* google global */
-    google.accounts.id.initialize({
-      client_id: config.googleClientId,
-      callback: handleCallbackResponse,
-    });
-    google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
-      theme: 'outline',
-      width: '400px',
-      height: '40px',
-      border_radius: 0,
-      locale: 'en',
-    });
-    google.accounts.id.prompt();
-  }, []);
-  useEffect(()=>{
-    if (authError) {
-      setLoginError(authError);
-    }
-  }, [authError]);
+  //  const handleCallbackResponse = (response) => {
+  //    const userInfo = jwtDecode(response.credential);
+  //    const googleUser = {
+  //      email: userInfo.email,
+  //      name: userInfo.name,
+  //      sub: userInfo.sub,
+  //    };
+  //    dispatch(login({payload: googleUser}));
+  //  };
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -71,12 +72,6 @@ const LoginForm = () => {
             Welcome back! Please enter your details
         </span>
       </div>
-      {loginError &&
-        <div className={styles.registerError}>
-          <span>
-            {loginError}
-          </span>
-        </div> }
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
           <div className={styles.input}>
@@ -119,6 +114,7 @@ const LoginForm = () => {
           ) : null}
           </div>
           <button
+            onClick={() => googleLogin()}
             className={styles.button}
           >
             <span>
@@ -137,6 +133,7 @@ const LoginForm = () => {
               id='signUpDiv'>
             </div>
             <button
+              onClick={()=> googleLogin()}
             >
               <GoogleIcon />
               <span>
