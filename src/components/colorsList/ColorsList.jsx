@@ -8,7 +8,8 @@ const ColorsList = ({colors}) => {
   let [selectedColor, setSelectedColor] = useState('');
 
   const handleChange = (event) => {
-    setSelectedColor((selectedColor = event.target.value));
+    setSelectedColor((selectedColor = event.target.id));
+    console.log(event.target);
   };
 
   return (
@@ -27,7 +28,7 @@ const ColorsList = ({colors}) => {
             <input
               type='radio'
               name='color'
-              value={color.name}
+              value={color.value}
               id={color.name}
               onChange={handleChange}
             />

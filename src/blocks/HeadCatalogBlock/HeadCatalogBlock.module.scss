@@ -29,4 +29,13 @@
   padding: 2.1rem 3.6rem;
   text-transform: uppercase;
   cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+
+  &:hover {
+    background-color: $accent-a-3;
+  }
+
+  &:active {
+    background-color: $accent-a-5;
+  }
 }

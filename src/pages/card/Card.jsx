@@ -33,6 +33,15 @@ const colors = [
 
 const Card = ({searchingId = '1'}) => {
   const [openModal, setOpenModal] = useState(false);
+
+  // const [selectedOptions, setSelectedOptions] = useState({
+  //   name: '',
+  //   price: '',
+  //   size: '',
+  //   color: '',
+  //   quantity: '',
+  // });
+
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
@@ -40,6 +49,14 @@ const Card = ({searchingId = '1'}) => {
     const mainImage = document.getElementById('mainImage');
     mainImage.src = imgUrl;
   };
+
+  // const handleChange = (e) => {
+  //   const {name, value, type, checked} = e.target;
+  //   setSelectedOptions((prevOptions) => ({
+  //     ...prevOptions,
+  //     [name]: type === 'checkbox' ? checked : value,
+  //   }));
+  // };
 
   const closeModal = () => {
     setOpenModal(false);

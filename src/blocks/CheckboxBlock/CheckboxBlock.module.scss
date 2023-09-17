@@ -13,7 +13,6 @@
   }
 
   &:checked + .checkboxLabel::before {
-    // background-color: $black-color;
     content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 6 6' fill='none'><path d='M0.599609 2.64001L2.39961 4.80001L5.39961 1.20001' stroke='%231A6449'/></svg>");
   }
 }
@@ -30,7 +29,6 @@
 
   &::before {
     content: '';
-    // align-self: flex-start;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +38,6 @@
     border: 0.1rem solid $black-color;
     margin: 0rem 0.8rem 0rem 0rem;
     cursor: pointer;
-    transition: all 0.5s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 }

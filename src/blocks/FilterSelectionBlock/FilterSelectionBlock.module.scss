@@ -56,4 +56,13 @@
   font-weight: 600;
   line-height: 120%;
   text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background-color: $transparent-30;
+  }
+
+  &:active {
+    background-color: $accent-a-05;
+  }
 }
