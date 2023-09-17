@@ -16,9 +16,7 @@ const AlsoBoughtBlock = () => {
 
   return (
     <div className={styles.alsoBought}>
-      <h2 className={styles.alsoBoughtTitle}>
-        WITH THIS PRODUCT IS ALSO BOUGHT
-      </h2>
+      <h2 className={styles.alsoBoughtTitle}>You might also like</h2>
       {!isItemsLoading && (
         <ul className={styles.alsoBoughtList}>
           {alsoBought.map((item) => (
