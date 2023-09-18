@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './LoginForm.module.scss';
 import * as Yup from 'yup';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
-import {login, loginWithGoogle} from '../../store/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {getAuthErrors, login, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 
 const LoginForm = () => {
+  const [loginError, setLoginError] = useState(null);
+  const authError = useSelector(getAuthErrors());
+  useEffect(()=> {
+    setLoginError(authError);
+  }, [authError]);
   const fetchUserData = async (accessToken) => {
     const endpoint = 'https://www.googleapis.com/oauth2/v2/userinfo';
-
     try {
       const response = await fetch(endpoint, {
         headers: {
@@ -55,15 +59,6 @@ const LoginForm = () => {
     },
   });
   const isValid = Object.keys(formik.errors).length === 0;
-  //  const handleCallbackResponse = (response) => {
-  //    const userInfo = jwtDecode(response.credential);
-  //    const googleUser = {
-  //      email: userInfo.email,
-  //      name: userInfo.name,
-  //      sub: userInfo.sub,
-  //    };
-  //    dispatch(login({payload: googleUser}));
-  //  };
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -71,6 +66,9 @@ const LoginForm = () => {
         <span>
             Welcome back! Please enter your details
         </span>
+      </div>
+      <div>
+        {loginError && <div className={styles.registerError}>{loginError}</div>}
       </div>
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
@@ -114,7 +112,8 @@ const LoginForm = () => {
           ) : null}
           </div>
           <button
-            onClick={() => googleLogin()}
+            disabled={!isValid}
+            type='submit'
             className={styles.button}
           >
             <span>

@@ -189,6 +189,10 @@
   background: var(--accent-a-5, #1A6449);
 }
 
+.button:disabled {
+  background: var(--gray-300, #D0D5DD);
+}
+
 .googleButton {
   height: 4rem;
 }
