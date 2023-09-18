@@ -58,7 +58,11 @@ const LoginForm = () => {
       dispatch(login({payload: values, redirect}));
     },
   });
+  useEffect(()=>{
+    setLoginError(null);
+  }, [formik.values]);
   const isValid = Object.keys(formik.errors).length === 0;
+  console.log(formik);
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
