@@ -1,11 +1,11 @@
-@import '../../../styles/variables.module';
+@import '../../../../styles/variables.module';
 
 .guideContainer {
   width: 100%;
   padding: 40px 80px 80px;
   position: relative;
 
-  .closeIcon{
+  .closeIcon {
     position: absolute;
     top: 2.4rem;
     right: 2.4rem;

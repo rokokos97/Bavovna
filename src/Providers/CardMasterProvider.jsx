@@ -12,10 +12,10 @@ export const CardMasterProvider = ({children}) => {
   // eslint-disable-next-line no-unused-vars
   const collectData = () => {
     const jsonData = {
-      price: {price},
-      color: {color},
-      size: {size},
-      quantity: {quantity},
+      price: price,
+      color: selectedColor,
+      size: selectedSize,
+      quantity: quantity,
     };
     console.log(jsonData);
   };
@@ -31,6 +31,7 @@ export const CardMasterProvider = ({children}) => {
         setSelectedSize,
         quantity,
         setQuantity,
+        collectData,
       }}
     >
       {children}

@@ -6,11 +6,12 @@ import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import {Dropdown} from '../../components/dropdown/Dropdown';
-import {SizeGuide} from '../../components/modal/modalContent';
+import CheckoutModal from '../../components/modal/CheckoutModal/CheckoutModal';
+import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
+import {useData} from '../../Providers/CardMasterProvider';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import styles from './Card.module.scss';
 import ColorsList from '../../components/colorsList/ColorsList';
-// import '../../services/dropdown.service';
 
 const colors = [
   {
@@ -33,7 +34,7 @@ const colors = [
 
 const CardContext = ({searchingId = '1'}) => {
   const [openModal, setOpenModal] = useState(false);
-
+  const {collectData} = useData();
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
@@ -41,14 +42,6 @@ const CardContext = ({searchingId = '1'}) => {
     const mainImage = document.getElementById('mainImage');
     mainImage.src = imgUrl;
   };
-
-  // const handleChange = (e) => {
-  //   const {name, value, type, checked} = e.target;
-  //   setSelectedOptions((prevOptions) => ({
-  //     ...prevOptions,
-  //     [name]: type === 'checkbox' ? checked : value,
-  //   }));
-  // };
 
   const closeModal = () => {
     setOpenModal(false);
@@ -72,7 +65,10 @@ const CardContext = ({searchingId = '1'}) => {
                       changeImage(`http://localhost:8000/api/${image}`)
                     }
                   >
-                    <img src={`http://localhost:8000/api/${image}`} alt='img' />
+                    <img
+                      src={`http://localhost:8000/api/${image}`}
+                      alt='model'
+                    />
                   </li>
                 ))}
               </ul>
@@ -81,7 +77,7 @@ const CardContext = ({searchingId = '1'}) => {
               <img
                 id='mainImage'
                 src={`http://localhost:8000/api/${images[0]}`}
-                alt='img'
+                alt='model'
               />
             </div>
             <div className={styles.about}>
@@ -105,7 +101,9 @@ const CardContext = ({searchingId = '1'}) => {
                     </button>
                   </div>
                   <div className={styles.formBag}>
-                    <button type='button'>ADD TO BAG</button>
+                    <button type='button' onClick={collectData}>
+                      ADD TO BAG
+                    </button>
                   </div>
                 </form>
                 <div className={styles.descriptions}>
@@ -138,6 +136,9 @@ const CardContext = ({searchingId = '1'}) => {
             </div>
           </div>
           <AlsoBoughtBlock />
+          <Modal isOpen={openModal} handleCloseModal={closeModal}>
+            <CheckoutModal handleCloseModal={closeModal} />
+          </Modal>
           <Modal isOpen={openModal} handleCloseModal={closeModal}>
             <SizeGuide handleCloseModal={closeModal} />
           </Modal>
