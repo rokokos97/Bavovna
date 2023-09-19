@@ -53,6 +53,7 @@ const LoginForm = () => {
     }),
     onSubmit: (values) => {
       if (!isValid) return;
+      setLoginError(authError);
       console.log(JSON.stringify(values, null, 2));
       const redirect = '/';
       dispatch(login({payload: values, redirect}));
