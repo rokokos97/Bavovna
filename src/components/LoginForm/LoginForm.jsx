@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import styles from './LoginForm.module.scss';
-import * as Yup from 'yup';
 import {useFormik} from 'formik';
-import {NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAuthErrors, login, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
+import {validationSchemaLoginForm} from '../../utils/validationSchema';
 
 const LoginForm = () => {
   const [loginError, setLoginError] = useState(null);
@@ -44,13 +44,7 @@ const LoginForm = () => {
       email: '',
       password: '',
     },
-    validationSchema: Yup.object().shape({
-      password: Yup.string()
-          .required('Password is required'),
-      email: Yup.string()
-          .matches( /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Email format is not valid')
-          .required('Email is required'),
-    }),
+    validationSchema: validationSchemaLoginForm,
     onSubmit: (values) => {
       if (!isValid) return;
       setLoginError(authError);
@@ -63,7 +57,6 @@ const LoginForm = () => {
     setLoginError(null);
   }, [formik.values]);
   const isValid = Object.keys(formik.errors).length === 0;
-  console.log(formik);
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -73,15 +66,14 @@ const LoginForm = () => {
         </span>
       </div>
       <div>
-        {loginError && <div className={styles.registerError}>{loginError}</div>}
+        {loginError && <div className={styles.loginError}>{loginError}</div>}
       </div>
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
-          <div className={styles.input}>
+          <div className={styles.inputs}>
             <label htmlFor="email">
-              <span>
-                  Email *
-              </span>
+              Email
+              <span>*</span>
             </label>
             <input
               id="email"
@@ -92,14 +84,15 @@ const LoginForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.touched.email && formik.errors.email ? (
+            {formik.errors.email ? (
             <div className={styles.error}>{formik.errors.email}</div>
           ) : null}
           </div>
-          <div className={styles.input}>
+          <div className={styles.inputs}>
             <label htmlFor="password">
+              Password
               <span>
-                  Password *
+                *
               </span>
             </label>
             <input
@@ -116,6 +109,36 @@ const LoginForm = () => {
             <div className={styles.error}>{formik.errors.password}</div>
           ) : null}
           </div>
+          <div className={styles.checkbox}>
+            <input
+              type='checkbox'
+              id="rememberMe"
+              name="rememberMe"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.rememberMe}
+            />
+            <label htmlFor="rememberMe">Remember me</label>
+          </div>
+          <div className={styles.checkboxBlock}>
+            <div className={styles.checkbox}>
+              <input
+                type='checkbox'
+                id="license"
+                name="license"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.license}/>
+              <label
+                htmlFor="license"
+              >
+                I agree to the terms and conditions of use.
+              </label>
+            </div>
+            {formik.errors.license ? (
+              <div className={styles.error}>{formik.errors.license}</div>
+            ) : null}
+          </div>
           <button
             disabled={!isValid}
             type='submit'
@@ -125,6 +148,12 @@ const LoginForm = () => {
                 Sign In
             </span>
           </button>
+          <Link
+            to='/forgotPassword'
+            className={styles.forgotPassword}
+          >
+            <span>Forgot password?</span>
+          </Link>
         </form>
         <div className={styles.socialButtonsBlock}>
           <div className={styles.divider}>
