@@ -2,24 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
   margin: 4rem auto 17rem;
   width: 40rem;
+  gap: 2.4rem;
 }
 .loginForm p {
-  color: #000;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.6rem; /* 114.286% */
+  color: #040404;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
 }
 .loginForm p span {
-  color: #000;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.6rem; /* 114.286% */
-  letter-spacing: -0.0003rem;
+  color: #040404;
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
 }
 
 .titleBlock {
@@ -27,52 +24,31 @@
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
-  color: #000000;
-  font-size: 3.2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem; /* 62.5% */
+  font-family: "Fixel Display Medium";
+  font-size: 32px;
+  line-height: 120%;
+  color: #040404;
 }
 .titleBlock span {
-  color: var(--gray-gray-10, #4A4A4A);
-  font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2rem; /* 111.111% */
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+  color: #4A4A4A;
 }
 
-.registerError {
-  width: 100%;
+.loginError {
+  width: 40rem;
   display: flex;
   padding: 1.2rem;
   align-items: center;
-  gap: 1rem;
+  align-self: stretch;
   background: var(--error, #DFC5C5);
 }
-.registerError span {
-  font-family: Fixel, sans-serif;
-  color: #BB3B34;
-  text-align: center;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 110%; /* 142.857% */
-}
-
-.conformationBlock {
-  display: flex;
-  padding: 0.8rem;
-  align-items: center;
-  gap: 1rem;
-  background: var(--success, #2AB66A);
-}
-.conformationBlock span {
-  color: var(--gray-gray-90, #F5F5F5);
-  text-align: center;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2rem; /* 142.857% */
+.loginError span {
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+  color: #EA001B;
 }
 
 .inputsBlock {
@@ -90,40 +66,103 @@
   gap: 1.6rem;
 }
 
-.input {
+.inputs {
   display: flex;
   width: 40rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
 }
-.input label {
+.inputs label {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   align-self: stretch;
+  color: #030A07;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
 }
-.input label span {
-  color: var(--gray-gray-10, #4A4A4A);
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.inputs label span {
+  color: #EA001B;
 }
-.input input {
+.inputs input {
   display: flex;
   padding: 1.6rem;
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
   align-self: stretch;
-  border: 1px solid var(--gray-gray-30, #727272);
-  background: #FFF;
-  color: var(--gray-gray-40, #868686);
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  border: 1px solid #727272;
+  background: #FAFAFA;
+  color: #868686;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+
+.passwordBlock {
+  display: flex;
+  height: 4.8rem;
+  padding: 1.6rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+  border: 1px solid #727272;
+  background: #FAFAFA;
+}
+.passwordBlock input {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 0;
+  align-self: stretch;
+  border: none;
+}
+
+.checkboxBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.checkbox input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgba(74, 74, 74, 0.7);
+  background: #FAFAFA;
+  cursor: pointer;
+}
+.checkbox input[type=checkbox]:checked {
+  background: #FAFAFA;
+  border: 1px solid rgba(74, 74, 74, 0.7);
+}
+.checkbox input[type=checkbox]:checked:after {
+  content: "";
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDNMNC41IDguNUwyIDYiIHN0cm9rZT0iIzFBNjQ0OSIgc3Ryb2tlLXdpZHRoPSIxLjY2NjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.checkbox label {
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+  color: #030A07;
 }
 
 .error {
@@ -132,6 +171,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.forgotPassword {
+  font-family: "Fixel Display Semibold";
+  font-size: 12px;
+  line-height: 110%;
+  color: #4A4A4A;
 }
 
 .socialButtonsBlock {
@@ -155,11 +201,10 @@
   background: #EEE;
 }
 .divider span {
-  color: #000;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.4rem; /* 150% */
+  color: #040404;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
 }
 
 .button {
@@ -172,25 +217,27 @@
   gap: 0.2rem;
 }
 .button span {
-  color: #FFF;
-  text-align: center;
-  font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem; /* 111.111% */
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  color: #FAFAFA;
   text-transform: uppercase;
 }
 
 .button:hover {
-  background: var(--accent-a-3, #5A9B83);
+  background: #5A9B83;
 }
 
 .button:active {
-  background: var(--accent-a-5, #1A6449);
+  background: #1A6449;
 }
 
 .button:disabled {
-  background: var(--gray-300, #D0D5DD);
+  background: #F5F5F5;
+  cursor: not-allowed;
+}
+.button:disabled span {
+  color: #9B9B9B;
 }
 
 .googleButton {

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './LoginForm.module.scss';
+// Імпорт бібліотек і компонентів необхідних для форми
 import {useFormik} from 'formik';
 import {Link, NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
@@ -8,39 +9,17 @@ import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
 import ShowPasswordIcon from '../svg/showPasswordIcon/showPasswordIcon';
+import googleService from '../../services/google.service';
 
 const LoginForm = () => {
+  // Використання Redux hooks для диспетчеризації дій і отримання даних зі store
+  const dispatch = useDispatch();
+  const authError = useSelector(getAuthErrors());
+  // Використання стану для відображення пароля та помилок сервера при вході в систему
   const [showPassword, setShowPassword] = useState('password');
   const [loginError, setLoginError] = useState(null);
-  const authError = useSelector(getAuthErrors());
-  useEffect(()=> {
-    setLoginError(authError);
-  }, [authError]);
-  const fetchUserData = async (accessToken) => {
-    const endpoint = 'https://www.googleapis.com/oauth2/v2/userinfo';
-    try {
-      const response = await fetch(endpoint, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
 
-      const data = await response.json();
-      console.log(data); // тут ви побачите дані користувача
-      return data;
-    } catch (error) {
-      console.error('Error fetching user data', error);
-    }
-  };
-  const googleLogin = useGoogleLogin(
-      {
-        onSuccess: (tokenResponse) => {
-          const accessToken = tokenResponse.access_token;
-          fetchUserData(accessToken).then((userInfo) => dispatch(loginWithGoogle(userInfo)));
-        },
-      },
-  );
-  const dispatch = useDispatch();
+  // Ініціалізація форми за допомогою Formik
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -48,20 +27,41 @@ const LoginForm = () => {
     },
     validationSchema: validationSchemaLoginForm,
     onSubmit: (values) => {
-      if (!isValid) return;
+      if (!isFormValid) return;
       setLoginError(authError);
       console.log(JSON.stringify(values, null, 2));
       const redirect = '/';
       dispatch(login({payload: values, redirect}));
     },
   });
-  useEffect(()=>{
+
+  // Інтеграція Google OAuth
+  const googleLogin = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      const accessToken = tokenResponse.access_token;
+      googleService.get(accessToken).then((userInfo) => dispatch(loginWithGoogle(userInfo)));
+    },
+  });
+
+  // Перевірка на наявність помилок у формі
+  const isFormValid = Object.keys(formik.errors).length === 0;
+
+  // Функція для демонстрації пароля
+  const handleShowPassword = () => {
+    showPassword === 'password' ? setShowPassword('text') : setShowPassword('password');
+  };
+
+  // Встановлення помилок аутентифікації
+  useEffect(() => {
+    setLoginError(authError);
+  }, [authError]);
+
+  // Очищення помилок входу в систему при зміні значень форми
+  useEffect(() => {
     setLoginError(null);
   }, [formik.values]);
-  const handleShowPassword = () => {
-    showPassword === 'password' ? setShowPassword('text'): setShowPassword('password');
-  };
-  const isValid = Object.keys(formik.errors).length === 0;
+
+  // Рендер компоненту форми входу
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -159,7 +159,7 @@ const LoginForm = () => {
             ) : null}
           </div>
           <button
-            disabled={!isValid}
+            disabled={!isFormValid}
             type='submit'
             className={styles.button}
           >
@@ -207,5 +207,4 @@ const LoginForm = () => {
     </div>
   );
 };
-
 export default LoginForm;
