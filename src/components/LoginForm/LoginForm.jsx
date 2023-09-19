@@ -7,8 +7,10 @@ import {getAuthErrors, login, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
+import ShowPasswordIcon from '../svg/showPasswordIcon/showPasswordIcon';
 
 const LoginForm = () => {
+  const [showPassword, setShowPassword] = useState('password');
   const [loginError, setLoginError] = useState(null);
   const authError = useSelector(getAuthErrors());
   useEffect(()=> {
@@ -56,6 +58,9 @@ const LoginForm = () => {
   useEffect(()=>{
     setLoginError(null);
   }, [formik.values]);
+  const handleShowPassword = () => {
+    showPassword === 'password' ? setShowPassword('text'): setShowPassword('password');
+  };
   const isValid = Object.keys(formik.errors).length === 0;
   return (
     <div className={styles.loginForm}>
@@ -66,7 +71,13 @@ const LoginForm = () => {
         </span>
       </div>
       <div>
-        {loginError && <div className={styles.loginError}>{loginError}</div>}
+        {loginError &&
+          <div className={styles.loginError}>
+            <span>
+              {loginError}
+            </span>
+          </div>
+        }
       </div>
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
@@ -95,16 +106,24 @@ const LoginForm = () => {
                 *
               </span>
             </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="**********"
-              autoComplete='off'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
+            <div className={styles.passwordBlock}>
+              <input
+                id="password"
+                name="password"
+                type={showPassword}
+                placeholder="**********"
+                autoComplete='off'
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
+              />
+              <div
+                role='button'
+                onClick={handleShowPassword}
+              >
+                <ShowPasswordIcon/>
+              </div>
+            </div>
             {formik.errors.password ? (
             <div className={styles.error}>{formik.errors.password}</div>
           ) : null}
