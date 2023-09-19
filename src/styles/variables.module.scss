@@ -22,7 +22,6 @@ $headline-2:(
         family: 'Fixel Display Medium',
         size: 32px,
         line-height: 120%,
-        letter-spacing: 0%,
 );
 $headline-3:(
         family: 'Fixel Display Bold',
@@ -34,97 +33,81 @@ $headline-4:(
         family: 'Fixel Display Regular',
         size: 24px,
         line-height: 120%,
-        letter-spacing: 0%,
 );
 $headline-5:(
         family: 'Fixel Text Medium',
         size: 20px,
         line-height: 120%,
-        letter-spacing: 0%,
 );
 $headline-6:(
         family: 'Fixel Text Regular',
         size: 20px,
         line-height: 120%,
-        letter-spacing: 0%,
 );
 $headline-7:(
         family: 'Fixel Text Semibold',
         size: 20px,
         line-height: 120%,
-        letter-spacing: 0%
 );
 $headline-8:(
         family: 'Fixel Text Medium',
         size: 18px,
         line-height: 110%,
-        letter-spacing: 0%,
 );
 $headline-9:(
         family: 'Fixel Display Regular',
         size: 16px,
         line-height: 110%,
-        letter-spacing: 0%,
 );
 $headline-10:(
         family: 'Fixel Display Regular',
         size: 14px,
         line-height: 110%,
-        letter-spacing: 0%,
 );
 $body-1:(
         family: 'Fixel Text Medium',
         size: 20px,
         line-height: 120%,
-        letter-spacing: 0%
 );
 $body-2:(
         family: 'Fixel Text Regular',
         size: 18px,
         line-height: 140%,
-        letter-spacing: 0%
 );
 $body-3:(
         family: 'Fixel Text Regular',
         size: 16px,
         line-height: 110%,
-        letter-spacing: 0%
 );
 $menu-1:(
         family: 'Fixel Display Semibold',
         size: 16px,
         line-height: 110%,
-        letter-spacing: 0%,
 );
 $menu-2:(
         family: 'Fixel Display Regular',
         size: 12px,
         line-height: 110%,
-        letter-spacing: 0%,
 );
 $menu-3:(
         family: 'Fixel Display Regular',
         size: 12px,
         line-height: 110%,
-        letter-spacing: 0%
 );
 $menu-4:(
         family: 'Fixel Display Medium',
         size: 12px,
         line-height: 110%,
-        letter-spacing: 0%,
 );
 $link-1:(
         family: 'Fixel Display Semibold',
         size: 12px,
         line-height: 110%,
-        letter-spacing: 0%
 );
 $link-2:(
         family: 'Fixel Display Regular',
         size: 12px,
         line-height: 110%,
-        letter-spacing: 0%
 );
 
 @mixin apply-font-properties($font-map) {
