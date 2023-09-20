@@ -235,11 +235,7 @@
 
     span {
       color: var(--gray-700, #344054);
-      font-family: Fixel-Text, sans-serif;
-      font-size: 1.6rem;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 2.4rem; /* 150% */
+      @include apply-font-properties($button);
     }
   }
 
