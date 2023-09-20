@@ -58,7 +58,9 @@ const LoginForm = () => {
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
-      Sign In
+        <p>
+          Sign In
+        </p>
         <span>
             Welcome back! Please enter your details
         </span>
@@ -119,7 +121,7 @@ const LoginForm = () => {
             </span>
           </button>
           <Link
-            to='/forgotPassword'
+            to='forgotPassword'
             className={styles.forgotPassword}
           >
             <span>Forgot password?</span>

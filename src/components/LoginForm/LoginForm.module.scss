@@ -22,8 +22,11 @@
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
-  @include apply-font-properties($headline-2);
-  color: $black-color;
+
+  p {
+    @include apply-font-properties($headline-2);
+    color: $black-color;
+  }
 
   span {
     @include apply-font-properties($body-2);
