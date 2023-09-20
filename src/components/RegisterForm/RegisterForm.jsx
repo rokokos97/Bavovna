@@ -1,18 +1,15 @@
 import React, {useEffect} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
-import {validationSchema} from '../../utils/validationSchema';
+import {validationSchemaRegisterForm} from '../../utils/validationSchema';
 import {NavLink} from 'react-router-dom';
 import 'react-phone-number-input/style.css';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, getUser, signUp} from '../../store/userSlice';
+import {getAuthErrors, signUp} from '../../store/userSlice';
 import config from '../../config.json';
-import jwtDecode from 'jwt-decode';
-
 
 const RegisterForm = () => {
   const registerError = useSelector(getAuthErrors());
-  const user = useSelector(getUser());
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -21,7 +18,7 @@ const RegisterForm = () => {
       password: '',
       confirmPassword: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
       if (!isValid) return;
       console.log(JSON.stringify(values, null, 2));
@@ -65,11 +62,6 @@ const RegisterForm = () => {
             {registerError}
           </span>
         </div> }
-      {user && <div className={styles.conformationBlock}>
-        <span>
-          We have sent an email to {user.email}. Please click on the link to confirm your email address.
-        </span>
-      </div>}
       <div className={styles.inputsBlock}>
         <form
           className={styles.form}
