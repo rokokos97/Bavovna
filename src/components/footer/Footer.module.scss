@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: $black-color;
+  background-color: $black;
 }
 
 .footer {
@@ -12,7 +12,7 @@
   flex-direction: column;
   max-width: $max-width;
   width: 100%;
-  color: $white-color;
+  color: $white;
   padding: 7rem 8rem 4rem;
   margin: auto;
 }

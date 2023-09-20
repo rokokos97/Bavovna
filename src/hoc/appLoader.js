@@ -8,9 +8,9 @@ import {useEffect} from 'react';
 const AppLoader = ({children}) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(getIsLoggedIn());
-  dispatch(uploadItemList());
-  dispatch(uploadCategoriesList());
   useEffect(()=>{
+    dispatch(uploadItemList());
+    dispatch(uploadCategoriesList());
     if (isLoggedIn) {
       dispatch(loadUser());
     }

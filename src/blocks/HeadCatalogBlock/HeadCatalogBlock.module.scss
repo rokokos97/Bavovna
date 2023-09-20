@@ -1,7 +1,7 @@
 @import '../../styles/variables.module.scss';
 
 .hero {
-  background-color: $bg-color;
+  background-color: $gray-70;
   background-image: url('../../../public/img/images/Catalog/catalogHero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,8 +20,8 @@
 }
 
 .heroBtn {
-  background-color: $black-color;
-  color: $white-color;
+  background-color: $black;
+  color: $white;
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;

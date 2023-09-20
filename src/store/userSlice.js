@@ -91,37 +91,35 @@ export const signUp = (payload) =>
       }
     }
   };
-export const login = ({payload}) => async (dispatch) => {
-  const {sub} = payload;
-  if (sub) {
-    const {email} = payload;
-    dispatch(authRequested());
-    try {
-      const data = await authService.loginWithGoogle({email});
-      localStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    } catch (error) {
-      const {code, message} = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generateAuthError(message);
-        dispatch(authRequestFailed(errorMessage));
-      } else if (code === 500) {
-        dispatch(authRequestFailed('Server error. Please repeat latter...'));
-      }
+export const loginWithGoogle = (payload) =>async (dispatch) =>{
+  const {email} = payload;
+  dispatch(authRequested());
+  try {
+    const data = await authService.loginWithGoogle({email});
+    localStorageService.setTokens(data);
+    dispatch(authRequestSuccess(data.user));
+  } catch (error) {
+    const {code, message} = error.response.data.error;
+    if (code === 400) {
+      const errorMessage = generateAuthError(message);
+      dispatch(authRequestFailed(errorMessage));
+    } else if (code === 500) {
+      dispatch(authRequestFailed('Server error. Please repeat latter...'));
     }
-  } else {
-    const {email, password} = payload;
-    dispatch(authRequested());
-    try {
-      const data = await authService.login({email, password});
-      localStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    } catch (error) {
-      const {code, message} = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generateAuthError(message);
-        dispatch(authRequestFailed(errorMessage));
-      }
+  }
+};
+export const login = ({payload}) => async (dispatch) => {
+  const {email, password} = payload;
+  dispatch(authRequested());
+  try {
+    const data = await authService.login({email, password});
+    localStorageService.setTokens(data);
+    dispatch(authRequestSuccess(data.user));
+  } catch (error) {
+    const {code, message} = error.response.data.error;
+    if (code === 400) {
+      const errorMessage = generateAuthError(message);
+      dispatch(authRequestFailed(errorMessage));
     }
   }
 };

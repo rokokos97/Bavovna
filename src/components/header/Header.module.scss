@@ -1,9 +1,7 @@
 @import '../../styles/variables.module.scss';
 
-
-
 .container {
-  background: #FFFFFF;
+  background: $white;
   display: flex;
   position: fixed;
   margin: 0 auto;
@@ -21,12 +19,12 @@
   padding-bottom: 1rem;
   justify-content: center;
   align-items: flex-start;
-  background: #000;
+  background: $black;
 
   span {
-    color: #FFF;
+    color: $white;
     text-align: center;
-    font-family: Fixel Display,sans-serif;
+    // font-family: Fixel Display, sans-serif;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 700;
@@ -43,14 +41,14 @@
   justify-content: space-between;
   align-items: center;
   max-width: $max-width;
-  color: $header-text-color;
+  color: $black;
 }
 
 .headerNavBar {
   display: flex;
   gap: 1.6rem;
   text-transform: uppercase;
-  span  {
+  span {
     font-size: 1.2rem;
   }
 }
@@ -60,13 +58,13 @@
   align-items: center;
   gap: 1.6rem;
   span {
-    color: var(--Black, #040404);
+    color: $black;
     font-family: Fixel-Text, sans-serif;
     text-align: center;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%; /* 1.4rem */
+    line-height: 140%;
     letter-spacing: 0.01rem;
   }
 }
@@ -82,7 +80,7 @@
 }
 
 .headerMenuBar a:hover span {
-  color: $accent_4;
+  color: $accent-a-4;
 }
 
 .headerSearch {
