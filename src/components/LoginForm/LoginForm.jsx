@@ -10,6 +10,7 @@ import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
 import googleService from '../../services/google.service';
 import TextField from '../formFields/textField/textField';
+import CheckboxField from '../formFields/checkboxField/checkboxField';
 
 const LoginForm = () => {
   // Використання Redux hooks для диспетчеризації дій і отримання даних зі store
@@ -92,36 +93,22 @@ const LoginForm = () => {
             onBlur={formik.handleBlur}
             error={formik.errors.password}
           />
-          <div className={styles.checkbox}>
-            <input
-              type='checkbox'
-              id="rememberMe"
-              name="rememberMe"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              // value={formik.values.rememberMe}
-            />
-            <label htmlFor="rememberMe">Remember me</label>
-          </div>
-          <div className={styles.checkboxBlock}>
-            <div className={styles.checkbox}>
-              <input
-                type='checkbox'
-                id="license"
-                name="license"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.license}/>
-              <label
-                htmlFor="license"
-              >
-                I agree to the terms and conditions of use.
-              </label>
-            </div>
-            {formik.errors?.license ? (
-              <div className={styles.error}>{formik.errors.license}</div>
-            ) : null}
-          </div>
+          <CheckboxField
+            name='rememberMe'
+            value={formik.values.rememberMe}
+            onChange={formik.handleChange}
+            error={formik.errors.rememberMe}
+          >
+            Remember me
+          </CheckboxField>
+          <CheckboxField
+            name='license'
+            value={formik.values.license}
+            onChange={formik.handleChange}
+            error={formik.errors.license}
+          >
+            I agree to the terms and conditions of use.
+          </CheckboxField>
           <button
             disabled={!isFormValid}
             type='submit'
