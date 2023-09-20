@@ -17,52 +17,62 @@ $headline-1:(
         size: 56px,
         line-height: 150%,
         letter-spacing: 4%,
+        text-transform: uppercase,
 );
 $headline-2:(
         family: 'Fixel Display Medium',
         size: 32px,
         line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-3:(
         family: 'Fixel Display Bold',
         size: 24px,
         line-height: 120%,
         letter-spacing: 4%,
+        text-transform: uppercase,
 );
 $headline-4:(
         family: 'Fixel Display Regular',
         size: 24px,
         line-height: 120%,
+        text-transform: uppercase
 );
 $headline-5:(
         family: 'Fixel Text Medium',
         size: 20px,
         line-height: 120%,
+        text-transform: uppercase
 );
 $headline-6:(
         family: 'Fixel Text Regular',
         size: 20px,
         line-height: 120%,
+        text-transform: uppercase
 );
 $headline-7:(
         family: 'Fixel Text Semibold',
         size: 20px,
         line-height: 120%,
+        text-transform: uppercase
 );
 $headline-8:(
         family: 'Fixel Text Medium',
         size: 18px,
         line-height: 110%,
+        text-transform: uppercase
 );
 $headline-9:(
         family: 'Fixel Display Regular',
         size: 16px,
         line-height: 110%,
+        text-transform: uppercase
 );
 $headline-10:(
         family: 'Fixel Display Regular',
         size: 14px,
         line-height: 110%,
+        text-transform: uppercase
 );
 $body-1:(
         family: 'Fixel Text Medium',
@@ -83,11 +93,13 @@ $menu-1:(
         family: 'Fixel Display Semibold',
         size: 16px,
         line-height: 110%,
+        text-transform: uppercase,
 );
 $menu-2:(
         family: 'Fixel Display Regular',
         size: 12px,
         line-height: 110%,
+        text-transform: uppercase,
 );
 $menu-3:(
         family: 'Fixel Display Regular',
@@ -98,6 +110,7 @@ $menu-4:(
         family: 'Fixel Display Medium',
         size: 12px,
         line-height: 110%,
+        text-transform: uppercase,
 );
 $link-1:(
         family: 'Fixel Display Semibold',
@@ -114,12 +127,54 @@ $link-3:(
         size: 12px,
         line-height: 110%,
 );
+$button:(
+        family: 'Fixel Display Semibold',
+        size: 20px,
+        line-height: 140%,
+        text-transform: uppercase,
+);
+$running-line:(
+        family: 'Fixel Display Light',
+        size: 20px,
+        line-height: 120%,
+        text-transform: uppercase,
+);
+$tab-bars:(
+        family: 'Fixel Display Semibold',
+        size: 16px,
+        line-height: 140%,
+        text-transform: uppercase,
+);
+$breadcrumb:(
+        family: 'Fixel Display Regular',
+        size: 16px,
+        line-height: 140%,
+);
+$discount-price:(
+        family: 'Fixel Display Medium',
+        size: 16px,
+        line-height: 140%,
+        text-transform: uppercase,
+);
+$label:(
+        family: 'Fixel Display Regular',
+        size: 16px,
+        line-height: 140%,
+);
+$input-text:(
+        family: 'Fixel Display Regular',
+        size: 16px,
+        line-height: 140%,
+);
+
+
 
 @mixin apply-font-properties($font-map) {
   font-family: map-get($font-map, family);
   font-size: map-get($font-map, size);
   line-height: map-get($font-map, line-height);
   letter-spacing: map-get($font-map, letter-spacing);
+  text-transform: map-get($font-map, text-transform);
 }
 
 $accent-a-95: #030A07;
