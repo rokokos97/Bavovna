@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from './textField.module.scss';
 import PropTypes from 'prop-types';
 import ShowPasswordIcon from '../../svg/showPasswordIcon/showPasswordIcon';
+import HidePasswordIcon from '../../svg/hidePasswordIcon/hidePasswordIcon';
 
 const TextField = ({label, name, type, value, onChange, onBlur, error, placeholder}) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +32,10 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, placehold
           <button
             type='button'
             onClick={toggleShowPassword}>
-            <ShowPasswordIcon/>
+            {!showPassword ?
+              <ShowPasswordIcon/> :
+              <HidePasswordIcon/>
+            }
           </button>
         )}
       </div>
