@@ -95,7 +95,7 @@ export const signUpWithGoogle = (payload) =>
   async (dispatch) => {
     dispatch(authRequested());
     try {
-      const data = await authService.register(payload);
+      const data = await authService.registerWithGoogle(payload);
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
     } catch (error) {
