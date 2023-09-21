@@ -34,7 +34,7 @@ const NewArrivalsBlock = () => {
                 <path d="M10.3879 20.35L11.8649 19.0161L7.07842 13.9528H22.45V12.0473H7.07842L11.8649 6.98391L10.3879 5.65002L3.55005 13L10.3879 20.35Z" fill="#1A1924"/>
               </svg>
             </button>
-            {/* Кнопка для переходу до наступного слайда */}
+            {/* Кнопка переходу до наступного слайда */}
             <button onClick={() => swiperRef.current?.slideNext()}>
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                 {/* eslint-disable-next-line max-len */}
