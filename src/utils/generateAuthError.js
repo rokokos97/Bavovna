@@ -1,7 +1,7 @@
 export function generateAuthError(message) {
   switch (message) {
     case 'INVALID_PASSWORD':
-      return 'Email or password not correct';
+      return 'The email address or password is incorrect.';
     case 'EMAIL_EXIST':
       return 'User with this Email already exists';
     case 'EMAIL_NOT_FOUND':

@@ -8,15 +8,15 @@ import {getAuthErrors, login, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
-import ShowPasswordIcon from '../svg/showPasswordIcon/showPasswordIcon';
 import googleService from '../../services/google.service';
+import TextField from '../formFields/textField/textField';
+import CheckboxField from '../formFields/checkboxField/checkboxField';
 
 const LoginForm = () => {
   // Використання Redux hooks для диспетчеризації дій і отримання даних зі store
   const dispatch = useDispatch();
   const authError = useSelector(getAuthErrors());
-  // Використання стану для відображення пароля та помилок сервера при вході в систему
-  const [showPassword, setShowPassword] = useState('password');
+  // Використання стану для відображення помилок сервера при вході в систему
   const [loginError, setLoginError] = useState(null);
 
   // Ініціалізація форми за допомогою Formik
@@ -42,15 +42,8 @@ const LoginForm = () => {
       googleService.get(accessToken).then((userInfo) => dispatch(loginWithGoogle(userInfo)));
     },
   });
-
   // Перевірка на наявність помилок у формі
   const isFormValid = Object.keys(formik.errors).length === 0;
-
-  // Функція для демонстрації пароля
-  const handleShowPassword = () => {
-    showPassword === 'password' ? setShowPassword('text') : setShowPassword('password');
-  };
-
   // Встановлення помилок аутентифікації
   useEffect(() => {
     setLoginError(authError);
@@ -65,7 +58,9 @@ const LoginForm = () => {
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
-      Sign In
+        <p>
+          Sign In
+        </p>
         <span>
             Welcome back! Please enter your details
         </span>
@@ -81,83 +76,41 @@ const LoginForm = () => {
       </div>
       <div className={styles.inputsBlock}>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
-          <div className={styles.inputs}>
-            <label htmlFor="email">
-              Email
-              <span>*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="example@ex.com"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            {formik.errors.email ? (
-            <div className={styles.error}>{formik.errors.email}</div>
-          ) : null}
-          </div>
-          <div className={styles.inputs}>
-            <label htmlFor="password">
-              Password
-              <span>
-                *
-              </span>
-            </label>
-            <div className={styles.passwordBlock}>
-              <input
-                id="password"
-                name="password"
-                type={showPassword}
-                placeholder="**********"
-                autoComplete='off'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.password}
-              />
-              <div
-                role='button'
-                onClick={handleShowPassword}
-              >
-                <ShowPasswordIcon/>
-              </div>
-            </div>
-            {formik.errors.password ? (
-            <div className={styles.error}>{formik.errors.password}</div>
-          ) : null}
-          </div>
-          <div className={styles.checkbox}>
-            <input
-              type='checkbox'
-              id="rememberMe"
-              name="rememberMe"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.rememberMe}
-            />
-            <label htmlFor="rememberMe">Remember me</label>
-          </div>
-          <div className={styles.checkboxBlock}>
-            <div className={styles.checkbox}>
-              <input
-                type='checkbox'
-                id="license"
-                name="license"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.license}/>
-              <label
-                htmlFor="license"
-              >
-                I agree to the terms and conditions of use.
-              </label>
-            </div>
-            {formik.errors.license ? (
-              <div className={styles.error}>{formik.errors.license}</div>
-            ) : null}
-          </div>
+          <TextField
+            label='Email'
+            name='email'
+            placeholder={'example@ex.com'}
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.email}
+          />
+          <TextField
+            type='password'
+            label='Password'
+            name='password'
+            placeholder='**********'
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.password}
+          />
+          <CheckboxField
+            name='rememberMe'
+            value={formik.values.rememberMe}
+            onChange={formik.handleChange}
+            error={formik.errors.rememberMe}
+          >
+            Remember me
+          </CheckboxField>
+          <CheckboxField
+            name='license'
+            value={formik.values.license}
+            onChange={formik.handleChange}
+            error={formik.errors.license}
+          >
+            I agree to the terms and conditions of use.
+          </CheckboxField>
           <button
             disabled={!isFormValid}
             type='submit'
@@ -168,7 +121,7 @@ const LoginForm = () => {
             </span>
           </button>
           <Link
-            to='/forgotPassword'
+            to='forgotPassword'
             className={styles.forgotPassword}
           >
             <span>Forgot password?</span>

@@ -44,7 +44,7 @@ router.post('/signUp',
           res.status(500).json({
             error: {
               code: 500,
-              message: 'Server error. Please repeat latter...',
+              message: 'Oops... There was a server error with your connection, please try again later...',
             },
           });
         }
@@ -92,7 +92,7 @@ router.post('/signInWithPassword', [
           {...tokens, userId: existingUser._id, user: existingUser});
     } catch (e) {
       res.status(500).json({
-        message: 'Server error. Please repeat latter...',
+        message: 'Oops... There was a server error with your connection, please try again later...',
       });
     }
   },
@@ -129,7 +129,7 @@ router.post('/signInWithGoogle', [
           {...tokens, userId: existingUser._id, user: existingUser});
     } catch (e) {
       res.status(500).json({
-        message: 'Server error. Please repeat latter...',
+        message: 'Oops... There was a server error with your connection, please try again later...',
       });
     }
   },
@@ -151,7 +151,7 @@ router.post('/token', async (req, res) => {
     res.status(201).send({...tokens, userId: data._id});
   } catch (e) {
     res.status(500).json({
-      message: 'Server error. Please repeat latter...',
+      message: 'Oops... There was a server error with your connection, please try again later...',
     });
   }
 });
