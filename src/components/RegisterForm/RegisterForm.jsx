@@ -1,175 +1,123 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
-import {validationSchemaRegisterForm} from '../../utils/validationSchema';
 import {NavLink} from 'react-router-dom';
-import 'react-phone-number-input/style.css';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, signUp} from '../../store/userSlice';
-import config from '../../config.json';
+import {getAuthErrors, signUp, signUpWithGoogle} from '../../store/userSlice';
+import GoogleIcon from '../svg/googleIcon/googleIcon';
+import {useGoogleLogin} from '@react-oauth/google';
+import {validationSchemaRegisterForm} from '../../utils/validationSchema';
+import googleService from '../../services/google.service';
+import TextField from '../formFields/textField/textField';
 
 const RegisterForm = () => {
-  const registerError = useSelector(getAuthErrors());
   const dispatch = useDispatch();
+  const authError = useSelector(getAuthErrors());
+  const [registerError, setRegisterError] = useState(null);
   const formik = useFormik({
     initialValues: {
       name: '',
+      surname: '',
       email: '',
       password: '',
       confirmPassword: '',
     },
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
-      if (!isValid) return;
+      if (!isFormValid) return;
+      setRegisterError(authError);
       console.log(JSON.stringify(values, null, 2));
       dispatch(signUp(values));
     },
   });
-  const isValid = Object.keys(formik.errors).length === 0;
-  const handleCallbackResponse = (response) => {
-    const userInfo = jwtDecode(response.credential);
-    const googleUser = {
-      email: userInfo.email,
-      name: userInfo.name,
-      sub: userInfo.sub,
-    };
-    dispatch(signUp(googleUser));
-  };
-  useEffect(() => {
-    /* google global */
-    google.accounts.id.initialize({
-      client_id: config.googleClientId,
-      callback: handleCallbackResponse,
-    });
-    window.google.accounts.id.renderButton(document.getElementById('signUpDiv'), {
-      theme: 'online',
-      width: '400px',
-      locale: 'en',
-      border_radius: 0,
-    });
-  }, []);
+  const googleRegister = useGoogleLogin({
+    onSuccess: (tokenResponse) => {
+      const accessToken = tokenResponse.access_token;
+      googleService.get(accessToken).then((userInfo) => dispatch(signUpWithGoogle(userInfo)));
+    },
+  });
+  const isFormValid = Object.keys(formik.errors).length === 0;
+  useEffect(()=>{
+    setRegisterError(authError);
+  }, [authError]);
+  useEffect(()=>{
+    setRegisterError(null);
+  }, [formik.values]);
   return (
     <div className={styles.registerForm}>
       <div className={styles.titleBlock}>
-        Sign up
+        <p>
+          Sign up
+        </p>
         <span>
           Welcome! Please enter your details
         </span>
       </div>
-      {registerError &&
-        <div className={styles.registerError}>
-          <span>
-            {registerError}
-          </span>
-        </div> }
+      <div>
+        {registerError &&
+          <div className={styles.registerError}>
+            <span>
+              {registerError}
+            </span>
+          </div>
+        }
+      </div>
       <div className={styles.inputsBlock}>
         <form
           className={styles.form}
           onSubmit={formik.handleSubmit}
         >
-          <div className={styles.input}>
-            <label htmlFor="name">
-              <span>
-                First name *
-              </span>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="name"
-              placeholder="Enter your first name"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
-            />
-            {formik.errors.name ? (
-              <div className={styles.error}>{formik.errors.name}</div>
-            ) : null}
-          </div>
-          <div className={styles.input}>
-            <label htmlFor="surname">
-              <span>
-                Last name *
-              </span>
-            </label>
-            <input
-              id="surname"
-              name="surname"
-              type="name"
-              placeholder="Enter your last name"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.surname}
-            />
-            {formik.errors.name ? (
-              <div className={styles.error}>{formik.errors.surname}</div>
-            ) : null}
-          </div>
-          <div className={styles.input}>
-            <label htmlFor="email">
-              <span>
-                Email *
-              </span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="example@ex.com"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            {formik.errors.email ? (
-            <div className={styles.error}>{formik.errors.email}</div>
-          ) : null}
-          </div>
-          <div className={styles.input}>
-            <label htmlFor="password">
-              <span>
-                Password *
-              </span>
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="**********"
-              autoComplete='new password'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
-            {formik.errors.password ? (
-            <div className={styles.error}>{formik.errors.password}</div>
-          ) : null}
-          </div>
-          <div className={styles.input}>
-            <label htmlFor="confirmPassword">
-              <span>
-                Confirm password *
-              </span>
-            </label>
-            <input
-              id="confirmPassword"
-              name="confirmPassword"
-              type="password"
-              placeholder="**********"
-              autoComplete='new password'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.confirmPassword}
-            />
-            {formik.errors.confirmPassword ? (
-            <div className={styles.error}>
-              {formik.errors.confirmPassword}
-            </div>
-          ) : null}
-          </div>
+          <TextField
+            label='First name'
+            name='name'
+            placeholder={'Enter your first name'}
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.name}
+          />
+          <TextField
+            label='Last name'
+            name='surname'
+            placeholder={'Enter your last name'}
+            value={formik.values.surname}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.surname}
+          />
+          <TextField
+            label='Email'
+            name='email'
+            placeholder={'example@ex.com'}
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.email}
+          />
+          <TextField
+            type='password'
+            label='Password'
+            name='password'
+            placeholder='**********'
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.password}
+          />
+          <TextField
+            type='password'
+            label='Confirm password'
+            name='confirmPassword'
+            placeholder='**********'
+            value={formik.values.confirmPassword}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.errors.confirmPassword}
+          />
           <button
             type="submit"
+            disabled={!isFormValid}
             className={styles.button}
-            disabled={!isValid}
           >
             <span>
               Sign up
@@ -182,8 +130,18 @@ const RegisterForm = () => {
             <span>or</span>
             <div></div>
           </div>
-          <div
-            id='signUpDiv'>
+          <div>
+            <div
+              id='signUpDiv'>
+            </div>
+            <button className={styles.googleButton}
+              onClick={()=> googleRegister()}
+            >
+              <GoogleIcon />
+              <span>
+                Sign up with Google
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -192,10 +150,9 @@ const RegisterForm = () => {
         <NavLink
           to="login"
           role="button"
-          className="link-dark"
         >
           {' '}
-          Sign in
+          <span>Sign in</span>
         </NavLink>
       </p>
     </div>

@@ -1,27 +1,30 @@
 .hero {
-  width: 100%;
   background-color: #d9d9d9;
+  background-image: url("../../../public/img/images/Catalog/catalogHero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
-  padding: 54px;
+  padding: 5.4rem;
 }
 
 .heroTitle {
-  font-size: 32px;
+  font-size: 3.2rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   text-transform: uppercase;
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
 }
 
 .heroBtn {
-  padding: 21px 36px;
-  background-color: #6d6d6d;
+  background-color: #040404;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+  padding: 2.1rem 3.6rem;
   text-transform: uppercase;
   cursor: pointer;
 }

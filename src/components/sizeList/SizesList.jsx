@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {useData} from '../../Providers/CardMasterProvider';
 
@@ -8,10 +8,12 @@ const allSizes = ['xs', 's', 'm', 'l'];
 const noSize = 'Choose a size';
 
 const SizesList = ({sizes}) => {
-  let {selectedSize, setSelectedSize} = useData();
+  const [selectedSize, setSelectedSize] = useState('');
+  const {setItemSize} = useData();
 
   const handleChange = (event) => {
-    setSelectedSize((selectedSize = event.target.value));
+    setSelectedSize(event.target.value);
+    setItemSize(event.target.value);
   };
 
   return (

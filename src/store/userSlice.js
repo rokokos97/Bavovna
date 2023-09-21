@@ -91,6 +91,23 @@ export const signUp = (payload) =>
       }
     }
   };
+export const signUpWithGoogle = (payload) =>
+  async (dispatch) => {
+    dispatch(authRequested());
+    try {
+      const data = await authService.registerWithGoogle(payload);
+      localStorageService.setTokens(data);
+      dispatch(authRequestSuccess(data.user));
+    } catch (error) {
+      const {code, message} = error.response.data.error;
+      if (code === 400) {
+        const errorMessage = generateAuthError(message);
+        dispatch(authRequestFailed(errorMessage));
+      } else if (code === 500) {
+        dispatch(authRequestFailed('Server error. Please repeat latter...'));
+      }
+    }
+  };
 export const loginWithGoogle = (payload) =>async (dispatch) =>{
   const {email} = payload;
   dispatch(authRequested());

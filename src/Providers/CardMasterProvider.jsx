@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 const DataContext = createContext(undefined);
 
 export const CardMasterProvider = ({children}) => {
-  const [price, setPrice] = useState('');
-  const [selectedColor, setSelectedColor] = useState('');
-  const [selectedSize, setSelectedSize] = useState('');
+  const [itemPrice, setItemPrice] = useState('');
+  const [itemColor, setItemColor] = useState('');
+  const [itemSize, setItemSize] = useState('');
   const [quantity, setQuantity] = useState(1);
 
   // eslint-disable-next-line no-unused-vars
   const collectData = () => {
     const jsonData = {
-      price: price,
-      color: selectedColor,
-      size: selectedSize,
-      quantity: quantity,
+      itemPrice,
+      itemColor,
+      itemSize,
+      quantity,
     };
     console.log(jsonData);
   };
@@ -23,12 +23,12 @@ export const CardMasterProvider = ({children}) => {
   return (
     <DataContext.Provider
       value={{
-        price,
-        setPrice,
-        selectedColor,
-        setSelectedColor,
-        selectedSize,
-        setSelectedSize,
+        itemPrice,
+        setItemPrice,
+        itemColor,
+        setItemColor,
+        itemSize,
+        setItemSize,
         quantity,
         setQuantity,
         collectData,

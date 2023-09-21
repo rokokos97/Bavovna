@@ -47,8 +47,9 @@ const CardContext = ({searchingId = '1'}) => {
     setOpenModal(false);
   };
 
+  const handleCollection = () => collectData();
+
   if (!isItemsLoading) {
-    console.log(items);
     const {name, price, size, images, description, modelParams, composition} =
       items[searchingId];
 
@@ -101,7 +102,7 @@ const CardContext = ({searchingId = '1'}) => {
                     </button>
                   </div>
                   <div className={styles.formBag}>
-                    <button type='button' onClick={collectData}>
+                    <button type='button' onClick={() => handleCollection()}>
                       ADD TO BAG
                     </button>
                   </div>

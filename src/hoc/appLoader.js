@@ -9,8 +9,10 @@ const AppLoader = ({children}) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(getIsLoggedIn());
   useEffect(()=>{
-    dispatch(uploadItemList());
     dispatch(uploadCategoriesList());
+    dispatch(uploadItemList());
+  }, []);
+  useEffect(()=>{
     if (isLoggedIn) {
       dispatch(loadUser());
     }
