@@ -50,6 +50,49 @@ router.post('/signUp',
         }
       }],
 );
+router.post('/signUpWithGoogle',
+    [
+      check('email', 'email is not correct')
+          .isEmail(),
+      async (req, res) => {
+        req.body;
+        try {
+          const errors = validationResult(req);
+          if (!errors.isEmpty()) {
+            return res.status(400).json({
+              error: {
+                message: 'INVALID_DATA',
+                code: 400,
+                errors: errors.array(),
+              },
+            });
+          }
+          const {email} = req.body;
+          const existingUser = await User.findOne({email});
+          if (existingUser) {
+            return res.status(400).json({
+              error: {
+                message: 'EMAIL_EXIST',
+                code: 400,
+              },
+            });
+          }
+          const newUser = await User.create({
+            ...req.body,
+          });
+          const tokens = tokenService.generate({_id: newUser._id});
+          await tokenService.save(newUser._id, tokens.refreshToken);
+          res.status(201).send({...tokens, userId: newUser._id, user: newUser});
+        } catch (e) {
+          res.status(500).json({
+            error: {
+              code: 500,
+              message: 'Oops... There was a server error with your connection, please try again later...',
+            },
+          });
+        }
+      }],
+);
 router.post('/signInWithPassword', [
   check('email', 'email is not correct')
       .normalizeEmail()

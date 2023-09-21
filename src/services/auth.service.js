@@ -13,6 +13,10 @@ const authService = {
     const {data} = await httpAuth.post(`signUp`, payload);
     return data;
   },
+  registerWithGoogle: async (payload) => {
+    const {data} = await httpAuth.post(`signUpWithGoogle`, payload);
+    return data;
+  },
   login: async ({email, password}) => {
     const {data} = await httpAuth.post(`signInWithPassword`, {
       email,
