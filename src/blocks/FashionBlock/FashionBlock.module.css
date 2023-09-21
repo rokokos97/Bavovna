@@ -1,6 +1,6 @@
 .fashionBlock {
   display: flex;
-  gap: 52px;
+  gap: 5.2rem;
 }
 
 .imgs {
@@ -26,36 +26,40 @@
   display: block;
   position: absolute;
   bottom: 0;
-  right: -17px;
+  right: -2rem;
   width: 65.4%;
 }
 
 .description {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 3.2rem;
   flex: 50% 1 1;
   justify-content: center;
   order: -1;
+  text-align: start;
 }
 
 .title {
+  max-width: 28rem;
+  padding-bottom: 0.8rem;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   text-transform: uppercase;
+  border-bottom: 0.2rem solid #040404;
 }
 .title span {
   font-weight: 700;
 }
 
 .text {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
-  max-width: 600px;
+  max-width: 60rem;
 }
 
 /*# sourceMappingURL=FashionBlock.module.css.map */
