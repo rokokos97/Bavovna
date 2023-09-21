@@ -12,11 +12,10 @@ import {Navigation} from 'swiper/modules';
 const NewArrivalsBlock = () => {
   // Створюємо ref для зберігання swiper
   const swiperRef = useRef();
-  const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
+  const items = useSelector(getItems());
   let newArrivalItems = [];
-  // Фільтруємо елементи для нових приходів
-  if (!isItemsLoading) {
+  if (!isItemsLoading && items) {
     newArrivalItems = items.filter((item) => item.status === 'new');
   }
   return (
