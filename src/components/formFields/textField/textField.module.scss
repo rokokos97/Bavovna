@@ -1,7 +1,7 @@
 @import '../../../styles/variables.module';
 .textField {
   display: flex;
-  width: 40rem;
+  width: $form-width;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
@@ -13,7 +13,7 @@
   gap: 0.4rem;
   align-self: stretch;
   color: $accent-a-95;
-  @include apply-font-properties($body-3);
+  @include fonts($body-3);
 
   span {
     color: $error
@@ -40,7 +40,7 @@
     align-self: stretch;
 
     background: $white;
-    @include apply-font-properties($input-text);
+    @include fonts($input-text);
   }
   button {
     background: $white;
