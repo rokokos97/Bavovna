@@ -211,8 +211,8 @@ $light-pink: #DFC5C5;
   text-transform: map-get($font-map, text-transform);
 }
 
-@mixin button-submit () {
-  width: 100%;
+@mixin button-black($width) {
+  width: $width;
   background: $black;
   align-items: center;
   justify-content: center;
@@ -241,9 +241,9 @@ $light-pink: #DFC5C5;
   }
 }
 
-@mixin button-social (){
+@mixin button-transparent($button-width){
   display: flex;
-  width: $form-width;
+  width: $button-width;
   padding: 1rem 1.6rem;
   justify-content: center;
   align-items: center;

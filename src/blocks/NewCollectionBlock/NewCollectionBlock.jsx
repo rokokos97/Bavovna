@@ -12,8 +12,8 @@ const NewCollectionBlock = () => {
             Together, we can transform the way we consume
             and create a brighter, greener future for generations to come
         </p>
-        <button className={styles.buttons}>
-          <span className={styles.buttonText}>shop now</span>
+        <button className={styles.button}>
+          <span>shop now</span>
         </button>
       </div>
     </div>
