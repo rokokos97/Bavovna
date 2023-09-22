@@ -26,16 +26,14 @@
 
 .button {
   margin: 0 auto;
-  display: flex;
   width: 19.5rem;
-  padding: 1rem 1.6rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-  border: 1px solid #727272;
   background: #FAFAFA;
+  align-items: center;
+  justify-content: center;
+  padding: 2.1rem 3.6rem;
+  gap: 0.2rem;
+  border: 1px solid #727272;
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-  padding: 1.55rem 3.7rem;
 }
 .button span {
   color: #4A4A4A;
@@ -49,6 +47,11 @@
 }
 .button:active {
   background: #A9DFCB;
+}
+.button:disabled {
+  background: #F5F5F5;
+  border: 1px solid #9B9B9B;
+  coursor: not-allowed;
 }
 
 /*# sourceMappingURL=BavovnaBlock.module.css.map */
