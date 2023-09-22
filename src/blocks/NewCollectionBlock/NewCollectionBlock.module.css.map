@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"sourceRoot":"","sources":["NewCollectionBlock.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE,YACQ;EAIR;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACI,OC0KI;EDzKJ;ECqLF;EACA;EACA;EACA;EACA;;;ADtLF;EACE,OCqKM;EAYN;EACA;EACA;EDjLA;EACA;;;AAEF;ECoLE,ODnLsB;ECoLtB,YArBM;EAsBN;EACA;EACA;EACA;;AAEA;EAfA;EACA;EACA;EAEA;EAaE,OA5BI;EA6BJ;;AAGF;EACE,YAlDS;;AAoDX;EACE,YAvDS;;AAyDX;EACE,YA1CM;EA2CN;;AAEA;EACE,OAlDI","file":"NewCollectionBlock.module.css"}
+=======
+{"version":3,"sourceRoot":"","sources":["NewCollectionBlock.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE,YACQ;EAIR;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACI,OC0KI;EDzKJ;ECqLF;EACA;EACA;EACA;EACA;;;ADtLF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"NewCollectionBlock.module.css"}
+>>>>>>> 47f950d585b39f790173c8204b88b0753f879814
