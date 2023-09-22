@@ -16,12 +16,8 @@
 }
 .title {
   margin: 0 auto;
-  color: #000;
-  font-size: 3.2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
+  color: $black;
+  @include fonts($headline-2)
 }
 .button {
 @include button-transparent(19.5rem)
