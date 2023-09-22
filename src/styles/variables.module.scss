@@ -14,7 +14,7 @@ $btn-bg-color: #6d6d6d;
 $transparent-30: rgba(169, 223, 203, 0.3);
 
 $headline-1:(
-        family: 'Fixel Display Extrabold',
+        family: 'Fixel Display Extra Bold',
         size: 56px,
         line-height: 150%,
         letter-spacing: 4%,
@@ -211,8 +211,8 @@ $light-pink: #DFC5C5;
   text-transform: map-get($font-map, text-transform);
 }
 
-@mixin button-submit () {
-  width: 100%;
+@mixin button-black($width) {
+  width: $width;
   background: $black;
   align-items: center;
   justify-content: center;
@@ -241,9 +241,9 @@ $light-pink: #DFC5C5;
   }
 }
 
-@mixin button-social (){
+@mixin button-transparent($button-width){
   display: flex;
-  width: $form-width;
+  width: $button-width;
   padding: 1rem 1.6rem;
   justify-content: center;
   align-items: center;
