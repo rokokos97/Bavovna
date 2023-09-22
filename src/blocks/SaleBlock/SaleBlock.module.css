@@ -26,34 +26,28 @@
 }
 
 .button {
-  margin: 0 auto;
-  border: 1px solid var(--Black, #040404);
-  background: var(--TR30-Gray90, rgba(245, 245, 245, 0.3));
   display: flex;
   width: 19.5rem;
-  padding: 2.1rem 3.6rem;
+  padding: 1rem 1.6rem;
   justify-content: center;
   align-items: center;
-  gap: 0.2rem;
+  gap: 1.2rem;
+  border: 1px solid #727272;
+  background: #FAFAFA;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
 }
 .button span {
-  color: 1px solid var(--Black, #040404);
-  text-align: center;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%; /* 2.4rem */
+  color: #4A4A4A;
+  font-family: "Fixel Display Semibold";
+  font-size: 20px;
+  line-height: 140%;
   text-transform: uppercase;
 }
-
 .button:hover {
-  border: 1px solid var(--Black, #040404);
-  background: var(--transparent-30-a-05, rgba(169, 223, 203, 0.3));
+  background: rgba(169, 223, 203, 0.3);
 }
-
 .button:active {
-  border: 1px solid var(--Black, #040404);
-  background: var(--accent-a-05, #A9DFCB);
+  background: #A9DFCB;
 }
 
 /*# sourceMappingURL=SaleBlock.module.css.map */
