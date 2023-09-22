@@ -20,5 +20,5 @@
   @include fonts($headline-2)
 }
 .button {
-@include button-transparent(19.5rem)
+  @include button-transparent(19.5rem);
 }
