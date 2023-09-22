@@ -36,8 +36,8 @@
   @include divider();
 }
 .button {
-  @include button-submit();
+  @include button-black($form-width);
 }
 .googleButton {
-  @include button-social();
+  @include button-transparent($form-width);
 }

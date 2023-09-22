@@ -1,3 +1,4 @@
+@import "../../styles/variables.module.scss";
 .newCollectionBlock {
   background:
           linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
@@ -21,12 +22,9 @@
   margin-bottom: 33.7rem;
 }
 .newCollectionBlock__title {
-    color: #000;
-    font-size: 5.6rem;
-    font-weight: 600;
-    letter-spacing: 0.224rem;
-    text-transform: uppercase;
+    color: $black;
     word-wrap: break-word;
+    @include fonts($headline-1);
 }
 .newCollectionBlock__manifest {
   color: #000;
