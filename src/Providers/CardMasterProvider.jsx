@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 
-const DataContext = createContext(undefined);
+const DataContext = createContext(null);
 
 export const CardMasterProvider = ({children}) => {
   const [itemPrice, setItemPrice] = useState('');
@@ -40,7 +40,11 @@ export const CardMasterProvider = ({children}) => {
 };
 
 export const useData = () => {
-  return useContext(DataContext);
+  const data = useContext(DataContext);
+  if (!data) {
+    throw new Error('Can not "useData" outside of the "CardMasterProvider"');
+  }
+  return data;
 };
 
 CardMasterProvider.propTypes = {
