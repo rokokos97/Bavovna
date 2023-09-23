@@ -34,7 +34,7 @@ export const uploadCategoriesList = () => async (dispatch) => {
 };
 
 export const getCategories = () => (state) => state.categories.entities;
-export const getCategoriesLoadingStatus = (state) => state.categories.isLoading;
+export const getCategoriesLoadingStatus = () => (state) => state.categories.isLoading;
 export const {
   categoriesRequested,
   categoriesReceived,

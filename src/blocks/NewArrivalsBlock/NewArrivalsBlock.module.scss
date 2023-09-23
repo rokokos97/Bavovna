@@ -1,3 +1,4 @@
+@import "../../styles/variables.module.scss";
 .newArrivalsBlock {
   margin: 10rem auto;
   display: flex;
@@ -16,13 +17,7 @@
   align-self: stretch;
 
   span {
-    color: #000;
-    font-family: Fixel Display, serif;
-    font-size: 3.2rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
+    @include fonts($headline-2);
   }
 }
 .newArrivalsBlock__arrows {
@@ -37,12 +32,12 @@
     padding: 0.94rem 0.84rem 0.94rem 1.04rem;
     justify-content: center;
     align-items: center;
+    color: $accent-a-4;
   }
-
 }
 
 .newArrivalsBlock__box {
-  width: 128rem;
+  width: 100%;
   display: flex;
   align-items: flex-start;
   gap: 2.4rem;

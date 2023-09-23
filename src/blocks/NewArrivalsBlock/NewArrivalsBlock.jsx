@@ -7,6 +7,8 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {Navigation} from 'swiper/modules';
+import LeftArrowIcon from '../../components/svg/leftArrowIcon/leftArrowIcon';
+import RightArrowIcon from '../../components/svg/rightArrowIcon/rightArrowIcon';
 
 
 const NewArrivalsBlock = () => {
@@ -28,21 +30,12 @@ const NewArrivalsBlock = () => {
           <div className={styles.newArrivalsBlock__arrows}>
             {/* Кнопка для переходу до попереднього слайда */}
             <button onClick={() => swiperRef.current?.slidePrev()}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                {/* eslint-disable-next-line max-len */}
-                <path d="M10.3879 20.35L11.8649 19.0161L7.07842 13.9528H22.45V12.0473H7.07842L11.8649 6.98391L10.3879 5.65002L3.55005 13L10.3879 20.35Z" fill="#1A1924"/>
-              </svg>
+              <LeftArrowIcon />
             </button>
             {/* Кнопка переходу до наступного слайда */}
             <button onClick={() => swiperRef.current?.slideNext()}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                {/* eslint-disable-next-line max-len */}
-                <path d="M15.6121 20.35L14.1352 19.0161L18.9216 13.9528H3.55005V12.0473H18.9216L14.1352 6.98391L15.6121 5.65002L22.45 13L15.6121 20.35Z" fill="#1A1924"/>
-              </svg>
-
+              <RightArrowIcon />
             </button>
-
-
           </div>
         </div>
         {!isItemsLoading &&

@@ -28,7 +28,7 @@ export const validationSchemaRegisterForm = Yup.object().shape({
       .required('First name is required')
       .min(2, 'First name has to be longer than 2 characters')
       .matches(
-          /^[A-Z][a-z]$/,
+          /^[A-Z][a-z]+$/,
           'The First name must begin with a capital' +
         ' letter and consist only of letters')
       .max(20, 'First name must be at most 15 characters long'),

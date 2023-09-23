@@ -1,3 +1,4 @@
+@import "../../styles/variables.module.scss";
 .newCollectionBlock {
   background:
           linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
@@ -9,7 +10,7 @@
   margin: 0 auto;
 }
 .newCollectionBlock__wrapper {
-  display: inline-flex;
+  display: flex;
   width: 57.8rem;
   height: 26.3rem;
   flex-direction: column;
@@ -21,42 +22,17 @@
   margin-bottom: 33.7rem;
 }
 .newCollectionBlock__title {
-    color: #000;
-    font-size: 5.6rem;
-    font-weight: 600;
-    letter-spacing: 0.224rem;
-    text-transform: uppercase;
+    color: $black;
     word-wrap: break-word;
+    @include fonts($headline-1);
 }
 .newCollectionBlock__manifest {
-  color: #000;
-  font-size: 1.8rem;
-  font-weight: 300;
+  color: $black;
+  @include fonts($body-2);
   word-wrap: break-word;
+  text-align: start;
 }
-.buttons {
-  width: 19.5rem;
-  padding: 2.1rem 3.6rem;
-  background: #222222;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2rem;
-  display: inline-flex
-}
-.buttons:hover {
-  background: var(--accent-a-3, #5A9B83);
-}
-.buttons:active {
-  background: var(--accent-a-5, #1A6449);
-}
-.buttonText {
-  text-align: center;
-  color: white;
-  font-size: 2rem;
-  font-family: Fixel, sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 2.4rem;
-  word-wrap: break-word;
+.button {
+  @include button-black(19.5rem);
 }
 

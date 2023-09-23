@@ -1,3 +1,4 @@
+@import "../../styles/variables.module.scss";
 .saleBlock {
   display: flex;
   flex-direction: column;
@@ -15,39 +16,9 @@
 }
 .title {
   margin: 0 auto;
-  color: #000;
-  font-size: 3.2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
+  color: $black;
+  @include fonts($headline-2)
 }
 .button {
-  margin: 0 auto;
-  border: 1px solid var(--Black, #040404);
-  background: var(--TR30-Gray90, rgba(245, 245, 245, 0.30));
-  display: flex;
-  width: 19.5rem;
-  padding: 2.1rem 3.6rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2rem;
-
-  span {
-    color: 1px solid var(--Black, #040404);
-    text-align: center;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%; /* 2.4rem */
-    text-transform: uppercase;
-  }
-}
-.button:hover {
-  border: 1px solid var(--Black, #040404);
-  background: var(--transparent-30-a-05, rgba(169, 223, 203, 0.30));
-}
-.button:active {
-  border: 1px solid var(--Black, #040404);
-  background: var(--accent-a-05, #A9DFCB);
+  @include button-transparent(19.5rem);
 }
