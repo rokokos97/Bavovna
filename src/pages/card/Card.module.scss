@@ -44,6 +44,11 @@
       object-fit: cover;
       object-position: top;
       cursor: pointer;
+      transition: scale 0.3s ease-in-out 0s;
+
+      &:hover{
+        scale: 1.05;
+      }
     }
   }
 }

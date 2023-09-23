@@ -9,11 +9,11 @@ const noSize = 'Choose a size';
 
 const SizesList = ({sizes}) => {
   const [selectedSize, setSelectedSize] = useState('');
-  const {setItemSize} = useData();
+  const {itemData, setItemData} = useData();
 
   const handleChange = (event) => {
     setSelectedSize(event.target.value);
-    setItemSize(event.target.value);
+    setItemData({...itemData, itemSize: event.target.value});
   };
 
   return (

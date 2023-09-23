@@ -31,9 +31,19 @@ const colors = [
 
 const CardContext = ({item}) => {
   const [openModal, setOpenModal] = useState(false);
-  const {collectData} = useData();
+  const {itemData, setItemData, collectData} = useData();
   const {name, price, size, images, description, modelParams, composition} =
     item;
+
+  const handleCollectData = () => {
+    setItemData({
+      ...itemData,
+      itemName: name,
+      itemPrice: price,
+      itemImg: `http://localhost:8000/api/${images[0]}`,
+    });
+    collectData();
+  };
 
   const changeImage = (imgUrl) => {
     const mainImage = document.getElementById('mainImage');
@@ -43,8 +53,6 @@ const CardContext = ({item}) => {
   const closeModal = () => {
     setOpenModal(false);
   };
-
-  const handleCollection = () => collectData();
 
   return (
     <>
@@ -92,7 +100,7 @@ const CardContext = ({item}) => {
                   </button>
                 </div>
                 <div className={styles.formBag}>
-                  <button type='button' onClick={() => handleCollection()}>
+                  <button type='button' onClick={() => handleCollectData()}>
                     ADD TO BAG
                   </button>
                 </div>
@@ -127,7 +135,7 @@ const CardContext = ({item}) => {
           </div>
         </div>
         <AlsoBoughtBlock />
-        <Modal isOpen={openModal} handleCloseModal={closeModal}>
+        <Modal isOpen={true} handleCloseModal={closeModal}>
           <CheckoutModal handleCloseModal={closeModal} />
         </Modal>
         <Modal isOpen={openModal} handleCloseModal={closeModal}>
