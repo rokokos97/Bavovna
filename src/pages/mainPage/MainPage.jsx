@@ -6,6 +6,7 @@ import SaleBlock from '../../blocks/SaleBlock/SaleBlock';
 import BavovnaBlock from '../../blocks/BavovnaBlock/BavovnaBlock';
 import NewsLettersBlock from '../../blocks/NewsLettersBlock/NewsLettersBlock';
 import BavovnaCoverImageBlock from '../../blocks/BavovnaCoverImageBlock/BavovnaCoverImageBlock';
+import CategoriesBlock from '../../blocks/CategoriesBlock/CategoriesBlock';
 
 const MainPage = () => {
   return (
@@ -16,6 +17,7 @@ const MainPage = () => {
         <SaleBlock />
         <BavovnaBlock />
         <BavovnaCoverImageBlock />
+        <CategoriesBlock />
         <NewArrivalsBlock />
         <NewsLettersBlock />
       </div>
