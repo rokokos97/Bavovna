@@ -61,9 +61,10 @@
   padding: 1.2rem;
   width: 4rem;
   border-radius: 0.8rem;
+  background-color: inherit;
 
   &.activeBtn {
-    color: #3a7f66;
-    background-color: rgba(169, 223, 203, 0.3);
+    color: $accent_4;
+    background-color: $transparent-30-a-05;
   }
 }

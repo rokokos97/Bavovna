@@ -1,14 +1,17 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import {useData} from '../../Providers/CardMasterProvider';
 import styles from './ColorsList.module.scss';
 
 const noColor = 'Choose a color';
 
 const ColorsList = ({colors}) => {
-  let [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
+  const {setItemColor} = useData();
 
   const handleChange = (event) => {
-    setSelectedColor((selectedColor = event.target.value));
+    setSelectedColor(event.target.id);
+    setItemColor(event.target.value);
   };
 
   return (
@@ -27,7 +30,7 @@ const ColorsList = ({colors}) => {
             <input
               type='radio'
               name='color'
-              value={color.name}
+              value={color.value}
               id={color.name}
               onChange={handleChange}
             />

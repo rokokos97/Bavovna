@@ -2,7 +2,7 @@
 
 .cardSection {
   width: 100%;
-  background-color: $second-color;
+  background-color: $gray-90;
   padding: 4rem 8rem 8rem;
 }
 
@@ -16,7 +16,7 @@
 .imgs {
   width: 20%;
   max-width: 8.5rem;
-  max-height: 62.7rem;
+  max-height: 68.2rem;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -63,8 +63,7 @@
   img {
     width: 100%;
     max-width: 52rem;
-    height: 100%;
-    max-height: 62.7rem;
+    height: 68.2rem;
     object-fit: cover;
     object-position: top;
   }
@@ -119,14 +118,23 @@
   & button {
     width: 100%;
     padding: 1.2rem 0;
-    background-color: $black-color;
-    color: $white-color;
+    background-color: $black;
+    color: $white;
     text-align: center;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 500;
     line-height: 2rem;
     text-transform: uppercase;
+    transition: background-color 0.3s ease 0s;
+
+    &:hover {
+      background-color: $accent-a-3;
+    }
+
+    &:active {
+      background-color: $accent-a-5;
+    }
   }
 }
 

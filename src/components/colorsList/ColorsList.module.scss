@@ -23,8 +23,8 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: $white-color;
-    border: 0.1rem solid $black-color;
+    background-color: $white;
+    border: 0.1rem solid $black;
     text-transform: uppercase;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -36,6 +36,6 @@
     bottom: -0.4rem;
     width: 100%;
     height: 0;
-    border: 0.1rem solid $black-color;
+    border: 0.1rem solid $black;
   }
 }
