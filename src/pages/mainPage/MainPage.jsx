@@ -18,7 +18,6 @@ const MainPage = () => {
         <BavovnaBlock />
         <BavovnaCoverImageBlock />
         <CategoriesBlock />
-        <NewArrivalsBlock />
         <NewsLettersBlock />
       </div>
     </>
