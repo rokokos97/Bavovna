@@ -111,3 +111,35 @@
   align-items: center;
   gap: 0.4rem;
 }
+.eng {
+  background: transparent;
+  span {
+    @include fonts($link-2)
+  }
+  &:hover {
+    span {
+      color: $accent-a-4;
+    }
+  }
+  &:active {
+    span {
+      color: $accent-a-8;
+    }
+  }
+}
+.ukr {
+  background: transparent;
+  span {
+    @include fonts($link-3)
+  }
+  &:hover {
+    span {
+      color: $accent-a-4;
+    }
+  }
+  &:active {
+    span {
+      color: $accent-a-8;
+    }
+  }
+}

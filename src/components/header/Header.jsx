@@ -61,12 +61,18 @@ const Header = () => {
             <AccountIcon />
             <span>{isLoggedIn && user ? user.name : ''}</span>
           </Link>
-          <Link to=''>
-            <div className={styles.headerLang}>
-              <span>Eng</span>
-              <span>Укр</span>
-            </div>
-          </Link>
+          <div className={styles.headerLang}>
+            <button className={styles.eng}>
+              <span>
+                Eng
+              </span>
+            </button>
+            <button className={styles.ukr}>
+              <span>
+                Укр
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

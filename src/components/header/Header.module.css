@@ -114,4 +114,34 @@
   gap: 0.4rem;
 }
 
+.eng {
+  background: transparent;
+}
+.eng span {
+  font-family: "Fixel Display Semibold";
+  font-size: 12px;
+  line-height: 110%;
+}
+.eng:hover span {
+  color: #3a7f66;
+}
+.eng:active span {
+  color: #0a281d;
+}
+
+.ukr {
+  background: transparent;
+}
+.ukr span {
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+}
+.ukr:hover span {
+  color: #3a7f66;
+}
+.ukr:active span {
+  color: #0a281d;
+}
+
 /*# sourceMappingURL=Header.module.css.map */
