@@ -1,64 +1,28 @@
 @import '../../styles/variables.module';
 .loginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4rem auto 17rem;
-  width: 40rem;
-  gap: 2.4rem;
-
-  p {
-    color: $black;
-    @include apply-font-properties($body-3);
-
-    span {
-      color: $black;
-      @include apply-font-properties($link-1);
-    }
-  }
+  @include form();
 }
 .titleBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-  @include apply-font-properties($headline-2);
-  color: $black-color;
-
-  span {
-    @include apply-font-properties($body-2);
-    color: $gray-10;
-    }
+  @include form-title-block();
 }
 .loginError {
-  width: 40rem;
-  display: flex;
-  padding: 1.2rem;
-  align-items: center;
-  align-self: stretch;
-
-  background: var(--error, #DFC5C5);
-
-  span {
-    @include apply-font-properties($body-3);
-    color: $error;
-  }
+  @include form-expected-error();
 }
 .inputsBlock {
-  width: 40rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 3.2rem;
 }
 .form {
+  width: $form-width;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6rem;
 }
 .forgotPassword {
-  @include apply-font-properties($link-2);
+  @include fonts($link-2);
   color: $gray-10;
 }
 .socialButtonsBlock {
@@ -69,69 +33,11 @@
   gap: 1.6rem;
 }
 .divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  align-self: stretch;
-
-  div {
-    width: 19.3rem;
-    height: 0.1rem;
-    background: #EEE;
-  }
-
-  span {
-    color: $black;
-    @include apply-font-properties($body-3);
-  }
+  @include divider();
 }
-
 .button {
-  background-color: #040404;
-  display: flex;
-  width: 100%;
-  padding: 2.1rem 3.6rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2rem;
-
-  span {
-    @include apply-font-properties($headline-8);
-    color: $white;
-    text-transform: uppercase;
-  }
-}
-.button:hover {
-  background: $accent-a-3
-}
-.button:active {
-  background: $accent-a-5
-}
-.button:disabled {
-  background: $gray-90;
-  cursor: not-allowed;
-  span {
-    color: $gray-50;
-  }
+  @include button-black($form-width);
 }
 .googleButton {
-  height: 4rem;
-  button {
-    display: flex;
-    width: 40rem;
-    padding: 1rem 1.6rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
-    border: 1px solid var(--gray-300, #D0D5DD);
-    background: var(--White, #FFF);
-    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-
-    span {
-      color: var(--gray-700, #344054);
-      @include apply-font-properties($button);
-    }
-  }
-
+  @include button-transparent($form-width);
 }

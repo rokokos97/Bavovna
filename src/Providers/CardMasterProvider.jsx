@@ -1,46 +1,42 @@
 import React, {createContext, useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 
-const DataContext = createContext(undefined);
+const DataContext = createContext(null);
 
 export const CardMasterProvider = ({children}) => {
-  const [price, setPrice] = useState('');
-  const [selectedColor, setSelectedColor] = useState('');
-  const [selectedSize, setSelectedSize] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  // const [itemPrice, setItemPrice] = useState('');
+  // const [itemColor, setItemColor] = useState('');
+  // const [itemSize, setItemSize] = useState('');
+  // const [itemImg, setItemImg] = useState('');
+  // const [quantity, setQuantity] = useState(1);
 
-  // eslint-disable-next-line no-unused-vars
+  const [itemData, setItemData] = useState({
+    itemName: '',
+    itemPrice: '',
+    itemColor: null,
+    itemSize: '',
+    itemImg: '',
+    itemQuantity: 1,
+  });
+
   const collectData = () => {
-    const jsonData = {
-      price: price,
-      color: selectedColor,
-      size: selectedSize,
-      quantity: quantity,
-    };
+    const jsonData = {...itemData};
     console.log(jsonData);
   };
 
   return (
-    <DataContext.Provider
-      value={{
-        price,
-        setPrice,
-        selectedColor,
-        setSelectedColor,
-        selectedSize,
-        setSelectedSize,
-        quantity,
-        setQuantity,
-        collectData,
-      }}
-    >
+    <DataContext.Provider value={{itemData, setItemData, collectData}}>
       {children}
     </DataContext.Provider>
   );
 };
 
 export const useData = () => {
-  return useContext(DataContext);
+  const data = useContext(DataContext);
+  if (!data) {
+    throw new Error('Can not "useData" outside of the "CardMasterProvider"');
+  }
+  return data;
 };
 
 CardMasterProvider.propTypes = {

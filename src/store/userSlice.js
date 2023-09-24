@@ -12,6 +12,7 @@ const initialState = localStorageService.getAccessToken() ?
   error: null,
   auth: {userId: localStorageService.getUserId()},
   isLoggedIn: true,
+  isRegistering: false,
 }:
 {
   entities: null,
@@ -19,6 +20,7 @@ const initialState = localStorageService.getAccessToken() ?
   error: null,
   auth: null,
   isLoggedIn: false,
+  isRegistering: false,
 };
 
 
@@ -79,6 +81,24 @@ export const signUp = (payload) =>
     dispatch(authRequested());
     try {
       const data = await authService.register(payload);
+      console.log(data);
+      localStorageService.setTokens(data);
+      dispatch(authRequestSuccess(data.user));
+    } catch (error) {
+      const {code, message} = error.response.data.error;
+      if (code === 400) {
+        const errorMessage = generateAuthError(message);
+        dispatch(authRequestFailed(errorMessage));
+      } else if (code === 500) {
+        dispatch(authRequestFailed('Server error. Please repeat latter...'));
+      }
+    }
+  };
+export const signUpWithGoogle = (payload) =>
+  async (dispatch) => {
+    dispatch(authRequested());
+    try {
+      const data = await authService.registerWithGoogle(payload);
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
     } catch (error) {

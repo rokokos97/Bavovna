@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import styles from './LoginForm.module.scss';
-// Імпорт бібліотек і компонентів необхідних для форми
 import {useFormik} from 'formik';
 import {Link, NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
@@ -58,7 +57,9 @@ const LoginForm = () => {
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
-      Sign In
+        <p>
+          Sign In
+        </p>
         <span>
             Welcome back! Please enter your details
         </span>
@@ -73,7 +74,10 @@ const LoginForm = () => {
         }
       </div>
       <div className={styles.inputsBlock}>
-        <form className={styles.form} onSubmit={formik.handleSubmit}>
+        <form
+          className={styles.form}
+          onSubmit={formik.handleSubmit}
+        >
           <TextField
             label='Email'
             name='email'
@@ -110,8 +114,8 @@ const LoginForm = () => {
             I agree to the terms and conditions of use.
           </CheckboxField>
           <button
-            disabled={!isFormValid}
             type='submit'
+            disabled={!isFormValid}
             className={styles.button}
           >
             <span>
@@ -119,7 +123,7 @@ const LoginForm = () => {
             </span>
           </button>
           <Link
-            to='/forgotPassword'
+            to='forgotPassword'
             className={styles.forgotPassword}
           >
             <span>Forgot password?</span>
@@ -131,11 +135,11 @@ const LoginForm = () => {
             <span>or</span>
             <div></div>
           </div>
-          <div className={styles.googleButton}>
+          <div>
             <div
               id='signUpDiv'>
             </div>
-            <button
+            <button className={styles.googleButton}
               onClick={()=> googleLogin()}
             >
               <GoogleIcon />
@@ -148,11 +152,12 @@ const LoginForm = () => {
       </div>
       <p>
         Don’t have an account?{'  '}
-        <NavLink to="signUp"
+        <NavLink
+          to="signUp"
           role="button"
         >
           {' '}
-          <span>Sign Up</span>
+          <span>Sign up</span>
         </NavLink>
       </p>
     </div>

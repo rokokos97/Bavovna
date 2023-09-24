@@ -16,37 +16,43 @@ const Header = () => {
     <header className={styles.container}>
       <div className={styles.banner}>
         <Link to='/'>
-          <span>
-            10% discount on the summer collection
-          </span>
+          <span>10% discount on the summer collection</span>
         </Link>
       </div>
       <div className={styles.header}>
         <div className={styles.headerNavBar}>
-          <Link to='/sale'><span>Sale</span></Link>
-          <Link to='/shop'><span>Shop</span></Link>
-          <Link to='/aboutus'><span>About us</span></Link>
-          <Link to='/card'><span>Card</span></Link>
-          <Link to='/catalogue'><span>Catalogue</span></Link>
+          <Link to='/sale'>
+            <span>Sale</span>
+          </Link>
+          <Link to='/shop'>
+            <span>Shop</span>
+          </Link>
+          <Link to='/aboutus'>
+            <span>About us</span>
+          </Link>
+          <Link to='/card'>
+            <span>Card</span>
+          </Link>
+          <Link to='/catalogue'>
+            <span>Catalogue</span>
+          </Link>
         </div>
         {/* <div className={styles.headerLogo}>Logo</div>*/}
         <div className={styles.headerMenuBar}>
           <div className={styles.headerSearch}>
-            <input></input>
-            <SearchIcon/>
+            <input name='search'></input>
+            <SearchIcon />
           </div>
           <Link to='/favorite'>
-            <FavoriteIcon/>
+            <FavoriteIcon />
           </Link>
           <Link to=''>
-            <ShoppingCartIcon/>
+            <ShoppingCartIcon />
             <span>(0)</span>
           </Link>
           <Link to='/login'>
-            <AccountIcon/>
-            <span>
-              {isLoggedIn && user ? user.name : ''}
-            </span>
+            <AccountIcon />
+            <span>{isLoggedIn && user ? user.name : ''}</span>
           </Link>
           <Link to=''>
             <div className={styles.headerLang}>

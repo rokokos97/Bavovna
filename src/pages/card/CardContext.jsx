@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import NotFoundPage from '../notFoundPage/notFoundPage';
 import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
@@ -9,9 +7,10 @@ import {Dropdown} from '../../components/dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
 import {useData} from '../../Providers/CardMasterProvider';
-import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import styles from './Card.module.scss';
 import ColorsList from '../../components/colorsList/ColorsList';
+import {useEffect} from 'react';
+// import {useCallback} from 'react';
 
 const colors = [
   {
@@ -32,11 +31,26 @@ const colors = [
   },
 ];
 
-const CardContext = ({searchingId = '1'}) => {
-  const [openModal, setOpenModal] = useState(false);
-  const {collectData} = useData();
-  const items = useSelector(getItems());
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+const CardContext = ({item}) => {
+  const [showGuideModal, setShowGuideModal] = useState(false);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  const {itemData, setItemData, collectData} = useData();
+  const {name, price, size, images, description, modelParams, composition} =
+    item;
+
+  useEffect(() => {
+    setItemData({
+      ...itemData,
+      itemName: name,
+      itemPrice: price,
+      itemImg: `http://localhost:8000/api/${images[0]}`,
+    });
+  }, []);
+
+  const handleCollectData = () => {
+    collectData();
+    setShowCheckoutModal(true);
+  };
 
   const changeImage = (imgUrl) => {
     const mainImage = document.getElementById('mainImage');
@@ -44,114 +58,104 @@ const CardContext = ({searchingId = '1'}) => {
   };
 
   const closeModal = () => {
-    setOpenModal(false);
+    setShowGuideModal(false);
+    setShowCheckoutModal(false);
   };
 
-  if (!isItemsLoading) {
-    console.log(items);
-    const {name, price, size, images, description, modelParams, composition} =
-      items[searchingId];
-
-    return (
-      <>
-        <section className={styles.cardSection}>
-          <div className={styles.card}>
-            <div className={styles.imgs}>
-              <ul className={styles.imgsList}>
-                {images.map((image) => (
-                  <li
-                    key={image}
-                    onClick={() =>
-                      changeImage(`http://localhost:8000/api/${image}`)
-                    }
+  return (
+    <>
+      <section className={styles.cardSection}>
+        <div className={styles.card}>
+          <div className={styles.imgs}>
+            <ul className={styles.imgsList}>
+              {images.map((image) => (
+                <li
+                  key={image}
+                  onClick={() =>
+                    changeImage(`http://localhost:8000/api/${image}`)
+                  }
+                >
+                  <img src={`http://localhost:8000/api/${image}`} alt='model' />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.mainImg}>
+            <img
+              id='mainImage'
+              src={`http://localhost:8000/api/${images[0]}`}
+              alt='model'
+            />
+          </div>
+          <div className={styles.about}>
+            <div className={styles.aboutInner}>
+              <form className={styles.buyForm}>
+                <h2 className={styles.buyFormTitle}>{name}</h2>
+                <span className={styles.buyFormPrice}>${price}</span>
+                <dir className={styles.color}>
+                  <ColorsList colors={colors} />
+                </dir>
+                <div className={styles.size}>
+                  <SizesList sizes={size} />
+                  <button
+                    type='button'
+                    className={styles.btnGuide}
+                    onClick={() => {
+                      setShowGuideModal(true);
+                    }}
                   >
-                    <img
-                      src={`http://localhost:8000/api/${image}`}
-                      alt='model'
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.mainImg}>
-              <img
-                id='mainImage'
-                src={`http://localhost:8000/api/${images[0]}`}
-                alt='model'
-              />
-            </div>
-            <div className={styles.about}>
-              <div className={styles.aboutInner}>
-                <form className={styles.buyForm}>
-                  <h2 className={styles.buyFormTitle}>{name}</h2>
-                  <span className={styles.buyFormPrice}>${price}</span>
-                  <dir className={styles.color}>
-                    <ColorsList colors={colors} />
-                  </dir>
-                  <div className={styles.size}>
-                    <SizesList sizes={size} />
-                    <button
-                      type='button'
-                      className={styles.btnGuide}
-                      onClick={() => {
-                        setOpenModal(true);
-                      }}
-                    >
-                      Size guide
-                    </button>
-                  </div>
-                  <div className={styles.formBag}>
-                    <button type='button' onClick={collectData}>
-                      ADD TO BAG
-                    </button>
-                  </div>
-                </form>
-                <div className={styles.descriptions}>
-                  <Dropdown
-                    id='dropdownToggle'
-                    placeholder='Details'
-                    name='details'
-                    inner={description}
-                  />
-                  <Dropdown
-                    id='dropdownToggle'
-                    placeholder='Model parameters'
-                    name='parameters'
-                    inner={modelParams}
-                  />
-                  <Dropdown
-                    id='dropdownToggle'
-                    placeholder='Composition and care'
-                    name='composition'
-                    inner={composition.join()}
-                  />
-                  <Dropdown
-                    id='dropdownToggle'
-                    placeholder='Shipping and returns'
-                    name='shipping'
-                    inner='Lorem ipsum dolor sit amen consectetur'
-                  />
+                    Size guide
+                  </button>
                 </div>
+                <div className={styles.formBag}>
+                  <button type='button' onClick={handleCollectData}>
+                    ADD TO BAG
+                  </button>
+                </div>
+              </form>
+              <div className={styles.descriptions}>
+                <Dropdown
+                  id='dropdownToggle'
+                  placeholder='Details'
+                  name='details'
+                  inner={description}
+                />
+                <Dropdown
+                  id='dropdownToggle'
+                  placeholder='Model parameters'
+                  name='parameters'
+                  inner={modelParams}
+                />
+                <Dropdown
+                  id='dropdownToggle'
+                  placeholder='Composition and care'
+                  name='composition'
+                  inner={composition.join()}
+                />
+                <Dropdown
+                  id='dropdownToggle'
+                  placeholder='Shipping and returns'
+                  name='shipping'
+                  inner='Lorem ipsum dolor sit amen consectetur'
+                />
               </div>
             </div>
           </div>
-          <AlsoBoughtBlock />
-          <Modal isOpen={openModal} handleCloseModal={closeModal}>
-            <CheckoutModal handleCloseModal={closeModal} />
-          </Modal>
-          <Modal isOpen={openModal} handleCloseModal={closeModal}>
-            <SizeGuide handleCloseModal={closeModal} />
-          </Modal>
-        </section>
-      </>
-    );
-  } else {
-    return <NotFoundPage />;
-  }
+        </div>
+        <AlsoBoughtBlock />
+        <Modal isOpen={showCheckoutModal} handleCloseModal={closeModal}>
+          <CheckoutModal handleCloseModal={closeModal} />
+        </Modal>
+        <Modal isOpen={showGuideModal} handleCloseModal={closeModal}>
+          <SizeGuide handleCloseModal={closeModal} />
+        </Modal>
+      </section>
+    </>
+  );
 };
 
 CardContext.propTypes = {
-  searchingId: PropTypes.string.isRequired,
+  item: PropTypes.object.isRequired,
 };
 
 export default CardContext;

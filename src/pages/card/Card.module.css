@@ -1,15 +1,20 @@
+.cardSection {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 4rem 8rem 8rem;
+}
+
 .card {
-  background-color: #f9f9f9;
-  height: 100%;
   display: flex;
-  gap: 24px;
-  padding: 32px 80px;
+  flex-grow: 1;
+  gap: 2.4rem;
+  padding-bottom: 4rem;
 }
 
 .imgs {
   width: 20%;
-  max-width: 193px;
-  max-height: 627px;
+  max-width: 8.5rem;
+  max-height: 62.7rem;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -23,7 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 24px;
+  gap: 2.4rem;
   width: 100%;
 }
 .imgsList li {
@@ -34,20 +39,28 @@
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+  object-position: top;
   cursor: pointer;
 }
 
-.mainImg,
 .about {
-  width: 40%;
+  max-width: 62.7rem;
+  width: 100%;
+}
+
+.mainImg,
+.aboutInner {
+  max-width: 52rem;
+  width: 100%;
 }
 
 .mainImg img {
   width: 100%;
-  max-width: 520px;
+  max-width: 52rem;
   height: 100%;
-  max-height: 627px;
+  max-height: 62.7rem;
   object-fit: cover;
+  object-position: top;
 }
 
 .buyForm {
@@ -57,52 +70,63 @@
 }
 
 .buyFormTitle {
-  font-size: 24px;
+  font-size: 2.4rem;
   text-transform: uppercase;
-  padding-bottom: 24px;
+  padding-bottom: 2.4rem;
 }
 
 .buyFormPrice {
-  font-size: 20px;
-  padding-bottom: 32px;
+  font-size: 2rem;
+  padding-bottom: 3.2rem;
 }
 
+.color {
+  margin-bottom: 3.2rem;
+}
+
+.color,
 .size {
   text-align: start;
-  font-size: 18px;
-}
-.size pre,
-.size span {
+  font-size: 1.8rem;
   display: inline-block;
   text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
 }
 
 .btnGuide {
   border: none;
   text-transform: uppercase;
   text-decoration: underline;
-  margin-top: 16px;
+  margin-top: 1.6rem;
   background-color: inherit;
 }
 
 .formBag {
   display: flex;
-  padding-top: 16px;
+  padding-top: 1.6rem;
   width: 100%;
 }
 .formBag button {
   width: 100%;
-  padding: 12px 0;
-  background-color: #000000;
+  padding: 1.2rem 0;
+  background-color: #040404;
   color: #ffffff;
   text-align: center;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem;
+  text-transform: uppercase;
 }
 
 .descriptions {
-  margin-top: 32px;
+  margin-top: 3.2rem;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.6rem;
 }
 
 /*# sourceMappingURL=Card.module.css.map */

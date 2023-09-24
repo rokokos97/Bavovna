@@ -8,6 +8,24 @@
   gap: 0.8rem;
   display: inline-flex;
 }
+.itemPreviewCard:hover .itemPreviewCard__status {
+  background: #3A7F66;
+}
+.itemPreviewCard:hover .itemPreviewCard__heart div svg path[stroke] {
+  stroke: #3A7F66;
+}
+.itemPreviewCard:hover .itemPreviewCard__heart div svg path[fill] {
+  fill: #3A7F66;
+}
+.itemPreviewCard:active .itemPreviewCard__status {
+  background: #0A281D;
+}
+.itemPreviewCard:active .itemPreviewCard__heart div svg path[stroke] {
+  stroke: #0A281D;
+}
+.itemPreviewCard:active .itemPreviewCard__heart div svg path[fill] {
+  fill: #0A281D;
+}
 
 .itemPreviewCard__image {
   width: 41rem;
@@ -56,21 +74,19 @@
 }
 
 .itemPreviewCard__descriptionText {
-  color: var(--black, #040404);
-  font-family: Fixel Display, serif;
-  font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2.2rem;
+  color: #040404;
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+  text-align: start;
 }
 
 .itemPreviewCard__price {
-  color: var(--black, #040404);
-  font-family: Fixel Display, serif;
-  font-size: 2.4rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2.8rem;
+  color: black;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=ItemPreviewCard.module.css.map */
