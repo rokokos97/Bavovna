@@ -1,0 +1,108 @@
+.checkout {
+  width: 100%;
+  padding: 4rem 8rem 8rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.checkout .closeIcon {
+  position: absolute;
+  top: 2.4rem;
+  right: 2.4rem;
+  cursor: pointer;
+}
+.checkout h2 {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.checkoutContainer {
+  display: flex;
+  gap: 2.4rem;
+}
+.checkoutContainer img {
+  max-width: 10rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+}
+.checkoutContainer p {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.checkoutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 46.5rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.dataBlock {
+  display: flex;
+  gap: 5.6rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.priceBlock {
+  display: flex;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.coloredSquare {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0px 0.4rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 0.1rem solid #040404;
+}
+
+.paramsBlock {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.quantityBlock {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.quantityBtn {
+  background-color: inherit;
+}
+
+.trash {
+  display: flex;
+  align-items: center;
+  width: 2.4rem;
+}
+
+/*# sourceMappingURL=CheckoutModal.module.css.map */

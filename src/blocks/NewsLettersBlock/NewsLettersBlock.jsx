@@ -15,7 +15,7 @@ const NewsLettersBlock = () => (
     </div>
     <button className={styles.button} >
       <span>
-        subscribe
+        Subscribe to our newsletter
       </span>
     </button>
   </div>
