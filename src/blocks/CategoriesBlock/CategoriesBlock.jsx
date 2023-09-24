@@ -18,7 +18,7 @@ const CategoriesBlock = () => {
         <span>
           categories
         </span>
-        <div className={styles.arrows}>
+        {categories && categories.length>6 ? <div className={styles.arrows}>
           {/* Кнопка для переходу до попереднього слайда */}
           <button onClick={() => swiperRef.current?.slidePrev()}>
             <LeftArrowIcon />
@@ -27,7 +27,7 @@ const CategoriesBlock = () => {
           <button onClick={() => swiperRef.current?.slideNext()}>
             <RightArrowIcon />
           </button>
-        </div>
+        </div> : <></>}
       </div>
       {
         <div className={styles.newArrivalsBlock__box}>
