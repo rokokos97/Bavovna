@@ -29,7 +29,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  border-top: 0.1rem solid #D7D7D7;
+  border-top: 0.1rem solid #d7d7d7;
 }
 
 .arrow {
@@ -44,8 +44,8 @@
   cursor: pointer;
 }
 .arrow.arrowDisable {
-  color: #9B9B9B;
-  fill: #9B9B9B;
+  color: #9b9b9b;
+  fill: #9b9b9b;
   cursor: not-allowed;
 }
 
@@ -57,6 +57,7 @@
   padding: 1.2rem;
   width: 4rem;
   border-radius: 0.8rem;
+  background-color: inherit;
 }
 .pageButton.activeBtn {
   color: #3a7f66;

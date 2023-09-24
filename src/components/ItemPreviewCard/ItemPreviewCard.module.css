@@ -9,22 +9,22 @@
   display: inline-flex;
 }
 .itemPreviewCard:hover .itemPreviewCard__status {
-  background: #3A7F66;
+  background: #3a7f66;
 }
 .itemPreviewCard:hover .itemPreviewCard__heart div svg path[stroke] {
-  stroke: #3A7F66;
+  stroke: #3a7f66;
 }
 .itemPreviewCard:hover .itemPreviewCard__heart div svg path[fill] {
-  fill: #3A7F66;
+  fill: #3a7f66;
 }
 .itemPreviewCard:active .itemPreviewCard__status {
-  background: #0A281D;
+  background: #0a281d;
 }
 .itemPreviewCard:active .itemPreviewCard__heart div svg path[stroke] {
-  stroke: #0A281D;
+  stroke: #0a281d;
 }
 .itemPreviewCard:active .itemPreviewCard__heart div svg path[fill] {
-  fill: #0A281D;
+  fill: #0a281d;
 }
 
 .itemPreviewCard__image {

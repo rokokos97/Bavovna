@@ -50,20 +50,20 @@
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 .button:hover {
-  background: #5A9B83;
+  background: #5a9b83;
 }
 .button:active {
-  background: #1A6449;
+  background: #1a6449;
 }
 .button:disabled {
-  background: #F5F5F5;
+  background: #f5f5f5;
   cursor: not-allowed;
 }
 .button:disabled span {
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 
 /*# sourceMappingURL=NewCollectionBlock.module.css.map */

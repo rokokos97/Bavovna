@@ -1,5 +1,5 @@
 .hero {
-  background-color: #d9d9d9;
+  background-color: #c3c3c3;
   background-image: url("../../../public/img/images/Catalog/catalogHero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 
 .heroBtn {
   background-color: #040404;
-  color: #ffffff;
+  color: #fafafa;
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
@@ -27,6 +27,13 @@
   padding: 2.1rem 3.6rem;
   text-transform: uppercase;
   cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+.heroBtn:hover {
+  background-color: #5a9b83;
+}
+.heroBtn:active {
+  background-color: #1a6449;
 }
 
 /*# sourceMappingURL=HeadCatalogBlock.module.css.map */
