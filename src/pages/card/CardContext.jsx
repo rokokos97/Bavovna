@@ -9,6 +9,8 @@ import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
 import {useData} from '../../Providers/CardMasterProvider';
 import styles from './Card.module.scss';
 import ColorsList from '../../components/colorsList/ColorsList';
+import {useEffect} from 'react';
+// import {useCallback} from 'react';
 
 const colors = [
   {
@@ -30,10 +32,25 @@ const colors = [
 ];
 
 const CardContext = ({item}) => {
-  const [openModal, setOpenModal] = useState(false);
-  const {collectData} = useData();
+  const [showGuideModal, setShowGuideModal] = useState(false);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  const {itemData, setItemData, collectData} = useData();
   const {name, price, size, images, description, modelParams, composition} =
     item;
+
+  useEffect(() => {
+    setItemData({
+      ...itemData,
+      itemName: name,
+      itemPrice: price,
+      itemImg: `http://localhost:8000/api/${images[0]}`,
+    });
+  }, []);
+
+  const handleCollectData = () => {
+    collectData();
+    setShowCheckoutModal(true);
+  };
 
   const changeImage = (imgUrl) => {
     const mainImage = document.getElementById('mainImage');
@@ -41,10 +58,9 @@ const CardContext = ({item}) => {
   };
 
   const closeModal = () => {
-    setOpenModal(false);
+    setShowGuideModal(false);
+    setShowCheckoutModal(false);
   };
-
-  const handleCollection = () => collectData();
 
   return (
     <>
@@ -85,14 +101,14 @@ const CardContext = ({item}) => {
                     type='button'
                     className={styles.btnGuide}
                     onClick={() => {
-                      setOpenModal(true);
+                      setShowGuideModal(true);
                     }}
                   >
                     Size guide
                   </button>
                 </div>
                 <div className={styles.formBag}>
-                  <button type='button' onClick={() => handleCollection()}>
+                  <button type='button' onClick={handleCollectData}>
                     ADD TO BAG
                   </button>
                 </div>
@@ -127,10 +143,10 @@ const CardContext = ({item}) => {
           </div>
         </div>
         <AlsoBoughtBlock />
-        <Modal isOpen={openModal} handleCloseModal={closeModal}>
+        <Modal isOpen={showCheckoutModal} handleCloseModal={closeModal}>
           <CheckoutModal handleCloseModal={closeModal} />
         </Modal>
-        <Modal isOpen={openModal} handleCloseModal={closeModal}>
+        <Modal isOpen={showGuideModal} handleCloseModal={closeModal}>
           <SizeGuide handleCloseModal={closeModal} />
         </Modal>
       </section>

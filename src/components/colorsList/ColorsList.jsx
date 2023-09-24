@@ -7,11 +7,11 @@ const noColor = 'Choose a color';
 
 const ColorsList = ({colors}) => {
   const [selectedColor, setSelectedColor] = useState('');
-  const {setItemColor} = useData();
+  const {itemData, setItemData} = useData();
 
   const handleChange = (event) => {
     setSelectedColor(event.target.id);
-    setItemColor(event.target.value);
+    setItemData({...itemData, itemColor: event.target.value});
   };
 
   return (
