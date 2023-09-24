@@ -13,6 +13,13 @@
   z-index: 9999;
 }
 
+.logo {
+  font-family: "Fixel Display Semibold";
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
 .banner {
   display: flex;
   width: 100%;
