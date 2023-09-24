@@ -19,15 +19,12 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const [currentPage, setCurrentPage] = useState(1);
 
-  let newArrivalItems = [];
-
-  if (!isItemsLoading) {
-    newArrivalItems = items;
-    totalItems = newArrivalItems.length;
+  if (!isItemsLoading && items) {
+    totalItems = items.length;
     totalPages = Math.ceil(totalItems / itemsPerPage);
     startIndex = (currentPage - 1) * itemsPerPage;
     endIndex = Math.min(startIndex + itemsPerPage, totalItems);
-    visibleItems = newArrivalItems.slice(startIndex, endIndex);
+    visibleItems = items.slice(startIndex, endIndex);
   }
 
   const handlePageChange = (event) => {
@@ -45,14 +42,14 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
         {isFilter ? (
           <FilterSelectionBlock handlerIsFilter={handlerIsFilter} />
         ) : null}
-        <div
-          className={styles.cardsContainer}
-        >
-          <ul className={
-            !isFilter ?
-            styles.cards :
-            `${styles.cards} ${styles.cardsPadding}`
-          }>
+        <div className={styles.cardsContainer}>
+          <ul
+            className={
+              !isFilter ?
+                styles.cards :
+                `${styles.cards} ${styles.cardsPadding}`
+            }
+          >
             {visibleItems.map((item, index) => (
               <li key={index}>
                 <ItemPreviewCard item={item} />
