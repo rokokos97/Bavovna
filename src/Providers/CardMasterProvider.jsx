@@ -19,7 +19,6 @@ export const CardMasterProvider = ({children}) => {
     itemQuantity: 1,
   });
 
-  // eslint-disable-next-line no-unused-vars
   const collectData = () => {
     const jsonData = {...itemData};
     console.log(jsonData);

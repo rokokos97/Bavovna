@@ -51,6 +51,22 @@
   text-transform: uppercase;
 }
 
+.checkoutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 46.5rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.dataBlock {
+  display: flex;
+  gap: 5.6rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .priceBlock {
   display: flex;
   font-size: 1.8rem;
@@ -59,27 +75,11 @@
   line-height: 140%;
 }
 
-.checkoutContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  max-width: 46.5rem;
-  width: 100%;
-  justify-content: flex-start;
-  padding-right: 4rem;
-}
-
-.dataBlock {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .coloredSquare {
   display: flex;
-  width: 15px;
-  height: 15px;
-  padding: 0px 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0px 0.4rem;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -96,7 +96,17 @@
   text-transform: uppercase;
 }
 
-.removeBasket {
+.quantityBlock {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.quantityBtn {
+  background-color: inherit;
+}
+
+.trash {
+  display: flex;
+  align-items: center;
   width: 2.4rem;
-  background-color: #ccc;
 }

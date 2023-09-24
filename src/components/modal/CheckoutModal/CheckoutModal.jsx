@@ -1,14 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import CloseIcon from '../../svg/closeIcon/CloseIcon';
 import {useData} from '../../../Providers/CardMasterProvider';
+import TrashIcon from '../../svg/trashIcon/trashIcon';
 import styles from './CheckoutModal.module.scss';
 
 const CheckoutModal = ({handleCloseModal}) => {
   // const {itemData, setItemData, collectData} = useData();
+  // const {itemData, setItemData} = useData();
   const {itemData} = useData();
   const {itemName, itemPrice, itemColor, itemSize, itemImg, itemQuantity} =
     itemData;
+
+  const [quantity, setQuantity] = useState(itemQuantity);
+
+  const handleSub = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+  const handleAdd = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const calcPrice = () => {
+    return itemPrice * quantity;
+  };
 
   return (
     <section className={styles.checkout}>
@@ -21,7 +38,7 @@ const CheckoutModal = ({handleCloseModal}) => {
         <div className={styles.checkoutContent}>
           <p className={styles.name}>{itemName}</p>
           <pre className={styles.priceBlock}>
-            {itemPrice}&nbsp;
+            {calcPrice().toFixed(2)}&nbsp;
             <span>$</span>
           </pre>
           <div className={styles.dataBlock}>
@@ -38,13 +55,29 @@ const CheckoutModal = ({handleCloseModal}) => {
             </div>
             <div className={styles.paramsBlock}>
               <span>Quantity:</span>
-              <button type='button'>-</button>
-              {itemQuantity}
-              <button type='button'>+</button>
+              <div className={styles.quantityBlock}>
+                <button
+                  className={styles.quantityBtn}
+                  type='button'
+                  onClick={handleSub}
+                >
+                  -
+                </button>
+                {quantity}
+                <button
+                  className={styles.quantityBtn}
+                  type='button'
+                  onClick={handleAdd}
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div className={styles.removeBasket}></div>
+        <div className={styles.trash}>
+          <TrashIcon />
+        </div>
       </div>
     </section>
   );
