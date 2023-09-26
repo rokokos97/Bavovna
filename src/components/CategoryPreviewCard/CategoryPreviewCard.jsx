@@ -7,7 +7,7 @@ import config from '../../config.json';
 const CategoryPreviewCard = ({item}) => {
   return (
     <div className={styles.categoryPreviewCard} data-testid="CategoryPreviewCard">
-      <img src={`${config.apiEndpoint}${item.images}`} alt="category cover image"/>
+      <img src={`${config.apiEndpoint}${item.image}`} alt="category cover image"/>
       <p>{item.name}</p>
     </div>
   );
