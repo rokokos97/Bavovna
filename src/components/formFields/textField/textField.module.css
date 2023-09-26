@@ -11,13 +11,13 @@
   align-items: center;
   gap: 0.4rem;
   align-self: stretch;
-  color: #030A07;
+  color: #030a07;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
 .label span {
-  color: #EA001B;
+  color: #ea001b;
 }
 
 .inputBlock {
@@ -29,7 +29,7 @@
   gap: 1rem;
   align-self: stretch;
   border: 1px solid #727272;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 .inputBlock input {
   border: none;
@@ -38,14 +38,14 @@
   justify-content: center;
   flex: 1 0 0;
   align-self: stretch;
-  background: #FAFAFA;
+  background: #fafafa;
   font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
 }
 .inputBlock button {
-  background: #FAFAFA;
-  color: #5D5D5D;
+  background: #fafafa;
+  color: #5d5d5d;
 }
 
 .error {

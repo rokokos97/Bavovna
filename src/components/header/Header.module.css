@@ -1,5 +1,5 @@
 .container {
-  background: #FFFFFF;
+  background: #fafafa;
   display: flex;
   position: fixed;
   margin: 0 auto;
@@ -9,6 +9,15 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  border-bottom: 0.1rem solid #d7d7d7;
+  z-index: 9999;
+}
+
+.logo {
+  font-family: "Fixel Display Semibold";
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
 }
 
 .banner {
@@ -18,12 +27,11 @@
   padding-bottom: 1rem;
   justify-content: center;
   align-items: flex-start;
-  background: #000;
+  background: #040404;
 }
 .banner span {
-  color: #FFF;
+  color: #fafafa;
   text-align: center;
-  font-family: Fixel Display, sans-serif;
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 700;
@@ -40,7 +48,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 144rem;
-  color: #212a2f;
+  color: #040404;
 }
 
 .headerNavBar {
@@ -58,13 +66,13 @@
   gap: 1.6rem;
 }
 .headerMenuBar span {
-  color: var(--Black, #040404);
+  color: #040404;
   font-family: Fixel-Text, sans-serif;
   text-align: center;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%; /* 1.4rem */
+  line-height: 140%;
   letter-spacing: 0.01rem;
 }
 
@@ -104,6 +112,36 @@
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
+}
+
+.eng {
+  background: transparent;
+}
+.eng span {
+  font-family: "Fixel Display Semibold";
+  font-size: 12px;
+  line-height: 110%;
+}
+.eng:hover span {
+  color: #3a7f66;
+}
+.eng:active span {
+  color: #0a281d;
+}
+
+.ukr {
+  background: transparent;
+}
+.ukr span {
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+}
+.ukr:hover span {
+  color: #3a7f66;
+}
+.ukr:active span {
+  color: #0a281d;
 }
 
 /*# sourceMappingURL=Header.module.css.map */

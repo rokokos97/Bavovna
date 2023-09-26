@@ -1,12 +1,12 @@
 .section {
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
   margin: 0 auto;
 }
 
 .block {
   max-width: 144rem;
-  padding: 5rem 8rem 10rem;
+  padding: 5rem 8rem 0rem;
 }
 
 /*# sourceMappingURL=Catalogue.module.css.map */

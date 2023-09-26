@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import AccountIcon from '../svg/accountIcon/accountIcon';
@@ -10,21 +10,22 @@ import {useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../store/userSlice';
 
 const Header = () => {
+  const navigate = useNavigate();
   const user = useSelector(getUser());
   const isLoggedIn = useSelector(getIsLoggedIn());
   return (
     <header className={styles.container}>
       <div className={styles.banner}>
-        <Link to='/'>
+        <Link to='/catalogue'>
           <span>10% discount on the summer collection</span>
         </Link>
       </div>
       <div className={styles.header}>
         <div className={styles.headerNavBar}>
-          <Link to='/sale'>
+          <Link to='/catalogue'>
             <span>Sale</span>
           </Link>
-          <Link to='/shop'>
+          <Link to='/catalogue'>
             <span>Shop</span>
           </Link>
           <Link to='/aboutus'>
@@ -37,7 +38,13 @@ const Header = () => {
             <span>Catalogue</span>
           </Link>
         </div>
-        {/* <div className={styles.headerLogo}>Logo</div>*/}
+        <button
+          role='button'
+          className={styles.logo}
+          onClick={()=> (navigate('/'))}
+        >
+          BAVOVNA LOGO
+        </button>
         <div className={styles.headerMenuBar}>
           <div className={styles.headerSearch}>
             <input name='search'></input>
@@ -46,20 +53,26 @@ const Header = () => {
           <Link to='/favorite'>
             <FavoriteIcon />
           </Link>
-          <Link to=''>
+          <Link to='/cart'>
             <ShoppingCartIcon />
             <span>(0)</span>
           </Link>
           <Link to='/login'>
             <AccountIcon />
-            <span>{isLoggedIn && user ? user.name : ''}</span>
           </Link>
-          <Link to=''>
-            <div className={styles.headerLang}>
-              <span>Eng</span>
-              <span>Укр</span>
-            </div>
-          </Link>
+          <span>{isLoggedIn && user ? user.name : 'ACCOUNT'}</span>
+          <div className={styles.headerLang}>
+            <button className={styles.eng}>
+              <span>
+                Eng
+              </span>
+            </button>
+            <button className={styles.ukr}>
+              <span>
+                Укр
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

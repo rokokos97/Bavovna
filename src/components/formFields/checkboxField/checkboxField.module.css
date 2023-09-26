@@ -15,11 +15,11 @@
   width: 1.6rem;
   height: 1.6rem;
   border: 1px solid rgba(74, 74, 74, 0.7);
-  background: #FAFAFA;
+  background: #fafafa;
   cursor: pointer;
 }
 .checkboxField .checkbox input[type=checkbox]:checked {
-  background: #FAFAFA;
+  background: #fafafa;
   border: 1px solid rgba(74, 74, 74, 0.7);
 }
 .checkboxField .checkbox input[type=checkbox]:checked:after {
@@ -37,7 +37,7 @@
   font-family: "Fixel Display Regular";
   font-size: 12px;
   line-height: 110%;
-  color: #030A07;
+  color: #030a07;
 }
 
 .error {

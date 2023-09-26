@@ -6,13 +6,13 @@
   fill: #040404;
 }
 .leftArrowIcon svg path:hover {
-  fill: #3A7F66;
+  fill: #3a7f66;
 }
 .leftArrowIcon svg path:active {
-  fill: #15503A;
+  fill: #15503a;
 }
 .leftArrowIcon svg path:disabled {
-  fill: #D7D7D7;
+  fill: #d7d7d7;
   coursor: not-allowed;
 }
 

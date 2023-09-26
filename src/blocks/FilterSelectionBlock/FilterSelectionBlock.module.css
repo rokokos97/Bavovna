@@ -54,6 +54,13 @@
   font-weight: 600;
   line-height: 120%;
   text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+.filterBtn:hover {
+  background-color: rgba(169, 223, 203, 0.3);
+}
+.filterBtn:active {
+  background-color: #a9dfcb;
 }
 
 /*# sourceMappingURL=FilterSelectionBlock.module.css.map */

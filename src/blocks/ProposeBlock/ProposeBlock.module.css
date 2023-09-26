@@ -13,13 +13,20 @@
 }
 .description button {
   padding: 2.1rem 3.6rem;
-  color: #ffffff;
+  color: #fafafa;
   background-color: #040404;
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
   text-transform: uppercase;
+  transition: background-color 0.3s ease 0s;
+}
+.description button:hover {
+  background-color: #5a9b83;
+}
+.description button:active {
+  background-color: #1a6449;
 }
 
 .title {
