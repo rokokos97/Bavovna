@@ -59,8 +59,8 @@ const Header = () => {
           </Link>
           <Link to='/login'>
             <AccountIcon />
-            <span>{isLoggedIn && user ? user.name : ''}</span>
           </Link>
+          <span>{isLoggedIn && user ? user.name : 'ACCOUNT'}</span>
           <div className={styles.headerLang}>
             <button className={styles.eng}>
               <span>
