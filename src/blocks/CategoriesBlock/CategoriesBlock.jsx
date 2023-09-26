@@ -44,11 +44,28 @@ const CategoriesBlock = () => {
               prevEl: '.swiper-button-prev',
             }}
           >
-            {!isCategoriesLoading && categories && categories.map((item) =>
-              <SwiperSlide key={item._id}>
-                <CategoryPreviewCard item={item}/>
-              </SwiperSlide>,
-            )}
+            {!isCategoriesLoading && categories &&
+              <>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[2]}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[0]}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[3]}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[1]}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[5]}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[4]}/>
+                </SwiperSlide>
+              </>
+            }
           </Swiper>
         </div>
       }
