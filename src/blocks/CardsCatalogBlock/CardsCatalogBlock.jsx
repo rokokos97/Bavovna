@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
@@ -51,9 +52,11 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
             }
           >
             {visibleItems.map((item, index) => (
-              <li key={index}>
-                <ItemPreviewCard item={item} />
-              </li>
+              <Link key={index} to={`/catalogue/${item._id}`}>
+                <li>
+                  <ItemPreviewCard item={item} />
+                </li>
+              </Link>
             ))}
           </ul>
           <div className={styles.pagination}>

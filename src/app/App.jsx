@@ -23,8 +23,8 @@ function App() {
             <Route path='sale' element={<SalePage />} />
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
-            <Route path='card' element={<Card searchingId={'0'} />} />
             <Route path='catalogue' element={<Catalogue />} />
+            <Route path='catalogue/:id' element={<Card />} />
             <Route path='login/*' element={<LoginLayout />} />
             <Route path='main' element={<MainPage />} />
             <Route path='*' element={<NotFoundPage />} />
