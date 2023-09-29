@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
 
-  button {
+  a {
     padding: 2.1rem 3.6rem;
     color: $white;
     background-color: $black;
@@ -22,14 +22,14 @@
     font-weight: 600;
     line-height: 120%;
     text-transform: uppercase;
+    text-decoration: none;
     transition: background-color 0.3s ease 0s;
 
-    &:hover {
-      background-color: $accent-a-3;
-    }
-
+    &:hover,
     &:active {
-      background-color: $accent-a-5;
+      background-color: $accent-a-3;
+      color: $white;
+      text-decoration: none;
     }
   }
 }

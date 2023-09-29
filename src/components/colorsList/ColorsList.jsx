@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {useData} from '../../Providers/CardMasterProvider';
 import styles from './ColorsList.module.scss';
 
 const noColor = 'Choose a color';
 
-const ColorsList = ({colors}) => {
-  const [selectedColor, setSelectedColor] = useState('');
+const ColorsList = ({colors, selectedColor, setSelectedColor}) => {
+  // const [selectedColor, setSelectedColor] = useState('');
   const {itemData, setItemData} = useData();
 
   const handleChange = (event) => {
@@ -47,6 +47,8 @@ const ColorsList = ({colors}) => {
 
 ColorsList.propTypes = {
   colors: PropTypes.array.isRequired,
+  selectedColor: PropTypes.string,
+  setSelectedColor: PropTypes.func,
 };
 
 export default ColorsList;

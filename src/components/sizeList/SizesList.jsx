@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {useData} from '../../Providers/CardMasterProvider';
 
@@ -7,8 +7,7 @@ import styles from './SizeList.module.scss';
 const allSizes = ['xs', 's', 'm', 'l'];
 const noSize = 'Choose a size';
 
-const SizesList = ({sizes}) => {
-  const [selectedSize, setSelectedSize] = useState('');
+const SizesList = ({sizes, selectedSize, setSelectedSize}) => {
   const {itemData, setItemData} = useData();
 
   const handleChange = (event) => {
@@ -47,6 +46,8 @@ const SizesList = ({sizes}) => {
 
 SizesList.propTypes = {
   sizes: PropTypes.array.isRequired,
+  selectedSize: PropTypes.string,
+  setSelectedSize: PropTypes.func,
 };
 
 export {SizesList};
