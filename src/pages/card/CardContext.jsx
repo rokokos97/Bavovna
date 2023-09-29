@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+/* eslint-disable operator-linebreak */
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
@@ -9,9 +10,7 @@ import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
 import {useData} from '../../Providers/CardMasterProvider';
 import styles from './Card.module.scss';
 import ColorsList from '../../components/colorsList/ColorsList';
-import {useEffect} from 'react';
-// import {useCallback} from 'react';
-
+import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 const colors = [
   {
     name: 'Black',
@@ -32,9 +31,12 @@ const colors = [
 ];
 
 const CardContext = ({item}) => {
+  const {itemData, setItemData, collectData} = useData();
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
-  const {itemData, setItemData, collectData} = useData();
   const {name, price, size, images, description, modelParams, composition} =
     item;
 
@@ -48,8 +50,11 @@ const CardContext = ({item}) => {
   }, []);
 
   const handleCollectData = () => {
-    collectData();
-    setShowCheckoutModal(true);
+    if (selectedColor && selectedSize) {
+      collectData();
+      setShowCheckoutModal(true);
+      hideBodyOverflow();
+    }
   };
 
   const changeImage = (imgUrl) => {
@@ -57,9 +62,15 @@ const CardContext = ({item}) => {
     mainImage.src = imgUrl;
   };
 
+  const openShowGuideModal = () => {
+    setShowGuideModal(true);
+    hideBodyOverflow();
+  };
+
   const closeModal = () => {
     setShowGuideModal(false);
     setShowCheckoutModal(false);
+    showBodyOverflow();
   };
 
   return (
@@ -93,22 +104,36 @@ const CardContext = ({item}) => {
                 <h2 className={styles.buyFormTitle}>{name}</h2>
                 <span className={styles.buyFormPrice}>${price}</span>
                 <dir className={styles.color}>
-                  <ColorsList colors={colors} />
+                  <ColorsList
+                    colors={colors}
+                    selectedColor={selectedColor}
+                    setSelectedColor={setSelectedColor}
+                  />
                 </dir>
                 <div className={styles.size}>
-                  <SizesList sizes={size} />
+                  <SizesList
+                    sizes={size}
+                    selectedSize={selectedSize}
+                    setSelectedSize={setSelectedSize}
+                  />
                   <button
                     type='button'
                     className={styles.btnGuide}
-                    onClick={() => {
-                      setShowGuideModal(true);
-                    }}
+                    onClick={openShowGuideModal}
                   >
                     Size guide
                   </button>
                 </div>
                 <div className={styles.formBag}>
-                  <button type='button' onClick={handleCollectData}>
+                  <button
+                    type='button'
+                    onClick={handleCollectData}
+                    className={
+                      selectedColor && selectedSize ?
+                      `${styles.activeBtn}` :
+                      `${styles.disableBtn}`
+                    }
+                  >
                     ADD TO BAG
                   </button>
                 </div>

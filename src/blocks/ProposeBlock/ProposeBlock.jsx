@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ProposeBlock.module.scss';
+import {Link} from 'react-router-dom';
 
 const ProposeBlock = () => {
   return (
@@ -28,7 +29,7 @@ const ProposeBlock = () => {
             environment and emphasize your style and elegance.
           </p>
         </div>
-        <button type='button'>View new</button>
+        <Link to='/catalogue'>View new</Link>
       </div>
     </div>
   );
