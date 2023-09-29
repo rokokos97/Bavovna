@@ -241,30 +241,53 @@ $light-pink: #dfc5c5;
 }
 
 @mixin button-transparent($button-width){
-  display: flex;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   width: $button-width;
-  background: $white;
-  align-items: center;
-  justify-content: center;
   padding: 2.1rem 3.6rem;
-  gap: 1.2rem;
-  border: 1px solid $gray-30;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  gap: 0.2rem;
+  background: transparent;
+  border: 1px solid $black;
 
   span {
-    color: $gray-10;
-    @include fonts($button);
+  @include fonts($button);
+  color: $black;
+  text-align: center;
   }
-  &:hover {
+  div {
+    width: $button-width/5;
+    height: $button-width/5;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
     background: $transparent-30-a-05;
+    position: absolute;
+    transition:  .2s ease-in;
+    top: $button-width/13;
+    left: $button-width/2.5;
+  }
+
+  &:hover {
+    div {
+      opacity: 1;
+      width: $button-width*1.1;
+      height: $button-width*1.1;
+      position: absolute;
+      top: -$button-width*1.1/3;
+      left: -1rem;
+    }
   }
   &:active {
-    background: $accent-a-05;
-  }
-  &:disabled {
-    background: $gray-90;
-    border: 1px solid $gray-50;
-    cursor: not-allowed;
+    div {
+      background: $accent-a-5;
+      opacity: 1;
+      width: $button-width*1.1;
+      height: $button-width*1.1;
+      position: absolute;
+      top: -$button-width*1.1/3;
+      left: -1rem;
+    }
   }
 }
 
@@ -280,7 +303,6 @@ $light-pink: #dfc5c5;
     height: 0.1rem;
     background: $gray-80;
   }
-
   span {
     color: $black;
     @include fonts($body-3);

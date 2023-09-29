@@ -15,6 +15,7 @@ const SaleBlock = () => {
           }}
         >
           <span>shop now</span>
+          <div></div>
         </button>
       </div>
 

@@ -133,33 +133,51 @@
 }
 
 .googleButton {
-  display: flex;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   width: 40.9rem;
-  background: #fafafa;
-  align-items: center;
-  justify-content: center;
   padding: 2.1rem 3.6rem;
-  gap: 1.2rem;
-  border: 1px solid #727272;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  gap: 0.2rem;
+  background: transparent;
+  border: 1px solid #040404;
 }
 .googleButton span {
-  color: #4a4a4a;
   font-family: "Fixel Display Semibold";
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
+  color: #040404;
+  text-align: center;
 }
-.googleButton:hover {
+.googleButton div {
+  width: 8.18rem;
+  height: 8.18rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
   background: rgba(169, 223, 203, 0.3);
+  position: absolute;
+  transition: 0.2s ease-in;
+  top: 3.1461538462rem;
+  left: 16.36rem;
 }
-.googleButton:active {
-  background: #a9dfcb;
+.googleButton:hover div {
+  opacity: 1;
+  width: 44.99rem;
+  height: 44.99rem;
+  position: absolute;
+  top: -14.9966666667rem;
+  left: -1rem;
 }
-.googleButton:disabled {
-  background: #f5f5f5;
-  border: 1px solid #9b9b9b;
-  cursor: not-allowed;
+.googleButton:active div {
+  background: #1a6449;
+  opacity: 1;
+  width: 44.99rem;
+  height: 44.99rem;
+  position: absolute;
+  top: -14.9966666667rem;
+  left: -1rem;
 }
 
 /*# sourceMappingURL=RegisterForm.module.css.map */
