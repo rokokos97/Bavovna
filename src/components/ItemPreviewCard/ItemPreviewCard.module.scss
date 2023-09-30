@@ -8,41 +8,6 @@
   align-items: flex-start;
   gap: 0.8rem;
   display: inline-flex;
-
-  &:hover {
-    .itemPreviewCard__status {
-      background: $accent-a-4;
-    }
-    .itemPreviewCard__heart {
-      div {
-        svg {
-          path[stroke] {
-            stroke: $accent-a-4;
-          }
-          path[fill] {
-            fill: $accent-a-4;
-          }
-        }
-      }
-    }
-  }
-  &:active {
-    .itemPreviewCard__status {
-      background: $accent-a-8;
-    }
-    .itemPreviewCard__heart {
-      div {
-        svg {
-          path[stroke] {
-            stroke: $accent-a-8;
-          }
-          path[fill] {
-            fill: $accent-a-8;
-          }
-        }
-      }
-    }
-  }
 }
 .itemPreviewCard__image {
   width: 41rem;

@@ -2,5 +2,11 @@
   width: 2.4rem;
   height: 2.4rem;
 }
+.emptyHeartIcon:hover svg path[stroke] {
+  stroke: #3a7f66;
+}
+.emptyHeartIcon:active svg path[stroke] {
+  stroke: #0a281d;
+}
 
 /*# sourceMappingURL=emptyHeartIcon.module.css.map */

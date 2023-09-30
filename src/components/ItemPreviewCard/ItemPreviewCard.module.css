@@ -8,24 +8,6 @@
   gap: 0.8rem;
   display: inline-flex;
 }
-.itemPreviewCard:hover .itemPreviewCard__status {
-  background: #3a7f66;
-}
-.itemPreviewCard:hover .itemPreviewCard__heart div svg path[stroke] {
-  stroke: #3a7f66;
-}
-.itemPreviewCard:hover .itemPreviewCard__heart div svg path[fill] {
-  fill: #3a7f66;
-}
-.itemPreviewCard:active .itemPreviewCard__status {
-  background: #0a281d;
-}
-.itemPreviewCard:active .itemPreviewCard__heart div svg path[stroke] {
-  stroke: #0a281d;
-}
-.itemPreviewCard:active .itemPreviewCard__heart div svg path[fill] {
-  fill: #0a281d;
-}
 
 .itemPreviewCard__image {
   width: 41rem;
