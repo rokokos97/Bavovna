@@ -20,5 +20,6 @@
   @include fonts($headline-2)
 }
 .button {
-  @include button-transparent(19.5rem);
+  border: 1px solid $black;
+  @include button(19.5rem, 7.28rem, $white, $black, $transparent-30-a-05, $accent-a-3);
 }
