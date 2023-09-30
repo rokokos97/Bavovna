@@ -1,27 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import {CardMasterProvider} from '../../Providers/CardMasterProvider';
 import CardContext from './CardContext';
 
-const Card = ({searchingId = '1'}) => {
+const Card = () => {
+  const {id} = useParams();
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
   if (!isItemsLoading && items) {
-    const item = items[searchingId];
-
+    const searchingItem = items.filter((item)=> item._id === id)[0];
     return (
       <CardMasterProvider>
-        <CardContext item={item} />
+        <CardContext item={searchingItem} />
       </CardMasterProvider>
     );
   }
-};
-
-Card.propTypes = {
-  searchingId: PropTypes.string.isRequired,
 };
 
 export default Card;

@@ -46,7 +46,7 @@
       cursor: pointer;
       transition: scale 0.3s ease-in-out 0s;
 
-      &:hover{
+      &:hover {
         scale: 1.05;
       }
     }
@@ -120,7 +120,7 @@
   padding-top: 1.6rem;
   width: 100%;
 
-  & button {
+  .activeBtn {
     width: 100%;
     padding: 1.2rem 0;
     background-color: $black;
@@ -140,6 +140,21 @@
     &:active {
       background-color: $accent-a-5;
     }
+  }
+
+  .disableBtn {
+    width: 100%;
+    padding: 1.2rem 0;
+    background-color: $gray-90;
+    color: $gray-50;
+    border: 0.1rem solid $gray-50;
+    text-align: center;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    text-transform: uppercase;
+    cursor: default;
   }
 }
 
