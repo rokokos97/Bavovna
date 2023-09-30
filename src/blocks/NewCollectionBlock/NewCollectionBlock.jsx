@@ -21,6 +21,7 @@ const NewCollectionBlock = () => {
           }}
         >
           <span>shop now</span>
+          <div></div>
         </button>
       </div>
     </div>

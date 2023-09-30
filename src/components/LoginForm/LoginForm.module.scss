@@ -36,7 +36,7 @@
   @include divider();
 }
 .button {
-  @include button-black($form-width);
+  @include button($form-width, 5.5rem, $black, $white, $accent-a-3, $accent-a-5);
 }
 .googleButton {
   @include button-transparent($form-width);

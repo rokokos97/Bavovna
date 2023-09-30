@@ -4,7 +4,9 @@
   flex-direction: column;
   width: 100%;
   height: 42.8rem;
-  padding: 10rem 4rem;
+  padding-top: 10rem;
+  padding-left:4rem;
+  padding-right:4rem;
   background-image: url("../../../public/img/images/NewsLetter/newsletterBlock.png");
   align-items: center;
   gap: 2.4rem;
@@ -40,5 +42,5 @@
   }
 }
 .button {
-  @include button-black(63rem)
+  @include button(63rem, 5.5rem, $black, $white, $accent-a-3, $accent-a-5);
 }

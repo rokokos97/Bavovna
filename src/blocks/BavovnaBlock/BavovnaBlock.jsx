@@ -17,6 +17,7 @@ const BavovnaBlock = () => {
         <span>
           shop now
         </span>
+        <div></div>
       </button>
     </div>
   );

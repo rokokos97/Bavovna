@@ -12,7 +12,6 @@
 .newCollectionBlock__wrapper {
   display: flex;
   width: 57.8rem;
-  height: 26.3rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -33,6 +32,6 @@
   text-align: start;
 }
 .button {
-  @include button-black(19.5rem);
+  @include button(19.5rem,7.28rem, $black, $white, $accent-a-3, $accent-a-5);
 }
 

@@ -122,6 +122,7 @@ const RegisterForm = () => {
             <span>
               Sign up
             </span>
+            <div/>
           </button>
         </form>
         <div className={styles.socialButtonsBlock}>
