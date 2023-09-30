@@ -8,6 +8,26 @@
   gap: 0.8rem;
   display: inline-flex;
 }
+.itemPreviewCard:hover {
+  cursor: pointer;
+}
+.itemPreviewCard:hover .itemPreviewCard__description, .itemPreviewCard:hover .itemPreviewCard__price {
+  text-decoration: underline;
+  color: #103c2c;
+}
+.itemPreviewCard:hover .itemPreviewCard__description span, .itemPreviewCard:hover .itemPreviewCard__price span {
+  color: #103c2c;
+}
+.itemPreviewCard:active {
+  cursor: pointer;
+}
+.itemPreviewCard:active .itemPreviewCard__description, .itemPreviewCard:active .itemPreviewCard__price {
+  text-decoration: underline;
+  color: #3a7f66;
+}
+.itemPreviewCard:active .itemPreviewCard__description span, .itemPreviewCard:active .itemPreviewCard__price span {
+  color: #3a7f66;
+}
 
 .itemPreviewCard__image {
   width: 41rem;
@@ -20,6 +40,7 @@
 }
 
 .itemPreviewCard__status {
+  cursor: pointer;
   padding: 0.8rem 1rem;
   background: #040404;
   justify-content: center;
@@ -28,6 +49,12 @@
   position: absolute;
   top: 1rem;
   left: -0.3rem;
+}
+.itemPreviewCard__status:hover {
+  background: #5a9b83;
+}
+.itemPreviewCard__status:active {
+  background: #1a6449;
 }
 
 .itemPreviewCard__statusText {

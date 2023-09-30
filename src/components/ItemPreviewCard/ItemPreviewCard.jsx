@@ -4,14 +4,20 @@ import PropTypes from 'prop-types';
 import config from '../../config.json';
 import FillHeartIcon from '../svg/fillHeartIcon/fillHeartIcon';
 import EmptyHeartIcon from '../svg/emptyHeartIcon/emptyHeartIcon';
+import {useNavigate} from 'react-router-dom';
 
 const ItemPreviewCard = ({item}) => {
+  const navigate = useNavigate();
   const [favorite, setFavorite] = useState(false);
   const handleSetFavorite = () => {
     setFavorite(!favorite);
   };
   return (
-    <div className={styles.itemPreviewCard} data-testid="ItemPreviewCard">
+    <div
+      className={styles.itemPreviewCard}
+      onClick={()=> navigate('/card')}
+      data-testid="ItemPreviewCard"
+    >
       <div className={styles.itemPreviewCard__image}>
         <img
           src={`${config.apiEndpoint}${item.images[0]}`}
@@ -20,7 +26,10 @@ const ItemPreviewCard = ({item}) => {
       </div>
       {
         item.status &&
-        <div className={styles.itemPreviewCard__status}>
+        <div
+          className={styles.itemPreviewCard__status}
+          onClick={()=> navigate('/card')}
+        >
           <div className={styles.itemPreviewCard__statusText}>
             {item.status}
           </div>
