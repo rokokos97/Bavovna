@@ -78,6 +78,7 @@ const userUpdateRequested = createAction('users/userUpdateRequested');
 
 export const signUp = (payload) =>
   async (dispatch) => {
+    console.log('payload signUp', payload);
     dispatch(authRequested());
     try {
       const data = await authService.register(payload);
@@ -168,7 +169,6 @@ export const loadUser = () => async (dispatch) => {
     const content = await userService.getCurrentUser();
     dispatch(userLoadRequestSuccess({...content}));
   } catch (error) {
-    console.log(error);
     dispatch(userLoadRequestFailed(error.message));
   }
 };

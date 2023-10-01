@@ -16,19 +16,19 @@ export const validationSchemaRegisterForm = Yup.object().shape({
   email: Yup.string()
       .required('Email is required')
       .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Invalid email address'),
-  surname: Yup.string()
+  lastName: Yup.string()
       .required('Last name is required')
       .min(2, 'Last name has to be longer than 2 characters')
       .matches(
-          /^[A-Z][a-z]+$/,
+          /^[A-ZА-я][a-zа-я]+$/,
           'The Last name must begin with a capital' +
       ' letter and consist only of letters')
       .max(20, 'First name must be at most 15 characters long'),
-  name: Yup.string()
+  firstName: Yup.string()
       .required('First name is required')
       .min(2, 'First name has to be longer than 2 characters')
       .matches(
-          /^[A-Z][a-z]+$/,
+          /^[A-ZА-я][a-zа-я]+$/,
           'The First name must begin with a capital' +
         ' letter and consist only of letters')
       .max(20, 'First name must be at most 15 characters long'),

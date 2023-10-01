@@ -60,7 +60,7 @@ const Header = () => {
           <Link to='/login'>
             <AccountIcon />
           </Link>
-          <span>{isLoggedIn && user ? user.name : 'ACCOUNT'}</span>
+          <span>{isLoggedIn && user ? user.firstName : 'ACCOUNT'}</span>
           <div className={styles.headerLang}>
             <button className={styles.eng}>
               <span>
