@@ -31,9 +31,6 @@ const Header = () => {
           <Link to='/aboutus'>
             <span>About us</span>
           </Link>
-          <Link to='/card'>
-            <span>Card</span>
-          </Link>
           <Link to='/catalogue'>
             <span>Catalogue</span>
           </Link>
