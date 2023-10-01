@@ -147,6 +147,7 @@ const LoginForm = () => {
               <span>
                 Sign in with Google
               </span>
+              <div/>
             </button>
           </div>
         </div>

@@ -42,5 +42,5 @@
   }
 }
 .button {
-  @include button(63rem, 5.5rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button(63rem, $black, $white, $accent-a-3, $accent-a-5);
 }

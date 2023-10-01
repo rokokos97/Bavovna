@@ -148,6 +148,7 @@ const RegisterForm = () => {
               <span>
                 Sign up with Google
               </span>
+              <div/>
             </button>
           </div>
         </div>

@@ -104,8 +104,10 @@
 }
 
 .button {
+  display: flex;
   width: 40.9rem;
-  height: 5.5rem;
+  height: 5.6rem;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -123,15 +125,16 @@
   z-index: 10;
 }
 .button div {
-  width: 5.5rem;
-  height: 5.5rem;
+  background: #5a9b83;
+  width: 4.8rem;
+  height: 4.8rem;
   opacity: 0;
   line-height: 40px;
   border-radius: 50%;
   position: absolute;
-  transition: 0.2s ease-in;
-  top: 0;
-  left: 33%;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 18.05rem;
 }
 .button:hover div {
   width: 44.99rem;
@@ -139,7 +142,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -100%;
+  top: -18.05rem;
   left: -5%;
 }
 .button:active div {
@@ -148,10 +151,11 @@
   background: #1a6449;
   opacity: 1;
   position: absolute;
-  top: -100%;
+  top: -18.05rem;
   left: -5%;
 }
 .button:disabled {
+  border: 1px solid #868686;
   background: #f5f5f5;
   cursor: not-allowed;
 }
@@ -160,52 +164,66 @@
 }
 
 .googleButton {
+  display: flex;
+  gap: 1.2rem;
+  border: 1px solid #040404;
+  display: flex;
+  width: 40.9rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  width: 40.9rem;
-  padding: 2.1rem 3.6rem;
   background: #fafafa;
-  border: 1px solid #040404;
+  padding: 2.1rem 3.6rem;
 }
 .googleButton span {
-  position: relative;
-  z-index: 10;
   font-family: "Fixel Display Semibold";
   font-size: 1.8rem;
   line-height: 140%;
   text-transform: uppercase;
-  text-align: center;
   color: #040404;
+  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 .googleButton div {
-  width: 8.18rem;
-  height: 8.18rem;
+  background: rgba(169, 223, 203, 0.3);
+  width: 4.8rem;
+  height: 4.8rem;
   opacity: 0;
   line-height: 40px;
   border-radius: 50%;
-  background: rgba(169, 223, 203, 0.3);
   position: absolute;
-  transition: 0.2s ease-in;
-  top: 3.1461538462rem;
-  left: 16.36rem;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 18.05rem;
 }
 .googleButton:hover div {
-  opacity: 1;
   width: 44.99rem;
   height: 44.99rem;
+  background: rgba(169, 223, 203, 0.3);
+  opacity: 1;
   position: absolute;
-  top: -14.9966666667rem;
-  left: -1rem;
+  top: -18.05rem;
+  left: -5%;
 }
 .googleButton:active div {
-  background: #1a6449;
-  opacity: 1;
   width: 44.99rem;
   height: 44.99rem;
+  background: #5a9b83;
+  opacity: 1;
   position: absolute;
-  top: -14.9966666667rem;
-  left: -1rem;
+  top: -18.05rem;
+  left: -5%;
+}
+.googleButton:disabled {
+  border: 1px solid #868686;
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+.googleButton:disabled span {
+  color: #9b9b9b;
 }
 
 /*# sourceMappingURL=LoginForm.module.css.map */
