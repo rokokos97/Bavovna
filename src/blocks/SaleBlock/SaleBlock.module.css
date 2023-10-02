@@ -102,11 +102,5 @@
 .button:disabled span {
   color: #9b9b9b;
 }
-.button:disabled::before {
-  opacity: 0;
-}
-.button:disabled::after {
-  opacity: 0;
-}
 
 /*# sourceMappingURL=SaleBlock.module.css.map */

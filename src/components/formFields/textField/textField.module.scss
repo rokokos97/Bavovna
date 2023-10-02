@@ -42,6 +42,10 @@
     background: $white;
     @include fonts($input-text);
   }
+  input[type='password'] {
+    -webkit-text-security: disc;
+
+  }
   button {
     background: $white;
     color: $gray-20;

@@ -15,7 +15,6 @@ const ItemPreviewCard = ({item}) => {
   return (
     <div
       className={styles.itemPreviewCard}
-      onClick={()=> navigate('/card')}
       data-testid="ItemPreviewCard"
     >
       <div className={styles.itemPreviewCard__image}>
