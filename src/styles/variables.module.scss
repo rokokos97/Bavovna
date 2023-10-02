@@ -284,12 +284,6 @@ $light-pink: #dfc5c5;
       color: $gray-50;
     }
   }
-  &:disabled::before {
-    opacity: 0;
-  }
-  &:disabled::after {
-    opacity: 0;
-  }
 }
 @mixin divider() {
   display: flex;

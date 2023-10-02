@@ -180,12 +180,6 @@
 .button:disabled span {
   color: #9b9b9b;
 }
-.button:disabled::before {
-  opacity: 0;
-}
-.button:disabled::after {
-  opacity: 0;
-}
 
 .googleButton {
   display: flex;
@@ -266,12 +260,6 @@
 }
 .googleButton:disabled span {
   color: #9b9b9b;
-}
-.googleButton:disabled::before {
-  opacity: 0;
-}
-.googleButton:disabled::after {
-  opacity: 0;
 }
 
 /*# sourceMappingURL=LoginForm.module.css.map */
