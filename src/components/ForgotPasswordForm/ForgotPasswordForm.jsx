@@ -52,7 +52,6 @@ const ForgotPasswordForm = () => {
           <span>
             recover
           </span>
-          <div/>
         </button>
       </form>
       <p>

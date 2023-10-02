@@ -17,7 +17,6 @@ const NewsLettersBlock = () => (
       <span>
         Subscribe to our newsletter
       </span>
-      <div/>
     </button>
   </div>
 );
