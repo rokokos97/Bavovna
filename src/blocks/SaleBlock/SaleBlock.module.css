@@ -46,7 +46,8 @@
   position: relative;
   z-index: 10;
 }
-.button div {
+.button::before {
+  content: "";
   background: rgba(169, 223, 203, 0.3);
   width: 4.8rem;
   height: 4.8rem;
@@ -58,22 +59,39 @@
   top: 0.4rem;
   left: 7.35rem;
 }
-.button:hover div {
+.button::after {
+  content: "";
+  background: #5a9b83;
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 9.45rem;
+}
+.button:hover::before {
+  content: "";
   width: 21.45rem;
   height: 21.45rem;
   background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -7.35rem;
+  top: -8.325rem;
   left: -5%;
 }
-.button:active div {
+.button:active::after {
+  content: "";
   width: 21.45rem;
   height: 21.45rem;
-  background: #5a9b83;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -7.35rem;
+  top: -8.325rem;
   left: -5%;
 }
 .button:disabled {

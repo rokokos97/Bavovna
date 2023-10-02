@@ -70,7 +70,8 @@
   position: relative;
   z-index: 10;
 }
-.button div {
+.button::before {
+  content: "";
   background: #5a9b83;
   width: 4.8rem;
   height: 4.8rem;
@@ -82,22 +83,39 @@
   top: 0.4rem;
   left: 29.1rem;
 }
-.button:hover div {
+.button::after {
+  content: "";
+  background: #1a6449;
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 31.2rem;
+}
+.button:hover::before {
+  content: "";
   width: 69.3rem;
   height: 69.3rem;
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -29.1rem;
+  top: -32.25rem;
   left: -5%;
 }
-.button:active div {
+.button:active::after {
+  content: "";
   width: 69.3rem;
   height: 69.3rem;
-  background: #1a6449;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -29.1rem;
+  top: -32.25rem;
   left: -5%;
 }
 .button:disabled {
