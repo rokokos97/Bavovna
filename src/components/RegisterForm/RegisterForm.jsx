@@ -155,7 +155,7 @@ const RegisterForm = () => {
       <p>
         Already have account?{'  '}
         <NavLink
-          to="login"
+          to="/login"
           role="button"
         >
           {' '}
