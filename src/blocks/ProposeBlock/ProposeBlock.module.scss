@@ -81,3 +81,6 @@
 .lastChild {
   order: 2;
 }
+.button {
+  @include button(16.2rem, $black, $white, $accent-a-3, $accent-a-5);
+}

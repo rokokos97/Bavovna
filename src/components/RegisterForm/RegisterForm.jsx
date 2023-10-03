@@ -16,8 +16,8 @@ const RegisterForm = () => {
   const [registerError, setRegisterError] = useState(null);
   const formik = useFormik({
     initialValues: {
-      name: '',
-      surname: '',
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -33,7 +33,13 @@ const RegisterForm = () => {
   const googleRegister = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
-      googleService.get(accessToken).then((userInfo) => dispatch(signUpWithGoogle(userInfo)));
+      googleService.get(accessToken).then((userInfo) => {
+        dispatch(signUpWithGoogle({
+          firstName: userInfo.given_name,
+          lastName: userInfo.family_name,
+          email: userInfo.email,
+        }));
+      });
     },
   });
   const isFormValid = Object.keys(formik.errors).length === 0;
@@ -69,21 +75,21 @@ const RegisterForm = () => {
         >
           <TextField
             label='First name'
-            name='name'
+            name='firstName'
             placeholder={'Enter your first name'}
-            value={formik.values.name}
+            value={formik.values.firstName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            error={formik.errors.name}
+            error={formik.errors.firstName}
           />
           <TextField
             label='Last name'
-            name='surname'
+            name='lastName'
             placeholder={'Enter your last name'}
-            value={formik.values.surname}
+            value={formik.values.lastName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            error={formik.errors.surname}
+            error={formik.errors.lastName}
           />
           <TextField
             label='Email'

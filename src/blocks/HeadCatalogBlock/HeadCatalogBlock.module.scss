@@ -20,22 +20,6 @@
 }
 
 .heroBtn {
-  background-color: $black;
-  color: $white;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  padding: 2.1rem 3.6rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s ease 0s;
-
-  &:hover {
-    background-color: $accent-a-3;
-  }
-
-  &:active {
-    background-color: $accent-a-5;
-  }
+  margin: 0 auto;
+  @include button(17.4rem, $black, $white, $accent-a-3, $accent-a-5);
 }

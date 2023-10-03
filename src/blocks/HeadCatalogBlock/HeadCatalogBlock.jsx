@@ -8,7 +8,11 @@ const HeadCatalogBlock = () => {
         <h2 className={styles.heroTitle}>
           10% discount on the summer collection
         </h2>
-        <button className={styles.heroBtn}>View more</button>
+        <button className={styles.heroBtn}>
+          <span>
+            View more
+          </span>
+        </button>
       </div>
     </div>
   );

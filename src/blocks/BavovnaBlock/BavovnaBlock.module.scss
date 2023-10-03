@@ -21,5 +21,5 @@
 .button {
   margin: 0 auto;
   border: 1px solid $black;
-  @include button(19.5rem, 7.28rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  @include button(19.5rem, $white, $black, $transparent-30-a-05, $accent-a-3);
 }

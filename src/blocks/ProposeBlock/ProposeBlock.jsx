@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './ProposeBlock.module.scss';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const ProposeBlock = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.proposeBlock}>
       <div className={styles.img}>
@@ -29,6 +30,14 @@ const ProposeBlock = () => {
             environment and emphasize your style and elegance.
           </p>
         </div>
+        <button
+          className={styles.button}
+          onClick={()=> navigate('/catalogue')}
+        >
+          <span>
+            View new
+          </span>
+        </button>
         <Link to='/catalogue'>View new</Link>
       </div>
     </div>
