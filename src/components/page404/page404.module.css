@@ -83,6 +83,7 @@
 .page404 button:disabled {
   border: 1px solid #868686;
   background: #f5f5f5;
+  pointer-events: none;
   cursor: not-allowed;
 }
 .page404 button:disabled span {
