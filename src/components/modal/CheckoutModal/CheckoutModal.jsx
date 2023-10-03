@@ -77,7 +77,11 @@ const CheckoutModal = ({handleCloseModal}) => {
         </div>
       </div>
       <div className={styles.btnContainer}>
-        <button type='button' className={styles.continueBtn}>
+        <button
+          type='button'
+          className={styles.continueBtn}
+          onClick={handleCloseModal}
+        >
           <ArrowBackIcon />
           <span>Сontinue shopping</span>
         </button>
