@@ -49,20 +49,7 @@
 }
 
 .filterBtn {
-  padding: 1.5rem 3.4rem;
-  border: 0.1rem solid $black;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-
-  &:hover {
-    background-color: $transparent-30-a-05;
-  }
-
-  &:active {
-    background-color: $accent-a-05;
-  }
+  margin: 0 auto;
+  border: 1px solid $black;
+  @include button(19.5rem, $white, $black, $transparent-30-a-05, $accent-a-3);
 }

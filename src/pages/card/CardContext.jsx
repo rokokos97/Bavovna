@@ -128,13 +128,10 @@ const CardContext = ({item}) => {
                   <button
                     type='button'
                     onClick={handleCollectData}
-                    className={
-                      selectedColor && selectedSize ?
-                      `${styles.activeBtn}` :
-                      `${styles.disableBtn}`
-                    }
+                    className={styles.activeBtn}
+                    disabled={!selectedColor || !selectedSize}
                   >
-                    ADD TO BAG
+                    <span>ADD TO BAG</span>
                   </button>
                 </div>
               </form>
