@@ -9,8 +9,8 @@ import LoginLayout from '../components/LoginLayout/LoginLayout';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';
-import NotFoundPage from '../pages/notFoundPage/notFoundPage';
 import Catalogue from '../pages/catalogue/Catalogue';
+import Page404 from '../components/page404/page404';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             <Route path='catalogue/:id' element={<Card />} />
             <Route path='login/*' element={<LoginLayout />} />
             <Route path='main' element={<MainPage />} />
-            <Route path='*' element={<NotFoundPage />} />
+            <Route path='*' element={<Page404 />} />
           </Route>
         </Routes>
       </AppLoader>

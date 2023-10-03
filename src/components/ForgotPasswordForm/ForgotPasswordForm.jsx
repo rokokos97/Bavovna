@@ -57,7 +57,7 @@ const ForgotPasswordForm = () => {
       <p>
         Do you remember your password?{'  '}
         <NavLink
-          to="signUp"
+          to="/login"
           role="button"
         >
           {' '}
