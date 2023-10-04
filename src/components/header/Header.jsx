@@ -34,11 +34,14 @@ const Header = () => {
           <Link to='/catalogue'>
             <span>Catalogue</span>
           </Link>
+          <Link to='/help'>
+            <span>Help</span>
+          </Link>
         </div>
         <button
           role='button'
           className={styles.logo}
-          onClick={()=> (navigate('/'))}
+          onClick={() => navigate('/')}
         >
           BAVOVNA LOGO
         </button>

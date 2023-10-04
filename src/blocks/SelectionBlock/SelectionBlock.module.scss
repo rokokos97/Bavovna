@@ -19,3 +19,44 @@
   background-color: inherit;
   text-transform: uppercase;
 }
+.sortBlock {
+  position: relative;
+}
+
+.sortPopup {
+  position: absolute;
+  right: 0;
+  top: 4.9rem;
+  width: 19.3rem;
+  padding-top: 0.8rem;
+  border: 0.1rem solid $gray-30;
+  border-top: none;
+  background-color: $white;
+  z-index: 2;
+}
+
+.activeName {
+  @include fonts($body_3);
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem;
+  cursor: pointer;
+
+  &:not(:first-child) {
+    border-top: 0.05rem solid $transparent70-gray10;
+  }
+
+  &:hover {
+    background-color: $transparent-30-a-05;
+    border-top: none;
+
+    & + .activeName {
+      border-top: none;
+    }
+  }
+
+  &:active {
+    background-color: $accent-a-05;
+  }
+}
