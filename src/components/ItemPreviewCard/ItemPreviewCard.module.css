@@ -13,10 +13,10 @@
 }
 .itemPreviewCard:hover .itemPreviewCard__description, .itemPreviewCard:hover .itemPreviewCard__price {
   text-decoration: underline;
-  color: #103c2c;
+  color: #03281c;
 }
 .itemPreviewCard:hover .itemPreviewCard__description span, .itemPreviewCard:hover .itemPreviewCard__price span {
-  color: #103c2c;
+  color: #03281c;
 }
 .itemPreviewCard:active {
   cursor: pointer;

@@ -31,11 +31,9 @@
 }
 .banner span {
   color: #fafafa;
-  text-align: center;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.3rem; /* 162.5% */
+  font-family: "Fixel Display Bold";
+  font-size: 8px;
+  line-height: 110%;
   text-transform: uppercase;
 }
 
@@ -54,40 +52,63 @@
 .headerNavBar {
   display: flex;
   gap: 1.6rem;
-  text-transform: uppercase;
 }
 .headerNavBar span {
-  font-size: 1.2rem;
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
 
 .headerMenuBar {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1.6rem;
 }
-.headerMenuBar span {
-  color: #040404;
-  font-family: Fixel-Text, sans-serif;
-  text-align: center;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.01rem;
-}
-
-.headerMenuBar a {
+.headerMenuBar div {
   display: flex;
   align-items: center;
+  gap: 0.4rem;
+  font-family: "Fixel Display Medium";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
-
-.headerMenuBar a span {
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+.headerMenuBar div button {
+  background: transparent;
+  font-family: "Fixel Display Medium";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
-
-.headerMenuBar a:hover span {
-  color: #3a7f66;
+.headerMenuBar button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  font-family: "Fixel Display Medium";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.headerMenuBar button:hover {
+  color: #03281c;
+}
+.headerMenuBar button:hover span {
+  color: #03281c;
+}
+.headerMenuBar button:hover div svg path {
+  stroke: #03281c;
+}
+.headerMenuBar button:active {
+  color: #1a6449;
+}
+.headerMenuBar button:active span {
+  color: #1a6449;
+}
+.headerMenuBar button:active div svg path {
+  stroke: #1a6449;
 }
 
 .headerSearch {
@@ -95,53 +116,11 @@
   align-items: center;
   position: relative;
 }
-
 .headerSearch input {
+  background: transparent;
   border: none;
   outline: none;
   height: 2.4rem;
-}
-
-.headerSearch span {
-  position: absolute;
-  right: 0.1rem;
-}
-
-.headerLang {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.eng {
-  background: transparent;
-}
-.eng span {
-  font-family: "Fixel Display Semibold";
-  font-size: 12px;
-  line-height: 110%;
-}
-.eng:hover span {
-  color: #3a7f66;
-}
-.eng:active span {
-  color: #0a281d;
-}
-
-.ukr {
-  background: transparent;
-}
-.ukr span {
-  font-family: "Fixel Display Regular";
-  font-size: 12px;
-  line-height: 110%;
-}
-.ukr:hover span {
-  color: #3a7f66;
-}
-.ukr:active span {
-  color: #0a281d;
 }
 
 /*# sourceMappingURL=Header.module.css.map */

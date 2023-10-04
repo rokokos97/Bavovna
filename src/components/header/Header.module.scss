@@ -28,13 +28,7 @@
 
   span {
     color: $white;
-    text-align: center;
-    // font-family: Fixel Display, sans-serif;
-    font-size: 0.8rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.3rem; /* 162.5% */
-    text-transform: uppercase;
+    @include fonts($headline-11)
   }
 }
 .header {
@@ -52,94 +46,72 @@
 .headerNavBar {
   display: flex;
   gap: 1.6rem;
-  text-transform: uppercase;
   span {
-    font-size: 1.2rem;
+    @include fonts($menu-2);
   }
 }
-
 .headerMenuBar {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1.6rem;
-  span {
-    color: $black;
-    font-family: Fixel-Text, sans-serif;
-    text-align: center;
-    font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    letter-spacing: 0.01rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    @include fonts($menu-4);
+
+    button {
+        background: transparent;
+        @include fonts($menu-4)
+    }
   }
-}
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background:  transparent;
+    @include fonts($menu-4);
 
-.headerMenuBar a {
-  display: flex;
-  align-items: center;
-}
-
-.headerMenuBar a span {
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.headerMenuBar a:hover span {
-  color: $accent-a-4;
+    &:hover {
+      color: $accent-a-7;
+      span {
+        color: $accent-a-7;
+      }
+      div {
+        svg {
+          path {
+            stroke: $accent-a-7;
+          }
+        }
+      }
+    }
+    &:active {
+      color: $accent-a-5;
+      span {
+        color: $accent-a-5;
+      }
+      div {
+        svg {
+          path {
+            stroke: $accent-a-5;
+          }
+        }
+      }
+    }
+  }
 }
 
 .headerSearch {
   display: flex;
   align-items: center;
   position: relative;
-}
 
-.headerSearch input {
-  border: none;
-  outline: none;
-  height: 2.4rem;
-}
-
-.headerSearch span {
-  position: absolute;
-  right: 0.1rem;
-}
-
-.headerLang {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-}
-.eng {
-  background: transparent;
-  span {
-    @include fonts($link-2)
-  }
-  &:hover {
-    span {
-      color: $accent-a-4;
-    }
-  }
-  &:active {
-    span {
-      color: $accent-a-8;
-    }
-  }
-}
-.ukr {
-  background: transparent;
-  span {
-    @include fonts($link-3)
-  }
-  &:hover {
-    span {
-      color: $accent-a-4;
-    }
-  }
-  &:active {
-    span {
-      color: $accent-a-8;
-    }
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+    height: 2.4rem;
   }
 }
