@@ -90,7 +90,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
           <CheckboxBlock value='sale' label='SALE' />
         </div>
         <button type='button' className={styles.filterBtn}>
-          Clean filter
+          <span>Clean filter</span>
         </button>
       </div>
     </div>

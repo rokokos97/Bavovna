@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ProposeBlock.module.scss';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const ProposeBlock = () => {
   const navigate = useNavigate();
@@ -32,13 +32,10 @@ const ProposeBlock = () => {
         </div>
         <button
           className={styles.button}
-          onClick={()=> navigate('/catalogue')}
+          onClick={() => navigate('/catalogue')}
         >
-          <span>
-            View new
-          </span>
+          <span>View new</span>
         </button>
-        <Link to='/catalogue'>View new</Link>
       </div>
     </div>
   );

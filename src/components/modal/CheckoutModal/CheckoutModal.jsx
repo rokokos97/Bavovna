@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import CloseIcon from '../../svg/closeIcon/CloseIcon';
 import {useData} from '../../../Providers/CardMasterProvider';
-import TrashIcon from '../../svg/trashIcon/trashIcon';
 import styles from './CheckoutModal.module.scss';
+import ArrowBackIcon from '../../svg/arrowBackIcon/arrowBackIcon';
 
 const CheckoutModal = ({handleCloseModal}) => {
   // const {itemData, setItemData, collectData} = useData();
@@ -75,9 +75,19 @@ const CheckoutModal = ({handleCloseModal}) => {
             </div>
           </div>
         </div>
-        <div className={styles.trash}>
-          <TrashIcon />
-        </div>
+      </div>
+      <div className={styles.btnContainer}>
+        <button
+          type='button'
+          className={styles.continueBtn}
+          onClick={handleCloseModal}
+        >
+          <ArrowBackIcon />
+          <span>Сontinue shopping</span>
+        </button>
+        <button type='button' className={styles.checkoutBtn}>
+          <span>Check out</span>
+        </button>
       </div>
     </section>
   );
