@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["favoriteIcon.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA","file":"favoriteIcon.module.css"}
+{"version":3,"sourceRoot":"","sources":["favoriteIcon.module.scss","../../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;;AAII;EACE,QC6KK;;ADvKP;EACE,QCyKK","file":"favoriteIcon.module.css"}

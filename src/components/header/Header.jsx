@@ -43,31 +43,33 @@ const Header = () => {
           BAVOVNA LOGO
         </button>
         <div className={styles.headerMenuBar}>
-          <div className={styles.headerSearch}>
+          <button className={styles.headerSearch}>
             <input name='search'></input>
             <SearchIcon />
-          </div>
-          <Link to='/favorite'>
+          </button>
+          <button
+            onClick={()=>(navigate('/favorite'))}
+          >
             <FavoriteIcon />
-          </Link>
-          <Link to='/cart'>
+          </button>
+          <button
+            onClick={()=>(navigate('/cart'))}
+          >
             <ShoppingCartIcon />
             <span>(0)</span>
-          </Link>
-          <Link to='/login'>
+          </button>
+          <button
+            onClick={()=>(navigate('/user'))}
+          >
             <AccountIcon />
-          </Link>
-          <span>{isLoggedIn && user ? user.firstName : 'ACCOUNT'}</span>
-          <div className={styles.headerLang}>
-            <button className={styles.eng}>
-              <span>
-                Eng
-              </span>
+            <span>{isLoggedIn && user ? user.firstName : 'account'}</span>
+          </button>
+          <div>
+            <button style={{fontWeight: 'bold'}}>
+              eng
             </button>
-            <button className={styles.ukr}>
-              <span>
-                Укр
-              </span>
+            <button>
+              укр
             </button>
           </div>
         </div>
