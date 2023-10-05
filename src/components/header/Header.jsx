@@ -56,7 +56,7 @@ const Header = () => {
             onClick={()=>(navigate('/cart'))}
           >
             <ShoppingCartIcon />
-            <span>(0)</span>
+            <p>(0)</p>
           </button>
           <button
             onClick={()=>(navigate('/user'))}

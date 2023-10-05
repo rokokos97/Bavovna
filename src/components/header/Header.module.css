@@ -93,13 +93,14 @@
   text-transform: uppercase;
 }
 .headerMenuBar button:hover {
-  color: #03281c;
+  color: #5a9b83;
 }
 .headerMenuBar button:hover span {
-  color: #03281c;
+  text-decoration: underline;
+  color: #5a9b83;
 }
 .headerMenuBar button:hover div svg path {
-  stroke: #03281c;
+  stroke: #5a9b83;
 }
 .headerMenuBar button:active {
   color: #1a6449;

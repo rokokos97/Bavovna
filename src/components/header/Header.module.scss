@@ -75,14 +75,15 @@
     @include fonts($menu-4);
 
     &:hover {
-      color: $accent-a-7;
+      color: $accent-a-3;
       span {
-        color: $accent-a-7;
+        text-decoration: underline;
+        color: $accent-a-3;
       }
       div {
         svg {
           path {
-            stroke: $accent-a-7;
+            stroke: $accent-a-3;
           }
         }
       }
