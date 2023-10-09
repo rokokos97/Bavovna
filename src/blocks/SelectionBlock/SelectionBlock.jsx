@@ -5,16 +5,20 @@ import SortIcon from '../../components/svg/sortIcon/sortIcon';
 
 import styles from './SelectionBlock.module.scss';
 
-const SelectionBlock = ({handlerIsFilter}) => {
+const SelectionBlock = ({handlerIsFilter, setSelectedSort}) => {
   const [sortIsOpen, setSortIsOpen] = useState(false);
   const sortList = [
-    'New Arrivals',
-    'Best Selling',
-    'Price Low to Hight',
-    'Price Hight to Low',
+    {new: 'New Arrivals'},
+    {best: 'Best Selling'},
+    {low: 'Price Low to Hight'},
+    {hight: 'Price Hight to Low'},
   ];
-  const onToggleSortIsOpen = () => {
-    setSortIsOpen(!sortIsOpen);
+  const onChangeIsSort = () => {
+    setSortIsOpen((prevValue) => !prevValue);
+  };
+  const handleOptionClick = (option) => {
+    setSelectedSort(option);
+    onChangeIsSort();
   };
 
   return (
@@ -24,16 +28,20 @@ const SelectionBlock = ({handlerIsFilter}) => {
         Filter
       </button>
       <div className={styles.sortBlock}>
-        <button className={styles.iconBtn} onClick={onToggleSortIsOpen}>
+        <button className={styles.iconBtn} onClick={onChangeIsSort}>
           Sort by
           <SortIcon />
         </button>
         {sortIsOpen && (
           <div className={styles.sortPopup}>
             <ul>
-              {sortList.map((name, index) => (
-                <li key={index} className={styles.activeName}>
-                  {name}
+              {sortList.map((option, index) => (
+                <li
+                  key={index}
+                  className={styles.activeName}
+                  onClick={() => handleOptionClick(Object.keys(option)[0])}
+                >
+                  {Object.values(option)[0]}
                 </li>
               ))}
             </ul>
@@ -46,6 +54,7 @@ const SelectionBlock = ({handlerIsFilter}) => {
 
 SelectionBlock.propTypes = {
   handlerIsFilter: PropTypes.func,
+  setSelectedSort: PropTypes.func,
 };
 
 export default SelectionBlock;

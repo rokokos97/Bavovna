@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,7 +9,7 @@ import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
 import ArrowForwardIcon from '../../components/svg/arrowForwardIcon/arrowForwardIcon';
 import styles from './CardsCatalogBlock.module.scss';
 
-const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
+const CardsCatalogBlock = ({isFilter, handlerIsFilter, selectedSort}) => {
   const itemsPerPage = 9;
   let totalPages = null;
   let totalItems = null;
@@ -19,6 +19,18 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
   const items = useSelector(getItems());
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const [currentPage, setCurrentPage] = useState(1);
+  // const [currentItems, setCurrentItems] = useState(items);
+
+  useEffect(()=>{
+    if (selectedSort === 'low') {
+      items.sort((a, b) => a.price - b.price);
+      console.log(items);
+    }
+    if (selectedSort === 'hight') {
+      items.sort((a, b) => b.price - a.price);
+      console.log(items);
+    }
+  }, [selectedSort]);
 
   if (!isItemsLoading && items) {
     totalItems = items.length;
@@ -47,8 +59,8 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
           <ul
             className={
               !isFilter ?
-                styles.cards :
-                `${styles.cards} ${styles.cardsPadding}`
+               styles.cards :
+               `${styles.cards} ${styles.cardsPadding}`
             }
           >
             {visibleItems.map((item, index) => (
@@ -63,8 +75,8 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
             <div
               className={
                 currentPage !== 1 ?
-                  styles.arrow :
-                  `${styles.arrow} ${styles.arrowDisable}`
+                 styles.arrow :
+                 `${styles.arrow} ${styles.arrowDisable}`
               }
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(currentPage - 1)}
@@ -78,8 +90,8 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
                   key={index}
                   className={
                     index + 1 === currentPage ?
-                      `${styles.pageButton} ${styles.activeBtn}` :
-                      styles.pageButton
+                     `${styles.pageButton} ${styles.activeBtn}` :
+                     styles.pageButton
                   }
                   onClick={handlePageChange}
                 >
@@ -90,8 +102,8 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
             <div
               className={
                 currentPage !== totalPages ?
-                  styles.arrow :
-                  `${styles.arrow} ${styles.arrowDisable}`
+                 styles.arrow :
+                 `${styles.arrow} ${styles.arrowDisable}`
               }
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage(currentPage + 1)}
@@ -109,6 +121,7 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter}) => {
 CardsCatalogBlock.propTypes = {
   isFilter: PropTypes.bool,
   handlerIsFilter: PropTypes.func,
+  selectedSort: PropTypes.string,
 };
 
 export default CardsCatalogBlock;

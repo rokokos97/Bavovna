@@ -6,8 +6,9 @@ import styles from './Catalogue.module.scss';
 
 const Catalogue = () => {
   const [isFilter, setIsFilter] = useState(false);
+  const [selectedSort, setSelectedSort] = useState('');
 
-  const changeIsFilter = () => {
+  const onChangeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
 
@@ -15,10 +16,15 @@ const Catalogue = () => {
     <section className={styles.section}>
       <div className={styles.block}>
         <HeadCatalogBlock />
-        <SelectionBlock handlerIsFilter={changeIsFilter} />
+        <SelectionBlock
+          handlerIsFilter={onChangeIsFilter}
+          selectedSort={selectedSort}
+          setSelectedSort={setSelectedSort}
+        />
         <CardsCatalogBlock
           isFilter={isFilter}
-          handlerIsFilter={changeIsFilter}
+          handlerIsFilter={onChangeIsFilter}
+          selectedSort={selectedSort}
         />
       </div>
     </section>
