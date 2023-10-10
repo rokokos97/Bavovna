@@ -4,7 +4,7 @@ import styles from './filterIcon.module.scss';
 
 const FilterIcon = () => {
   return (
-    <div className={styles.filterIcon}>
+    <div className={styles.filterIcon} data-testid="FilterIcon">
       <svg
         width='40'
         height='40'
