@@ -9,6 +9,8 @@ const schema = new Schema({
   deliveryAddress: {type: Object},
   novaPoshtaAddress: {type: Object},
   favorite: [{type: Schema.Types.ObjectId, ref: 'Item'}],
+  isVerified: {type: Boolean, default: false},
+  emailVerificationToken: {type: String, default: null},
 }, {
   timestamps: true,
 });
