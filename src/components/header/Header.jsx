@@ -62,7 +62,7 @@ const Header = () => {
             <p>(0)</p>
           </button>
           <button
-            onClick={()=>(navigate('/user'))}
+            onClick={()=>(user? navigate('/user'):navigate('/login'))}
           >
             <AccountIcon />
             <span>{isLoggedIn && user ? user.firstName : 'account'}</span>

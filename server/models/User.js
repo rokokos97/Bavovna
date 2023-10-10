@@ -4,11 +4,13 @@ const schema = new Schema({
   firstName: {type: String},
   lastName: {type: String},
   email: {type: String, required: true, unique: true},
-  password: {type: String, unique: true},
+  password: {type: String},
   phoneNumber: {type: String},
   deliveryAddress: {type: Object},
   novaPoshtaAddress: {type: Object},
   favorite: [{type: Schema.Types.ObjectId, ref: 'Item'}],
+  isVerified: {type: Boolean, default: false},
+  emailVerificationToken: {type: String, default: null},
 }, {
   timestamps: true,
 });
