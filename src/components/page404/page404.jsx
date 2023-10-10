@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './page404.module.scss';
 import {useNavigate} from 'react-router-dom';
+import NotFoundPageImage from '../svg/notFoundPageImage/notFoundPageImage';
 
 const Page404 = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.page404} data-testid="Page404">
-      <img src={`http://localhost:8000/api/uploads/notFoundPage.png`} alt='not found page image'/>
+      <NotFoundPageImage />
       <p>
         The page you are looking for does not exist or has been moved.
       </p>

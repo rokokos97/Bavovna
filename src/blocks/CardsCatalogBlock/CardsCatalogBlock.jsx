@@ -1,23 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import FilterSelectionBlock from '../FilterSelectionBlock/FilterSelectionBlock';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
 import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
 import ArrowForwardIcon from '../../components/svg/arrowForwardIcon/arrowForwardIcon';
 import styles from './CardsCatalogBlock.module.scss';
 
-const CardsCatalogBlock = ({isFilter, handlerIsFilter, selectedSort}) => {
+const CardsCatalogBlock = ({items, isFilter, handlerIsFilter}) => {
   const itemsPerPage = 9;
   let totalPages = null;
   let totalItems = null;
   let startIndex = null;
   let endIndex = null;
   let visibleItems = [];
-  const items = useSelector(getItems());
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  // const isItemsLoading = useSelector(getItemsLoadingStatus());
   const [currentPage, setCurrentPage] = useState(1);
   // const [currentItems, setCurrentItems] = useState(items);
 
@@ -32,7 +29,8 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter, selectedSort}) => {
     }
   }, [selectedSort]);
 
-  if (!isItemsLoading && items) {
+  // if (!isItemsLoading && items) {
+  if (items) {
     totalItems = items.length;
     totalPages = Math.ceil(totalItems / itemsPerPage);
     startIndex = (currentPage - 1) * itemsPerPage;
@@ -119,6 +117,7 @@ const CardsCatalogBlock = ({isFilter, handlerIsFilter, selectedSort}) => {
 };
 
 CardsCatalogBlock.propTypes = {
+  items: PropTypes.array,
   isFilter: PropTypes.bool,
   handlerIsFilter: PropTypes.func,
   selectedSort: PropTypes.string,
