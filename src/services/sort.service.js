@@ -9,5 +9,8 @@ export const sortItems = (sortOrder, items) => {
   if (sortOrder === 'best') {
     return sortedItems.filter((item) => item.status === 'sale');
   }
+  if (sortOrder === 'new') {
+    return sortedItems.filter((item) => item.status === 'new');
+  }
   return sortedItems;
 };

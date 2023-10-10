@@ -14,10 +14,8 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter}) => {
   let startIndex = null;
   let endIndex = null;
   let visibleItems = [];
-  // const isItemsLoading = useSelector(getItemsLoadingStatus());
   const [currentPage, setCurrentPage] = useState(1);
 
-  // if (!isItemsLoading && items) {
   if (items) {
     totalItems = items.length;
     totalPages = Math.ceil(totalItems / itemsPerPage);
