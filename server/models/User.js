@@ -4,7 +4,7 @@ const schema = new Schema({
   firstName: {type: String},
   lastName: {type: String},
   email: {type: String, required: true, unique: true},
-  password: {type: String, unique: false},
+  password: {type: String},
   phoneNumber: {type: String},
   deliveryAddress: {type: Object},
   novaPoshtaAddress: {type: Object},
