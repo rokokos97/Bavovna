@@ -13,7 +13,7 @@ const Catalogue = () => {
   const [sortBy, setSortBy] = useState('');
   let sortedItems = null;
 
-  const onChangeIsFilter = () => {
+  const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
 
@@ -30,8 +30,7 @@ const Catalogue = () => {
         <CardsCatalogBlock
           items={sortedItems}
           isFilter={isFilter}
-          handlerIsFilter={onChangeIsFilter}
-          selectedSort={selectedSort}
+          handlerIsFilter={changeIsFilter}
         />
       </div>
     </section>
