@@ -10,8 +10,8 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
   const sortList = [
     {new: 'New Arrivals'},
     {best: 'Best Selling'},
-    {low: 'Price Low to Hight'},
-    {hight: 'Price Hight to Low'},
+    {lowToHigh: 'Price Low to Hight'},
+    {highToLow: 'Price Hight to Low'},
   ];
   const onToggleIsSort = () => {
     setIsSort(!isSort);
@@ -19,6 +19,7 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
 
   const onClickToSort = (sortBy) => {
     handlerSortBy(sortBy);
+    onToggleIsSort();
   };
 
   return (
