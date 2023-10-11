@@ -12,6 +12,7 @@ import ShopPage from '../pages/shopPage/shopPage';
 import Catalogue from '../pages/catalogue/Catalogue';
 import Page404 from '../components/page404/page404';
 import HelpPage from '../pages/helpPage/HelpPage';
+import UserPage from '../pages/userPage/userPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path='login/*' element={<LoginLayout />} />
             <Route path='main' element={<MainPage />} />
             <Route path='help' element={<HelpPage />} />
+            <Route path='user/:id' element={<UserPage />}/>
             <Route path='*' element={<Page404 />} />
           </Route>
         </Routes>

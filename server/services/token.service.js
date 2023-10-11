@@ -12,6 +12,12 @@ class TokenService {
       accessToken, refreshToken, expiresIn: 3600,
     };
   }
+  createVerify(payload) {
+    const verifyToken = jwt.sign(payload, config.get('verifySecret'));
+    return {
+      verifyToken,
+    };
+  }
   async save(userId, refreshToken) {
     const data = await Token.findOne({userId});
     console.log(data);
