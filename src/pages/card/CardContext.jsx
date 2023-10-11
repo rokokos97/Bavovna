@@ -5,7 +5,7 @@ import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import {Dropdown} from '../../components/dropdown/Dropdown';
-import CheckoutModal from '../../components/modal/CheckoutModal/CheckoutModal';
+import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
 import {useData} from '../../Providers/CardMasterProvider';
 import styles from './Card.module.scss';
