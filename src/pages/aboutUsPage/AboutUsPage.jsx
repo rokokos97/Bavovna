@@ -7,7 +7,7 @@ import styles from './AboutUsPage.module.scss';
 
 const AboutUsPage = () => {
   return (
-    <section className={styles.aboutUs}>
+    <section className={styles.aboutUs} data-testid='AboutUsPage'>
       <AboutBlock />
       <ProposeBlock />
       <FashionBlock />

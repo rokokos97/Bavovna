@@ -34,71 +34,69 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter}) => {
   });
 
   return (
-    <>
-      <div className={styles.catalog}>
-        {isFilter ? (
+    <div className={styles.catalog} data-testid='CardsCatalogBlock'>
+      {isFilter ? (
           <FilterSelectionBlock handlerIsFilter={handlerIsFilter} />
         ) : null}
-        <div className={styles.cardsContainer}>
-          <ul
-            className={
+      <div className={styles.cardsContainer}>
+        <ul
+          className={
               !isFilter ?
                 styles.cards :
                 `${styles.cards} ${styles.cardsPadding}`
-            }
-          >
-            {visibleItems.map((item, index) => (
-              <Link key={index} to={`/catalogue/${item._id}`}>
-                <li>
-                  <ItemPreviewCard item={item} />
-                </li>
-              </Link>
-            ))}
-          </ul>
-          <div className={styles.pagination}>
-            <div
-              className={
+          }
+        >
+          {visibleItems.map((item, index) => (
+            <Link key={index} to={`/catalogue/${item._id}`}>
+              <li>
+                <ItemPreviewCard item={item} />
+              </li>
+            </Link>
+          ))}
+        </ul>
+        <div className={styles.pagination}>
+          <div
+            className={
                 currentPage !== 1 ?
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
-              }
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage(currentPage - 1)}
-            >
-              <ArrowBackIcon />
-              <span>Previous</span>
-            </div>
-            <div className={styles.btnBlock}>
-              {Array.from({length: totalPages}).map((_, index) => (
-                <button
-                  key={index}
-                  className={
+            }
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+          >
+            <ArrowBackIcon />
+            <span>Previous</span>
+          </div>
+          <div className={styles.btnBlock}>
+            {Array.from({length: totalPages}).map((_, index) => (
+              <button
+                key={index}
+                className={
                     index + 1 === currentPage ?
                       `${styles.pageButton} ${styles.activeBtn}` :
                       styles.pageButton
-                  }
-                  onClick={handlePageChange}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
-            <div
-              className={
+                }
+                onClick={handlePageChange}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+          <div
+            className={
                 currentPage !== totalPages ?
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
-              }
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage(currentPage + 1)}
-            >
-              <span>Next</span>
-              <ArrowForwardIcon />
-            </div>
+            }
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage(currentPage + 1)}
+          >
+            <span>Next</span>
+            <ArrowForwardIcon />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import styles from './CheckboxBlock.module.scss';
 
 const CheckboxBlock = ({value, label, id = ''}) => {
   return (
-    <div className={styles.checkbox}>
+    <div className={styles.checkbox} data-testid='CheckboxBlock'>
       <input
         type='checkbox'
         name={value}

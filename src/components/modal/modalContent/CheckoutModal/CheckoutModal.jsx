@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import CloseIcon from '../../../svg/closeIcon/CloseIcon';
-import {useData} from '../../../../Providers/CardMasterProvider';
+import {useDataCard} from '../../../../Providers/CardMasterProvider';
 import styles from './CheckoutModal.module.scss';
 import ArrowBackIcon from '../../../svg/arrowBackIcon/arrowBackIcon';
 
 const CheckoutModal = ({handleCloseModal}) => {
-  // const {itemData, setItemData, collectData} = useData();
-  // const {itemData, setItemData} = useData();
-  const {itemData} = useData();
+  const {itemData} = useDataCard();
   const {itemName, itemPrice, itemColor, itemSize, itemImg, itemQuantity} =
     itemData;
 
@@ -28,7 +26,7 @@ const CheckoutModal = ({handleCloseModal}) => {
   };
 
   return (
-    <section className={styles.checkout}>
+    <section className={styles.checkout} data-testid='CheckoutModal'>
       <div className={styles.closeIcon} onClick={handleCloseModal}>
         <CloseIcon />
       </div>

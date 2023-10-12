@@ -4,12 +4,6 @@ import PropTypes from 'prop-types';
 const DataContext = createContext(null);
 
 export const CardMasterProvider = ({children}) => {
-  // const [itemPrice, setItemPrice] = useState('');
-  // const [itemColor, setItemColor] = useState('');
-  // const [itemSize, setItemSize] = useState('');
-  // const [itemImg, setItemImg] = useState('');
-  // const [quantity, setQuantity] = useState(1);
-
   const [itemData, setItemData] = useState({
     itemName: '',
     itemPrice: '',
@@ -31,7 +25,7 @@ export const CardMasterProvider = ({children}) => {
   );
 };
 
-export const useData = () => {
+export const useDataCard = () => {
   const data = useContext(DataContext);
   if (!data) {
     throw new Error('Can not "useData" outside of the "CardMasterProvider"');

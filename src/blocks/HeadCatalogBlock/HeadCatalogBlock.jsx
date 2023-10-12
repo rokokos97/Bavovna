@@ -3,7 +3,7 @@ import styles from './HeadCatalogBlock.module.scss';
 
 const HeadCatalogBlock = () => {
   return (
-    <div className={styles.head}>
+    <div className={styles.head} data-testid='HeadCatalogBlock'>
       <div className={styles.hero}>
         <h2 className={styles.heroTitle}>
           10% discount on the summer collection

@@ -29,7 +29,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
   // };
 
   return (
-    <div className={styles.filterContainer}>
+    <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
       <div className={styles.filterSelection}>
         <div className={styles.closeIcon} onClick={handlerIsFilter}>
           <CloseIcon />

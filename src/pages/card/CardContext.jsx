@@ -7,7 +7,7 @@ import {Modal} from '../../components/modal';
 import {Dropdown} from '../../components/dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
-import {useData} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../Providers/CardMasterProvider';
 import styles from './Card.module.scss';
 import ColorsList from '../../components/colorsList/ColorsList';
 import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
@@ -31,7 +31,7 @@ const colors = [
 ];
 
 const CardContext = ({item}) => {
-  const {itemData, setItemData, collectData} = useData();
+  const {itemData, setItemData, collectData} = useDataCard();
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
 
