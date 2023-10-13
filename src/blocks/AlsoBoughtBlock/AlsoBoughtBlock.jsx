@@ -15,7 +15,7 @@ const AlsoBoughtBlock = () => {
   }
 
   return (
-    <div className={styles.alsoBought}>
+    <div className={styles.alsoBought} data-testid='AlsoBoughtBlock'>
       <h2 className={styles.alsoBoughtTitle}>You might also like</h2>
       {!isItemsLoading && (
         <ul className={styles.alsoBoughtList}>

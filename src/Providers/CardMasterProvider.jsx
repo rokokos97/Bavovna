@@ -4,23 +4,18 @@ import PropTypes from 'prop-types';
 const DataContext = createContext(null);
 
 export const CardMasterProvider = ({children}) => {
-  // const [itemPrice, setItemPrice] = useState('');
-  // const [itemColor, setItemColor] = useState('');
-  // const [itemSize, setItemSize] = useState('');
-  // const [itemImg, setItemImg] = useState('');
-  // const [quantity, setQuantity] = useState(1);
-
   const [itemData, setItemData] = useState({
+    _id: '',
     itemName: '',
-    itemPrice: '',
-    itemColor: null,
+    itemPrice: 0,
+    itemColor: '',
     itemSize: '',
     itemImg: '',
     itemQuantity: 1,
   });
 
-  const collectData = () => {
-    const jsonData = {...itemData};
+  const collectData = (data) => {
+    const jsonData = {...data};
     console.log(jsonData);
   };
 
@@ -31,7 +26,7 @@ export const CardMasterProvider = ({children}) => {
   );
 };
 
-export const useData = () => {
+export const useDataCard = () => {
   const data = useContext(DataContext);
   if (!data) {
     throw new Error('Can not "useData" outside of the "CardMasterProvider"');

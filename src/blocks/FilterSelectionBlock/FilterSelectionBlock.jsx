@@ -6,21 +6,15 @@ import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
 import styles from './FilterSelectionBlock.module.scss';
 import {filtersValues} from '../../services/filtersValues.service';
 
-const FilterSelectionBlock = ({handlerIsFilter}) => {
+const FilterSelectionBlock = ({handlerIsFilter, handleFilterChange}) => {
   const {categoryValues, sizeValues, colorValues, availabilityValues} =
     filtersValues;
-  // const [selectedOptions, setSelectedOptions] = useState({
-  //   category: 'All',
-  //   size: 'None',
-  //   color: 'None',
-  //   availability: 'All',
-  //   new: false,
-  //   discount: false,
-  // });
+
 
   // const handleFilter = () => {};
 
   // const handleChange = (e) => {
+  //   console.log('target', e.target);
   //   const {name, value, type, checked} = e.target;
   //   setSelectedOptions((prevFilters) => ({
   //     ...prevFilters,
@@ -29,7 +23,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
   // };
 
   return (
-    <div className={styles.filterContainer}>
+    <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
       <div className={styles.filterSelection}>
         <div className={styles.closeIcon} onClick={handlerIsFilter}>
           <CloseIcon />
@@ -44,6 +38,8 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 key={index}
                 value={categoryValue.value}
                 label={categoryValue.label}
+                option='category'
+                handleFilterChange={handleFilterChange}
               />
             ))}
           />
@@ -56,6 +52,8 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 key={index}
                 value={sizeValue.value}
                 label={sizeValue.label}
+                option='size'
+                handleFilterChange={handleFilterChange}
               />
             ))}
           />
@@ -69,6 +67,8 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 id='isColor'
                 value={colorValue.value}
                 label={colorValue.label}
+                option='color'
+                handleFilterChange={handleFilterChange}
               />
             ))}
           />
@@ -81,6 +81,8 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 key={index}
                 value={availabilityValue.value}
                 label={availabilityValue.label}
+                option='availability'
+                handleFilterChange={handleFilterChange}
               />
             ))}
           />
@@ -99,6 +101,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
 
 FilterSelectionBlock.propTypes = {
   handlerIsFilter: PropTypes.func,
+  handleFilterChange: PropTypes.func,
 };
 
 export default FilterSelectionBlock;

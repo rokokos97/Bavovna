@@ -3,7 +3,7 @@ import styles from './AboutBlock.module.scss';
 
 const AboutBlock = () => {
   return (
-    <div className={styles.aboutBlock}>
+    <div className={styles.aboutBlock} data-testid='AboutBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
           <img src='./img/images/AboutUs/aboutBlock_1.jpg' alt='img_1' />

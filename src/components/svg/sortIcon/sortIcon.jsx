@@ -3,7 +3,7 @@ import styles from './sortIcon.module.scss';
 
 const SortIcon = () => {
   return (
-    <div className={styles.sortIcon}>
+    <div className={styles.sortIcon} data-testid='SortIcon'>
       <svg
         // width='40'
         // height='40'

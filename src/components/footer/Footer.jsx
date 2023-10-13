@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className={styles.container}>
+    <footer className={styles.container} data-testid='Footer'>
       <div className={styles.footer}>
         <div className={styles.footerTop}>
           <div className={styles.footerTopLeft}>
