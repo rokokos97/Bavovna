@@ -24,20 +24,20 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter}) => {
     visibleItems = items.slice(startIndex, endIndex);
   }
 
-  const handlePageChange = (event) => {
+  const handlerPageChange = (event) => {
     setCurrentPage(parseInt(event.target.textContent));
   };
 
   const pageButtons = document.querySelectorAll('.pageButton');
   pageButtons.forEach((button) => {
-    button.addEventListener('click', handlePageChange);
+    button.addEventListener('click', handlerPageChange);
   });
 
   return (
     <>
       <div className={styles.catalog}>
         {isFilter ? (
-          <FilterSelectionBlock handlerIsFilter={handlerIsFilter} />
+          <FilterSelectionBlock handlerIsFilter={handleIsFilter} />
         ) : null}
         <div className={styles.cardsContainer}>
           <ul
