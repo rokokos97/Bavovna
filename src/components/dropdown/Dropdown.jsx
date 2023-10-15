@@ -12,7 +12,7 @@ const Dropdown = ({id, placeholder, name, inner}) => {
   };
 
   return (
-    <div className={styles.dropdown}>
+    <div className={styles.dropdown} data-testid='Dropdown'>
       <button
         data-path={name}
         id={id}

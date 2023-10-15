@@ -7,7 +7,7 @@ import {Modal} from '../../components/modal';
 import {Dropdown} from '../../components/dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
-import {useData} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../Providers/CardMasterProvider';
 import styles from './Card.module.scss';
 import ColorsList from '../../components/colorsList/ColorsList';
 import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
@@ -31,18 +31,19 @@ const colors = [
 ];
 
 const CardContext = ({item}) => {
-  const {itemData, setItemData, collectData} = useData();
+  const {itemData, setItemData, collectData} = useDataCard();
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
 
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
-  const {name, price, size, images, description, modelParams, composition} =
+  const {_id, name, price, size, images, description, modelParams, composition} =
     item;
 
   useEffect(() => {
     setItemData({
       ...itemData,
+      _id,
       itemName: name,
       itemPrice: price,
       itemImg: `http://localhost:8000/api/${images[0]}`,
@@ -51,7 +52,7 @@ const CardContext = ({item}) => {
 
   const handleCollectData = () => {
     if (selectedColor && selectedSize) {
-      collectData();
+      collectData(itemData);
       setShowCheckoutModal(true);
       hideBodyOverflow();
     }
@@ -79,9 +80,9 @@ const CardContext = ({item}) => {
         <div className={styles.card}>
           <div className={styles.imgs}>
             <ul className={styles.imgsList}>
-              {images.map((image) => (
+              {images.map((image, index) => (
                 <li
-                  key={image}
+                  key={index}
                   onClick={() =>
                     changeImage(`http://localhost:8000/api/${image}`)
                   }

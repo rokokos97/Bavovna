@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useData} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../Providers/CardMasterProvider';
 
 import styles from './SizeList.module.scss';
 
@@ -8,7 +8,7 @@ const allSizes = ['xs', 's', 'm', 'l'];
 const noSize = 'Choose a size';
 
 const SizesList = ({sizes, selectedSize, setSelectedSize}) => {
-  const {itemData, setItemData} = useData();
+  const {itemData, setItemData} = useDataCard();
 
   const handleChange = (event) => {
     setSelectedSize(event.target.value);

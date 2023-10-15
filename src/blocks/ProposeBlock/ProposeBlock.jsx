@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 const ProposeBlock = () => {
   const navigate = useNavigate();
   return (
-    <div className={styles.proposeBlock}>
+    <div className={styles.proposeBlock} data-testid='ProposeBlock'>
       <div className={styles.img}>
         <img src='./img/images/AboutUs/propose_1.jpg' alt='img_3' />
       </div>
