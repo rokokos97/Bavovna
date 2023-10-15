@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
 import FilterIcon from '../../components/svg/filterIcon/filterIcon';
 import SortIcon from '../../components/svg/sortIcon/sortIcon';
+import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 
 import styles from './SelectionBlock.module.scss';
 
-const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
+const SelectionBlock = () => {
+  const {changeIsFilter, onSortItems} = useDataCatalogue();
   const [isSort, setIsSort] = useState(false);
 
   const sortList = [
@@ -24,7 +25,7 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
   };
 
   const onClickToSort = (sortBy) => {
-    handlerSortBy(sortBy);
+    onSortItems(sortBy);
     closeIsSort();
   };
 
@@ -36,7 +37,7 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
 
   return (
     <div className={styles.selection} data-testid='SelectionBlock'>
-      <button className={styles.iconBtn} onClick={handlerIsFilter}>
+      <button className={styles.iconBtn} onClick={changeIsFilter}>
         <FilterIcon />
         Filter
       </button>
@@ -59,11 +60,6 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
       </div>
     </div>
   );
-};
-
-SelectionBlock.propTypes = {
-  handlerIsFilter: PropTypes.func,
-  handlerSortBy: PropTypes.func,
 };
 
 export default SelectionBlock;

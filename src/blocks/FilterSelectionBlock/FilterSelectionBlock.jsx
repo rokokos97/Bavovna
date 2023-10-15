@@ -1,31 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import CloseIcon from '../../components/svg/closeIcon/CloseIcon';
 import {Dropdown} from '../../components/dropdown/Dropdown';
 import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
-import styles from './FilterSelectionBlock.module.scss';
+import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 import {filtersValues} from '../../services/filtersValues.service';
+import styles from './FilterSelectionBlock.module.scss';
 
-const FilterSelectionBlock = ({handlerIsFilter, handleFilterChange}) => {
+const FilterSelectionBlock = () => {
+  const {changeIsFilter, handleFilterChange} = useDataCatalogue();
+
   const {categoryValues, sizeValues, colorValues, availabilityValues} =
     filtersValues;
-
-
-  // const handleFilter = () => {};
-
-  // const handleChange = (e) => {
-  //   console.log('target', e.target);
-  //   const {name, value, type, checked} = e.target;
-  //   setSelectedOptions((prevFilters) => ({
-  //     ...prevFilters,
-  //     [name]: type === 'checkbox' ? checked : value,
-  //   }));
-  // };
 
   return (
     <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
       <div className={styles.filterSelection}>
-        <div className={styles.closeIcon} onClick={handlerIsFilter}>
+        <div className={styles.closeIcon} onClick={changeIsFilter}>
           <CloseIcon />
         </div>
         <div className={styles.selectsContainer}>
@@ -97,11 +87,6 @@ const FilterSelectionBlock = ({handlerIsFilter, handleFilterChange}) => {
       </div>
     </div>
   );
-};
-
-FilterSelectionBlock.propTypes = {
-  handlerIsFilter: PropTypes.func,
-  handleFilterChange: PropTypes.func,
 };
 
 export default FilterSelectionBlock;

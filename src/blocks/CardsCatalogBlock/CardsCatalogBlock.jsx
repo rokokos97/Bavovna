@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import FilterSelectionBlock from '../FilterSelectionBlock/FilterSelectionBlock';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
 import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
 import ArrowForwardIcon from '../../components/svg/arrowForwardIcon/arrowForwardIcon';
+import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 import styles from './CardsCatalogBlock.module.scss';
 
-const CardsCatalogBlock = ({items, isFilter, handlerIsFilter, handleFilterChange}) => {
+const CardsCatalogBlock = () => {
+  const {filteredItems: items, isFilter, changeIsFilter, handleFilterChange} = useDataCatalogue();
+
   const itemsPerPage = 9;
   let totalPages = null;
   let totalItems = null;
@@ -36,7 +38,7 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter, handleFilterChange
   return (
     <div className={styles.catalog} data-testid='CardsCatalogBlock'>
       {isFilter ? (
-          <FilterSelectionBlock handlerIsFilter={handlerIsFilter} handleFilterChange={handleFilterChange} />
+          <FilterSelectionBlock changeIsFilter={changeIsFilter} handleFilterChange={handleFilterChange} />
         ) : null}
       <div className={styles.cardsContainer}>
         <ul
@@ -46,8 +48,8 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter, handleFilterChange
                 `${styles.cards} ${styles.cardsPadding}`
           }
         >
-          {visibleItems.map((item, index) => (
-            <Link key={index} to={`/catalogue/${item._id}`}>
+          {visibleItems.map((item) => (
+            <Link key={item._id} to={`/catalogue/${item._id}`}>
               <li>
                 <ItemPreviewCard item={item} />
               </li>
@@ -98,13 +100,6 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter, handleFilterChange
       </div>
     </div>
   );
-};
-
-CardsCatalogBlock.propTypes = {
-  items: PropTypes.array,
-  isFilter: PropTypes.bool,
-  handlerIsFilter: PropTypes.func,
-  handleFilterChange: PropTypes.func,
 };
 
 export default CardsCatalogBlock;
