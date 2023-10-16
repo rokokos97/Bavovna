@@ -44,13 +44,13 @@ const ItemPreviewCard = ({id}) => {
         {favorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
       </div>
       <div className={styles.itemPreviewCard__description}>
-        <span className={styles.itemPreviewCard__descriptionText}>
+        <span>
           {item.description}
         </span>
+        <p>
+          ${item.price}
+        </p>
       </div>
-      <span className={styles.itemPreviewCard__price}>
-        ${item.price}
-      </span>
     </div>
   );
 };
