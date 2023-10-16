@@ -20,16 +20,16 @@ const UserPage = () => {
           <li>orders</li>
           <li>wishlist</li>
           <li>personal data</li>
-          <li>exit</li>
+          <li><span>exit</span></li>
         </ul>
       </div>
       <div className={styles.wishList}>
         <p>wish list</p>
-        <div>
+        <section>
           {
             user && user.favorite.map((item)=> <ItemPreviewCard key={item} id={item}/>)
           }
-        </div>
+        </section>
         <div>
         </div>
       </div>
