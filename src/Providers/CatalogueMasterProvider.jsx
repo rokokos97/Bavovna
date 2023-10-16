@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useEffect} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
 import PropTypes from 'prop-types';
@@ -6,20 +6,24 @@ import PropTypes from 'prop-types';
 const DataCatalogueContext = createContext(null);
 
 export const CatalogueMasterProvider = ({children}) => {
-  const items = useSelector(getItems());
-  const [isFilter, setIsFilter] = useState(false);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [selectedFilters, setSelectedFilters] = useState({
+  const initialFilters = {
     category: [],
     size: [],
     color: [],
     availability: [],
     // new: false,
     // discount: false,
-  });
+  };
+  const items = useSelector(getItems());
+  const [isFilter, setIsFilter] = useState(false);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState(initialFilters);
+
 
   useEffect(() => {
     setFilteredItems(items);
+    setSelectedFilters(initialFilters);
+    console.log(items);
   }, [items]);
 
   const changeIsFilter = () => {
@@ -55,8 +59,38 @@ export const CatalogueMasterProvider = ({children}) => {
         prevFilters[category].filter((item) => item !== value) :
         [...prevFilters[category], value],
     }));
-    console.log(selectedFilters);
   };
+
+
+  useEffect(() => {
+    filteredItems.filter((item) => {
+      return Object.keys(selectedFilters).every((categories) => {
+        if (selectedFilters[categories].length === 0) {
+          return true;
+        }
+        return selectedFilters[categories].includes(item[categories]);
+      });
+    });
+    console.log('selectedFilters: ', selectedFilters);
+  }, [selectedFilters]);
+
+  // useEffect(()=>{
+  //   setFilteredItems(
+  //       filteredItems.filter((item) => {
+  //         if (selectedFilters.category && item.category !== selectedFilters.category) {
+  //           return false;
+  //         }
+  //         if (selectedFilters.size.length > 0 && !selectedFilters.size.includes(item.size)) {
+  //           return false;
+  //         }
+  //         if (selectedFilters.color.length > 0 && !selectedFilters.color.includes(item.color)) {
+  //           return false;
+  //         }
+  //         return true;
+  //       }),
+  //   );
+  // }, [selectedFilters]);
+
 
   return (
     <DataCatalogueContext.Provider value={{isFilter, filteredItems, changeIsFilter, onSortItems, handleFilterChange}}>

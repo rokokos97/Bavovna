@@ -7,7 +7,7 @@ import {filtersValues} from '../../services/filtersValues.service';
 import styles from './FilterSelectionBlock.module.scss';
 
 const FilterSelectionBlock = () => {
-  const {changeIsFilter, handleFilterChange} = useDataCatalogue();
+  const {changeIsFilter} = useDataCatalogue();
 
   const {categoryValues, sizeValues, colorValues, availabilityValues} =
     filtersValues;
@@ -29,7 +29,6 @@ const FilterSelectionBlock = () => {
                 value={categoryValue.value}
                 label={categoryValue.label}
                 option='category'
-                handleFilterChange={handleFilterChange}
               />
             ))}
           />
@@ -43,7 +42,7 @@ const FilterSelectionBlock = () => {
                 value={sizeValue.value}
                 label={sizeValue.label}
                 option='size'
-                handleFilterChange={handleFilterChange}
+
               />
             ))}
           />
@@ -58,7 +57,6 @@ const FilterSelectionBlock = () => {
                 value={colorValue.value}
                 label={colorValue.label}
                 option='color'
-                handleFilterChange={handleFilterChange}
               />
             ))}
           />
@@ -72,7 +70,6 @@ const FilterSelectionBlock = () => {
                 value={availabilityValue.value}
                 label={availabilityValue.label}
                 option='availability'
-                handleFilterChange={handleFilterChange}
               />
             ))}
           />

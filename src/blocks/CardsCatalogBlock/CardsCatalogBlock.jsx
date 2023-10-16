@@ -8,7 +8,7 @@ import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 import styles from './CardsCatalogBlock.module.scss';
 
 const CardsCatalogBlock = () => {
-  const {filteredItems: items, isFilter, changeIsFilter, handleFilterChange} = useDataCatalogue();
+  const {filteredItems: items, isFilter} = useDataCatalogue();
 
   const itemsPerPage = 9;
   let totalPages = null;
@@ -38,7 +38,7 @@ const CardsCatalogBlock = () => {
   return (
     <div className={styles.catalog} data-testid='CardsCatalogBlock'>
       {isFilter ? (
-          <FilterSelectionBlock changeIsFilter={changeIsFilter} handleFilterChange={handleFilterChange} />
+          <FilterSelectionBlock />
         ) : null}
       <div className={styles.cardsContainer}>
         <ul
