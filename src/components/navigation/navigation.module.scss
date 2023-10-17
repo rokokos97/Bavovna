@@ -9,7 +9,7 @@
     @include fonts($headline-4);
     padding: 0.6rem 1.6rem 2.4rem;
   };
-  div {
+  .menuItem {
   width: 100%;
   cursor: pointer;
   padding: 1.6rem;
@@ -19,6 +19,12 @@
   }
 }
 .active {
+  width: 100%;
+  cursor: pointer;
+  padding: 1.6rem;
+  text-align: start;
+  margin-bottom: 0.8rem;
+  @include fonts($menu-1);
   background-color: $transparent-30-a-05;
 }
 .navigationContentSide {

@@ -13,7 +13,7 @@
   text-transform: uppercase;
   padding: 0.6rem 1.6rem 2.4rem;
 }
-.sidebar div {
+.sidebar .menuItem {
   width: 100%;
   cursor: pointer;
   padding: 1.6rem;
@@ -26,6 +26,15 @@
 }
 
 .active {
+  width: 100%;
+  cursor: pointer;
+  padding: 1.6rem;
+  text-align: start;
+  margin-bottom: 0.8rem;
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
   background-color: rgba(169, 223, 203, 0.3);
 }
 

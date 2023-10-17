@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './navigation.module.scss';
 import PropTypes from 'prop-types';
+import ExitString from '../exitString/exitString';
 
 const Navigation = ({sections}) => {
   const [activeSection, setActiveSection] = useState(sections[0].label);
@@ -11,10 +12,10 @@ const Navigation = ({sections}) => {
         {sections.map((section) => (
           <div
             key={section.label}
-            className={activeSection === section.label ? styles.active : ''}
+            className={activeSection === section.label ? styles.active : styles.menuItem}
             onClick={() => setActiveSection(section.label)}
           >
-            {section.label}
+            {section.label==='exit'? <ExitString/>:section.label}
           </div>
         ))}
       </div>
