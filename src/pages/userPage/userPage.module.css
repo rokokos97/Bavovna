@@ -1,71 +1,12 @@
 .userPage {
   width: 100%;
-  display: flex;
-}
-
-.sideMenu {
-  margin-top: 1.1rem;
+  text-align: start;
   margin-left: 8rem;
-  margin-right: 13.4rem;
-  display: flex;
-  width: 30rem;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.4rem;
+  margin-top: 1.1rem;
 }
-.sideMenu div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.4rem;
-}
-.sideMenu div ul {
-  font-family: "Fixel Display Regular";
-  font-size: 16px;
-  line-height: 140%;
-  font-size: 12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-.sideMenu div p {
-  font-family: "Fixel Display Regular";
-  font-size: 24px;
-  line-height: 120%;
-  text-transform: uppercase;
-}
-.sideMenu ul {
-  font-family: "Fixel Display Semibold";
-  font-size: 16px;
-  line-height: 110%;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
-  align-self: stretch;
-}
-
-.wishList {
+.userPage ul {
+  margin-bottom: 2.4rem;
   display: inline-flex;
-  justify-content: center;
-  margin: 4.6rem auto;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 2.4rem;
-}
-.wishList p {
-  font-family: "Fixel Display Semibold";
-  font-size: 16px;
-  line-height: 110%;
-  text-transform: uppercase;
-}
-.wishList section {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 2.4rem;
-  row-gap: 2.4rem;
-  margin: 0 auto;
 }
 
 /*# sourceMappingURL=userPage.module.css.map */

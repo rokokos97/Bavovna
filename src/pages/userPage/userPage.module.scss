@@ -1,60 +1,11 @@
 @import "../../styles/variables.module";
 .userPage {
   width: 100%;
-  display: flex;
-}
-.sideMenu {
-  margin-top: 1.1rem;
-  margin-left: 8rem;
-  margin-right: 13.4rem;
-  display: flex;
-  width: 30rem;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.4rem;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.4rem;
-
-    ul {
-      @include fonts($breadcrumb);
-      font-size: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-    p {
-      @include fonts($headline-4);
-    }
-  }
-  ul {
-    @include fonts($menu-1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    align-self: stretch;
-  }
-}
-.wishList {
-  display: inline-flex;
-  justify-content: center;
-  margin: 4.6rem auto;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 2.4rem;
-
-  p {
-    @include fonts($menu-1);
-  }
-  section {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2.4rem;
-    row-gap: 2.4rem;
-    margin:  0 auto;
-  }
+ text-align: start;
+ margin-left: 8rem;
+ margin-top: 1.1rem;
+ ul {
+   margin-bottom: 2.4rem;
+   display: inline-flex;
+ }
 }
