@@ -18,6 +18,7 @@ export const CatalogueMasterProvider = ({children}) => {
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
+  console.log(selectedFilters);
 
 
   useEffect(() => {
@@ -52,43 +53,53 @@ export const CatalogueMasterProvider = ({children}) => {
     }
   };
 
-  const handleFilterChange = (category, value) => {
+  const handleFilterChange = (categoryType, value) => {
     setSelectedFilters((prevFilters) => ({
       ...prevFilters,
-      [category]: prevFilters[category].includes(value) ?
-        prevFilters[category].filter((item) => item !== value) :
-        [...prevFilters[category], value],
+      [categoryType]: prevFilters[categoryType].includes(value) ?
+        prevFilters[categoryType].filter((item) => item !== value) :
+        [...prevFilters[categoryType], value],
     }));
   };
 
 
-  useEffect(() => {
-    filteredItems.filter((item) => {
-      return Object.keys(selectedFilters).every((categories) => {
-        if (selectedFilters[categories].length === 0) {
-          return true;
-        }
-        return selectedFilters[categories].includes(item[categories]);
-      });
-    });
-    console.log('selectedFilters: ', selectedFilters);
-  }, [selectedFilters]);
+  // useEffect(() => {
+  //   const newItems = [...filteredItems];
+
+  //   newItems.filter((item) => {
+  //     return Object.keys(selectedFilters).every((categoryType) => {
+  //       if (selectedFilters[categoryType].length === 0) {
+  //         return true;
+  //       }
+  //       console.log(item[categoryType].length);
+  //     });
+  //   });
+
+  // newItems.filter((item) => {
+  //   return Object.keys(selectedFilters).every((categoryType) => {
+  //     if (selectedFilters[categoryType].length === 0) {
+  //       return true;
+  //     }
+  //     return selectedFilters[categoryType].includes(item[categoryType]);
+  //   });
+  // });
+  // console.log('selectedFilters: ', selectedFilters);
+  // }, [selectedFilters]);
 
   // useEffect(()=>{
-  //   setFilteredItems(
-  //       filteredItems.filter((item) => {
-  //         if (selectedFilters.category && item.category !== selectedFilters.category) {
-  //           return false;
-  //         }
-  //         if (selectedFilters.size.length > 0 && !selectedFilters.size.includes(item.size)) {
-  //           return false;
-  //         }
-  //         if (selectedFilters.color.length > 0 && !selectedFilters.color.includes(item.color)) {
-  //           return false;
-  //         }
-  //         return true;
-  //       }),
-  //   );
+  //   const newItems = [...filteredItems];
+  //   const items = newItems.filter((item) => {
+  //     return (
+  //       selectedFilters.category.length === 0 || selectedFilters.category
+  //           .some((category) => item.category.includes(category))
+  //     ) && (
+  //       selectedFilters.size.length === 0 || selectedFilters.size.some((size) => item.size.includes(size))
+  //     ) && (
+  //       selectedFilters.color.length === 0 || selectedFilters.color.some((color) => item.color.includes(color))
+  //     );
+  //   });
+  //   console.log('items: ', items);
+  //   setFilteredItems(items);
   // }, [selectedFilters]);
 
 
