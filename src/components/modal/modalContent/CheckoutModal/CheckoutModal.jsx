@@ -49,7 +49,7 @@ const CheckoutModal = ({handleCloseModal}) => {
         <div className={styles.checkoutContent}>
           <p className={styles.name}>{itemName}</p>
           <pre className={styles.priceBlock}>
-            {currentPrice}&nbsp;
+            {parseFloat(currentPrice).toFixed(2)}&nbsp;
             <span>$</span>
           </pre>
           <div className={styles.dataBlock}>
