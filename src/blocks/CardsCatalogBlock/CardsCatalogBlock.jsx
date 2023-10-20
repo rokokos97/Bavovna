@@ -50,7 +50,7 @@ const CardsCatalogBlock = ({items, isFilter, handlerIsFilter}) => {
             {visibleItems.map((item, index) => (
               <Link key={index} to={`/catalogue/${item._id}`}>
                 <li>
-                  <ItemPreviewCard item={item} />
+                  <ItemPreviewCard id={item._id} />
                 </li>
               </Link>
             ))}
