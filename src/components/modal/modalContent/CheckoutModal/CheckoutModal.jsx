@@ -1,34 +1,45 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import CloseIcon from '../../../svg/closeIcon/CloseIcon';
-import {useData} from '../../../../Providers/CardMasterProvider';
+import {useDataCard} from '../../../../Providers/CardMasterProvider';
 import styles from './CheckoutModal.module.scss';
 import ArrowBackIcon from '../../../svg/arrowBackIcon/arrowBackIcon';
 
 const CheckoutModal = ({handleCloseModal}) => {
-  // const {itemData, setItemData, collectData} = useData();
-  // const {itemData, setItemData} = useData();
-  const {itemData} = useData();
-  const {itemName, itemPrice, itemColor, itemSize, itemImg, itemQuantity} =
+  const {itemData} = useDataCard();
+  const {_id, itemName, itemPrice, itemColor, itemSize, itemImg, itemQuantity} =
     itemData;
 
-  const [quantity, setQuantity] = useState(itemQuantity);
+  const [currentQuantity, setCurrentQuantity] = useState(itemQuantity);
+  const [currentPrice, setCurrentPrice] = useState(itemPrice);
 
   const handleSub = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+    if (currentQuantity > 1) {
+      setCurrentQuantity(currentQuantity - 1);
+      setCurrentPrice(+(parseFloat(currentPrice - itemPrice).toFixed(2)));
     }
   };
+
   const handleAdd = () => {
-    setQuantity(quantity + 1);
+    setCurrentQuantity(currentQuantity + 1);
+    setCurrentPrice(+((parseFloat(currentPrice) + parseFloat(itemPrice)).toFixed(2)));
   };
 
-  const calcPrice = () => {
-    return itemPrice * quantity;
+
+  const handleCheckout = () => {
+    const checkoutData = {
+      _id,
+      name: itemName,
+      price: currentPrice,
+      color: itemColor,
+      size: itemSize,
+      quantity: currentQuantity,
+    };
+    console.log(checkoutData);
   };
 
   return (
-    <section className={styles.checkout}>
+    <section className={styles.checkout} data-testid='CheckoutModal'>
       <div className={styles.closeIcon} onClick={handleCloseModal}>
         <CloseIcon />
       </div>
@@ -38,7 +49,7 @@ const CheckoutModal = ({handleCloseModal}) => {
         <div className={styles.checkoutContent}>
           <p className={styles.name}>{itemName}</p>
           <pre className={styles.priceBlock}>
-            {calcPrice().toFixed(2)}&nbsp;
+            {parseFloat(currentPrice).toFixed(2)}&nbsp;
             <span>$</span>
           </pre>
           <div className={styles.dataBlock}>
@@ -63,7 +74,7 @@ const CheckoutModal = ({handleCloseModal}) => {
                 >
                   -
                 </button>
-                {quantity}
+                {currentQuantity}
                 <button
                   className={styles.quantityBtn}
                   type='button'
@@ -85,7 +96,7 @@ const CheckoutModal = ({handleCloseModal}) => {
           <ArrowBackIcon />
           <span>Сontinue shopping</span>
         </button>
-        <button type='button' className={styles.checkoutBtn}>
+        <button type='button' className={styles.checkoutBtn} onClick={handleCheckout}>
           <span>Check out</span>
         </button>
       </div>

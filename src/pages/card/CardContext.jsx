@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
-import {Dropdown} from '../../components/dropdown/Dropdown';
+import Dropdown from '../../components/dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
-import {useData} from '../../Providers/CardMasterProvider';
-import styles from './Card.module.scss';
+import {useDataCard} from '../../Providers/CardMasterProvider';
 import ColorsList from '../../components/colorsList/ColorsList';
+import EmptyHeartIcon from '../../components/svg/emptyHeartIcon/emptyHeartIcon';
+import FillHeartIcon from '../../components/svg/fillHeartIcon/fillHeartIcon';
 import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
+import styles from './Card.module.scss';
+
 const colors = [
   {
     name: 'Black',
@@ -31,30 +34,55 @@ const colors = [
 ];
 
 const CardContext = ({item}) => {
-  const {itemData, setItemData, collectData} = useData();
+  const {itemData, setItemData, collectData} = useDataCard();
+  const {
+    _id,
+    name,
+    price,
+    size,
+    images,
+    description,
+    modelParams,
+    composition,
+    sale,
+    favorite,
+  } = item;
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
-
+  const [isFavorite, setIsFavorite] = useState(favorite);
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
-  const {name, price, size, images, description, modelParams, composition} =
-    item;
+  let currentPrice = 0;
+
+  // if (sale > 0) {
+  //   currentPrice = (price * sale) / 100;
+  // } else {
+  //   currentPrice = price;
+  // }
+  sale
+    ? (currentPrice = parseFloat((price * sale) / 100).toFixed(2))
+    : (currentPrice = price);
 
   useEffect(() => {
     setItemData({
       ...itemData,
+      _id,
       itemName: name,
-      itemPrice: price,
+      itemPrice: currentPrice,
       itemImg: `http://localhost:8000/api/${images[0]}`,
     });
-  }, []);
+  }, [item]);
 
   const handleCollectData = () => {
     if (selectedColor && selectedSize) {
-      collectData();
+      collectData(itemData);
       setShowCheckoutModal(true);
       hideBodyOverflow();
     }
+  };
+
+  const handleIsFavorite = () => {
+    setIsFavorite(!isFavorite);
   };
 
   const changeImage = (imgUrl) => {
@@ -79,9 +107,9 @@ const CardContext = ({item}) => {
         <div className={styles.card}>
           <div className={styles.imgs}>
             <ul className={styles.imgsList}>
-              {images.map((image) => (
+              {images.map((image, index) => (
                 <li
-                  key={image}
+                  key={index}
                   onClick={() =>
                     changeImage(`http://localhost:8000/api/${image}`)
                   }
@@ -101,8 +129,18 @@ const CardContext = ({item}) => {
           <div className={styles.about}>
             <div className={styles.aboutInner}>
               <form className={styles.buyForm}>
-                <h2 className={styles.buyFormTitle}>{name}</h2>
-                <span className={styles.buyFormPrice}>${price}</span>
+                <div className={styles.titleBlock}>
+                  <h2 className={styles.buyFormTitle}>{name}</h2>
+                  <div className={styles.heart} onClick={handleIsFavorite}>
+                    {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+                  </div>
+                </div>
+                <div className={styles.priceBlock}>
+                  {sale ? (
+                    <span className={styles.unCurrentPrice}>${price}</span>
+                  ) : null}
+                  <span className={styles.buyFormPrice}>${currentPrice}</span>
+                </div>
                 <dir className={styles.color}>
                   <ColorsList
                     colors={colors}

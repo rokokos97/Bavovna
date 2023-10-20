@@ -14,7 +14,7 @@ const Header = () => {
   const user = useSelector(getUser());
   const isLoggedIn = useSelector(getIsLoggedIn());
   return (
-    <header className={styles.container}>
+    <header className={styles.container} data-testid='Header'>
       <div className={styles.banner}>
         <Link to='/catalogue'>
           <span>10% discount on the summer collection</span>

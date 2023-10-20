@@ -1,30 +1,43 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
 import FilterIcon from '../../components/svg/filterIcon/filterIcon';
 import SortIcon from '../../components/svg/sortIcon/sortIcon';
+import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 
 import styles from './SelectionBlock.module.scss';
 
-const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
+const SelectionBlock = () => {
+  const {changeIsFilter, onSortItems} = useDataCatalogue();
   const [isSort, setIsSort] = useState(false);
+
   const sortList = [
     {new: 'New Arrivals'},
     {best: 'Best Selling'},
     {lowToHigh: 'Price Low to Hight'},
     {highToLow: 'Price Hight to Low'},
   ];
+
   const onToggleIsSort = () => {
     setIsSort(!isSort);
   };
 
+  const closeIsSort = () => {
+    setIsSort(false);
+  };
+
   const onClickToSort = (sortBy) => {
-    handlerSortBy(sortBy);
-    onToggleIsSort();
+    onSortItems(sortBy);
+    closeIsSort();
+  };
+
+  const handleMouseLeave = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setIsSort(false);
+    }
   };
 
   return (
-    <div className={styles.selection}>
-      <button className={styles.iconBtn} onClick={handlerIsFilter}>
+    <div className={styles.selection} data-testid='SelectionBlock'>
+      <button className={styles.iconBtn} onClick={changeIsFilter}>
         <FilterIcon />
         Filter
       </button>
@@ -35,7 +48,7 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
         </button>
         {isSort && (
           <div className={styles.sortPopup}>
-            <ul>
+            <ul onMouseLeave={handleMouseLeave}>
               {sortList.map((item, index) => (
                 <li key={index} className={styles.activeName} onClick={() => onClickToSort(Object.keys(item)[0])}>
                   {Object.values(item)[0]}
@@ -47,11 +60,6 @@ const SelectionBlock = ({handlerIsFilter, handlerSortBy}) => {
       </div>
     </div>
   );
-};
-
-SelectionBlock.propTypes = {
-  handlerIsFilter: PropTypes.func,
-  handlerSortBy: PropTypes.func,
 };
 
 export default SelectionBlock;

@@ -1,37 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import CloseIcon from '../../components/svg/closeIcon/CloseIcon';
-import {Dropdown} from '../../components/dropdown/Dropdown';
+import Dropdown from '../../components/dropdown/Dropdown';
 import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
-import styles from './FilterSelectionBlock.module.scss';
+import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 import {filtersValues} from '../../services/filtersValues.service';
+import styles from './FilterSelectionBlock.module.scss';
 
-const FilterSelectionBlock = ({handlerIsFilter}) => {
+const FilterSelectionBlock = () => {
+  const {changeIsFilter} = useDataCatalogue();
+
   const {categoryValues, sizeValues, colorValues, availabilityValues} =
     filtersValues;
-  // const [selectedOptions, setSelectedOptions] = useState({
-  //   category: 'All',
-  //   size: 'None',
-  //   color: 'None',
-  //   availability: 'All',
-  //   new: false,
-  //   discount: false,
-  // });
-
-  // const handleFilter = () => {};
-
-  // const handleChange = (e) => {
-  //   const {name, value, type, checked} = e.target;
-  //   setSelectedOptions((prevFilters) => ({
-  //     ...prevFilters,
-  //     [name]: type === 'checkbox' ? checked : value,
-  //   }));
-  // };
 
   return (
-    <div className={styles.filterContainer}>
+    <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
       <div className={styles.filterSelection}>
-        <div className={styles.closeIcon} onClick={handlerIsFilter}>
+        <div className={styles.closeIcon} onClick={changeIsFilter}>
           <CloseIcon />
         </div>
         <div className={styles.selectsContainer}>
@@ -44,6 +28,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 key={index}
                 value={categoryValue.value}
                 label={categoryValue.label}
+                option='category'
               />
             ))}
           />
@@ -56,6 +41,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 key={index}
                 value={sizeValue.value}
                 label={sizeValue.label}
+                option='size'
               />
             ))}
           />
@@ -69,6 +55,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 id='isColor'
                 value={colorValue.value}
                 label={colorValue.label}
+                option='color'
               />
             ))}
           />
@@ -81,6 +68,7 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
                 key={index}
                 value={availabilityValue.value}
                 label={availabilityValue.label}
+                option='availability'
               />
             ))}
           />
@@ -95,10 +83,6 @@ const FilterSelectionBlock = ({handlerIsFilter}) => {
       </div>
     </div>
   );
-};
-
-FilterSelectionBlock.propTypes = {
-  handlerIsFilter: PropTypes.func,
 };
 
 export default FilterSelectionBlock;

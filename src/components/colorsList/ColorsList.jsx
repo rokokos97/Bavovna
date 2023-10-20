@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useData} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../Providers/CardMasterProvider';
 import styles from './ColorsList.module.scss';
 
 const noColor = 'Choose a color';
 
 const ColorsList = ({colors, selectedColor, setSelectedColor}) => {
   // const [selectedColor, setSelectedColor] = useState('');
-  const {itemData, setItemData} = useData();
+  const {itemData, setItemData} = useDataCard();
 
   const handleChange = (event) => {
     setSelectedColor(event.target.id);

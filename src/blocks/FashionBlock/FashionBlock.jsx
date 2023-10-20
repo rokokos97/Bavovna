@@ -3,7 +3,7 @@ import styles from './FashionBlock.module.scss';
 
 const FashionBlock = () => {
   return (
-    <div className={styles.fashionBlock}>
+    <div className={styles.fashionBlock} data-testid='FashionBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
           <img src='./img/images/AboutUs/fashion_1.jpg' alt='img_5' />

@@ -80,16 +80,38 @@
   align-items: flex-start;
 }
 
+.titleBlock{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+.heart{
+  cursor: pointer;
+}
+
 .buyFormTitle {
   font-size: 2.4rem;
   text-transform: uppercase;
-  padding-bottom: 2.4rem;
 }
 
-.buyFormPrice {
-  font-size: 2rem;
-  padding-bottom: 3.2rem;
+.priceBlock{
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+  font-size: 1.8rem;
 }
+
+.unCurrentPrice{
+  color: $gray-30;
+  text-decoration: line-through;
+}
+
+// .buyFormPrice {
+//   font-size: 2rem;
+// }
 
 .color {
   margin-bottom: 3.2rem;
@@ -117,7 +139,7 @@
 
 .formBag {
   display: flex;
-  padding-top: 1.6rem;
+  margin-top: 1.6rem;
   width: 100%;
 
   .activeBtn {
