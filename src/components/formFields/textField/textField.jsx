@@ -58,5 +58,6 @@ TextField.propTypes = {
   onBlur: PropTypes.func,
   error: PropTypes.string,
   placeholder: PropTypes.string,
+  style: PropTypes.string,
 };
 export default TextField;

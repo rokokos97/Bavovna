@@ -1,0 +1,47 @@
+@import "../../styles/variables.module";
+.navigationBlock {
+  width: 100%;
+  display: flex;
+  column-gap: 21.6rem;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+
+}
+.navigation {
+  @include fonts($breadcrumb);
+  text-align: start;
+}
+.navigationContentSide {
+  width: min-content;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.title {
+    @include fonts($headline-3);
+    padding: 0 1.6rem 0;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  p {
+    width: 100%;
+    cursor: pointer;
+    padding: 1.2rem 1.6rem;
+    text-align: start;
+    @include fonts($headline-4);
+  }
+}
+.active {
+  width: 100%;
+  cursor: pointer;
+  padding: 1.2rem 1.6rem;
+  text-align: start;
+  @include fonts($headline-4);
+  background-color: $transparent-30-a-05;
+}
+

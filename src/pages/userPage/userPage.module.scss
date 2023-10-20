@@ -1,1 +1,6 @@
-.userPage {}
+@import "../../styles/variables.module";
+.userPage {
+ width: 100%;
+ margin-left: 8rem;
+ margin-top: 1.1rem;
+}

@@ -5,9 +5,12 @@ import config from '../../config.json';
 import FillHeartIcon from '../svg/fillHeartIcon/fillHeartIcon';
 import EmptyHeartIcon from '../svg/emptyHeartIcon/emptyHeartIcon';
 import {useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {getItemsById} from '../../store/itemsSlice';
 
-const ItemPreviewCard = ({item}) => {
+const ItemPreviewCard = ({id}) => {
   const navigate = useNavigate();
+  const item = useSelector(getItemsById(id));
   const [favorite, setFavorite] = useState(false);
   const handleSetFavorite = () => {
     setFavorite(!favorite);
@@ -41,19 +44,19 @@ const ItemPreviewCard = ({item}) => {
         {favorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
       </div>
       <div className={styles.itemPreviewCard__description}>
-        <span className={styles.itemPreviewCard__descriptionText}>
+        <span>
           {item.description}
         </span>
+        <p>
+          ${item.price}
+        </p>
       </div>
-      <span className={styles.itemPreviewCard__price}>
-        ${item.price}
-      </span>
     </div>
   );
 };
 
 ItemPreviewCard.propTypes = {
-  item: PropTypes.object,
+  id: PropTypes.string.isRequired,
 };
 
 export default ItemPreviewCard;

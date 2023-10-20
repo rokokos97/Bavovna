@@ -29,7 +29,7 @@ function App() {
             <Route path='login/*' element={<LoginLayout />} />
             <Route path='main' element={<MainPage />} />
             <Route path='help' element={<HelpPage />} />
-            <Route path='user/:id' element={<UserPage />}/>
+            <Route path='user/:id/*' element={<UserPage />}/>
             <Route path='*' element={<Page404 />} />
           </Route>
         </Routes>

@@ -55,7 +55,7 @@ const NewArrivalsBlock = () => {
               >
                 {newArrivalItems.map((item) =>
                   <SwiperSlide key={item._id}>
-                    <ItemPreviewCard item={item}/>
+                    <ItemPreviewCard id={item._id}/>
                   </SwiperSlide>,
                 )}
               </Swiper>

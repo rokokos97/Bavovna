@@ -5,8 +5,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 0.8rem;
-  display: inline-flex;
 }
 .itemPreviewCard:hover {
   cursor: pointer;
@@ -75,23 +73,16 @@
 }
 
 .itemPreviewCard__description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 0 0;
-  align-self: stretch;
+  text-align: start;
 }
-
-.itemPreviewCard__descriptionText {
-  color: #040404;
+.itemPreviewCard__description span {
+  padding-top: 0.8rem;
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
-  text-align: start;
 }
-
-.itemPreviewCard__price {
-  color: black;
+.itemPreviewCard__description p:last-child {
+  padding-top: 0.8rem;
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;

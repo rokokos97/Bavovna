@@ -6,8 +6,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 0.8rem;
-  display: inline-flex;
 
   &:hover {
       cursor: pointer;
@@ -74,19 +72,15 @@
   right: 1.6rem;
 }
 .itemPreviewCard__description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 0 0;
-  align-self: stretch;
-}
-.itemPreviewCard__descriptionText {
-  color: $black;
-  @include fonts($body-2);
   text-align: start;
+  span {
+    padding-top: 0.8rem;
+    @include fonts($body-2);
+  }
+  p:last-child {
+    padding-top: 0.8rem;
+    @include fonts($headline-8);
+  }
 }
-.itemPreviewCard__price {
-  color: black;
-  @include fonts($headline-8);
-}
+
 
