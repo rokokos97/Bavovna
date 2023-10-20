@@ -51,7 +51,7 @@ const Header = () => {
             <SearchIcon />
           </button>
           <button
-            onClick={()=>(navigate('/favorite'))}
+            onClick={()=>(user? navigate(`/user/${user._id}/wishList`):{})}
           >
             <FavoriteIcon />
           </button>

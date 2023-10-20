@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["HelpPage.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AAEA;EACE;EACA,kBCoMQ;EDnMR","file":"HelpPage.module.css"}
+{"version":3,"sourceRoot":"","sources":["HelpPage.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA,kBCkMQ;EDjMR;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA","file":"HelpPage.module.css"}
