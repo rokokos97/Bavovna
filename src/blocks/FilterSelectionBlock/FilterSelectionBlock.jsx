@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseIcon from '../../components/svg/closeIcon/CloseIcon';
-import {Dropdown} from '../../components/dropdown/Dropdown';
+import Dropdown from '../../components/dropdown/Dropdown';
 import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
 import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 import {filtersValues} from '../../services/filtersValues.service';
@@ -42,7 +42,6 @@ const FilterSelectionBlock = () => {
                 value={sizeValue.value}
                 label={sizeValue.label}
                 option='size'
-
               />
             ))}
           />

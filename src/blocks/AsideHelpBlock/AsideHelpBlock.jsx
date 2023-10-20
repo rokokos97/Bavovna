@@ -2,27 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './AsideHelpBlock.module.scss';
 
-const AsideHelpBlock = ({selectedHelp, handleHelpSelect}) => {
-  const helps = [
-    'Delivery information',
-    'Return information',
-    'Payment',
-    'FAQ',
-    'Cookies settings',
-    'Privacy policy',
-  ];
-
+const AsideHelpBlock = ({helps, selectedHelpId, handleHelpSelect}) => {
   return (
     <div className={styles.aside}>
       <ul className={styles.asideList}>
-        {helps.map((help, index) => (
-          <li key={index} onClick={() => handleHelpSelect(index)}>
+        {helps.map((help) => (
+          <li key={help.id} onClick={() => handleHelpSelect(help.id)}>
             <span
               className={
-                index === selectedHelp ? styles.selected : styles.unselected
+                help.id === selectedHelpId ? styles.selected : styles.unselected
               }
             >
-              {help}
+              {help.name}
             </span>
           </li>
         ))}
@@ -32,7 +23,8 @@ const AsideHelpBlock = ({selectedHelp, handleHelpSelect}) => {
 };
 
 AsideHelpBlock.propTypes = {
-  selectedHelp: PropTypes.number,
+  helps: PropTypes.array,
+  selectedHelpId: PropTypes.number,
   handleHelpSelect: PropTypes.func,
 };
 

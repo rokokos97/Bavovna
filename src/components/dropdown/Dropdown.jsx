@@ -38,4 +38,4 @@ Dropdown.propTypes = {
   inner: PropTypes.any,
 };
 
-export {Dropdown};
+export default Dropdown;

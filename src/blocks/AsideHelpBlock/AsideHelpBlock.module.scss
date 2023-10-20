@@ -3,6 +3,7 @@
 .aside {
   @include fonts($headline-4);
   text-align: start;
+  white-space: nowrap;
 }
 
 .asideList {

@@ -16,7 +16,7 @@ const CheckoutModal = ({handleCloseModal}) => {
   const handleSub = () => {
     if (currentQuantity > 1) {
       setCurrentQuantity(currentQuantity - 1);
-      setCurrentPrice(+((parseFloat(currentPrice) - parseFloat(itemPrice)).toFixed(2)));
+      setCurrentPrice(+(parseFloat(currentPrice - itemPrice).toFixed(2)));
     }
   };
 
