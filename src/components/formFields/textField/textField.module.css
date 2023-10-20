@@ -59,4 +59,8 @@
   line-height: normal;
 }
 
+.block {
+  display: inline;
+}
+
 /*# sourceMappingURL=textField.module.css.map */

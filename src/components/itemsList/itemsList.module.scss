@@ -1,16 +1,18 @@
 @import '../../styles/variables.module';
 .itemsList {
+  width: 100%;
   flex-direction: column;
-  p {
-    @include fonts($menu-1);
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-  .previewCardList {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2.4rem;
-  }
+
+}
+.previewCardList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+.title {
+  @include fonts($menu-1);
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }

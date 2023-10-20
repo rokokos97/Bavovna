@@ -24,7 +24,7 @@ const RegisterForm = () => {
     },
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
-      if (!isFormValid) return;
+      if (!formik.isValid) return;
       setRegisterError(authError);
       console.log(JSON.stringify(values, null, 2));
       dispatch(signUp(values));

@@ -8,7 +8,8 @@ const schema = new Schema({
   phoneNumber: {type: String},
   deliveryAddress: {type: Object},
   novaPoshtaAddress: {type: Object},
-  favorite: [{type: Schema.Types.ObjectId, ref: 'Item'}],
+  favorite: [{type: String}],
+  orders: [{type: String}],
   isVerified: {type: Boolean, default: false},
   emailVerificationToken: {type: String, default: null},
 }, {

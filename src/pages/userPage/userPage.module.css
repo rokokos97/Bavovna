@@ -1,12 +1,7 @@
 .userPage {
   width: 100%;
-  text-align: start;
   margin-left: 8rem;
   margin-top: 1.1rem;
-}
-.userPage ul {
-  margin-bottom: 2.4rem;
-  display: inline-flex;
 }
 
 /*# sourceMappingURL=userPage.module.css.map */
