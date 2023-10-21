@@ -175,25 +175,25 @@ const CardContext = ({item}) => {
               </form>
               <div className={styles.descriptions}>
                 <Dropdown
-                  id='dropdownToggle'
+                  id='rightArrowDropdown'
                   placeholder='Details'
                   name='details'
                   inner={description}
                 />
                 <Dropdown
-                  id='dropdownToggle'
+                  id='rightArrowDropdown'
                   placeholder='Model parameters'
                   name='parameters'
                   inner={modelParams}
                 />
                 <Dropdown
-                  id='dropdownToggle'
+                  id='rightArrowDropdown'
                   placeholder='Composition and care'
                   name='composition'
                   inner={composition.join()}
                 />
                 <Dropdown
-                  id='dropdownToggle'
+                  id='rightArrowDropdown'
                   placeholder='Shipping and returns'
                   name='shipping'
                   inner='Lorem ipsum dolor sit amen consectetur'

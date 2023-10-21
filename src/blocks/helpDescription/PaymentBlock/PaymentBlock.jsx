@@ -24,7 +24,7 @@ const PaymentBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Bank card'
             name='bank'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -33,7 +33,7 @@ const PaymentBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Cashback, bonuses, promo codes'
             name='cashback'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -50,7 +50,7 @@ const PaymentBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Cash'
             name='cash'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -59,7 +59,7 @@ const PaymentBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Bank card'
             name='card'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius

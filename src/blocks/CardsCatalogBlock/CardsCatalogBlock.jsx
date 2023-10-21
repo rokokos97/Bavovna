@@ -26,8 +26,6 @@ const CardsCatalogBlock = () => {
     visibleItems = items.slice(startIndex, endIndex);
   }
 
-  console.log('visibleItems from CardsCatalogBlock', visibleItems);
-
   const handlerPageChange = (event) => {
     setCurrentPage(parseInt(event.target.textContent));
   };

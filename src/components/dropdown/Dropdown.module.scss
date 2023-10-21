@@ -1,16 +1,24 @@
+@import '../../styles/variables.module.scss';
+
 .dropdown {
   text-align: start;
 }
 
-.dropdownBtn {
+.dropdownRightBtn {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+  @include fonts($headline-9);
+  text-transform: uppercase;
+  background-color: inherit;
+}
+
+.dropdownLeftBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  @include fonts($headline-8);
   text-transform: uppercase;
   background-color: inherit;
 }
