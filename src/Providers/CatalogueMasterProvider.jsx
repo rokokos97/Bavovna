@@ -18,13 +18,13 @@ export const CatalogueMasterProvider = ({children}) => {
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
-  console.log(selectedFilters);
+  console.log('Selected filters: ', selectedFilters);
 
 
   useEffect(() => {
     setFilteredItems(items);
     setSelectedFilters(initialFilters);
-    console.log(items);
+    console.log('Items from Provider', items);
   }, [items]);
 
   const changeIsFilter = () => {
