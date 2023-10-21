@@ -25,7 +25,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Table of sizes'
             name='sizes'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -34,7 +34,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Availability of goods'
             name='availability'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -43,7 +43,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Pricing policy'
             name='policy'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -60,7 +60,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Availability of goods'
             name='availability'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -69,7 +69,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='What happens after placing an order?'
             name='happens'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -78,7 +78,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Order tracking'
             name='tracking'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -87,7 +87,7 @@ const FaqBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Order cancellation'
             name='cancellation'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius

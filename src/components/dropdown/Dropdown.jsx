@@ -13,15 +13,26 @@ const Dropdown = ({id, placeholder, name, inner}) => {
 
   return (
     <div className={styles.dropdown} data-testid='Dropdown'>
-      <button
+      {id === 'rightArrowDropdown' ?
+      (<button
         data-path={name}
         id={id}
         onClick={toggleIsOpen}
-        className={styles.dropdownBtn}
+        className={styles.dropdownRightBtn}
       >
         {placeholder}
         {!isOpen ? <ChevronDown /> : <ChevronUp />}
-      </button>
+      </button>) :
+            (<button
+              data-path={name}
+              id={id}
+              onClick={toggleIsOpen}
+              className={styles.dropdownLeftBtn}
+            >
+              {!isOpen ? <ChevronDown /> : <ChevronUp />}
+              {placeholder}
+            </button>)
+      }
       {isOpen && (
         <div data-target={name} className={styles.description}>
           {inner}

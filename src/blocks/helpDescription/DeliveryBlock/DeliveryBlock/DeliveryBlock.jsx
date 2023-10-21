@@ -23,7 +23,7 @@ const DeliveryBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Nova poshta delivery to the post office'
             name='postOffice'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -32,7 +32,7 @@ const DeliveryBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Nova poshta delivery to the address'
             name='address'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -41,7 +41,7 @@ const DeliveryBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='International delivery'
             name='internationalDelivery'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius

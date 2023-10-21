@@ -24,7 +24,7 @@ const ReturnBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Good quality product'
             name='Good'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
@@ -33,7 +33,7 @@ const ReturnBlock = () => {
         </div>
         <div className={styles.detailsDropdown}>
           <Dropdown
-            id='dropdownToggle'
+            id='dropdownLeftBtn'
             placeholder='Poor quality product'
             name='Poor'
             inner='Lorem ipsum dolor sit amet consectetur. Tellus quis commodo varius
