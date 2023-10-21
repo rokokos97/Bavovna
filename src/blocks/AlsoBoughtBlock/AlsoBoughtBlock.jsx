@@ -23,7 +23,7 @@ const AlsoBoughtBlock = () => {
           {alsoBought.map((item) => (
             <Link key={item._id} to={`/catalogue/${item._id}`}>
               <li>
-                <ItemPreviewCard item={item} />
+                <ItemPreviewCard id={item._id} />
               </li>
             </Link>
           ))}
