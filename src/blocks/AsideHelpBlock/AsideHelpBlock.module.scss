@@ -17,10 +17,10 @@
   }
 }
 
-.selected {
-  color: $black;
+.unactive {
+  color: $gray-20;
 }
 
-.unselected {
-  color: $gray-20;
+.active {
+  color: $black;
 }

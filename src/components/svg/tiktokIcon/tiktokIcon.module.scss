@@ -1,0 +1,5 @@
+@import '../../../styles/variables.module.scss';
+
+.tiktokIcon:hover path {
+  fill: $accent-a-3;
+}
