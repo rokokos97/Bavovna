@@ -1,24 +1,53 @@
 @import "../../styles/variables.module";
 .userDataForm {
-  width: 52.6rem;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
 }
 .title {
-  @include fonts($menu-1);
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  @include fonts($headline-2);
+  text-align: start;
+  padding-top: 3.2rem;
+  padding-bottom: 2.4rem;
 }
 .userPersonalDataForm {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.submitWrapper {
+  display: flex;
+  gap: 2.4rem;
+}
+.column{
+  display: flex;
+  flex-direction: column;
   row-gap: 1.6rem;
 }
 .deliveryForm {
-
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  column-gap: 2.4rem;
+}
+.deliveryTitle {
+  @include fonts($headline-8);
+  text-align: start;
+  margin-bottom: 2.4rem;
+}
+.deliveryBlock {
+  display: flex;
+  column-gap: 2.4rem;
+}
+.deliveryBlockColumn {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  p {
+    @include fonts($headline-6);
+    margin-bottom: 1.8rem;
+  };
 }
 .button {
   margin-left: auto;
-  margin-top: 1.6rem;
   @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
 }

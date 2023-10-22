@@ -17,12 +17,12 @@
   cursor: pointer;
 }
 
-.selected {
-  color: #040404;
+.unactive {
+  color: #5d5d5d;
 }
 
-.unselected {
-  color: #5d5d5d;
+.active {
+  color: #040404;
 }
 
 /*# sourceMappingURL=AsideHelpBlock.module.css.map */

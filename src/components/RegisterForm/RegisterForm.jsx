@@ -81,6 +81,7 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.firstName}
+            touched={formik.touched.firstName}
           />
           <TextField
             label='Last name'
@@ -90,6 +91,7 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.lastName}
+            touched={formik.touched.lastName}
           />
           <TextField
             label='Email'
@@ -99,6 +101,7 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.email}
+            touched={formik.touched.email}
           />
           <TextField
             type='password'
@@ -109,6 +112,7 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.password}
+            touched={formik.touched.password}
           />
           <TextField
             type='password'
@@ -119,8 +123,9 @@ const RegisterForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.confirmPassword}
+            touched={formik.touched.confirmPassword}
           />
-          <button
+          <butto
             type="submit"
             disabled={!isFormValid}
             className={styles.button}
@@ -129,7 +134,7 @@ const RegisterForm = () => {
               Sign up
             </span>
             <div/>
-          </button>
+          </butto>
         </form>
         <div className={styles.socialButtonsBlock}>
           <div className={styles.divider}>

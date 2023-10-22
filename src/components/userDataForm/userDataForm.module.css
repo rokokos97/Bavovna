@@ -1,27 +1,71 @@
 .userDataForm {
-  width: 52.6rem;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
 }
 
 .title {
-  font-family: "Fixel Display Semibold";
-  font-size: 16px;
-  line-height: 110%;
+  font-family: "Fixel Display Medium";
+  font-size: 32px;
+  line-height: 120%;
   text-transform: uppercase;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  text-align: start;
+  padding-top: 3.2rem;
+  padding-bottom: 2.4rem;
 }
 
 .userPersonalDataForm {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.submitWrapper {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
   row-gap: 1.6rem;
+}
+
+.deliveryForm {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  column-gap: 2.4rem;
+}
+
+.deliveryTitle {
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-align: start;
+  margin-bottom: 2.4rem;
+}
+
+.deliveryBlock {
+  display: flex;
+  column-gap: 2.4rem;
+}
+
+.deliveryBlockColumn {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.deliveryBlockColumn p {
+  font-family: "Fixel Text Regular";
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
 }
 
 .button {
   margin-left: auto;
-  margin-top: 1.6rem;
   display: flex;
   width: 24rem;
   height: 5.6rem;

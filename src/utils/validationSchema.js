@@ -34,11 +34,7 @@ export const validationSchemaRegisterForm = Yup.object().shape({
       .max(20, 'First name must be at most 15 characters long'),
 });
 export const validationSchemaUserDataForm = Yup.object().shape({
-  confirmPassword: Yup.string()
-      .required('Password confirmation is required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match'),
   password: Yup.string()
-      .required('Password is required')
       .min(8, 'Password has to be longer than 8 characters')
       .matches(/(?=.*[0-9])/, 'Password must contain at least one number')
       .matches(/(?=.*[!_$%&*"])/, 'Password must contain at ' +
@@ -46,6 +42,10 @@ export const validationSchemaUserDataForm = Yup.object().shape({
       .matches(/(?=.*[A-Z])/, 'Password must contain at' +
       ' least one capital letter')
       .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
+  currentPassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+  phone: Yup.string()
+      .required('Phone is required'),
   email: Yup.string()
       .required('Email is required')
       .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Invalid email address'),

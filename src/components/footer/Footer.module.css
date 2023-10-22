@@ -4,6 +4,9 @@
   width: 100%;
   background-color: #040404;
 }
+.container a:hover {
+  color: #5a9b83;
+}
 
 .footer {
   display: flex;
@@ -16,6 +19,7 @@
 }
 
 .footerTop {
+  height: 25.8rem;
   display: flex;
   justify-content: space-between;
   padding-bottom: 3rem;
@@ -30,11 +34,10 @@
   justify-content: space-between;
 }
 .footerTopLeft h3 {
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 2.1rem;
-  letter-spacing: 0.2rem;
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
   text-transform: uppercase;
   padding-bottom: 2rem;
 }
@@ -50,11 +53,10 @@
   gap: 1.6rem;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.2rem;
-  letter-spacing: 0.5px;
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
 
 .footerTopRight {
@@ -74,20 +76,12 @@
   justify-content: center;
   height: 3.6rem;
   width: 3.6rem;
-  transition: border-color 0.3s ease;
-}
-.socialListItem img {
-  height: 1.8rem;
-  transition: filter 0.3s ease;
-}
-.socialListItem:hover img {
-  filter: invert(0.5) sepia(10) saturate(100) hue-rotate(395deg);
-  fill: #ad1f00;
 }
 
 .footerBottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 2.1rem;
 }
 
@@ -99,14 +93,21 @@
 
 .footerBottomItem {
   display: flex;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.6rem;
-  letter-spacing: 0.48px;
+  line-height: 1.4rem;
+  letter-spacing: 0.01rem;
   text-transform: uppercase;
   flex-basis: 33.3%;
-  opacity: 0.47;
+  opacity: 0.48;
+}
+
+.footerBottomLink {
+  font-family: "Fixel Display Medium";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
 
 .footerBottomRight {

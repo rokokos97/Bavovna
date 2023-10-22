@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ShowPasswordIcon from '../../svg/showPasswordIcon/showPasswordIcon';
 import HidePasswordIcon from '../../svg/hidePasswordIcon/hidePasswordIcon';
 
-const TextField = ({label, name, type, value, onChange, onBlur, error, placeholder}) => {
+const TextField = ({label, name, type, value, onChange, onBlur, error, touched, placeholder}) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -40,7 +40,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, placehold
           </button>
         )}
       </div>
-      {error ? (
+      {touched && error ? (
           <div className={styles.error}>{error}</div>
         ) : null}
     </div>
@@ -50,13 +50,14 @@ TextField.defaultProps = {
   type: 'text',
 };
 TextField.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  type: PropTypes.string,
-  onChange: PropTypes.func,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   error: PropTypes.string,
+  touched: PropTypes.bool,
   placeholder: PropTypes.string,
   style: PropTypes.string,
 };

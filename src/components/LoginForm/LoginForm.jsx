@@ -86,6 +86,7 @@ const LoginForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.email}
+            touched={formik.touched.email}
           />
           <TextField
             type='password'
@@ -96,12 +97,12 @@ const LoginForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.errors.password}
+            touched={formik.touched.password}
           />
           <CheckboxField
             name='rememberMe'
             value={formik.values.rememberMe}
             onChange={formik.handleChange}
-            error={formik.errors.rememberMe}
           >
             Remember me
           </CheckboxField>
@@ -110,6 +111,7 @@ const LoginForm = () => {
             value={formik.values.license}
             onChange={formik.handleChange}
             error={formik.errors.license}
+
           >
             I agree to the terms and conditions of use.
           </CheckboxField>
