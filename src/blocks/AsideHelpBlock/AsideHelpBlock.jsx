@@ -1,20 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {NavLink} from 'react-router-dom';
+import {helps} from '../../services/helps.service';
+// import PropTypes from 'prop-types';
 import styles from './AsideHelpBlock.module.scss';
 
-const AsideHelpBlock = ({helps, selectedHelpId, handleHelpSelect}) => {
+const AsideHelpBlock = () => {
   return (
     <div className={styles.aside}>
       <ul className={styles.asideList}>
         {helps.map((help) => (
-          <li key={help.id} onClick={() => handleHelpSelect(help.id)}>
-            <span
-              className={
-                help.id === selectedHelpId ? styles.selected : styles.unselected
+          <li key={help.id} className={styles.help}>
+            <NavLink
+              to={help.path}
+              className={({isActive}) =>
+                isActive ? styles.active : styles.unactive
               }
             >
               {help.name}
-            </span>
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -22,10 +25,10 @@ const AsideHelpBlock = ({helps, selectedHelpId, handleHelpSelect}) => {
   );
 };
 
-AsideHelpBlock.propTypes = {
-  helps: PropTypes.array,
-  selectedHelpId: PropTypes.number,
-  handleHelpSelect: PropTypes.func,
-};
+// AsideHelpBlock.propTypes = {
+//   helps: PropTypes.array,
+//   selectedHelpId: PropTypes.number,
+//   handleHelpSelect: PropTypes.func,
+// };
 
 export default AsideHelpBlock;

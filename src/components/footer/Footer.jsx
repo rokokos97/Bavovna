@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import InstagrammIcon from '../svg/instagrammIcon/instagrammIcon';
+import FacebookIcon from '../svg/facebookIcon/facebookIcon';
+import TiktokIcon from '../svg/tiktokIcon/tiktokIcon';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
@@ -12,7 +14,7 @@ const Footer = () => {
             <div className={styles.footerContact}>
               <h3>Contact</h3>
               <div className={styles.footerList}>
-                <Link to='tel:+380441234567'>+38 (044) 123-45-67</Link>
+                <Link to='tel:+380441234567'>1-888-963-8944</Link>
                 <Link to='mailto:help@email.com'>help@email.com</Link>
                 <Link to='/'>Contact Us</Link>
               </div>
@@ -22,10 +24,10 @@ const Footer = () => {
               <div className={styles.footerList}>
                 <Link to='/'>Sale</Link>
                 <Link to='/'>New</Link>
-                <Link to='/'>Shorts</Link>
-                <Link to='/'>Pants</Link>
                 <Link to='/'>T-Shirts</Link>
-                <Link to='/'>Tops</Link>
+                <Link to='/'>Dress</Link>
+                <Link to='/'>Pants</Link>
+                <Link to='/'>Skirts</Link>
               </div>
             </div>
             <div className={styles.footerHelp}>
@@ -41,13 +43,13 @@ const Footer = () => {
             <Link to='/'>Logo</Link>
             <div className={styles.socialList}>
               <Link to='/' className={styles.socialListItem}>
-                <img src='/img/svg/instagram.svg' alt='instagram icon' />
+                <InstagrammIcon />
               </Link>
               <Link to='/' className={styles.socialListItem}>
-                <img src='/img/svg/facebook.svg' alt='facebook icon' />
+                <FacebookIcon />
               </Link>
               <Link to='/' className={styles.socialListItem}>
-                <img src='/img/svg/tik-tok.svg' alt='tik-tok icon' />
+                <TiktokIcon />
               </Link>
             </div>
           </div>
@@ -57,7 +59,9 @@ const Footer = () => {
             <p className={styles.footerBottomItem}>
               © 2023 Bavovna | All Rights Reserved
             </p>
-            <div className={styles.footerBottomItem}>
+            <div
+              className={`${styles.footerBottomItem} ${styles.footerBottomLink}`}
+            >
               <Link to='/'>Cookies settings</Link>
             </div>
             <div className={styles.footerBottomItem}>
