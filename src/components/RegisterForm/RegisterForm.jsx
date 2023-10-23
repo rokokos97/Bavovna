@@ -125,7 +125,7 @@ const RegisterForm = () => {
             error={formik.errors.confirmPassword}
             touched={formik.touched.confirmPassword}
           />
-          <butto
+          <button
             type="submit"
             disabled={!isFormValid}
             className={styles.button}
@@ -134,7 +134,7 @@ const RegisterForm = () => {
               Sign up
             </span>
             <div/>
-          </butto>
+          </button>
         </form>
         <div className={styles.socialButtonsBlock}>
           <div className={styles.divider}>
