@@ -144,4 +144,12 @@
   color: #9b9b9b;
 }
 
+.inputContainer {
+  border: 1px solid red;
+}
+
+.phoneInput {
+  border: 1px solid red;
+}
+
 /*# sourceMappingURL=userDataForm.module.css.map */

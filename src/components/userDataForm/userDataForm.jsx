@@ -6,6 +6,8 @@ import {useFormik} from 'formik';
 import {getUser} from '../../store/userSlice';
 import {validationSchemaUserDataForm} from '../../utils/validationSchema';
 import SelectField from '../formFields/selectField/selectField';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const UserDataForm = () => {
   const user = useSelector(getUser());
@@ -21,7 +23,7 @@ const UserDataForm = () => {
     validationSchema: validationSchemaUserDataForm,
     onSubmit: (values) => {
       if (!formik.isValid) return;
-      console.log(values);
+      console.log(values.phone);
     }},
   );
   useEffect(() => {
@@ -34,7 +36,7 @@ const UserDataForm = () => {
       });
     }
   }, [user]);
-
+  console.log(formik.values);
   const onSelect = () => {};
   return (
     <div className={styles.userDataForm} data-testid="UserDataForm">
@@ -75,16 +77,45 @@ const UserDataForm = () => {
             />
           </div>
           <div className={styles.column}>
-            <TextField
-              type='phone'
-              label='Phone'
-              name='phone'
-              placeholder='+380 123456790'
+            <p>Phone *</p>
+            <PhoneInput
               value={formik.values.phone}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.errors.phone}
+              onChange={(phone)=> {
+                formik.setFieldValue('phone', phone);
+              }}
+              placeholder={'+380671234567'}
+              containerStyle={{
+                fontFamily: 'Fixel Display Regular, self-serif',
+                fontSize: '1.6rem',
+                backgroundColor: '#fafafa',
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0',
+                border: '1px solid #727272',
+                height: '4.8rem',
+                alignContent: 'center',
+              }}
+              inputStyle={{
+                border: 'none',
+                paddingLeft: '5rem',
+                paddingTop: '0.5rem',
+              }}
+              dropdownStyle={{
+                paddingLeft: '1.6rem',
+                border: 'none',
+                textAlign: 'start',
+              }}
             />
+            {/* <TextField*/}
+            {/*  type='phone'*/}
+            {/*  label='Phone'*/}
+            {/*  name='phone'*/}
+            {/*  placeholder=''*/}
+            {/*  value={formik.values.phone}*/}
+            {/*  onChange={formik.handleChange}*/}
+            {/*  onBlur={formik.handleBlur}*/}
+            {/*  error={formik.errors.phone}*/}
+            {/* />*/}
             <TextField
               type='password'
               label='Current password'
