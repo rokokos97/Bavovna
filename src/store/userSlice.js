@@ -78,11 +78,9 @@ const userUpdateRequested = createAction('users/userUpdateRequested');
 
 export const signUp = (payload) =>
   async (dispatch) => {
-    console.log('payload signUp', payload);
     dispatch(authRequested());
     try {
       const data = await authService.register(payload);
-      console.log(data);
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
     } catch (error) {
@@ -137,6 +135,7 @@ export const login = ({payload}) => async (dispatch) => {
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
+    console.log(error);
     const {code, message} = error.response.data.error;
     if (code === 400) {
       const errorMessage = generateAuthError(message);
