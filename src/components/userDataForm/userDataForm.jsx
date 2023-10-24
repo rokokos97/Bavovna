@@ -2,14 +2,15 @@ import React from 'react';
 import 'react-phone-input-2/lib/style.css';
 import styles from './userDataForm.module.scss';
 import TextField from '../formFields/textField/textField';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
-import {getUser} from '../../store/userSlice';
+import {getUser, updateUser} from '../../store/userSlice';
 import {validationSchemaUserDataForm} from '../../utils/validationSchema';
 // import SelectField from '../formFields/selectField/selectField';
 import PhoneInput from 'react-phone-input-2';
 
 const UserDataForm = () => {
+  const dispatch = useDispatch();
   const user = useSelector(getUser());
   const formik = useFormik({
     initialValues: {
@@ -23,9 +24,20 @@ const UserDataForm = () => {
     validationSchema: validationSchemaUserDataForm,
     onSubmit: () => {
       if (!formik.isValid) return;
-      console.log(formik.values);
+      const changedFields = getChangedFields(formik.values);
+      const newUser = {...user, ...changedFields};
+      dispatch(updateUser(newUser));
     }},
   );
+  const getChangedFields = (values) => {
+    const changes = {};
+    for (const key in values) {
+      if (values[key] !== '') {
+        changes[key] = values[key];
+      }
+    }
+    return changes;
+  };
   return ( user && (
     <div className={styles.userDataForm} data-testid="UserDataForm">
       <p className={styles.title}>personal data</p>

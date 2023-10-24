@@ -1,7 +1,6 @@
 import {createSlice, createAction} from '@reduxjs/toolkit';
 import localStorageService from '../services/localStorage.service';
 import authService from '../services/auth.service';
-import {toast} from 'react-toastify';
 import {generateAuthError} from '../utils/generateAuthError';
 import userService from '../services/user.service';
 
@@ -154,11 +153,6 @@ export const updateUser = (payload) => async (dispatch) => {
   try {
     const {content} = await userService.update(payload);
     dispatch(userUpdateSuccess(content));
-    toast.dark('User info updated', {
-      hideProgressBar: true,
-      position: toast.POSITION.BOTTOM_RIGHT,
-    });
-    history.push(`/user`);
   } catch (error) {
     dispatch(userUpdateFailed(error.message));
   }
