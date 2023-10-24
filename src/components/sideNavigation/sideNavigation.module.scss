@@ -24,18 +24,6 @@
     @include fonts($headline-3);
     padding: 0 1.6rem 0;
 }
-.list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.8rem;
-  p {
-    width: 100%;
-    cursor: pointer;
-    padding: 1.2rem 1.6rem;
-    text-align: start;
-    @include fonts($headline-4);
-  }
-}
 .active {
   width: 100%;
   cursor: pointer;
@@ -43,5 +31,17 @@
   text-align: start;
   @include fonts($headline-4);
   background-color: $transparent-30-a-05;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  li {
+    width: 100%;
+    cursor: pointer;
+    padding: 1.2rem 1.6rem;
+    text-align: start;
+    @include fonts($headline-4);
+  }
 }
 

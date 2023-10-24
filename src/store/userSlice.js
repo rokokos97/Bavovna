@@ -81,6 +81,7 @@ export const signUp = (payload) =>
     dispatch(authRequested());
     try {
       const data = await authService.register(payload);
+      console.log('signUp data', data);
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
     } catch (error) {
@@ -132,6 +133,7 @@ export const login = ({payload}) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
+    console.log('login data', data);
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {

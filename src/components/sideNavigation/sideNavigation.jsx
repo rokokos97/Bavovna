@@ -14,22 +14,22 @@ const SideNavigation = () => {
       <div className={styles.sidebar}>
         <p className={styles.navigation}>Home / My account</p>
         <p className={styles.title}>my account</p>
-        <div className={styles.list}>
-          <p onClick={()=>{
+        <ul className={styles.list}>
+          <li onClick={()=>{
             navigate('');
-          }}>orders</p>
-          <p
+          }}>orders</li>
+          <li
             onClick={()=>{
               navigate(`wishList`);
             }}
-          >wish list</p>
-          <p
+          >wish list</li>
+          <li
             onClick={()=>{
               navigate('personalData');
             }}
-          >personal data</p>
-          <p><ExitString/></p>
-        </div>
+          >personal data</li>
+          <li><ExitString/></li>
+        </ul>
       </div>
       <div className={styles.navigationContentSide}>
         <Routes>

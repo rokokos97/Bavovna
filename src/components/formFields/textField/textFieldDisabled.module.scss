@@ -1,5 +1,6 @@
 @import '../../../styles/variables.module';
 .textField {
+  cursor: not-allowed;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -8,15 +9,16 @@
 
 }
 .label {
+  cursor: not-allowed;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   align-self: stretch;
-  color: $accent-a-95;
+  color: $gray-80;
   @include fonts($body-3);
 
   span {
-    color: $error
+    color: $gray-80
   }
 }
 
@@ -28,36 +30,45 @@
   align-items: center;
   gap: 1rem;
   align-self: stretch;
-  border: 1px solid $gray-30;
+  border: 1px solid $gray-80;
   background: $white;
 
   input {
+    cursor: not-allowed;
     border: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     flex: 1 0 0;
     align-self: stretch;
 
     background: $white;
     @include fonts($input-text);
-  }
-  input[type='password'] {
-    &::placeholder {
-      padding-top: 2rem;
-      -webkit-text-security: disc;
-    }
 
   }
+  input::placeholder {
+    color: $gray-80;
+  }
+  input[type='password'] {
+    div {
+      color: $gray-80;
+    }
+  }
   button {
+    cursor: not-allowed;
     background: $white;
-    color: $gray-20;
+    color: $gray-80;
+    div {
+      svg {
+        path {
+          stroke: $gray-80;
+        }
+      }
+    }
   }
 }
 .error {
   color: var(--error, #EA001B);
-
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;

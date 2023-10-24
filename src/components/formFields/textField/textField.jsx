@@ -1,29 +1,31 @@
 import React, {useState} from 'react';
 import styles from './textField.module.scss';
+import disabledStyles from './textFieldDisabled.module.scss';
 import PropTypes from 'prop-types';
 import ShowPasswordIcon from '../../svg/showPasswordIcon/showPasswordIcon';
 import HidePasswordIcon from '../../svg/hidePasswordIcon/hidePasswordIcon';
 
-const TextField = ({label, name, type, value, onChange, onBlur, error, touched, placeholder}) => {
+const TextField = ({label, name, type, value, onChange, onBlur, error, touched, placeholder, disabled}) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
   return (
-    <div className={styles.textField} data-testid="TextField">
+    <div className={disabled? disabledStyles.textField: styles.textField} data-testid="TextField">
       <label
         htmlFor={name}
-        className={styles.label}
+        className={disabled? disabledStyles.label: styles.label}
       >
         {label}
         <span>*</span>
       </label>
-      <div className={styles.inputBlock}>
+      <div className={disabled? disabledStyles.inputBlock :styles.inputBlock}>
         <input
+          disabled={disabled}
           id={name}
           name={name}
           type={showPassword ? 'text' : type}
-          placeholder={placeholder}
+          placeholder={(type==='password' && disabled)? 'Enter current password before': placeholder}
           onChange={onChange}
           onBlur={onBlur}
           value={value}
@@ -52,13 +54,14 @@ TextField.defaultProps = {
 TextField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
   onBlur: PropTypes.func,
   error: PropTypes.string,
   touched: PropTypes.bool,
   placeholder: PropTypes.string,
   style: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 export default TextField;
