@@ -24,11 +24,10 @@ const userService = {
     const {data} = await httpService.get(
         userEndpoint + localStorageService.getUserId(), {
           headers: {
-            Authorization: 'Barer '+token,
+            Authorization: 'Bearer '+token,
           },
         },
     );
-    console.log(data);
     return data;
   },
   update: async (payload) => {
@@ -36,7 +35,7 @@ const userService = {
         userEndpoint + localStorageService.getUserId(),
         payload, {
           headers: {
-            Authorization: `Barer ${token}`,
+            Authorization: `Bearer ${token}`,
           },
         },
     );
