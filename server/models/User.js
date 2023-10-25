@@ -5,6 +5,8 @@ const schema = new Schema({
   lastName: {type: String},
   email: {type: String, required: true, unique: true},
   password: {type: String},
+  currentPassword: {type: String},
+  newPassword: {type: String},
   phoneNumber: {type: String},
   deliveryAddress: {type: Object},
   novaPoshtaAddress: {type: Object},
