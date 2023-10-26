@@ -3,6 +3,7 @@ import localStorageService from '../services/localStorage.service';
 import authService from '../services/auth.service';
 import {generateAuthError} from '../utils/generateAuthError';
 import userService from '../services/user.service';
+import history from '../utils/history';
 
 const initialState = localStorageService.getAccessToken() ?
 {
@@ -83,6 +84,7 @@ export const signUp = (payload) =>
       console.log('signUp data', data);
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
+      history.push('/');
     } catch (error) {
       const {code, message} = error.response.data.error;
       if (code === 400) {
@@ -115,8 +117,10 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
   dispatch(authRequested());
   try {
     const data = await authService.loginWithGoogle({email});
+    console.log('data', data);
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
+    history.push('/');
   } catch (error) {
     const {code, message} = error.response.data.error;
     if (code === 400) {
@@ -132,11 +136,9 @@ export const login = ({payload}) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
-    console.log('login data', data);
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    console.log(error);
     const {code, message} = error.response.data.error;
     if (code === 400) {
       const errorMessage = generateAuthError(message);

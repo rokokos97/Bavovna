@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "formik": "^2.4.3",
+    "history": "^5.3.0",
     "libphonenumber-js": "^1.10.39",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
