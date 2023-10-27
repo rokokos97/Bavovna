@@ -42,7 +42,6 @@ const RegisterForm = () => {
       });
     },
   });
-  const isFormValid = Object.keys(formik.errors).length === 0;
   useEffect(()=>{
     setRegisterError(authError);
   }, [authError]);
@@ -127,7 +126,7 @@ const RegisterForm = () => {
           />
           <button
             type="submit"
-            disabled={!isFormValid}
+            disabled={!formik.isValid}
             className={styles.button}
           >
             <span>

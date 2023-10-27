@@ -5,6 +5,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import ForgotPasswordForm from '../ForgotPasswordForm/ForgotPasswordForm';
 import Page404 from '../page404/page404';
+import ResetPasswordForm from '../resetPasswordForm/resetPasswordForm';
 
 const LoginLayout = () => (
   <div className={styles.loginLayout} data-testid="LoginLayout">
@@ -12,6 +13,7 @@ const LoginLayout = () => (
       <Route index element={<LoginForm />} />
       <Route path="signUp" element={<RegisterForm />} />
       <Route path="forgotPassword" element={<ForgotPasswordForm />}/>
+      <Route path="resetPassword" element={<ResetPasswordForm />}/>
       <Route path="*" element={<Page404 />}/>
     </Routes>
   </div>

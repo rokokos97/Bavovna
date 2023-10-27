@@ -12,7 +12,6 @@ const initialState = localStorageService.getAccessToken() ?
   error: null,
   auth: {userId: localStorageService.getUserId()},
   isLoggedIn: true,
-  isRegistering: false,
 }:
 {
   entities: null,
@@ -20,7 +19,6 @@ const initialState = localStorageService.getAccessToken() ?
   error: null,
   auth: null,
   isLoggedIn: false,
-  isRegistering: false,
 };
 
 
@@ -70,6 +68,7 @@ const {
   userLoadRequestSuccess,
 } = actions;
 
+const userResetPasswordRequested = createAction('user/userResetPasswordRequested');
 const authRequested = createAction('users/authRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
@@ -117,7 +116,6 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
   dispatch(authRequested());
   try {
     const data = await authService.loginWithGoogle({email});
-    console.log('data', data);
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
@@ -145,6 +143,19 @@ export const login = ({payload}) => async (dispatch) => {
     }
   }
 };
+export const reset = ({payload}) => async (dispatch) => {
+  const {email} = payload;
+  console.log(email);
+  dispatch(userResetPasswordRequested());
+  try {
+    const data = await authService.reset({email});
+    console.log(data);
+    return data;
+  } catch (error) {
+
+  }
+};
+
 export const logOut = () => (dispatch) => {
   localStorageService.removeAuthData();
   dispatch(userLoggedOut());

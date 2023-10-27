@@ -5,6 +5,7 @@ import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import * as Yup from 'yup';
+import {reset} from '../../store/userSlice';
 
 const ForgotPasswordForm = () => {
   const dispatch = useDispatch();
@@ -17,13 +18,12 @@ const ForgotPasswordForm = () => {
           .required('Email is required')
           .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Invalid email address'),
     }),
-    onSubmit: (values) => {
-      if (!isFormValid) return;
+    onSubmit: async (values) => {
+      if (!formik.isValid) return;
       console.log(JSON.stringify(values, null, 2));
       dispatch(reset({payload: values}));
     },
   });
-  const isFormValid = Object.keys(formik.errors).length === 0;
   return (
     <div className={styles.forgotPasswordForm} data-testid="ForgotPasswordForm">
       <div className={styles.titleBlock}>
@@ -34,7 +34,10 @@ const ForgotPasswordForm = () => {
         Please enter your e-mail address:
         </span>
       </div>
-      <form className={styles.form}>
+      <form
+        className={styles.form}
+        onSubmit={formik.handleSubmit}
+      >
         <TextField
           label='Email'
           name='email'
@@ -46,8 +49,7 @@ const ForgotPasswordForm = () => {
           touched={formik.touched.email}
         />
         <button
-          disabled={!isFormValid}
-          type='submit'
+          disabled={!formik.isValid || !formik.dirty}
         >
           <span>
             recover
