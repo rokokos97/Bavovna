@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import styles from './LoginForm.module.scss';
 import {useFormik} from 'formik';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, login, loginWithGoogle} from '../../store/userSlice';
+import {getAuthErrors, getIsLoggedIn, login, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
@@ -17,7 +17,13 @@ const LoginForm = () => {
   const authError = useSelector(getAuthErrors());
   // Використання стану для відображення помилок сервера при вході в систему
   const [loginError, setLoginError] = useState(null);
-
+  const isLoggedIn = useSelector(getIsLoggedIn());
+  const navigate = useNavigate();
+  useEffect(()=>{
+    if (isLoggedIn) {
+      navigate('/');
+    }
+  }, [isLoggedIn]);
   // Ініціалізація форми за допомогою Formik
   const formik = useFormik({
     initialValues: {
@@ -25,12 +31,11 @@ const LoginForm = () => {
       password: '',
     },
     validationSchema: validationSchemaLoginForm,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       if (!isFormValid) return;
       setLoginError(authError);
       console.log(JSON.stringify(values, null, 2));
-      const redirect = '/';
-      dispatch(login({payload: values, redirect}));
+      dispatch(login({payload: values}));
     },
   });
 
@@ -38,7 +43,9 @@ const LoginForm = () => {
   const googleLogin = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
-      googleService.get(accessToken).then((userInfo) => dispatch(loginWithGoogle(userInfo)));
+      googleService
+          .get(accessToken)
+          .then((userInfo) => dispatch(loginWithGoogle(userInfo)));
     },
   });
   // Перевірка на наявність помилок у формі

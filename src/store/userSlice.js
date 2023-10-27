@@ -84,8 +84,8 @@ export const signUp = (payload) =>
       console.log('signUp data', data);
       localStorageService.setTokens(data);
       dispatch(authRequestSuccess(data.user));
-      history.push('/');
     } catch (error) {
+      console.log(error);
       const {code, message} = error.response.data.error;
       if (code === 400) {
         const errorMessage = generateAuthError(message);
