@@ -2,5 +2,9 @@
   "port": 8080,
   "mongoUri": "mongodb+srv://RostyslavLisovyi:8XhehApZqilGzDXF@cluster.wqp9fw1.mongodb.net/",
   "accessSecret": "super secret from backend",
-  "refreshSecret": "super refresh key"
+  "refreshSecret": "super refresh key",
+  "mailTrap": {
+    "user": "23360271359d54",
+    "password": "9be46a7d07d498"
+  }
 }
