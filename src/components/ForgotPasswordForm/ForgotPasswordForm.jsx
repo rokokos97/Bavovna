@@ -20,8 +20,7 @@ const ForgotPasswordForm = () => {
     onSubmit: (values) => {
       if (!isFormValid) return;
       console.log(JSON.stringify(values, null, 2));
-      const redirect = '/';
-      dispatch(recover({payload: values, redirect}));
+      dispatch(reset({payload: values}));
     },
   });
   const isFormValid = Object.keys(formik.errors).length === 0;
@@ -44,6 +43,7 @@ const ForgotPasswordForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.email}
+          touched={formik.touched.email}
         />
         <button
           disabled={!isFormValid}
