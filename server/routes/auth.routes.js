@@ -178,10 +178,10 @@ router.post('/signInWithGoogle', [
       }
       const tokens = tokenService.generate({_id: existingUser._id});
       await tokenService.save(existingUser._id, tokens.refreshToken);
-      res.status(201).send(
+      return res.status(201).send(
           {...tokens, userId: existingUser._id, user: existingUser});
     } catch (e) {
-      res.status(500).json({
+      return res.status(500).json({
         message: 'Oops... There was a server error with your connection, please try again later...',
       });
     }
@@ -225,8 +225,16 @@ router.post('/forgotPassword', [
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           console.log('error', error);
+          return res.status(500).json({
+            message: 'Oops... There was a server error with your connection, please try again later...',
+          });
         } else {
-          console.log('info.response', info.response);
+          console.log('info.response', info);
+          if (info.response === '250 2.0.0 Ok: queued') {
+            return res.status(200).json({message:
+                'We have sent you an email with further instructions on how to reset your password.',
+            });
+          }
         }
       });
     } catch (error) {
