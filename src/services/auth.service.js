@@ -2,6 +2,7 @@ import axios from 'axios';
 import localStorageService from './localStorage.service';
 import config from '../config.json';
 
+
 const httpAuth = axios.create({
   baseURL: config.apiEndpoint + 'auth/',
 });
@@ -32,6 +33,12 @@ const authService = {
   reset: async ({email}) => {
     console.log(email);
     const {data} = await httpAuth.post('forgotPassword', {email});
+    console.log(data);
+    return data;
+  },
+  setNewPassword: async (token, email, password) => {
+    console.log(token, email, password);
+    const {data} = await httpAuth.post('resetPassword', {token, email, password});
     console.log(data);
     return data;
   },

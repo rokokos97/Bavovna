@@ -57,10 +57,18 @@ const usersSlice = createSlice({
       state.isLoggedIn = true;
       state.isLoading = false;
     },
+    userResetPasswordRequestFailed: (state, action) => {
+      state.error = action.payload;
+    },
+    userSetNewPasswordRequestFailed: (state, action) => {
+      state.error = action.payload;
+    },
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
 const {
+  userSetNewPasswordRequestFailed,
+  userResetPasswordRequestFailed,
   authRequestFailed,
   authRequestSuccess,
   userLoggedOut,
@@ -68,6 +76,7 @@ const {
   userLoadRequestSuccess,
 } = actions;
 
+const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
 const userResetPasswordRequested = createAction('user/userResetPasswordRequested');
 const authRequested = createAction('users/authRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
@@ -152,10 +161,19 @@ export const reset = ({payload}) => async (dispatch) => {
     console.log(data);
     return data;
   } catch (error) {
-
+    dispatch(userResetPasswordRequestFailed(error));
   }
 };
-
+export const setNewPassword = (token, email, values) => async (dispatch) => {
+  dispatch(userSetNewPasswordRequested());
+  try {
+    const data = await authService.setNewPassword(token, email, values);
+    console.log(data);
+    return data;
+  } catch (error) {
+    dispatch(userSetNewPasswordRequestFailed());
+  }
+};
 export const logOut = () => (dispatch) => {
   localStorageService.removeAuthData();
   dispatch(userLoggedOut());
