@@ -213,23 +213,28 @@ router.post('/forgotPassword', [
           },
         });
       }
-      // const resetToken = tokenService.generate({_id: existingUser._id});
+      const emailVerificationToken = tokenService.generate({_id: existingUser._id});
+      existingUser.emailVarificationToken = emailVerificationToken.accessToken;
+      console.log(emailVerificationToken.accessToken);
+      await existingUser.save();
+      const encodedEmail = encodeURIComponent(email);
+      const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
+      const resetPasswordURL = `http://localhost:3000/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
+      console.log('resetPasswordURL', resetPasswordURL);
       const mailOptions = {
         from: 'to@example.com',
         to: email,
         subject: 'Test Email',
         text: `Hello. If you would like reset your password please enter the link!`,
-        html: '<b>If you would like reset your password please enter the link</b>' +
-        '<a href=`http://localhost:3000/login/resetPassword`> Click here... </a>',
+        html: `<b>If you would like reset your password please enter the link</b>
+<a href="${resetPasswordURL}"> Click here... </a>`,
       };
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-          console.log('error', error);
           return res.status(500).json({
             message: 'Oops... There was a server error with your connection, please try again later...',
           });
         } else {
-          console.log('info.response', info);
           if (info.response === '250 2.0.0 Ok: queued') {
             return res.status(200).json({message:
                 'We have sent you an email with further instructions on how to reset your password.',
@@ -241,6 +246,9 @@ router.post('/forgotPassword', [
       console.log(error.message);
     }
   }]);
+router.post('/resetPassword', async (req, res) => {
+  const {email, password, token} = req.body;
+});
 router.post('/token', async (req, res) => {
   try {
     const {refresh_token: refreshToken} = req.body;
