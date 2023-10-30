@@ -1,10 +1,10 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
-const {check, validationResult} = require('express-validator');
-const User = require('../models/User');
-const tokenService = require('../services/token.service');
 const nodemailer = require('nodemailer');
 const config = require('../config/default.json');
+const {check, validationResult} = require('express-validator');
+const bcrypt = require('bcryptjs');
+const tokenService = require('../services/token.service');
+const User = require('../models/User');
 // eslint-disable-next-line new-cap
 const router = express.Router({mergeParams: true});
 function isTokenInvalid(data, dbToken) {
@@ -20,7 +20,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-
 router.post('/signUp', [
   check('email', 'email is not correct')
       .isEmail(),
@@ -29,10 +28,10 @@ router.post('/signUp', [
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({
-          error: {
-            message: 'INVALID_DATA',
-            code: 400,
+          response: {
             errors: errors.array(),
+            code: 400,
+            message: 'INVALID_DATA',
           },
         });
       }
@@ -40,9 +39,9 @@ router.post('/signUp', [
       const existingUser = await User.findOne({email});
       if (existingUser) {
         return res.status(400).json({
-          error: {
-            message: 'EMAIL_EXIST',
+          response: {
             code: 400,
+            message: 'EMAIL_EXIST',
           },
         });
       }
@@ -53,12 +52,21 @@ router.post('/signUp', [
       });
       const tokens = tokenService.generate({_id: newUser._id});
       await tokenService.save(newUser._id, tokens.refreshToken);
-      res.status(201).send({...tokens, userId: newUser._id, user: newUser});
-    } catch (e) {
+      res.status(201).send({
+        ...tokens,
+        userId: newUser._id,
+        user: newUser,
+        response: {
+          message: 'USER_CREATED',
+          code: 201,
+        },
+      });
+    } catch (error) {
       res.status(500).json({
-        error: {
+        response: {
+          errors: error,
           code: 500,
-          message: 'Oops... There was a server error with your connection, please try again later...',
+          message: 'INTERNAL_SERVER_ERROR',
         },
       });
     }
@@ -71,10 +79,10 @@ router.post('/signUpWithGoogle', [
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({
-          error: {
-            message: 'INVALID_DATA',
-            code: 400,
+          response: {
             errors: errors.array(),
+            code: 400,
+            message: 'INVALID_DATA',
           },
         });
       }
@@ -82,23 +90,34 @@ router.post('/signUpWithGoogle', [
       const existingUser = await User.findOne({email});
       if (existingUser) {
         return res.status(400).json({
-          error: {
-            message: 'EMAIL_EXIST',
+          response: {
             code: 400,
+            message: 'EMAIL_EXIST',
           },
         });
       }
       const newUser = await User.create({
         ...req.body,
       });
-      const tokens = tokenService.generate({_id: newUser._id});
+      const tokens = tokenService.generate({
+        _id: newUser._id,
+      });
       await tokenService.save(newUser._id, tokens.refreshToken);
-      res.status(201).send({...tokens, userId: newUser._id, user: newUser});
-    } catch (e) {
+      res.status(201).send({
+        ...tokens,
+        userId: newUser._id,
+        user: newUser,
+        response: {
+          message: 'USER_CREATED',
+          code: 201,
+        },
+      });
+    } catch (error) {
       res.status(500).json({
-        error: {
+        response: {
+          errors: error,
           code: 500,
-          message: 'Oops... There was a server error with your connection, please try again later...',
+          message: 'INTERNAL_SERVER_ERROR',
         },
       });
     }
@@ -112,10 +131,10 @@ router.post('/signInWithPassword', [
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({
-          error: {
-            message: 'INVALID_DATA',
-            code: 400,
+          response: {
             errors: errors.array(),
+            code: 400,
+            message: 'INVALID_DATA',
           },
         });
       }
@@ -123,9 +142,9 @@ router.post('/signInWithPassword', [
       const existingUser = await User.findOne({email});
       if (!existingUser) {
         return res.status(400).json({
-          error: {
-            message: 'EMAIL_NOT_FOUND',
+          response: {
             code: 400,
+            message: 'EMAIL_NOT_FOUND',
           },
         });
       }
@@ -133,19 +152,26 @@ router.post('/signInWithPassword', [
           password, existingUser.password);
       if (!isPasswordEqual) {
         return res.status(400).json({
-          error: {
-            message: 'INVALID_PASSWORD',
+          response: {
             code: 400,
+            message: 'INVALID_PASSWORD',
           },
         });
       }
       const tokens = tokenService.generate({_id: existingUser._id});
       await tokenService.save(existingUser._id, tokens.refreshToken);
-      res.status(201).send(
-          {...tokens, userId: existingUser._id, user: existingUser});
-    } catch (e) {
+      res.status(201).send({
+        ...tokens,
+        userId: existingUser._id,
+        user: existingUser,
+      });
+    } catch (error) {
       res.status(500).json({
-        message: 'Oops... There was a server error with your connection, please try again later...',
+        response: {
+          errors: error,
+          code: 500,
+          message: 'INTERNAL_SERVER_ERROR',
+        },
       });
     }
   },
@@ -159,10 +185,10 @@ router.post('/signInWithGoogle', [
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({
-          error: {
-            message: 'INVALID_DATA',
-            code: 400,
+          response: {
             errors: errors.array(),
+            code: 400,
+            message: 'INVALID_DATA',
           },
         });
       }
@@ -170,9 +196,9 @@ router.post('/signInWithGoogle', [
       const existingUser = await User.findOne({email});
       if (!existingUser) {
         return res.status(400).json({
-          error: {
-            message: 'EMAIL_NOT_FOUND',
+          response: {
             code: 400,
+            message: 'EMAIL_NOT_FOUND',
           },
         });
       }
@@ -180,9 +206,13 @@ router.post('/signInWithGoogle', [
       await tokenService.save(existingUser._id, tokens.refreshToken);
       return res.status(201).send(
           {...tokens, userId: existingUser._id, user: existingUser});
-    } catch (e) {
+    } catch (error) {
       return res.status(500).json({
-        message: 'Oops... There was a server error with your connection, please try again later...',
+        response: {
+          errors: error,
+          code: 500,
+          message: 'SERVER_ERROR',
+        },
       });
     }
   },
@@ -192,14 +222,13 @@ router.post('/forgotPassword', [
       .isEmail(),
   async (req, res) => {
     try {
-      console.log('req.body', req.body);
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({
-          error: {
-            message: 'INVALID_DATA',
-            code: 400,
+          response: {
             errors: errors.array(),
+            code: 400,
+            message: 'INVALID_DATA',
           },
         });
       }
@@ -207,63 +236,111 @@ router.post('/forgotPassword', [
       const existingUser = await User.findOne({email});
       if (!existingUser) {
         return res.status(400).json({
-          error: {
-            message: 'EMAIL_NOT_FOUND',
+          response: {
             code: 400,
+            message: 'EMAIL_NOT_FOUND',
           },
         });
       }
-      const emailVerificationToken = tokenService.generate({_id: existingUser._id});
-      existingUser.emailVarificationToken = emailVerificationToken.accessToken;
-      console.log(emailVerificationToken.accessToken);
+      const emailVerificationToken= tokenService.generate({_id: existingUser._id});
+      existingUser.emailVerificationToken = emailVerificationToken.accessToken;
       await existingUser.save();
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
       const resetPasswordURL = `http://localhost:3000/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
-      console.log('resetPasswordURL', resetPasswordURL);
       const mailOptions = {
         from: 'to@example.com',
         to: email,
         subject: 'Test Email',
         text: `Hello. If you would like reset your password please enter the link!`,
         html: `<b>If you would like reset your password please enter the link</b>
-<a href="${resetPasswordURL}"> Click here... </a>`,
+               <a href="${resetPasswordURL}"> Click here... </a>`,
       };
-      transporter.sendMail(mailOptions, function(error, info) {
+      await transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           return res.status(500).json({
-            message: 'Oops... There was a server error with your connection, please try again later...',
+            response: {
+              errors: error,
+              code: 500,
+              message: 'SERVER_ERROR',
+            },
           });
         } else {
           if (info.response === '250 2.0.0 Ok: queued') {
-            return res.status(200).json({message:
-                'We have sent you an email with further instructions on how to reset your password.',
+            return res.status(200).json({
+              response: {
+                code: 200,
+                message: 'EMAIL_SENT',
+              },
             });
           }
         }
       });
     } catch (error) {
-      console.log(error.message);
+      return res.status(500).json({
+        response: {
+          errors: error,
+          code: 500,
+          message: 'SERVER_ERROR',
+        },
+      });
     }
   }]);
 router.post('/resetPassword', async (req, res) => {
-  const {email, password, token} = req.body;
+  try {
+    const {token, email, password} = req.body;
+    const currentUser = await User.findOne({email});
+    const isValidToken = (token === currentUser.emailVerificationToken);
+    if (isValidToken) {
+      currentUser.password = await bcrypt.hash(password, 12);
+      await currentUser.save();
+      return res.status(200).json({
+        response: {
+          code: 200,
+          message: 'PASSWORD_CHANGED',
+        },
+      });
+    } else {
+      return res.status(400).json({
+        response: {
+          code: 400,
+          message: 'INVALID_TOKEN',
+        },
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      response: {
+        errors: error,
+        code: 500,
+        message: 'SERVER_ERROR',
+      },
+    });
+  }
 });
 router.post('/token', async (req, res) => {
   try {
     const {refresh_token: refreshToken} = req.body;
     const data = tokenService.validateRefresh(refreshToken);
     const dbToken = await tokenService.findToken(refreshToken);
-
     if (isTokenInvalid(data, dbToken)) {
-      return res.status(401).json({message: 'UnauthorizedAuth'});
+      return res.status(401).json({
+        response: {
+          code: 401,
+          message: 'UNAUTHORIZED',
+        },
+      });
     }
     const tokens = tokenService.generate({_id: data._id});
     await tokenService.save(data._id, tokens.refreshToken);
     res.status(201).send({...tokens, userId: data._id});
-  } catch (e) {
-    res.status(500).json({
-      message: 'Oops... There was a server error with your connection, please try again later...',
+  } catch (error) {
+    return res.status(500).json({
+      response: {
+        errors: error,
+        code: 500,
+        message: 'SERVER_ERROR',
+      },
     });
   }
 });
