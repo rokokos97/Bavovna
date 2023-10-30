@@ -14,7 +14,6 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
   const clearInput = () => {
     onChange({target: {value: '', name: name}});
   };
-  console.log(touched, error, value);
   return (
     <div className={`${styles.textField} ${touched && error? styles.hasError: ''}`} data-testid="TextField">
       <label
