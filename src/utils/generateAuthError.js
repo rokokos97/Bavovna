@@ -1,12 +1,8 @@
-export function generateAuthError(message) {
-  switch (message) {
-    case 'INVALID_PASSWORD':
-      return 'The email address or password is incorrect.';
-    case 'EMAIL_EXIST':
-      return 'User with this Email already exists';
-    case 'EMAIL_NOT_FOUND':
-      return 'User with this email was not found';
-    default:
-      return 'Too many login attempts. Please try later';
-  }
-}
+const transformErrorMessage = {
+  INVALID_PASSWORD: 'The email address or password is incorrect.',
+  EMAIL_EXIST: 'User with this Email already exists.',
+  EMAIL_NOT_FOUND: 'No account found with this email.',
+  SERVER_ERROR: 'Oops... There was a server error with your connection, please try again later.',
+};
+
+export default transformErrorMessage;
