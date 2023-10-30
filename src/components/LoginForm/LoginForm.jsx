@@ -3,7 +3,7 @@ import styles from './LoginForm.module.scss';
 import {useFormik} from 'formik';
 import {Link, NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, getIsLoggedIn, login, loginWithGoogle} from '../../store/userSlice';
+import {getAuthErrors, getIsLoggedIn, logIn, loginWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
@@ -35,7 +35,7 @@ const LoginForm = () => {
       if (!isFormValid) return;
       setLoginError(authError);
       console.log(JSON.stringify(values, null, 2));
-      dispatch(login({payload: values}));
+      dispatch(logIn({payload: values}));
     },
   });
 
