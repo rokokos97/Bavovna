@@ -13,7 +13,7 @@
   gap: 0.4rem;
   align-self: stretch;
   color: $accent-a-95;
-  @include fonts($body-3);
+  @include fonts($label);
 
   span {
     color: $error
@@ -57,7 +57,7 @@
 }
 .error {
   color: var(--error, #EA001B);
-
+  padding-left: 0.8rem;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -65,4 +65,28 @@
 }
 .block {
   display: inline;
+}
+
+.textField.hasError {
+  .label {
+    color: $error;
+  }
+
+  .inputBlock {
+    border-color: $error;
+
+    input,
+    button {
+      color: $error;
+      svg {
+        path {
+          stroke: $error;
+        }
+      }
+    }
+
+    input::placeholder {
+      color: $error;
+    }
+  }
 }

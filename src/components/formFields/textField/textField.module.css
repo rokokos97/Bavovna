@@ -12,9 +12,9 @@
   gap: 0.4rem;
   align-self: stretch;
   color: #030a07;
-  font-family: "Fixel Text Regular";
+  font-family: "Fixel Display Regular";
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
 }
 .label span {
   color: #ea001b;
@@ -55,6 +55,7 @@
 
 .error {
   color: var(--error, #EA001B);
+  padding-left: 0.8rem;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -63,6 +64,24 @@
 
 .block {
   display: inline;
+}
+
+.textField.hasError .label {
+  color: #ea001b;
+}
+.textField.hasError .inputBlock {
+  border-color: #ea001b;
+}
+.textField.hasError .inputBlock input,
+.textField.hasError .inputBlock button {
+  color: #ea001b;
+}
+.textField.hasError .inputBlock input svg path,
+.textField.hasError .inputBlock button svg path {
+  stroke: #ea001b;
+}
+.textField.hasError .inputBlock input::placeholder {
+  color: #ea001b;
 }
 
 /*# sourceMappingURL=textField.module.css.map */

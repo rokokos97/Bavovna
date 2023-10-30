@@ -4,17 +4,22 @@ import disabledStyles from './textFieldDisabled.module.scss';
 import PropTypes from 'prop-types';
 import ShowPasswordIcon from '../../svg/showPasswordIcon/showPasswordIcon';
 import HidePasswordIcon from '../../svg/hidePasswordIcon/hidePasswordIcon';
+import CleatFormIcon from '../../svg/cleatFormIcon/cleatFormIcon';
 
 const TextField = ({label, name, type, value, onChange, onBlur, error, touched, placeholder, disabled}) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
+  const clearInput = () => {
+    onChange({target: {value: '', name: name}});
+  };
+  console.log(touched, error, value);
   return (
-    <div className={disabled? disabledStyles.textField: styles.textField} data-testid="TextField">
+    <div className={`${styles.textField} ${touched && error? styles.hasError: ''}`} data-testid="TextField">
       <label
         htmlFor={name}
-        className={disabled? disabledStyles.label: styles.label}
+        className={disabled? disabledStyles.label : styles.label}
       >
         {label}
         <span>*</span>
@@ -31,7 +36,15 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
           value={value}
           autoComplete='off'
         />
-        {type === 'password' && (
+        {value && type!=='password' && (
+          <button
+            type='button'
+            onClick={clearInput}
+          >
+            <CleatFormIcon/>
+          </button>
+        )}
+        {type === 'password' && value &&(
           <button
             type='button'
             onClick={toggleShowPassword}>
