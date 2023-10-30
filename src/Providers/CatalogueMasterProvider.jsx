@@ -16,14 +16,14 @@ export const CatalogueMasterProvider = ({children}) => {
   };
   const items = useSelector(getItems());
   const [isFilter, setIsFilter] = useState(false);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
-  console.log('Selected filters: ', selectedFilters);
+  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(filterCheckboxes);
 
-  useEffect(() => {
-    setFilteredItems(items);
-    setSelectedFilters(initialFilters);
-  }, [items]);
+  // useEffect(() => {
+  //   setFilteredItems(items);
+  // }, [items]);
 
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
@@ -60,8 +60,18 @@ export const CatalogueMasterProvider = ({children}) => {
     }));
   };
 
+  const handleCleanFilter = () => {
+    setSelectedFilters(initialFilters);
+    filterCheckboxes.forEach((checkbox) => console.log(checkbox.checked));
+  };
+
+  let downloadedItems = [];
+
+  if (items) {
+    downloadedItems = [...items];
+  }
   useEffect(()=>{
-    const newItems = items.filter((item) => {
+    const newItems = downloadedItems.filter((item) => {
       return (
         selectedFilters.category.length === 0 || selectedFilters.category
             .some((category) => item.category.includes(category))
@@ -71,9 +81,9 @@ export const CatalogueMasterProvider = ({children}) => {
         selectedFilters.color.length === 0 || selectedFilters.color.some((color) => item.color.includes(color))
       );
     });
-    console.log('newItems: ', newItems);
     setFilteredItems(newItems);
-  }, [selectedFilters]);
+  }, [selectedFilters, items]);
+
 
   return (
     <DataCatalogueContext.Provider
@@ -83,6 +93,7 @@ export const CatalogueMasterProvider = ({children}) => {
         changeIsFilter,
         onSortItems,
         handleFilterChange,
+        handleCleanFilter,
       }}
     >
       {children}
