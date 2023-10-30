@@ -1,20 +1,26 @@
 import axios from 'axios';
-import localStorageService from './localStorage.service';
 import config from '../config.json';
+import localStorageService from './localStorage.service';
 
-
+// Створюємо екземпляр Axios для автентифікаційних запитів
 const httpAuth = axios.create({
   baseURL: config.apiEndpoint + 'auth/',
 });
+
 const authService = {
+  // Реєстрація нового користувача
   register: async (payload) => {
     const {data} = await httpAuth.post(`signUp`, payload);
     return data;
   },
+
+  // Реєстрація користувача за допомогою Google
   registerWithGoogle: async (payload) => {
     const {data} = await httpAuth.post(`signUpWithGoogle`, payload);
     return data;
   },
+
+  // Вхід в систему за допомогою електронної пошти та пароля
   login: async ({email, password}) => {
     const {data} = await httpAuth.post(`signInWithPassword`, {
       email,
@@ -23,6 +29,8 @@ const authService = {
     });
     return data;
   },
+
+  // Вхід в систему за допомогою Google
   loginWithGoogle: async ({email}) => {
     const {data} = await httpAuth.post('signInWithGoogle', {
       email,
@@ -30,24 +38,29 @@ const authService = {
     });
     return data;
   },
+
+  // Запит на скидання пароля
   reset: async ({email}) => {
-    console.log(email);
     const {data} = await httpAuth.post('forgotPassword', {email});
-    console.log(data);
     return data;
   },
+
+  // Встановлення нового пароля
   setNewPassword: async (token, email, password) => {
-    console.log(token, email, password);
     const {data} = await httpAuth.post('resetPassword', {token, email, password});
-    console.log(data);
     return data;
   },
+
+  // Оновлення токену автентифікації
   refresh: async () => {
     const {data} = await httpAuth.post('token', {
       grant_type: 'refresh_token',
+      // Отримання токену оновлення з локального зберігання
       refresh_token: localStorageService.getRefreshToken(),
     });
     return data;
   },
 };
+
+// Експорт сервісу для автентифікації
 export default authService;
