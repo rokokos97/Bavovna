@@ -73,11 +73,11 @@
   border-color: #ea001b;
 }
 .textField.hasError .inputBlock input,
-.textField.hasError .inputBlock button {
+.textField.hasError .inputBlock .clearButton {
   color: #ea001b;
 }
 .textField.hasError .inputBlock input svg path,
-.textField.hasError .inputBlock button svg path {
+.textField.hasError .inputBlock .clearButton svg path {
   stroke: #ea001b;
 }
 .textField.hasError .inputBlock input::placeholder {

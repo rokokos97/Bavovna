@@ -30,7 +30,6 @@ $headline-3:(
   family: 'Fixel Display Bold',
   size: 24px,
   line-height: 120%,
-  letter-spacing: 4%,
   text-transform: uppercase,
 );
 $headline-4:(
@@ -76,10 +75,10 @@ $headline-10:(
   text-transform: uppercase,
 );
 $headline-11:(
-        family: 'Fixel Display Bold',
-        size: 8px,
-        line-height: 110%,
-        text-transform: uppercase,
+  family: 'Fixel Display Bold',
+  size: 8px,
+  line-height: 110%,
+  text-transform: uppercase,
 );
 
 $body-1:(
@@ -105,7 +104,7 @@ $menu-1:(
 );
 $menu-2:(
   family: 'Fixel Display Regular',
-  size: 12px,
+  size: 14px,
   line-height: 110%,
   text-transform: uppercase,
 );
@@ -137,7 +136,7 @@ $link-3:(
 );
 $button:(
   family: 'Fixel Display Semibold',
-  size: 1.8rem,
+  size: 2rem,
   line-height: 140%,
   text-transform: uppercase,
 );
@@ -189,6 +188,7 @@ $accent-a-2: #79b6a0;
 $accent-a-15: #89c4ae;
 $accent-a-1: #99d2bd;
 $accent-a-05: #a9dfcb;
+$accent-a-0: #B9EDDA;
 
 $gray-10: #4a4a4a;
 $gray-20: #5d5d5d;

@@ -37,6 +37,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
         />
         {value && type!=='password' && (
           <button
+            className={styles.clearButton}
             type='button'
             onClick={clearInput}
           >
