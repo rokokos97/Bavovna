@@ -13,7 +13,7 @@ const schema = new Schema({
   favorite: [{type: String}],
   orders: [{type: String}],
   isVerified: {type: Boolean, default: false},
-  emailVerificationToken: {type: String, default: null},
+  emailVerificationToken: {type: String},
 }, {
   timestamps: true,
 });
