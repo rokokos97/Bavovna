@@ -1,9 +1,8 @@
-import {createSlice, createAction} from '@reduxjs/toolkit';
+import {createAction, createSlice} from '@reduxjs/toolkit';
 import localStorageService from '../services/localStorage.service';
 import authService from '../services/auth.service';
-import {generateAuthError} from '../utils/generateAuthError';
 import userService from '../services/user.service';
-
+import transformErrorMessage from '../utils/generateAuthError';
 
 const initialState = localStorageService.getAccessToken() ?
 {
@@ -79,7 +78,6 @@ const {
   userMessageCleared,
   userResetPasswordRequestSuccess,
   userSetNewPasswordRequestFailed,
-  userResetPasswordRequestFailed,
   authRequestFailed,
   authRequestSuccess,
   userLoggedOut,
@@ -98,7 +96,7 @@ const userUpdateRequested = createAction('users/userUpdateRequested');
 function errorHandler(error, dispatch) {
   const {code, message} = error.response.data.response;
   if (code === 400 || code === 500) {
-    const errorMessage = generateAuthError(message);
+    const errorMessage = transformErrorMessage[message];
     dispatch(authRequestFailed(errorMessage));
   }
 }
@@ -154,19 +152,13 @@ export const reset = ({payload}) => async (dispatch) => {
     const data = await authService.reset({email});
     dispatch(userResetPasswordRequestSuccess(data.message));
   } catch (error) {
-    const {code, message} = error.response.data.error;
-    if (code === 400) {
-      const errorMessage = generateAuthError(message);
-      dispatch(userResetPasswordRequestFailed(errorMessage));
-    }
+    errorHandler(error, dispatch);
   }
 };
 export const setNewPassword = (token, email, values) => async (dispatch) => {
   dispatch(userSetNewPasswordRequested());
   try {
-    const data = await authService.setNewPassword(token, email, values);
-    console.log(data);
-    return data;
+    return await authService.setNewPassword(token, email, values);
   } catch (error) {
     dispatch(userSetNewPasswordRequestFailed());
   }
