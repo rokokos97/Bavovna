@@ -23,7 +23,7 @@ export const validationSchemaRegisterForm = Yup.object().shape({
           /^[A-ZА-я][a-zа-я]+$/,
           'The Last name must begin with a capital' +
       ' letter and consist only of letters')
-      .max(20, 'First name must be at most 15 characters long'),
+      .max(15, 'First name must be at most 15 characters long'),
   firstName: Yup.string()
       .required('First name is required')
       .min(2, 'First name has to be longer than 2 characters')
@@ -31,7 +31,7 @@ export const validationSchemaRegisterForm = Yup.object().shape({
           /^[A-ZА-я][a-zа-я]+$/,
           'The First name must begin with a capital' +
         ' letter and consist only of letters')
-      .max(20, 'First name must be at most 15 characters long'),
+      .max(15, 'First name must be at most 15 characters long'),
 });
 export const validationSchemaUserDataForm = Yup.object().shape({
   currentPassword: Yup.string(),
@@ -51,14 +51,14 @@ export const validationSchemaUserDataForm = Yup.object().shape({
           /^[A-ZА-я][a-zа-я]+$/,
           'The Last name must begin with a capital' +
       ' letter and consist only of letters')
-      .max(20, 'First name must be at most 15 characters long'),
+      .max(15, 'First name must be at most 15 characters long'),
   firstName: Yup.string()
       .min(2, 'First name has to be longer than 2 characters')
       .matches(
           /^[A-ZА-я][a-zа-я]+$/,
           'The First name must begin with a capital' +
       ' letter and consist only of letters')
-      .max(20, 'First name must be at most 15 characters long'),
+      .max(15, 'First name must be at most 15 characters long'),
 });
 export const validationSchemaLoginForm = Yup.object().shape({
   license: Yup.boolean()
