@@ -10,6 +10,7 @@ const initialState = localStorageService.getAccessToken() ?
   entities: null,
   isLoading: true,
   error: null,
+  success: null,
   auth: {userId: localStorageService.getUserId()},
   isLoggedIn: true,
 }:
@@ -17,6 +18,7 @@ const initialState = localStorageService.getAccessToken() ?
   entities: null,
   isLoading: false,
   error: null,
+  success: null,
   auth: null,
   isLoggedIn: false,
 };
@@ -57,16 +59,25 @@ const usersSlice = createSlice({
       state.isLoggedIn = true;
       state.isLoading = false;
     },
+    userResetPasswordRequestSuccess: (state, action) => {
+      state.success = action.payload;
+    },
     userResetPasswordRequestFailed: (state, action) => {
       state.error = action.payload;
     },
     userSetNewPasswordRequestFailed: (state, action) => {
       state.error = action.payload;
     },
+    userMessageCleared: (state) => {
+      state.error = null;
+      state.success = null;
+    },
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
 const {
+  userMessageCleared,
+  userResetPasswordRequestSuccess,
   userSetNewPasswordRequestFailed,
   userResetPasswordRequestFailed,
   authRequestFailed,
@@ -84,42 +95,36 @@ const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
 const userUpdateFailed = createAction('users/userUpdateFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');
 
-export const signUp = (payload) =>
-  async (dispatch) => {
-    dispatch(authRequested());
-    try {
-      const data = await authService.register(payload);
-      console.log('signUp data', data);
-      localStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    } catch (error) {
-      console.log(error);
-      const {code, message} = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generateAuthError(message);
-        dispatch(authRequestFailed(errorMessage));
-      } else if (code === 500) {
-        dispatch(authRequestFailed('Server error. Please repeat latter...'));
-      }
-    }
-  };
-export const signUpWithGoogle = (payload) =>
-  async (dispatch) => {
-    dispatch(authRequested());
-    try {
-      const data = await authService.registerWithGoogle(payload);
-      localStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    } catch (error) {
-      const {code, message} = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generateAuthError(message);
-        dispatch(authRequestFailed(errorMessage));
-      } else if (code === 500) {
-        dispatch(authRequestFailed('Server error. Please repeat latter...'));
-      }
-    }
-  };
+function errorHandler(error, dispatch) {
+  const {code, message} = error.response.data.response;
+  if (code === 400 || code === 500) {
+    const errorMessage = generateAuthError(message);
+    dispatch(authRequestFailed(errorMessage));
+  }
+}
+export const clearUserMessages = () => (dispatch) => {
+  dispatch(userMessageCleared());
+};
+export const signUp = (payload) => async (dispatch) => {
+  dispatch(authRequested());
+  try {
+    const data = await authService.register(payload);
+    localStorageService.setTokens(data);
+    dispatch(authRequestSuccess(data.user));
+  } catch (error) {
+    errorHandler(error, dispatch);
+  }
+};
+export const signUpWithGoogle = (payload) => async (dispatch) => {
+  dispatch(authRequested());
+  try {
+    const data = await authService.registerWithGoogle(payload);
+    localStorageService.setTokens(data);
+    dispatch(authRequestSuccess(data.user));
+  } catch (error) {
+    errorHandler(error, dispatch);
+  }
+};
 export const loginWithGoogle = (payload) =>async (dispatch) =>{
   const {email} = payload;
   dispatch(authRequested());
@@ -128,16 +133,10 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    const {code, message} = error.response.data.error;
-    if (code === 400) {
-      const errorMessage = generateAuthError(message);
-      dispatch(authRequestFailed(errorMessage));
-    } else if (code === 500) {
-      dispatch(authRequestFailed('Server error. Please repeat latter...'));
-    }
+    errorHandler(error, dispatch);
   }
 };
-export const login = ({payload}) => async (dispatch) => {
+export const logIn = ({payload}) => async (dispatch) => {
   const {email, password} = payload;
   dispatch(authRequested());
   try {
@@ -145,23 +144,21 @@ export const login = ({payload}) => async (dispatch) => {
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    const {code, message} = error.response.data.error;
-    if (code === 400) {
-      const errorMessage = generateAuthError(message);
-      dispatch(authRequestFailed(errorMessage));
-    }
+    errorHandler(error, dispatch);
   }
 };
 export const reset = ({payload}) => async (dispatch) => {
   const {email} = payload;
-  console.log(email);
   dispatch(userResetPasswordRequested());
   try {
     const data = await authService.reset({email});
-    console.log(data);
-    return data;
+    dispatch(userResetPasswordRequestSuccess(data.message));
   } catch (error) {
-    dispatch(userResetPasswordRequestFailed(error));
+    const {code, message} = error.response.data.error;
+    if (code === 400) {
+      const errorMessage = generateAuthError(message);
+      dispatch(userResetPasswordRequestFailed(errorMessage));
+    }
   }
 };
 export const setNewPassword = (token, email, values) => async (dispatch) => {
@@ -198,8 +195,9 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 export const getUser = () => (state) => state.user.entities;
-export const getIsLoadingUser = () => (state) => state.user.isLoading;
+// export const getIsLoadingUser = () => (state) => state.user.isLoading;
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getAuthErrors = () => (state) => state.user.error;
+export const getSuccessMessage = () => (state) => state.user.success;
 
 export default userReducer;
