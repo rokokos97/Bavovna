@@ -1,14 +1,14 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Page404 from './Page404';
+import ModalLogin from './modalLogin';
 
 describe('<Box />', () => {
   test('it should mount', () => {
-    render(<Page404 />);
+    render(<ModalLogin />);
 
-    const page404 = screen.getByTestId('Page404');
+    const modalLogin = screen.getByTestId('ModalLogin');
 
-    expect(page404).toBeInTheDocument();
+    expect(modalLogin).toBeInTheDocument();
   });
 });

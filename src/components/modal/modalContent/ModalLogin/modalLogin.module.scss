@@ -1,0 +1,22 @@
+@import "../../../../styles/variables.module";
+.modalLogin {
+  width: 51.9rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  background: $gray-80;
+  padding: 2.4rem;
+}
+.container {
+  display: flex;
+  column-gap: 1.6rem;
+}
+.content {
+  text-align: start;
+}
+.closeButton{
+  background: $gray-80;
+}
+.button {
+  @include button(19.5rem, $black, $white, $accent-a-3, $accent-a-5);
+}

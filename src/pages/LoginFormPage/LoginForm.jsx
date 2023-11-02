@@ -3,27 +3,26 @@ import styles from './LoginForm.module.scss';
 import {useFormik} from 'formik';
 import {Link, NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, getIsLoggedIn, logIn, loginWithGoogle} from '../../store/userSlice';
-import GoogleIcon from '../svg/googleIcon/googleIcon';
+import {clearUserResponse, getIsLoggedIn, getResponse, logInWithPassword, loginWithGoogle} from '../../store/userSlice';
+import GoogleIcon from '../../components/svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
 import googleService from '../../services/google.service';
-import TextField from '../formFields/textField/textField';
-import CheckboxField from '../formFields/checkboxField/checkboxField';
-
+import TextField from '../../components/formFields/textField/textField';
+import CheckboxField from '../../components/formFields/checkboxField/checkboxField';
+import transformErrorMessage from '../../utils/generateErrorMessage';
+import ModalLogin from '../../components/modal/modalContent/ModalLogin/modalLogin';
+import {showBodyOverflow} from '../../services/modal.service';
+import {Modal} from '../../components/modal';
 const LoginForm = () => {
   // Використання Redux hooks для диспетчеризації дій і отримання даних зі store
   const dispatch = useDispatch();
-  const authError = useSelector(getAuthErrors());
+  // Використання селектора для отримання відповіді з redux store
+  const response = useSelector(getResponse());
   // Використання стану для відображення помилок сервера при вході в систему
-  const [loginError, setLoginError] = useState(null);
   const isLoggedIn = useSelector(getIsLoggedIn());
   const navigate = useNavigate();
-  useEffect(()=>{
-    if (isLoggedIn) {
-      navigate('/');
-    }
-  }, [isLoggedIn]);
+  const [showCookiesModal, setShowCookiesModal] = useState(true);
   // Ініціалізація форми за допомогою Formik
   const formik = useFormik({
     initialValues: {
@@ -31,11 +30,8 @@ const LoginForm = () => {
       password: '',
     },
     validationSchema: validationSchemaLoginForm,
-    onSubmit: async (values) => {
-      if (!isFormValid) return;
-      setLoginError(authError);
-      console.log(JSON.stringify(values, null, 2));
-      dispatch(logIn({payload: values}));
+    onSubmit: (values) => {
+      dispatch(logInWithPassword({payload: values}));
     },
   });
 
@@ -48,19 +44,19 @@ const LoginForm = () => {
           .then((userInfo) => dispatch(loginWithGoogle(userInfo)));
     },
   });
-  // Перевірка на наявність помилок у формі
-  const isFormValid = Object.keys(formik.errors).length === 0;
-  // Встановлення помилок аутентифікації
   useEffect(() => {
-    setLoginError(authError);
-  }, [authError]);
-
-  // Очищення помилок входу в систему при зміні значень форми
-  useEffect(() => {
-    setLoginError(null);
-  }, [formik.values]);
-
+    if (response) {
+      dispatch(clearUserResponse());
+    }
+    if (isLoggedIn) {
+      navigate('/');
+    }
+  }, [formik.values, dispatch, isLoggedIn]);
   // Рендер компоненту форми входу
+  const closeModal = () => {
+    setShowCookiesModal(false);
+    showBodyOverflow();
+  };
   return (
     <div className={styles.loginForm}>
       <div className={styles.titleBlock}>
@@ -71,15 +67,10 @@ const LoginForm = () => {
             Welcome back! Please enter your details
         </span>
       </div>
-      <div>
-        {loginError &&
-          <div className={styles.loginError}>
-            <span>
-              {loginError}
-            </span>
-          </div>
-        }
-      </div>
+      {response ?
+        <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+          <p>{transformErrorMessage[response.message]}</p>
+        </div> : null}
       <div className={styles.inputsBlock}>
         <form
           className={styles.form}
@@ -124,7 +115,7 @@ const LoginForm = () => {
           </CheckboxField>
           <button
             type='submit'
-            disabled={!isFormValid}
+            disabled={!formik.isValid || !formik.dirty}
             className={styles.button}
           >
             <span>
@@ -149,7 +140,9 @@ const LoginForm = () => {
             <div
               id='signUpDiv'>
             </div>
-            <button className={styles.googleButton}
+            <button
+              type='button'
+              className={styles.googleButton}
               onClick={()=> googleLogin()}
             >
               <GoogleIcon />
@@ -170,6 +163,12 @@ const LoginForm = () => {
           <span>Sign up</span>
         </NavLink>
       </p>
+      <Modal
+        isOpen={showCookiesModal}
+        handleCloseModal={closeModal}
+      >
+        <ModalLogin handleCloseModal={closeModal}/>
+      </Modal>
     </div>
   );
 };

@@ -1,19 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAuthErrors, signUp, signUpWithGoogle} from '../../store/userSlice';
-import GoogleIcon from '../svg/googleIcon/googleIcon';
+import {clearUserResponse, getIsLoggedIn, getResponse, signUp, signUpWithGoogle} from '../../store/userSlice';
+import GoogleIcon from '../../components/svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../utils/validationSchema';
 import googleService from '../../services/google.service';
-import TextField from '../formFields/textField/textField';
+import TextField from '../../components/formFields/textField/textField';
+import transformErrorMessage from '../../utils/generateErrorMessage';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const authError = useSelector(getAuthErrors());
-  const [registerError, setRegisterError] = useState(null);
+  const response = useSelector(getResponse());
+  const isLoggedIn = useSelector(getIsLoggedIn());
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -25,8 +27,6 @@ const RegisterForm = () => {
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
       if (!formik.isValid) return;
-      setRegisterError(authError);
-      console.log(JSON.stringify(values, null, 2));
       dispatch(signUp(values));
     },
   });
@@ -43,11 +43,15 @@ const RegisterForm = () => {
     },
   });
   useEffect(()=>{
-    setRegisterError(authError);
-  }, [authError]);
-  useEffect(()=>{
-    setRegisterError(null);
-  }, [formik.values]);
+    if (isLoggedIn) {
+      navigate('/');
+    }
+  }, [isLoggedIn]);
+  useEffect(() => {
+    if (response) {
+      dispatch(clearUserResponse());
+    }
+  }, [formik.values, dispatch]);
   return (
     <div className={styles.registerForm}>
       <div className={styles.titleBlock}>
@@ -59,13 +63,10 @@ const RegisterForm = () => {
         </span>
       </div>
       <div>
-        {registerError &&
-          <div className={styles.registerError}>
-            <span>
-              {registerError}
-            </span>
-          </div>
-        }
+        {response ?
+          <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+            <p>{transformErrorMessage[response.message]}</p>
+          </div> : null}
       </div>
       <div className={styles.inputsBlock}>
         <form
@@ -157,7 +158,7 @@ const RegisterForm = () => {
         </div>
       </div>
       <p>
-        Already have account?{'  '}
+        Already have an account?{'  '}
         <NavLink
           to="/login"
           role="button"

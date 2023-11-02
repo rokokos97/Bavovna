@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './page404.module.scss';
 import {useNavigate} from 'react-router-dom';
-import NotFoundPageImage from '../svg/notFoundPageImage/notFoundPageImage';
+import NotFoundPageImage from '../../components/svg/notFoundPageImage/notFoundPageImage';
 
 const Page404 = () => {
   const navigate = useNavigate();

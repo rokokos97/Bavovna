@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './LoginLayout.module.scss';
 import {Route, Routes} from 'react-router-dom';
-import LoginForm from '../LoginForm/LoginForm';
-import RegisterForm from '../RegisterForm/RegisterForm';
-import ForgotPasswordForm from '../ForgotPasswordForm/ForgotPasswordForm';
+import LoginForm from '../LoginFormPage/LoginForm';
+import RegisterForm from '../RegisterFormPage/RegisterForm';
+import ForgotPasswordForm from '../forgotPasswordPage/ForgotPasswordForm';
 import Page404 from '../page404/page404';
-import ResetPasswordForm from '../resetPasswordForm/resetPasswordForm';
+import ResetPasswordForm from '../resetPasswordPage/resetPasswordForm';
 
 const LoginLayout = () => (
   <div className={styles.loginLayout} data-testid="LoginLayout">

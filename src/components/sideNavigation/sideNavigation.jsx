@@ -5,7 +5,7 @@ import {Route, Routes, useNavigate} from 'react-router-dom';
 import OrdersBlock from '../../blocks/ordersBlock/ordersBlock';
 import WishListBlock from '../../blocks/wishListBlock/wishListBlock';
 import UserDataForm from '../userDataForm/userDataForm';
-import Page404 from '../page404/page404';
+import Page404 from '../../pages/page404/page404';
 
 const SideNavigation = () => {
   const navigate = useNavigate();
