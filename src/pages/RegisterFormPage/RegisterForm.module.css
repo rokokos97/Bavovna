@@ -1,18 +1,17 @@
-.loginForm {
+.registerForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 4rem auto 17rem;
   width: 40.9rem;
   gap: 2.4rem;
 }
-.loginForm p {
+.registerForm p {
   color: #040404;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
-.loginForm p span {
+.registerForm p span {
   color: #040404;
   font-family: "Fixel Display Semibold";
   font-size: 16px;
@@ -39,22 +38,8 @@
   color: #4a4a4a;
 }
 
-.loginError {
-  width: 40.9rem;
-  display: flex;
-  padding: 1.2rem;
-  align-items: center;
-  align-self: stretch;
-  background: #dfc5c5;
-}
-.loginError span {
-  font-family: "Fixel Text Regular";
-  font-size: 16px;
-  line-height: 110%;
-  color: #ea001b;
-}
-
 .inputsBlock {
+  width: 40.9rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -62,7 +47,6 @@
 }
 
 .form {
-  width: 40.9rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -264,4 +248,28 @@
   color: #9b9b9b;
 }
 
-/*# sourceMappingURL=LoginForm.module.css.map */
+.errorMessagesBlock {
+  display: flex;
+  align-self: stretch;
+  background: #dfc5c5;
+}
+.errorMessagesBlock p {
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #ea001b;
+}
+
+.successMessagesBlock {
+  display: flex;
+  align-self: stretch;
+  background: #a9dfcb;
+}
+.successMessagesBlock p {
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #2ab66a;
+}
+
+/*# sourceMappingURL=RegisterForm.module.css.map */
