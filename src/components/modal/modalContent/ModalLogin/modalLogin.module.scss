@@ -6,12 +6,16 @@
   row-gap: 1.6rem;
   background: $gray-80;
   padding: 2.4rem;
+  position: absolute;
+  left: 84.1rem;
+  bottom: 0;
 }
 .container {
   display: flex;
   column-gap: 1.6rem;
 }
 .content {
+  @include fonts($body-3);
   text-align: start;
 }
 .closeButton{
