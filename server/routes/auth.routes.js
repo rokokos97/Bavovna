@@ -66,7 +66,7 @@ router.post('/signUp', [
         response: {
           errors: error,
           code: 500,
-          message: 'INTERNAL_SERVER_ERROR',
+          message: 'SERVER_ERROR',
         },
       });
     }
@@ -117,7 +117,7 @@ router.post('/signUpWithGoogle', [
         response: {
           errors: error,
           code: 500,
-          message: 'INTERNAL_SERVER_ERROR',
+          message: 'SERVER_ERROR',
         },
       });
     }
@@ -144,7 +144,15 @@ router.post('/signInWithPassword', [
         return res.status(400).json({
           response: {
             code: 400,
-            message: 'EMAIL_NOT_FOUND',
+            message: 'EMAIL_NOT_FOUND_OR_INVALID_PASSWORD',
+          },
+        });
+      }
+      if (!existingUser.password) {
+        return res.status(400).json({
+          response: {
+            code: 400,
+            message: 'EMAIL_NOT_FOUND_OR_INVALID_PASSWORD',
           },
         });
       }
@@ -154,7 +162,7 @@ router.post('/signInWithPassword', [
         return res.status(400).json({
           response: {
             code: 400,
-            message: 'INVALID_PASSWORD',
+            message: 'EMAIL_NOT_FOUND_OR_INVALID_PASSWORD',
           },
         });
       }
@@ -170,7 +178,7 @@ router.post('/signInWithPassword', [
         response: {
           errors: error,
           code: 500,
-          message: 'INTERNAL_SERVER_ERROR',
+          message: 'SERVER_ERROR',
         },
       });
     }
