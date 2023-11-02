@@ -315,7 +315,6 @@ $light-pink: #dfc5c5;
 @mixin form() {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 4rem auto 17rem;
   width: $form-width;
   gap: 2.4rem;
@@ -359,5 +358,17 @@ $light-pink: #dfc5c5;
   span {
     @include fonts($body-2);
     color: $gray-10;
+  }
+}
+
+@mixin form-message-block($background-color, $text-color) {
+  display: flex;
+  align-self: stretch;
+  background: $background-color;
+  p {
+    width: 100%;
+    text-align: start;
+    padding: 1.2rem;
+    color: $text-color;
   }
 }
