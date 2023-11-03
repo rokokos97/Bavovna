@@ -28,6 +28,8 @@ const LoginForm = () => {
     initialValues: {
       email: '',
       password: '',
+      rememberMe: false,
+      license: false,
     },
     validationSchema: validationSchemaLoginForm,
     onSubmit: (values) => {
