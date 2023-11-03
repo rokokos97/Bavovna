@@ -1,21 +1,25 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {clearUserResponse, getIsLoggedIn, getResponse, signUp, signUpWithGoogle} from '../../store/userSlice';
+import {clearUserResponse, getResponse, signUp, signUpWithGoogle} from '../../store/userSlice';
 import GoogleIcon from '../../components/svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../utils/validationSchema';
 import googleService from '../../services/google.service';
 import TextField from '../../components/formFields/textField/textField';
 import transformErrorMessage from '../../utils/generateErrorMessage';
+import {Modal} from '../../components/modal';
+import ModalVerifyEmail from '../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
+import {showBodyOverflow} from '../../services/modal.service';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const response = useSelector(getResponse());
-  const isLoggedIn = useSelector(getIsLoggedIn());
   const navigate = useNavigate();
+  const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(true);
+  const [email, setEmail] = useState(null);
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -26,8 +30,9 @@ const RegisterForm = () => {
     },
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
-      if (!formik.isValid) return;
+      setEmail(values.email);
       dispatch(signUp(values));
+      //      navigate('/');
     },
   });
   const googleRegister = useGoogleLogin({
@@ -42,11 +47,18 @@ const RegisterForm = () => {
       });
     },
   });
+  const closeModal = () => {
+    setShowVerifyEmailModal(false);
+    showBodyOverflow();
+    navigate('/');
+  };
   useEffect(()=>{
-    if (isLoggedIn) {
-      navigate('/');
+    console.log(response);
+    if (response && response.code === 201) {
+      setShowVerifyEmailModal(true);
+      formik.resetForm();
     }
-  }, [isLoggedIn]);
+  }, [response]);
   useEffect(() => {
     if (response) {
       dispatch(clearUserResponse());
@@ -127,7 +139,7 @@ const RegisterForm = () => {
           />
           <button
             type="submit"
-            disabled={!formik.isValid}
+            disabled={!formik.isValid || !formik.dirty}
             className={styles.button}
           >
             <span>
@@ -167,6 +179,12 @@ const RegisterForm = () => {
           <span>Sign in</span>
         </NavLink>
       </p>
+      <Modal
+        isOpen={showVerifyEmailModal}
+        handleCloseModal={closeModal}
+      >
+        <ModalVerifyEmail handleCloseModal={closeModal} email={email}/>
+      </Modal>
     </div>
   );
 };

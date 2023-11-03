@@ -50,7 +50,11 @@ const authService = {
     const {data} = await httpAuth.post('resetPassword', {token, email, password});
     return data;
   },
-
+  emailVerifiy: async (token, email) => {
+    console.log('authService', token, email);
+    const {data} = await httpAuth.post('emailVerification', {token, email});
+    return data;
+  },
   // Оновлення токену автентифікації
   refresh: async () => {
     const {data} = await httpAuth.post('token', {

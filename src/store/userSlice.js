@@ -43,7 +43,7 @@ const usersSlice = createSlice({
       state.response = action.payload;
     },
     userCreated: (state, action) => {
-      state.entities.push(action.payload);
+      state.response = action.payload;
     },
     userLoggedOut: (state) => {
       state.entities = null;
@@ -71,10 +71,20 @@ const usersSlice = createSlice({
     userResponseCleared: (state) => {
       state.response = null;
     },
+    emailVerificationRequestedSuccess: (state, action) => {
+      state.entities = action.payload.user;
+      state.auth = action.payload._id;
+      state.isLoggedIn = true;
+      state.response = action.payload.response;
+    },
+    emailVerificationRequestFailed: (state, action) => {
+      state.response = action.payload;
+    },
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
 const {
+  userCreated,
   userResponseCleared,
   userResetPasswordRequestSuccess,
   userResetPasswordRequestFailed,
@@ -84,6 +94,8 @@ const {
   userLoggedOut,
   userUpdateSuccess,
   userLoadRequestSuccess,
+  emailVerificationRequestedSuccess,
+  emailVerificationRequestFailed,
 } = actions;
 
 const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
@@ -93,7 +105,7 @@ const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
 const userUpdateFailed = createAction('users/userUpdateFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');
-
+const emailVerificationRequested = createAction('user/emailVerificationRequested');
 export const clearUserResponse = () => (dispatch) => {
   dispatch(userResponseCleared());
 };
@@ -101,8 +113,7 @@ export const signUp = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.register(payload);
-    localStorageService.setTokens(data);
-    dispatch(authRequestSuccess(data.user));
+    dispatch(userCreated(data.response));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
   }
@@ -137,6 +148,17 @@ export const logInWithPassword = ({payload}) => async (dispatch) => {
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
+  }
+};
+export const verifyEmail = (token, email) => async (dispatch) => {
+  dispatch(emailVerificationRequested());
+  try {
+    const data = await authService.emailVerifiy(token, email);
+    localStorageService.setTokens(data);
+    dispatch(emailVerificationRequestedSuccess(data));
+  } catch (error) {
+    console.log('userSlice error', error.response.data);
+    dispatch(emailVerificationRequestFailed(error.response.data.response));
   }
 };
 export const resetPassword = ({payload}) => async (dispatch) => {
