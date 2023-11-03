@@ -50,12 +50,44 @@ router.post('/signUp', [
         ...req.body,
         password: hashedPassword,
       });
+      const emailVerificationToken = tokenService.generateVerify({_id: newUser._id});
       const tokens = tokenService.generate({_id: newUser._id});
       await tokenService.save(newUser._id, tokens.refreshToken);
+      newUser.emailVerificationToken = emailVerificationToken;
+      await newUser.save();
+      console.log('newUser', newUser);
+      const encodedEmail = encodeURIComponent(email);
+      const encodedToken = encodeURIComponent(emailVerificationToken);
+      const verifyEmailURL = `http://localhost:3000/user/${newUser._id}?token=${encodedToken}&email=${encodedEmail}`;
+      const mailOptions = {
+        from: 'bavovna@mail.com',
+        to: email,
+        subject: 'Verification email',
+        text: `Hello! Please verify your email. Follow the link to verify your email: `,
+        html: `<b>Hello! Please verify your email. Follow the link to verify your email:</b>
+                     <a href="${verifyEmailURL}"> Click here... </a>`,
+      };
+      await transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+          return res.status(500).json({
+            response: {
+              errors: error,
+              code: 500,
+              message: 'SERVER_ERROR',
+            },
+          });
+        } else {
+          if (info.response === '250 2.0.0 Ok: queued') {
+            return res.status(200).json({
+              response: {
+                code: 200,
+                message: 'VERIFY_EMAIL_SENT',
+              },
+            });
+          }
+        }
+      });
       res.status(201).send({
-        ...tokens,
-        userId: newUser._id,
-        user: newUser,
         response: {
           message: 'USER_CREATED',
           code: 201,
@@ -257,7 +289,7 @@ router.post('/forgotPassword', [
       const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
       const resetPasswordURL = `http://localhost:3000/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
       const mailOptions = {
-        from: 'to@example.com',
+        from: 'bavovna@shop.com',
         to: email,
         subject: 'Test Email',
         text: `Hello. If you would like reset your password please enter the link!`,
@@ -278,7 +310,7 @@ router.post('/forgotPassword', [
             return res.status(200).json({
               response: {
                 code: 200,
-                message: 'EMAIL_SENT',
+                message: 'RESET_EMAIL_SENT',
               },
             });
           }
@@ -306,6 +338,51 @@ router.post('/resetPassword', async (req, res) => {
         response: {
           code: 200,
           message: 'PASSWORD_CHANGED',
+        },
+      });
+    } else {
+      return res.status(400).json({
+        response: {
+          code: 400,
+          message: 'INVALID_TOKEN',
+        },
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      response: {
+        errors: error,
+        code: 500,
+        message: 'SERVER_ERROR',
+      },
+    });
+  }
+});
+router.post('/emailVerification', async (req, res) => {
+  try {
+    const {token, email} = req.body;
+    //    console.log('auth.route', token, email);
+    const currentUser = await User.findOne({email});
+    if (!currentUser) {
+      return res.status(400).json({
+        response: {
+          code: 400,
+          message: 'USER_NOT_FOUND',
+        },
+      });
+    }
+    const isValidToken = (token === currentUser.emailVerificationToken);
+    if (isValidToken) {
+      currentUser.isVerified = true;
+      await currentUser.save();
+      const tokens = tokenService.generate({_id: currentUser._id});
+      res.status(201).send({
+        ...tokens,
+        userId: currentUser._id,
+        user: currentUser,
+        response: {
+          code: 200,
+          message: 'EMAIL_VERIFIED',
         },
       });
     } else {
