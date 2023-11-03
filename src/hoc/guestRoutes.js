@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // Компонент для захисту роутів призначених для неавторизованих користувачів
 const GuestRoutes = ({children, redirectTo = '/'}) => {
   const navigate = useNavigate();
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const isLoggedIn = useSelector(getIsLoggedIn());
 
   // Редірект авторизованих користувачів з гостьових роутів
   useEffect(() => {
