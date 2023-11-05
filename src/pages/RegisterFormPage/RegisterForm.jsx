@@ -18,7 +18,7 @@ const RegisterForm = () => {
   const dispatch = useDispatch();
   const response = useSelector(getResponse());
   const navigate = useNavigate();
-  const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(true);
+  const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
   const [email, setEmail] = useState(null);
   const formik = useFormik({
     initialValues: {
@@ -32,7 +32,6 @@ const RegisterForm = () => {
     onSubmit: (values) => {
       setEmail(values.email);
       dispatch(signUp(values));
-      //      navigate('/');
     },
   });
   const googleRegister = useGoogleLogin({
@@ -53,7 +52,6 @@ const RegisterForm = () => {
     navigate('/');
   };
   useEffect(()=>{
-    console.log(response);
     if (response && response.code === 201) {
       setShowVerifyEmailModal(true);
       formik.resetForm();
