@@ -1,14 +1,14 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import ModalLogin from './modalLogin';
+import ModalCookies from './modalCookies';
 
 describe('<Box />', () => {
   test('it should mount', () => {
-    render(<ModalLogin />);
+    render(<ModalCookies />);
 
-    const modalLogin = screen.getByTestId('ModalLogin');
+    const ModalCookies = screen.getByTestId('ModalCookies');
 
-    expect(modalLogin).toBeInTheDocument();
+    expect(ModalCookies).toBeInTheDocument();
   });
 });

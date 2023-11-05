@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from './LoginForm.module.scss';
 import {useFormik} from 'formik';
 import {Link, NavLink, useNavigate} from 'react-router-dom';
@@ -7,13 +7,10 @@ import {clearUserResponse, getIsLoggedIn, getResponse, logInWithPassword, loginW
 import GoogleIcon from '../../components/svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
-import googleService from '../../services/google.service';
 import TextField from '../../components/formFields/textField/textField';
 import CheckboxField from '../../components/formFields/checkboxField/checkboxField';
+import googleService from '../../services/google.service';
 import transformErrorMessage from '../../utils/generateErrorMessage';
-import ModalLogin from '../../components/modal/modalContent/ModalLogin/modalLogin';
-import {showBodyOverflow} from '../../services/modal.service';
-import {Modal} from '../../components/modal';
 const LoginForm = () => {
   // Використання Redux hooks для диспетчеризації дій і отримання даних зі store
   const dispatch = useDispatch();
@@ -22,7 +19,6 @@ const LoginForm = () => {
   // Використання стану для відображення помилок сервера при вході в систему
   const isLoggedIn = useSelector(getIsLoggedIn());
   const navigate = useNavigate();
-  const [showCookiesModal, setShowCookiesModal] = useState(true);
   // Ініціалізація форми за допомогою Formik
   const formik = useFormik({
     initialValues: {
@@ -38,7 +34,7 @@ const LoginForm = () => {
   });
 
   // Інтеграція Google OAuth
-  const googleLogin = useGoogleLogin({
+  const googleLoginHook = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
       googleService
@@ -46,6 +42,9 @@ const LoginForm = () => {
           .then((userInfo) => dispatch(loginWithGoogle(userInfo)));
     },
   });
+  const googleLogin = () => {
+    googleLoginHook();
+  };
   useEffect(() => {
     if (response) {
       dispatch(clearUserResponse());
@@ -55,9 +54,12 @@ const LoginForm = () => {
     }
   }, [formik.values, dispatch, isLoggedIn]);
   // Рендер компоненту форми входу
-  const closeModal = () => {
-    setShowCookiesModal(false);
-    showBodyOverflow();
+  const renderMessagesBlockStyle = () => {
+    if (response && response.code === 200) {
+      return styles.successMessagesBlock;
+    } else {
+      return styles.errorMessagesBlock;
+    }
   };
   return (
     <div className={styles.loginForm}>
@@ -70,7 +72,7 @@ const LoginForm = () => {
         </span>
       </div>
       {response ?
-        <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+        <div className={renderMessagesBlockStyle()}>
           <p>{transformErrorMessage[response.message]}</p>
         </div> : null}
       <div className={styles.inputsBlock}>
@@ -145,7 +147,7 @@ const LoginForm = () => {
             <button
               type='button'
               className={styles.googleButton}
-              onClick={()=> googleLogin()}
+              onClick={googleLogin}
             >
               <GoogleIcon />
               <span>
@@ -165,12 +167,6 @@ const LoginForm = () => {
           <span>Sign up</span>
         </NavLink>
       </p>
-      <Modal
-        isOpen={showCookiesModal}
-        handleCloseModal={closeModal}
-      >
-        <ModalLogin handleCloseModal={closeModal}/>
-      </Modal>
     </div>
   );
 };
