@@ -7,8 +7,6 @@ const initialState = localStorageService.getAccessToken() ?
 {
   entities: null,
   isLoading: true,
-  error: null,
-  success: null,
   response: null,
   auth: {userId: localStorageService.getUserId()},
   isLoggedIn: true,
@@ -16,8 +14,6 @@ const initialState = localStorageService.getAccessToken() ?
 {
   entities: null,
   isLoading: false,
-  error: null,
-  success: null,
   response: null,
   auth: null,
   isLoggedIn: false,
@@ -157,7 +153,6 @@ export const verifyEmail = (token, email) => async (dispatch) => {
     localStorageService.setTokens(data);
     dispatch(emailVerificationRequestedSuccess(data));
   } catch (error) {
-    console.log('userSlice error', error.response.data);
     dispatch(emailVerificationRequestFailed(error.response.data.response));
   }
 };
@@ -168,7 +163,6 @@ export const resetPassword = ({payload}) => async (dispatch) => {
     const data = await authService.reset({email});
     dispatch(userResetPasswordRequestSuccess(data.response));
   } catch (error) {
-    console.log(error);
     dispatch(userResetPasswordRequestFailed(error.response.data.response));
   }
 };
