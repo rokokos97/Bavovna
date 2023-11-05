@@ -37,6 +37,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
         />
         {value && type!=='password' && (
           <button
+            aria-label='clear input'
             className={styles.clearButton}
             type='button'
             onClick={clearInput}
@@ -46,6 +47,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
         )}
         {type === 'password' && value &&(
           <button
+            aria-label='show/hide password'
             type='button'
             onClick={toggleShowPassword}>
             {!showPassword ?
@@ -74,7 +76,6 @@ TextField.propTypes = {
   error: PropTypes.string,
   touched: PropTypes.bool,
   placeholder: PropTypes.string,
-  style: PropTypes.string,
   disabled: PropTypes.bool,
 };
 export default TextField;
