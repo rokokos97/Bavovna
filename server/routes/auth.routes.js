@@ -55,7 +55,6 @@ router.post('/signUp', [
       await tokenService.save(newUser._id, tokens.refreshToken);
       newUser.emailVerificationToken = emailVerificationToken;
       await newUser.save();
-      console.log('newUser', newUser);
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken);
       const verifyEmailURL = `http://localhost:3000/user/${newUser._id}?token=${encodedToken}&email=${encodedEmail}`;
@@ -361,7 +360,6 @@ router.post('/resetPassword', async (req, res) => {
 router.post('/emailVerification', async (req, res) => {
   try {
     const {token, email} = req.body;
-    //    console.log('auth.route', token, email);
     const currentUser = await User.findOne({email});
     if (!currentUser) {
       return res.status(400).json({

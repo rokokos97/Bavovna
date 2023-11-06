@@ -7,20 +7,25 @@ const router = express.Router({mergeParams: true});
 
 router.patch('/:userId', auth,
     async (req, res) => {
+      const {currentPassword} = req.body;
+      const _id = req.params.userId;
       try {
-        const {userId, email, currentPassword} = req.body;
-        const existingUser = await User.findOne({email});
-        console.log('existingUser', existingUser);
+        const existingUser = await User.findOne({_id});
         if (!existingUser) {
           return res.status(400).json({
             error: {
-              message: 'EMAIL_NOT_FOUND',
+              message: 'USER_NOT_FOUND',
               code: 400,
             },
           });
         }
+        if (!currentPassword) {
+          const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true});
+          return res.send(updatedUser);
+        }
         const isPasswordEqual = await bcrypt.compare(
             currentPassword, existingUser.password);
+        console.log('isPasswordEqual', isPasswordEqual);
         if (!isPasswordEqual) {
           return res.status(400).json({
             error: {
@@ -29,8 +34,7 @@ router.patch('/:userId', auth,
             },
           });
         }
-        // eslint-disable-next-line max-len
-        const updatedUser = await User.findByIdAndUpdate(userId, req.body, {new: true});
+        const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true});
         res.send(updatedUser);
       } catch (e) {
         res.status(500).json({

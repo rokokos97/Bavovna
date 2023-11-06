@@ -26,6 +26,7 @@ const UserDataForm = () => {
       if (!formik.isValid) return;
       const changedFields = getChangedFields(formik.values);
       const newUser = {...user, ...changedFields};
+      console.log('newUser', newUser);
       dispatch(updateUser(newUser));
     }},
   );

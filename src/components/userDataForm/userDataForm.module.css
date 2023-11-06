@@ -160,10 +160,10 @@
   gap: 0.4rem;
   align-self: stretch;
   color: #030a07;
+  margin-bottom: 0.8rem;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
-  margin-bottom: 0.8rem;
 }
 .phoneLabel span {
   color: #ea001b;
