@@ -56,15 +56,17 @@ const CardsCatalogBlock = () => {
             </Link>
           ))}
         </ul>
-        <div className={styles.pagination}>
+        {endIndex ?
+        (<div className={styles.pagination}>
           <div
             className={
                 currentPage !== 1 ?
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
             }
-            disabled={currentPage === 1}
-            onClick={() => setCurrentPage(currentPage - 1)}
+            onClick={currentPage === 1 ?
+            null :
+            () => setCurrentPage(currentPage - 1)}
           >
             <ArrowBackIcon />
             <span>Previous</span>
@@ -90,13 +92,17 @@ const CardsCatalogBlock = () => {
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
             }
-            disabled={currentPage === totalPages}
-            onClick={() => setCurrentPage(currentPage + 1)}
+            // disabled={currentPage === 1 || currentPage === totalPages}
+            onClick={currentPage === totalPages ?
+              null :
+              () => setCurrentPage(currentPage + 1)}
           >
             <span>Next</span>
             <ArrowForwardIcon />
           </div>
-        </div>
+        </div>) :
+        null
+        }
       </div>
     </div>
   );
