@@ -54,7 +54,7 @@
 }
 
 .error {
-  color: var(--error, #EA001B);
+  color: #ea001b;
   padding-left: 0.8rem;
   font-size: 1.6rem;
   font-style: normal;
@@ -78,6 +78,9 @@
 }
 .textField.hasError .inputBlock input svg path,
 .textField.hasError .inputBlock .clearButton svg path {
+  stroke: #ea001b;
+}
+.textField.hasError .inputBlock button div svg path {
   stroke: #ea001b;
 }
 .textField.hasError .inputBlock input::placeholder {

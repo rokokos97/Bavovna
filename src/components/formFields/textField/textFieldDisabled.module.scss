@@ -15,7 +15,7 @@
   gap: 0.4rem;
   align-self: stretch;
   color: $gray-80;
-  @include fonts($body-3);
+  @include fonts($label);
 
   span {
     color: $gray-80
