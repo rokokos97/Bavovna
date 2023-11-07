@@ -25,20 +25,29 @@ router.patch('/:userId', auth,
         }
         const isPasswordEqual = await bcrypt.compare(
             currentPassword, existingUser.password);
-        console.log('isPasswordEqual', isPasswordEqual);
         if (!isPasswordEqual) {
           return res.status(400).json({
-            error: {
-              message: 'INVALID_PASSWORD',
+            response: {
+              message: 'INVALID_CURRENT_PASSWORD',
               code: 400,
             },
           });
         }
         const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true});
-        res.send(updatedUser);
-      } catch (e) {
-        res.status(500).json({
-          message: 'Server error. Please try later...',
+        return res.status(200).send({
+          response: {
+            message: 'USER_UPDATE',
+            code: 200,
+          },
+          updatedUser,
+        });
+      } catch (error) {
+        return res.status(500).json({
+          response: {
+            errors: error,
+            code: 500,
+            message: 'SERVER_ERROR',
+          },
         });
       }
     });
@@ -47,9 +56,13 @@ router.get('/:userId', auth, async (req, res) => {
     const {userId} = req.params;
     const user = await User.findById(userId);
     res.send(user);
-  } catch (e) {
-    res.status(500).json({
-      message: 'Server error. Please try later...',
+  } catch (error) {
+    return res.status(500).json({
+      response: {
+        errors: error,
+        code: 500,
+        message: 'SERVER_ERROR',
+      },
     });
   }
 });

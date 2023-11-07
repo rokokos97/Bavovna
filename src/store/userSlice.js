@@ -47,7 +47,11 @@ const usersSlice = createSlice({
       state.auth = null;
     },
     userUpdateSuccess: (state, action) => {
-      state.entities = action.payload;
+      state.entities = action.payload.updatedUser;
+      state.response = action.payload.response;
+    },
+    userUpdateFailed: (state, action) => {
+      state.response = action.payload;
     },
     userLoadRequestSuccess: (state, action) => {
       state.entities = action.payload;
@@ -89,6 +93,7 @@ const {
   authRequestSuccess,
   userLoggedOut,
   userUpdateSuccess,
+  userUpdateFailed,
   userLoadRequestSuccess,
   emailVerificationRequestedSuccess,
   emailVerificationRequestFailed,
@@ -99,7 +104,6 @@ const userResetPasswordRequested = createAction('user/userResetPasswordRequested
 const authRequested = createAction('users/authRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
-const userUpdateFailed = createAction('users/userUpdateFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');
 const emailVerificationRequested = createAction('user/emailVerificationRequested');
 export const clearUserResponse = () => (dispatch) => {
@@ -181,11 +185,13 @@ export const logOut = () => (dispatch) => {
 export const updateUser = (payload) => async (dispatch) => {
   dispatch(userUpdateRequested());
   try {
-    const {content} = await userService.update(payload);
+    const content = await userService.update(payload);
+    console.log(content);
     dispatch(userUpdateSuccess(content));
     dispatch(loadUser());
   } catch (error) {
-    dispatch(userUpdateFailed(error.message));
+    console.log('error', error.response.data.response);
+    dispatch(userUpdateFailed(error.response.data.response));
   }
 };
 export const loadUser = () => async (dispatch) => {
