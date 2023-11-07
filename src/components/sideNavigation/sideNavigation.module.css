@@ -45,12 +45,12 @@
   background-color: rgba(169, 223, 203, 0.3);
 }
 
-ul {
+.list {
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
 }
-ul li {
+.list li {
   width: 100%;
   cursor: pointer;
   padding: 1.2rem 1.6rem;
