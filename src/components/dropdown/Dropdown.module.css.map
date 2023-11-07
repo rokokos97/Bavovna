@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["Dropdown.module.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE","file":"Dropdown.module.css"}
+{"version":3,"sourceRoot":"","sources":["Dropdown.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AAEA;EACE;;;AAGF;EACE;EACA;EACA;EACA;EC4MA;EACA;EACA;EAEA;ED9MA;EACA;;;AAGF;EACE;EACA;EACA;ECmMA;EACA;EACA;EAEA;EDrMA;EACA;;;AAGF;EACE;EACA;EACA;EC0LA;EACA;EACA;ED1LA;;;AAGF;EACE","file":"Dropdown.module.css"}

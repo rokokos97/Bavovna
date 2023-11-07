@@ -1,26 +1,22 @@
-import {createSlice, createAction} from '@reduxjs/toolkit';
+import {createAction, createSlice} from '@reduxjs/toolkit';
 import localStorageService from '../services/localStorage.service';
 import authService from '../services/auth.service';
-import {toast} from 'react-toastify';
-import {generateAuthError} from '../utils/generateAuthError';
 import userService from '../services/user.service';
 
 const initialState = localStorageService.getAccessToken() ?
 {
   entities: null,
   isLoading: true,
-  error: null,
+  response: null,
   auth: {userId: localStorageService.getUserId()},
   isLoggedIn: true,
-  isRegistering: false,
 }:
 {
   entities: null,
   isLoading: false,
-  error: null,
+  response: null,
   auth: null,
   isLoggedIn: false,
-  isRegistering: false,
 };
 
 
@@ -28,19 +24,22 @@ const usersSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    authRequested: (state) => {
+      state.error = null;
+    },
     authRequestSuccess: (state, action) => {
       state.entities = action.payload;
       state.auth = action.payload._id;
       state.isLoggedIn = true;
-      state.error = null;
+      state.response = null;
     },
     authRequestFailed: (state, action) => {
       state.entities = null;
       state.auth = null;
-      state.error = action.payload;
+      state.response = action.payload;
     },
     userCreated: (state, action) => {
-      state.entities.push(action.payload);
+      state.response = action.payload;
     },
     userLoggedOut: (state) => {
       state.entities = null;
@@ -48,10 +47,11 @@ const usersSlice = createSlice({
       state.auth = null;
     },
     userUpdateSuccess: (state, action) => {
-      state.entities = action.payload;
+      state.entities = action.payload.updatedUser;
+      state.response = action.payload.response;
     },
-    authRequested: (state) => {
-      state.error = null;
+    userUpdateFailed: (state, action) => {
+      state.response = action.payload;
     },
     userLoadRequestSuccess: (state, action) => {
       state.entities = action.payload;
@@ -59,59 +59,75 @@ const usersSlice = createSlice({
       state.isLoggedIn = true;
       state.isLoading = false;
     },
+    userResetPasswordRequestSuccess: (state, action) => {
+      state.response = action.payload;
+    },
+    userResetPasswordRequestFailed: (state, action) => {
+      state.response = action.payload;
+    },
+    userSetNewPasswordRequestFailed: (state, action) => {
+      state.error = action.payload;
+    },
+    userResponseCleared: (state) => {
+      state.response = null;
+    },
+    emailVerificationRequestedSuccess: (state, action) => {
+      state.entities = action.payload.user;
+      state.auth = action.payload._id;
+      state.isLoggedIn = true;
+      state.response = action.payload.response;
+    },
+    emailVerificationRequestFailed: (state, action) => {
+      state.response = action.payload;
+    },
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
 const {
+  userCreated,
+  userResponseCleared,
+  userResetPasswordRequestSuccess,
+  userResetPasswordRequestFailed,
+  userSetNewPasswordRequestFailed,
   authRequestFailed,
   authRequestSuccess,
   userLoggedOut,
   userUpdateSuccess,
+  userUpdateFailed,
   userLoadRequestSuccess,
+  emailVerificationRequestedSuccess,
+  emailVerificationRequestFailed,
 } = actions;
 
+const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
+const userResetPasswordRequested = createAction('user/userResetPasswordRequested');
 const authRequested = createAction('users/authRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
-const userUpdateFailed = createAction('users/userUpdateFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');
-
-export const signUp = (payload) =>
-  async (dispatch) => {
-    console.log('payload signUp', payload);
-    dispatch(authRequested());
-    try {
-      const data = await authService.register(payload);
-      console.log(data);
-      localStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    } catch (error) {
-      const {code, message} = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generateAuthError(message);
-        dispatch(authRequestFailed(errorMessage));
-      } else if (code === 500) {
-        dispatch(authRequestFailed('Server error. Please repeat latter...'));
-      }
-    }
-  };
-export const signUpWithGoogle = (payload) =>
-  async (dispatch) => {
-    dispatch(authRequested());
-    try {
-      const data = await authService.registerWithGoogle(payload);
-      localStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    } catch (error) {
-      const {code, message} = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generateAuthError(message);
-        dispatch(authRequestFailed(errorMessage));
-      } else if (code === 500) {
-        dispatch(authRequestFailed('Server error. Please repeat latter...'));
-      }
-    }
-  };
+const emailVerificationRequested = createAction('user/emailVerificationRequested');
+export const clearUserResponse = () => (dispatch) => {
+  dispatch(userResponseCleared());
+};
+export const signUp = (payload) => async (dispatch) => {
+  dispatch(authRequested());
+  try {
+    const data = await authService.register(payload);
+    dispatch(userCreated(data.response));
+  } catch (error) {
+    dispatch(authRequestFailed(error.response.data.response));
+  }
+};
+export const signUpWithGoogle = (payload) => async (dispatch) => {
+  dispatch(authRequested());
+  try {
+    const data = await authService.registerWithGoogle(payload);
+    localStorageService.setTokens(data);
+    dispatch(authRequestSuccess(data.user));
+  } catch (error) {
+    dispatch(authRequestFailed(error.response.data.response));
+  }
+};
 export const loginWithGoogle = (payload) =>async (dispatch) =>{
   const {email} = payload;
   dispatch(authRequested());
@@ -120,16 +136,10 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    const {code, message} = error.response.data.error;
-    if (code === 400) {
-      const errorMessage = generateAuthError(message);
-      dispatch(authRequestFailed(errorMessage));
-    } else if (code === 500) {
-      dispatch(authRequestFailed('Server error. Please repeat latter...'));
-    }
+    dispatch(authRequestFailed(error.response.data.response));
   }
 };
-export const login = ({payload}) => async (dispatch) => {
+export const logInWithPassword = ({payload}) => async (dispatch) => {
   const {email, password} = payload;
   dispatch(authRequested());
   try {
@@ -137,11 +147,35 @@ export const login = ({payload}) => async (dispatch) => {
     localStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    const {code, message} = error.response.data.error;
-    if (code === 400) {
-      const errorMessage = generateAuthError(message);
-      dispatch(authRequestFailed(errorMessage));
-    }
+    dispatch(authRequestFailed(error.response.data.response));
+  }
+};
+export const verifyEmail = (token, email) => async (dispatch) => {
+  dispatch(emailVerificationRequested());
+  try {
+    const data = await authService.emailVerifiy(token, email);
+    localStorageService.setTokens(data);
+    dispatch(emailVerificationRequestedSuccess(data));
+  } catch (error) {
+    dispatch(emailVerificationRequestFailed(error.response.data.response));
+  }
+};
+export const resetPassword = ({payload}) => async (dispatch) => {
+  dispatch(userResetPasswordRequested());
+  const {email} = payload;
+  try {
+    const data = await authService.reset({email});
+    dispatch(userResetPasswordRequestSuccess(data.response));
+  } catch (error) {
+    dispatch(userResetPasswordRequestFailed(error.response.data.response));
+  }
+};
+export const setNewPassword = (token, email, values) => async (dispatch) => {
+  dispatch(userSetNewPasswordRequested());
+  try {
+    return await authService.setNewPassword(token, email, values);
+  } catch (error) {
+    dispatch(userSetNewPasswordRequestFailed());
   }
 };
 export const logOut = () => (dispatch) => {
@@ -151,15 +185,13 @@ export const logOut = () => (dispatch) => {
 export const updateUser = (payload) => async (dispatch) => {
   dispatch(userUpdateRequested());
   try {
-    const {content} = await userService.update(payload);
+    const content = await userService.update(payload);
+    console.log(content);
     dispatch(userUpdateSuccess(content));
-    toast.dark('User info updated', {
-      hideProgressBar: true,
-      position: toast.POSITION.BOTTOM_RIGHT,
-    });
-    history.push(`/user`);
+    dispatch(loadUser());
   } catch (error) {
-    dispatch(userUpdateFailed(error.message));
+    console.log('error', error.response.data.response);
+    dispatch(userUpdateFailed(error.response.data.response));
   }
 };
 export const loadUser = () => async (dispatch) => {
@@ -172,8 +204,8 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 export const getUser = () => (state) => state.user.entities;
-export const getIsLoadingUser = () => (state) => state.user.isLoading;
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
-export const getAuthErrors = () => (state) => state.user.error;
+export const getResponse = () => (state) => state.user.response;
+
 
 export default userReducer;

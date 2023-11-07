@@ -11,8 +11,8 @@ import {getIsLoggedIn, getUser} from '../../store/userSlice';
 
 const Header = () => {
   const navigate = useNavigate();
-  const user = useSelector(getUser());
   const isLoggedIn = useSelector(getIsLoggedIn());
+  const user = useSelector(getUser());
   return (
     <header className={styles.container} data-testid='Header'>
       <div className={styles.banner}>

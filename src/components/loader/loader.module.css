@@ -1,3 +1,9 @@
-
+.loader {
+  font-family: "Fixel Display Extra Bold";
+  font-size: 56px;
+  line-height: 150%;
+  letter-spacing: 4%;
+  text-transform: uppercase;
+}
 
 /*# sourceMappingURL=loader.module.css.map */

@@ -1,0 +1,27 @@
+@import "../../../../styles/variables.module";
+.modalVerifyEmail {
+  width: 51.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.6rem;
+  background: $white;
+  padding: 2.4rem;
+}
+.link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.closeButton {
+  background: $white;
+}
+.content {
+  width: 46.9rem;
+  @include fonts($body-3);
+  text-align: center;
+}
+.button {
+  @include button(41rem, $black, $white, $accent-a-3, $accent-a-5);
+}

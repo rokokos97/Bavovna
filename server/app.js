@@ -45,7 +45,6 @@ async function start() {
       )), // Вивід підтвердження запуску сервера
     );
   } catch (e) {
-    console.log(chalk.red(e.message));
     process.exit(1);
   }
 }

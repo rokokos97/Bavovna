@@ -41,7 +41,8 @@
 }
 
 .error {
-  color: var(--error, #EA001B);
+  color: #ea001b;
+  padding-left: 0.8rem;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;

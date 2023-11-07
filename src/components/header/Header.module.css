@@ -15,7 +15,7 @@
 
 .logo {
   font-family: "Fixel Display Semibold";
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
 }
@@ -55,7 +55,7 @@
 }
 .headerNavBar span {
   font-family: "Fixel Display Regular";
-  font-size: 12px;
+  font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
 }

@@ -5,14 +5,16 @@ import Card from '../pages/card/Card';
 import AboutUsPage from '../pages/aboutUsPage/AboutUsPage';
 import styles from './App.module.scss';
 import AppLoader from '../hoc/appLoader';
-import LoginLayout from '../components/LoginLayout/LoginLayout';
+import LoginLayout from '../pages/LoginLayoutPage/LoginLayout';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';
 import Catalogue from '../pages/catalogue/Catalogue';
-import Page404 from '../components/page404/page404';
+import Page404 from '../pages/page404/page404';
 import HelpPage from '../pages/helpPage/HelpPage';
 import UserPage from '../pages/userPage/userPage';
+import GuestRoutes from '../hoc/guestRoutes';
+
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
             <Route path='aboutus' element={<AboutUsPage />} />
             <Route path='catalogue' element={<Catalogue />} />
             <Route path='catalogue/:id' element={<Card />} />
-            <Route path='login/*' element={<LoginLayout />} />
+            <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
             <Route path='main' element={<MainPage />} />
             <Route path='help/*' element={<HelpPage />} />
             <Route path='user/:id/*' element={<UserPage />}/>

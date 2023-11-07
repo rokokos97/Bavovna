@@ -11,7 +11,7 @@ const NewsLettersBlock = () => (
         AND EXCLUSIVE ACCESS BEFORE EVERYONE ELSE
     </span>
     <div className={styles.input}>
-      <input placeholder={'Enter your e-mail'}/>
+      <input name='email' placeholder={'Enter your e-mail'} autoComplete='false'/>
     </div>
     <button className={styles.button} >
       <span>
