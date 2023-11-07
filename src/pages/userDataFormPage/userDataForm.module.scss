@@ -66,7 +66,7 @@
   align-self: stretch;
   color: $accent-a-95;
   margin-bottom: 0.8rem;
-  @include fonts($body-3);
+  @include fonts($label);
 
   span {
     color: $error
@@ -96,7 +96,6 @@
   padding-left: 1rem !important;
   padding-right: 1rem !important;
   &:hover {
-
     background: $white !important;
   }
 }
@@ -105,7 +104,6 @@
 }
 .error {
   color: var(--error, #EA001B);
-
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;

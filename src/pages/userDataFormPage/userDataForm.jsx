@@ -1,29 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'react-phone-input-2/lib/style.css';
 import styles from './userDataForm.module.scss';
-import TextField from '../formFields/textField/textField';
+import TextField from '../../components/formFields/textField/textField';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
-import {getUser, updateUser} from '../../store/userSlice';
+import {clearUserResponse, getResponse, getUser, updateUser} from '../../store/userSlice';
 import {validationSchemaUserDataForm} from '../../utils/validationSchema';
 // import SelectField from '../formFields/selectField/selectField';
-import PhoneInput from 'react-phone-input-2';
+// import PhoneInput from 'react-phone-input-2';
+import PhoneField from '../../components/formFields/phoneField/phoneField';
+import transformErrorMessage from '../../utils/generateErrorMessage';
 
 const UserDataForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser());
+  const response = useSelector(getResponse());
   const formik = useFormik({
     initialValues: {
       firstName: '',
       lastName: '',
       email: '',
-      phone: '',
+      phoneNumber: '',
       currentPassword: '',
       newPassword: '',
     },
     validationSchema: validationSchemaUserDataForm,
     onSubmit: () => {
-      if (!formik.isValid) return;
       const changedFields = getChangedFields(formik.values);
       const newUser = {...user, ...changedFields};
       console.log('newUser', newUser);
@@ -39,6 +41,11 @@ const UserDataForm = () => {
     }
     return changes;
   };
+  useEffect(() => {
+    if (response) {
+      dispatch(clearUserResponse());
+    }
+  }, [formik.values.currentPassword, dispatch]);
   return ( user && (
     <div className={styles.userDataForm} data-testid="UserDataForm">
       <p className={styles.title}>personal data</p>
@@ -49,6 +56,7 @@ const UserDataForm = () => {
         <div className={styles.submitWrapper}>
           <div className={styles.column}>
             <TextField
+              disabled = {!user.isVerified}
               label='First name'
               name='firstName'
               placeholder={user.firstName}
@@ -59,6 +67,7 @@ const UserDataForm = () => {
               touched={formik.touched.firstName}
             />
             <TextField
+              disabled = {!user.isVerified}
               label='Last name'
               name='lastName'
               placeholder={user.lastName}
@@ -69,6 +78,7 @@ const UserDataForm = () => {
               touched={formik.touched.lastName}
             />
             <TextField
+              disabled = {!user.isVerified}
               label='Email'
               name='email'
               placeholder={user.email}
@@ -79,30 +89,19 @@ const UserDataForm = () => {
               touched={formik.touched.email}
             />
           </div>
-          <div className={styles.column}>
-            <div>
-              <p className={styles.phoneLabel}>Phone
-                <span>
-                 *
-                </span>
-              </p>
-              <PhoneInput
-                onlyCountries={['ua', 'pl', 'ru', 'cz', 'sk', 'de', 'es', 'it']}
-                placeholder={'+38 (067) 123 45 67'}
-                containerClass={styles.phoneInputContainer}
-                inputClass={styles.phoneInputInput}
-                buttonClass={styles.phoneInputButton}
-                dropdownClass={styles.phoneInputDropdown}
-                value={formik.values.phone}
-                onChange={(value) => formik.setFieldValue('phone', value)}
-                onBlur={()=> formik.setFieldTouched('phone', true)}
-
-              />
-              {formik.touched.phone && formik.errors.phone ? (
-                <div className={styles.error}>{formik.errors.phone}</div>
-              ) : null}
-            </div>
+          <div
+            className={styles.column}
+          >
+            <PhoneField
+              value={formik.values.phoneNumber || user.phoneNumber}
+              onChange={(value) => formik.setFieldValue('phoneNumber', value)}
+              onBlur={()=> formik.setFieldTouched('phoneNumber', true)}
+              touched={formik.touched.phoneNumber}
+              error={formik.errors.phoneNumber}
+              phoneNumber={formik.values.phoneNumber}
+            />
             <TextField
+              disabled = {!user.isVerified}
               type='password'
               label='Current password'
               name='currentPassword'
@@ -110,11 +109,11 @@ const UserDataForm = () => {
               value={formik.values.currentPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.errors.currentPassword}
+              error={response ? transformErrorMessage[response.message] : formik.errors.currentPassword}
               touched={formik.touched.currentPassword}
             />
             <TextField
-              disabled={formik.values.currentPassword.length === 0}
+              disabled={formik.values.currentPassword.length === 0 || !user.isVerified}
               type='password'
               label='New password'
               name='newPassword'
