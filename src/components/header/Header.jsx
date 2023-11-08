@@ -8,6 +8,7 @@ import FavoriteIcon from '../svg/favoriteIcon/favoriteIcon';
 import SearchIcon from '../svg/searchIcon/searchIcon';
 import {useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../store/userSlice';
+import LogoIcon from '../svg/logoIcon/logoIcon';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,16 +39,12 @@ const Header = () => {
             <span>Help</span>
           </Link>
         </div>
-        <button
-          role='button'
-          className={styles.logo}
-          onClick={() => navigate('/')}
-        >
-          BAVOVNA LOGO
-        </button>
+        <Link to='/'>
+          <LogoIcon />
+        </Link>
         <div className={styles.headerMenuBar}>
-          <button className={styles.headerSearch}>
-            <input name='search'></input>
+          <button type='button' className={styles.headerSearch}>
+            {/* <input name='search'></input> */}
             <SearchIcon />
           </button>
           <button

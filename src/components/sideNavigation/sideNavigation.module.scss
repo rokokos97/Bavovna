@@ -32,7 +32,7 @@
   @include fonts($headline-4);
   background-color: $transparent-30-a-05;
 }
-ul {
+.list {
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
