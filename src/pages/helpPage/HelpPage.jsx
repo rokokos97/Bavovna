@@ -1,5 +1,5 @@
-import React from 'react';
-import {Routes, Route} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 import AsideHelpBlock from '../../blocks/AsideHelpBlock/AsideHelpBlock';
 import DeliveryBlock from '../../blocks/helpDescription/DeliveryBlock/DeliveryBlock/DeliveryBlock';
 import ReturnBlock from '../../blocks/helpDescription/ReturnBlock/ReturnBlock';
@@ -8,12 +8,19 @@ import FaqBlock from '../../blocks/helpDescription/FaqBlock/FaqBlock';
 import PolicyBlock from '../../blocks/helpDescription/PolicyBlock/PolicyBlock';
 import CookiesBlock from '../../blocks/helpDescription/CookiesBlock/CookiesBlock';
 import styles from './HelpPage.module.scss';
-// import {useState} from 'react';
 
 const HelpPage = () => {
-  // const [activeHelp, setActiveHelp] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [selectedLink, setSelectedLink] = useState(null);
 
-  // const handleActiveHelp = (helpId) => setActiveHelp(helpId);
+  useEffect(() => {
+    const defaultLink = 'delivery';
+    if (location.pathname === '/help' && selectedLink !== defaultLink) {
+      setSelectedLink(defaultLink);
+      navigate(defaultLink);
+    }
+  }, [location, selectedLink, navigate]);
 
   return (
     <div className={styles.helpPage}>
@@ -22,7 +29,7 @@ const HelpPage = () => {
       </div>
       <div className={styles.helpDescription}>
         <Routes>
-          <Route isActive path='delivery' element={<DeliveryBlock />} />
+          <Route path='delivery' element={<DeliveryBlock />} />
           <Route path='return' element={<ReturnBlock />} />
           <Route path='payment' element={<PaymentBlock />} />
           <Route path='faq' element={<FaqBlock />} />

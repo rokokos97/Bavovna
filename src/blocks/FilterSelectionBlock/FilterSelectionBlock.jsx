@@ -7,7 +7,9 @@ import {filtersValues} from '../../services/filtersValues.service';
 import styles from './FilterSelectionBlock.module.scss';
 
 const FilterSelectionBlock = () => {
-  const {changeIsFilter} = useDataCatalogue();
+  const {changeIsFilter, handleCleanFilter} = useDataCatalogue();
+  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(filterCheckboxes);
 
   const {categoryValues, sizeValues, colorValues, availabilityValues} =
     filtersValues;
@@ -77,7 +79,7 @@ const FilterSelectionBlock = () => {
           <CheckboxBlock value='new' label='NEW' />
           <CheckboxBlock value='sale' label='SALE' />
         </div>
-        <button type='button' className={styles.filterBtn}>
+        <button type='button' className={styles.filterBtn} onClick={handleCleanFilter}>
           <span>Clean filter</span>
         </button>
       </div>

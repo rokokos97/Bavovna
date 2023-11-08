@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 
 const DataContext = createContext(null);
 
+const initialItemData = {
+  _id: '',
+  itemName: '',
+  itemPrice: 0,
+  itemColor: '',
+  itemSize: '',
+  itemImg: '',
+  itemQuantity: 1,
+};
+
 export const CardMasterProvider = ({children}) => {
-  const [itemData, setItemData] = useState({
-    _id: '',
-    itemName: '',
-    itemPrice: 0,
-    itemColor: '',
-    itemSize: '',
-    itemImg: '',
-    itemQuantity: 1,
-  });
+  const [itemData, setItemData] = useState(initialItemData);
 
   const collectData = (data) => {
     const jsonData = {...data};

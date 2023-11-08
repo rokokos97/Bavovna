@@ -33,9 +33,10 @@ const Footer = () => {
             <div className={styles.footerHelp}>
               <h3>Help</h3>
               <div className={styles.footerList}>
-                <Link to='/'>Delivery information</Link>
-                <Link to='/'>Return information</Link>
-                <Link to='/'>FAQ</Link>
+                <Link to='/help/delivery'>Delivery information</Link>
+                <Link to='/help/return'>Return information</Link>
+                <Link to='/help/payment'>Payment</Link>
+                <Link to='/help/faq'>FAQ</Link>
               </div>
             </div>
           </div>
@@ -62,10 +63,10 @@ const Footer = () => {
             <div
               className={`${styles.footerBottomItem} ${styles.footerBottomLink}`}
             >
-              <Link to='/'>Cookies settings</Link>
+              <Link to='/help/cookies'>Cookies settings</Link>
             </div>
             <div className={styles.footerBottomItem}>
-              <Link to='/'>Privacy policy</Link>
+              <Link to='/help/privacy'>Privacy policy</Link>
             </div>
           </div>
           <div className={styles.footerBottomRight}>

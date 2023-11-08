@@ -46,22 +46,15 @@
 .title {
   max-width: 28rem;
   padding-bottom: 0.8rem;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  text-transform: uppercase;
-  border-bottom: 0.2rem solid $black-color;
+  @include fonts($headline-4);
+  border-bottom: 0.1rem solid $black-color;
 
   span {
-    font-weight: 700;
+    @include fonts($headline-3);
   }
 }
 
 .text {
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 110%;
   max-width: 60rem;
+  @include fonts($body-3);
 }

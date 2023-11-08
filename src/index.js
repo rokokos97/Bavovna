@@ -18,7 +18,7 @@ root.render(
       <GoogleOAuthProvider clientId={config.googleClientId}>
         <Provider store={store}>
           <BrowserRouter>
-            <ScrollToTop/>
+            <ScrollToTop />
             <App />
           </BrowserRouter>
         </Provider>

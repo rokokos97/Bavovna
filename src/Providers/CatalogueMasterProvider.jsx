@@ -16,16 +16,14 @@ export const CatalogueMasterProvider = ({children}) => {
   };
   const items = useSelector(getItems());
   const [isFilter, setIsFilter] = useState(false);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
-  console.log('Selected filters: ', selectedFilters);
+  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(filterCheckboxes);
 
-
-  useEffect(() => {
-    setFilteredItems(items);
-    setSelectedFilters(initialFilters);
-    console.log('Items from Provider', items);
-  }, [items]);
+  // useEffect(() => {
+  //   setFilteredItems(items);
+  // }, [items]);
 
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
@@ -35,12 +33,12 @@ export const CatalogueMasterProvider = ({children}) => {
     let sortedItems = [];
     if (sortOrder === 'lowToHigh') {
       sortedItems = [...items];
-      sortedItems.sort((a, b) => (a.price - b.price));
+      sortedItems.sort((a, b) => a.price - b.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'highToLow') {
       sortedItems = [...items];
-      sortedItems.sort((a, b) => (b.price - a.price));
+      sortedItems.sort((a, b) => b.price - a.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'best') {
@@ -62,49 +60,42 @@ export const CatalogueMasterProvider = ({children}) => {
     }));
   };
 
+  const handleCleanFilter = () => {
+    setSelectedFilters(initialFilters);
+    filterCheckboxes.forEach((checkbox) => console.log(checkbox.checked));
+  };
 
-  // useEffect(() => {
-  //   const newItems = [...filteredItems];
+  let downloadedItems = [];
 
-  //   newItems.filter((item) => {
-  //     return Object.keys(selectedFilters).every((categoryType) => {
-  //       if (selectedFilters[categoryType].length === 0) {
-  //         return true;
-  //       }
-  //       console.log(item[categoryType].length);
-  //     });
-  //   });
-
-  // newItems.filter((item) => {
-  //   return Object.keys(selectedFilters).every((categoryType) => {
-  //     if (selectedFilters[categoryType].length === 0) {
-  //       return true;
-  //     }
-  //     return selectedFilters[categoryType].includes(item[categoryType]);
-  //   });
-  // });
-  // console.log('selectedFilters: ', selectedFilters);
-  // }, [selectedFilters]);
-
-  // useEffect(()=>{
-  //   const newItems = [...filteredItems];
-  //   const items = newItems.filter((item) => {
-  //     return (
-  //       selectedFilters.category.length === 0 || selectedFilters.category
-  //           .some((category) => item.category.includes(category))
-  //     ) && (
-  //       selectedFilters.size.length === 0 || selectedFilters.size.some((size) => item.size.includes(size))
-  //     ) && (
-  //       selectedFilters.color.length === 0 || selectedFilters.color.some((color) => item.color.includes(color))
-  //     );
-  //   });
-  //   console.log('items: ', items);
-  //   setFilteredItems(items);
-  // }, [selectedFilters]);
+  if (items) {
+    downloadedItems = [...items];
+  }
+  useEffect(()=>{
+    const newItems = downloadedItems.filter((item) => {
+      return (
+        selectedFilters.category.length === 0 || selectedFilters.category
+            .some((category) => item.category.includes(category))
+      ) && (
+        selectedFilters.size.length === 0 || selectedFilters.size.some((size) => item.size.includes(size))
+      ) && (
+        selectedFilters.color.length === 0 || selectedFilters.color.some((color) => item.color.includes(color))
+      );
+    });
+    setFilteredItems(newItems);
+  }, [selectedFilters, items]);
 
 
   return (
-    <DataCatalogueContext.Provider value={{isFilter, filteredItems, changeIsFilter, onSortItems, handleFilterChange}}>
+    <DataCatalogueContext.Provider
+      value={{
+        isFilter,
+        filteredItems,
+        changeIsFilter,
+        onSortItems,
+        handleFilterChange,
+        handleCleanFilter,
+      }}
+    >
       {children}
     </DataCatalogueContext.Provider>
   );
@@ -113,7 +104,9 @@ export const CatalogueMasterProvider = ({children}) => {
 export const useDataCatalogue = () => {
   const data = useContext(DataCatalogueContext);
   if (!data) {
-    throw new Error('Can not "useData" outside of the "CatalogueMasterProvider"');
+    throw new Error(
+        'Can not "useData" outside of the "CatalogueMasterProvider"',
+    );
   }
   return data;
 };

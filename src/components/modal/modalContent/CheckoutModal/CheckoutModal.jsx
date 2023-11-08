@@ -28,11 +28,11 @@ const CheckoutModal = ({handleCloseModal}) => {
 
   const handleCheckout = () => {
     const checkoutData = {
-      _id,
-      name: itemName,
-      price: currentPrice,
-      color: itemColor,
-      size: itemSize,
+      itemId: _id,
+      // name: itemName,
+      // price: currentPrice,
+      chosenColorId: itemColor,
+      chosenSizeId: itemSize,
       quantity: currentQuantity,
     };
     console.log(checkoutData);
