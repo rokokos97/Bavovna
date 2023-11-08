@@ -1,6 +1,7 @@
 /* eslint-disable operator-linebreak */
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import config from '../../config.json';
 import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
@@ -54,11 +55,6 @@ const CardContext = ({item}) => {
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
 
-  // if (sale > 0) {
-  //   currentPrice = (price * sale) / 100;
-  // } else {
-  //   currentPrice = price;
-  // }
   sale
     ? (currentPrice = parseFloat((price * sale) / 100).toFixed(2))
     : (currentPrice = price);
@@ -69,7 +65,7 @@ const CardContext = ({item}) => {
       _id,
       itemName: name,
       itemPrice: currentPrice,
-      itemImg: `http://localhost:8000/api/${images[0]}`,
+      itemImg: `${config.apiEndpoint}${images[0]}`,
     });
   }, [item]);
 
@@ -111,10 +107,10 @@ const CardContext = ({item}) => {
                 <li
                   key={index}
                   onClick={() =>
-                    changeImage(`http://localhost:8000/api/${image}`)
+                    changeImage(`${config.apiEndpoint}${image}`)
                   }
                 >
-                  <img src={`http://localhost:8000/api/${image}`} alt='model' />
+                  <img src={`${config.apiEndpoint}${image}`} alt='model' />
                 </li>
               ))}
             </ul>
@@ -122,7 +118,7 @@ const CardContext = ({item}) => {
           <div className={styles.mainImg}>
             <img
               id='mainImage'
-              src={`http://localhost:8000/api/${images[0]}`}
+              src={`${config.apiEndpoint}${images[0]}`}
               alt='model'
             />
           </div>
