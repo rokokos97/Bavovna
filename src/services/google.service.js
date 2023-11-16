@@ -12,7 +12,7 @@ const googleService = {
       });
       return data;
     } catch (error) {
-      console.error('Error fetching user data from Google:', error);
+      console.error('Error fetching user data from Google', error);
       throw error;
     }
   },

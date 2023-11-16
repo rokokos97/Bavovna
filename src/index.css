@@ -1,91 +1,140 @@
-@import 'styles/variables.module.scss';
+@charset "UTF-8";
+.custom__control {
+  border-radius: 0 !important;
+  background-color: #fafafa !important;
+  border: 1px solid #727272 !important;
+  height: 4.8rem;
+}
+.custom__value-container {
+  padding-left: 1.4rem !important;
+}
+.custom__single-value {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  color: #868686 !important;
+  text-align: start;
+}
+.custom__indicator-separator {
+  display: none !important;
+}
+.custom__indicator {
+  color: #5d5d5d !important;
+}
+.custom__menu {
+  padding-top: 0.8rem !important;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+  border: 1px solid #040404 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+.custom__option {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  font-size: 16px !important;
+  text-align: start !important;
+  text-wrap: none !important;
+  border-bottom: 0.5px solid #727272 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+.custom__menu-noties--no--options {
+  text-align: start !important;
+}
+.custom__option--is-selected {
+  background-color: #a9dfcb !important;
+  color: #040404 !important;
+}
+.custom__option--is-focused {
+  background-color: rgba(169, 223, 203, 0.3) !important;
+  color: #040404 !important;
+}
+.custom__menu-noties--no--options {
+  display: none !important;
+}
+.custom__placegolder {
+  font-size: 16px !important;
+}
+.custom__input-container {
+  font-size: 16px !important;
+}
 
 /* Типографіка */
 @font-face {
-  font-family: 'Fixel Display Extra Bold';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-ExtraBold.woff2')
-    format('woff2');
+  font-family: "Fixel Display Extra Bold";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-ExtraBold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel Display Bold';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-Bold.woff2')
-    format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fixel Display Semibold';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-SemiBold.woff2')
-    format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fixel Display Medium';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-Medium.woff2')
-    format('woff2');
+  font-family: "Fixel Display Bold";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-Bold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel Display Regular';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2')
-    format('woff2');
+  font-family: "Fixel Display Semibold";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-SemiBold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel Display Light';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-Light.woff2')
-    format('woff2');
+  font-family: "Fixel Display Medium";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-Medium.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel Text Semibold';
-  src: url('../public/fonts/fixelText/FixelText-SemiBold.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fixel Text Regular';
-  src: url('../public/fonts/fixelText/FixelText-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fixel Text Medium';
-  src: url('../public/fonts/fixelText/FixelText-Medium.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fixel Display';
-  src: url('../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2')
-    format('woff2');
+  font-family: "Fixel Display Regular";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel';
-  src: url('../public/fonts/fixelVariable/FixelVariable.ttf') format('ttf');
+  font-family: "Fixel Display Light";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Fixel-Text';
-  src: url('../public/fonts/fixelText/FixelText-Regular.woff2') format('woff2');
+  font-family: "Fixel Text Semibold";
+  src: url("../public/fonts/fixelText/FixelText-SemiBold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "Fixel Text Regular";
+  src: url("../public/fonts/fixelText/FixelText-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fixel Text Medium";
+  src: url("../public/fonts/fixelText/FixelText-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fixel Display";
+  src: url("../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fixel";
+  src: url("../public/fonts/fixelVariable/FixelVariable.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fixel-Text";
+  src: url("../public/fonts/fixelText/FixelText-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   height: 100%;
   font-size: 10px;
@@ -93,12 +142,7 @@ html {
 
 body {
   height: 100%;
-  font-family: 'Fixel', 'Fixel Display', 'Fixel Display Extra Bold',
-    'Fixel Display Bold', 'Fixel Display Semibold', 'Fixel Display Regular',
-    'Fixel Text Semibold', 'Fixel Text Regular', 'Fixel Display Medium',
-    'Fixel Text Medium', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Fixel", "Fixel Display", "Fixel Display Extra Bold", "Fixel Display Bold", "Fixel Display Semibold", "Fixel Display Regular", "Fixel Text Semibold", "Fixel Text Regular", "Fixel Display Medium", "Fixel Text Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -106,3 +150,5 @@ body {
 #root {
   height: 100%;
 }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,25 @@
+.userDeliveryAddressList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+
+.radioWrapper {
+  width: 30rem;
+  display: flex;
+  column-gap: 0.8rem;
+}
+
+.input {
+  color: #040404;
+}
+
+.label {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-align: start;
+  word-wrap: inherit;
+}
+
+/*# sourceMappingURL=userDeliveryAddressList.module.css.map */

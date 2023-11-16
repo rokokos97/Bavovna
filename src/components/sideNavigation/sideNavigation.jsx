@@ -4,7 +4,7 @@ import ExitString from '../exitString/exitString';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import OrdersBlock from '../../blocks/ordersBlock/ordersBlock';
 import WishListBlock from '../../blocks/wishListBlock/wishListBlock';
-import UserDataForm from '../../pages/userDataFormPage/userDataForm';
+import UserDataForm from '../../pages/userPage/userDataFormPage/userDataForm';
 import Page404 from '../../pages/page404/page404';
 
 const SideNavigation = () => {

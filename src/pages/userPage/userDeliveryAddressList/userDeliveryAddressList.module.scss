@@ -1,0 +1,19 @@
+@import '../../../styles/variables.module';
+.userDeliveryAddressList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+.radioWrapper {
+  width: 30rem;
+  display: flex;
+  column-gap: 0.8rem;
+}
+.input {
+  color: $black;
+}
+.label {
+  @include fonts($label);
+  text-align: start;
+  word-wrap: inherit;
+}

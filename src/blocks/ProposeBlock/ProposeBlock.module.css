@@ -33,20 +33,23 @@
   max-width: 28rem;
   width: 100%;
   padding-bottom: 0.8rem;
-  font-size: 2.4rem;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Fixel Display Regular";
+  font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
-  border-bottom: 0.2rem solid #040404;
+  border-bottom: 0.1rem solid #040404;
 }
 .title span {
-  font-weight: 700;
+  font-family: "Fixel Display Bold";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
 }
 
 .innerText {
   display: flex;
   flex-direction: column;
+  text-align: start;
   gap: 1.6rem;
   width: 100%;
   padding-bottom: 1.6rem;
@@ -54,9 +57,8 @@
 
 .text {
   width: 100%;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
   line-height: 110%;
 }
 
@@ -84,7 +86,7 @@
   position: relative;
   overflow: hidden;
   background: #040404;
-  padding: 2.1rem 3.6rem;
+  padding: 2.1rem 2.6rem;
 }
 .button span {
   font-family: "Fixel Display Semibold";

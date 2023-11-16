@@ -80,6 +80,9 @@ const usersSlice = createSlice({
     emailVerificationRequestFailed: (state, action) => {
       state.response = action.payload;
     },
+    userAddressAddedFailed: (state, action) => {
+      state.response = action.payload;
+    },
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
@@ -97,8 +100,10 @@ const {
   userLoadRequestSuccess,
   emailVerificationRequestedSuccess,
   emailVerificationRequestFailed,
+  userAddressAddedFailed,
 } = actions;
 
+const userAddressAddedRequested = createAction('userAddressAddedRequested');
 const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
 const userResetPasswordRequested = createAction('user/userResetPasswordRequested');
 const authRequested = createAction('users/authRequested');
@@ -192,6 +197,15 @@ export const updateUser = (payload) => async (dispatch) => {
   } catch (error) {
     console.log('error', error.response.data.response);
     dispatch(userUpdateFailed(error.response.data.response));
+  }
+};
+export const addDeliveryAddress = (payload) => (dispatch) => {
+  dispatch(userAddressAddedRequested());
+  try {
+    console.log(payload);
+  } catch (error) {
+    console.log('error', error.response.data.response);
+    dispatch(userAddressAddedFailed(error.response.data.response));
   }
 };
 export const loadUser = () => async (dispatch) => {

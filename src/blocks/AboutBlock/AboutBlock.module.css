@@ -44,21 +44,22 @@
 .title {
   max-width: 28rem;
   padding-bottom: 0.8rem;
-  font-size: 2.4rem;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Fixel Display Regular";
+  font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
-  border-bottom: 0.2rem solid #040404;
+  border-bottom: 0.1rem solid #040404;
 }
 .title span {
-  font-weight: 700;
+  font-family: "Fixel Display Bold";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
 }
 
 .text {
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
   line-height: 110%;
   max-width: 60rem;
 }

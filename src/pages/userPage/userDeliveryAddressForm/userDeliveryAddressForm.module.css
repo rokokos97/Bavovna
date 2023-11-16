@@ -1,42 +1,14 @@
-.userDataForm {
+.userDeliveryAddressForm {
+  margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
-}
-
-.title {
-  font-family: "Fixel Display Medium";
-  font-size: 32px;
-  line-height: 120%;
-  text-transform: uppercase;
-  text-align: start;
-  padding-top: 3.2rem;
-  padding-bottom: 2.4rem;
+  column-gap: 2.4rem;
 }
 
 .userPersonalDataForm {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
-}
-
-.submitWrapper {
-  width: 62.4rem;
-  display: flex;
-  gap: 2.4rem;
-}
-
-.column {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.6rem;
-}
-
-.deliveryForm {
-  margin-top: 3.5rem;
-  display: flex;
-  flex-direction: column;
-  column-gap: 2.4rem;
+  gap: 1.6rem;
 }
 
 .deliveryTitle {
@@ -55,10 +27,11 @@
 
 .deliveryBlockColumn {
   display: flex;
+  width: 30rem;
   flex-direction: column;
   flex-grow: 1;
 }
-.deliveryBlockColumn p {
+.deliveryBlockColumn .blockLabel {
   font-family: "Fixel Text Regular";
   font-size: 20px;
   line-height: 120%;
@@ -76,7 +49,7 @@
   position: relative;
   overflow: hidden;
   background: #040404;
-  padding: 2.1rem 3.6rem;
+  padding: 2.1rem 2.6rem;
 }
 .button span {
   font-family: "Fixel Display Semibold";
@@ -214,4 +187,4 @@
   text-align: start;
 }
 
-/*# sourceMappingURL=userDataForm.module.css.map */
+/*# sourceMappingURL=userDeliveryAddressForm.module.css.map */
