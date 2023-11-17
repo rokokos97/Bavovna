@@ -9,7 +9,7 @@ const schema = new Schema({
   newPassword: {type: String},
   phoneNumber: {type: String},
   deliveryAddress: [{type: Object}],
-  novaPoshtaAddress: [{type: Object}],
+  currentDeliveryAddress: {type: Object},
   favorite: [{type: String}],
   orders: [{type: String}],
   isVerified: {type: Boolean},
