@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {uploadCategoriesList} from '../store/categorySlice';
 import {getIsLoggedIn, loadUser} from '../store/userSlice';
 import {useEffect} from 'react';
+import {uploadCitiesList} from '../store/citiesSlice';
 
 const AppLoader = ({children}) => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const AppLoader = ({children}) => {
   useEffect(()=>{
     dispatch(uploadCategoriesList());
     dispatch(uploadItemList());
+    dispatch(uploadCitiesList());
   }, []);
   useEffect(()=>{
     if (isLoggedIn) {
