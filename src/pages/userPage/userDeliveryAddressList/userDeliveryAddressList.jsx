@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './userDeliveryAddressList.module.scss';
-import {useSelector} from 'react-redux';
-import {getUser} from '../../../store/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {getUser, updateUser} from '../../../store/userSlice';
 
 const UserDeliveryAddressList = () => {
   const user = useSelector(getUser());
-  const deliveryAddressList = user.deliveryAddress.map((item, index)=>(
+  const dispatch = useDispatch();
+  const [currentDeliveryAddress, setCurrentDeliveryAddress] = useState(user.currentDeliveryAddress);
+  const deliveryAddressList = user.deliveryAddress.map((item)=>(
     {
-      id: user.phoneNumber+index,
+      id: item._id,
       address: `${item.city.label}, ${
         (item.warehouse)?item.warehouse.label:''
       } ${item.street?item.street:''} ${
@@ -17,18 +19,29 @@ const UserDeliveryAddressList = () => {
       }`,
     }
   ) );
-  console.log(deliveryAddressList);
+  const selectDeliveryAddress = (id) => {
+    setCurrentDeliveryAddress(id);
+    dispatch(updateUser({...user, currentDeliveryAddress: id}));
+  };
   return ( user.deliveryAddress &&
-    <form className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList">
-      {deliveryAddressList.map((address)=>
+    <div
+      className={styles.userDeliveryAddressList}
+      data-testid="UserDeliveryAddressList"
+    >
+      {deliveryAddressList && deliveryAddressList.map((address)=>
         <div
           className={styles.radioWrapper}
           key={address.id}>
           <input
+            checked={currentDeliveryAddress === address.id}
             className={styles.input}
             type='radio'
             value={address.address}
             id={address.id}
+            onChange={(event) => {
+              event.preventDefault();
+              selectDeliveryAddress(address.id);
+            }}
             name='address'
           />
           <label
@@ -38,7 +51,7 @@ const UserDeliveryAddressList = () => {
             {address.address}
           </label>
         </div>)}
-    </form>
+    </div>
   );
 };
 

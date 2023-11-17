@@ -8,13 +8,16 @@ import {useFormik} from 'formik';
 import {validationSchemaAddressForm} from '../../../utils/validationSchema';
 import npService from '../../../services/np.service';
 import UserDeliveryAddressList from '../userDeliveryAddressList/userDeliveryAddressList';
+import {nanoid} from 'nanoid/non-secure';
+import {getCitiesList} from '../../../store/citiesSlice';
 
 const UserDeliveryAddressForm = () => {
   const dispatch = useDispatch();
-  const [citiesList, setCitiesList] = useState([]);
+  const citiesList = useSelector(getCitiesList());
   const [warehousesList, setWarehousesList] = useState([]);
   const user = useSelector(getUser());
   const [selectedCity, setSelectedCity] = useState(null);
+
   const formik= useFormik({
     initialValues: {
       city: {},
@@ -25,16 +28,15 @@ const UserDeliveryAddressForm = () => {
     },
     validationSchema: validationSchemaAddressForm,
     onSubmit: () => {
-      const newAddress = {...formik.values};
-      const newUser = {...user, deliveryAddress: [...user.deliveryAddress, newAddress]};
+      const newAddress = {...formik.values, _id: nanoid(12)};
+      const newUser = {
+        ...user,
+        deliveryAddress: [...user.deliveryAddress, newAddress],
+        currentDeliveryAddress: newAddress._id,
+      };
       dispatch(updateUser(newUser));
     },
   });
-  useEffect(()=>{
-    npService.get().then(async (data)=> {
-      setCitiesList(await data);
-    });
-  }, []);
   useEffect(()=>{
     if (selectedCity) {
       npService.post({cityRef: selectedCity.value}).then(async (data)=> {
@@ -75,7 +77,7 @@ const UserDeliveryAddressForm = () => {
               name='city'
               onChange={handleCityChange}
               defaultValue={{label: 'Select a city', value: ''}}
-              options={citiesList}
+              options={citiesList? citiesList: []}
             />
             <SelectField
               label='Post office'
