@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import RadioButtonCheckedIcon from './RadioButtonCheckedIcon';
+import RadioButtonCheckedIcon from './radioButtonCheckedIcon';
 
 describe('<Box />', () => {
   test('it should mount', () => {
