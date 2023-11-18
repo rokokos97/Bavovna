@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styles from './userDeliveryAddressList.module.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUser, updateUser} from '../../../store/userSlice';
+import RadioButtonEmptyIcon from '../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
+import RadioButtonCheckedIcon from '../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 
 const UserDeliveryAddressList = () => {
   const user = useSelector(getUser());
@@ -31,7 +33,14 @@ const UserDeliveryAddressList = () => {
       {deliveryAddressList && deliveryAddressList.map((address)=>
         <div
           className={styles.radioWrapper}
-          key={address.id}>
+          key={address.id}
+        >
+          <button
+            className={styles.radioButton}
+            onClick = {()=> selectDeliveryAddress(address.id)}
+          >
+            {currentDeliveryAddress === address.id? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+          </button>
           <label
             className={styles.label}
           >
@@ -40,10 +49,7 @@ const UserDeliveryAddressList = () => {
               className={styles.input}
               type='radio'
               value={address.address}
-              onChange={(event) => {
-                event.preventDefault();
-                selectDeliveryAddress(address.id);
-              }}
+              onChange={()=> selectDeliveryAddress(address.id)}
               name='address'
             />
             <div className={styles.labelText}>{address.address}</div>
