@@ -32,23 +32,21 @@ const UserDeliveryAddressList = () => {
         <div
           className={styles.radioWrapper}
           key={address.id}>
-          <input
-            checked={currentDeliveryAddress === address.id}
-            className={styles.input}
-            type='radio'
-            value={address.address}
-            id={address.id}
-            onChange={(event) => {
-              event.preventDefault();
-              selectDeliveryAddress(address.id);
-            }}
-            name='address'
-          />
           <label
             className={styles.label}
-            htmlFor={address.id}
           >
-            {address.address}
+            <input
+              checked={currentDeliveryAddress === address.id}
+              className={styles.input}
+              type='radio'
+              value={address.address}
+              onChange={(event) => {
+                event.preventDefault();
+                selectDeliveryAddress(address.id);
+              }}
+              name='address'
+            />
+            <div className={styles.labelText}>{address.address}</div>
           </label>
         </div>)}
     </div>

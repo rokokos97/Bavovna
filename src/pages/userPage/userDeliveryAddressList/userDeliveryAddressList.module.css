@@ -10,11 +10,23 @@
   column-gap: 0.8rem;
 }
 
-.input {
-  color: #040404;
+.label {
+  display: flex;
+  flex-direction: row;
 }
 
-.label {
+.input {
+  position: absolute;
+  background: url("../../../../public/img/svg/adio_button_unchecked.svg");
+}
+
+.input:checked {
+  background: url("../../../../public/img/svg/adio_button_unchecked.svg");
+  position: absolute;
+  appearance: none;
+}
+
+.labelText {
   font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;

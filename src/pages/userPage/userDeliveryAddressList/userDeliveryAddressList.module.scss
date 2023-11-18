@@ -9,10 +9,22 @@
   display: flex;
   column-gap: 0.8rem;
 }
-.input {
-  color: $black;
-}
 .label {
+  display: flex;
+  flex-direction: row;
+}
+.input {
+  position: absolute;
+  background: url('../../../../public/img/svg/adio_button_unchecked.svg');
+  //color: $black;
+}
+.input:checked {
+  background: url('../../../../public/img/svg/adio_button_unchecked.svg');
+  position: absolute;
+  appearance: none;
+  //color: $black;
+}
+.labelText {
   @include fonts($label);
   text-align: start;
   word-wrap: inherit;
