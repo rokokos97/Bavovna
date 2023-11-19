@@ -1,21 +1,32 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './ItemPreviewCard.module.scss';
 import PropTypes from 'prop-types';
 import config from '../../config.json';
 import FillHeartIcon from '../svg/fillHeartIcon/fillHeartIcon';
 import EmptyHeartIcon from '../svg/emptyHeartIcon/emptyHeartIcon';
 import {useNavigate} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getItemsById} from '../../store/itemsSlice';
+import {getUser, updateUser} from '../../store/userSlice';
 
 const ItemPreviewCard = ({id}) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector(getUser());
   const item = useSelector(getItemsById(id));
-  const [favorite, setFavorite] = useState(false);
-  const handleSetFavorite = () => {
-    setFavorite(!favorite);
+  let isFavorite = false;
+  if (user) {
+    isFavorite = user.favorite.includes(id);
+  }
+  const handleChangeFavorite = () => {
+    if (isFavorite) {
+      const userFavorite = user.favorite.filter((item) => item !== id);
+      dispatch(updateUser({...user, favorite: userFavorite}));
+    } else {
+      dispatch(updateUser({...user, favorite: [...user.favorite, id]}));
+    }
   };
-  return (
+  return user && (
     <div
       className={styles.itemPreviewCard}
       data-testid="ItemPreviewCard"
@@ -39,9 +50,9 @@ const ItemPreviewCard = ({id}) => {
       }
       <div
         className={styles.itemPreviewCard__heart}
-        onClick = {handleSetFavorite}
+        onClick = {handleChangeFavorite}
       >
-        {favorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+        {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
       </div>
       <div className={styles.itemPreviewCard__description}>
         <span>
