@@ -17,8 +17,10 @@ const NewArrivalsBlock = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
   let newArrivalItems = [];
+  console.log('isItemsLoading', isItemsLoading, 'items', items);
   if (!isItemsLoading && items) {
     newArrivalItems = items.filter((item) => item.status === 'new');
+    console.log(newArrivalItems);
   }
   return (
     <>
@@ -38,7 +40,7 @@ const NewArrivalsBlock = () => {
             </button>
           </div>
         </div>
-        {!isItemsLoading &&
+        {!isItemsLoading && newArrivalItems &&
             <div className={styles.newArrivalsBlock__box}>
               {/* Swiper для відображення елементів */}
               <Swiper

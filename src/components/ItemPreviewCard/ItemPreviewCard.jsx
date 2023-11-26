@@ -19,14 +19,18 @@ const ItemPreviewCard = ({id}) => {
     isFavorite = user.favorite.includes(id);
   }
   const handleChangeFavorite = () => {
-    if (isFavorite) {
-      const userFavorite = user.favorite.filter((item) => item !== id);
-      dispatch(updateUser({...user, favorite: userFavorite}));
+    if (user) {
+      if (isFavorite) {
+        const userFavorite = user.favorite.filter((item) => item !== id);
+        dispatch(updateUser({...user, favorite: userFavorite}));
+      } else {
+        dispatch(updateUser({...user, favorite: [...user.favorite, id]}));
+      }
     } else {
-      dispatch(updateUser({...user, favorite: [...user.favorite, id]}));
+      navigate('/logIn');
     }
   };
-  return user && (
+  return (
     <div
       className={styles.itemPreviewCard}
       data-testid="ItemPreviewCard"
