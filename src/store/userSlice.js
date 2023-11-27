@@ -1,14 +1,14 @@
 import {createAction, createSlice} from '@reduxjs/toolkit';
-import localStorageService from '../services/localStorage.service';
+import sessionStorageService from '../services/sessionStorage.service';
 import authService from '../services/auth.service';
 import userService from '../services/user.service';
 
-const initialState = localStorageService.getAccessToken() ?
+const initialState = sessionStorageService.getAccessToken() ?
 {
   entities: null,
   isLoading: true,
   response: null,
-  auth: {userId: localStorageService.getUserId()},
+  auth: {userId: sessionStorageService.getUserId()},
   isLoggedIn: true,
 }:
 {
@@ -125,7 +125,7 @@ export const signUpWithGoogle = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.registerWithGoogle(payload);
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
@@ -136,7 +136,7 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
   dispatch(authRequested());
   try {
     const data = await authService.loginWithGoogle({email});
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
@@ -147,7 +147,7 @@ export const logInWithPassword = ({payload}) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
@@ -157,7 +157,7 @@ export const verifyEmail = (token, email) => async (dispatch) => {
   dispatch(emailVerificationRequested());
   try {
     const data = await authService.emailVerifiy(token, email);
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(emailVerificationRequestedSuccess(data));
   } catch (error) {
     dispatch(emailVerificationRequestFailed(error.response.data.response));
@@ -182,7 +182,7 @@ export const setNewPassword = (token, email, values) => async (dispatch) => {
   }
 };
 export const logOut = () => (dispatch) => {
-  localStorageService.removeAuthData();
+  sessionStorageService.removeAuthData();
   dispatch(userLoggedOut());
 };
 export const updateUser = (payload) => async (dispatch) => {

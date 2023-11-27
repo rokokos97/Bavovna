@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from '../config.json';
-import localStorageService from './localStorage.service';
+import sessionStorageService from './sessionStorage.service';
 
 // Створюємо екземпляр Axios для автентифікаційних запитів
 const httpAuth = axios.create({
@@ -60,7 +60,7 @@ const authService = {
     const {data} = await httpAuth.post('token', {
       grant_type: 'refresh_token',
       // Отримання токену оновлення з локального зберігання
-      refresh_token: localStorageService.getRefreshToken(),
+      refresh_token: sessionStorageService.getRefreshToken(),
     });
     return data;
   },

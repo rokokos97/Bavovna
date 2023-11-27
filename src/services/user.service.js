@@ -1,11 +1,11 @@
 import httpService from './http.service';
-import localStorageService from './localStorage.service';
+import sessionStorageService from './sessionStorage.service';
 
 const userEndpoint = 'user/';
 
 const userService = {
   get: async () => {
-    const token = localStorageService.getAccessToken();
+    const token = sessionStorageService.getAccessToken();
     const {data} = await httpService.get(userEndpoint, {
       headers: {
         Authorization: 'Bearer '+token,
@@ -21,9 +21,9 @@ const userService = {
     return data;
   },
   getCurrentUser: async () => {
-    const token = localStorageService.getAccessToken();
+    const token = sessionStorageService.getAccessToken();
     const {data} = await httpService.get(
-        userEndpoint + localStorageService.getUserId(), {
+        userEndpoint + sessionStorageService.getUserId(), {
           headers: {
             Authorization: 'Bearer '+token,
           },
@@ -32,9 +32,9 @@ const userService = {
     return data;
   },
   update: async (payload) => {
-    const token = localStorageService.getAccessToken();
+    const token = sessionStorageService.getAccessToken();
     const {data} = await httpService.patch(
-        userEndpoint + localStorageService.getUserId(),
+        userEndpoint + sessionStorageService.getUserId(),
         payload, {
           headers: {
             Authorization: `Bearer ${token}`,
