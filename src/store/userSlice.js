@@ -2,7 +2,18 @@ import {createAction, createSlice} from '@reduxjs/toolkit';
 import sessionStorageService from '../services/sessionStorage.service';
 import authService from '../services/auth.service';
 import userService from '../services/user.service';
+import localStorageService from '../services/localStorage.service';
 
+const transferDataToSessionStorage = () => {
+  const keys = Object.keys(localStorage);
+  keys.forEach((key) => {
+    const value = localStorage.getItem(key);
+    sessionStorage.setItem(key, value);
+  });
+};
+if (localStorageService.getAccessToken()) {
+  transferDataToSessionStorage();
+}
 const initialState = sessionStorageService.getAccessToken() ?
 {
   entities: null,
@@ -18,7 +29,6 @@ const initialState = sessionStorageService.getAccessToken() ?
   auth: null,
   isLoggedIn: false,
 };
-
 
 const usersSlice = createSlice({
   name: 'user',
@@ -143,11 +153,15 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
   }
 };
 export const logInWithPassword = ({payload}) => async (dispatch) => {
-  const {email, password} = payload;
+  const {email, password, rememberMe} = payload;
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
-    sessionStorageService.setTokens(data);
+    if (rememberMe) {
+      localStorageService.setTokens(data);
+    } else {
+      sessionStorageService.setTokens(data);
+    }
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
@@ -183,6 +197,7 @@ export const setNewPassword = (token, email, values) => async (dispatch) => {
 };
 export const logOut = () => (dispatch) => {
   sessionStorageService.removeAuthData();
+  localStorageService.removeAuthData();
   dispatch(userLoggedOut());
 };
 export const updateUser = (payload) => async (dispatch) => {
