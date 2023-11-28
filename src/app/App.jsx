@@ -14,6 +14,7 @@ import Page404 from '../pages/page404/page404';
 import HelpPage from '../pages/helpPage/HelpPage';
 import UserPage from '../pages/userPage/userPage';
 import GuestRoutes from '../hoc/guestRoutes';
+import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
             <Route path='catalogue' element={<Catalogue />} />
+            <Route path='cart' element={<ShoppingCartPage/>}/>
             <Route path='catalogue/:id' element={<Card />} />
             <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
             <Route path='main' element={<MainPage />} />
