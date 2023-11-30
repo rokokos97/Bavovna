@@ -75,6 +75,9 @@ const usersSlice = createSlice({
     userResetPasswordRequestFailed: (state, action) => {
       state.response = action.payload;
     },
+    userSetNewPasswordRequestSuccess: (state, action) => {
+      state.response = action.payload;
+    },
     userSetNewPasswordRequestFailed: (state, action) => {
       state.error = action.payload;
     },
@@ -101,6 +104,7 @@ const {
   userResponseCleared,
   userResetPasswordRequestSuccess,
   userResetPasswordRequestFailed,
+  userSetNewPasswordRequestSuccess,
   userSetNewPasswordRequestFailed,
   authRequestFailed,
   authRequestSuccess,
@@ -190,9 +194,10 @@ export const resetPassword = ({payload}) => async (dispatch) => {
 export const setNewPassword = (token, email, values) => async (dispatch) => {
   dispatch(userSetNewPasswordRequested());
   try {
-    return await authService.setNewPassword(token, email, values);
+    const data = await authService.setNewPassword(token, email, values);
+    dispatch(userSetNewPasswordRequestSuccess(data.response));
   } catch (error) {
-    dispatch(userSetNewPasswordRequestFailed());
+    dispatch(userSetNewPasswordRequestFailed(error));
   }
 };
 export const logOut = () => (dispatch) => {
