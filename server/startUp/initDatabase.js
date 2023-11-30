@@ -2,6 +2,9 @@ const colorsMock = require('../mock/colors.json');
 const Colors = require('../models/Colors');
 const itemsMock = require('../mock/items.json');
 const Items = require('../models/Item');
+const categoriesMock = require('../mock/categories.json');
+const Categories = require('../models/Category');
+
 
 module.exports = async () => {
   const colors = await Colors.find();
