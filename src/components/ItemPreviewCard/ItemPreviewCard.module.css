@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-left: 0.3rem;
 }
 .itemPreviewCard:hover {
   cursor: pointer;
@@ -46,7 +47,7 @@
   display: inline-flex;
   position: absolute;
   top: 1rem;
-  left: -0.3rem;
+  left: 0;
 }
 .itemPreviewCard__status:hover {
   background: #5a9b83;

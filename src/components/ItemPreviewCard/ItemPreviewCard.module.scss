@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-left: 0.3rem;
 
   &:hover {
       cursor: pointer;
@@ -47,7 +48,7 @@
   display: inline-flex;
   position: absolute;
   top: 1rem;
-  left: -0.3rem;
+  left: 0;
 
   &:hover {
     background: $accent-a-3;

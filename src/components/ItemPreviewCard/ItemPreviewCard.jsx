@@ -35,7 +35,10 @@ const ItemPreviewCard = ({id}) => {
       className={styles.itemPreviewCard}
       data-testid="ItemPreviewCard"
     >
-      <div className={styles.itemPreviewCard__image}>
+      <div
+        className={styles.itemPreviewCard__image}
+        onClick={()=> navigate(`catalogue/${item._id}`)}
+      >
         <img
           src={`${config.apiEndpoint}${item.images[0]}`}
           alt="item image"
@@ -45,7 +48,7 @@ const ItemPreviewCard = ({id}) => {
         item.status &&
         <div
           className={styles.itemPreviewCard__status}
-          onClick={()=> navigate('/card')}
+          onClick={()=> navigate('/catalogue')}
         >
           <div className={styles.itemPreviewCard__statusText}>
             {item.status}
@@ -58,7 +61,10 @@ const ItemPreviewCard = ({id}) => {
       >
         {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
       </div>
-      <div className={styles.itemPreviewCard__description}>
+      <div
+        className={styles.itemPreviewCard__description}
+        onClick={()=> navigate(`catalogue/${item._id}`)}
+      >
         <span>
           {item.description}
         </span>
