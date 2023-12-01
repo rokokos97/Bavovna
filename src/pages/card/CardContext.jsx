@@ -14,6 +14,8 @@ import EmptyHeartIcon from '../../components/svg/emptyHeartIcon/emptyHeartIcon';
 import FillHeartIcon from '../../components/svg/fillHeartIcon/fillHeartIcon';
 import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import styles from './Card.module.scss';
+import {addItemInCart} from '../../store/cartSlice';
+import {useDispatch} from 'react-redux';
 
 const colors = [
   {
@@ -48,6 +50,7 @@ const CardContext = ({item}) => {
     sale,
     favorite,
   } = item;
+  const dispatch = useDispatch();
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [isFavorite, setIsFavorite] = useState(favorite);
@@ -71,6 +74,7 @@ const CardContext = ({item}) => {
 
   const handleCollectData = () => {
     if (selectedColor && selectedSize) {
+      dispatch(addItemInCart(itemData));
       collectData(itemData);
       setShowCheckoutModal(true);
       hideBodyOverflow();
