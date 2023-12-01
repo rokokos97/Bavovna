@@ -207,7 +207,7 @@
     "sale": 0,
     "modelParams": "Chic pleated m_idi skirt for a feminine style.",
     "favorite": false,
-    "status": ""
+    "status": "new"
   },
   {
     "_id": "def456ghi789jkl012mno345",
@@ -222,7 +222,7 @@
     "sale": 0,
     "modelParams": "Warm hooded parka jacket for cold weather.",
     "favorite": false,
-    "status": ""
+    "status": "new"
   },
   {
     "_id": "pqr678stu901vwxyz234abcd",
@@ -237,7 +237,7 @@
     "sale": 0,
     "modelParams": "Stunning printed maxi dress for a boho look.",
     "favorite": false,
-    "status": "new"
+    "status": "sale"
   },
   {
     "_id": "efg789hij012klm345nopqrs",
