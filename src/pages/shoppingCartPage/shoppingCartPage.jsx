@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './shoppingCartPage.module.scss';
 import LeftArrowIcon from '../../components/svg/leftArrowIcon/leftArrowIcon';
-import {useSelector} from 'react-redux';
-import {getUser} from '../../store/userSlice';
 import {useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {getCart} from '../../store/cartSlice';
+import ProductCardInCart from '../../components/productCardInCart/productCardInCart';
 
 const ShoppingCartPage = () => {
+  const cart = useSelector(getCart());
+  console.log(cart);
   const navigate = useNavigate();
-  const user = useSelector(getUser());
-  console.log(user);
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
       <div className={styles.titleBlock}>
@@ -27,6 +28,11 @@ const ShoppingCartPage = () => {
             Continue Shopping
           </span>
         </button>
+      </div>
+      <div>
+        {
+          cart.map((item) => <ProductCardInCart key={item._id} item={item}/>)
+        }
       </div>
     </div>
   );
