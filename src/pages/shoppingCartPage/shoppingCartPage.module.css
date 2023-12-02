@@ -29,6 +29,7 @@
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
+  text-align: start;
   text-wrap: none;
 }
 
@@ -123,6 +124,30 @@
 }
 .button div svg {
   width: 2.4rem;
+}
+
+.emptyCartBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.fillCartBlock {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2.4rem;
+}
+
+.itemsBlock {
+  border-top: 1px solid #040404;
+  padding-top: 2.4rem;
+}
+
+.checkoutBlock {
+  width: 41.1rem;
+  border: 1px solid #040404;
 }
 
 /*# sourceMappingURL=shoppingCartPage.module.css.map */

@@ -1,7 +1,44 @@
+@import '../../styles/variables.module';
 .productCardInCart {
   width: 84.5rem;
   height: 14.2rem;
   display: flex;
   flex-direction: row;
-  border: #040404 solid 1px;
+  border: 1px solid $black;
+  justify-content: space-between;
+}
+.infoBlock {
+  width: 73.6rem;
+  height: 13.8rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  width: 14rem;
+  height: 13.8rem;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+  }
+}
+.deleteButton {
+  margin-top: 8.7rem;
+}
+.titleBlock {
+  margin-top: 2.4rem;
+  margin-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: flex-start;
+  text-align: start;
+}
+.title {
+  @include fonts($headline-9);
+}
+.price {
+  @include fonts($headline-8);
 }

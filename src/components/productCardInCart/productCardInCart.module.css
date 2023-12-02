@@ -3,7 +3,55 @@
   height: 14.2rem;
   display: flex;
   flex-direction: row;
-  border: #040404 solid 1px;
+  border: 1px solid #040404;
+  justify-content: space-between;
+}
+
+.infoBlock {
+  width: 73.6rem;
+  height: 13.8rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  width: 14rem;
+  height: 13.8rem;
+  overflow: hidden;
+}
+.image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.deleteButton {
+  margin-top: 8.7rem;
+}
+
+.titleBlock {
+  margin-top: 2.4rem;
+  margin-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.title {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.price {
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=productCardInCart.module.css.map */

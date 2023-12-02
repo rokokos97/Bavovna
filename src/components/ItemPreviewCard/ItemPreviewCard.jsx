@@ -37,7 +37,7 @@ const ItemPreviewCard = ({id}) => {
     >
       <div
         className={styles.itemPreviewCard__image}
-        onClick={()=> navigate(`catalogue/${item._id}`)}
+        onClick={()=> navigate(`/catalogue/${item._id}`)}
       >
         <img
           src={`${config.apiEndpoint}${item.images[0]}`}

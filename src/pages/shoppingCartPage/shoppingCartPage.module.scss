@@ -21,6 +21,7 @@
 }
 .text {
   @include fonts($body-2);
+  text-align: start;
   text-wrap: none;
 }
 .button {
@@ -39,4 +40,25 @@
       width: 2.4rem;
     }
   }
+}
+.emptyCartBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.fillCartBlock {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2.4rem;
+
+}
+.itemsBlock {
+  border-top: 1px solid $black;
+  padding-top: 2.4rem;
+}
+.checkoutBlock {
+  width: 41.1rem;
+  border: 1px solid $black;
 }
