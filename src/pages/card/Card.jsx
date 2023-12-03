@@ -12,6 +12,7 @@ const Card = () => {
 
   if (!isItemsLoading && items) {
     const searchingItem = items.filter((item)=> item._id === id)[0];
+    //    console.log('searchingItem', searchingItem);
     return (
       <CardMasterProvider>
         <CardContext item={searchingItem} />

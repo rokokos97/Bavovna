@@ -42,17 +42,17 @@
   line-height: 2rem;
   letter-spacing: 0.0144rem;
   text-transform: uppercase;
-  border: 0.1rem solid #040404;
+  border: 0.1rem solid #000000;
   border-right: none;
   border-spacing: 0;
   text-align: center;
 }
 .guideTable th {
-  border-bottom: 0.1rem solid #040404;
+  border-bottom: 0.1rem solid #000000;
 }
 .guideTable td,
 .guideTable th {
-  border-right: 0.1rem solid #040404;
+  border-right: 0.1rem solid #000000;
   padding: 1.6rem 0;
 }
 

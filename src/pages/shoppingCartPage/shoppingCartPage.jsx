@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './shoppingCartPage.module.scss';
 import LeftArrowIcon from '../../components/svg/leftArrowIcon/leftArrowIcon';
 import {useNavigate} from 'react-router-dom';
@@ -9,6 +9,7 @@ import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
+import _ from 'lodash';
 
 const ShoppingCartPage = () => {
   const cart = useSelector(getCart());
@@ -16,10 +17,27 @@ const ShoppingCartPage = () => {
   const swiperRef = useRef();
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
+  const [normalizedCart, setNormalizedCart] = useState([]);
   let sliderItems = [];
   if (!isItemsLoading && items) {
     sliderItems = items.filter((item) => item.status === 'new');
   }
+  useEffect(()=>{
+    const newNormalizedCart = [];
+    for (const good of cart) {
+      const foundIndex = newNormalizedCart.findIndex((item) => item.itemIdentifier === good.itemIdentifier);
+      if (foundIndex !== -1) {
+        newNormalizedCart[foundIndex] = {
+          ...newNormalizedCart[foundIndex],
+          itemQuantity: (newNormalizedCart[foundIndex].itemQuantity + 1),
+        };
+      } else {
+        newNormalizedCart.push(good);
+      }
+    }
+    const sortedCart = _.sortBy(newNormalizedCart, 'itemName');
+    setNormalizedCart(sortedCart);
+  }, [cart]);
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
       <div className={styles.titleBlock}>
@@ -42,7 +60,7 @@ const ShoppingCartPage = () => {
         <div className={styles.fillCartBlock}>
           <div className={styles.itemsBlock}>
             {
-              cart.map((item) => <ProductCardInCart key={item._id} item={item}/>)
+              normalizedCart.map((item) => <ProductCardInCart key={item._id+item.itemIdentifier} item={item}/>)
             }
           </div>
           <div className={styles.checkoutBlock}>
@@ -52,21 +70,21 @@ const ShoppingCartPage = () => {
         <div className={styles.emptyCartBlock}>
           <p className={styles.text}>Your shopping bag is empty</p>
           {!isItemsLoading && sliderItems &&
-            <div className={styles.carusell}>
+            <div>
               {/* Swiper для відображення елементів */}
               <Swiper
-                onSwiper={(swiper) => swiperRef.current = swiper}
+                onSwiper={(swiper) => swiperRef.current = swiper? swiper : null}
                 slidesPerView={3}
                 spaceBetween={3}
                 modules={[Autoplay]}
                 loop={true}
                 autoplay={{delay: 3000, pauseOnMouseEnter: true, stopOnLastSlide: true}}
               >
-                {sliderItems.map((item) =>
+                {sliderItems?sliderItems.map((item) =>
                   <SwiperSlide key={item._id}>
                     <ItemPreviewCard id={item._id}/>
                   </SwiperSlide>,
-                )}
+                ): null}
               </Swiper>
             </div>
           }

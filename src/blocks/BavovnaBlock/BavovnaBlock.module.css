@@ -9,7 +9,7 @@
 
 .title {
   width: 90rem;
-  color: #040404;
+  color: #000000;
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
@@ -18,7 +18,7 @@
 
 .content {
   width: 72.8rem;
-  color: #040404;
+  color: #000000;
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
@@ -26,7 +26,7 @@
 
 .button {
   margin: 0 auto;
-  border: 1px solid #040404;
+  border: 1px solid #000000;
   display: flex;
   width: 19.5rem;
   height: 5.6rem;
@@ -42,7 +42,7 @@
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #040404;
+  color: #000000;
   text-align: center;
   position: relative;
   z-index: 10;

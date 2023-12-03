@@ -14,7 +14,7 @@ import EmptyHeartIcon from '../../components/svg/emptyHeartIcon/emptyHeartIcon';
 import FillHeartIcon from '../../components/svg/fillHeartIcon/fillHeartIcon';
 import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import styles from './Card.module.scss';
-import {addItemInCart} from '../../store/cartSlice';
+import {addItemToCart} from '../../store/cartSlice';
 import {useDispatch} from 'react-redux';
 
 const colors = [
@@ -74,7 +74,12 @@ const CardContext = ({item}) => {
 
   const handleCollectData = () => {
     if (selectedColor && selectedSize) {
-      dispatch(addItemInCart(itemData));
+      //      Додаю костиль бо тут треба переробити трохи
+      const newItemData = {
+        ...itemData, itemIdentifier:
+          `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,
+      };
+      dispatch(addItemToCart(newItemData));
       collectData(itemData);
       setShowCheckoutModal(true);
       hideBodyOverflow();

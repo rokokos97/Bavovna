@@ -3,14 +3,12 @@
   height: 14.2rem;
   display: flex;
   flex-direction: row;
-  border: 1px solid #040404;
   justify-content: space-between;
 }
 
 .infoBlock {
   width: 73.6rem;
   height: 13.8rem;
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
 }
@@ -52,6 +50,35 @@
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
+}
+
+.titleBlockLine {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  width: 51.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleBlockLine div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.colorRectangle {
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background: transparent;
 }
 
 /*# sourceMappingURL=productCardInCart.module.css.map */

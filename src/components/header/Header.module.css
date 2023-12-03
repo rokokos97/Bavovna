@@ -20,7 +20,7 @@
   padding-bottom: 1rem;
   justify-content: center;
   align-items: flex-start;
-  background: #040404;
+  background: #000000;
 }
 .banner span {
   color: #fafafa;
@@ -39,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 144rem;
-  color: #040404;
+  color: #000000;
 }
 
 .headerNavBar {

@@ -41,7 +41,7 @@
 .itemPreviewCard__status {
   cursor: pointer;
   padding: 0.8rem 1rem;
-  background: #040404;
+  background: #000000;
   justify-content: center;
   align-items: center;
   display: inline-flex;

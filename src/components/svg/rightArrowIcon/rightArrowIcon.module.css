@@ -3,7 +3,7 @@
   height: 4rem;
 }
 .rightArrowIcon svg path {
-  fill: #040404;
+  fill: #000000;
 }
 .rightArrowIcon svg path:hover {
   fill: #3a7f66;
