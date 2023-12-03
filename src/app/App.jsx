@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Card from '../pages/card/Card';
@@ -15,9 +15,14 @@ import HelpPage from '../pages/helpPage/HelpPage';
 import UserPage from '../pages/userPage/userPage';
 import GuestRoutes from '../hoc/guestRoutes';
 import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
-
+import {useSelector} from 'react-redux';
+import sessionStorageService from '../services/sessionStorage.service';
 
 function App() {
+  const cart = useSelector((state) => state.cart);
+  useEffect(() => {
+    sessionStorageService.setCurrentCart(cart);
+  }, [cart]);
   return (
     <div className={styles.App}>
       <AppLoader>

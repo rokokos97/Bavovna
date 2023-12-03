@@ -1,11 +1,27 @@
 import {createSlice} from '@reduxjs/toolkit';
+import sessionStorageService from '../services/sessionStorage.service';
 
+// const transferDataToSessionStorage = () => {
+//  const keys = Object.keys(localStorage);
+//  keys.forEach((key) => {
+//    const value = localStorage.getItem(key);
+//    sessionStorage.setItem(key, value);
+//  });
+// };
+// if (localStorageService.getAccessToken()) {
+//  transferDataToSessionStorage();
+// }
+const storedCart = sessionStorageService.getCurrentCart('cart');
+
+
+const initialState = storedCart ? {
+  entities: storedCart,
+}:{
+  entities: [],
+};
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: {
-    entities: [],
-    user: null,
-  },
+  initialState: initialState,
   reducers: {
     addedItem(state, action) {
       state.entities.push(action.payload);

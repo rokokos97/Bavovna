@@ -22,7 +22,12 @@ export function removeAuthData() {
   sessionStorage.removeItem(REFRESH_KEY);
   sessionStorage.removeItem(EXPIRES_KEY);
 }
-
+export function setCurrentCart(cart) {
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+export function getCurrentCart() {
+  return JSON.parse(sessionStorage.getItem('cart')).entities;
+}
 export function getTokenExpiresDate() {
   return sessionStorage.getItem(EXPIRES_KEY);
 }
@@ -36,5 +41,7 @@ const sessionStorageService = {
   getTokenExpiresDate,
   getUserId,
   removeAuthData,
+  setCurrentCart,
+  getCurrentCart,
 };
 export default sessionStorageService;
