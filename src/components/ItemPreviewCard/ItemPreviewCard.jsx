@@ -66,7 +66,7 @@ const ItemPreviewCard = ({id}) => {
         onClick={()=> navigate(`catalogue/${item._id}`)}
       >
         <span>
-          {item.description}
+          {item.name}
         </span>
         <p>
           ${item.price}
