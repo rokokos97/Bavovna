@@ -13,7 +13,6 @@ import sessionStorageService from '../services/sessionStorage.service';
 // }
 const storedCart = sessionStorageService.getCurrentCart('cart');
 
-
 const initialState = storedCart ? {
   entities: storedCart,
 }:{

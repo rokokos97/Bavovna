@@ -17,11 +17,14 @@ import GuestRoutes from '../hoc/guestRoutes';
 import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
 import {useSelector} from 'react-redux';
 import sessionStorageService from '../services/sessionStorage.service';
+import {getCart} from '../store/cartSlice';
 
 function App() {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector(getCart());
   useEffect(() => {
-    sessionStorageService.setCurrentCart(cart);
+    if (cart.length !== 0) {
+      sessionStorageService.setCurrentCart(cart);
+    }
   }, [cart]);
   return (
     <div className={styles.App}>

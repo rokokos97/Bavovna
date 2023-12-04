@@ -105,7 +105,6 @@ const CardContext = ({item}) => {
     setShowCheckoutModal(false);
     showBodyOverflow();
   };
-
   return (
     <>
       <section className={styles.cardSection}>

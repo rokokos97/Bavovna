@@ -26,7 +26,7 @@ export function setCurrentCart(cart) {
   sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 export function getCurrentCart() {
-  return JSON.parse(sessionStorage.getItem('cart')).entities;
+  return JSON.parse(sessionStorage.getItem('cart'));
 }
 export function getTokenExpiresDate() {
   return sessionStorage.getItem(EXPIRES_KEY);
