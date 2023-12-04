@@ -30,12 +30,12 @@ const ColorsList = ({colors, selectedColor, setSelectedColor}) => {
             <input
               type='radio'
               name='color'
-              value={color.value}
+              value={color.code}
               id={color.name}
               onChange={handleChange}
             />
             <label
-              style={{backgroundColor: `${color.value}`}}
+              style={{backgroundColor: `${color.code}`}}
               htmlFor={color.name}
             ></label>
           </li>
