@@ -1,14 +1,25 @@
 import {createAction, createSlice} from '@reduxjs/toolkit';
-import localStorageService from '../services/localStorage.service';
+import sessionStorageService from '../services/sessionStorage.service';
 import authService from '../services/auth.service';
 import userService from '../services/user.service';
+import localStorageService from '../services/localStorage.service';
 
-const initialState = localStorageService.getAccessToken() ?
+const transferDataToSessionStorage = () => {
+  const keys = Object.keys(localStorage);
+  keys.forEach((key) => {
+    const value = localStorage.getItem(key);
+    sessionStorage.setItem(key, value);
+  });
+};
+if (localStorageService.getAccessToken()) {
+  transferDataToSessionStorage();
+}
+const initialState = sessionStorageService.getAccessToken() ?
 {
   entities: null,
   isLoading: true,
   response: null,
-  auth: {userId: localStorageService.getUserId()},
+  auth: {userId: sessionStorageService.getUserId()},
   isLoggedIn: true,
 }:
 {
@@ -18,7 +29,6 @@ const initialState = localStorageService.getAccessToken() ?
   auth: null,
   isLoggedIn: false,
 };
-
 
 const usersSlice = createSlice({
   name: 'user',
@@ -65,6 +75,9 @@ const usersSlice = createSlice({
     userResetPasswordRequestFailed: (state, action) => {
       state.response = action.payload;
     },
+    userSetNewPasswordRequestSuccess: (state, action) => {
+      state.response = action.payload;
+    },
     userSetNewPasswordRequestFailed: (state, action) => {
       state.error = action.payload;
     },
@@ -80,6 +93,9 @@ const usersSlice = createSlice({
     emailVerificationRequestFailed: (state, action) => {
       state.response = action.payload;
     },
+    userAddressAddedFailed: (state, action) => {
+      state.response = action.payload;
+    },
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
@@ -88,6 +104,7 @@ const {
   userResponseCleared,
   userResetPasswordRequestSuccess,
   userResetPasswordRequestFailed,
+  userSetNewPasswordRequestSuccess,
   userSetNewPasswordRequestFailed,
   authRequestFailed,
   authRequestSuccess,
@@ -122,7 +139,7 @@ export const signUpWithGoogle = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.registerWithGoogle(payload);
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
@@ -133,18 +150,22 @@ export const loginWithGoogle = (payload) =>async (dispatch) =>{
   dispatch(authRequested());
   try {
     const data = await authService.loginWithGoogle({email});
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
   }
 };
 export const logInWithPassword = ({payload}) => async (dispatch) => {
-  const {email, password} = payload;
+  const {email, password, rememberMe} = payload;
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
-    localStorageService.setTokens(data);
+    if (rememberMe) {
+      localStorageService.setTokens(data);
+    } else {
+      sessionStorageService.setTokens(data);
+    }
     dispatch(authRequestSuccess(data.user));
   } catch (error) {
     dispatch(authRequestFailed(error.response.data.response));
@@ -154,7 +175,7 @@ export const verifyEmail = (token, email) => async (dispatch) => {
   dispatch(emailVerificationRequested());
   try {
     const data = await authService.emailVerifiy(token, email);
-    localStorageService.setTokens(data);
+    sessionStorageService.setTokens(data);
     dispatch(emailVerificationRequestedSuccess(data));
   } catch (error) {
     dispatch(emailVerificationRequestFailed(error.response.data.response));
@@ -173,12 +194,14 @@ export const resetPassword = ({payload}) => async (dispatch) => {
 export const setNewPassword = (token, email, values) => async (dispatch) => {
   dispatch(userSetNewPasswordRequested());
   try {
-    return await authService.setNewPassword(token, email, values);
+    const data = await authService.setNewPassword(token, email, values);
+    dispatch(userSetNewPasswordRequestSuccess(data.response));
   } catch (error) {
-    dispatch(userSetNewPasswordRequestFailed());
+    dispatch(userSetNewPasswordRequestFailed(error));
   }
 };
 export const logOut = () => (dispatch) => {
+  sessionStorageService.removeAuthData();
   localStorageService.removeAuthData();
   dispatch(userLoggedOut());
 };
@@ -186,11 +209,9 @@ export const updateUser = (payload) => async (dispatch) => {
   dispatch(userUpdateRequested());
   try {
     const content = await userService.update(payload);
-    console.log(content);
     dispatch(userUpdateSuccess(content));
     dispatch(loadUser());
   } catch (error) {
-    console.log('error', error.response.data.response);
     dispatch(userUpdateFailed(error.response.data.response));
   }
 };

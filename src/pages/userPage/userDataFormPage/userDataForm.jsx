@@ -1,16 +1,14 @@
 import React, {useEffect} from 'react';
 import 'react-phone-input-2/lib/style.css';
 import styles from './userDataForm.module.scss';
-import TextField from '../../components/formFields/textField/textField';
+import TextField from '../../../components/formFields/textField/textField';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
-import {clearUserResponse, getResponse, getUser, updateUser} from '../../store/userSlice';
-import {validationSchemaUserDataForm} from '../../utils/validationSchema';
-// import SelectField from '../formFields/selectField/selectField';
-// import PhoneInput from 'react-phone-input-2';
-import PhoneField from '../../components/formFields/phoneField/phoneField';
-import transformErrorMessage from '../../utils/generateErrorMessage';
-
+import {clearUserResponse, getResponse, getUser, updateUser} from '../../../store/userSlice';
+import {validationSchemaUserDataForm} from '../../../utils/validationSchema';
+import PhoneField from '../../../components/formFields/phoneField/phoneField';
+import transformErrorMessage from '../../../utils/generateErrorMessage';
+import UserDeliveryAddressForm from '../userDeliveryAddressForm/userDeliveryAddressForm';
 const UserDataForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser());
@@ -27,9 +25,8 @@ const UserDataForm = () => {
     validationSchema: validationSchemaUserDataForm,
     onSubmit: () => {
       const changedFields = getChangedFields(formik.values);
-      const newUser = {...user, ...changedFields};
-      console.log('newUser', newUser);
-      dispatch(updateUser(newUser));
+      const updatedUser = {...user, ...changedFields};
+      dispatch(updateUser(updatedUser));
     }},
   );
   const getChangedFields = (values) => {
@@ -132,42 +129,11 @@ const UserDataForm = () => {
           className={styles.button}
         >
           <span>
-save changes
+            save changes
           </span>
         </button>
       </form>
-      {/* <div className={styles.deliveryForm}>*/}
-      {/*  <p*/}
-      {/*    className={styles.deliveryTitle}*/}
-      {/*  >*/}
-      {/*    delivery*/}
-      {/*  </p>*/}
-      {/*  <div className={styles.deliveryBlock}>*/}
-      {/*    <div className={styles.deliveryBlockColumn}>*/}
-      {/*      <p>*/}
-      {/*        Saved delivery method*/}
-      {/*      </p>*/}
-      {/*      Content*/}
-      {/*    </div>*/}
-      {/*    <div className={styles.deliveryBlockColumn}>*/}
-      {/*      <p>*/}
-      {/*        Add new delivery method*/}
-      {/*      </p>*/}
-      {/*      <form className={styles.userPersonalDataForm}>*/}
-      {/*        <SelectField onChange={onSelect} defaultValue={{}} options={[]}/>*/}
-      {/*        <button*/}
-      {/*          type="submit"*/}
-      {/*          disabled={!formik.dirty}*/}
-      {/*          className={styles.button}*/}
-      {/*        >*/}
-      {/*          <span>*/}
-      {/*            change delivery*/}
-      {/*          </span>*/}
-      {/*        </button>*/}
-      {/*      </form>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/* </div>*/}
+      <UserDeliveryAddressForm/>
     </div>
   ));
 };

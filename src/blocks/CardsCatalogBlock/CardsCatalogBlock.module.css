@@ -44,9 +44,8 @@
   cursor: pointer;
 }
 .arrow.arrowDisable {
-  color: #9b9b9b;
-  fill: #9b9b9b;
-  cursor: not-allowed;
+  opacity: 0;
+  cursor: default;
 }
 
 .pageButton {

@@ -6,13 +6,13 @@
   gap: 2.4rem;
 }
 .loginForm p {
-  color: #040404;
+  color: #000000;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
 .loginForm p span {
-  color: #040404;
+  color: #000000;
   font-family: "Fixel Display Semibold";
   font-size: 16px;
   line-height: 110%;
@@ -96,7 +96,7 @@
   background: #d7d7d7;
 }
 .divider span {
-  color: #040404;
+  color: #000000;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
@@ -110,8 +110,8 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #040404;
-  padding: 2.1rem 3.6rem;
+  background: #000000;
+  padding: 2.1rem 2.6rem;
 }
 .button span {
   font-family: "Fixel Display Semibold";
@@ -184,7 +184,7 @@
 .googleButton {
   display: flex;
   gap: 1.2rem;
-  border: 1px solid #040404;
+  border: 1px solid #000000;
   display: flex;
   width: 40.9rem;
   height: 5.6rem;
@@ -193,14 +193,14 @@
   position: relative;
   overflow: hidden;
   background: #fafafa;
-  padding: 2.1rem 3.6rem;
+  padding: 2.1rem 2.6rem;
 }
 .googleButton span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #040404;
+  color: #000000;
   text-align: center;
   position: relative;
   z-index: 10;

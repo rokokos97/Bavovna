@@ -1,0 +1,48 @@
+@import '../../../styles/variables.module';
+.userDeliveryAddressList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+.radioWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+.label {
+  display: flex;
+  flex-direction: row;
+  width: 30rem;
+}
+.input {
+  appearance: none;
+  color: $black;
+}
+.radioButton {
+  background: transparent;
+
+  &:hover {
+    div {
+      svg {
+        path {
+          fill: $accent-a-3
+        }
+      }
+    }
+  }
+  &:active {
+    div {
+      svg {
+        path {
+          fill: $accent-a-5
+        }
+      }
+    }
+  }
+}
+.labelText {
+  @include fonts($label);
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}

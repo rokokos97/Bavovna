@@ -76,7 +76,7 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border: 0.1rem solid #040404;
+  border: 0.1rem solid #000000;
 }
 
 .paramsBlock {
@@ -127,8 +127,8 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #040404;
-  padding: 2.1rem 3.6rem;
+  background: #000000;
+  padding: 2.1rem 2.6rem;
 }
 .checkoutBtn span {
   font-family: "Fixel Display Semibold";

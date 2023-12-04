@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Card from '../pages/card/Card';
@@ -14,9 +14,18 @@ import Page404 from '../pages/page404/page404';
 import HelpPage from '../pages/helpPage/HelpPage';
 import UserPage from '../pages/userPage/userPage';
 import GuestRoutes from '../hoc/guestRoutes';
-
+import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
+import {useSelector} from 'react-redux';
+import sessionStorageService from '../services/sessionStorage.service';
+import {getCart} from '../store/cartSlice';
 
 function App() {
+  const cart = useSelector(getCart());
+  useEffect(() => {
+    if (cart.length !== 0) {
+      sessionStorageService.setCurrentCart(cart);
+    }
+  }, [cart]);
   return (
     <div className={styles.App}>
       <AppLoader>
@@ -27,6 +36,7 @@ function App() {
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
             <Route path='catalogue' element={<Catalogue />} />
+            <Route path='cart' element={<ShoppingCartPage/>}/>
             <Route path='catalogue/:id' element={<Card />} />
             <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
             <Route path='main' element={<MainPage />} />

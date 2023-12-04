@@ -31,6 +31,8 @@ const ForgotPasswordForm = () => {
     onSubmit: (values) => {
       if (!formik.isValid) return;
       dispatch(resetPassword({payload: values}));
+      formik.setFieldValue('email', '');
+      formik.setFieldTouched('email', false);
     },
   });
 
@@ -40,7 +42,6 @@ const ForgotPasswordForm = () => {
       dispatch(clearUserResponse());
     }
   }, [formik.values, dispatch]);
-
   return (
     <div className={styles.forgotPasswordForm} data-testid="ForgotPasswordForm">
       <div className={styles.titleBlock}>

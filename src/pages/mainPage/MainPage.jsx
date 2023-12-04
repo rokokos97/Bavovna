@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './MainPage.module.scss';
 import NewArrivalsBlock from '../../blocks/NewArrivalsBlock/NewArrivalsBlock';
 import NewCollectionBlock from '../../blocks/NewCollectionBlock/NewCollectionBlock';
@@ -10,10 +10,21 @@ import CategoriesBlock from '../../blocks/CategoriesBlock/CategoriesBlock';
 import ModalCookies from '../../components/modal/modalContent/ModalCookies/modalCookies';
 import {Modal} from '../../components/modal';
 import {showBodyOverflow} from '../../services/modal.service';
-
+import Cookies from 'js-cookie';
 const MainPage = () => {
-  const [showCookiesModal, setShowCookiesModal] = useState(true);
+  const [showCookiesModal, setShowCookiesModal] = useState(false);
+  useEffect(() => {
+    const userConsent = Cookies.get('userConsent');
+    if (!userConsent) {
+      setShowCookiesModal(true);
+    }
+  }, []);
   const closeModal = () => {
+    setShowCookiesModal(false);
+    showBodyOverflow();
+  };
+  const confirmCookies = () => {
+    Cookies.set('userConsent', 'true', {expires: 365});
     setShowCookiesModal(false);
     showBodyOverflow();
   };
@@ -31,7 +42,7 @@ const MainPage = () => {
           isOpen={showCookiesModal}
           handleCloseModal={closeModal}
         >
-          <ModalCookies handleCloseModal={closeModal}/>
+          <ModalCookies handleCloseModal={closeModal} handleConfirmModal={confirmCookies}/>
         </Modal>
       </div>
     </>

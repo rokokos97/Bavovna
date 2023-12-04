@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './resetPasswordForm.module.scss';
 import TextField from '../../components/formFields/textField/textField';
 import {useFormik} from 'formik';
-import {useDispatch} from 'react-redux';
-import {setNewPassword} from '../../store/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {clearUserResponse, getResponse, setNewPassword} from '../../store/userSlice';
 import * as Yup from 'yup';
+import transformErrorMessage from '../../utils/generateErrorMessage';
 
 const ResetPasswordForm = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token');
   const email = urlParams.get('email');
   const dispatch = useDispatch();
+  const response = useSelector(getResponse());
   const formik = useFormik({
     initialValues: {
       password: '',
@@ -35,6 +37,9 @@ const ResetPasswordForm = () => {
       dispatch(setNewPassword(token, email, values.password));
     },
   });
+  useEffect(() => {
+    dispatch(clearUserResponse());
+  }, []);
   return (
     <div className={styles.resetPasswordForm} data-testid="ResetPasswordForm">
       <div
@@ -43,6 +48,10 @@ const ResetPasswordForm = () => {
         <p className={styles.title}>Reset PASSWORD</p>
         <p>Please enter a new password:</p>
       </div>
+      {response ?
+        <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+          <p>{transformErrorMessage[response.message]}</p>
+        </div> : null}
       <form
         className={styles.form}
         onSubmit={formik.handleSubmit}

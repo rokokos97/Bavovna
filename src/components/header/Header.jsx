@@ -9,11 +9,13 @@ import SearchIcon from '../svg/searchIcon/searchIcon';
 import {useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../store/userSlice';
 import LogoIcon from '../svg/logoIcon/logoIcon';
+import {getCart} from '../../store/cartSlice';
 
 const Header = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn());
   const user = useSelector(getUser());
+  const cart = useSelector(getCart());
   return (
     <header className={styles.container} data-testid='Header'>
       <div className={styles.banner}>
@@ -56,7 +58,7 @@ const Header = () => {
             onClick={()=>(navigate('/cart'))}
           >
             <ShoppingCartIcon />
-            <p>(0)</p>
+            <p>{`(${cart.length})`}</p>
           </button>
           <button
             onClick={()=>(user? navigate('/user/'+ user._id):navigate('/login'))}

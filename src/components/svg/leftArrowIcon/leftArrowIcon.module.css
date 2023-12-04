@@ -3,7 +3,7 @@
   height: 4rem;
 }
 .leftArrowIcon svg path {
-  fill: #040404;
+  fill: #000000;
 }
 .leftArrowIcon svg path:hover {
   fill: #3a7f66;

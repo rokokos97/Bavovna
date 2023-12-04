@@ -38,7 +38,7 @@ const NewArrivalsBlock = () => {
             </button>
           </div>
         </div>
-        {!isItemsLoading &&
+        {!isItemsLoading && newArrivalItems &&
             <div className={styles.newArrivalsBlock__box}>
               {/* Swiper для відображення елементів */}
               <Swiper

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import './styles/reset.css';
-import './index.css';
+import './index.scss';
 import App from './app/App';
 import config from './config.json';
 import {GoogleOAuthProvider} from '@react-oauth/google';

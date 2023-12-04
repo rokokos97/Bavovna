@@ -1,3 +1,16 @@
-
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+  color: #030a07;
+  margin-bottom: 0.8rem;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+.label span {
+  color: #ea001b;
+}
 
 /*# sourceMappingURL=selectField.module.css.map */

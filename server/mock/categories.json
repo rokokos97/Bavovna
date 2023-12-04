@@ -1,8 +1,8 @@
 [
-  {"name": "dresses", "_id": "5a19d650-2c53-11ee-be56-0242ac120002", "image":"uploads/categoryDresses.png"},
-  {"name": "skirts", "_id": "5a19d812-2c53-11ee-be56-0242ac120002", "image":"uploads/categorySkirts.png"},
-  {"name": "pants", "_id": "5a19dce0-2c53-11ee-be56-0242ac120002", "image":"uploads/categoryPants.png"},
-  {"name": "new", "_id": "5a19dce0-2c53-11ee-be56-0242ac120003", "image":"uploads/categoryNew.png" },
-  {"name": "t-shirts", "_id": "5a19dce0-2c53-11ee-be56-0242ac120004", "image":"uploads/category_Tshirts.png"},
-  {"name": "sale", "_id": "5a19dce0-2c53-11ee-be56-0242ac120005", "image":"uploads/categorySale.png"}
+  {"name": "dresses", "image":"uploads/categoryDresses.png"},
+  {"name": "skirts", "image":"uploads/categorySkirts.png"},
+  {"name": "pants", "image":"uploads/categoryPants.png"},
+  {"name": "new", "image":"uploads/categoryNew.png" },
+  {"name": "t-shirts", "image":"uploads/category_TShirts.png"},
+  {"name": "sale", "image":"uploads/categorySale.png"}
 ]

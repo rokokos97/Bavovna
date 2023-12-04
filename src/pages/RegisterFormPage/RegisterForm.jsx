@@ -31,7 +31,7 @@ const RegisterForm = () => {
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
       setEmail(values.email);
-      dispatch(signUp(values));
+      dispatch(signUp({...values, email: values.email.toLowerCase()}));
     },
   });
   const googleRegister = useGoogleLogin({
