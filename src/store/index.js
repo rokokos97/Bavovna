@@ -4,6 +4,7 @@ import categoriesReducer from './categorySlice.js';
 import userReducer from './userSlice';
 import citiesReducer from './citiesSlice';
 import cartReducer from './cartSlice.js';
+import colorsReducer from './colorsSlice.js';
 
 const rootReducer = combineReducers({
   items: itemsReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   cities: citiesReducer,
   user: userReducer,
   cart: cartReducer,
+  colors: colorsReducer,
 });
 export default configureStore({
   reducer: rootReducer,

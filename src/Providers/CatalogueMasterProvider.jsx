@@ -1,6 +1,8 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
+import {getCategories} from '../store/categorySlice';
+
 import PropTypes from 'prop-types';
 
 const DataCatalogueContext = createContext(null);
@@ -15,15 +17,13 @@ export const CatalogueMasterProvider = ({children}) => {
     // discount: false,
   };
   const items = useSelector(getItems());
+  const categories = useSelector(getCategories());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
   const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  console.log(filterCheckboxes);
 
-  // useEffect(() => {
-  //   setFilteredItems(items);
-  // }, [items]);
+  console.log(categories);
 
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
@@ -69,8 +69,9 @@ export const CatalogueMasterProvider = ({children}) => {
 
   if (items) {
     downloadedItems = [...items];
+    console.log('downloadedItems: ', downloadedItems);
   }
-  useEffect(()=>{
+  useEffect(() => {
     const newItems = downloadedItems.filter((item) => {
       return (
         selectedFilters.category.length === 0 || selectedFilters.category
