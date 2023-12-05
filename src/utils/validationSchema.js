@@ -78,6 +78,9 @@ export const validationSchemaAddressForm = Yup.object().shape({
       .min(1, 'Flat number must be at least 1 character long')
       .max(4, 'Flat number must be at most 4 characters long')
       .matches(/^[0-9A-Za-zа-яА-Я]+S?$/, 'Flat number must consist only numbers and letters'),
+  intDeliveryAddress: Yup.string()
+      .min(50, 'Address must be at least 50 characters long')
+      .max(200, 'Address must be at most 200 characters long'),
 });
 
 
