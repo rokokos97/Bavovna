@@ -17,26 +17,7 @@ import styles from './Card.module.scss';
 import {addItemToCart} from '../../store/cartSlice';
 import {useDispatch} from 'react-redux';
 
-const colors = [
-  {
-    name: 'Black',
-    value: '#000000',
-  },
-  {
-    name: 'Indigo',
-    value: '#4B0082',
-  },
-  {
-    name: 'Vanilla',
-    value: '#F3E5AB',
-  },
-  {
-    name: 'White',
-    value: '#ffffff',
-  },
-];
-
-const CardContext = ({item}) => {
+const CardContext = ({item, colors}) => {
   const {itemData, setItemData, collectData} = useDataCard();
   const {
     _id,
@@ -59,7 +40,7 @@ const CardContext = ({item}) => {
   let currentPrice = 0;
 
   sale
-    ? (currentPrice = parseFloat((price * sale) / 100).toFixed(2))
+    ? (currentPrice = parseFloat(price * sale) / 100)
     : (currentPrice = price);
 
   useEffect(() => {
@@ -67,7 +48,8 @@ const CardContext = ({item}) => {
       ...itemData,
       _id,
       itemName: name,
-      itemPrice: currentPrice,
+      itemPrice: price,
+      discountPrice: +currentPrice,
       itemImg: `${config.apiEndpoint}${images[0]}`,
     });
   }, [item]);
@@ -76,8 +58,8 @@ const CardContext = ({item}) => {
     if (selectedColor && selectedSize) {
       //      Додаю костиль бо тут треба переробити трохи
       const newItemData = {
-        ...itemData, itemIdentifier:
-          `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,
+        ...itemData,
+        itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,
       };
       dispatch(addItemToCart(newItemData));
       collectData(itemData);
@@ -114,9 +96,7 @@ const CardContext = ({item}) => {
               {images.map((image, index) => (
                 <li
                   key={index}
-                  onClick={() =>
-                    changeImage(`${config.apiEndpoint}${image}`)
-                  }
+                  onClick={() => changeImage(`${config.apiEndpoint}${image}`)}
                 >
                   <img src={`${config.apiEndpoint}${image}`} alt='model' />
                 </li>
@@ -141,9 +121,13 @@ const CardContext = ({item}) => {
                 </div>
                 <div className={styles.priceBlock}>
                   {sale ? (
-                    <span className={styles.unCurrentPrice}>${price}</span>
+                    <span className={styles.unCurrentPrice}>
+                      ${price.toFixed(2)}
+                    </span>
                   ) : null}
-                  <span className={styles.buyFormPrice}>${currentPrice}</span>
+                  <span className={styles.buyFormPrice}>
+                    ${currentPrice.toFixed(2)}
+                  </span>
                 </div>
                 <dir className={styles.color}>
                   <ColorsList
@@ -220,6 +204,7 @@ const CardContext = ({item}) => {
 
 CardContext.propTypes = {
   item: PropTypes.object.isRequired,
+  colors: PropTypes.array.isRequired,
 };
 
 export default CardContext;

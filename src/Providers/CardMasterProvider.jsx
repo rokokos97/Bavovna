@@ -7,6 +7,7 @@ const initialItemData = {
   _id: '',
   itemName: '',
   itemPrice: 0,
+  discountPrice: 0,
   itemColor: '',
   itemSize: '',
   itemImg: '',
