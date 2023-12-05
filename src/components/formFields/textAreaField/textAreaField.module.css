@@ -1,0 +1,69 @@
+.textAreaField {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+  color: #030a07;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+.label span {
+  color: #ea001b;
+}
+
+.textarea {
+  min-width: 41rem;
+  max-width: 41rem;
+  height: 7.5rem;
+  border: 1px solid #727272;
+  padding: 1.4rem;
+  background: #fafafa;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.error {
+  color: #ea001b;
+  padding-left: 0.8rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.block {
+  display: inline;
+}
+
+.textField.hasError .label {
+  color: #ea001b;
+}
+.textField.hasError .inputBlock {
+  border-color: #ea001b;
+}
+.textField.hasError .inputBlock input,
+.textField.hasError .inputBlock .clearButton {
+  color: #ea001b;
+}
+.textField.hasError .inputBlock input svg path,
+.textField.hasError .inputBlock .clearButton svg path {
+  stroke: #ea001b;
+}
+.textField.hasError .inputBlock button div svg path {
+  stroke: #ea001b;
+}
+.textField.hasError .inputBlock input::placeholder {
+  color: #ea001b;
+}
+
+/*# sourceMappingURL=textAreaField.module.css.map */
