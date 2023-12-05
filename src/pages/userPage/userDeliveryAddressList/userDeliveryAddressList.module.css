@@ -40,4 +40,16 @@
   margin-left: 0.8rem;
 }
 
+.deleteButton {
+  background: transparent;
+  display: flex;
+  align-content: start;
+}
+.deleteButton:hover svg path {
+  stroke: #5a9b83;
+}
+.deleteButton:active svg path {
+  stroke: #5a9b83;
+}
+
 /*# sourceMappingURL=userDeliveryAddressList.module.css.map */

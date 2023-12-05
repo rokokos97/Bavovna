@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getUser, updateUser} from '../../../store/userSlice';
 import RadioButtonEmptyIcon from '../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import RadioButtonCheckedIcon from '../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import DeleteIcon from '../../../components/svg/deleteIcon/deleteIcon';
 
 const UserDeliveryAddressList = () => {
   const user = useSelector(getUser());
@@ -24,6 +25,10 @@ const UserDeliveryAddressList = () => {
   const selectDeliveryAddress = (id) => {
     setCurrentDeliveryAddress(id);
     dispatch(updateUser({...user, currentDeliveryAddress: id}));
+  };
+  const deleteDeliveryAddress = (id) => {
+    const newDeliveryAddressList = user.deliveryAddress.filter((address)=>address._id !== id);
+    dispatch(updateUser({...user, currentDeliveryAddress: '', deliveryAddress: newDeliveryAddressList}));
   };
   return ( user.deliveryAddress &&
     <div
@@ -53,6 +58,12 @@ const UserDeliveryAddressList = () => {
               name='address'
             />
             <div className={styles.labelText}>{address.address}</div>
+            <button
+              onClick={()=> deleteDeliveryAddress(address.id)}
+              className={styles.deleteButton}
+            >
+              <DeleteIcon/>
+            </button>
           </label>
         </div>)}
     </div>

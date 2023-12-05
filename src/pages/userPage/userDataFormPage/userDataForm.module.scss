@@ -1,5 +1,6 @@
 @import "../../../styles/variables.module";
 .userDataForm {
+  width: 73.5rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 20rem;
@@ -18,10 +19,11 @@
 .submitWrapper {
   width: 62.4rem;
   display: flex;
+  flex-direction: column;
   gap: 2.4rem;
 }
 .column{
-  width: 50%;
+  width: 51.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
@@ -53,7 +55,6 @@
 }
 
 .button {
-  margin-left: auto;
   @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
 }
 .inputContainer {
@@ -113,3 +114,4 @@
   line-height: normal;
   text-align: start;
 }
+

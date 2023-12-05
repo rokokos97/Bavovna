@@ -1,4 +1,5 @@
 .userDeliveryAddressForm {
+  width: 41rem;
   margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
@@ -21,6 +22,7 @@
 }
 
 .deliveryBlock {
+  width: 73.5rem;
   display: flex;
   column-gap: 2.4rem;
 }
@@ -36,6 +38,7 @@
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
+  text-align: start;
   margin-bottom: 1.8rem;
 }
 
@@ -185,6 +188,54 @@
   font-weight: 400;
   line-height: normal;
   text-align: start;
+}
+
+.radioWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+
+.labelText {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  width: 30rem;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}
+
+.input {
+  appearance: none;
+  color: #000000;
+}
+
+.radioButton {
+  background: transparent;
+}
+.radioButton:hover div svg path {
+  fill: #5a9b83;
+}
+.radioButton:active div svg path {
+  fill: #1a6449;
+}
+
+.radioBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 }
 
 /*# sourceMappingURL=userDeliveryAddressForm.module.css.map */
