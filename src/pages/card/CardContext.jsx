@@ -17,12 +17,13 @@ import styles from './Card.module.scss';
 import {addItemToCart} from '../../store/cartSlice';
 import {useDispatch} from 'react-redux';
 
-const CardContext = ({item, colors}) => {
+const CardContext = ({item}) => {
   const {itemData, setItemData, collectData} = useDataCard();
   const {
     _id,
     name,
     price,
+    color,
     size,
     images,
     description,
@@ -131,7 +132,7 @@ const CardContext = ({item, colors}) => {
                 </div>
                 <dir className={styles.color}>
                   <ColorsList
-                    colors={colors}
+                    itemColors={color}
                     selectedColor={selectedColor}
                     setSelectedColor={setSelectedColor}
                   />
@@ -204,7 +205,6 @@ const CardContext = ({item, colors}) => {
 
 CardContext.propTypes = {
   item: PropTypes.object.isRequired,
-  colors: PropTypes.array.isRequired,
 };
 
 export default CardContext;
