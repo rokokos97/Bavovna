@@ -13,13 +13,13 @@ const UserDeliveryAddressList = () => {
   const deliveryAddressList = user.deliveryAddress.map((item)=>(
     {
       id: item._id,
-      address: `${item.city.label}, ${
+      address: item.city?`${item.city.label}, ${
         (item.warehouse)?item.warehouse.label:''
       } ${item.street?item.street:''} ${
         item.houseNumber?item.houseNumber:''} ${
         item.flatNumber?`, apt. ${item.flatNumber}`:''} ${
         user.phoneNumber?`, +${user.phoneNumber}`:''
-      }`,
+      }`:`${item.intDeliveryAddress}`,
     }
   ) );
   const selectDeliveryAddress = (id) => {

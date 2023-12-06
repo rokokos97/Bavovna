@@ -12,6 +12,7 @@ import {nanoid} from 'nanoid/non-secure';
 import {getCitiesList} from '../../../store/citiesSlice';
 import RadioButtonEmptyIcon from '../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import RadioButtonCheckedIcon from '../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import TextAreaField from '../../../components/formFields/textAreaField/textAreaField';
 
 const UserDeliveryAddressForm = () => {
   const [currentDeliveryMethod, setCurrentDeliveryMethod] = useState('1');
@@ -20,15 +21,6 @@ const UserDeliveryAddressForm = () => {
   const [warehousesList, setWarehousesList] = useState([]);
   const user = useSelector(getUser());
   const [selectedCity, setSelectedCity] = useState(null);
-  const deliveryMethodsList = [
-    {
-      id: '1', label: 'Nova poshta delivery to the post office', value: '',
-    }, {
-      id: '2', label: 'Nova poshta delivery to the address', value: '',
-    }, {
-      id: '3', label: 'International delivery', value: '',
-    },
-  ];
 
   const formik= useFormik({
     initialValues: {
@@ -37,6 +29,7 @@ const UserDeliveryAddressForm = () => {
       street: '',
       houseNumber: '',
       flatNumber: '',
+      intDeliveryAddress: '',
     },
     validationSchema: validationSchemaAddressForm,
     onSubmit: () => {
@@ -63,6 +56,122 @@ const UserDeliveryAddressForm = () => {
   const handleWarehouseChange = (value) => {
     formik.setFieldValue('warehouse', value);
   };
+  const deliveryMethodsList = [
+    {
+      id: '1', label: 'Nova poshta delivery to the post office', value: <form
+        //        style={{display: currentDeliveryMethod !== method.id ? 'none': 'block'}}
+        onSubmit={formik.handleSubmit}
+        className={styles.userPersonalDataForm}>
+        <SelectField
+          label='City'
+          name='city'
+          onChange={handleCityChange}
+          defaultValue={{label: 'Select a city', value: ''}}
+          options={citiesList? citiesList: []}
+        />
+        <SelectField
+          label='Post office'
+          name='warehouse'
+          onChange={handleWarehouseChange}
+          defaultValue={{label: 'Select a post office', value: ''}}
+          options={warehousesList}
+        />
+        <button
+          type='submit'
+          disabled={
+            (!formik.values.warehouse.value && formik.values.street.length === 0)
+          }
+          className={styles.button}
+        >
+          <span>
+                  change delivery
+          </span>
+        </button>
+      </form>,
+    }, {
+      id: '2', label: 'Nova poshta delivery to the address', value: <form
+        onSubmit={formik.handleSubmit}
+        className={styles.userPersonalDataForm}>
+        <SelectField
+          label='City'
+          name='city'
+          onChange={handleCityChange}
+          defaultValue={{label: 'Select a city', value: ''}}
+          options={citiesList? citiesList: []}
+        />
+        <TextField
+          disabled={!!formik.values.warehouse.value}
+          label='Street'
+          name='street'
+          placeholder='Enter your street name'
+          onChange={formik.handleChange}
+          value={formik.values.street}
+          error={formik.errors.street}
+          onBlur={formik.handleBlur}
+          touched={formik.touched.street}
+        />
+        <TextField
+          disabled={!!formik.values.warehouse.value}
+          label='House number'
+          name='houseNumber'
+          placeholder='Enter your street name'
+          onChange={formik.handleChange}
+          value={formik.values.houseNumber}
+          error={formik.errors.houseNumber}
+          onBlur={formik.handleBlur}
+          touched={formik.touched.houseNumber}
+        />
+        <TextField
+          disabled={!!formik.values.warehouse.value}
+          label='Flat Number'
+          name='flatNumber'
+          placeholder='Enter your flat number'
+          onChange={formik.handleChange}
+          value={formik.values.flatNumber}
+          error={formik.errors.flatNumber}
+          onBlur={formik.handleBlur}
+          touched={formik.touched.flatNumber}
+        />
+        <button
+          type='submit'
+          disabled={
+            (!formik.values.warehouse.value && formik.values.street.length === 0)
+          }
+          className={styles.button}
+        >
+          <span>
+                  change delivery
+          </span>
+        </button>
+      </form>,
+    }, {
+      id: '3', label: 'International delivery', value: <form
+        onSubmit={formik.handleSubmit}
+        className={styles.userPersonalDataForm}>
+        <TextAreaField
+          label='Delivery address '
+          name='intDeliveryAddress'
+          placeholder='Enter delivery address'
+          onChange={formik.handleChange}
+          value={formik.values.intDeliveryAddress}
+          error={formik.errors.intDeliveryAddress}
+          onBlur={formik.handleBlur}
+          touched={formik.touched.intDeliveryAddress}
+        />
+        <button
+          type='submit'
+          disabled={
+            (formik.values.intDeliveryAddress.length === 0)
+          }
+          className={styles.button}
+        >
+          <span>
+                  add address
+          </span>
+        </button>
+      </form>,
+    },
+  ];
   return (
     <div className={styles.userDeliveryAddressForm} data-testid="UserDeliveryAddressForm">
       <p
@@ -96,69 +205,7 @@ const UserDeliveryAddressForm = () => {
                     {method.label}
                   </label>
                 </div>
-                <form
-                  style={{display: currentDeliveryMethod !== method.id ? 'none': 'block'}}
-                  onSubmit={formik.handleSubmit}
-                  className={styles.userPersonalDataForm}>
-                  <SelectField
-                    label='City'
-                    name='city'
-                    onChange={handleCityChange}
-                    defaultValue={{label: 'Select a city', value: ''}}
-                    options={citiesList? citiesList: []}
-                  />
-                  <SelectField
-                    label='Post office'
-                    name='warehouse'
-                    onChange={handleWarehouseChange}
-                    defaultValue={{label: 'Select a post office', value: ''}}
-                    options={warehousesList}
-                  />
-                  <TextField
-                    disabled={!!formik.values.warehouse.value}
-                    label='Street'
-                    name='street'
-                    placeholder='Enter your street name'
-                    onChange={formik.handleChange}
-                    value={formik.values.street}
-                    error={formik.errors.street}
-                    onBlur={formik.handleBlur}
-                    touched={formik.touched.street}
-                  />
-                  <TextField
-                    disabled={!!formik.values.warehouse.value}
-                    label='House number'
-                    name='houseNumber'
-                    placeholder='Enter your street name'
-                    onChange={formik.handleChange}
-                    value={formik.values.houseNumber}
-                    error={formik.errors.houseNumber}
-                    onBlur={formik.handleBlur}
-                    touched={formik.touched.houseNumber}
-                  />
-                  <TextField
-                    disabled={!!formik.values.warehouse.value}
-                    label='Flat Number'
-                    name='flatNumber'
-                    placeholder='Enter your flat number'
-                    onChange={formik.handleChange}
-                    value={formik.values.flatNumber}
-                    error={formik.errors.flatNumber}
-                    onBlur={formik.handleBlur}
-                    touched={formik.touched.flatNumber}
-                  />
-                  <button
-                    type='submit'
-                    disabled={
-                      (!formik.values.warehouse.value && formik.values.street.length === 0)
-                    }
-                    className={styles.button}
-                  >
-                    <span>
-                  change delivery
-                    </span>
-                  </button>
-                </form>
+                {currentDeliveryMethod === method.id ? method.value: null}
               </div>))}
           </div>
         </div>
