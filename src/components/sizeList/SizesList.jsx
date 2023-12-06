@@ -4,7 +4,7 @@ import {useDataCard} from '../../Providers/CardMasterProvider';
 
 import styles from './SizeList.module.scss';
 
-const allSizes = ['xs', 's', 'm', 'l'];
+const allSizes = ['s', 'm', 'l', 'xl'];
 const noSize = 'Choose a size';
 
 const SizesList = ({sizes, selectedSize, setSelectedSize}) => {

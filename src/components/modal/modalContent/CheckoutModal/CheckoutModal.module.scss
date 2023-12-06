@@ -116,4 +116,5 @@
 
 .checkoutBtn {
   @include button(30rem, $black, $white, $accent-a-3, $accent-a-5);
+  text-decoration: none !important;
 }

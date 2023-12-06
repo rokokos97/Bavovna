@@ -4,18 +4,12 @@ import CloseIcon from '../../../svg/closeIcon/CloseIcon';
 import {useDataCard} from '../../../../Providers/CardMasterProvider';
 import styles from './CheckoutModal.module.scss';
 import ArrowBackIcon from '../../../svg/arrowBackIcon/arrowBackIcon';
+import {Link} from 'react-router-dom';
 
 const CheckoutModal = ({handleCloseModal}) => {
   const {itemData} = useDataCard();
-  const {
-    _id,
-    itemName,
-    discountPrice,
-    itemColor,
-    itemSize,
-    itemImg,
-    itemQuantity,
-  } = itemData;
+  const {itemName, discountPrice, itemColor, itemSize, itemImg, itemQuantity} =
+    itemData;
 
   // const [currentQuantity, setCurrentQuantity] = useState(itemQuantity);
   // const [currentPrice, setCurrentPrice] = useState(itemPrice);
@@ -32,17 +26,18 @@ const CheckoutModal = ({handleCloseModal}) => {
   //   setCurrentPrice(+((parseFloat(currentPrice) + parseFloat(itemPrice)).toFixed(2)));
   // };
 
-  const handleCheckout = () => {
-    const checkoutData = {
-      itemId: _id,
-      // name: itemName,
-      // price: currentPrice,
-      chosenColorId: itemColor,
-      chosenSizeId: itemSize,
-      quantity: itemQuantity,
-    };
-    console.log(checkoutData);
-  };
+  // const handleCheckout = () => {
+  //   handleCloseModal();
+  //   const checkoutData = {
+  //     itemId: _id,
+  //     name: itemName,
+  //     price: currentPrice,
+  //     chosenColorId: itemColor,
+  //     chosenSizeId: itemSize,
+  //     quantity: itemQuantity,
+  //   };
+  //   console.log(checkoutData);
+  // };
 
   return (
     <section className={styles.checkout} data-testid='CheckoutModal'>
@@ -102,13 +97,13 @@ const CheckoutModal = ({handleCloseModal}) => {
           <ArrowBackIcon />
           <span>Сontinue shopping</span>
         </button>
-        <button
-          type='button'
+        <Link
+          to='/cart'
           className={styles.checkoutBtn}
-          onClick={handleCheckout}
+          onClick={handleCloseModal}
         >
           <span>Check out</span>
-        </button>
+        </Link>
       </div>
     </section>
   );
