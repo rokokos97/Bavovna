@@ -64,7 +64,7 @@ const ShoppingCartPage = () => {
             }
           </div>
           <div className={styles.checkoutBlock}>
-
+            HELLO WORLD
           </div>
         </div> :
         <div className={styles.emptyCartBlock}>
@@ -89,7 +89,6 @@ const ShoppingCartPage = () => {
             </div>
           }
         </div>
-
       }
     </div>
   );

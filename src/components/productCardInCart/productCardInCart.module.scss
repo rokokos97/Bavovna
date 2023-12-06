@@ -24,7 +24,23 @@
 }
 .deleteButton {
   margin-top: 8.7rem;
+  background: transparent;
+  &:hover {
+      svg {
+        path {
+          stroke: $accent-a-3
+        }
+      }
+  }
+  &:active {
+      svg {
+        path {
+          stroke: $accent-a-5
+        }
+      }
+  }
 }
+
 .titleBlock {
   margin-top: 2.4rem;
   margin-left: 2.4rem;
