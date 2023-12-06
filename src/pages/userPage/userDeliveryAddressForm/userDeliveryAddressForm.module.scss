@@ -34,7 +34,6 @@
   }
 
   .button {
-    margin-left: auto;
     @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
   }
   .inputContainer {
