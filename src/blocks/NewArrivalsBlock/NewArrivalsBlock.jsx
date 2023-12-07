@@ -21,24 +21,23 @@ const NewArrivalsBlock = () => {
     newArrivalItems = items.filter((item) => item.status === 'new');
   }
   return (
-    <>
-      <div className={styles.newArrivalsBlock} data-testid="NewArrivalsBlock">
-        <div className={styles.newArrivalsBlock__title}>
-          <span>
+    <div className={styles.newArrivalsBlock} data-testid="NewArrivalsBlock">
+      <div className={styles.newArrivalsBlock__title}>
+        <span>
             new arrivals
-          </span>
-          <div className={styles.newArrivalsBlock__arrows}>
-            {/* Кнопка для переходу до попереднього слайда */}
-            <button onClick={() => swiperRef.current?.slidePrev()}>
-              <LeftArrowIcon />
-            </button>
-            {/* Кнопка переходу до наступного слайда */}
-            <button onClick={() => swiperRef.current?.slideNext()}>
-              <RightArrowIcon />
-            </button>
-          </div>
+        </span>
+        <div className={styles.newArrivalsBlock__arrows}>
+          {/* Кнопка для переходу до попереднього слайда */}
+          <button onClick={() => swiperRef.current?.slidePrev()}>
+            <LeftArrowIcon />
+          </button>
+          {/* Кнопка переходу до наступного слайда */}
+          <button onClick={() => swiperRef.current?.slideNext()}>
+            <RightArrowIcon />
+          </button>
         </div>
-        {!isItemsLoading && newArrivalItems &&
+      </div>
+      {!isItemsLoading && newArrivalItems &&
             <div className={styles.newArrivalsBlock__box}>
               {/* Swiper для відображення елементів */}
               <Swiper
@@ -60,9 +59,8 @@ const NewArrivalsBlock = () => {
                 )}
               </Swiper>
             </div>
-        }
-      </div>
-    </>
+      }
+    </div>
   );
 };
 

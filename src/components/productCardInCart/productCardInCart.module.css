@@ -53,10 +53,30 @@
 }
 
 .price {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
+}
+
+.discont {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.discont span:first-child {
+  text-decoration: line-through;
+  color: #727272;
+}
+.discont span:last-child {
+  color: #ea001b;
 }
 
 .titleBlockLine {

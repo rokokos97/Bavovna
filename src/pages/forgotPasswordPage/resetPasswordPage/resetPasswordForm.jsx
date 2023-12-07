@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import styles from './resetPasswordForm.module.scss';
-import TextField from '../../components/formFields/textField/textField';
+import TextField from '../../../components/formFields/textField/textField';
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
-import {clearUserResponse, getResponse, setNewPassword} from '../../store/userSlice';
+import {clearUserResponse, getResponse, setNewPassword} from '../../../store/userSlice';
 import * as Yup from 'yup';
-import transformErrorMessage from '../../utils/generateErrorMessage';
+import transformErrorMessage from '../../../utils/generateErrorMessage';
 
 const ResetPasswordForm = () => {
   const urlParams = new URLSearchParams(window.location.search);

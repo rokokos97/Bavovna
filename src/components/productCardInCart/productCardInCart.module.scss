@@ -54,7 +54,23 @@
   @include fonts($headline-9);
 }
 .price {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
   @include fonts($headline-8);
+}
+.discont {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  @include fonts($headline-8);
+  span:first-child {
+    text-decoration: line-through;
+    color: $gray-30
+  }
+  span:last-child {
+    color: $error;
+  }
 }
 .titleBlockLine {
   @include fonts($headline-9);

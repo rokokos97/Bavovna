@@ -5,7 +5,7 @@ import LoginForm from '../LoginFormPage/LoginForm';
 import RegisterForm from '../RegisterFormPage/RegisterForm';
 import ForgotPasswordForm from '../forgotPasswordPage/ForgotPasswordForm';
 import Page404 from '../page404/page404';
-import ResetPasswordForm from '../resetPasswordPage/resetPasswordForm';
+import ResetPasswordForm from '../forgotPasswordPage/resetPasswordPage/resetPasswordForm';
 
 const LoginLayout = () => (
   <div className={styles.loginLayout} data-testid="LoginLayout">

@@ -16,6 +16,7 @@ const ProductCardInCart = ({item}) => {
   const handleQuantityLess = () => {
     dispatch(removeOneItemFromCart(item.itemIdentifier));
   };
+  console.log('item', item);
   return (
     <div className={styles.productCardInCart} data-testid="ProductCardInCart">
       <div className={styles.infoBlock}>
@@ -24,7 +25,15 @@ const ProductCardInCart = ({item}) => {
         </div>
         <div className={styles.titleBlock}>
           <p className={styles.title}>{item.itemName}</p>
-          <p className={styles.price}>{item.itemPrice} $</p>
+          <p className={(item.discountPrice===item.itemPrice)? styles.price : styles.discont}
+          >
+            <span>
+              {item.itemPrice} $
+            </span>
+            <span>
+              {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + '$'}
+            </span>
+          </p>
           <div className={styles.titleBlockLine}>
             <div>
               <p>size: </p>

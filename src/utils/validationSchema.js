@@ -82,5 +82,8 @@ export const validationSchemaAddressForm = Yup.object().shape({
       .min(40, 'Address must be at least 40 characters long')
       .max(100, 'Address must be at most 100 characters long'),
 });
+export const validationSchemaPromoCode = Yup.object().shape({
+  promoCode: Yup.string(),
+});
 
 

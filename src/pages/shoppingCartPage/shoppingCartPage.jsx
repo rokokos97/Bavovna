@@ -19,6 +19,7 @@ const ShoppingCartPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
   const [normalizedCart, setNormalizedCart] = useState([]);
+  const [totalCartPrice, setTotalCartPrice] = useState();
   let sliderItems = [];
   if (!isItemsLoading && items) {
     sliderItems = items.filter((item) => item.status === 'new');
@@ -37,7 +38,9 @@ const ShoppingCartPage = () => {
       }
     }
     const sortedCart = _.sortBy(newNormalizedCart, 'itemName');
+    const totalPrice = sortedCart.reduce(( acc, item) => acc + item.discountPrice * item.itemQuantity, 0);
     setNormalizedCart(sortedCart);
+    setTotalCartPrice(totalPrice);
   }, [cart]);
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
@@ -64,7 +67,7 @@ const ShoppingCartPage = () => {
               normalizedCart.map((item) => <ProductCardInCart key={item._id+item.itemIdentifier} item={item}/>)
             }
           </div>
-          <CheckOutBlock/>
+          <CheckOutBlock totalPrice={totalCartPrice}/>
         </div> :
         <div className={styles.emptyCartBlock}>
           <p className={styles.text}>Your shopping bag is empty</p>
