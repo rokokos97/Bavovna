@@ -212,7 +212,7 @@
 }
 .buttonsBlock button:last-child::before {
   content: "";
-  background: #5a9b83;
+  background: rgba(169, 223, 203, 0.3);
   width: 4.8rem;
   height: 4.8rem;
   opacity: 0;
@@ -225,7 +225,7 @@
 }
 .buttonsBlock button:last-child::after {
   content: "";
-  background: #1a6449;
+  background: #a9dfcb;
   width: 0.6rem;
   height: 0.6rem;
   opacity: 0;
@@ -240,7 +240,7 @@
   content: "";
   width: 39.93rem;
   height: 39.93rem;
-  background: #5a9b83;
+  background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
   top: -17.565rem;
@@ -252,7 +252,7 @@
   height: 39.93rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #5a9b83;
+  border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
   top: -17.565rem;

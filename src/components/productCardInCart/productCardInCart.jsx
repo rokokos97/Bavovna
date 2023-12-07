@@ -25,7 +25,7 @@ const ProductCardInCart = ({item}) => {
         </div>
         <div className={styles.titleBlock}>
           <p className={styles.title}>{item.itemName}</p>
-          <p className={(item.discountPrice===item.itemPrice)? styles.price : styles.discont}
+          <p className={(item.discountPrice===item.itemPrice)? styles.price : styles.discount}
           >
             <span>
               {item.itemPrice} $

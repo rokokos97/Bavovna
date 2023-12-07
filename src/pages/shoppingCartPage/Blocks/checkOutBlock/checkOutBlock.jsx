@@ -4,8 +4,10 @@ import TextField from '../../../../components/formFields/textField/textField';
 import PropTypes from 'prop-types';
 import {useFormik} from 'formik';
 import {validationSchemaPromoCode} from '../../../../utils/validationSchema';
+import {useNavigate} from 'react-router-dom';
 
 const CheckOutBlock = ({totalPrice}) => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       promoCode: '',
@@ -50,7 +52,9 @@ const CheckOutBlock = ({totalPrice}) => {
             Continue to check out
           </span>
         </button>
-        <button>
+        <button
+          onClick={()=> navigate('/catalogue')}
+        >
           <span>
             Continue shopping
           </span>

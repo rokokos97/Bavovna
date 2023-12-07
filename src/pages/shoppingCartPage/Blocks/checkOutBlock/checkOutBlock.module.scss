@@ -33,7 +33,7 @@
   }
   button:last-child {
     border: 1px solid $black;
-    @include button(36.3rem, $white, $black, $accent-a-3, $accent-a-5);
+    @include button(36.3rem, $white, $black, $transparent-30-a-05, $accent-a-05);
   }
 }
 

@@ -62,7 +62,7 @@
   text-transform: uppercase;
 }
 
-.discont {
+.discount {
   display: flex;
   flex-direction: row;
   gap: 1.6rem;
@@ -71,11 +71,11 @@
   line-height: 110%;
   text-transform: uppercase;
 }
-.discont span:first-child {
+.discount span:first-child {
   text-decoration: line-through;
   color: #727272;
 }
-.discont span:last-child {
+.discount span:last-child {
   color: #ea001b;
 }
 
