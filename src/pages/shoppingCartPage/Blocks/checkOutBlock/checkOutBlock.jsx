@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './checkOutBlock.module.scss';
-import TextField from '../../../../components/formFields/textField/textField';
+import TextField from '../../../../components/form/formFields/textField/textField';
 import PropTypes from 'prop-types';
 import {useFormik} from 'formik';
 import {validationSchemaPromoCode} from '../../../../utils/validationSchema';

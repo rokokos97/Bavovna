@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LoginLayout.module.scss';
 import {Route, Routes} from 'react-router-dom';
-import LoginForm from '../LoginFormPage/LoginForm';
+import LoginForm from '../loginFormPage/LoginForm';
 import RegisterForm from '../RegisterFormPage/RegisterForm';
 import ForgotPasswordForm from '../forgotPasswordPage/ForgotPasswordForm';
 import Page404 from '../page404/page404';

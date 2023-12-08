@@ -69,11 +69,11 @@ export const validationSchemaAddressForm = Yup.object().shape({
   street: Yup.string()
       .min(3, 'Flat number must be at least 3 character long')
       .max(15, 'Flat number must be at most 15 characters long')
-      .matches(/^[0-9A-Za-zа-яА-Я]+S?$/, 'Street must consist only numbers and letters'),
+      .matches(/^[a-zA-Zа-яА-ЯіІїЇ0-9]+S?$/, 'Street must consist only numbers and letters'),
   houseNumber: Yup.string()
       .min(1, 'House number must be at least 1 character long')
-      .max(4, 'House number must be at most 4 characters long')
-      .matches(/^[0-9A-Za-zа-яА-Я]+S?$/, 'House number must consist only numbers and letters'),
+      .max(5, 'House number must be at most 5 characters long')
+      .matches(/^[0-9A-Za-zа-яА-Я/]+S?$/, 'House number must consist only numbers and letters'),
   flatNumber: Yup.string()
       .min(1, 'Flat number must be at least 1 character long')
       .max(4, 'Flat number must be at most 4 characters long')

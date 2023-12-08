@@ -7,8 +7,8 @@ import {clearUserResponse, getIsLoggedIn, getResponse, logInWithPassword, loginW
 import GoogleIcon from '../../components/svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaLoginForm} from '../../utils/validationSchema';
-import TextField from '../../components/formFields/textField/textField';
-import CheckboxField from '../../components/formFields/checkboxField/checkboxField';
+import TextField from '../../components/form/formFields/textField/textField';
+import CheckboxField from '../../components/form/formFields/checkboxField/checkboxField';
 import googleService from '../../services/google.service';
 import transformErrorMessage from '../../utils/generateErrorMessage';
 const LoginForm = () => {

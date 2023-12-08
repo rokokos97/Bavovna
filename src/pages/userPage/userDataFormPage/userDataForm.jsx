@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import 'react-phone-input-2/lib/style.css';
 import styles from './userDataForm.module.scss';
-import TextField from '../../../components/formFields/textField/textField';
+import TextField from '../../../components/form/formFields/textField/textField';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
 import {clearUserResponse, getResponse, getUser, updateUser} from '../../../store/userSlice';
 import {validationSchemaUserDataForm} from '../../../utils/validationSchema';
-import PhoneField from '../../../components/formFields/phoneField/phoneField';
+import PhoneField from '../../../components/form/formFields/phoneField/phoneField';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import UserDeliveryAddressForm from '../userDeliveryAddressForm/userDeliveryAddressForm';
 const UserDataForm = () => {

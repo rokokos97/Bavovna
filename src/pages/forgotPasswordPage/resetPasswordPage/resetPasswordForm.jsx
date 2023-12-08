@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from './resetPasswordForm.module.scss';
-import TextField from '../../../components/formFields/textField/textField';
+import TextField from '../../../components/form/formFields/textField/textField';
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
 import {clearUserResponse, getResponse, setNewPassword} from '../../../store/userSlice';

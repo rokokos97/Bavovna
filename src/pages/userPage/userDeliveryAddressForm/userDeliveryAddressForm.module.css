@@ -6,12 +6,6 @@
   column-gap: 2.4rem;
 }
 
-.userPersonalDataForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
 .deliveryTitle {
   font-family: "Fixel Text Medium";
   font-size: 18px;

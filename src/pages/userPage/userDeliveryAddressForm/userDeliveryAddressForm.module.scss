@@ -6,11 +6,6 @@
   flex-direction: column;
   column-gap: 2.4rem;
 }
-.userPersonalDataForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
 .deliveryTitle {
   @include fonts($headline-8);
   text-align: start;

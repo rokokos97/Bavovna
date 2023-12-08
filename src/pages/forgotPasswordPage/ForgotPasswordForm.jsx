@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from './ForgotPasswordForm.module.scss';
-import TextField from '../../components/formFields/textField/textField';
+import TextField from '../../components/form/formFields/textField/textField';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';

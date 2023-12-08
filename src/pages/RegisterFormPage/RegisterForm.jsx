@@ -8,7 +8,7 @@ import GoogleIcon from '../../components/svg/googleIcon/googleIcon';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../utils/validationSchema';
 import googleService from '../../services/google.service';
-import TextField from '../../components/formFields/textField/textField';
+import TextField from '../../components/form/formFields/textField/textField';
 import transformErrorMessage from '../../utils/generateErrorMessage';
 import {Modal} from '../../components/modal';
 import ModalVerifyEmail from '../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
