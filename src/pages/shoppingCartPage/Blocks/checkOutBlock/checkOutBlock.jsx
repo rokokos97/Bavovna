@@ -16,7 +16,6 @@ const CheckOutBlock = ({totalPrice}) => {
       console.log(values.promoCode);
     },
   });
-  console.log(totalPrice);
   return (
     <div className={styles.checkOutBlock} data-testid="CheckOutBlock">
       <form
@@ -47,7 +46,9 @@ const CheckOutBlock = ({totalPrice}) => {
         {totalPrice}$
       </div>
       <div className={styles.buttonsBlock}>
-        <button>
+        <button
+          onClick={() => navigate('/cart/checkout')}
+        >
           <span>
             Continue to check out
           </span>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import NovaInternationalAddressDeliveryForm from './NovaInternationalAddressDeliveryForm';
+import NovaInternationalAddressDeliveryForm from './novaInternationalAddressDeliveryForm';
 
 describe('<Box />', () => {
   test('it should mount', () => {

@@ -67,7 +67,7 @@ const ShoppingCartPage = () => {
               normalizedCart.map((item) => <ProductCardInCart key={item._id+item.itemIdentifier} item={item}/>)
             }
           </div>
-          <CheckOutBlock totalPrice={totalCartPrice}/>
+          <CheckOutBlock totalPrice={totalCartPrice?totalCartPrice:0}/>
         </div> :
         <div className={styles.emptyCartBlock}>
           <p className={styles.text}>Your shopping bag is empty</p>

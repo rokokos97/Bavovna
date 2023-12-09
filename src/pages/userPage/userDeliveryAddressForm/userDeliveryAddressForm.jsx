@@ -15,7 +15,7 @@ import NovaPoshtaWarehouseForm
 import NovaPoshtaAddressDeliveryForm
   from '../../../components/form/formBlocks/novaPoshtaAddressDeliveryForm/novaPoshtaAddressDeliveryForm';
 import NovaInternationalAddressDeliveryForm
-  from '../../../components/novaInternationalAddressDeliveryForm/novaInternationalAddressDeliveryForm';
+  from '../../../components/form/formBlocks/novaInternationalAddressDeliveryForm/novaInternationalAddressDeliveryForm';
 
 const UserDeliveryAddressForm = () => {
   const [currentDeliveryMethod, setCurrentDeliveryMethod] = useState('1');

@@ -1,6 +1,9 @@
 import * as Yup from 'yup';
 
 export const validationSchemaRegisterForm = Yup.object().shape({
+  license: Yup.boolean()
+      .oneOf([true], 'You must agree to the terms and conditions')
+      .required('Accepting terms and conditions is required'),
   confirmPassword: Yup.string()
       .required('Password confirmation is required')
       .oneOf([Yup.ref('password'), null], 'Passwords must match'),
@@ -55,9 +58,6 @@ export const validationSchemaUserDataForm = Yup.object().shape({
       .max(15, 'First name must be at most 15 characters long'),
 });
 export const validationSchemaLoginForm = Yup.object().shape({
-  license: Yup.boolean()
-      .oneOf([true], 'You must agree to the terms and conditions')
-      .required('Accepting terms and conditions is required'),
   password: Yup.string()
       .required('Password is required'),
   email: Yup.string()

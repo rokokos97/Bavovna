@@ -1,0 +1,72 @@
+@import 'src/styles/variables.module';
+.checkOutUserInfoBlock {
+  //border: 1px solid $black;
+  box-sizing: border-box;
+  width: 62.8rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  div {
+    form {
+      button {
+        @include button(62.8rem, $black, $white, $accent-a-3, $accent-a-5);
+      }
+    }
+  }
+  div {
+    div {
+      div {
+        button {
+          @include button(62.8rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+        }
+      }
+    }
+  }
+}
+.title {
+  @include fonts($headline-3);
+  text-align: start;
+}
+.radioBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.4rem;
+}
+.radioWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+.label {
+  display: flex;
+  flex-direction: row;
+  width: 19.3rem;
+  @include fonts($headline-9);
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}
+.radioButton {
+  background: transparent;
+
+  &:hover {
+    div {
+      svg {
+        path {
+          fill: $accent-a-3
+        }
+      }
+    }
+  }
+  &:active {
+    div {
+      svg {
+        path {
+          fill: $accent-a-5
+        }
+      }
+    }
+  }
+}
+
+

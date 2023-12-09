@@ -16,7 +16,6 @@ const ProductCardInCart = ({item}) => {
   const handleQuantityLess = () => {
     dispatch(removeOneItemFromCart(item.itemIdentifier));
   };
-  console.log('item', item);
   return (
     <div className={styles.productCardInCart} data-testid="ProductCardInCart">
       <div className={styles.infoBlock}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './novaInternationalAddressDeliveryForm.module.scss';
 import PropTypes from 'prop-types';
-import TextAreaField from '../form/formFields/textAreaField/textAreaField';
+import TextAreaField from '../../formFields/textAreaField/textAreaField';
 const NovaInternationalAddressDeliveryForm = ({formik}) => (
   <form
     className={styles.novaInternationalAddressDeliveryForm}
