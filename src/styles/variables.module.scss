@@ -302,7 +302,7 @@ $light-pink: #dfc5c5;
   align-self: stretch;
 
   div {
-    width: 19.3rem;
+    width: 50%;
     height: 0.1rem;
     background: $gray-80;
   }
@@ -316,9 +316,7 @@ $light-pink: #dfc5c5;
   display: flex;
   flex-direction: column;
   margin: 4rem auto 17rem;
-  width: $form-width;
   gap: 2.4rem;
-
   p {
     color: $black;
     @include fonts($body-3);
