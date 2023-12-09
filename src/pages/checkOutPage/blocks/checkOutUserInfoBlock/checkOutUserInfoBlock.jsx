@@ -3,23 +3,35 @@ import styles from './checkOutUserInfoBlock.module.scss';
 import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import LoginFormBlock from '../../../../components/form/formBlocks/loginFormBlock/loginFormBlock';
+import {useSelector} from 'react-redux';
+import {getIsLoggedIn} from '../../../../store/userSlice';
+import {useFormik} from 'formik';
+import AnonimUserContactFormBlock
+  from '../../../../components/form/formBlocks/anonimUserContactFormBlock/anonimUserContactFormBlock';
 
 const CheckOutUserInfoBlock = () => {
+  const isLoggedIn = useSelector(getIsLoggedIn());
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      deliveryAddress: [],
+      currentDeliveryAddress: '',
+    },
+  });
   const userCurrentDetailsList = [
     {
       id: '1',
       label: 'new user',
-      component: <></>,
+      component: <AnonimUserContactFormBlock formik={formik}/>,
     },
     {
       id: '2',
       label: 'registered user',
-      component: (
-        <>
-          <LoginFormBlock />
-        </>
-      ),
+      component: <LoginFormBlock />,
     },
   ];
   return (
@@ -33,6 +45,7 @@ const CheckOutUserInfoBlock = () => {
           >
             <button
               className={styles.radioButton}
+              disabled={isLoggedIn}
               onClick = {()=> setUserCurrentDetails(detail.id) }
             >
               {userCurrentDetails === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
@@ -47,7 +60,10 @@ const CheckOutUserInfoBlock = () => {
       </div>
       {userCurrentDetailsList.map((detail)=>
             userCurrentDetails === detail.id ? detail.component:null)}
+      <div className={styles.divider}/>
+      <p className={styles.title}>delivery</p>
     </div>
+
   );
 };
 

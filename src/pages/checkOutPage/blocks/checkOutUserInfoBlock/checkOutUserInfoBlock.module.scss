@@ -1,4 +1,8 @@
 @import 'src/styles/variables.module';
+.divider {
+  width: 100%;
+  border-top: 1px solid $black;
+}
 .checkOutUserInfoBlock {
   //border: 1px solid $black;
   box-sizing: border-box;
@@ -63,6 +67,15 @@
       svg {
         path {
           fill: $accent-a-5
+        }
+      }
+    }
+  }
+  &:disabled {
+    div {
+      svg {
+        path {
+          fill: $gray-70;
         }
       }
     }
