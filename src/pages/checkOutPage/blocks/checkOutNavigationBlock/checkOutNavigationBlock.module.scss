@@ -4,3 +4,47 @@
   height: 25.1rem;
   border: 1px solid $black;
 }
+.progress-tracker ul {
+  list-style: none;
+  padding: 0;
+}
+
+.progress-tracker li {
+  position: relative;
+  padding-left: 30px; /* Місце для точки перед текстом */
+  margin-bottom: 20px; /* Відстань між кроками */
+}
+
+.progress-tracker li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+/* Додає вертикальну лінію між точками */
+.progress-tracker li::after {
+  content: '';
+  position: absolute;
+  left: 5px; /* Центрування лінії відносно точок */
+  top: 100%;
+  width: 2px;
+  height: 20px; /* Висота лінії */
+  background-color: black;
+}
+
+/* Видалення лінії від останнього кроку */
+.progress-tracker li:last-child::after {
+  display: none;
+}
+
+/* Стиль для активного кроку */
+.progress-tracker li.active::before {
+  background-color: blue; /* Колір активного кроку */
+}
+

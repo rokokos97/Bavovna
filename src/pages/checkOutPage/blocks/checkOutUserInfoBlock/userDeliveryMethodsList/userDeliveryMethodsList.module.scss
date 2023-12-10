@@ -4,6 +4,10 @@
   flex-direction: column;
   gap: 1.6rem;
 }
+.title {
+  text-align: start;
+  @include fonts($headline-6);
+}
 .radioWrapper {
   display: flex;
   flex-direction: row;

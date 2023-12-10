@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import styles from './userDeliveryMethodsList.module.scss';
-import RadioButtonCheckedIcon from '../svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
-import NovaPoshtaWarehouseForm from '../form/formBlocks/novaPoshtaWarehouseForm/novaPoshtaWarehouseForm';
+import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
+import NovaPoshtaWarehouseForm
+  from '../../../../../components/form/formBlocks/novaPoshtaWarehouseForm/novaPoshtaWarehouseForm';
 import NovaPoshtaAddressDeliveryForm
-  from '../form/formBlocks/novaPoshtaAddressDeliveryForm/novaPoshtaAddressDeliveryForm';
+  from '../../../../../components/form/formBlocks/novaPoshtaAddressDeliveryForm/novaPoshtaAddressDeliveryForm';
 import NovaInternationalAddressDeliveryForm
-  from '../form/formBlocks/novaInternationalAddressDeliveryForm/novaInternationalAddressDeliveryForm';
-import npService from '../../services/np.service';
+  from '../../../../../components/form/formBlocks/novaInternationalAddressDeliveryForm/novaInternationalAddressDeliveryForm';
+import npService from '../../../../../services/np.service';
 import {useSelector} from 'react-redux';
-import {getCitiesList} from '../../store/citiesSlice';
+import {getCitiesList} from '../../../../../store/citiesSlice';
 import PropTypes from 'prop-types';
 const UserDeliveryMethodsList = ({formik}) => {
   const [currentDeliveryMethod, setCurrentDeliveryMethod] = useState('1');
@@ -72,6 +73,7 @@ const UserDeliveryMethodsList = ({formik}) => {
             </label>
           </div>
         </div>))}
+      <p className={styles.title}>delivery to the address</p>
       {deliveryMethodsList.map((method)=> currentDeliveryMethod === method.id ? method.value: null)}
     </div>
   );

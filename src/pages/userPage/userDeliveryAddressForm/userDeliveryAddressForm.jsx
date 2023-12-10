@@ -6,7 +6,7 @@ import {useFormik} from 'formik';
 import {validationSchemaAddressForm} from '../../../utils/validationSchema';
 import UserDeliveryAddressList from '../userDeliveryAddressList/userDeliveryAddressList';
 import {nanoid} from 'nanoid/non-secure';
-import UserDeliveryMethodsList from '../../../components/userDeliveryMethodsList/userDeliveryMethodsList';
+import UserDeliveryMethodsList from '../../checkOutPage/blocks/checkOutUserInfoBlock/userDeliveryMethodsList/userDeliveryMethodsList';
 
 const UserDeliveryAddressForm = () => {
   const dispatch = useDispatch();

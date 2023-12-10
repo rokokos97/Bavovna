@@ -8,7 +8,9 @@ import {getIsLoggedIn} from '../../../../store/userSlice';
 import {useFormik} from 'formik';
 import AnonimUserContactFormBlock
   from '../../../../components/form/formBlocks/anonimUserContactFormBlock/anonimUserContactFormBlock';
-import UserDeliveryMethodsList from '../../../../components/userDeliveryMethodsList/userDeliveryMethodsList';
+import UserDeliveryMethodsList from './userDeliveryMethodsList/userDeliveryMethodsList';
+import UserPaymentMethodsList from './userPaymentMethodsList/userPaymentMethodsList';
+import {validationSchemaCheckOutUserData} from '../../../../utils/validationSchema';
 
 const CheckOutUserInfoBlock = () => {
   const isLoggedIn = useSelector(getIsLoggedIn());
@@ -21,20 +23,29 @@ const CheckOutUserInfoBlock = () => {
       phoneNumber: '',
       deliveryAddress: [],
       currentDeliveryAddress: '',
+      cardNumber: '',
+      validityDate: '',
+      cvvCvc: '',
+      cartHolderName: '',
+    },
+    ValidationSchema: validationSchemaCheckOutUserData,
+    onSubmit: (values)=> {
+      console.log(values);
     },
   });
   const userCurrentDetailsList = [
     {
       id: '1',
       label: 'new user',
-      component: <AnonimUserContactFormBlock formik={formik}/>,
+      value: <AnonimUserContactFormBlock formik={formik}/>,
     },
     {
       id: '2',
       label: 'registered user',
-      component: <LoginFormBlock />,
+      value: <LoginFormBlock/>,
     },
   ];
+  console.log(formik);
   return (
     <div className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
       <p className={styles.title}>Contact details</p>
@@ -60,11 +71,13 @@ const CheckOutUserInfoBlock = () => {
         </>)}
       </div>
       {userCurrentDetailsList.map((detail)=>
-            userCurrentDetails === detail.id ? detail.component:null)}
+            userCurrentDetails === detail.id ? detail.value : null)}
       <div className={styles.divider}/>
       <p className={styles.title}>delivery</p>
       <UserDeliveryMethodsList formik={formik}/>
       <div className={styles.divider}/>
+      <p className={styles.title}>payment method</p>
+      <UserPaymentMethodsList formik={formik}/>
     </div>
 
   );

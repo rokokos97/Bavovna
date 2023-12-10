@@ -86,4 +86,25 @@ export const validationSchemaPromoCode = Yup.object().shape({
   promoCode: Yup.string(),
 });
 
+export const validationSchemaCheckOutUserData = Yup.object().shape({
+  cvvCvc: Yup.string()
+      .matches(/^\d{3}$/, 'CVV/CVC must be 3 numbers long'),
+  validityDate: Yup.string()
+      .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format'),
+  curdNumber: Yup.string()
+      .matches(/^\d{16}$/, 'Card number must be 16 numbers long'),
+  phoneNumber: Yup.string()
+      .matches(/^\d{12}$/, 'Phone number must be 12 digits'),
+  email: Yup.string()
+      .email('Invalid email address'),
+  lastName: Yup.string()
+      .min(2, 'Last name has to be longer than 2 characters')
+      .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The Last name must begin with a capital letter and consist only of letters')
+      .max(15, 'Last name must be at most 15 characters long'),
+  firstName: Yup.string()
+      .min(2, 'First name has to be longer than 2 characters')
+      .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The First name must begin with a capital letter and consist only of letters')
+      .max(15, 'First name must be at most 15 characters long'),
+});
+
 

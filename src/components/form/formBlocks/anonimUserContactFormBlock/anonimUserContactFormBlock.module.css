@@ -1,3 +1,7 @@
-
+.anonimUserContactFormBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
 
 /*# sourceMappingURL=anonimUserContactFormBlock.module.css.map */
