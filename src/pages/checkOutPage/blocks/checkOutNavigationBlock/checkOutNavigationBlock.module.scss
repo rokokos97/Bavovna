@@ -1,6 +1,6 @@
 @import '../../../../styles/variables.module';
 .checkOutNavigationBlock {
-  width: 20rem;
+  width: 21rem;
   height: 25.1rem;
   //border: 1px solid $black;
   @include fonts($headline-9);
@@ -14,7 +14,7 @@
 
     li {
       position: relative;
-      padding-left: 20px; // Місце для точки перед текстом
+      padding-left: 25px; // Місце для точки перед текстом
       margin-bottom: 37px; // Відстань між кроками
 
       &:not(:last-child)::after {

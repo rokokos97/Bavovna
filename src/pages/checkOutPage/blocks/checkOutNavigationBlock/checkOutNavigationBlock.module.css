@@ -1,5 +1,5 @@
 .checkOutNavigationBlock {
-  width: 20rem;
+  width: 21rem;
   height: 25.1rem;
   font-family: "Fixel Display Regular";
   font-size: 16px;
@@ -15,7 +15,7 @@
 }
 .progressTracker ul li {
   position: relative;
-  padding-left: 20px;
+  padding-left: 25px;
   margin-bottom: 37px;
 }
 .progressTracker ul li:not(:last-child)::after {
