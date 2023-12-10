@@ -48,7 +48,7 @@ const CheckOutUserInfoBlock = () => {
   console.log(formik);
   return (
     <div className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
-      <p className={styles.title}>Contact details</p>
+      <p className={styles.title} id='contacts'>Contact details</p>
       <div className={styles.radioBlock}>
         {userCurrentDetailsList.map((detail)=> <>
           <div
@@ -73,10 +73,10 @@ const CheckOutUserInfoBlock = () => {
       {userCurrentDetailsList.map((detail)=>
             userCurrentDetails === detail.id ? detail.value : null)}
       <div className={styles.divider}/>
-      <p className={styles.title}>delivery</p>
+      <p className={styles.title} id='delivery'>delivery</p>
       <UserDeliveryMethodsList formik={formik}/>
       <div className={styles.divider}/>
-      <p className={styles.title}>payment method</p>
+      <p className={styles.title} id='payment'>payment method</p>
       <UserPaymentMethodsList formik={formik}/>
     </div>
 
