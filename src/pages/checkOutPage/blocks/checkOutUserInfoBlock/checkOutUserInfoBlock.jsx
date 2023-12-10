@@ -8,6 +8,7 @@ import {getIsLoggedIn} from '../../../../store/userSlice';
 import {useFormik} from 'formik';
 import AnonimUserContactFormBlock
   from '../../../../components/form/formBlocks/anonimUserContactFormBlock/anonimUserContactFormBlock';
+import UserDeliveryMethodsList from '../../../../components/userDeliveryMethodsList/userDeliveryMethodsList';
 
 const CheckOutUserInfoBlock = () => {
   const isLoggedIn = useSelector(getIsLoggedIn());
@@ -62,6 +63,8 @@ const CheckOutUserInfoBlock = () => {
             userCurrentDetails === detail.id ? detail.component:null)}
       <div className={styles.divider}/>
       <p className={styles.title}>delivery</p>
+      <UserDeliveryMethodsList formik={formik}/>
+      <div className={styles.divider}/>
     </div>
 
   );

@@ -17,7 +17,6 @@ const NovaPoshtaAddressDeliveryForm = ({formik, handleCityChange, citiesList}) =
       options={citiesList? citiesList: []}
     />
     <TextField
-      disabled={!!formik.values.warehouse.value}
       label='Street'
       name='street'
       placeholder='Enter your street name'
@@ -28,7 +27,6 @@ const NovaPoshtaAddressDeliveryForm = ({formik, handleCityChange, citiesList}) =
       touched={formik.touched.street}
     />
     <TextField
-      disabled={!!formik.values.warehouse.value}
       label='House number'
       name='houseNumber'
       placeholder='Enter your street name'
@@ -39,7 +37,6 @@ const NovaPoshtaAddressDeliveryForm = ({formik, handleCityChange, citiesList}) =
       touched={formik.touched.houseNumber}
     />
     <TextField
-      disabled={!!formik.values.warehouse.value}
       label='Flat Number'
       name='flatNumber'
       placeholder='Enter your flat number'
@@ -49,17 +46,6 @@ const NovaPoshtaAddressDeliveryForm = ({formik, handleCityChange, citiesList}) =
       onBlur={formik.handleBlur}
       touched={formik.touched.flatNumber}
     />
-    <button
-      type='submit'
-      disabled={
-        (!formik.values.warehouse.value && formik.values.street.length === 0)
-      }
-      className={styles.button}
-    >
-      <span>
-                  add address
-      </span>
-    </button>
   </form>
 );
 

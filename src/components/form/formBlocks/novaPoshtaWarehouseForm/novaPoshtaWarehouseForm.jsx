@@ -30,17 +30,6 @@ const NovaPoshtaWarehouseForm = ({
       defaultValue={{label: 'Select a post office', value: ''}}
       options={warehousesList}
     />
-    <button
-      type='submit'
-      disabled={
-        (!formik.values.warehouse.value && formik.values.street.length === 0)
-      }
-      className={styles.button}
-    >
-      <span>
-                  add address
-      </span>
-    </button>
   </form>
 );
 NovaPoshtaWarehouseForm.propTypes = {

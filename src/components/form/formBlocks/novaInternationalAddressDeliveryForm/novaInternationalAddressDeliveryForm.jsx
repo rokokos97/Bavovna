@@ -18,17 +18,6 @@ const NovaInternationalAddressDeliveryForm = ({formik}) => (
       onBlur={formik.handleBlur}
       touched={formik.touched.intDeliveryAddress}
     />
-    <button
-      type='submit'
-      disabled={
-        (formik.values.intDeliveryAddress.length === 0)
-      }
-      className={styles.button}
-    >
-      <span>
-                  add address
-      </span>
-    </button>
   </form>
 );
 NovaInternationalAddressDeliveryForm.propTypes = {
