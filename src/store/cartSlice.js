@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import sessionStorageService from '../services/sessionStorage.service';
+import _ from 'lodash';
 
 // const transferDataToSessionStorage = () => {
 //  const keys = Object.keys(localStorage);
@@ -34,14 +35,11 @@ const cartSlice = createSlice({
         state.entities.splice(index, 1);
       }
     },
-    deletedItems(state) {
-      state.entities = [];
-    },
   },
 });
 
 const {reducer: cartReducer, actions} = cartSlice;
-const {addedItem, deletedItems, removeItem, removeOneItem} = actions;
+const {addedItem, removeItem, removeOneItem} = actions;
 
 export const addItemToCart = (item) => (dispatch) => {
   dispatch(addedItem(item));
@@ -53,12 +51,25 @@ export const removeOneItemFromCart = (itemId) => (dispatch) => {
 export const removeItemFromCart = (itemId) => (dispatch) => {
   dispatch(removeItem(itemId));
 };
-
-
-export const deleteItemsFromCart = () => (dispatch) => {
-  dispatch(deletedItems());
-};
-
 export const getCart = () => (state) => state.cart.entities;
+
+export const getCartTotalPrice = () => (state) => state.cart.entities.reduce((acc, el)=> acc+el.discountPrice, 0);
+
+export const getNormalizedCart = () => (state) => {
+  const newNormalizedCart = [];
+  for (const good of state.cart.entities) {
+    const foundIndex = newNormalizedCart.findIndex((item) => item.itemIdentifier === good.itemIdentifier);
+    if (foundIndex !== -1) {
+      newNormalizedCart[foundIndex] = {
+        ...newNormalizedCart[foundIndex],
+        itemQuantity: (newNormalizedCart[foundIndex].itemQuantity + 1),
+      };
+    } else {
+      newNormalizedCart.push(good);
+    }
+  }
+  return _.sortBy(newNormalizedCart, 'itemName');
+};
+export const getCartLength = () => (state) => state.cart.entities.length;
 
 export default cartReducer;

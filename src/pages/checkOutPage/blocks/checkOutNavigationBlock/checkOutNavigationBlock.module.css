@@ -1,6 +1,8 @@
 .checkOutNavigationBlock {
+  position: fixed;
   width: 20rem;
   height: 25.1rem;
+  border: 1px solid #000000;
   font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 110%;

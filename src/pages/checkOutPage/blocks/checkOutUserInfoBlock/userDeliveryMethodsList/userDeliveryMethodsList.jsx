@@ -55,10 +55,10 @@ const UserDeliveryMethodsList = ({formik}) => {
   ];
   return (
     <div className={styles.userDeliveryMethodsList} data-testid="UserDeliveryMethodsList">
-      {deliveryMethodsList.map((method)=> (
+      {deliveryMethodsList.map((method, index)=> (
         <div
           style={{display: 'block'}}
-          key={method.id}>
+          key={index}>
           <div className={styles.radioWrapper}>
             <div
               className={styles.radioButton}
@@ -74,7 +74,7 @@ const UserDeliveryMethodsList = ({formik}) => {
           </div>
         </div>))}
       <p className={styles.title}>delivery to the address</p>
-      {deliveryMethodsList.map((method)=> currentDeliveryMethod === method.id ? method.value: null)}
+      {deliveryMethodsList.map((method)=> currentDeliveryMethod === method.id ? <div key={method.id}>{method.value}</div>: null)}
     </div>
   );
 };

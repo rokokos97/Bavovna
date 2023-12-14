@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './checkOutBlock.module.scss';
 import TextField from '../../../../components/form/formFields/textField/textField';
-import PropTypes from 'prop-types';
 import {useFormik} from 'formik';
 import {validationSchemaPromoCode} from '../../../../utils/validationSchema';
 import {useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {getCartTotalPrice} from '../../../../store/cartSlice';
 
-const CheckOutBlock = ({totalPrice}) => {
+const CheckOutBlock = () => {
+  const totalPrice = useSelector(getCartTotalPrice());
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
@@ -65,7 +67,4 @@ const CheckOutBlock = ({totalPrice}) => {
   );
 };
 
-CheckOutBlock.propTypes = {
-  totalPrice: PropTypes.number.isRequired,
-};
 export default CheckOutBlock;

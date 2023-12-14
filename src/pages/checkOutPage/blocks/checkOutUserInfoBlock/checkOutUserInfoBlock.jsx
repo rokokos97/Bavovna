@@ -37,23 +37,21 @@ const CheckOutUserInfoBlock = () => {
     {
       id: '1',
       label: 'new user',
-      value: <AnonimUserContactFormBlock formik={formik}/>,
+      value: <AnonimUserContactFormBlock formik={formik} key={1}/>,
     },
     {
       id: '2',
       label: 'registered user',
-      value: <LoginFormBlock/>,
+      value: <LoginFormBlock key={2}/>,
     },
   ];
-  console.log(formik);
   return (
     <div className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
       <p className={styles.title} id='contacts'>Contact details</p>
       <div className={styles.radioBlock}>
-        {userCurrentDetailsList.map((detail)=> <>
+        {userCurrentDetailsList.map((detail, index)=> <div key={index}>
           <div
             className={styles.radioWrapper}
-            key={detail.id}
           >
             <button
               className={styles.radioButton}
@@ -68,10 +66,10 @@ const CheckOutUserInfoBlock = () => {
               {detail.label}
             </label>
           </div>
-        </>)}
+        </div>)}
       </div>
       {userCurrentDetailsList.map((detail)=>
-            userCurrentDetails === detail.id ? detail.value : null)}
+            userCurrentDetails === detail.id ? <div key={detail.id}>{detail.value}</div> : null)}
       <div className={styles.divider}/>
       <p className={styles.title} id='delivery'>delivery</p>
       <UserDeliveryMethodsList formik={formik}/>

@@ -1,8 +1,9 @@
 @import '../../../../styles/variables.module';
 .checkOutNavigationBlock {
+  position: fixed;
   width: 20rem;
   height: 25.1rem;
-  //border: 1px solid $black;
+  border: 1px solid $black;
   @include fonts($headline-9);
   text-align: start;
 }

@@ -1,4 +1,36 @@
 @import 'src/styles/variables.module';
 .checkOutShoppingCartBlock {
+  position: fixed;
+  right: 0;
   border: 1px solid $black;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+.titleBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.2rem;
+  @include fonts($headline-5);
+}
+.title {
+  @include fonts($headline-3);
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem
+}
+.arrowButton {
+  margin-top: auto;
+  @include button(7.5rem,  $black, $white, $accent-a-3, $accent-a-5);
+}
+.priceBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include fonts($headline-3);
+}
+.button {
+  @include button(42.3rem, $black, $white, $accent-a-3, $accent-a-5);
 }
