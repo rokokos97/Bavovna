@@ -2,7 +2,6 @@ function collectLabels(values) {
   const keys = Object.keys(values);
   const labels = keys.map((key) => {
     const item = values[key];
-    console.log('item', item);
 
     let label;
     if (key === 'street' && item.label) {

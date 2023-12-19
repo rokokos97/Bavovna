@@ -23,7 +23,6 @@ const NovaPoshtaAddressDeliveryForm = () => {
     },
     validationSchema: validationSchemaAddressForm,
     onSubmit: () => {
-      console.log(formik.values);
       const transformValues = transformFormikValues(formik.values);
       const transformAddress = collectLabels(transformValues);
       const updatedUser = {

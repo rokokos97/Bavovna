@@ -41,7 +41,6 @@ const userService = {
           },
         },
     );
-    console.log('data', data);
     return data;
   },
 };

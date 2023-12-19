@@ -55,8 +55,6 @@ const CheckOutUserInfoBlock = () => {
       formik.setFieldValue('phoneNumber', user.phoneNumber);
     }
   }, [user]);
-  console.log('formik.values', formik.values);
-  console.log('user', user);
   return (
     <div className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
       <p className={styles.title} id='contacts'>Contact details</p>
