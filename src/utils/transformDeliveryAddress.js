@@ -1,10 +1,21 @@
 function collectLabels(values) {
   const keys = Object.keys(values);
-  console.log('keys', keys);
   const labels = keys.map((key) => {
     const item = values[key];
     console.log('item', item);
-    return item.label? item.label : item;
+
+    let label;
+    if (key === 'street' && item.label) {
+      label = `str. ${item.label}`;
+    } else if (key === 'houseNumber' && item.label) {
+      label = `№${item.label}`;
+    } else if (key === 'flatNumber' && item.label) {
+      label = `apt. ${item.label}`;
+    } else {
+      label = item.label || item;
+    }
+
+    return label;
   });
   return labels.join(', ');
 }

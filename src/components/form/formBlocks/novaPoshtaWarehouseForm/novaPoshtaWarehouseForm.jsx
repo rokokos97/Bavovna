@@ -6,7 +6,6 @@ import {getCitiesList} from '../../../../store/citiesSlice';
 import npService from '../../../../services/np.service';
 import {getUser, updateUser} from '../../../../store/userSlice';
 import {useFormik} from 'formik';
-import {validationSchemaWarehouseForm} from '../../../../utils/validationSchema';
 import {nanoid} from 'nanoid/non-secure';
 
 const NovaPoshtaWarehouseForm = () => {
@@ -20,7 +19,7 @@ const NovaPoshtaWarehouseForm = () => {
       city: '',
       warehouse: '',
     },
-    validationSchema: validationSchemaWarehouseForm,
+    validationSchema: null,
     onSubmit: () => {
       const updatedUser = {
         ...user,

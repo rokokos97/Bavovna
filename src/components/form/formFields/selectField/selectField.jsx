@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 
 const SelectField = ({defaultValue, onChange, options, label, error}) => {
+  console.log(options);
   return (
     <div className={styles.selectField} data-testid="SelectField">
       <p className={styles.label}>{label}
