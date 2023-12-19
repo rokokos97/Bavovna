@@ -1,0 +1,45 @@
+@import 'src/styles/variables.module';
+.listWithRadioButtons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+.radioOption {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.radioInput {
+  appearance: none;
+}
+.radioLabel {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.7rem;
+  align-items: center;
+  cursor: pointer;
+  text-align: start;
+  @include fonts($label);
+}
+.deleteButton {
+  background: transparent;
+  display: flex;
+  align-content: start;
+
+  &:hover {
+    svg {
+      path {
+
+        stroke: $accent-a-3
+      }
+    }
+  }
+  &:active {
+    svg {
+      path {
+        stroke: $accent-a-3
+      }
+    }
+  }
+}
+

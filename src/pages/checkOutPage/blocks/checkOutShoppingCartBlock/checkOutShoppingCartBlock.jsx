@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './checkOutShoppingCartBlock.module.scss';
 import {useSelector} from 'react-redux';
-import {getCartLength, getCartTotalPrice, getNormalizedCart} from '../../../../store/cartSlice';
+import {getCartLength, getCartTotalPrice} from '../../../../store/cartSlice';
 import TextField from '../../../../components/form/formFields/textField/textField';
 import {useFormik} from 'formik';
 import {validationSchemaPromoCode} from '../../../../utils/validationSchema';
@@ -9,7 +9,6 @@ import CheckOutShoppingCartBlockItemsList
   from './checkOutShoppingCartBlockItemsList/checkOutShoppingCartBlockItemsList';
 
 const CheckOutShoppingCartBlock = () => {
-  const normalizedCart = useSelector(getNormalizedCart());
   const cartLength = useSelector(getCartLength());
   const price = useSelector(getCartTotalPrice());
   const formik = useFormik({
@@ -20,7 +19,6 @@ const CheckOutShoppingCartBlock = () => {
       console.log(values.promoCode);
     },
   });
-  console.log(normalizedCart);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
       <div className={styles.titleBlock}>

@@ -4,7 +4,7 @@ import Select from 'react-select';
 import PropTypes from 'prop-types';
 
 
-const SelectField = ({defaultValue, onChange, options, label}) => {
+const SelectField = ({defaultValue, onChange, options, label, error}) => {
   return (
     <div className={styles.selectField} data-testid="SelectField">
       <p className={styles.label}>{label}
@@ -13,11 +13,15 @@ const SelectField = ({defaultValue, onChange, options, label}) => {
         </span>
       </p>
       <Select
+        autoComplete='off'
         classNamePrefix='custom'
         defaultValue={defaultValue}
         onChange={onChange}
         options={options}
       />
+      {error ? (
+        <div className={styles.error}>{error}</div>
+      ) : null}
     </div>
   );
 };
@@ -26,5 +30,6 @@ SelectField.propTypes = {
   onChange: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,
+  error: PropTypes.object,
 };
 export default SelectField;

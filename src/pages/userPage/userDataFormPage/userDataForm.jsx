@@ -9,6 +9,7 @@ import {validationSchemaUserDataForm} from '../../../utils/validationSchema';
 import PhoneField from '../../../components/form/formFields/phoneField/phoneField';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import UserDeliveryAddressForm from '../userDeliveryAddressForm/userDeliveryAddressForm';
+
 const UserDataForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser());
@@ -53,22 +54,20 @@ const UserDataForm = () => {
         <div className={styles.submitWrapper}>
           <div className={styles.column}>
             <TextField
-              disabled = {!user.isVerified}
               label='First name'
               name='firstName'
               placeholder={user.firstName}
-              value={formik.values.firstName}
+              value={formik.values.firstName || user.firstName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.firstName}
               touched={formik.touched.firstName}
             />
             <TextField
-              disabled = {!user.isVerified}
               label='Last name'
               name='lastName'
               placeholder={user.lastName}
-              value={formik.values.lastName}
+              value={formik.values.lastName || user.lastName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.lastName}

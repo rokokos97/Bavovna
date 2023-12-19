@@ -19,6 +19,7 @@ const UserDeliveryAddressForm = () => {
       houseNumber: '',
       flatNumber: '',
       intDeliveryAddress: '',
+      deliveryMethod: '',
     },
     validationSchema: validationSchemaAddressForm,
     onSubmit: () => {
@@ -26,7 +27,7 @@ const UserDeliveryAddressForm = () => {
       const newUser = {
         ...user,
         deliveryAddress: [...user.deliveryAddress, newAddress],
-        currentDeliveryAddress: newAddress._id,
+        currentDeliveryAddress: {...newAddress},
       };
       dispatch(updateUser(newUser));
     },
@@ -46,17 +47,7 @@ const UserDeliveryAddressForm = () => {
             Add new delivery method
           </p>
           <div className={styles.radioBlock}>
-            <UserDeliveryMethodsList formik={formik}/>
-            <button
-              type='submit'
-              onClick={formik.handleSubmit}
-              disabled={!formik.dirty}
-              className={styles.button}
-            >
-              <span>
-                  add address
-              </span>
-            </button>
+            <UserDeliveryMethodsList/>
           </div>
         </div>
         <div className={styles.deliveryBlockColumn}>

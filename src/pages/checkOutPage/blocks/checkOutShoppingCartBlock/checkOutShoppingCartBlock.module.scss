@@ -1,8 +1,5 @@
 @import 'src/styles/variables.module';
 .checkOutShoppingCartBlock {
-  position: fixed;
-  right: 0;
-  border: 1px solid $black;
   display: flex;
   flex-direction: column;
   gap: 1.7rem;

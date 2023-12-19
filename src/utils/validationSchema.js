@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 
+const streetNameRegex = /^[A-ZА-ЯІЇЄҐ][a-zа-яіїєґ'-]*\s?([A-ZА-ЯІЇЄҐ]?[a-zа-яіїєґ'-]*)?$/;
 export const validationSchemaRegisterForm = Yup.object().shape({
   license: Yup.boolean()
       .oneOf([true], 'You must agree to the terms and conditions')
@@ -67,12 +68,12 @@ export const validationSchemaLoginForm = Yup.object().shape({
 
 export const validationSchemaAddressForm = Yup.object().shape({
   street: Yup.string()
-      .min(3, 'Flat number must be at least 3 character long')
-      .max(15, 'Flat number must be at most 15 characters long')
-      .matches(/^[a-zA-Zа-яА-ЯіІїЇ0-9]+S?$/, 'Street must consist only numbers and letters'),
+      .matches(streetNameRegex, 'Street name must start with a capital letter, can include one space or hyphen and must be up to two words')
+      .min(1, 'Street name must be at least 1 character long')
+      .max(30, 'Street name must be at most 30 characters long'),
   houseNumber: Yup.string()
       .min(1, 'House number must be at least 1 character long')
-      .max(5, 'House number must be at most 5 characters long')
+      .max(4, 'House number must be at most 4 characters long')
       .matches(/^[0-9A-Za-zа-яА-Я/]+S?$/, 'House number must consist only numbers and letters'),
   flatNumber: Yup.string()
       .min(1, 'Flat number must be at least 1 character long')
@@ -105,6 +106,16 @@ export const validationSchemaCheckOutUserData = Yup.object().shape({
       .min(2, 'First name has to be longer than 2 characters')
       .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The First name must begin with a capital letter and consist only of letters')
       .max(15, 'First name must be at most 15 characters long'),
+});
+export const validationSchemaWarehouseForm = Yup.object().shape({
+  city: Yup.object().shape({
+    label: Yup.string().required('City label is required'),
+    value: Yup.string().required('City is required'),
+  }),
+  warehouse: Yup.object().shape({
+    label: Yup.string().required('Warehouse label is required'),
+    value: Yup.string().required('Warehouse is required'),
+  }),
 });
 
 
