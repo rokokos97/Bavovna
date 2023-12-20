@@ -8,11 +8,9 @@ import {getUser, updateUser} from '../../store/userSlice';
 import {useDispatch, useSelector} from 'react-redux';
 
 const ListWithRadioButtons = ({options, isList, hideButton}) => {
-  console.log('options', options);
   const dispatch = useDispatch();
   const user = useSelector(getUser());
 
-  //  user.deliveryAddress && console.log(user.deliveryAddress.filter((item) => item._id === user.currentDeliveryAddress)[0].deliveryMethod);
   const [selectedValue, setSelectedValue] = useState('Nova poshta delivery to the post office');
   const handleChange = (label) => {
     setSelectedValue(label);

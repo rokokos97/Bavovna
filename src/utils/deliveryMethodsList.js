@@ -7,20 +7,11 @@ import React from 'react';
 
 const deliveryMethodsList = [
   {
-    _id: '1', label: 'Nova poshta delivery to the post office', value: <NovaPoshtaWarehouseForm
-    />,
+    _id: '1', label: 'Nova poshta delivery to the post office', value: <NovaPoshtaWarehouseForm/>, price: 2,
   }, {
-    _id: '2', label: 'Nova poshta delivery to the address', value: <NovaPoshtaAddressDeliveryForm
-    />,
+    _id: '2', label: 'Nova poshta delivery to the address', value: <NovaPoshtaAddressDeliveryForm/>, price: 3,
   }, {
-    _id: '3', label: 'International delivery', value: <NovaInternationalAddressDeliveryForm
-    />,
+    _id: '3', label: 'International delivery', value: <NovaInternationalAddressDeliveryForm/>, price: 20,
   },
 ];
-
-export const deliveryMethodsObject = {
-  1: {label: 'Nova poshta delivery to the post office', value: <NovaPoshtaWarehouseForm/>},
-  2: {label: 'Nova poshta delivery to the address', value: <NovaPoshtaAddressDeliveryForm/>},
-  3: {label: 'International delivery', value: <NovaInternationalAddressDeliveryForm/>},
-};
 export default deliveryMethodsList;

@@ -11,7 +11,8 @@ import AnonimUserContactFormBlock
 import UserDeliveryMethodsList from './userDeliveryMethodsList/userDeliveryMethodsList';
 import UserPaymentMethodsList from './userPaymentMethodsList/userPaymentMethodsList';
 import {validationSchemaCheckOutUserData} from '../../../../utils/validationSchema';
-import UserDeliveryAddressList from '../../../userPage/userDeliveryAddressList/userDeliveryAddressList';
+import UserDeliveryAddressList
+  from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/userDeliveryAddressList/userDeliveryAddressList';
 
 const CheckOutUserInfoBlock = () => {
   const isLoggedIn = useSelector(getIsLoggedIn());

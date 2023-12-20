@@ -41,9 +41,6 @@ const Header = () => {
             <span>Help</span>
           </Link>
         </div>
-        <Link to='/'>
-          <LogoIcon />
-        </Link>
         <div className={styles.headerMenuBar}>
           <button type='button' className={styles.headerSearch}>
             {/* <input name='search'></input> */}
@@ -66,15 +63,20 @@ const Header = () => {
             <AccountIcon />
             <span>{isLoggedIn && user ? user.firstName : 'account'}</span>
           </button>
-          <div>
-            <button style={{fontWeight: 'bold'}}>
-              eng
-            </button>
-            <button>
-              укр
-            </button>
-          </div>
+          {/* <div>*/}
+          {/*  <button style={{fontWeight: 'bold'}}>*/}
+          {/*    eng*/}
+          {/*  </button>*/}
+          {/*  <button>*/}
+          {/*    укр*/}
+          {/*  </button>*/}
+          {/* </div>*/}
         </div>
+      </div>
+      <div className={styles.logo}>
+        <Link to='/'>
+          <LogoIcon />
+        </Link>
       </div>
     </header>
   );

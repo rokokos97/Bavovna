@@ -56,7 +56,7 @@ const CheckOutShoppingCartBlock = () => {
         <p>{`${price} $`}</p>
       </div>
       <div className={styles.price}>
-        <p>order value</p>
+        <p>shipping</p>
         <p>{`${price} $`}</p>
       </div>
       <div className={styles.priceBlock}>

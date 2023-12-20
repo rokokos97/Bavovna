@@ -1,15 +1,17 @@
 @import "../../styles/variables.module.scss";
 .saleBlock {
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  width: 100%;
+  max-width: 144rem;
+  min-width: 128rem;
   height: 37.6rem;
-  background: url("../../../public/img/images/Sale/Rectangle 27.png"), lightgray 50% / cover no-repeat;
+  justify-content: center;
+  background-size: cover;
+  background: lightgray url("../../../public/img/images/Sale/Rectangle 27.png") no-repeat right;
 }
 .contentBlock {
-  margin: 12.6rem auto;
-  display: inline-flex;
+  display: flex;
+  width: 22.3rem;
+  margin-top: 12.6rem;
   flex-direction: column;
   align-items: center;
   gap: 4rem;

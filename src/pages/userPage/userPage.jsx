@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './userPage.module.scss';
-import SideNavigation from '../../components/sideNavigation/sideNavigation';
+import SideNavigation from './sideNavigation/sideNavigation';
 import {useDispatch} from 'react-redux';
 import {verifyEmail} from '../../store/userSlice';
 

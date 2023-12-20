@@ -2,19 +2,19 @@
   background: linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0) 45.58%), url("../../../public/img/images/NewCollection/Rectangle 25.png"), lightgray 50%/cover no-repeat;
   width: 100%;
   height: 84.1rem;
-  margin: 0 auto;
 }
 
 .newCollectionBlock__wrapper {
   display: flex;
-  width: 57.8rem;
+  max-width: 1280px;
+  position: relative;
+  top: 28.4rem;
+  left: 50%;
+  transform: translateX(-50%);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4rem;
-  margin-top: 24.1rem;
-  margin-left: 8rem;
-  margin-bottom: 33.7rem;
 }
 
 .newCollectionBlock__title {
@@ -28,6 +28,7 @@
 }
 
 .newCollectionBlock__manifest {
+  width: 57.8rem;
   color: #000000;
   font-family: "Fixel Text Regular";
   font-size: 18px;
