@@ -69,17 +69,19 @@ export const validationSchemaLoginForm = Yup.object().shape({
 export const validationSchemaAddressForm = Yup.object().shape({
   street: Yup.string()
       .matches(streetNameRegex, 'Street name must start with a capital letter, can include one space or hyphen and must be up to two words')
+      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
       .min(1, 'Street name must be at least 1 character long')
       .max(30, 'Street name must be at most 30 characters long'),
   houseNumber: Yup.string()
       .min(1, 'House number must be at least 1 character long')
       .max(4, 'House number must be at most 4 characters long')
-      .matches(/^[0-9A-Za-zа-яА-Я/]+S?$/, 'House number must consist only numbers and letters'),
+      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters'),
   flatNumber: Yup.string()
       .min(1, 'Flat number must be at least 1 character long')
-      .max(4, 'Flat number must be at most 4 characters long')
-      .matches(/^[0-9A-Za-zа-яА-Я]+S?$/, 'Flat number must consist only numbers and letters'),
+      .max(5, 'Flat number must be at most 5 characters long')
+      .matches(/^[0-9A-Za-z]+S?$/, 'Flat number must consist only numbers and latin letters'),
   intDeliveryAddress: Yup.string()
+      .matches(/^[a-zA-Z0-9.,/ ]*$/, 'Address must consist only numbers and latin letters')
       .min(40, 'Address must be at least 40 characters long')
       .max(100, 'Address must be at most 100 characters long'),
 });

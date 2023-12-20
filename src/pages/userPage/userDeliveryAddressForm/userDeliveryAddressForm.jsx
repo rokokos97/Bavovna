@@ -54,7 +54,7 @@ const UserDeliveryAddressForm = () => {
           <p className={styles.blockLabel}>
             Saved delivery method
           </p>
-          <UserDeliveryAddressList/>
+          <UserDeliveryAddressList hiddenButton={false}/>
         </div>
       </div>
     </div>

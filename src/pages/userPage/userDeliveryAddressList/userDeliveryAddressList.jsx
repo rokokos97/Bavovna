@@ -3,15 +3,19 @@ import styles from './userDeliveryAddressList.module.scss';
 import {useSelector} from 'react-redux';
 import {getUser} from '../../../store/userSlice';
 import ListWithRadioButtons from '../../../components/listWithRadioButtons/listWithRadioButtons';
+import PropTypes from 'prop-types';
 
-const UserDeliveryAddressList = () => {
+const UserDeliveryAddressList = ({hiddenButton}) => {
   const user = useSelector(getUser());
-  return ( user.deliveryAddress &&
+  return ( user &&
     <div className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList"
     >
-      <ListWithRadioButtons options={user.deliveryAddress} isList={true}/>
+      <ListWithRadioButtons options={user.deliveryAddress} isList={true} hideButton={hiddenButton}/>
     </div>
   );
 };
 
+UserDeliveryAddressList.propTypes = {
+  hiddenButton: PropTypes.bool,
+};
 export default UserDeliveryAddressList;

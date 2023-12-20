@@ -31,7 +31,7 @@ const NovaPoshtaAddressDeliveryForm = () => {
           _id: nanoid(12),
           label: transformAddress,
           value: formik.values,
-          deliveryMethod: 'npAddress',
+          deliveryMethod: 'Nova poshta delivery to the address',
         }],
       };
       dispatch(updateUser(updatedUser));

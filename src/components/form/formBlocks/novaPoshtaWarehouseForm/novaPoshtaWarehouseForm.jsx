@@ -7,6 +7,8 @@ import npService from '../../../../services/np.service';
 import {getUser, updateUser} from '../../../../store/userSlice';
 import {useFormik} from 'formik';
 import {nanoid} from 'nanoid/non-secure';
+import transformFormikValues from '../../../../utils/transformFormikValues';
+import collectLabels from '../../../../utils/transformDeliveryAddress';
 
 const NovaPoshtaWarehouseForm = () => {
   const citiesList = useSelector(getCitiesList());
@@ -21,14 +23,18 @@ const NovaPoshtaWarehouseForm = () => {
     },
     validationSchema: null,
     onSubmit: () => {
+      const transformValues = transformFormikValues(formik.values);
+      const transformAddress = collectLabels(transformValues);
       const updatedUser = {
         ...user,
         deliveryAddress: [...user.deliveryAddress, {
           _id: nanoid(12),
-          ...formik.values,
-          deliveryMethod: 'npPoint',
+          label: transformAddress,
+          value: formik.values,
+          deliveryMethod: 'Nova poshta delivery to the post office',
         }],
       };
+      console.log(updatedUser);
       dispatch(updateUser(updatedUser));
     }},
   );
@@ -41,6 +47,7 @@ const NovaPoshtaWarehouseForm = () => {
   };
   useEffect(()=>{
     if (selectedCity) {
+      console.log(selectedCity);
       npService.post({cityRef: selectedCity.value}).then(async (data)=> {
         setWarehousesList(await data);
       });

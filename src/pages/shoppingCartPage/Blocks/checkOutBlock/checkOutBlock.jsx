@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './checkOutBlock.module.scss';
-import TextField from '../../../../components/form/formFields/textField/textField';
 import {useFormik} from 'formik';
 import {validationSchemaPromoCode} from '../../../../utils/validationSchema';
 import {useNavigate} from 'react-router-dom';
@@ -23,25 +22,6 @@ const CheckOutBlock = () => {
       <form
         onSubmit={formik.handleSubmit}
         className={styles.form}>
-        <TextField
-          label='Promo code'
-          name='promoCode'
-          placeholder='Enter your promo code'
-          value={formik.values.promoCode}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.errors.promoCode}
-          touched={formik.touched.promoCode}
-        />
-        <button
-          disabled={!formik.isValid || !formik.dirty}
-          className={styles.arrowButton}
-          type='submit'
-        >
-          <span>
-            -&gt;
-          </span>
-        </button>
       </form>
       <div className={styles.totalPriceBlock}>
         <p>total</p>

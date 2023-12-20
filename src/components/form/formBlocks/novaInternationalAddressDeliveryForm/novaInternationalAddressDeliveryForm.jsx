@@ -8,18 +8,20 @@ import {validationSchemaAddressForm} from '../../../../utils/validationSchema';
 import {nanoid} from 'nanoid/non-secure';
 const NovaInternationalAddressDeliveryForm = () => {
   const dispatch = useDispatch();
-  const user = useSelector(getUser);
+  const user = useSelector(getUser());
   const formik = useFormik({
     initialValues: {
       intDeliveryAddress: '',
     },
     validationSchema: validationSchemaAddressForm,
     onSubmit: () => {
-      const updatedUser = {...user, deliveryAddress: {
-        ...formik.values,
-        deliveryMethod: 'internationalShipping',
-        _id: nanoid(12),
-      }};
+      const updatedUser = {...user,
+        deliveryAddress: [...user.deliveryAddress, {
+          label: formik.values.intDeliveryAddress,
+          value: formik.values,
+          deliveryMethod: 'internationalShipping',
+          _id: nanoid(12),
+        }]};
       dispatch(updateUser(updatedUser));
     }},
   );

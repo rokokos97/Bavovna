@@ -11,11 +11,13 @@ import AnonimUserContactFormBlock
 import UserDeliveryMethodsList from './userDeliveryMethodsList/userDeliveryMethodsList';
 import UserPaymentMethodsList from './userPaymentMethodsList/userPaymentMethodsList';
 import {validationSchemaCheckOutUserData} from '../../../../utils/validationSchema';
+import UserDeliveryAddressList from '../../../userPage/userDeliveryAddressList/userDeliveryAddressList';
 
 const CheckOutUserInfoBlock = () => {
   const isLoggedIn = useSelector(getIsLoggedIn());
   const user = useSelector(getUser());
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
+  const [userCurrentDelivery, setUserCurrentDelivery] = useState('1');
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -23,7 +25,6 @@ const CheckOutUserInfoBlock = () => {
       email: '',
       phoneNumber: '',
       deliveryAddress: [],
-      currentDeliveryMethod: '',
       currentDeliveryAddress: '',
       cardNumber: '',
       validityDate: '',
@@ -47,12 +48,25 @@ const CheckOutUserInfoBlock = () => {
       value: <LoginFormBlock key={2}/>,
     },
   ];
+  const deliveryMethodsList = [
+    {
+      id: '1',
+      label: 'new address',
+      value: <UserDeliveryMethodsList formik={formik} key={2}/>,
+    },
+    {
+      id: '2',
+      label: 'saved address',
+      value: <UserDeliveryAddressList formik={formik} hiddenButton={true} key={1}/>,
+    },
+  ];
   useEffect(()=> {
     if (user) {
       formik.setFieldValue('firstName', user.firstName);
       formik.setFieldValue('lastName', user.lastName);
       formik.setFieldValue('email', user.email);
       formik.setFieldValue('phoneNumber', user.phoneNumber);
+      formik.setFieldValue('currentDeliveryAddress', user.currentDeliveryAddress);
     }
   }, [user]);
   return (
@@ -82,7 +96,28 @@ const CheckOutUserInfoBlock = () => {
             userCurrentDetails === detail.id ? <div key={detail.id}>{detail.value}</div> : null)}
       <div className={styles.divider}/>
       <p className={styles.title} id='delivery'>delivery</p>
-      <UserDeliveryMethodsList formik={formik}/>
+      <div className={styles.radioBlock}>
+        {deliveryMethodsList.map((detail, index)=> <div key={index}>
+          <div
+            className={styles.radioWrapper}
+          >
+            <button
+              className={styles.radioButton}
+              disabled={!isLoggedIn}
+              onClick = {()=> setUserCurrentDelivery(detail.id) }
+            >
+              {userCurrentDelivery === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+            </button>
+            <label
+              className={styles.label}
+            >
+              {detail.label}
+            </label>
+          </div>
+        </div>)}
+      </div>
+      {deliveryMethodsList.map((detail)=>
+        userCurrentDelivery === detail.id ? <div key={detail.id}>{detail.value}</div> : null)}
       <div className={styles.divider}/>
       <p className={styles.title} id='payment'>payment method</p>
       <UserPaymentMethodsList formik={formik}/>

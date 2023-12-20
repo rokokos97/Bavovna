@@ -1,8 +1,12 @@
 @import 'src/styles/variables.module';
 .checkOutShoppingCartBlock {
+  width: 51.9rem;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 1.7rem;
+  background: $white;
+  box-sizing: border-box;
 }
 .titleBlock {
   display: flex;
@@ -27,6 +31,12 @@
   flex-direction: row;
   justify-content: space-between;
   @include fonts($headline-3);
+}
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include fonts($body-3);
 }
 .button {
   @include button(42.3rem, $black, $white, $accent-a-3, $accent-a-5);

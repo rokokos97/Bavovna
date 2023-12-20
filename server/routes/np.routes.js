@@ -6,7 +6,7 @@ const novaPoshta = initNovaPoshta(config.novaPochta.apiKey);
 const router = express.Router({mergeParams: true});
 router.get('/', async (req, res) => {
   try {
-    const data = await novaPoshta.address.getCities({limit: 20});
+    const data = await novaPoshta.address.getCities();
     const cities = [];
     data.forEach((item) => {
       cities.push({label: item.description, value: item.ref});

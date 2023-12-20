@@ -51,18 +51,26 @@ const CheckOutShoppingCartBlock = () => {
           </span>
         </button>
       </form>
+      <div className={styles.price}>
+        <p>order value</p>
+        <p>{`${price} $`}</p>
+      </div>
+      <div className={styles.price}>
+        <p>order value</p>
+        <p>{`${price} $`}</p>
+      </div>
       <div className={styles.priceBlock}>
         <p>total</p>
         <p>{`${price} $`}</p>
       </div>
-      <button
-        className={styles.button}
-        onClick={() => navigate('/cart/checkout')}
-      >
-        <span>
-            Continue to check out
-        </span>
-      </button>
+      {/* <button*/}
+      {/*  className={styles.button}*/}
+      {/*  onClick={() => navigate('/cart/checkout')}*/}
+      {/* >*/}
+      {/*  <span>*/}
+      {/*      Continue to check out*/}
+      {/*  </span>*/}
+      {/* </button>*/}
     </div>
   );
 };
