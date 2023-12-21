@@ -1,7 +1,10 @@
 @import '../styles/variables.module.scss';
 
 .App {
-  width: 1440px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  min-width: 1280px;
   margin: 0 auto;
   background-color: $gray-90;
 }

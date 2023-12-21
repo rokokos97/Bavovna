@@ -5,7 +5,7 @@ import Card from '../pages/card/Card';
 import AboutUsPage from '../pages/aboutUsPage/AboutUsPage';
 import styles from './App.module.scss';
 import AppLoader from '../hoc/appLoader';
-import LoginLayout from '../pages/LoginLayoutPage/LoginLayout';
+import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';

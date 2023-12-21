@@ -7,9 +7,10 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 1440px;
+  max-width: 1440rem;
+  width: 100%;
+  min-width: 128rem;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   z-index: 9999;
 }
@@ -31,8 +32,6 @@
 }
 .header {
   width: 100%;
-  //position: relative;
-  //top: -1.5rem;
   padding: 1.6rem 8rem;
   display: flex;
   justify-content: space-between;
