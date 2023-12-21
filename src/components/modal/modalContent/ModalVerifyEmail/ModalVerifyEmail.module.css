@@ -1,11 +1,11 @@
 .modalVerifyEmail {
-  width: 51.9rem;
+  width: 62.9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1.6rem;
+  padding: 8rem;
   background: #fafafa;
-  padding: 2.4rem;
 }
 
 .link {
@@ -16,15 +16,19 @@
 }
 
 .closeButton {
+  position: relative;
+  top: -7rem;
+  left: 29rem;
   background: #fafafa;
 }
 
 .content {
-  width: 46.9rem;
+  width: 40rem;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
   text-align: center;
+  margin-top: -3.5rem;
 }
 
 .button {
