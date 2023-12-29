@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useDataCard} from '../../Providers/CardMasterProvider';
+import {filtersValues} from '../../services/filtersValues.service';
+
 
 import styles from './SizeList.module.scss';
 
-const allSizes = ['s', 'm', 'l', 'xl'];
 const noSize = 'Choose a size';
 
 const SizesList = ({sizes, selectedSize, setSelectedSize}) => {
   const {itemData, setItemData} = useDataCard();
+  const {sizeValues} = filtersValues;
 
   const handleChange = (event) => {
     setSelectedSize(event.target.value);
@@ -26,17 +28,17 @@ const SizesList = ({sizes, selectedSize, setSelectedSize}) => {
         )}
       </pre>
       <ul className={styles.sizeList}>
-        {allSizes.map((size) => (
-          <li key={size} className={styles.sizeListItem}>
+        {sizeValues.map((size) => (
+          <li key={size.label} className={styles.sizeListItem}>
             <input
               type='radio'
               name='size'
-              value={size}
-              id={size}
+              value={size.value}
+              id={size.value}
               onChange={handleChange}
-              disabled={!sizes.includes(size)}
+              disabled={!sizes.includes(size.value)}
             />
-            <label htmlFor={size}>{size}</label>
+            <label htmlFor={size.value}>{size.label}</label>
           </li>
         ))}
       </ul>

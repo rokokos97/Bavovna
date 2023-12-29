@@ -1,9 +1,3 @@
-// export const values = {
-//   categoryValues: ['shirts', 'shorts', 'skirts', 'dresses'],
-//   sizeValues: ['xs', 's', 'm', 'l', 'xl'],
-//   colorValues: ['black', 'indigo', 'vanilla', 'white'],
-//   availabilityValues: ['In stock', 'Sold out'],
-// };
 export const filtersValues = {
   categoryValues: [
     {
@@ -25,10 +19,6 @@ export const filtersValues = {
   ],
   sizeValues: [
     {
-      value: 'xs',
-      label: 'XS',
-    },
-    {
       value: 's',
       label: 'S',
     },
@@ -39,6 +29,10 @@ export const filtersValues = {
     {
       value: 'l',
       label: 'L',
+    },
+    {
+      value: 'xl',
+      label: 'XL',
     },
   ],
   colorValues: [

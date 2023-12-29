@@ -2,6 +2,7 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
+import {getColors} from '../store/colorsSlice';
 
 import PropTypes from 'prop-types';
 
@@ -18,13 +19,12 @@ export const CatalogueMasterProvider = ({children}) => {
   };
   const items = useSelector(getItems());
   const categories = useSelector(getCategories());
+  const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
   const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-
-  console.log(categories);
-
+  console.log('selectedFilters: ', selectedFilters);
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
@@ -74,23 +74,26 @@ export const CatalogueMasterProvider = ({children}) => {
   useEffect(() => {
     const newItems = downloadedItems.filter((item) => {
       return (
-        selectedFilters.category.length === 0 || selectedFilters.category
-            .some((category) => item.category.includes(category))
-      ) && (
-        selectedFilters.size.length === 0 || selectedFilters.size.some((size) => item.size.includes(size))
-      ) && (
-        selectedFilters.color.length === 0 || selectedFilters.color.some((color) => item.color.includes(color))
+        (selectedFilters.category.length === 0 ||
+          selectedFilters.category.some((category) =>
+            item.category.includes(category),
+          )) &&
+        (selectedFilters.size.length === 0 ||
+          selectedFilters.size.some((size) => item.size.includes(size))) &&
+        (selectedFilters.color.length === 0 ||
+          selectedFilters.color.some((color) => item.color.includes(color)))
       );
     });
     setFilteredItems(newItems);
   }, [selectedFilters, items]);
-
 
   return (
     <DataCatalogueContext.Provider
       value={{
         isFilter,
         filteredItems,
+        categories,
+        colors,
         changeIsFilter,
         onSortItems,
         handleFilterChange,

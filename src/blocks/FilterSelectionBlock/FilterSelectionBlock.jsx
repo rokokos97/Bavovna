@@ -7,11 +7,13 @@ import {filtersValues} from '../../services/filtersValues.service';
 import styles from './FilterSelectionBlock.module.scss';
 
 const FilterSelectionBlock = () => {
-  const {changeIsFilter, handleCleanFilter} = useDataCatalogue();
-  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  console.log(filterCheckboxes);
+  const {changeIsFilter, handleCleanFilter, categories, colors} = useDataCatalogue();
+  // const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  // console.log('FilterCheckboxes: ', filterCheckboxes);
+  // console.log('Categories: ', categories);
+  // console.log('Colors: ', colors);
 
-  const {categoryValues, sizeValues, colorValues, availabilityValues} =
+  const {sizeValues, availabilityValues} =
     filtersValues;
 
   return (
@@ -25,11 +27,11 @@ const FilterSelectionBlock = () => {
             id='category'
             placeholder='Category'
             name='category'
-            inner={categoryValues.map((categoryValue, index) => (
+            inner={categories.map((category, index) => (
               <CheckboxBlock
                 key={index}
-                value={categoryValue.value}
-                label={categoryValue.label}
+                value={category.name}
+                label={category.name}
                 option='category'
               />
             ))}
@@ -51,12 +53,12 @@ const FilterSelectionBlock = () => {
             id='color'
             placeholder='Color'
             name='color'
-            inner={colorValues.map((colorValue, index) => (
+            inner={colors.map((color, index) => (
               <CheckboxBlock
                 key={index}
                 id='isColor'
-                value={colorValue.value}
-                label={colorValue.label}
+                value={color.value}
+                label={color.name}
                 option='color'
               />
             ))}
