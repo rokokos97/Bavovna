@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './listWithRadioButtons.module.scss';
 import PropTypes from 'prop-types';
 import RadioButtonCheckedIcon from '../svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
@@ -7,35 +7,26 @@ import DeleteIcon from '../svg/deleteIcon/deleteIcon';
 import {getUser, updateUser} from '../../store/userSlice';
 import {useDispatch, useSelector} from 'react-redux';
 
-const ListWithRadioButtons = ({options, isList, hideButton}) => {
+const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) => {
   const dispatch = useDispatch();
-  const user = useSelector(getUser());
-
-  const [selectedValue, setSelectedValue] = useState('Nova poshta delivery to the post office');
-  const handleChange = (label) => {
-    setSelectedValue(label);
+  const user = useSelector(getUser);
+  const [currentValue, setCurrentValue] = useState(!isList? '1' : user.currentDeliveryAddress);
+  const handleChange = (id) => {
+    setCurrentValue(id);
+    if (onSelectValue) {
+      onSelectValue(id);
+    }
     if (isList) {
-      dispatch(updateUser({...user, currentDeliveryAddress: label}));
+      dispatch(updateUser({...user, currentDeliveryAddress: id}));
     }
   };
   const deleteDeliveryAddress = (id) => {
     const newDeliveryAddressList = user.deliveryAddress.filter((address)=>address._id !== id);
     dispatch(updateUser({...user, currentDeliveryAddress: '', deliveryAddress: newDeliveryAddressList}));
   };
-  useEffect(()=> {
-    if (!isList && user && user.deliveryAddress) {
-      const currentDeliveryMethod = user.deliveryAddress.find((item) => item.label === user.currentDeliveryAddress);
-      console.log('currentDeliveryMethod', currentDeliveryMethod);
-      currentDeliveryMethod && setSelectedValue(currentDeliveryMethod.deliveryMethod);
-    }
-    if (isList && user.currentDeliveryAddress) {
-      setSelectedValue(user.currentDeliveryAddress);
-    }
-  }, [user]);
   return (
     <div className={styles.listWithRadioButtons}>
-      {options.map((option) => {
-        console.log('selectedValue', selectedValue);
+      {Object.values(options).map((option) => {
         return (
           <div key={option._id} className={styles.radioOption}>
             <input
@@ -43,17 +34,17 @@ const ListWithRadioButtons = ({options, isList, hideButton}) => {
               type="radio"
               name="customRadio"
               value={option.value}
-              checked={selectedValue === option.label}
-              onChange={() => handleChange(option.label)}
+              checked={currentValue === option._id}
+              onChange={() => handleChange(option._id)}
               className={styles.radioInput}
             />
             <label htmlFor={option._id} className={styles.radioLabel}>
-              {selectedValue === option.label ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
+              {currentValue === option._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
               <div>{option.label}</div>
             </label>
             {isList && <div
               onClick={() => deleteDeliveryAddress(option._id)}
-              style={hideButton ? {display: 'none'}: {}}
+              style={deleteButton ? {display: 'none'}: {}}
               role='button'
               className={styles.deleteButton}
             >
@@ -62,18 +53,19 @@ const ListWithRadioButtons = ({options, isList, hideButton}) => {
           </div>
         );
       })}
-      {selectedValue && !isList && (
+      {currentValue && !isList &&(
         <div>
-          {options.find((option) => option.label === selectedValue).value}
+          {Object.values(options).find((option) => option._id === currentValue).value}
         </div>
       )}
     </div>
   );
 };
 ListWithRadioButtons.propTypes = {
-  options: PropTypes.array,
+  options: PropTypes.object,
   isList: PropTypes.bool,
-  hideButton: PropTypes.bool,
+  deleteButton: PropTypes.bool,
+  onSelectValue: PropTypes.func,
 };
 export default ListWithRadioButtons;
 

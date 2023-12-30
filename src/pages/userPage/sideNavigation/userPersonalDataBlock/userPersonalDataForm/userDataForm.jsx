@@ -10,7 +10,7 @@ import PhoneField from '../../../../../components/form/formFields/phoneField/pho
 import transformErrorMessage from '../../../../../utils/generateErrorMessage';
 const UserDataForm = () => {
   const dispatch = useDispatch();
-  const user = useSelector(getUser());
+  const user = useSelector(getUser);
   const response = useSelector(getResponse());
   const formik = useFormik({
     initialValues: {

@@ -6,16 +6,16 @@ import AccountIcon from '../svg/accountIcon/accountIcon';
 import ShoppingCartIcon from '../svg/shoppingCartIcon/shoppingCartIcon';
 import FavoriteIcon from '../svg/favoriteIcon/favoriteIcon';
 import SearchIcon from '../svg/searchIcon/searchIcon';
-import {useSelector} from 'react-redux';
-import {getIsLoggedIn, getUser} from '../../store/userSlice';
+import {shallowEqual, useSelector} from 'react-redux';
 import LogoIcon from '../svg/logoIcon/logoIcon';
 import {getCart} from '../../store/cartSlice';
+import {getIsLoggedIn, getUser} from '../../store/userSlice';
 
 const Header = () => {
   const navigate = useNavigate();
-  const isLoggedIn = useSelector(getIsLoggedIn());
-  const user = useSelector(getUser());
-  const cart = useSelector(getCart());
+  const isLoggedIn = useSelector(getIsLoggedIn);
+  const user = useSelector(getUser );
+  const cart = useSelector(getCart, shallowEqual);
   return (
     <header className={styles.container} data-testid='Header'>
       <div className={styles.banner}>

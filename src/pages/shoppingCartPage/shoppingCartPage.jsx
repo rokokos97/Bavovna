@@ -13,7 +13,7 @@ import _ from 'lodash';
 import CheckOutBlock from './Blocks/checkOutBlock/checkOutBlock';
 
 const ShoppingCartPage = () => {
-  const cart = useSelector(getCart());
+  const cart = useSelector(getCart);
   const navigate = useNavigate();
   const swiperRef = useRef();
   const isItemsLoading = useSelector(getItemsLoadingStatus());

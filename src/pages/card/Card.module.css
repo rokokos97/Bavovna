@@ -148,7 +148,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .formBag .activeBtn::before {
   content: "";
@@ -183,7 +182,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -26.035rem;
+  top: -30.835rem;
   left: -5%;
 }
 .formBag .activeBtn:active::after {
@@ -195,7 +194,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -26.035rem;
+  top: -30.835rem;
   left: -5%;
 }
 .formBag .activeBtn:disabled {

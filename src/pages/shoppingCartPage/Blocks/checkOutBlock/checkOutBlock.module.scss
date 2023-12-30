@@ -1,8 +1,8 @@
 @import '../../../../styles/variables.module';
 .checkOutBlock {
-  position: fixed;
-  left: 94.9rem;
   width: 41.1rem;
+  position: absolute;
+  right:0;
   height: 28.5rem;
   display: flex;
   flex-direction: column;

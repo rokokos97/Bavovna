@@ -47,7 +47,6 @@
   color: #000000;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .button::before {
   content: "";
@@ -82,7 +81,7 @@
   background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -7.115rem;
+  top: -11.915rem;
   left: -5%;
 }
 .button:active::after {
@@ -94,7 +93,7 @@
   border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -7.115rem;
+  top: -11.915rem;
   left: -5%;
 }
 .button:disabled {

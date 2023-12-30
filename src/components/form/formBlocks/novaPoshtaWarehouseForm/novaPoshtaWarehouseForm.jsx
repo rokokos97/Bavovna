@@ -4,40 +4,41 @@ import SelectField from '../../formFields/selectField/selectField';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCitiesList} from '../../../../store/citiesSlice';
 import npService from '../../../../services/np.service';
-import {getUser, updateUser} from '../../../../store/userSlice';
 import {useFormik} from 'formik';
+import {validationSchemaNPDeliveryWarehouse} from '../../../../utils/validationSchema';
 import {nanoid} from 'nanoid/non-secure';
-import transformFormikValues from '../../../../utils/transformFormikValues';
-import collectLabels from '../../../../utils/transformDeliveryAddress';
+import {getUser, updateUser} from '../../../../store/userSlice';
+import PropTypes from 'prop-types';
 
-const NovaPoshtaWarehouseForm = () => {
+
+const NovaPoshtaWarehouseForm = ({isButton}) => {
   const citiesList = useSelector(getCitiesList());
+  const user = useSelector(getUser);
+  const dispatch = useDispatch();
   const [warehousesList, setWarehousesList] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
-  const dispatch = useDispatch();
-  const user = useSelector(getUser());
-  const formik = useFormik({
+  const formik= useFormik({
     initialValues: {
-      city: '',
-      warehouse: '',
+      city: {},
+      warehouse: {},
+      deliveryMethod: 'Nova poshta delivery to the post office',
+      label: '',
     },
-    validationSchema: null,
+    validationSchema: validationSchemaNPDeliveryWarehouse,
     onSubmit: () => {
-      const transformValues = transformFormikValues(formik.values);
-      const transformAddress = collectLabels(transformValues);
-      const updatedUser = {
-        ...user,
-        deliveryAddress: [...user.deliveryAddress, {
-          _id: nanoid(12),
-          label: transformAddress,
-          value: formik.values,
-          deliveryMethod: 'Nova poshta delivery to the post office',
-        }],
+      const newAddress = {
+        ...formik.values,
+        _id: nanoid(12),
+        label: `${formik.values.city.label}, ${formik.values.warehouse.label}`,
       };
-      console.log(updatedUser);
-      dispatch(updateUser(updatedUser));
-    }},
-  );
+      const newUser = {
+        ...user,
+        deliveryAddress: [...user.deliveryAddress, newAddress],
+        currentDeliveryAddress: {...newAddress},
+      };
+      dispatch(updateUser(newUser));
+    },
+  });
   const handleCityChange = (value) => {
     setSelectedCity(value);
     formik.setFieldValue('city', value);
@@ -47,7 +48,6 @@ const NovaPoshtaWarehouseForm = () => {
   };
   useEffect(()=>{
     if (selectedCity) {
-      console.log(selectedCity);
       npService.post({cityRef: selectedCity.value}).then(async (data)=> {
         setWarehousesList(await data);
       });
@@ -63,7 +63,7 @@ const NovaPoshtaWarehouseForm = () => {
         label='City'
         name='city'
         onChange={handleCityChange}
-        defaultValue={{label: 'Select a city', value: ''}}
+        defaultValue={{label: 'Select a city', value: null}}
         options={citiesList ? citiesList : []}
         error={formik.errors.city}
       />
@@ -71,21 +71,23 @@ const NovaPoshtaWarehouseForm = () => {
         label='Post office'
         name='warehouse'
         onChange={handleWarehouseChange}
-        defaultValue={{label: 'Select a post office', value: ''}}
+        defaultValue={{label: 'Select a post office', value: null}}
         options={warehousesList}
         error={formik.errors.warehouse}
       />
-      <button
+      {isButton && <button
         type='submit'
-        disabled={!formik.dirty}
+        disabled={!formik.dirty || !formik.isValid}
         className={styles.button}
       >
         <span>
                   add address
         </span>
-      </button>
+      </button>}
     </form>
   );
 };
-
+NovaPoshtaWarehouseForm.propTypes = {
+  isButton: PropTypes.bool,
+};
 export default NovaPoshtaWarehouseForm;

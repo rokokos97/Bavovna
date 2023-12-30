@@ -7,7 +7,7 @@ import {getUser} from '../../../../store/userSlice';
 import OrdersList from '../../../../components/ordersList/ordersList';
 
 const OrdersBlock = () => {
-  const user = useSelector(getUser());
+  const user = useSelector(getUser);
   if (!user) {
     return <Loader/>;
   }

@@ -7,7 +7,7 @@
 .radioOption {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .radioInput {
   appearance: none;
@@ -25,7 +25,7 @@
 .deleteButton {
   background: transparent;
   display: flex;
-  align-content: start;
+  align-content: flex-start;
 
   &:hover {
     svg {

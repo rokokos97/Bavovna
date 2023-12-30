@@ -139,7 +139,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .checkoutBtn::before {
   content: "";
@@ -174,7 +173,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -14.1rem;
+  top: -18.9rem;
   left: -5%;
 }
 .checkoutBtn:active::after {
@@ -186,7 +185,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -14.1rem;
+  top: -18.9rem;
   left: -5%;
 }
 .checkoutBtn:disabled {

@@ -6,7 +6,7 @@ import DeleteIcon from '../../../../../components/svg/deleteIcon/deleteIcon';
 
 const CheckOutShoppingCartBlockItemsList = () => {
   const dispatch = useDispatch();
-  const normalizeCart = useSelector(getNormalizedCart());
+  const normalizeCart = useSelector(getNormalizedCart);
   const handleItemDelete = (itemIdentifier) => {
     dispatch(removeItemFromCart(itemIdentifier));
   };

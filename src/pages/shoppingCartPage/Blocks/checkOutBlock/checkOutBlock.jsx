@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux';
 import {getCartTotalPrice} from '../../../../store/cartSlice';
 
 const CheckOutBlock = () => {
-  const totalPrice = useSelector(getCartTotalPrice());
+  const totalPrice = useSelector(getCartTotalPrice);
   const navigate = useNavigate();
   return (
     <div className={styles.checkOutBlock} data-testid="CheckOutBlock">

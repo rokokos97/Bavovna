@@ -1,23 +1,25 @@
 @import 'src/styles/variables.module';
 .userDeliveryBlock {
-  width: 73.5rem;
+  width: 100%;
 }
 .deliveryTitle {
   @include fonts($headline-3);
   text-align: start;
   margin-bottom: 2.4rem;
 }
-section {
+.section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  column-gap: 2.4rem;
+  column-gap: 13.4rem;
 }
 .blockLabel {
   @include fonts($headline-6);
   text-align: start;
   margin-bottom: 1.8rem;
 };
-.rightColumn {
-  width: 30.3rem;
+.column {
+  width: 30rem;
+}
+.button {
+  @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
 }

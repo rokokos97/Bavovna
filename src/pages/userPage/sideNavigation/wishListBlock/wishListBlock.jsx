@@ -7,7 +7,7 @@ import EmptyBlock from '../../../../blocks/emptyBlock/emptyBlock';
 import Loader from '../../../../components/loader/loader';
 
 const WishListBlock = () => {
-  const user = useSelector(getUser());
+  const user = useSelector(getUser);
   if (!user) {
     return <Loader/>;
   }

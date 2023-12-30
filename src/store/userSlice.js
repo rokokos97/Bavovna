@@ -3,6 +3,7 @@ import sessionStorageService from '../services/sessionStorage.service';
 import authService from '../services/auth.service';
 import userService from '../services/user.service';
 import localStorageService from '../services/localStorage.service';
+import {createSelector} from '@reduxjs/toolkit';
 
 const transferDataToSessionStorage = () => {
   const keys = Object.keys(localStorage);
@@ -224,8 +225,18 @@ export const loadUser = () => async (dispatch) => {
     dispatch(userLoadRequestFailed(error.message));
   }
 };
-export const getUser = () => (state) => state.user.entities;
-export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
+const selectUserEntities = (state) => state.user.entities;
+const selectIsLoggedIn = (state) => state.user.isLoggedIn;
+export const getUser = createSelector(
+    [selectUserEntities], // Масив селекторів, результати яких будуть аргументами для функції нижче
+    (entities) => entities, // Функція, яка отримує результати вищезазначених селекторів
+);
+// export const getUser = () => (state) => state.user.entities;
+export const getIsLoggedIn = createSelector(
+    [selectIsLoggedIn], // Масив селекторів, результати яких будуть аргументами для функції нижче
+    (isLoggedIn) => isLoggedIn, // Функція, яка отримує результати вищезазначених селекторів
+);
+// export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getResponse = () => (state) => state.user.response;
 
 

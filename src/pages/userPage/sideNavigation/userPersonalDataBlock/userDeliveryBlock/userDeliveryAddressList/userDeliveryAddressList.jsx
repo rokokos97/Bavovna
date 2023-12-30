@@ -6,15 +6,14 @@ import ListWithRadioButtons from '../../../../../../components/listWithRadioButt
 import PropTypes from 'prop-types';
 
 const UserDeliveryAddressList = ({hiddenButton}) => {
-  const user = useSelector(getUser());
+  const user = useSelector(getUser);
   return ( user &&
     <div className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList"
     >
-      <ListWithRadioButtons options={user.deliveryAddress} isList={true} hideButton={hiddenButton}/>
+      <ListWithRadioButtons options={{...user.deliveryAddress}} isList={true} deleteButton={hiddenButton}/>
     </div>
   );
 };
-
 UserDeliveryAddressList.propTypes = {
   hiddenButton: PropTypes.bool,
 };

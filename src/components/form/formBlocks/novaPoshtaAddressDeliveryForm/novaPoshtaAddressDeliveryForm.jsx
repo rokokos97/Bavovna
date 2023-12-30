@@ -4,38 +4,41 @@ import SelectField from '../../formFields/selectField/selectField';
 import TextField from '../../formFields/textField/textField';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCitiesList} from '../../../../store/citiesSlice';
+import PropTypes from 'prop-types';
 import {useFormik} from 'formik';
-import {validationSchemaAddressForm} from '../../../../utils/validationSchema';
-import {getUser, updateUser} from '../../../../store/userSlice';
+import {validationSchemaNPDeliveryAddress} from '../../../../utils/validationSchema';
 import {nanoid} from 'nanoid/non-secure';
-import collectLabels from '../../../../utils/transformDeliveryAddress';
-import transformFormikValues from '../../../../utils/transformFormikValues';
-const NovaPoshtaAddressDeliveryForm = () => {
+import {getUser, updateUser} from '../../../../store/userSlice';
+
+const NovaPoshtaAddressDeliveryForm = ({isButton}) => {
   const citiesList = useSelector(getCitiesList());
+  const user = useSelector(getUser);
   const dispatch = useDispatch();
-  const user = useSelector(getUser());
-  const formik = useFormik({
+  const formik= useFormik({
     initialValues: {
-      city: '',
+      city: {},
       street: '',
       houseNumber: '',
       flatNumber: '',
+      deliveryMethod: 'Nova poshta delivery to the address',
+      label: '',
     },
-    validationSchema: validationSchemaAddressForm,
+    validationSchema: validationSchemaNPDeliveryAddress,
     onSubmit: () => {
-      const transformValues = transformFormikValues(formik.values);
-      const transformAddress = collectLabels(transformValues);
-      const updatedUser = {
-        ...user,
-        deliveryAddress: [...user.deliveryAddress, {
-          _id: nanoid(12),
-          label: transformAddress,
-          value: formik.values,
-          deliveryMethod: 'Nova poshta delivery to the address',
-        }],
+      const newAddress = {
+        ...formik.values,
+        _id: nanoid(12),
+        label: `${formik.values.city.label}, str. ${formik.values.street}, bld. ${formik.values.houseNumber}
+         ${formik.values.flatNumber?', flat.'+formik.values.flatNumber:''}`,
       };
-      dispatch(updateUser(updatedUser));
-    }});
+      const newUser = {
+        ...user,
+        deliveryAddress: [...user.deliveryAddress, newAddress],
+        currentDeliveryAddress: {...newAddress},
+      };
+      dispatch(updateUser(newUser));
+    },
+  });
   const handleCityChange = (value) => formik.setFieldValue('city', value);
   return (
     <form onSubmit={formik.handleSubmit} className={styles.novaPoshtaAddressDeliveryForm} data-testid="NovaPoshtaAddressDeliveryForm">
@@ -45,6 +48,8 @@ const NovaPoshtaAddressDeliveryForm = () => {
         onChange={handleCityChange}
         defaultValue={{label: 'Select a city', value: ''}}
         options={citiesList ? citiesList : []}
+        touched={formik.touched.city}
+        error={formik.errors.city}
       />
       <TextField
         label='Street'
@@ -76,16 +81,19 @@ const NovaPoshtaAddressDeliveryForm = () => {
         onBlur={formik.handleBlur}
         touched={formik.touched.flatNumber}
       />
-      <button
+      {isButton && <button
         type='submit'
-        disabled={!formik.dirty}
+        disabled={!formik.dirty || !formik.isValid}
         className={styles.button}
       >
         <span>
-                  add address
+           add address
         </span>
-      </button>
+      </button>}
     </form>
   );
+};
+NovaPoshtaAddressDeliveryForm.propTypes = {
+  isButton: PropTypes.bool,
 };
 export default NovaPoshtaAddressDeliveryForm;

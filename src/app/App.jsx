@@ -21,7 +21,7 @@ import {getCart} from '../store/cartSlice';
 import CheckOutPage from '../pages/checkOutPage/checkOutPage';
 
 function App() {
-  const cart = useSelector(getCart());
+  const cart = useSelector(getCart);
   useEffect(() => {
     if (cart.length !== 0) {
       sessionStorageService.setCurrentCart(cart);

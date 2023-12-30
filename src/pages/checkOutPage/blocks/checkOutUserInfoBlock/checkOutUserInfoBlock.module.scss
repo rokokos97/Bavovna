@@ -84,5 +84,11 @@
     }
   }
 }
-
-
+.userPaymentMethodsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.button {
+  @include button(62.8rem, $black, $white, $accent-a-3, $accent-a-5);
+}

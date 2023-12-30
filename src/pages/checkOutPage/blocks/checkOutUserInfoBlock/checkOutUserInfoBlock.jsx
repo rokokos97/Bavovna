@@ -3,20 +3,21 @@ import styles from './checkOutUserInfoBlock.module.scss';
 import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import LoginFormBlock from '../../../../components/form/formBlocks/loginFormBlock/loginFormBlock';
-import {useSelector} from 'react-redux';
-import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
+import {useSelector, shallowEqual} from 'react-redux';
 import {useFormik} from 'formik';
 import AnonimUserContactFormBlock
   from '../../../../components/form/formBlocks/anonimUserContactFormBlock/anonimUserContactFormBlock';
-import UserDeliveryMethodsList from './userDeliveryMethodsList/userDeliveryMethodsList';
 import UserPaymentMethodsList from './userPaymentMethodsList/userPaymentMethodsList';
 import {validationSchemaCheckOutUserData} from '../../../../utils/validationSchema';
 import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/userDeliveryAddressList/userDeliveryAddressList';
+import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
+import ListWithRadioButtons from '../../../../components/listWithRadioButtons/listWithRadioButtons';
+import PropTypes from 'prop-types';
 
-const CheckOutUserInfoBlock = () => {
-  const isLoggedIn = useSelector(getIsLoggedIn());
-  const user = useSelector(getUser());
+const CheckOutUserInfoBlock = ({selectedValue}) => {
+  const isLoggedIn = useSelector((state)=> state.user.isLoggedIn, shallowEqual);
+  const user = useSelector((state) => state.user.entities, shallowEqual );
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
   const [userCurrentDelivery, setUserCurrentDelivery] = useState('1');
   const formik = useFormik({
@@ -25,16 +26,17 @@ const CheckOutUserInfoBlock = () => {
       lastName: '',
       email: '',
       phoneNumber: '',
-      deliveryAddress: [],
+      city: {},
+      warehouse: {},
       currentDeliveryAddress: '',
       cardNumber: '',
       validityDate: '',
       cvvCvc: '',
-      cartHolderName: '',
+      cardHolderName: '',
     },
-    ValidationSchema: validationSchemaCheckOutUserData,
+    validationSchema: validationSchemaCheckOutUserData,
     onSubmit: (values)=> {
-      console.log(values);
+      console.log('OrderDetails', values);
     },
   });
   const userCurrentDetailsList = [
@@ -49,11 +51,16 @@ const CheckOutUserInfoBlock = () => {
       value: <LoginFormBlock key={2}/>,
     },
   ];
-  const deliveryMethodsList = [
+  const deliveryMethods = [
     {
       id: '1',
       label: 'new address',
-      value: <UserDeliveryMethodsList formik={formik} key={2}/>,
+      value: <ListWithRadioButtons
+        onSelectValue={selectedValue}
+        options={deliveryMethodsList[2]}
+        isList={false}
+        deleteButton={true}
+        key={2}/>,
     },
     {
       id: '2',
@@ -71,7 +78,7 @@ const CheckOutUserInfoBlock = () => {
     }
   }, [user]);
   return (
-    <div className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
+    <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
       <p className={styles.title} id='contacts'>Contact details</p>
       <div className={styles.radioBlock}>
         {userCurrentDetailsList.map((detail, index)=> <div key={index}>
@@ -98,12 +105,13 @@ const CheckOutUserInfoBlock = () => {
       <div className={styles.divider}/>
       <p className={styles.title} id='delivery'>delivery</p>
       <div className={styles.radioBlock}>
-        {deliveryMethodsList.map((detail, index)=> <div key={index}>
+        {deliveryMethods.map((detail, index)=> <div key={index}>
           <div
             className={styles.radioWrapper}
           >
             <button
               className={styles.radioButton}
+              type='button'
               disabled={!isLoggedIn}
               onClick = {()=> setUserCurrentDelivery(detail.id) }
             >
@@ -117,14 +125,24 @@ const CheckOutUserInfoBlock = () => {
           </div>
         </div>)}
       </div>
-      {deliveryMethodsList.map((detail)=>
+      {deliveryMethods.map((detail)=>
         userCurrentDelivery === detail.id ? <div key={detail.id}>{detail.value}</div> : null)}
       <div className={styles.divider}/>
       <p className={styles.title} id='payment'>payment method</p>
       <UserPaymentMethodsList formik={formik}/>
-    </div>
-
+      <button
+        type='submit'
+        disabled={!formik.dirty || !formik.isValid}
+        className={styles.button}
+      >
+        <span>
+                  place the order
+        </span>
+      </button>
+    </form>
   );
 };
-
+CheckOutUserInfoBlock.propTypes = {
+  selectedValue: PropTypes.func,
+};
 export default CheckOutUserInfoBlock;

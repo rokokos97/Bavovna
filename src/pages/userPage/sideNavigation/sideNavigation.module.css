@@ -1,6 +1,7 @@
 .navigationBlock {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  column-gap: 21.7rem;
 }
 
 .sidebar {
@@ -19,7 +20,7 @@
 }
 
 .navigationContentSide {
-  width: 73.5rem;
+  width: 84.5rem;
   display: flex;
   flex-direction: row;
 }

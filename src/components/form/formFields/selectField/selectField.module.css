@@ -26,4 +26,8 @@ input {
   line-height: normal;
 }
 
+.selectField.hasError .label {
+  color: #ea001b;
+}
+
 /*# sourceMappingURL=selectField.module.css.map */

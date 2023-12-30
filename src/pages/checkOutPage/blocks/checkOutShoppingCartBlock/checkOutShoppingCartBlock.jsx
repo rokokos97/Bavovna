@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './checkOutShoppingCartBlock.module.scss';
 import {useSelector} from 'react-redux';
 import {getCartLength, getCartTotalPrice} from '../../../../store/cartSlice';
@@ -7,16 +7,21 @@ import {useFormik} from 'formik';
 import {validationSchemaPromoCode} from '../../../../utils/validationSchema';
 import CheckOutShoppingCartBlockItemsList
   from './checkOutShoppingCartBlockItemsList/checkOutShoppingCartBlockItemsList';
+import PropTypes from 'prop-types';
 
-const CheckOutShoppingCartBlock = () => {
-  const cartLength = useSelector(getCartLength());
-  const price = useSelector(getCartTotalPrice());
+const CheckOutShoppingCartBlock = ({deliveryPrice}) => {
+  const [promoCode, setPromoCode] = useState(null);
+  const cartLength = useSelector(getCartLength);
+  const itemPrice = useSelector(getCartTotalPrice);
+  const finalDiscount = promoCode ? itemPrice * promoCode : null;
+  const totalPrice = itemPrice - finalDiscount + deliveryPrice;
   const formik = useFormik({
     initialValues: {
       promoCode: '',
     }, validationSchema: validationSchemaPromoCode,
     onSubmit: (values) => {
       console.log(values.promoCode);
+      setPromoCode(values.promoCode/100);
     },
   });
   return (
@@ -52,16 +57,20 @@ const CheckOutShoppingCartBlock = () => {
         </button>
       </form>
       <div className={styles.price}>
-        <p>order value</p>
-        <p>{`${price} $`}</p>
+        <p>Order value</p>
+        <p>{`${itemPrice} $`}</p>
       </div>
+      {finalDiscount && <div className={styles.discount}>
+        <p>Promo code</p>
+        <p>{`-${finalDiscount} $`}</p>
+      </div>}
       <div className={styles.price}>
-        <p>shipping</p>
-        <p>{`${price} $`}</p>
+        <p>Shipping</p>
+        <p>{`${deliveryPrice} $`}</p>
       </div>
       <div className={styles.priceBlock}>
         <p>total</p>
-        <p>{`${price} $`}</p>
+        <p>{`${totalPrice} $`}</p>
       </div>
       {/* <button*/}
       {/*  className={styles.button}*/}
@@ -74,5 +83,7 @@ const CheckOutShoppingCartBlock = () => {
     </div>
   );
 };
-
+CheckOutShoppingCartBlock.propTypes = {
+  deliveryPrice: PropTypes.number,
+};
 export default CheckOutShoppingCartBlock;

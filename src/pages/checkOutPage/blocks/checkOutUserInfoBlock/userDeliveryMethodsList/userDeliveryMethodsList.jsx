@@ -6,7 +6,7 @@ import ListWithRadioButtons from '../../../../../components/listWithRadioButtons
 const UserDeliveryMethodsList = () => {
   return (
     <div className={styles.userDeliveryMethodsList} data-testid="UserDeliveryMethodsList">
-      <ListWithRadioButtons options={deliveryMethodsList} isList={false} hideButton={true}/>
+      <ListWithRadioButtons options={deliveryMethodsList[1]} isList={false} deleteButton={true}/>
     </div>
   );
 };

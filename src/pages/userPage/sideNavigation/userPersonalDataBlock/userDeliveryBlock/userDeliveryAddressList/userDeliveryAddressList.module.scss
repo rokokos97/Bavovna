@@ -42,14 +42,14 @@
 }
 .labelText {
   @include fonts($label);
-  text-align: start;
+  text-align: left;
   word-wrap: inherit;
   margin-left: 0.8rem;
 }
 .deleteButton {
   background: transparent;
   display: flex;
-  align-content: start;
+  align-content: flex-start;
 
   &:hover {
       svg {

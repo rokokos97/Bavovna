@@ -1,32 +1,35 @@
 import React from 'react';
 import styles from './novaInternationalAddressDeliveryForm.module.scss';
 import TextAreaField from '../../formFields/textAreaField/textAreaField';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUser, updateUser} from '../../../../store/userSlice';
+import PropTypes from 'prop-types';
 import {useFormik} from 'formik';
-import {validationSchemaAddressForm} from '../../../../utils/validationSchema';
+import {validationSchemaIntDeliveryForm} from '../../../../utils/validationSchema';
 import {nanoid} from 'nanoid/non-secure';
-const NovaInternationalAddressDeliveryForm = () => {
+import {getUser, updateUser} from '../../../../store/userSlice';
+import {useDispatch, useSelector} from 'react-redux';
+const NovaInternationalAddressDeliveryForm = ({isButton}) => {
+  const user = useSelector(getUser);
   const dispatch = useDispatch();
-  const user = useSelector(getUser());
-  const formik = useFormik({
+  const formik= useFormik({
     initialValues: {
       intDeliveryAddress: '',
+      deliveryMethod: 'International delivery',
     },
-    validationSchema: validationSchemaAddressForm,
+    validationSchema: validationSchemaIntDeliveryForm,
     onSubmit: () => {
-      const updatedUser = {...user,
-        deliveryAddress: [...user.deliveryAddress, {
-          label: formik.values.intDeliveryAddress,
-          value: formik.values,
-          deliveryMethod: 'internationalShipping',
-          _id: nanoid(12),
-        }]};
-      dispatch(updateUser(updatedUser));
-    }},
-  );
+      const newAddress = {...formik.values, _id: nanoid(12)};
+      const newUser = {
+        ...user,
+        deliveryAddress: [...user.deliveryAddress, newAddress],
+        currentDeliveryAddress: {...newAddress},
+      };
+      dispatch(updateUser(newUser));
+    },
+  });
   return (
-    <form className={styles.novaInternationalAddressDeliveryForm} onSubmit={formik.handleSubmit}
+    <form
+      onSubmit={formik.handleSubmit}
+      className={styles.novaInternationalAddressDeliveryForm}
       data-testid="NovaInternationalAddressDeliveryForm">
       <TextAreaField
         label='Delivery address '
@@ -38,7 +41,7 @@ const NovaInternationalAddressDeliveryForm = () => {
         onBlur={formik.handleBlur}
         touched={formik.touched.intDeliveryAddress}
       />
-      <button
+      {isButton && <button
         type='submit'
         disabled={!formik.dirty || !formik.isValid}
         className={styles.button}
@@ -46,8 +49,12 @@ const NovaInternationalAddressDeliveryForm = () => {
         <span>
                   add address
         </span>
-      </button>
+      </button>}
     </form>
   );
+};
+
+NovaInternationalAddressDeliveryForm.propTypes = {
+  isButton: PropTypes.bool,
 };
 export default NovaInternationalAddressDeliveryForm;

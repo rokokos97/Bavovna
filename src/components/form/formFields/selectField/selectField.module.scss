@@ -1,7 +1,6 @@
 @import "../../../../styles/variables.module";
 .selectField {
   }
-
 .label {
   display: flex;
   align-items: center;
@@ -25,4 +24,9 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+.selectField.hasError {
+  .label {
+    color: $error;
+  }
 }
