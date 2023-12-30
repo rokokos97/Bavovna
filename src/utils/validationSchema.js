@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-const streetNameRegex = /^[A-ZА-ЯІЇЄҐ][a-zа-яіїєґ'-]*\s?([A-ZА-ЯІЇЄҐ]?[a-zа-яіїєґ'-]*)?$/;
+const streetNameRegex = /^[A-Z][a-z'-]*\s?([A-Z]?[a-z'-]*)?$/;
 export const validationSchemaRegisterForm = Yup.object().shape({
   license: Yup.boolean()
       .oneOf([true], 'You must agree to the terms and conditions')
@@ -24,17 +24,17 @@ export const validationSchemaRegisterForm = Yup.object().shape({
       .required('Last name is required')
       .min(2, 'Last name has to be longer than 2 characters')
       .matches(
-          /^[A-ZА-я][a-zа-я]+$/,
+          /^[A-Z][a-z]+$/,
           'The Last name must begin with a capital' +
-      ' letter and consist only of letters')
+      ' letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long'),
   firstName: Yup.string()
       .required('First name is required')
       .min(2, 'First name has to be longer than 2 characters')
       .matches(
-          /^[A-ZА-я][a-zа-я]+$/,
+          /^[A-Z][a-z]+$/,
           'The First name must begin with a capital' +
-        ' letter and consist only of letters')
+        ' letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long'),
 });
 export const validationSchemaUserDataForm = Yup.object().shape({
@@ -51,11 +51,11 @@ export const validationSchemaUserDataForm = Yup.object().shape({
       .email('Invalid email address'),
   lastName: Yup.string()
       .min(2, 'Last name has to be longer than 2 characters')
-      .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The Last name must begin with a capital letter and consist only of letters')
+      .matches(/^[A-Z][a-z]+$/, 'The Last name must begin with a capital letter and consist only of latin letters')
       .max(15, 'Last name must be at most 15 characters long'),
   firstName: Yup.string()
       .min(2, 'First name has to be longer than 2 characters')
-      .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The First name must begin with a capital letter and consist only of letters')
+      .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long'),
 });
 export const validationSchemaLoginForm = Yup.object().shape({
@@ -78,7 +78,7 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
     return Object.keys(obj).length === 2;
   }),
   street: Yup.string()
-      .matches(streetNameRegex, 'Street name must start with a capital letter, can include one space or hyphen and must be up to two words')
+      .matches(streetNameRegex, 'Street name must start with a capital latin letter, can include one space or hyphen and must be up to two words')
       .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
       .min(1, 'Street name must be at least 1 character long')
       .max(30, 'Street name must be at most 30 characters long')
@@ -117,12 +117,12 @@ export const validationSchemaCheckOutUserData = Yup.object().shape({
       .required('Email is required'),
   lastName: Yup.string()
       .min(2, 'Last name has to be longer than 2 characters')
-      .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The Last name must begin with a capital letter and consist only of letters')
+      .matches(/^[A-Z][a-z]+$/, 'The Last name must begin with a capital letter and consist only of latin letters')
       .max(15, 'Last name must be at most 15 characters long')
       .required('Last name is required'),
   firstName: Yup.string()
       .min(2, 'First name has to be longer than 2 characters')
-      .matches(/^[A-ZА-Я][a-zа-я]+$/, 'The First name must begin with a capital letter and consist only of letters')
+      .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long')
       .required('First name is required'),
 });
