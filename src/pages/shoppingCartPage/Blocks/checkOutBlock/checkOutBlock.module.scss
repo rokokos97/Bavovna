@@ -1,13 +1,14 @@
 @import '../../../../styles/variables.module';
 .checkOutBlock {
-  position: fixed;
-  left: 94.9rem;
   width: 41.1rem;
-  border: 1px solid $black;
+  position: absolute;
+  right:0;
+  height: 28.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
   padding: 4rem 2.4rem;
+  background: $white;
 }
 .form {
   display: flex;

@@ -52,7 +52,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .heroBtn::before {
   content: "";
@@ -87,7 +86,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -7.17rem;
+  top: -11.97rem;
   left: -5%;
 }
 .heroBtn:active::after {
@@ -99,7 +98,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -7.17rem;
+  top: -11.97rem;
   left: -5%;
 }
 .heroBtn:disabled {

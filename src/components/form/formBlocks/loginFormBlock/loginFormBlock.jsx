@@ -22,7 +22,7 @@ const LoginFormBlock = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const response = useSelector(getResponse());
-  const isLoggedIn = useSelector(getIsLoggedIn());
+  const isLoggedIn = useSelector(getIsLoggedIn);
   const formik = useFormik({
     initialValues: {
       email: '',

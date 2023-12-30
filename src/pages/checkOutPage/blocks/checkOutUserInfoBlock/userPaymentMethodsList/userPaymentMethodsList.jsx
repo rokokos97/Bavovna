@@ -40,7 +40,7 @@ const UserPaymentMethodsList = ({formik}) => {
             </label>
           </div>
         </div>))}
-      {paymentMethodsList.map((method)=> currentPaymentMethod === method.id ? method.value: null)}
+      {paymentMethodsList.map((method)=> currentPaymentMethod === method.id ? <div key={method.id}>{method.value}</div>: null)}
     </div>
   );
 };

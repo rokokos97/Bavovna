@@ -40,7 +40,7 @@ const UserPaymentByCardForm = ({formik}) => {
       </div>
       <TextField
         label='Name on card'
-        name='cartHolderName'
+        name='cardHolderName'
         placeholder='Enter the name indicated on the card'
         onChange={formik.handleChange}
         value={formik.values.cartHolderName}

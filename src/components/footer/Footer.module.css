@@ -3,6 +3,7 @@
   align-items: center;
   width: 100%;
   background-color: #000000;
+  z-index: 100000;
 }
 .container a:hover {
   color: #5a9b83;
@@ -16,6 +17,7 @@
   color: #fafafa;
   padding: 7rem 8rem 4rem;
   margin: auto;
+  z-index: 10000;
 }
 
 .footerTop {

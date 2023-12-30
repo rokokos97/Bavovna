@@ -1,31 +1,34 @@
 @import 'src/styles/variables.module';
-.divider {
-  width: 100%;
-  border-top: 1px solid $black;
-}
 .checkOutUserInfoBlock {
-  //border: 1px solid $black;
   box-sizing: border-box;
   width: 62.8rem;
   display: flex;
   flex-direction: column;
   row-gap: 3.2rem;
   div {
-    form {
-      button {
-        @include button(62.8rem, $black, $white, $accent-a-3, $accent-a-5);
+    div {
+      form {
+        button {
+          @include button(62.8rem, $black, $white, $accent-a-3, $accent-a-5);
+        }
       }
     }
   }
   div {
     div {
       div {
-        button {
-          @include button(62.8rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+        div {
+          button {
+            @include button(62.8rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+          }
         }
       }
     }
   }
+}
+.divider {
+  width: 100%;
+  border-top: 1px solid $black;
 }
 .title {
   @include fonts($headline-3);
@@ -81,5 +84,11 @@
     }
   }
 }
-
-
+.userPaymentMethodsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.button {
+  @include button(62.8rem, $black, $white, $accent-a-3, $accent-a-5);
+}

@@ -96,7 +96,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .button::before {
   content: "";
@@ -131,7 +130,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -6.51rem;
+  top: -11.31rem;
   left: -5%;
 }
 .button:active::after {
@@ -143,7 +142,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -6.51rem;
+  top: -11.31rem;
   left: -5%;
 }
 .button:disabled {

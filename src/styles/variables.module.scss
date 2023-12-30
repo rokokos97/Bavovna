@@ -1,3 +1,4 @@
+@use "sass:math";
 $headerHeight: 9rem;
 $max-width: 144rem;
 $form-width: 40.9rem;
@@ -228,13 +229,12 @@ $light-pink: #dfc5c5;
   overflow: hidden;
   background: $background-color;
   padding: 2.1rem 2.6rem;
-
   span {
     @include fonts($button);
     color: $text-color;
     text-align: center;
     position: relative;
-    z-index: 10;
+    //z-index: 10;
   }
   &::before {
     content: '';
@@ -247,7 +247,7 @@ $light-pink: #dfc5c5;
     position: absolute;
     transition:  300ms ease-in;
     top: 0.4rem;
-    left: ($width/2)-2.4rem;
+    left: math.div($width, 2)-2.4rem;
   }
   &::after {
     content: '';
@@ -260,7 +260,7 @@ $light-pink: #dfc5c5;
     position: absolute;
     transition:  300ms ease-in;
     top: 2.5rem;
-    left: ($width/2)-0.3rem;
+    left: math.div($width, 2)-0.3rem;
   }
   &:hover::before {
     content: '';
@@ -269,7 +269,7 @@ $light-pink: #dfc5c5;
     background: $hover-color;
     opacity: 1;
     position: absolute;
-    top: -(1.1*$width/2)+2.4rem;
+    top: -(math.div(1.1*$width, 2)+2.4rem);
     left: -5%;
   }
   &:active::after {
@@ -281,7 +281,7 @@ $light-pink: #dfc5c5;
     border: 1px solid $hover-color;
     opacity: 1;
     position: absolute;
-    top: -(1.1*$width/2)+2.4rem;
+    top: -(math.div(1.1*$width, 2)+2.4rem);
     left: -5%;
   }
   &:disabled {
@@ -315,7 +315,6 @@ $light-pink: #dfc5c5;
 @mixin form() {
   display: flex;
   flex-direction: column;
-  margin: 4rem auto 17rem;
   gap: 2.4rem;
   p {
     color: $black;

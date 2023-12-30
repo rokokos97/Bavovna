@@ -13,4 +13,21 @@
   color: #ea001b;
 }
 
+input {
+  autoComplete: "off";
+}
+
+.error {
+  color: #ea001b;
+  padding-left: 0.8rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.selectField.hasError .label {
+  color: #ea001b;
+}
+
 /*# sourceMappingURL=selectField.module.css.map */

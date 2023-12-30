@@ -30,7 +30,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .page404 button::before {
   content: "";
@@ -65,7 +64,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -7.61rem;
+  top: -12.41rem;
   left: -5%;
 }
 .page404 button:active::after {
@@ -77,7 +76,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -7.61rem;
+  top: -12.41rem;
   left: -5%;
 }
 .page404 button:disabled {
