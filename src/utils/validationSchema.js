@@ -109,6 +109,27 @@ export const validationSchemaCheckOutUserData = Yup.object().shape({
   curdNumber: Yup.string()
       .matches(/^\d{16}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
+  city: Yup.object().test('object-length', 'City is required', (obj) => {
+    return Object.keys(obj).length === 2;
+  }),
+  warehouse: Yup.object().test('object-length', 'Warehouse is required', (obj) => {
+    return Object.keys(obj).length === 2;
+  }),
+  street: Yup.string()
+      .matches(streetNameRegex, 'Street name must start with a capital latin letter, can include one space or hyphen and must be up to two words')
+      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
+      .min(1, 'Street name must be at least 1 character long')
+      .max(30, 'Street name must be at most 30 characters long')
+      .required('House number is required'),
+  houseNumber: Yup.string()
+      .min(1, 'House number must be at least 1 character long')
+      .max(5, 'House number must be at most 5 characters long')
+      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
+      .required('House number is required'),
+  flatNumber: Yup.string()
+      .min(1, 'Flat number must be at least 1 character long')
+      .max(5, 'Flat number must be at most 5 characters long')
+      .matches(/^[0-9A-Za-z]+S?$/, 'Flat number must consist only numbers and latin letters'),
   phoneNumber: Yup.string()
       .matches(/^\d{12}$/, 'Phone number must be 12 digits')
       .required('Phone number is required'),

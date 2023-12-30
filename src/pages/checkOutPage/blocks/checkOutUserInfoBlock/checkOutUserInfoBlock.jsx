@@ -11,15 +11,23 @@ import UserPaymentMethodsList from './userPaymentMethodsList/userPaymentMethodsL
 import {validationSchemaCheckOutUserData} from '../../../../utils/validationSchema';
 import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/userDeliveryAddressList/userDeliveryAddressList';
-import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
+// import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
 import ListWithRadioButtons from '../../../../components/listWithRadioButtons/listWithRadioButtons';
 import PropTypes from 'prop-types';
+import NpWarehouseDeliveryFormCheckout
+  from './userDeliveryMethods/npWarehouseDeliveryFormCheckout/npWarehouseDeliveryFormCheckout';
+import npService from '../../../../services/np.service';
+import NpHomeDeliveryFormCheckout from './userDeliveryMethods/npHomeDeliveryFormCheckout/npHomeDeliveryFormCheckout';
+import NpInternationalDeliveryFormCheckout
+  from './userDeliveryMethods/npInternationalDeliveryFormCheckout/npInternationalDeliveryFormCheckout';
 
 const CheckOutUserInfoBlock = ({selectedValue}) => {
   const isLoggedIn = useSelector((state)=> state.user.isLoggedIn, shallowEqual);
   const user = useSelector((state) => state.user.entities, shallowEqual );
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
   const [userCurrentDelivery, setUserCurrentDelivery] = useState('1');
+  const [warehousesList, setWarehousesList] = useState([]);
+  const [selectedCity, setSelectedCity] = useState(null);
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -39,6 +47,47 @@ const CheckOutUserInfoBlock = ({selectedValue}) => {
       console.log('OrderDetails', values);
     },
   });
+  const handleCityChange = (value) => {
+    setSelectedCity(value);
+    formik.setFieldValue('city', value);
+  };
+  const handleWarehouseChange = (value) => {
+    formik.setFieldValue('warehouse', value);
+  };
+  useEffect(()=>{
+    if (selectedCity) {
+      npService.post({cityRef: selectedCity.value}).then(async (data)=> {
+        setWarehousesList(await data);
+      });
+    }
+  }, [selectedCity]);
+  const option = {
+    1: {
+      _id: '1',
+      label: 'Nova poshta delivery to the post office',
+      value: <NpWarehouseDeliveryFormCheckout
+        formik={formik}
+        warehousesList={warehousesList}
+        handleCityChange={handleCityChange}
+        handleWarehouseChange={handleWarehouseChange}
+      />,
+      price: 2,
+    },
+    2: {
+      _id: '2',
+      label: 'Nova poshta delivery to the address',
+      value: <NpHomeDeliveryFormCheckout
+        formik={formik}
+        handleCityChange={handleCityChange}/>,
+      price: 3,
+    },
+    3: {
+      _id: '3',
+      label: 'International delivery',
+      value: <NpInternationalDeliveryFormCheckout formik={formik}/>,
+      price: 20,
+    },
+  };
   const userCurrentDetailsList = [
     {
       id: '1',
@@ -57,7 +106,7 @@ const CheckOutUserInfoBlock = ({selectedValue}) => {
       label: 'new address',
       value: <ListWithRadioButtons
         onSelectValue={selectedValue}
-        options={deliveryMethodsList[2]}
+        options={option}
         isList={false}
         deleteButton={true}
         key={2}/>,
@@ -77,6 +126,7 @@ const CheckOutUserInfoBlock = ({selectedValue}) => {
       formik.setFieldValue('currentDeliveryAddress', user.currentDeliveryAddress);
     }
   }, [user]);
+  console.log(formik.values);
   return (
     <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
       <p className={styles.title} id='contacts'>Contact details</p>
