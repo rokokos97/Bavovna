@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './checkOutShoppingCartBlockItemsList.module.scss';
 import {useDispatch, useSelector} from 'react-redux';
-import {getNormalizedCart, removeItemFromCart} from '../../../../../store/cartSlice';
 import DeleteIcon from '../../../../../components/svg/deleteIcon/deleteIcon';
+import {getNormalizedCart, removeItemFromCart} from '../../../../../store/cartSlice';
 
 const CheckOutShoppingCartBlockItemsList = () => {
   const dispatch = useDispatch();

@@ -5,10 +5,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getCitiesList} from '../../../../store/citiesSlice';
 import npService from '../../../../services/np.service';
 import {useFormik} from 'formik';
-import {validationSchemaNPDeliveryWarehouse} from '../../../../utils/validationSchema';
 import {nanoid} from 'nanoid/non-secure';
 import {getUser, updateUser} from '../../../../store/userSlice';
 import PropTypes from 'prop-types';
+import {validationSchemaNPDeliveryWarehouse} from '../../../../utils/validationSchema';
 
 
 const NovaPoshtaWarehouseForm = ({isButton}) => {

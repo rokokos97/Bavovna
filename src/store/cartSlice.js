@@ -2,17 +2,6 @@ import {createSlice} from '@reduxjs/toolkit';
 import sessionStorageService from '../services/sessionStorage.service';
 import _ from 'lodash';
 import {createSelector} from '@reduxjs/toolkit';
-
-// const transferDataToSessionStorage = () => {
-//  const keys = Object.keys(localStorage);
-//  keys.forEach((key) => {
-//    const value = localStorage.getItem(key);
-//    sessionStorage.setItem(key, value);
-//  });
-// };
-// if (localStorageService.getAccessToken()) {
-//  transferDataToSessionStorage();
-// }
 const storedCart = sessionStorageService.getCurrentCart('cart');
 
 const initialState = storedCart ? {
@@ -55,8 +44,6 @@ export const getCart = createSelector(
     [selectCartEntities],
     (entries) => entries,
 );
-// export const getCart = () => (state) => state.cart.entities;
-// export const getCartTotalPrice = () => (state) => state.cart.entities.reduce((acc, el)=> acc+el.discountPrice, 0);
 export const getCartTotalPrice = createSelector(
     [selectCartEntities],
     (entities) => entities.reduce((acc, el) => acc + el.discountPrice, 0),
@@ -82,7 +69,8 @@ export const getNormalizedCart = createSelector(
       return _.sortBy(newNormalizedCart, 'itemName');
     },
 );
-
+// export const getCart = () => (state) => state.cart.entities;
+// export const getCartTotalPrice = () => (state) => state.cart.entities.reduce((acc, el)=> acc+el.discountPrice, 0);
 // export const getNormalizedCart = () => (state) => {
 //  const newNormalizedCart = [];
 //  for (const good of state.cart.entities) {
