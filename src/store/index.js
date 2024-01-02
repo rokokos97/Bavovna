@@ -13,6 +13,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
   colors: colorsReducer,
+  orders: ordersReducer,
 });
 export default configureStore({
   reducer: rootReducer,
