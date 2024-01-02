@@ -1,31 +1,28 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {useDataCatalogue} from '../../Providers/CatalogueMasterProvider';
 
 import styles from './CheckboxBlock.module.scss';
 
-const CheckboxBlock = ({value, label, option, id = ''}) => {
-  const {handleFilterChange} = useDataCatalogue();
-  const [checked, setChecked] = useState(false);
+const CheckboxBlock = ({value, label, option, id}) => {
+  const {handleFilterChange, selectedFilters} = useDataCatalogue();
 
   const handleOnChange = (e) => {
-    handleFilterChange(option, e.target.name);
-    setChecked((prev) => !prev);
+    handleFilterChange(option, e.target.id);
   };
-
 
   return (
     <div className={styles.checkbox} data-testid='CheckboxBlock'>
       <input
         type='checkbox'
         name={value}
-        id={value}
+        id={id}
         className={styles.checkboxInput}
-        checked={checked}
+        checked={selectedFilters[option].includes(id)}
         onChange={(e) => handleOnChange(e)}
       />
-      <label htmlFor={value} className={styles.checkboxLabel}>
-        {id === 'isColor' && (
+      <label htmlFor={id} className={styles.checkboxLabel}>
+        {option === 'color' && (
           <div
             style={{
               width: '2.5rem',

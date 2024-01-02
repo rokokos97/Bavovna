@@ -2,6 +2,7 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
+import {getColors} from '../store/colorsSlice';
 
 import PropTypes from 'prop-types';
 
@@ -13,18 +14,18 @@ export const CatalogueMasterProvider = ({children}) => {
     size: [],
     color: [],
     availability: [],
-    // new: false,
-    // discount: false,
+    status: [],
   };
   const items = useSelector(getItems());
   const categories = useSelector(getCategories());
+  const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
   const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-
-  console.log(categories);
-
+  // console.log('selectedFilters: ', selectedFilters);
+  // console.log('categories: ', categories);
+  // console.log('colors: ', colors);
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
@@ -65,32 +66,35 @@ export const CatalogueMasterProvider = ({children}) => {
     filterCheckboxes.forEach((checkbox) => console.log(checkbox.checked));
   };
 
-  let downloadedItems = [];
-
   if (items) {
-    downloadedItems = [...items];
-    console.log('downloadedItems: ', downloadedItems);
+    useEffect(() => {
+      const newItems = [...items].filter((item) => {
+        return (
+          (selectedFilters.category.length === 0 ||
+          selectedFilters.category.some((category) =>
+            item.category.includes(category),
+          )) &&
+        (selectedFilters.size.length === 0 ||
+          selectedFilters.size.some((size) => item.size.includes(size))) &&
+        (selectedFilters.color.length === 0 ||
+          selectedFilters.color.some((color) => item.color.includes(color))) &&
+        (selectedFilters.status.length === 0 ||
+          selectedFilters.status.some((status) => item.status.includes(status)))
+        );
+      });
+      setFilteredItems(newItems);
+    }, [selectedFilters, items]);
   }
-  useEffect(() => {
-    const newItems = downloadedItems.filter((item) => {
-      return (
-        selectedFilters.category.length === 0 || selectedFilters.category
-            .some((category) => item.category.includes(category))
-      ) && (
-        selectedFilters.size.length === 0 || selectedFilters.size.some((size) => item.size.includes(size))
-      ) && (
-        selectedFilters.color.length === 0 || selectedFilters.color.some((color) => item.color.includes(color))
-      );
-    });
-    setFilteredItems(newItems);
-  }, [selectedFilters, items]);
-
 
   return (
     <DataCatalogueContext.Provider
       value={{
         isFilter,
         filteredItems,
+        categories,
+        colors,
+        selectedFilters,
+        setSelectedFilters,
         changeIsFilter,
         onSortItems,
         handleFilterChange,
