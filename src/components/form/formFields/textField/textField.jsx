@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ShowPasswordIcon from '../../../svg/showPasswordIcon/showPasswordIcon';
 import HidePasswordIcon from '../../../svg/hidePasswordIcon/hidePasswordIcon';
 import CleatFormIcon from '../../../svg/cleatFormIcon/cleatFormIcon';
-const TextField = ({label, name, type, value, onChange, onBlur, error, touched, placeholder, disabled}) => {
+const TextField = ({label, name, type, value, onChange, onBlur, error, placeholder, disabled}) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -14,7 +14,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
     onChange({target: {value: '', name: name}});
   };
   return (
-    <div className={`${styles.textField} ${touched && error? styles.hasError: ''}`} data-testid="TextField">
+    <div className={`${styles.textField} ${error? styles.hasError: ''}`} data-testid="TextField">
       <label
         htmlFor={name}
         className={disabled? disabledStyles.label : styles.label}
@@ -56,7 +56,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, touched, 
           </div>
         )}
       </div>
-      {touched && error ? (
+      {error ? (
           <div className={styles.error}>{error}</div>
         ) : null}
     </div>

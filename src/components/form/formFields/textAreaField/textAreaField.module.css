@@ -45,24 +45,16 @@
   display: inline;
 }
 
-.textField.hasError .label {
+.textAreaField.hasError .label {
   color: #ea001b;
 }
-.textField.hasError .inputBlock {
+.textAreaField.hasError .textarea {
   border-color: #ea001b;
 }
-.textField.hasError .inputBlock input,
-.textField.hasError .inputBlock .clearButton {
+.textAreaField.hasError .textarea div {
   color: #ea001b;
 }
-.textField.hasError .inputBlock input svg path,
-.textField.hasError .inputBlock .clearButton svg path {
-  stroke: #ea001b;
-}
-.textField.hasError .inputBlock button div svg path {
-  stroke: #ea001b;
-}
-.textField.hasError .inputBlock input::placeholder {
+.textAreaField.hasError .textarea::placeholder {
   color: #ea001b;
 }
 

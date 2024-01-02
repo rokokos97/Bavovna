@@ -29,5 +29,11 @@ input {
 .selectField.hasError .label {
   color: #ea001b;
 }
+.selectField.hasError div {
+  border-color: red !important;
+}
+.selectField.hasError div div {
+  color: red !important;
+}
 
 /*# sourceMappingURL=selectField.module.css.map */

@@ -1,5 +1,6 @@
 @import "../../../../styles/variables.module";
 .selectField {
+
   }
 .label {
   display: flex;
@@ -28,5 +29,11 @@ input {
 .selectField.hasError {
   .label {
     color: $error;
+  }
+  div {
+    border-color: red!important;
+    div {
+      color: red!important;
+    }
   }
 }

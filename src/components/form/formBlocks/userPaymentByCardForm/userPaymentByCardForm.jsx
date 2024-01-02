@@ -43,10 +43,10 @@ const UserPaymentByCardForm = ({formik}) => {
         name='cardHolderName'
         placeholder='Enter the name indicated on the card'
         onChange={formik.handleChange}
-        value={formik.values.cartHolderName}
-        error={formik.errors.cartHolderName}
+        value={formik.values.cardHolderName}
+        error={formik.errors.cardHolderName}
         onBlur={formik.handleBlur}
-        touched={formik.touched.cartHolderName}
+        touched={formik.touched.cardHolderName}
       />
     </div>
   );

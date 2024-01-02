@@ -40,35 +40,18 @@
   display: inline;
 }
 
-.textField.hasError {
+.textAreaField.hasError {
   .label {
     color: $error;
   }
-
-  .inputBlock {
+  .textarea {
     border-color: $error;
 
-    input,
-    .clearButton {
-      color: $error;
-      svg {
-        path {
-          stroke: $error;
-        }
-      }
-    }
-    button {
-      div {
-        svg {
-          path {
-            stroke: $error;
-          }
-        }
-      }
-    }
-
-    input::placeholder {
+    div {
       color: $error;
     }
+  }
+  .textarea::placeholder {
+    color: $error;
   }
 }

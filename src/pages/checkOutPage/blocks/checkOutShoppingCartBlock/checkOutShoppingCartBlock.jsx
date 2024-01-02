@@ -9,7 +9,7 @@ import CheckOutShoppingCartBlockItemsList
   from './checkOutShoppingCartBlockItemsList/checkOutShoppingCartBlockItemsList';
 import PropTypes from 'prop-types';
 
-const CheckOutShoppingCartBlock = ({deliveryPrice}) => {
+const CheckOutShoppingCartBlock = ({deliveryPrice, selectedPromoCode}) => {
   const [promoCode, setPromoCode] = useState(null);
   const cartLength = useSelector(getCartLength);
   const itemPrice = useSelector(getCartTotalPrice);
@@ -22,6 +22,7 @@ const CheckOutShoppingCartBlock = ({deliveryPrice}) => {
     onSubmit: (values) => {
       console.log(values.promoCode);
       setPromoCode(values.promoCode/100);
+      selectedPromoCode(values.promoCode);
     },
   });
   return (
@@ -85,5 +86,6 @@ const CheckOutShoppingCartBlock = ({deliveryPrice}) => {
 };
 CheckOutShoppingCartBlock.propTypes = {
   deliveryPrice: PropTypes.number,
+  selectedPromoCode: PropTypes.func,
 };
 export default CheckOutShoppingCartBlock;

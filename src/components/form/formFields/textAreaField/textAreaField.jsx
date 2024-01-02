@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './textAreaField.module.scss';
 import PropTypes from 'prop-types';
 
-const TextAreaField = ({label, name, value, onChange, onBlur, error, touched, placeholder, disabled}) => {
+const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder, disabled}) => {
   return (
-    <div className={`${styles.textAreaField} ${touched && error? styles.hasError: ''}`} data-testid="TextAreaField">
+    <div className={`${styles.textAreaField} ${error? styles.hasError: ''}`} data-testid="TextAreaField">
       <label
         htmlFor={name}
         className={styles.label}
@@ -26,7 +26,7 @@ const TextAreaField = ({label, name, value, onChange, onBlur, error, touched, pl
           autoComplete='off'
         />
       </div>
-      {touched && error ? (
+      {error ? (
         <div className={styles.error}>{error}</div>
       ) : null}
     </div>
