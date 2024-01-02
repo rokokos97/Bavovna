@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
@@ -21,11 +20,9 @@ const AlsoBoughtBlock = () => {
       {!isItemsLoading && (
         <ul className={styles.alsoBoughtList}>
           {alsoBought.map((item) => (
-            <Link key={item._id} to={`/catalogue/${item._id}`}>
-              <li>
-                <ItemPreviewCard id={item._id} />
-              </li>
-            </Link>
+            <li key={item._id}>
+              <ItemPreviewCard id={item._id} />
+            </li>
           ))}
         </ul>
       )}

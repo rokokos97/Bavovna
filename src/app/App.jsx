@@ -18,7 +18,7 @@ import {useSelector} from 'react-redux';
 import sessionStorageService from '../services/sessionStorage.service';
 import {getCart} from '../store/cartSlice';
 import CheckOutPage from '../pages/checkOutPage/checkOutPage';
-import LoginLayout from '../pages/LoginLayoutPage/LoginLayout';
+import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
 
 function App() {
   const cart = useSelector(getCart);

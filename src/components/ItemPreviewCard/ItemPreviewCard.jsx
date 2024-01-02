@@ -63,7 +63,7 @@ const ItemPreviewCard = ({id}) => {
       </div>
       <div
         className={styles.itemPreviewCard__description}
-        onClick={()=> navigate(`catalogue/${item._id}`)}
+        onClick={()=> navigate(`/catalogue/${item._id}`)}
       >
         <span>
           {item.name}

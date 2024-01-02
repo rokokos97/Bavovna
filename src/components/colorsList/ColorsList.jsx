@@ -8,10 +8,8 @@ import styles from './ColorsList.module.scss';
 const noColor = 'Choose a color';
 
 const ColorsList = ({itemColors, selectedColor, setSelectedColor}) => {
-  // const [selectedColor, setSelectedColor] = useState('');
   const {itemData, setItemData} = useDataCard();
   const allColors = useSelector(getColors());
-  console.log(allColors);
 
   const handleChange = (event) => {
     setSelectedColor(event.target.id);

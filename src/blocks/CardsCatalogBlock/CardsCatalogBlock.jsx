@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import FilterSelectionBlock from '../FilterSelectionBlock/FilterSelectionBlock';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
 import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
@@ -49,11 +48,9 @@ const CardsCatalogBlock = () => {
           }
         >
           {visibleItems.map((item) => (
-            <Link key={item._id} to={`/catalogue/${item._id}`}>
-              <li>
-                <ItemPreviewCard id={item._id} />
-              </li>
-            </Link>
+            <li key={item._id}>
+              <ItemPreviewCard id={item._id} />
+            </li>
           ))}
         </ul>
         {endIndex ?
