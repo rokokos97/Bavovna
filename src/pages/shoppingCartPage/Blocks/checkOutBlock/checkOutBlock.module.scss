@@ -1,0 +1,40 @@
+@import '../../../../styles/variables.module';
+.checkOutBlock {
+  width: 41.1rem;
+  position: absolute;
+  right:0;
+  height: 28.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  padding: 4rem 2.4rem;
+  background: $white;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem
+}
+.arrowButton {
+  margin-top: auto;
+  @include button(7.5rem,  $black, $white, $accent-a-3, $accent-a-5);
+}
+.totalPriceBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include fonts($headline-3);
+}
+.buttonsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  button:first-child {
+    @include button(36.3rem, $black, $white, $accent-a-3, $accent-a-5);
+  }
+  button:last-child {
+    border: 1px solid $black;
+    @include button(36.3rem, $white, $black, $transparent-30-a-05, $accent-a-05);
+  }
+}
+

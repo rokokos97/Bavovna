@@ -10,9 +10,10 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
 import _ from 'lodash';
+import CheckOutBlock from './Blocks/checkOutBlock/checkOutBlock';
 
 const ShoppingCartPage = () => {
-  const cart = useSelector(getCart());
+  const cart = useSelector(getCart);
   const navigate = useNavigate();
   const swiperRef = useRef();
   const isItemsLoading = useSelector(getItemsLoadingStatus());
@@ -63,9 +64,7 @@ const ShoppingCartPage = () => {
               normalizedCart.map((item) => <ProductCardInCart key={item._id+item.itemIdentifier} item={item}/>)
             }
           </div>
-          <div className={styles.checkoutBlock}>
-
-          </div>
+          <CheckOutBlock />
         </div> :
         <div className={styles.emptyCartBlock}>
           <p className={styles.text}>Your shopping bag is empty</p>
@@ -89,7 +88,6 @@ const ShoppingCartPage = () => {
             </div>
           }
         </div>
-
       }
     </div>
   );

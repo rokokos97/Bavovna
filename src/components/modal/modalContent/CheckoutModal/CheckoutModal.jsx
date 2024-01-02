@@ -36,7 +36,6 @@ const CheckoutModal = ({handleCloseModal}) => {
   //     chosenSizeId: itemSize,
   //     quantity: itemQuantity,
   //   };
-  //   console.log(checkoutData);
   // };
 
   return (

@@ -50,7 +50,7 @@
   margin: 0 auto;
   border: 1px solid #000000;
   display: flex;
-  width: 19.5rem;
+  width: 18.9rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,6 @@
   color: #000000;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .filterBtn::before {
   content: "";
@@ -80,7 +79,7 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 0.4rem;
-  left: 7.35rem;
+  left: 7.05rem;
 }
 .filterBtn::after {
   content: "";
@@ -93,28 +92,28 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 2.5rem;
-  left: 9.45rem;
+  left: 9.15rem;
 }
 .filterBtn:hover::before {
   content: "";
-  width: 21.45rem;
-  height: 21.45rem;
+  width: 20.79rem;
+  height: 20.79rem;
   background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -8.325rem;
+  top: -12.795rem;
   left: -5%;
 }
 .filterBtn:active::after {
   content: "";
-  width: 21.45rem;
-  height: 21.45rem;
+  width: 20.79rem;
+  height: 20.79rem;
   border-radius: 50%;
   background: transparent;
   border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -8.325rem;
+  top: -12.795rem;
   left: -5%;
 }
 .filterBtn:disabled {

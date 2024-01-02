@@ -1,8 +1,15 @@
 @import '../../styles/variables.module';
 .shoppingCartPage {
+  width: 128rem ;
   display: flex;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   flex-direction: column;
-  margin: 5rem 8rem;
+  margin-top: 5rem;
+  box-sizing: border-box;
+  padding-bottom: 25rem;
 }
 .titleBlock {
   display: flex;
@@ -55,10 +62,5 @@
 
 }
 .itemsBlock {
-  border-top: 1px solid $black;
   padding-top: 2.4rem;
-}
-.checkoutBlock {
-  width: 41.1rem;
-  border: 1px solid $black;
 }

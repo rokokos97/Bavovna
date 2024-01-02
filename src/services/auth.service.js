@@ -51,7 +51,6 @@ const authService = {
     return data;
   },
   emailVerifiy: async (token, email) => {
-    console.log('authService', token, email);
     const {data} = await httpAuth.post('emailVerification', {token, email});
     return data;
   },

@@ -6,17 +6,14 @@ const npService = {
       const request = await httpService.get(npEndpoint);
       return request.data;
     } catch (error) {
-      console.error('Error fetching np data from server', error);
       throw error;
     }
   },
   post: async (payload)=> {
-    console.log('payload', payload);
     try {
       const request = await httpService.post(npEndpoint, payload);
       return request.data;
     } catch (error) {
-      console.error('Error fetching np data from server', error);
       throw error;
     }
   },

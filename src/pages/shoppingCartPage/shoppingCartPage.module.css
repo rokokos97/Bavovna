@@ -1,7 +1,14 @@
 .shoppingCartPage {
+  width: 128rem;
   display: flex;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   flex-direction: column;
-  margin: 5rem 8rem;
+  margin-top: 5rem;
+  box-sizing: border-box;
+  padding-bottom: 25rem;
 }
 
 .titleBlock {
@@ -58,7 +65,6 @@
   color: #000000;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .button::before {
   content: "";
@@ -93,7 +99,7 @@
   background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -13.66rem;
+  top: -18.46rem;
   left: -5%;
 }
 .button:active::after {
@@ -105,7 +111,7 @@
   border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -13.66rem;
+  top: -18.46rem;
   left: -5%;
 }
 .button:disabled {
@@ -141,13 +147,7 @@
 }
 
 .itemsBlock {
-  border-top: 1px solid #000000;
   padding-top: 2.4rem;
-}
-
-.checkoutBlock {
-  width: 41.1rem;
-  border: 1px solid #000000;
 }
 
 /*# sourceMappingURL=shoppingCartPage.module.css.map */

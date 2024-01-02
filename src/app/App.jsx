@@ -5,7 +5,6 @@ import Card from '../pages/card/Card';
 import AboutUsPage from '../pages/aboutUsPage/AboutUsPage';
 import styles from './App.module.scss';
 import AppLoader from '../hoc/appLoader';
-import LoginLayout from '../pages/LoginLayoutPage/LoginLayout';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';
@@ -18,9 +17,11 @@ import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
 import {useSelector} from 'react-redux';
 import sessionStorageService from '../services/sessionStorage.service';
 import {getCart} from '../store/cartSlice';
+import CheckOutPage from '../pages/checkOutPage/checkOutPage';
+import LoginLayout from '../pages/LoginLayoutPage/LoginLayout';
 
 function App() {
-  const cart = useSelector(getCart());
+  const cart = useSelector(getCart);
   useEffect(() => {
     if (cart.length !== 0) {
       sessionStorageService.setCurrentCart(cart);
@@ -36,6 +37,7 @@ function App() {
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
             <Route path='catalogue' element={<Catalogue />} />
+            <Route path='cart/checkout' element={<CheckOutPage />} />
             <Route path='cart' element={<ShoppingCartPage/>}/>
             <Route path='catalogue/:id' element={<Card />} />
             <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>

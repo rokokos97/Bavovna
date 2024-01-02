@@ -22,7 +22,6 @@ const citiesSlice = createSlice({
     },
   },
 });
-// const {reducer: citiesReducer, actions} = citiesSlice;
 export const {
   citiesRequested,
   citiesReceived,

@@ -15,18 +15,6 @@ const ModalVerifyEmail = ({handleCloseModal, email}) => (
     <p className={styles.content}>
       We have sent an e-mail to {email} please click on the link to confirm your e-mail address.
     </p>
-    <a
-      className={styles.link}
-      href={'https://mail.google.com/'}
-    >
-      <button
-        className={styles.button}
-      >
-        <span>
-        go to gmail
-        </span>
-      </button>
-    </a>
   </div>
 );
 ModalVerifyEmail.propTypes = {

@@ -26,6 +26,13 @@
 
 .deleteButton {
   margin-top: 8.7rem;
+  background: transparent;
+}
+.deleteButton:hover svg path {
+  stroke: #5a9b83;
+}
+.deleteButton:active svg path {
+  stroke: #1a6449;
 }
 
 .titleBlock {
@@ -46,10 +53,30 @@
 }
 
 .price {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
+}
+
+.discount {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.discount span:first-child {
+  text-decoration: line-through;
+  color: #727272;
+}
+.discount span:last-child {
+  color: #ea001b;
 }
 
 .titleBlockLine {

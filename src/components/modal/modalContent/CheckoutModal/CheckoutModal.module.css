@@ -129,6 +129,7 @@
   overflow: hidden;
   background: #000000;
   padding: 2.1rem 2.6rem;
+  text-decoration: none !important;
 }
 .checkoutBtn span {
   font-family: "Fixel Display Semibold";
@@ -138,7 +139,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .checkoutBtn::before {
   content: "";
@@ -173,7 +173,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -14.1rem;
+  top: -18.9rem;
   left: -5%;
 }
 .checkoutBtn:active::after {
@@ -185,7 +185,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -14.1rem;
+  top: -18.9rem;
   left: -5%;
 }
 .checkoutBtn:disabled {

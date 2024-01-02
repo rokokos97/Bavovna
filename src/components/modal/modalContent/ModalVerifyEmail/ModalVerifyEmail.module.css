@@ -1,11 +1,11 @@
 .modalVerifyEmail {
-  width: 51.9rem;
+  width: 62.9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1.6rem;
+  padding: 8rem;
   background: #fafafa;
-  padding: 2.4rem;
 }
 
 .link {
@@ -16,15 +16,19 @@
 }
 
 .closeButton {
+  position: relative;
+  top: -7rem;
+  left: 29rem;
   background: #fafafa;
 }
 
 .content {
-  width: 46.9rem;
+  width: 40rem;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
   text-align: center;
+  margin-top: -3.5rem;
 }
 
 .button {
@@ -46,7 +50,6 @@
   color: #fafafa;
   text-align: center;
   position: relative;
-  z-index: 10;
 }
 .button::before {
   content: "";
@@ -81,7 +84,7 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -20.15rem;
+  top: -24.95rem;
   left: -5%;
 }
 .button:active::after {
@@ -93,7 +96,7 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -20.15rem;
+  top: -24.95rem;
   left: -5%;
 }
 .button:disabled {

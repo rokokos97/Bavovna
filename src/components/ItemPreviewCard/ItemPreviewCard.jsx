@@ -12,7 +12,7 @@ import {getUser, updateUser} from '../../store/userSlice';
 const ItemPreviewCard = ({id}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector(getUser());
+  const user = useSelector(getUser);
   const item = useSelector(getItemsById(id));
   let isFavorite = false;
   if (user) {
