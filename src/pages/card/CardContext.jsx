@@ -91,6 +91,7 @@ const CardContext = ({item}) => {
   return (
     <>
       <section className={styles.cardSection}>
+        <p className={styles.navigation}>{`Home / Catalogue / ${name}`}</p>
         <div className={styles.card}>
           <div className={styles.imgs}>
             <ul className={styles.imgsList}>

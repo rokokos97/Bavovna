@@ -8,6 +8,7 @@ const CatalogueContext = () => {
   return (
     <section className={styles.section}>
       <div className={styles.block}>
+        <p className={styles.navigation}>Home / Catalogue</p>
         <HeadCatalogBlock />
         <SelectionBlock />
         <CardsCatalogBlock />

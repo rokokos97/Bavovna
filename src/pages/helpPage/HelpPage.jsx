@@ -24,18 +24,21 @@ const HelpPage = () => {
 
   return (
     <div className={styles.helpPage}>
-      <div className={styles.helpAside}>
-        <AsideHelpBlock />
-      </div>
-      <div className={styles.helpDescription}>
-        <Routes>
-          <Route path='delivery' element={<DeliveryBlock />} />
-          <Route path='return' element={<ReturnBlock />} />
-          <Route path='payment' element={<PaymentBlock />} />
-          <Route path='faq' element={<FaqBlock />} />
-          <Route path='cookies' element={<CookiesBlock />} />
-          <Route path='privacy' element={<PolicyBlock />} />
-        </Routes>
+      <p className={styles.navigation}>Home / Help</p>
+      <div className={styles.helpPageContainer}>
+        <div className={styles.helpAside}>
+          <AsideHelpBlock />
+        </div>
+        <div className={styles.helpDescription}>
+          <Routes>
+            <Route path='delivery' element={<DeliveryBlock />} />
+            <Route path='return' element={<ReturnBlock />} />
+            <Route path='payment' element={<PaymentBlock />} />
+            <Route path='faq' element={<FaqBlock />} />
+            <Route path='cookies' element={<CookiesBlock />} />
+            <Route path='privacy' element={<PolicyBlock />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
