@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import styles from './userPaymentMethodsList.module.scss';
+import styles from './paymentMethodSection.module.scss';
 import PropTypes from 'prop-types';
 import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import UserPaymentByCardForm
   from '../../../../../components/form/formBlocks/userPaymentByCardForm/userPaymentByCardForm';
 
-const UserPaymentMethodsList = ({formik}) => {
+const PaymentMethodSection = ({formik}) => {
   const [currentPaymentMethod, setCurrentPaymentMethod] = useState('1');
   const paymentMethodsList = [
     {
@@ -21,18 +21,19 @@ const UserPaymentMethodsList = ({formik}) => {
     },
   ];
   return (
-    <div className={styles.userPaymentMethodsList} data-testid="UserPaymentMethodsList">
+    <div className={styles.userPaymentMethodsList} data-testid="PaymentMethodSection">
       {paymentMethodsList.map((method)=> (
         <div
           style={{display: 'block'}}
           key={method.id}>
           <div className={styles.radioWrapper}>
-            <div
+            <button
               className={styles.radioButton}
+              type='button'
               onClick = {()=> setCurrentPaymentMethod(method.id)}
             >
               {currentPaymentMethod === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
-            </div>
+            </button>
             <label
               className={styles.label}
             >
@@ -44,7 +45,7 @@ const UserPaymentMethodsList = ({formik}) => {
     </div>
   );
 };
-UserPaymentMethodsList.propTypes = {
+PaymentMethodSection.propTypes = {
   formik: PropTypes.object.isRequired,
 };
-export default UserPaymentMethodsList;
+export default PaymentMethodSection;

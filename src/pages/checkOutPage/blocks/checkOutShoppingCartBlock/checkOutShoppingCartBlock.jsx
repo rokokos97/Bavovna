@@ -8,21 +8,26 @@ import {validationSchemaPromoCode} from '../../../../utils/validationSchema';
 import CheckOutShoppingCartBlockItemsList
   from './checkOutShoppingCartBlockItemsList/checkOutShoppingCartBlockItemsList';
 import PropTypes from 'prop-types';
+import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
+import {getUser} from '../../../../store/userSlice';
 
-const CheckOutShoppingCartBlock = ({deliveryPrice, selectedPromoCode}) => {
+const CheckOutShoppingCartBlock = ({selectedDeliveryMethod, userCurrentDelivery}) => {
+  const user = useSelector(getUser);
+  console.log('user', user);
   const [promoCode, setPromoCode] = useState(null);
   const cartLength = useSelector(getCartLength);
   const itemPrice = useSelector(getCartTotalPrice);
+  // eslint-disable-next-line max-len
+  const deliveryPrice = (!user && (userCurrentDelivery !== 2)) ? deliveryMethodsList[1][selectedDeliveryMethod].price : user.deliveryAddress.find((item)=>item._id === user.currentDeliveryAddress).price;
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount + deliveryPrice;
-  const formik = useFormik({
+  const promoCodeFormik = useFormik({
     initialValues: {
       promoCode: '',
     }, validationSchema: validationSchemaPromoCode,
     onSubmit: (values) => {
       console.log(values.promoCode);
       setPromoCode(values.promoCode/100);
-      selectedPromoCode(values.promoCode);
     },
   });
   return (
@@ -35,20 +40,20 @@ const CheckOutShoppingCartBlock = ({deliveryPrice, selectedPromoCode}) => {
         <CheckOutShoppingCartBlockItemsList/>
       </div>
       <form
-        onSubmit={formik.handleSubmit}
+        onSubmit={promoCodeFormik.handleSubmit}
         className={styles.form}>
         <TextField
           label='Promo code'
           name='promoCode'
           placeholder='Enter your promo code'
-          value={formik.values.promoCode}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.errors.promoCode}
-          touched={formik.touched.promoCode}
+          value={promoCodeFormik.values.promoCode}
+          onChange={promoCodeFormik.handleChange}
+          onBlur={promoCodeFormik.handleBlur}
+          error={promoCodeFormik.errors.promoCode}
+          touched={promoCodeFormik.touched.promoCode}
         />
         <button
-          disabled={!formik.isValid || !formik.dirty}
+          disabled={!promoCodeFormik.isValid || !promoCodeFormik.dirty}
           className={styles.arrowButton}
           type='submit'
         >
@@ -73,19 +78,11 @@ const CheckOutShoppingCartBlock = ({deliveryPrice, selectedPromoCode}) => {
         <p>total</p>
         <p>{`${totalPrice} $`}</p>
       </div>
-      {/* <button*/}
-      {/*  className={styles.button}*/}
-      {/*  onClick={() => navigate('/cart/checkout')}*/}
-      {/* >*/}
-      {/*  <span>*/}
-      {/*      Continue to check out*/}
-      {/*  </span>*/}
-      {/* </button>*/}
     </div>
   );
 };
 CheckOutShoppingCartBlock.propTypes = {
-  deliveryPrice: PropTypes.number,
-  selectedPromoCode: PropTypes.func,
+  userCurrentDelivery: PropTypes.string,
+  selectedDeliveryMethod: PropTypes.string,
 };
 export default CheckOutShoppingCartBlock;

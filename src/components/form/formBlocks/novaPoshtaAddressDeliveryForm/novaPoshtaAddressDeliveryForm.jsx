@@ -22,6 +22,7 @@ const NovaPoshtaAddressDeliveryForm = ({isButton}) => {
       flatNumber: '',
       deliveryMethod: 'Nova poshta delivery to the address',
       label: '',
+      price: 3,
     },
     validationSchema: validationSchemaNPDeliveryAddress,
     onSubmit: () => {
@@ -29,7 +30,7 @@ const NovaPoshtaAddressDeliveryForm = ({isButton}) => {
         ...formik.values,
         _id: nanoid(12),
         label: `${formik.values.city.label}, str. ${formik.values.street}, bld. ${formik.values.houseNumber}
-         ${formik.values.flatNumber?', flat.'+formik.values.flatNumber:''}`,
+         ${formik.values.flatNumber?', flat. '+formik.values.flatNumber:''}`,
       };
       const newUser = {
         ...user,

@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import styles from './checkOutUserInfoBlock.module.scss';
-import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import LoginFormBlock from '../../../../components/form/formBlocks/loginFormBlock/loginFormBlock';
-import {useSelector, shallowEqual} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {useFormik} from 'formik';
-import AnonimUserContactFormBlock
-  from '../../../../components/form/formBlocks/anonimUserContactFormBlock/anonimUserContactFormBlock';
-import UserPaymentMethodsList from './userPaymentMethodsList/userPaymentMethodsList';
+import UnknownUserContactFormBlock
+  from '../../../../components/form/formBlocks/anonimUserContactFormBlock/unknownUserContactFormBlock';
+import PaymentMethodSection from './paymentMethodSection/paymentMethodSection';
 import {
   validationSchemaCheckOutNPAD, validationSchemaCheckOutNPID,
   validationSchemaCheckOutNPWDC,
@@ -23,12 +21,15 @@ import NpHomeDeliveryFormCheckout from './userDeliveryMethods/npHomeDeliveryForm
 import NpInternationalDeliveryFormCheckout
   from './userDeliveryMethods/npInternationalDeliveryFormCheckout/npInternationalDeliveryFormCheckout';
 import {getNormalizedCart} from '../../../../store/cartSlice';
+import {addOrder} from '../../../../store/ordersSlice';
+import DeliveryMethodsSection from './deliveryMethodsSection/deliveryMethodsSection';
+import UserDetailsSection from './userDetailsSection/userDetailsSection';
+import {getUser} from '../../../../store/userSlice';
 
-const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, promoCode}) => {
-  const isLoggedIn = useSelector((state)=> state.user.isLoggedIn, shallowEqual);
-  const user = useSelector((state) => state.user.entities, shallowEqual );
+const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurrentDelivery, setUserCurrentDelivery}) => {
+  const user = useSelector(getUser);
+  const dispatch = useDispatch();
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
-  const [userCurrentDelivery, setUserCurrentDelivery] = useState('1');
   const [warehousesList, setWarehousesList] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
   const cart = useSelector(getNormalizedCart);
@@ -55,19 +56,14 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, promoCode
       flatNumber: '',
       intDeliveryAddress: '',
       currentDeliveryAddress: '',
-      cardNumber: '',
-      validityDate: '',
-      cvvCvc: '',
-      cardHolderName: '',
     },
     validationSchema: getValidationSchema(selectedDeliveryMethod),
     onSubmit: (values)=> {
       const order = {
         items: cart,
-        promoCode: promoCode,
         userData: {...values},
       };
-      console.log('order', order);
+      dispatch(addOrder(order));
     },
   });
   const handleCityChange = (value) => {
@@ -108,7 +104,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, promoCode
     {
       id: '1',
       label: 'new user',
-      value: <AnonimUserContactFormBlock formik={formik} key={1}/>,
+      value: <UnknownUserContactFormBlock formik={formik} key={1}/>,
     },
     {
       id: '2',
@@ -140,76 +136,44 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, promoCode
       });
     }
   }, [selectedCity]);
-  useEffect(()=>{
-    formik.setFieldValue('city', {});
-    formik.setFieldValue('warehouse', {});
-    formik.setFieldValue('street', '');
-    formik.setFieldValue('houseNumber', '');
-    formik.setFieldValue('flatNumber', '');
-    formik.setFieldValue('intDeliveryAddress', '');
-  }, [selectedValue]);
+  //  useEffect(()=>{
+  //    formik.setFieldValue('city', {});
+  //    formik.setFieldValue('warehouse', {});
+  //    formik.setFieldValue('street', '');
+  //    formik.setFieldValue('houseNumber', '');
+  //    formik.setFieldValue('flatNumber', '');
+  //    formik.setFieldValue('intDeliveryAddress', '');
+  //  }, [selectedValue]);
   useEffect(()=> {
     if (user) {
       formik.setFieldValue('firstName', user.firstName);
       formik.setFieldValue('lastName', user.lastName);
       formik.setFieldValue('email', user.email);
       formik.setFieldValue('phoneNumber', user.phoneNumber);
-      formik.setFieldValue('currentDeliveryAddress', user.currentDeliveryAddress);
     }
-  }, [user]);
+    if (userCurrentDelivery === '2') {
+      formik.setFieldValue('currentDeliveryAddress', user? user.currentDeliveryAddress: '');
+    }
+  }, [user, userCurrentDelivery]);
+  console.log(userCurrentDelivery);
   return (
     <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
       <p className={styles.title} id='contacts'>Contact details</p>
-      <div className={styles.radioBlock}>
-        {userCurrentDetailsList.map((detail, index)=> <div key={index}>
-          <div
-            className={styles.radioWrapper}
-          >
-            <button
-              className={styles.radioButton}
-              disabled={isLoggedIn}
-              onClick = {()=> setUserCurrentDetails(detail.id) }
-            >
-              {userCurrentDetails === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
-            </button>
-            <label
-              className={styles.label}
-            >
-              {detail.label}
-            </label>
-          </div>
-        </div>)}
-      </div>
-      {userCurrentDetailsList.map((detail)=>
-            userCurrentDetails === detail.id ? <div key={detail.id}>{detail.value}</div> : null)}
+      <UserDetailsSection
+        userCurrentDetailsList={userCurrentDetailsList}
+        setUserCurrentDetails={setUserCurrentDetails}
+        userCurrentDetails={userCurrentDetails}
+      />
       <div className={styles.divider}/>
       <p className={styles.title} id='delivery'>delivery</p>
-      <div className={styles.radioBlock}>
-        {deliveryMethods.map((detail, index)=> <div key={index}>
-          <div
-            className={styles.radioWrapper}
-          >
-            <button
-              className={styles.radioButton}
-              type='button'
-              disabled={!isLoggedIn}
-              onClick = {()=> setUserCurrentDelivery(detail.id) }
-            >
-              {userCurrentDelivery === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
-            </button>
-            <label
-              className={styles.label}
-            >
-              {detail.label}
-            </label>
-          </div>
-        </div>)}
-      </div>
-      {deliveryMethods.map((detail)=>
-        userCurrentDelivery === detail.id ? <div key={detail.id}>{detail.value}</div> : null)}
+      <DeliveryMethodsSection
+        deliveryMethods={deliveryMethods}
+        setUserCurrentDelivery={setUserCurrentDelivery}
+        userCurrentDelivery={userCurrentDelivery}
+      />
       <div className={styles.divider}/>
       <p className={styles.title} id='payment'>payment method</p>
-      <UserPaymentMethodsList formik={formik}/>
+      <PaymentMethodSection formik={formik}/>
       <button
         type='submit'
         disabled={!formik.dirty || !formik.isValid}
@@ -224,7 +188,8 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, promoCode
 };
 CheckOutUserInfoBlock.propTypes = {
   selectedValue: PropTypes.func,
+  userCurrentDelivery: PropTypes.string,
+  setUserCurrentDelivery: PropTypes.func,
   selectedDeliveryMethod: PropTypes.string,
-  promoCode: PropTypes.string,
 };
 export default CheckOutUserInfoBlock;

@@ -3,7 +3,7 @@ import styles from './anonimUserContactFormBlock.module.scss';
 import TextField from '../../formFields/textField/textField';
 import PropTypes from 'prop-types';
 import PhoneField from '../../formFields/phoneField/phoneField';
-const AnonimUserContactFormBlock = ({formik}) => {
+const UnknownUserContactFormBlock = ({formik}) => {
   return (
     <div className={styles.anonimUserContactFormBlock} data-testid="AnonimUserContactFormBlock">
       <TextField
@@ -47,7 +47,7 @@ const AnonimUserContactFormBlock = ({formik}) => {
     </div>
   );
 };
-AnonimUserContactFormBlock.propTypes = {
+UnknownUserContactFormBlock.propTypes = {
   formik: PropTypes.object.isRequired,
 };
-export default AnonimUserContactFormBlock;
+export default UnknownUserContactFormBlock;

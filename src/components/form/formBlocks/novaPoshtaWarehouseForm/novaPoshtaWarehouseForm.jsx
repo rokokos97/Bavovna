@@ -23,6 +23,7 @@ const NovaPoshtaWarehouseForm = ({isButton}) => {
       warehouse: {},
       deliveryMethod: 'Nova poshta delivery to the post office',
       label: '',
+      price: 2,
     },
     validationSchema: validationSchemaNPDeliveryWarehouse,
     onSubmit: () => {

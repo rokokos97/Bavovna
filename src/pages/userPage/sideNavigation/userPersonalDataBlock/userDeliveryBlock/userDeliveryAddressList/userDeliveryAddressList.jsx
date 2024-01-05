@@ -7,6 +7,9 @@ import PropTypes from 'prop-types';
 
 const UserDeliveryAddressList = ({hiddenButton}) => {
   const user = useSelector(getUser);
+  if (user) {
+    console.log(user.deliveryAddress);
+  }
   return ( user &&
     <div className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList"
     >

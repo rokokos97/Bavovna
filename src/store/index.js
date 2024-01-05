@@ -5,6 +5,7 @@ import userReducer from './userSlice';
 import citiesReducer from './citiesSlice';
 import cartReducer from './cartSlice.js';
 import colorsReducer from './colorsSlice.js';
+import ordersReducer from './ordersSlice.js';
 
 const rootReducer = combineReducers({
   items: itemsReducer,

@@ -9,5 +9,6 @@ router.use('/item', require('./item.routes'));
 router.use('/user', require('./user.routes'));
 router.use('/uploads', require('./upload.routes'));
 router.use('/novaPoshta', require('./np.routes'));
+router.use('/orders', require('./orders.routes'));
 
 module.exports = router;

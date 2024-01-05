@@ -100,7 +100,6 @@ const LoginFormBlock = () => {
           Remember me
         </CheckboxField>
         <button
-          type='submit'
           disabled={!formik.isValid || !formik.dirty}
           className={styles.button}
         >

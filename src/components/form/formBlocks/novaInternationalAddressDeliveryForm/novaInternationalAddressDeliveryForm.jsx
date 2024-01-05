@@ -14,10 +14,16 @@ const NovaInternationalAddressDeliveryForm = ({isButton}) => {
     initialValues: {
       intDeliveryAddress: '',
       deliveryMethod: 'International delivery',
+      label: '',
+      price: 20,
     },
     validationSchema: validationSchemaIntDeliveryForm,
     onSubmit: () => {
-      const newAddress = {...formik.values, _id: nanoid(12)};
+      const newAddress = {
+        ...formik.values,
+        _id: nanoid(12),
+        label: `${formik.values.intDeliveryAddress}`,
+      };
       const newUser = {
         ...user,
         deliveryAddress: [...user.deliveryAddress, newAddress],
@@ -26,6 +32,7 @@ const NovaInternationalAddressDeliveryForm = ({isButton}) => {
       dispatch(updateUser(newUser));
     },
   });
+  console.log(formik.values.intDeliveryAddress);
   return (
     <form
       onSubmit={formik.handleSubmit}
