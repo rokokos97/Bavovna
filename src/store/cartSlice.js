@@ -25,12 +25,18 @@ const cartSlice = createSlice({
         state.entities.splice(index, 1);
       }
     },
+    removeAllItemsFromCart(state) {
+      state.entities = [];
+    },
   },
 });
 
 const {reducer: cartReducer, actions} = cartSlice;
-const {addedItem, removeItem, removeOneItem} = actions;
+const {addedItem, removeItem, removeOneItem, removeAllItemsFromCart} = actions;
 const selectCartEntities = (state) => state.cart.entities;
+export const clearCart = () => (dispatch) => {
+  dispatch(removeAllItemsFromCart());
+};
 export const addItemToCart = (item) => (dispatch) => {
   dispatch(addedItem(item));
 };
