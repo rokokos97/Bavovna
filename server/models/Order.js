@@ -4,9 +4,10 @@ const schema = new Schema({
   items: [{
     type: String,
   }],
-  shippingAddress: {
-    type: Object,
-  },
+  userData: {type: Object},
+  totalPrice: {type: String},
+  _id: {type: String},
+  date: {type: String},
   shippingStatus: {
     type: String,
   },
