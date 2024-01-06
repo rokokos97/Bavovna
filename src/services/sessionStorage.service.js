@@ -28,6 +28,9 @@ export function setCurrentCart(cart) {
 export function getCurrentCart() {
   return JSON.parse(sessionStorage.getItem('cart'));
 }
+export function clearCartSessionStorage() {
+  sessionStorage.removeItem('cart');
+}
 export function getTokenExpiresDate() {
   return sessionStorage.getItem(EXPIRES_KEY);
 }
@@ -43,5 +46,6 @@ const sessionStorageService = {
   removeAuthData,
   setCurrentCart,
   getCurrentCart,
+  clearCartSessionStorage,
 };
 export default sessionStorageService;
