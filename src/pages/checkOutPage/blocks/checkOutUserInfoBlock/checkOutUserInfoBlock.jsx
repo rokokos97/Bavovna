@@ -21,14 +21,17 @@ import npService from '../../../../services/np.service';
 import NpHomeDeliveryFormCheckout from './userDeliveryMethods/npHomeDeliveryFormCheckout/npHomeDeliveryFormCheckout';
 import NpInternationalDeliveryFormCheckout
   from './userDeliveryMethods/npInternationalDeliveryFormCheckout/npInternationalDeliveryFormCheckout';
-import {getNormalizedCart} from '../../../../store/cartSlice';
+import {clearCart, getNormalizedCart} from '../../../../store/cartSlice';
 import DeliveryMethodsSection from './deliveryMethodsSection/deliveryMethodsSection';
 import UserDetailsSection from './userDetailsSection/userDetailsSection';
 import {getUser, updateUser} from '../../../../store/userSlice';
 import {customAlphabet} from 'nanoid/non-secure';
+import {useNavigate} from 'react-router-dom';
+import {addOrder} from '../../../../store/ordersSlice';
 
 const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurrentDelivery, setUserCurrentDelivery, totalPrice}) => {
   const user = useSelector(getUser);
+  const navigation = useNavigate();
   const dispatch = useDispatch();
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
   const [warehousesList, setWarehousesList] = useState([]);
@@ -72,13 +75,16 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
         paymentStatus: 'paid',
         deliveryStatus: 'pending',
       };
-      console.log('newOrder', newOrder);
-      const newUser = await {
-        ...user,
-        orders: [...user.orders, newOrder],
-      };
-      console.log('newUser', newUser);
-      await dispatch(updateUser(newUser));
+      if (user) {
+        const newUser = await {
+          ...user,
+          orders: [...user.orders, newOrder],
+        };
+        await dispatch(updateUser(newUser));
+      }
+      dispatch(addOrder(newOrder));
+      await dispatch(clearCart());
+      navigation('/orderSuccess');
     },
   });
   const handleCityChange = (value) => {
