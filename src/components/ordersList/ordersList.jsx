@@ -7,7 +7,7 @@ const OrdersList = () => {
   const user = useSelector(getUser);
   return user && (
     <div className={styles.ordersList} data-testid="OrdersList">
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>ORDER</th>
@@ -24,7 +24,7 @@ const OrdersList = () => {
               <td>{order.date}</td>
               <td>{order.paymentStatus}</td>
               <td>{order.deliveryStatus}</td>
-              <td>{`$${order.totalPrice}`}</td>
+              <td>{`$ ${order.totalPrice}`}</td>
             </tr>)}
 
         </tbody>
