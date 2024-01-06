@@ -19,6 +19,7 @@ import sessionStorageService from '../services/sessionStorage.service';
 import {getCart} from '../store/cartSlice';
 import CheckOutPage from '../pages/checkOutPage/checkOutPage';
 import LoginLayout from '../pages/LoginLayoutPage/LoginLayout';
+import OrderCompletePage from '../pages/orderCompletePage/orderCompletePage';
 
 function App() {
   const cart = useSelector(getCart);
@@ -38,6 +39,7 @@ function App() {
             <Route path='aboutus' element={<AboutUsPage />} />
             <Route path='catalogue' element={<Catalogue />} />
             <Route path='cart/checkout' element={<CheckOutPage />} />
+            <Route path='orderSuccess' element={<OrderCompletePage />} />
             <Route path='cart' element={<ShoppingCartPage/>}/>
             <Route path='catalogue/:id' element={<Card />} />
             <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
