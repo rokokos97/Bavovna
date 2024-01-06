@@ -68,7 +68,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
         userData: {...values},
         totalPrice: totalPrice,
         _id: generateNumericId(),
-        date: new Date(),
+        date: new Date().toISOString().split('T')[0],
         paymentStatus: 'paid',
         deliveryStatus: 'pending',
       };
