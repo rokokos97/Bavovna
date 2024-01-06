@@ -7,6 +7,7 @@ import UnknownUserContactFormBlock
   from '../../../../components/form/formBlocks/anonimUserContactFormBlock/unknownUserContactFormBlock';
 import PaymentMethodSection from './paymentMethodSection/paymentMethodSection';
 import {
+  validationSchemaCheckOutCurrentDeliveryAddress,
   validationSchemaCheckOutNPAD, validationSchemaCheckOutNPID,
   validationSchemaCheckOutNPWDC,
 } from '../../../../utils/validationSchema';
@@ -21,19 +22,22 @@ import NpHomeDeliveryFormCheckout from './userDeliveryMethods/npHomeDeliveryForm
 import NpInternationalDeliveryFormCheckout
   from './userDeliveryMethods/npInternationalDeliveryFormCheckout/npInternationalDeliveryFormCheckout';
 import {getNormalizedCart} from '../../../../store/cartSlice';
-import {addOrder} from '../../../../store/ordersSlice';
 import DeliveryMethodsSection from './deliveryMethodsSection/deliveryMethodsSection';
 import UserDetailsSection from './userDetailsSection/userDetailsSection';
-import {getUser} from '../../../../store/userSlice';
+import {getUser, updateUser} from '../../../../store/userSlice';
+import {customAlphabet} from 'nanoid/non-secure';
 
-const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurrentDelivery, setUserCurrentDelivery}) => {
+const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurrentDelivery, setUserCurrentDelivery, totalPrice}) => {
   const user = useSelector(getUser);
   const dispatch = useDispatch();
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
   const [warehousesList, setWarehousesList] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
   const cart = useSelector(getNormalizedCart);
-  const getValidationSchema = (deliveryMethod) => {
+  const numbers = '0123456789';
+  const generateNumericId = customAlphabet(numbers, 15);
+  const getValidationSchema = (deliveryMethod, userCurrentDelivery) => {
+    if (userCurrentDelivery === '2') return validationSchemaCheckOutCurrentDeliveryAddress;
     switch (deliveryMethod) {
       case '1': // Nova poshta delivery to the post office
         return validationSchemaCheckOutNPWDC;
@@ -57,13 +61,24 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       intDeliveryAddress: '',
       currentDeliveryAddress: '',
     },
-    validationSchema: getValidationSchema(selectedDeliveryMethod),
-    onSubmit: (values)=> {
-      const order = {
+    validationSchema: getValidationSchema(selectedDeliveryMethod, userCurrentDelivery),
+    onSubmit: async (values)=> {
+      const newOrder = {
         items: cart,
         userData: {...values},
+        totalPrice: totalPrice,
+        _id: generateNumericId(),
+        date: new Date(),
+        paymentStatus: 'paid',
+        deliveryStatus: 'pending',
       };
-      dispatch(addOrder(order));
+      console.log('newOrder', newOrder);
+      const newUser = await {
+        ...user,
+        orders: [...user.orders, newOrder],
+      };
+      console.log('newUser', newUser);
+      await dispatch(updateUser(newUser));
     },
   });
   const handleCityChange = (value) => {
@@ -136,14 +151,6 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       });
     }
   }, [selectedCity]);
-  //  useEffect(()=>{
-  //    formik.setFieldValue('city', {});
-  //    formik.setFieldValue('warehouse', {});
-  //    formik.setFieldValue('street', '');
-  //    formik.setFieldValue('houseNumber', '');
-  //    formik.setFieldValue('flatNumber', '');
-  //    formik.setFieldValue('intDeliveryAddress', '');
-  //  }, [selectedValue]);
   useEffect(()=> {
     if (user) {
       formik.setFieldValue('firstName', user.firstName);
@@ -152,41 +159,47 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       formik.setFieldValue('phoneNumber', user.phoneNumber);
     }
     if (userCurrentDelivery === '2') {
-      formik.setFieldValue('currentDeliveryAddress', user? user.currentDeliveryAddress: '');
+      const currentDeliveryAddress = user && user.deliveryAddress.filter((item)=> item._id === user.currentDeliveryAddress);
+      formik.setFieldValue('currentDeliveryAddress', user? currentDeliveryAddress[0] : '');
     }
   }, [user, userCurrentDelivery]);
-  console.log(userCurrentDelivery);
+  console.log(user && user);
+  console.log(formik.errors);
   return (
-    <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
-      <p className={styles.title} id='contacts'>Contact details</p>
+    <div className={styles.checkOutUserInfoBlock}>
+      <p className={styles.title}>Contact details</p>
       <UserDetailsSection
         userCurrentDetailsList={userCurrentDetailsList}
         setUserCurrentDetails={setUserCurrentDetails}
         userCurrentDetails={userCurrentDetails}
       />
-      <div className={styles.divider}/>
-      <p className={styles.title} id='delivery'>delivery</p>
-      <DeliveryMethodsSection
-        deliveryMethods={deliveryMethods}
-        setUserCurrentDelivery={setUserCurrentDelivery}
-        userCurrentDelivery={userCurrentDelivery}
-      />
-      <div className={styles.divider}/>
-      <p className={styles.title} id='payment'>payment method</p>
-      <PaymentMethodSection formik={formik}/>
-      <button
-        type='submit'
-        disabled={!formik.dirty || !formik.isValid}
-        className={styles.button}
-      >
-        <span>
+      <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
+        {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
+        <div className={styles.divider}/>
+        <p className={styles.title}>delivery</p>
+        <DeliveryMethodsSection
+          deliveryMethods={deliveryMethods}
+          setUserCurrentDelivery={setUserCurrentDelivery}
+          userCurrentDelivery={userCurrentDelivery}
+        />
+        <div className={styles.divider}/>
+        <p className={styles.title}>payment method</p>
+        <PaymentMethodSection formik={formik}/>
+        <button
+          type='submit'
+          disabled={!formik.dirty || !formik.isValid}
+          className={styles.button}
+        >
+          <span>
                   place the order
-        </span>
-      </button>
-    </form>
+          </span>
+        </button>
+      </form>
+    </div>
   );
 };
 CheckOutUserInfoBlock.propTypes = {
+  totalPrice: PropTypes.string,
   selectedValue: PropTypes.func,
   userCurrentDelivery: PropTypes.string,
   setUserCurrentDelivery: PropTypes.func,

@@ -73,7 +73,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
           I agree to the terms and conditions of use.
         </CheckboxField>
         <button
-          type="submit"
+          type='submit'
           disabled={!formik.isValid || !formik.dirty}
           className={styles.button}
         >
@@ -94,6 +94,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
             id='signUpDiv'>
           </div>
           <button className={styles.googleButton}
+            type='button'
             onClick={() => googleRegister()}
           >
             <GoogleIcon/>

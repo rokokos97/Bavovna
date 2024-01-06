@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './checkOutShoppingCartBlock.module.scss';
 import {useSelector} from 'react-redux';
 import {getCartLength, getCartTotalPrice} from '../../../../store/cartSlice';
@@ -11,14 +11,12 @@ import PropTypes from 'prop-types';
 import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
 import {getUser} from '../../../../store/userSlice';
 
-const CheckOutShoppingCartBlock = ({selectedDeliveryMethod, userCurrentDelivery}) => {
+const CheckOutShoppingCartBlock = ({selectedDeliveryMethod, userCurrentDelivery, onTotalPriceChange}) => {
   const user = useSelector(getUser);
-  console.log('user', user);
-  const [promoCode, setPromoCode] = useState(null);
   const cartLength = useSelector(getCartLength);
   const itemPrice = useSelector(getCartTotalPrice);
-  // eslint-disable-next-line max-len
-  const deliveryPrice = (!user && (userCurrentDelivery !== 2)) ? deliveryMethodsList[1][selectedDeliveryMethod].price : user.deliveryAddress.find((item)=>item._id === user.currentDeliveryAddress).price;
+  const [promoCode, setPromoCode] = useState(null);
+  const [deliveryPrice, setDeliveryPrice] = useState(deliveryMethodsList[1][1].price);
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount + deliveryPrice;
   const promoCodeFormik = useFormik({
@@ -26,10 +24,19 @@ const CheckOutShoppingCartBlock = ({selectedDeliveryMethod, userCurrentDelivery}
       promoCode: '',
     }, validationSchema: validationSchemaPromoCode,
     onSubmit: (values) => {
-      console.log(values.promoCode);
       setPromoCode(values.promoCode/100);
     },
   });
+  useEffect(()=> {
+    if (userCurrentDelivery === '1') {
+      setDeliveryPrice(deliveryMethodsList[1][selectedDeliveryMethod].price);
+    } else {
+      user && setDeliveryPrice(user.deliveryAddress.find((item)=>item._id === user.currentDeliveryAddress).price);
+    }
+  }, [userCurrentDelivery, selectedDeliveryMethod, user]);
+  useEffect(() => {
+    onTotalPriceChange(totalPrice);
+  }, [totalPrice, onTotalPriceChange]);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
       <div className={styles.titleBlock}>
@@ -82,6 +89,7 @@ const CheckOutShoppingCartBlock = ({selectedDeliveryMethod, userCurrentDelivery}
   );
 };
 CheckOutShoppingCartBlock.propTypes = {
+  onTotalPriceChange: PropTypes.func,
   userCurrentDelivery: PropTypes.string,
   selectedDeliveryMethod: PropTypes.string,
 };

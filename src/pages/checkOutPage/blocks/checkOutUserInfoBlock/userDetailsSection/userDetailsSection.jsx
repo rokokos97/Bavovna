@@ -31,7 +31,8 @@ const UserDetailsSection = ({userCurrentDetailsList, userCurrentDetails, setUser
           </div>
         </div>)}
       </div>
-      {userCurrentDetailsList.map((detail)=> userCurrentDetails === detail.id ? <div key={detail.id}>{detail.value}</div>: null)}
+      {userCurrentDetails === '2' && userCurrentDetailsList[1].value}
+      {/* {userCurrentDetailsList.map((detail)=> userCurrentDetails === detail.id ? <div key={detail.id}>{detail.value}</div>: null)}*/}
     </div>
   );
 };

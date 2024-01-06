@@ -11,7 +11,7 @@ const schema = new Schema({
   deliveryAddress: [{type: Object}],
   currentDeliveryAddress: {type: Object},
   favorite: [{type: String}],
-  orders: [{type: String}],
+  orders: [{type: Object}],
   isVerified: {type: Boolean},
   emailVerificationToken: {type: String},
 }, {
