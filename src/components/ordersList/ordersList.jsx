@@ -26,7 +26,6 @@ const OrdersList = () => {
               <td>{order.deliveryStatus}</td>
               <td>{`$ ${order.totalPrice}`}</td>
             </tr>)}
-
         </tbody>
       </table>
     </div>
