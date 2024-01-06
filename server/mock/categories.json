@@ -2,7 +2,5 @@
   {"name": "dresses", "image":"uploads/categoryDresses.png"},
   {"name": "skirts", "image":"uploads/categorySkirts.png"},
   {"name": "pants", "image":"uploads/categoryPants.png"},
-  {"name": "new", "image":"uploads/categoryNew.png" },
-  {"name": "t-shirts", "image":"uploads/category_TShirts.png"},
-  {"name": "sale", "image":"uploads/categorySale.png"}
+  {"name": "t-shirts", "image":"uploads/category_TShirts.png"}
 ]
