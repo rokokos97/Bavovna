@@ -1,8 +1,20 @@
 .aboutUs {
+  padding: 1.6rem 8rem 4rem;
+}
+
+.aboutUsContainer {
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  padding: 40px 80px;
+  gap: 10rem;
+}
+
+.navigation {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+  text-align: start;
+  margin-bottom: 1.4rem;
 }
 
 /*# sourceMappingURL=AboutUsPage.module.css.map */
