@@ -3,10 +3,14 @@ import styles from './orderSuccessPage.module.scss';
 import {useSelector} from 'react-redux';
 import {getOrders, getOrdersLoadingStatus} from '../../store/ordersSlice';
 import ConfirmIcon from '../../components/svg/confirmIcon/confirmIcon';
+import {useNavigate} from 'react-router-dom';
+import {getUser} from '../../store/userSlice';
 
 const OrderSuccessPage = () => {
   const isLoadingOrders = useSelector(getOrdersLoadingStatus());
   const orders = useSelector(getOrders());
+  const navigate = useNavigate();
+  const user = useSelector(getUser);
   return (!isLoadingOrders &&
     <div className={styles.orderCompletePage} data-testid="OrderCompletePage">
       <div className={styles.titleBlock}>
@@ -22,12 +26,14 @@ const OrderSuccessPage = () => {
         <p>You will receive an email notification when your order is shipped.</p>
       </div>
       <div className={styles.buttonsBlock}>
-        <button>
+        <button
+          onClick={()=> navigate('/catalogue')}
+        >
           <span>
             &lt;- go to shop
           </span>
         </button>
-        <button>
+        <button onClick={()=> navigate(user?('/user/'+ user._id): '/login')}>
           <span>
             view order
           </span>

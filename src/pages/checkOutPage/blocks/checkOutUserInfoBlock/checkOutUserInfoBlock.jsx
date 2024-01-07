@@ -51,6 +51,12 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
         return validationSchemaCheckOutNPID;
     }
   };
+  function formatDate(date) {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Місяці від 0 до 11
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+  }
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -74,7 +80,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
         userData: {...values},
         totalPrice: totalPrice,
         _id: generateNumericId(),
-        date: new Date().toISOString().split('T')[0],
+        date: formatDate(new Date()),
         paymentStatus: 'paid',
         deliveryStatus: 'pending',
       };
