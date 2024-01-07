@@ -28,6 +28,7 @@ import {getUser, updateUser} from '../../../../store/userSlice';
 import {customAlphabet} from 'nanoid/non-secure';
 import {useNavigate} from 'react-router-dom';
 import {addOrder} from '../../../../store/ordersSlice';
+import {clearCartSessionStorage} from '../../../../services/sessionStorage.service';
 
 const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurrentDelivery, setUserCurrentDelivery, totalPrice}) => {
   const user = useSelector(getUser);
@@ -63,6 +64,8 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       flatNumber: '',
       intDeliveryAddress: '',
       currentDeliveryAddress: '',
+      cardNumber: '',
+
     },
     validationSchema: getValidationSchema(selectedDeliveryMethod, userCurrentDelivery),
     onSubmit: async (values)=> {
@@ -84,6 +87,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       }
       dispatch(addOrder(newOrder));
       await dispatch(clearCart());
+      clearCartSessionStorage();
       navigation('/orderSuccess');
     },
   });
@@ -169,8 +173,6 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       formik.setFieldValue('currentDeliveryAddress', user? currentDeliveryAddress[0] : '');
     }
   }, [user, userCurrentDelivery]);
-  console.log(user && user);
-  console.log(formik.errors);
   return (
     <div className={styles.checkOutUserInfoBlock}>
       <p className={styles.title}>Contact details</p>
@@ -205,7 +207,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
   );
 };
 CheckOutUserInfoBlock.propTypes = {
-  totalPrice: PropTypes.string,
+  totalPrice: PropTypes.number,
   selectedValue: PropTypes.func,
   userCurrentDelivery: PropTypes.string,
   setUserCurrentDelivery: PropTypes.func,
