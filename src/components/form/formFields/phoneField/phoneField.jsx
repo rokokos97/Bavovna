@@ -3,9 +3,9 @@ import styles from './phoneField.module.scss';
 import PhoneInput from 'react-phone-input-2';
 import PropTypes from 'prop-types';
 
-const PhoneField = ({value, phoneNumber, onChange, onBlur, touched, error}) => {
+const PhoneField = ({value, phoneNumber, onChange, onBlur, error}) => {
   return (
-    <div className={`${styles.phoneField} ${touched && error? styles.hasError: ''}`} data-testid="PhoneField">
+    <div className={`${styles.phoneField} ${error? styles.hasError: ''}`} data-testid="PhoneField">
       <p className={styles.phoneLabel}>Phone
         <span>
                  *
@@ -23,7 +23,7 @@ const PhoneField = ({value, phoneNumber, onChange, onBlur, touched, error}) => {
         onChange={onChange}
         onBlur={onBlur}
       />
-      {touched && error ? (
+      {error ? (
         <div className={styles.error}>{error}</div>
       ) : null}
     </div>
@@ -35,7 +35,6 @@ PhoneField.propTypes = {
   phoneNumber: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
-  touched: PropTypes.bool,
   error: PropTypes.string,
 };
 

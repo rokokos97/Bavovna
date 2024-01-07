@@ -55,6 +55,8 @@
   text-align: start;
 }
 .phoneField .error {
+  margin-top: 0.8rem;
+  padding-left: 0.8rem;
   color: var(--error, #EA001B);
   font-size: 1.6rem;
   font-style: normal;
