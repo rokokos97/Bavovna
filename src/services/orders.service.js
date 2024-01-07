@@ -8,7 +8,6 @@ const categoryService = {
     return request.data;
   },
   add: async (payload) => {
-    console.log('payload', payload);
     const request = await httpService.post(ordersEndpoint, payload);
     return request.data;
   },

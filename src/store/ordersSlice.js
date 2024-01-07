@@ -39,24 +39,23 @@ export const uploadOrdersList = () => async (dispatch) => {
   dispatch(ordersRequested());
   try {
     const data = await ordersService.get();
-    console.log('data', data);
     dispatch(ordersReceived(data));
   } catch (error) {
     dispatch(ordersRequestFailed(error));
   }
 };
-export const addOrder = (order) => (dispatch) => {
+export const addOrder = (order) => async (dispatch) => {
   dispatch(addOrderRequested());
   try {
-    const data = ordersService.add(order);
+    const data = await ordersService.add(order);
     dispatch(addOrderReceived(data));
   } catch (error) {
     dispatch(addOrderReceiveFailed(error));
   }
 };
 
-export const getOrders = () => (state) => state.categories.entities;
-export const getOrdersLoadingStatus = () => (state) => state.categories.isLoading;
+export const getOrders = () => (state) => state.orders.entities;
+export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
 export const {
   ordersRequested,
   ordersReceived,
