@@ -86,8 +86,8 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -11.97rem;
-  left: -5%;
+  top: -7.17rem;
+  left: -1rem;
 }
 .heroBtn:active::after {
   content: "";
@@ -98,8 +98,8 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -11.97rem;
-  left: -5%;
+  top: -7.17rem;
+  left: -1.1rem;
 }
 .heroBtn:disabled {
   border: 1px solid #868686;

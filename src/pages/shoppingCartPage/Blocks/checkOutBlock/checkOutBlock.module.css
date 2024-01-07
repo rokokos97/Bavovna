@@ -70,8 +70,8 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -6.525rem;
-  left: -5%;
+  top: -1.725rem;
+  left: -1rem;
 }
 .arrowButton:active::after {
   content: "";
@@ -82,8 +82,8 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -6.525rem;
-  left: -5%;
+  top: -1.725rem;
+  left: -1.1rem;
 }
 .arrowButton:disabled {
   border: 1px solid #868686;
@@ -163,8 +163,8 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -22.365rem;
-  left: -5%;
+  top: -17.565rem;
+  left: -1rem;
 }
 .buttonsBlock button:first-child:active::after {
   content: "";
@@ -175,8 +175,8 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -22.365rem;
-  left: -5%;
+  top: -17.565rem;
+  left: -1.1rem;
 }
 .buttonsBlock button:first-child:disabled {
   border: 1px solid #868686;
@@ -241,8 +241,8 @@
   background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -22.365rem;
-  left: -5%;
+  top: -17.565rem;
+  left: -1rem;
 }
 .buttonsBlock button:last-child:active::after {
   content: "";
@@ -253,8 +253,8 @@
   border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -22.365rem;
-  left: -5%;
+  top: -17.565rem;
+  left: -1.1rem;
 }
 .buttonsBlock button:last-child:disabled {
   border: 1px solid #868686;

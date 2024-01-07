@@ -73,8 +73,8 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -14.83rem;
-  left: -5%;
+  top: -10.03rem;
+  left: -1rem;
 }
 .button:active::after {
   content: "";
@@ -85,8 +85,8 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -14.83rem;
-  left: -5%;
+  top: -10.03rem;
+  left: -1.1rem;
 }
 .button:disabled {
   border: 1px solid #868686;

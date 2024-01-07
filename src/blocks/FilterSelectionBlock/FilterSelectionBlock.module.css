@@ -101,8 +101,8 @@
   background: rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -12.795rem;
-  left: -5%;
+  top: -7.995rem;
+  left: -1rem;
 }
 .filterBtn:active::after {
   content: "";
@@ -113,8 +113,8 @@
   border: 1px solid rgba(169, 223, 203, 0.3);
   opacity: 1;
   position: absolute;
-  top: -12.795rem;
-  left: -5%;
+  top: -7.995rem;
+  left: -1.1rem;
 }
 .filterBtn:disabled {
   border: 1px solid #868686;

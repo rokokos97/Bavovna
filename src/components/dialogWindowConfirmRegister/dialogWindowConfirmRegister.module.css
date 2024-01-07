@@ -72,8 +72,8 @@
   background: #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -24.95rem;
-  left: -5%;
+  top: -20.15rem;
+  left: -1rem;
 }
 .dialogWindowConfirmRegister div button:active::after {
   content: "";
@@ -84,8 +84,8 @@
   border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -24.95rem;
-  left: -5%;
+  top: -20.15rem;
+  left: -1.1rem;
 }
 .dialogWindowConfirmRegister div button:disabled {
   border: 1px solid #868686;

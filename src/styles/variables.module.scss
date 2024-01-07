@@ -269,8 +269,8 @@ $light-pink: #dfc5c5;
     background: $hover-color;
     opacity: 1;
     position: absolute;
-    top: -(math.div(1.1*$width, 2)+2.4rem);
-    left: -5%;
+    top: (math.div(-1.1*$width, 2)+2.4rem);
+    left: -1rem;
   }
   &:active::after {
     content: '';
@@ -281,8 +281,8 @@ $light-pink: #dfc5c5;
     border: 1px solid $hover-color;
     opacity: 1;
     position: absolute;
-    top: -(math.div(1.1*$width, 2)+2.4rem);
-    left: -5%;
+    top: (math.div(-1.1*$width, 2)+2.4rem);
+    left: -1.1rem;
   }
   &:disabled {
     border: 1px solid $gray-40;
