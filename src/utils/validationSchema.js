@@ -115,8 +115,6 @@ export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
       .required('First name is required'),
 });
 export const validationSchemaCheckOutCurrentDeliveryAddress = Yup.object().shape({
-  cardHolderName: Yup.string()
-      .required('Card holder name name is required'),
   cvvCvc: Yup.string()
       .matches(/^\d{3}$/, 'CVV/CVC must be 3 numbers long')
       .required('CVV/CVC is required'),
@@ -124,7 +122,7 @@ export const validationSchemaCheckOutCurrentDeliveryAddress = Yup.object().shape
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{16}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   phoneNumber: Yup.string()
       .matches(/^\d{12}$/, 'Phone number must be 12 digits')
@@ -144,8 +142,6 @@ export const validationSchemaCheckOutCurrentDeliveryAddress = Yup.object().shape
       .required('First name is required'),
 });
 export const validationSchemaCheckOutNPWDC = Yup.object().shape({
-  cardHolderName: Yup.string()
-      .required('Card holder name name is required'),
   cvvCvc: Yup.string()
       .matches(/^\d{3}$/, 'CVV/CVC must be 3 numbers long')
       .required('CVV/CVC is required'),
@@ -153,7 +149,7 @@ export const validationSchemaCheckOutNPWDC = Yup.object().shape({
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{16}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   city: Yup.object().test('object-length', 'City is required', (obj) => {
     return Object.keys(obj).length === 2;
@@ -179,8 +175,6 @@ export const validationSchemaCheckOutNPWDC = Yup.object().shape({
       .required('First name is required'),
 });
 export const validationSchemaCheckOutNPAD = Yup.object().shape({
-  cardHolderName: Yup.string()
-      .required('Card holder name name is required'),
   cvvCvc: Yup.string()
       .matches(/^\d{3}$/, 'CVV/CVC must be 3 numbers long')
       .required('CVV/CVC is required'),
@@ -188,7 +182,7 @@ export const validationSchemaCheckOutNPAD = Yup.object().shape({
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{16}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   city: Yup.object().test('object-length', 'City is required', (obj) => {
     return Object.keys(obj).length === 2;
@@ -226,8 +220,6 @@ export const validationSchemaCheckOutNPAD = Yup.object().shape({
       .required('First name is required'),
 });
 export const validationSchemaCheckOutNPID = Yup.object().shape({
-  cardHolderName: Yup.string()
-      .required('Card holder name name is required'),
   cvvCvc: Yup.string()
       .matches(/^\d{3}$/, 'CVV/CVC must be 3 numbers long')
       .required('CVV/CVC is required'),
@@ -235,7 +227,7 @@ export const validationSchemaCheckOutNPID = Yup.object().shape({
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{16}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   intDeliveryAddress: Yup.string()
       .matches(/^[a-zA-Z0-9.,/ ]*$/, 'Address must consist only numbers and latin letters')
