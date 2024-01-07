@@ -75,24 +75,6 @@ export const getNormalizedCart = createSelector(
       return _.sortBy(newNormalizedCart, 'itemName');
     },
 );
-// export const getCart = () => (state) => state.cart.entities;
-// export const getCartTotalPrice = () => (state) => state.cart.entities.reduce((acc, el)=> acc+el.discountPrice, 0);
-// export const getNormalizedCart = () => (state) => {
-//  const newNormalizedCart = [];
-//  for (const good of state.cart.entities) {
-//    const foundIndex = newNormalizedCart.findIndex((item) => item.itemIdentifier === good.itemIdentifier);
-//    if (foundIndex !== -1) {
-//      newNormalizedCart[foundIndex] = {
-//        ...newNormalizedCart[foundIndex],
-//        itemQuantity: (newNormalizedCart[foundIndex].itemQuantity + 1),
-//      };
-//    } else {
-//      newNormalizedCart.push(good);
-//    }
-//  }
-//  return _.sortBy(newNormalizedCart, 'itemName');
-// };
-// export const getCartLength = () => (state) => state.cart.entities.length;
 export const getCartLength = createSelector(
     [selectCartEntities],
     (entities) => entities.length,

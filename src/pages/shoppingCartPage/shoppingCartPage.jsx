@@ -1,15 +1,14 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import styles from './shoppingCartPage.module.scss';
 import LeftArrowIcon from '../../components/svg/leftArrowIcon/leftArrowIcon';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-import {getCart} from '../../store/cartSlice';
+import {getCart, getNormalizedCart} from '../../store/cartSlice';
 import ProductCardInCart from '../../components/productCardInCart/productCardInCart';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
-import _ from 'lodash';
 import CheckOutBlock from './Blocks/checkOutBlock/checkOutBlock';
 
 const ShoppingCartPage = () => {
@@ -18,27 +17,11 @@ const ShoppingCartPage = () => {
   const swiperRef = useRef();
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
-  const [normalizedCart, setNormalizedCart] = useState([]);
+  const normalizedCart = useSelector(getNormalizedCart);
   let sliderItems = [];
   if (!isItemsLoading && items) {
     sliderItems = items.filter((item) => item.status === 'new');
   }
-  useEffect(()=>{
-    const newNormalizedCart = [];
-    for (const good of cart) {
-      const foundIndex = newNormalizedCart.findIndex((item) => item.itemIdentifier === good.itemIdentifier);
-      if (foundIndex !== -1) {
-        newNormalizedCart[foundIndex] = {
-          ...newNormalizedCart[foundIndex],
-          itemQuantity: (newNormalizedCart[foundIndex].itemQuantity + 1),
-        };
-      } else {
-        newNormalizedCart.push(good);
-      }
-    }
-    const sortedCart = _.sortBy(newNormalizedCart, 'itemName');
-    setNormalizedCart(sortedCart);
-  }, [cart]);
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
       <div className={styles.titleBlock}>
