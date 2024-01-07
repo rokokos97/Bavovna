@@ -9,7 +9,7 @@ import PaymentMethodSection from './paymentMethodSection/paymentMethodSection';
 import {
   validationSchemaCheckOutCurrentDeliveryAddress,
   validationSchemaCheckOutNPAD, validationSchemaCheckOutNPID,
-  validationSchemaCheckOutNPWDC,
+  validationSchemaCheckOutNPWDC, validationSchemaCheckOutReceiptPayment,
 } from '../../../../utils/validationSchema';
 import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/userDeliveryAddressList/userDeliveryAddressList';
@@ -37,10 +37,12 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
   const [warehousesList, setWarehousesList] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState('1');
   const cart = useSelector(getNormalizedCart);
   const numbers = '0123456789';
   const generateNumericId = customAlphabet(numbers, 15);
   const getValidationSchema = (deliveryMethod, userCurrentDelivery) => {
+    if (paymentMethod === '2') return validationSchemaCheckOutReceiptPayment;
     if (userCurrentDelivery === '2') return validationSchemaCheckOutCurrentDeliveryAddress;
     switch (deliveryMethod) {
       case '1': // Nova poshta delivery to the post office
@@ -57,6 +59,9 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
   }
+  const handlePaymentMethodChange = (method) => {
+    setPaymentMethod(method);
+  };
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -198,7 +203,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
         />
         <div className={styles.divider}/>
         <p className={styles.title}>payment method</p>
-        <PaymentMethodSection formik={formik}/>
+        <PaymentMethodSection formik={formik} onPaymentMethodChange={handlePaymentMethodChange} />
         <button
           type='submit'
           disabled={!formik.dirty || !formik.isValid}

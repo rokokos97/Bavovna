@@ -96,6 +96,24 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
 export const validationSchemaPromoCode = Yup.object().shape({
   promoCode: Yup.string().matches(/5|7|10|15|20|25|30/, 'Invalid promo code. Please check the code and try again'),
 });
+export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
+  phoneNumber: Yup.string()
+      .matches(/^\d{12}$/, 'Phone number must be 12 digits')
+      .required('Phone number is required'),
+  email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required'),
+  lastName: Yup.string()
+      .min(2, 'Last name has to be longer than 2 characters')
+      .matches(/^[A-Z][a-z]+$/, 'The Last name must begin with a capital letter and consist only of latin letters')
+      .max(15, 'Last name must be at most 15 characters long')
+      .required('Last name is required'),
+  firstName: Yup.string()
+      .min(2, 'First name has to be longer than 2 characters')
+      .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
+      .max(15, 'First name must be at most 15 characters long')
+      .required('First name is required'),
+});
 export const validationSchemaCheckOutCurrentDeliveryAddress = Yup.object().shape({
   cardHolderName: Yup.string()
       .required('Card holder name name is required'),
