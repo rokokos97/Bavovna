@@ -16,7 +16,6 @@ const NpHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         onChange={handleCityChange}
         defaultValue={{label: 'Select a city', value: ''}}
         options={citiesList ? citiesList : []}
-        touched={formik.touched.city}
         error={formik.errors.city}
       />
       <TextField
@@ -27,7 +26,6 @@ const NpHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         value={formik.values.street}
         error={formik.errors.street}
         onBlur={formik.handleBlur}
-        touched={formik.touched.street}
       />
       <TextField
         label='House number'
@@ -37,7 +35,6 @@ const NpHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         value={formik.values.houseNumber}
         error={formik.errors.houseNumber}
         onBlur={formik.handleBlur}
-        touched={formik.touched.houseNumber}
       />
       <TextField
         label='Flat Number'
@@ -47,7 +44,6 @@ const NpHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         value={formik.values.flatNumber}
         error={formik.errors.flatNumber}
         onBlur={formik.handleBlur}
-        touched={formik.touched.flatNumber}
       />
     </div>
   );
