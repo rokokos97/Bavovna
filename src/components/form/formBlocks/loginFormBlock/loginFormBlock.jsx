@@ -121,7 +121,7 @@ const LoginFormBlock = () => {
           <span>or</span>
           <div></div>
         </div>
-        <div>
+        <div className={styles.googleButtonBlock}>
           <div
             id='signUpDiv'>
           </div>
