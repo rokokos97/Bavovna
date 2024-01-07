@@ -49,18 +49,18 @@ const CategoriesBlock = () => {
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[2]}/>
                 </SwiperSlide>
-                <SwiperSlide>
-                  <CategoryPreviewCard item={categories[5]}/>
-                </SwiperSlide>
+                {/* <SwiperSlide>*/}
+                {/*   <CategoryPreviewCard item={categories[5]}/>*/}
+                {/* </SwiperSlide>*/}
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[3]}/>
                 </SwiperSlide>
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[1]}/>
                 </SwiperSlide>
-                <SwiperSlide>
-                  <CategoryPreviewCard item={categories[4]}/>
-                </SwiperSlide>
+                {/* <SwiperSlide>*/}
+                {/*   <CategoryPreviewCard item={categories[4]}/>*/}
+                {/* </SwiperSlide>*/}
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[0]}/>
                 </SwiperSlide>
