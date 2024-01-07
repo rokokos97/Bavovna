@@ -73,7 +73,6 @@ TextField.propTypes = {
   value: PropTypes.string,
   onBlur: PropTypes.func,
   error: PropTypes.string,
-  touched: PropTypes.bool,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
 };
