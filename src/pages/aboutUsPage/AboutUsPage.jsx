@@ -8,9 +8,12 @@ import styles from './AboutUsPage.module.scss';
 const AboutUsPage = () => {
   return (
     <section className={styles.aboutUs} data-testid='AboutUsPage'>
-      <AboutBlock />
-      <ProposeBlock />
-      <FashionBlock />
+      <p className={styles.navigation}>Home / About us</p>
+      <div className={styles.aboutUsContainer}>
+        <AboutBlock />
+        <ProposeBlock />
+        <FashionBlock />
+      </div>
     </section>
   );
 };

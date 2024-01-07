@@ -2,7 +2,14 @@
 
 .cardSection {
   width: 100%;
-  padding: 4rem 8rem 8rem;
+  padding: 1.6rem 8rem 5.4rem;
+}
+
+.navigation{
+  @include fonts($breadcrumb);
+  text-align: start;
+  margin-bottom: 1.4rem;
+  text-transform: capitalize;
 }
 
 .card {

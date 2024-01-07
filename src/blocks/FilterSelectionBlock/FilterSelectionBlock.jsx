@@ -7,12 +7,14 @@ import {filtersValues} from '../../services/filtersValues.service';
 import styles from './FilterSelectionBlock.module.scss';
 
 const FilterSelectionBlock = () => {
-  const {changeIsFilter, handleCleanFilter} = useDataCatalogue();
-  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  console.log(filterCheckboxes);
+  const {changeIsFilter, handleCleanFilter, categories, colors} =
+    useDataCatalogue();
+  // const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  // console.log('FilterCheckboxes: ', filterCheckboxes);
+  // console.log('Categories: ', categories);
+  // console.log('Colors: ', colors);
 
-  const {categoryValues, sizeValues, colorValues, availabilityValues} =
-    filtersValues;
+  const {sizeValues, availabilityValues, statusValues} = filtersValues;
 
   return (
     <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
@@ -25,11 +27,12 @@ const FilterSelectionBlock = () => {
             id='category'
             placeholder='Category'
             name='category'
-            inner={categoryValues.map((categoryValue, index) => (
+            inner={categories.map((category) => (
               <CheckboxBlock
-                key={index}
-                value={categoryValue.value}
-                label={categoryValue.label}
+                key={category._id}
+                id={category._id}
+                value={category._id}
+                label={category.name}
                 option='category'
               />
             ))}
@@ -38,9 +41,10 @@ const FilterSelectionBlock = () => {
             id='size'
             placeholder='Size'
             name='size'
-            inner={sizeValues.map((sizeValue, index) => (
+            inner={sizeValues.map((sizeValue) => (
               <CheckboxBlock
-                key={index}
+                key={sizeValue.value}
+                id={sizeValue.value}
                 value={sizeValue.value}
                 label={sizeValue.label}
                 option='size'
@@ -51,12 +55,12 @@ const FilterSelectionBlock = () => {
             id='color'
             placeholder='Color'
             name='color'
-            inner={colorValues.map((colorValue, index) => (
+            inner={colors.map((color) => (
               <CheckboxBlock
-                key={index}
-                id='isColor'
-                value={colorValue.value}
-                label={colorValue.label}
+                key={color._id}
+                id={color._id}
+                value={color.value}
+                label={color.name}
                 option='color'
               />
             ))}
@@ -65,9 +69,10 @@ const FilterSelectionBlock = () => {
             id='availability'
             placeholder='Availability'
             name='availability'
-            inner={availabilityValues.map((availabilityValue, index) => (
+            inner={availabilityValues.map((availabilityValue) => (
               <CheckboxBlock
-                key={index}
+                key={availabilityValue.value}
+                id={availabilityValue.value}
                 value={availabilityValue.value}
                 label={availabilityValue.label}
                 option='availability'
@@ -76,10 +81,15 @@ const FilterSelectionBlock = () => {
           />
         </div>
         <div className={styles.checkboxBlock}>
-          <CheckboxBlock value='new' label='NEW' />
-          <CheckboxBlock value='sale' label='SALE' />
+          {statusValues.map((statusValue) => (
+            <CheckboxBlock key={statusValue.value} id={statusValue.value} value={statusValue.value} label={statusValue.label} option='status'/>
+          ))}
         </div>
-        <button type='button' className={styles.filterBtn} onClick={handleCleanFilter}>
+        <button
+          type='button'
+          className={styles.filterBtn}
+          onClick={handleCleanFilter}
+        >
           <span>Clean filter</span>
         </button>
       </div>
