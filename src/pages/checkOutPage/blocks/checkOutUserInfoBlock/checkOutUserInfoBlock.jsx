@@ -62,6 +62,13 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
   const handlePaymentMethodChange = (method) => {
     setPaymentMethod(method);
   };
+  const handleCityChange = (value) => {
+    setSelectedCity(value);
+    formik.setFieldValue('city', value);
+  };
+  const handleWarehouseChange = (value) => {
+    formik.setFieldValue('warehouse', value);
+  };
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -102,14 +109,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       navigation('/orderSuccess');
     },
   });
-  const handleCityChange = (value) => {
-    setSelectedCity(value);
-    formik.setFieldValue('city', value);
-  };
-  const handleWarehouseChange = (value) => {
-    formik.setFieldValue('warehouse', value);
-  };
-  const option = {
+  const deliveryOptions = {
     1: {
       _id: '1',
       label: 'Nova poshta delivery to the post office',
@@ -154,7 +154,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       label: 'new address',
       value: <ListWithRadioButtons
         onSelectValue={selectedValue}
-        options={option}
+        options={deliveryOptions}
         isList={false}
         deleteButton={true}
         key={2}/>,
