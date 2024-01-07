@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './orderSuccessPage.module.scss';
 import {useSelector} from 'react-redux';
 import {getOrders, getOrdersLoadingStatus} from '../../store/ordersSlice';
+import ConfirmIcon from '../../components/svg/confirmIcon/confirmIcon';
 
 const OrderSuccessPage = () => {
   const isLoadingOrders = useSelector(getOrdersLoadingStatus());
@@ -9,6 +10,7 @@ const OrderSuccessPage = () => {
   return (!isLoadingOrders &&
     <div className={styles.orderCompletePage} data-testid="OrderCompletePage">
       <div className={styles.titleBlock}>
+        <ConfirmIcon/>
         <p className={styles.title}>Your order has been confirmed</p>
       </div>
       <div className={styles.numberBlock}>
