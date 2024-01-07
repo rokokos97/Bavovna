@@ -1,11 +1,11 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import OrderCompletePage from './orderCompletePage';
+import OrderSuccessPage from './orderSuccessPage';
 
 describe('<Box />', () => {
   test('it should mount', () => {
-    render(<OrderCompletePage />);
+    render(<OrderSuccessPage />);
 
     const orderCompletePage = screen.getByTestId('OrderCompletePage');
 
