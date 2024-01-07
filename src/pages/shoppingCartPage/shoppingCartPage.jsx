@@ -53,7 +53,6 @@ const ShoppingCartPage = () => {
           <p className={styles.text}>Your shopping bag is empty</p>
           {!isItemsLoading && sliderItems &&
             <div>
-              {/* Swiper для відображення елементів */}
               <Swiper
                 onSwiper={(swiper) => swiperRef.current = swiper? swiper : null}
                 slidesPerView={3}

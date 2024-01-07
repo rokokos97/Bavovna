@@ -15,6 +15,7 @@ const CheckOutBlock = () => {
       </div>
       <div className={styles.buttonsBlock}>
         <button
+          type='button'
           onClick={() => navigate('/cart/checkout')}
         >
           <span>
@@ -22,6 +23,7 @@ const CheckOutBlock = () => {
           </span>
         </button>
         <button
+          type='button'
           onClick={()=> navigate('/catalogue')}
         >
           <span>
