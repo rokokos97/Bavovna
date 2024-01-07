@@ -5,7 +5,6 @@ import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmpty
 import PropTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 import {getIsLoggedIn} from '../../../../../store/userSlice';
-
 const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCurrentDelivery}) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
