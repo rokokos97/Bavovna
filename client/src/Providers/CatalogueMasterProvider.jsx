@@ -4,11 +4,19 @@ import {getItems} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
 import {getColors} from '../store/colorsSlice';
 
+import {useLocation, useNavigate} from 'react-router-dom';
+import queryString from 'query-string';
+
 import PropTypes from 'prop-types';
 
 const DataCatalogueContext = createContext(null);
+// const FILTER_KEYS = ['new', 'sale'];
 
 export const CatalogueMasterProvider = ({children}) => {
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+  const navigate = useNavigate();
+  console.log('CatalogueMasterProvider query: ', Object.keys(query)[0]);
   const initialFilters = {
     category: [],
     size: [],
@@ -24,6 +32,7 @@ export const CatalogueMasterProvider = ({children}) => {
   const [selectedFilters, setSelectedFilters] = useState(initialFilters);
   const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
   // console.log('selectedFilters: ', selectedFilters);
+  // console.log('items: ', items);
   // console.log('categories: ', categories);
   // console.log('colors: ', colors);
   const changeIsFilter = () => {
@@ -61,13 +70,23 @@ export const CatalogueMasterProvider = ({children}) => {
     }));
   };
 
+  useEffect(() => {
+    if (Object.keys(query).length > 0) {
+      const categoryType = Object.keys(query)[0];
+      const value = query[categoryType];
+      handleFilterChange(categoryType, value);
+    } else {
+      navigate('/catalogue');
+    }
+  }, []);
+
   const handleCleanFilter = () => {
     setSelectedFilters(initialFilters);
     filterCheckboxes.forEach((checkbox) => console.log(checkbox.checked));
   };
 
-  if (items) {
-    useEffect(() => {
+  useEffect(() => {
+    if (items) {
       const newItems = [...items].filter((item) => {
         return (
           (selectedFilters.category.length === 0 ||
@@ -83,8 +102,8 @@ export const CatalogueMasterProvider = ({children}) => {
         );
       });
       setFilteredItems(newItems);
-    }, [selectedFilters, items]);
-  }
+    }
+  }, [selectedFilters, items]);
 
   return (
     <DataCatalogueContext.Provider

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import FilterSelectionBlock from '../FilterSelectionBlock/FilterSelectionBlock';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
 import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
@@ -24,6 +24,12 @@ const CardsCatalogBlock = () => {
     endIndex = Math.min(startIndex + itemsPerPage, totalItems);
     visibleItems = items.slice(startIndex, endIndex);
   }
+
+  useEffect(() => {
+    if (items?.length === 1) {
+      setCurrentPage(1);
+    }
+  });
 
   const handlerPageChange = (event) => {
     setCurrentPage(parseInt(event.target.textContent));

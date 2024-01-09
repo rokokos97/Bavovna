@@ -6,7 +6,7 @@ const AboutBlock = () => {
     <div className={styles.aboutBlock} data-testid='AboutBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
-          <img src='' alt='img_1' />
+          <img src='/img/images/AboutUs/aboutBlock_1.jpg' alt='img_1' />
         </div>
         <div className={styles.secondImg}>
           <img src='/img/images/AboutUs/aboutBlock_2.jpg' alt='img_2' />
