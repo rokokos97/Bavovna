@@ -48,7 +48,7 @@ const ItemPreviewCard = ({id}) => {
         item.status &&
         <div
           className={styles.itemPreviewCard__status}
-          onClick={()=> navigate('/catalogue')}
+          onClick={()=> navigate(`/catalogue?status=${item.status}`)}
         >
           <div className={styles.itemPreviewCard__statusText}>
             {item.status}

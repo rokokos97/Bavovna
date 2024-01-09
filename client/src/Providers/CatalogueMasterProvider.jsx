@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, {createContext, useContext, useEffect, useRef, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
@@ -14,9 +14,11 @@ const DataCatalogueContext = createContext(null);
 
 export const CatalogueMasterProvider = ({children}) => {
   const location = useLocation();
-  const query = queryString.parse(location.search);
+  const currentQuery = useRef(queryString.parse(location.search));
+  const query = currentQuery.current;
+  console.log('currentQuery: ', currentQuery);
   const navigate = useNavigate();
-  console.log('CatalogueMasterProvider query: ', Object.keys(query)[0]);
+  // console.log('CatalogueMasterProvider query: ', query.current);
   const initialFilters = {
     category: [],
     size: [],
@@ -42,21 +44,21 @@ export const CatalogueMasterProvider = ({children}) => {
   const onSortItems = (sortOrder) => {
     let sortedItems = [];
     if (sortOrder === 'lowToHigh') {
-      sortedItems = [...items];
+      sortedItems = [...filteredItems];
       sortedItems.sort((a, b) => a.price - b.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'highToLow') {
-      sortedItems = [...items];
+      sortedItems = [...filteredItems];
       sortedItems.sort((a, b) => b.price - a.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'best') {
-      sortedItems = items.filter((item) => item.status === 'sale');
+      sortedItems = filteredItems.filter((item) => item.status === 'sale');
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'new') {
-      sortedItems = items.filter((item) => item.status === 'new');
+      sortedItems = filteredItems.filter((item) => item.status === 'new');
       setFilteredItems(sortedItems);
     }
   };
@@ -73,9 +75,10 @@ export const CatalogueMasterProvider = ({children}) => {
   useEffect(() => {
     if (Object.keys(query).length > 0) {
       const categoryType = Object.keys(query)[0];
-      const value = query[categoryType];
-      handleFilterChange(categoryType, value);
-    } else {
+      const value = [query[categoryType]];
+      setSelectedFilters((prevFilters) => ({...prevFilters, status: value}));
+    } else if (Object.keys(query).length === 0) {
+      setSelectedFilters(initialFilters);
       navigate('/catalogue');
     }
   }, []);
