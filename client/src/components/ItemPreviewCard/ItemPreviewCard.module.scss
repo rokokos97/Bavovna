@@ -1,0 +1,87 @@
+@import '../../styles/variables.module.scss';
+.itemPreviewCard {
+  position: relative;
+  max-width: 41rem;
+  max-height: 57.8rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 0.3rem;
+
+  &:hover {
+      cursor: pointer;
+    .itemPreviewCard__description, .itemPreviewCard__price {
+      span {
+        color: $accent-a-7;
+      }
+      text-decoration: underline;
+      color: $accent-a-7;
+    }
+  }
+  &:active {
+    cursor: pointer;
+    .itemPreviewCard__description, .itemPreviewCard__price {
+      span {
+        color: $accent-a-4;
+      }
+      text-decoration: underline;
+      color: $accent-a-4;
+    }
+  }
+}
+.itemPreviewCard__image {
+  width: 41rem;
+  height: 50rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.itemPreviewCard__status {
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  background: $black;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+
+  &:hover {
+    background: $accent-a-3;
+  }
+  &:active {
+    background: $accent-a-5;
+  }
+}
+.itemPreviewCard__statusText {
+  color: white;
+  font-size: 1.8rem;
+  font-family: Fixel Display, serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+.itemPreviewCard__heart {
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+}
+.itemPreviewCard__description {
+  text-align: start;
+  span {
+    padding-top: 0.8rem;
+    @include fonts($body-2);
+  }
+  p:last-child {
+    padding-top: 0.8rem;
+    @include fonts($headline-8);
+  }
+}
+
+

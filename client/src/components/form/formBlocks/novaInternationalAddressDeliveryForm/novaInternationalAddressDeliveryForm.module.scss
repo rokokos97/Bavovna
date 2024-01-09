@@ -1,0 +1,9 @@
+@import "../../../../styles/variables.module";
+.novaInternationalAddressDeliveryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.button {
+  @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
+}

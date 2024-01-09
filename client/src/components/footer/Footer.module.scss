@@ -1,0 +1,114 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $black;
+  z-index: 100000;
+
+  & a:hover {
+    color: $accent-a-3;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width;
+  width: 100%;
+  color: $white;
+  padding: 7rem 8rem 4rem;
+  margin: auto;
+  z-index: 10000;
+}
+
+.footerTop {
+  height: 25.8rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footerTopLeft {
+  display: flex;
+  width: 75%;
+  gap: 1.7rem;
+  text-align: start;
+  justify-content: space-between;
+
+  & h3 {
+    @include fonts($menu-1);
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+  }
+}
+
+.footerContact,
+.footerShop,
+.footerHelp {
+  flex-basis: 33.3%;
+}
+
+.footerList {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+  align-items: flex-start;
+  @include fonts($menu-3);
+  text-transform: uppercase;
+}
+
+.footerTopRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.socialList {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.socialListItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.1rem;
+}
+
+.footerBottomLeft {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.footerBottomItem {
+  display: flex;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: 0.01rem;
+  text-transform: uppercase;
+  flex-basis: 33.3%;
+  opacity: 0.48;
+}
+
+.footerBottomLink {
+  @include fonts($menu-4);
+}
+
+.footerBottomRight {
+  display: flex;
+  align-items: center;
+}

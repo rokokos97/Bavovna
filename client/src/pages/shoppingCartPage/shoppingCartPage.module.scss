@@ -1,0 +1,66 @@
+@import '../../styles/variables.module';
+.shoppingCartPage {
+  width: 128rem ;
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  margin-top: 5rem;
+  box-sizing: border-box;
+  padding-bottom: 25rem;
+}
+.titleBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.infoBlock {
+  width: 39.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2.4rem;
+}
+.title {
+  @include fonts($headline-3);
+}
+.text {
+  @include fonts($body-2);
+  text-align: start;
+  text-wrap: none;
+}
+.button {
+  @include button(29.2rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  border: 1px solid $black;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  div {
+    position: relative;
+    z-index: 10;
+    width: 2.4rem;
+    svg {
+      width: 2.4rem;
+    }
+  }
+}
+.emptyCartBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.fillCartBlock {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2.4rem;
+
+}
+.itemsBlock {
+  padding-top: 2.4rem;
+}

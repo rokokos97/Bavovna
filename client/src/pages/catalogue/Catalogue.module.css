@@ -1,0 +1,20 @@
+.section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.block {
+  max-width: 144rem;
+  padding: 1.6rem 8rem 0;
+}
+
+.navigation {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+  text-align: start;
+  margin-bottom: 1.4rem;
+}
+
+/*# sourceMappingURL=Catalogue.module.css.map */

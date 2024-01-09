@@ -1,0 +1,12 @@
+.favoriteIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.favoriteIcon:hover svg path {
+  stroke: #03281c;
+}
+.favoriteIcon:active svg path {
+  stroke: #3a7f66;
+}
+
+/*# sourceMappingURL=favoriteIcon.module.css.map */

@@ -1,0 +1,39 @@
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+  color: #030a07;
+  margin-bottom: 0.8rem;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+.label span {
+  color: #ea001b;
+}
+
+input {
+  autoComplete: "off";
+}
+
+.error {
+  color: #ea001b;
+  padding-left: 0.8rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.selectField.hasError .label {
+  color: #ea001b;
+}
+.selectField.hasError div {
+  border-color: red !important;
+}
+.selectField.hasError div div {
+  color: red !important;
+}
+
+/*# sourceMappingURL=selectField.module.css.map */

@@ -1,0 +1,30 @@
+@import '/client/src/styles/variables.module';
+.registerFormBlock {
+
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.button {
+  @include button(41rem, $black, $white, $accent-a-3, $accent-a-5);
+}
+.socialButtonsBlock {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.divider {
+  margin-top: 3.2rem;
+  @include divider();
+}
+.googleButton {
+  display: flex;
+  gap: 1.2rem;
+  border: 1px solid $black;
+  @include button(41rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+}

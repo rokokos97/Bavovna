@@ -1,0 +1,111 @@
+.productCardInCart {
+  width: 84.5rem;
+  height: 14.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.infoBlock {
+  width: 73.6rem;
+  height: 13.8rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  width: 14rem;
+  height: 13.8rem;
+  overflow: hidden;
+}
+.image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.deleteButton {
+  margin-top: 8.7rem;
+  background: transparent;
+}
+.deleteButton:hover svg path {
+  stroke: #5a9b83;
+}
+.deleteButton:active svg path {
+  stroke: #1a6449;
+}
+
+.titleBlock {
+  margin-top: 2.4rem;
+  margin-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.title {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.discount {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.discount span:first-child {
+  text-decoration: line-through;
+  color: #727272;
+}
+.discount span:last-child {
+  color: #ea001b;
+}
+
+.titleBlockLine {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  width: 51.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleBlockLine div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.colorRectangle {
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background: transparent;
+}
+
+/*# sourceMappingURL=productCardInCart.module.css.map */
