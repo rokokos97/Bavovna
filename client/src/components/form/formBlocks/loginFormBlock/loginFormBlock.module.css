@@ -1,17 +1,254 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'client/src/styles/variables.module';
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   loginFormBlock.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'client/src/styles/variables.module';\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   loginFormBlock.module.scss 1:9  root stylesheet";
+#button {
+  width: 62.8rem !important;
 }
+
+.loginFormBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.2rem;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  width: 41rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  padding: 2.1rem 2.6rem;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+  text-align: center;
+  position: relative;
+}
+.button::before {
+  content: "";
+  background: #5a9b83;
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 18.1rem;
+}
+.button::after {
+  content: "";
+  background: #1a6449;
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 20.2rem;
+}
+.button:hover::before {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  background: #5a9b83;
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1rem;
+}
+.button:active::after {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #5a9b83;
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1.1rem;
+}
+.button:disabled {
+  border: 1px solid #868686;
+  background: #f5f5f5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.button:disabled span {
+  color: #9b9b9b;
+}
+
+.googleButtonBlock {
+  display: block;
+  margin: 0 auto;
+}
+
+.googleButton {
+  display: flex;
+  gap: 1.2rem;
+  border: 1px solid #000000;
+  margin: 0 auto;
+  display: flex;
+  width: 41rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;
+  padding: 2.1rem 2.6rem;
+}
+.googleButton span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+  position: relative;
+}
+.googleButton::before {
+  content: "";
+  background: rgba(169, 223, 203, 0.3);
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 18.1rem;
+}
+.googleButton::after {
+  content: "";
+  background: #5a9b83;
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 20.2rem;
+}
+.googleButton:hover::before {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  background: rgba(169, 223, 203, 0.3);
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1rem;
+}
+.googleButton:active::after {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(169, 223, 203, 0.3);
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1.1rem;
+}
+.googleButton:disabled {
+  border: 1px solid #868686;
+  background: #f5f5f5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.googleButton:disabled span {
+  color: #9b9b9b;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+}
+.divider div {
+  width: 50%;
+  height: 0.1rem;
+  background: #d7d7d7;
+}
+.divider span {
+  color: #000000;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+
+.socialButtonsBlock {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.forgotPassword {
+  display: block;
+  margin: 0 auto;
+  font-family: "Fixel Display Semibold";
+  font-size: 12px;
+  line-height: 110%;
+  color: #4a4a4a;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.errorMessagesBlock {
+  display: flex;
+  align-self: stretch;
+  background: #dfc5c5;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.errorMessagesBlock p {
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #ea001b;
+}
+
+.successMessagesBlock {
+  display: flex;
+  align-self: stretch;
+  background: #a9dfcb;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.successMessagesBlock p {
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #2ab66a;
+}
+
+/*# sourceMappingURL=loginFormBlock.module.css.map */

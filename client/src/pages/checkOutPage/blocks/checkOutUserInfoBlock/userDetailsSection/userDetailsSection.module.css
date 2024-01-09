@@ -1,17 +1,47 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'client/src/styles/variables.module';
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   userDetailsSection.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'client/src/styles/variables.module';\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   userDetailsSection.module.scss 1:9  root stylesheet";
+.userDetailsSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
 }
+
+.radioBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.4rem;
+}
+
+.radioWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  width: 19.3rem;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}
+
+.radioButton {
+  width: 2.4rem;
+  background: transparent;
+}
+.radioButton:hover div svg path {
+  fill: #5a9b83;
+}
+.radioButton:active div svg path {
+  fill: #1a6449;
+}
+.radioButton:disabled div svg path {
+  fill: #c3c3c3;
+}
+
+/*# sourceMappingURL=userDetailsSection.module.css.map */

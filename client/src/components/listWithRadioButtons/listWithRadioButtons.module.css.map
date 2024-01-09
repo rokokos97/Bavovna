@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["listWithRadioButtons.module.scss"],"names":[],"mappings":"AAEE;EACE;EACA;EACA;;;AAEF;EACE;;;AAGF;EACE;EACA;EACA","file":"listWithRadioButtons.module.css"}
+{"version":3,"sourceRoot":"","sources":["listWithRadioButtons.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;ECkMA;EACA;EACA;;;ADjMF;EACE;EACA;EACA;;AAII;EAEE,QCyJK;;ADnJP;EACE,QCkJK","file":"listWithRadioButtons.module.css"}

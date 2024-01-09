@@ -1,17 +1,42 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'client/src/styles/variables.module';
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   listWithRadioButtons.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'client/src/styles/variables.module';\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   listWithRadioButtons.module.scss 1:9  root stylesheet";
+.listWithRadioButtons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
 }
+
+.radioOption {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.radioInput {
+  appearance: none;
+}
+
+.radioLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.7rem;
+  align-items: center;
+  cursor: pointer;
+  text-align: start;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.deleteButton {
+  background: transparent;
+  display: flex;
+  align-content: flex-start;
+}
+.deleteButton:hover svg path {
+  stroke: #5a9b83;
+}
+.deleteButton:active svg path {
+  stroke: #5a9b83;
+}
+
+/*# sourceMappingURL=listWithRadioButtons.module.css.map */

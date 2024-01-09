@@ -1,17 +1,43 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import 'client/src/styles/variables.module';
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   paymentMethodSection.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import 'client/src/styles/variables.module';\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   paymentMethodSection.module.scss 1:9  root stylesheet";
+.userPaymentMethodsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 }
+
+.title {
+  text-align: start;
+  font-family: "Fixel Text Regular";
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.radioWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+
+.radioButton {
+  background: transparent;
+}
+.radioButton:hover div svg path {
+  fill: #5a9b83;
+}
+.radioButton:active div svg path {
+  fill: #1a6449;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  width: 30rem;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}
+
+/*# sourceMappingURL=paymentMethodSection.module.css.map */

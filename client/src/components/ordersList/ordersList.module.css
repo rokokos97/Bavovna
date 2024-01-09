@@ -1,17 +1,26 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "client/src/styles/variables.module";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   ordersList.module.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"client/src/styles/variables.module\";\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   ordersList.module.scss 1:9  root stylesheet";
+.ordersList {
+  width: 84.3rem;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
 }
+
+.table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+
+th {
+  width: 13.3rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #727272;
+}
+
+td {
+  padding: 2.4rem 0;
+  border-bottom: 1px solid #727272;
+}
+
+/*# sourceMappingURL=ordersList.module.css.map */
