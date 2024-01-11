@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useEffect, useRef, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
@@ -10,33 +10,31 @@ import queryString from 'query-string';
 import PropTypes from 'prop-types';
 
 const DataCatalogueContext = createContext(null);
-// const FILTER_KEYS = ['new', 'sale'];
+
+const STATUS_KEYS = ['new', 'sale'];
+const INITIAL_FILTERS = {
+  category: [],
+  size: [],
+  color: [],
+  availability: [],
+  status: [],
+};
 
 export const CatalogueMasterProvider = ({children}) => {
-  const location = useLocation();
-  const currentQuery = useRef(queryString.parse(location.search));
-  const query = currentQuery.current;
-  console.log('currentQuery: ', currentQuery);
-  const navigate = useNavigate();
-  // console.log('CatalogueMasterProvider query: ', query.current);
-  const initialFilters = {
-    category: [],
-    size: [],
-    color: [],
-    availability: [],
-    status: [],
-  };
   const items = useSelector(getItems());
+  // console.log('items: ', items);
+  const location = useLocation();
+  const query = queryString.parse(location.search);
+  const navigate = useNavigate();
   const categories = useSelector(getCategories());
   const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
-  const [selectedFilters, setSelectedFilters] = useState(initialFilters);
-  const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  // console.log('selectedFilters: ', selectedFilters);
-  // console.log('items: ', items);
-  // console.log('categories: ', categories);
-  // console.log('colors: ', colors);
+  // console.log(filteredItems);
+  const [selectedFilters, setSelectedFilters] = useState(INITIAL_FILTERS);
+  const [statusKey, setStatusKey] = useState(query.status);
+  // console.log('statusKey: ', statusKey);
+  // const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
@@ -72,20 +70,8 @@ export const CatalogueMasterProvider = ({children}) => {
     }));
   };
 
-  useEffect(() => {
-    if (Object.keys(query).length > 0) {
-      const categoryType = Object.keys(query)[0];
-      const value = [query[categoryType]];
-      setSelectedFilters((prevFilters) => ({...prevFilters, status: value}));
-    } else if (Object.keys(query).length === 0) {
-      setSelectedFilters(initialFilters);
-      navigate('/catalogue');
-    }
-  }, []);
-
   const handleCleanFilter = () => {
-    setSelectedFilters(initialFilters);
-    filterCheckboxes.forEach((checkbox) => console.log(checkbox.checked));
+    setSelectedFilters(INITIAL_FILTERS);
   };
 
   useEffect(() => {
@@ -107,6 +93,19 @@ export const CatalogueMasterProvider = ({children}) => {
       setFilteredItems(newItems);
     }
   }, [selectedFilters, items]);
+
+  useEffect(() => {
+    if (!STATUS_KEYS.includes(statusKey) || query.status === undefined) {
+      navigate('.');
+      setStatusKey(undefined);
+      setFilteredItems(items);
+    } else {
+      setFilteredItems((prevItems) => {
+        return prevItems.filter((item) => item.status === statusKey);
+      });
+      // setStatusKey(query.status);
+    }
+  }, [statusKey, navigate]);
 
   return (
     <DataCatalogueContext.Provider
