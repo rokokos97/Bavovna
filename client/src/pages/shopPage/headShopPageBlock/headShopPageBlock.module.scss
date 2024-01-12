@@ -1,0 +1,35 @@
+@import '../../../styles/variables.module.scss';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  background-color: $gray-70;
+  background-image: url('../../../../public/img/images/Catalog/catalogHero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5.4rem 5.4rem 6rem;
+}
+
+.heroActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.heroTitle {
+  @include fonts($headline-2);
+}
+
+.heroText {
+  max-width: 60rem;
+  width: 100%;
+  @include fonts($body-3);
+}
+
+.heroBtn {
+  @include button(17.4rem, $black, $white, $accent-a-3, $accent-a-5);
+}

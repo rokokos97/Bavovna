@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import FilterSelectionBlock from '../FilterSelectionBlock/FilterSelectionBlock';
-import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
-import ArrowBackIcon from '../../components/svg/arrowBackIcon/arrowBackIcon';
-import ArrowForwardIcon from '../../components/svg/arrowForwardIcon/arrowForwardIcon';
-import {useDataShopPage} from '../../Providers/ShopPageMasterProvider';
-import styles from './CardsCatalogBlock.module.scss';
+import FilterSelectionBlock from '../filterSelectionBlock/filterSelectionBlock';
+import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
+import ArrowBackIcon from '../../../components/svg/arrowBackIcon/arrowBackIcon';
+import ArrowForwardIcon from '../../../components/svg/arrowForwardIcon/arrowForwardIcon';
+import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import styles from './cardsCatalogBlock.module.scss';
 
 const CardsCatalogBlock = () => {
   const {filteredItems: items, isFilter} = useDataShopPage();

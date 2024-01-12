@@ -1,0 +1,55 @@
+@import '../../../styles/variables.module.scss';
+
+.filterContainer {
+  background-color: $gray-90;
+}
+
+.filterSelection {
+  position: relative;
+  width: 41rem;
+  min-height: 100%;
+  padding: 7.2rem 4rem;
+  border-right: 0.1rem solid $black;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+}
+
+.selectsContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  gap: 2.4rem;
+}
+
+.filterSelect {
+  padding: 1.6rem;
+}
+
+.selectTitle {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 2.4rem;
+  padding-bottom: 0.8rem;
+  margin-left: 0.2rem;
+}
+
+.checkboxBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  font-size: 2rem;
+  margin: 3.2rem 0;
+}
+
+.filterBtn {
+  margin: 0 auto;
+  border: 1px solid $black;
+  @include button(18.9rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+}

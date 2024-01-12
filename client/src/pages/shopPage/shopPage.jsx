@@ -1,6 +1,13 @@
 import React from 'react';
+import {ShopPageMasterProvider} from '../../Providers/ShopPageMasterProvider';
+import ShopPageContext from './shopPageContext';
+
 const ShopPage = () => {
-  return <div>Shop</div>;
+  return (
+    <ShopPageMasterProvider>
+      <ShopPageContext />
+    </ShopPageMasterProvider>
+  );
 };
 
 export default ShopPage;
