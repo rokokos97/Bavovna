@@ -19,23 +19,20 @@ const Header = () => {
   return (
     <header className={styles.container} data-testid='Header'>
       <div className={styles.banner}>
-        <Link to='/catalogue'>
+        <Link to='/shop?status=sale'>
           <span>10% discount on the summer collection</span>
         </Link>
       </div>
       <div className={styles.header}>
         <div className={styles.headerNavBar}>
-          <Link to='/catalogue'>
+          <Link to='/shop?status=sale'>
             <span>Sale</span>
           </Link>
-          <Link to='/catalogue'>
+          <Link to='/shop'>
             <span>Shop</span>
           </Link>
           <Link to='/aboutus'>
             <span>About us</span>
-          </Link>
-          <Link to='/catalogue'>
-            <span>Catalogue</span>
           </Link>
           <Link to='/help/delivery'>
             <span>Help</span>

@@ -8,7 +8,7 @@ import AppLoader from '../hoc/appLoader';
 import MainPage from '../pages/mainPage/MainPage';
 import SalePage from '../pages/salePage/salePage';
 import ShopPage from '../pages/shopPage/shopPage';
-import Catalogue from '../pages/catalogue/Catalogue';
+// import Catalogue from '../pages/catalogue/Catalogue';
 import Page404 from '../pages/page404/page404';
 import HelpPage from '../pages/helpPage/HelpPage';
 import UserPage from '../pages/userPage/userPage';
@@ -37,11 +37,10 @@ function App() {
             <Route path='sale' element={<SalePage />} />
             <Route path='shop' element={<ShopPage />} />
             <Route path='aboutus' element={<AboutUsPage />} />
-            <Route path='catalogue' element={<Catalogue />} />
             <Route path='cart/checkout' element={<CheckOutPage />} />
             <Route path='orderSuccess' element={<OrderSuccessPage />} />
             <Route path='cart' element={<ShoppingCartPage/>}/>
-            <Route path='catalogue/:id' element={<Card />} />
+            <Route path='shop/:id' element={<Card />} />
             <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
             <Route path='main' element={<MainPage />} />
             <Route path='help/*' element={<HelpPage />} />

@@ -20,7 +20,7 @@ const INITIAL_FILTERS = {
   status: [],
 };
 
-export const CatalogueMasterProvider = ({children}) => {
+export const ShopPageMasterProvider = ({children}) => {
   const items = useSelector(getItems());
   // console.log('items: ', items);
   const location = useLocation();
@@ -47,16 +47,16 @@ export const CatalogueMasterProvider = ({children}) => {
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'highToLow') {
-      sortedItems = [...filteredItems];
+      sortedItems = [...items];
       sortedItems.sort((a, b) => b.price - a.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'best') {
-      sortedItems = filteredItems.filter((item) => item.status === 'sale');
+      sortedItems = items.filter((item) => item.status === 'sold-out');
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'new') {
-      sortedItems = filteredItems.filter((item) => item.status === 'new');
+      sortedItems = items.filter((item) => item.status === 'new');
       setFilteredItems(sortedItems);
     }
   };
@@ -127,16 +127,16 @@ export const CatalogueMasterProvider = ({children}) => {
   );
 };
 
-export const useDataCatalogue = () => {
+export const useDataShopPage = () => {
   const data = useContext(DataCatalogueContext);
   if (!data) {
     throw new Error(
-        'Can not "useData" outside of the "CatalogueMasterProvider"',
+        'Can not "useData" outside of the "ShopPageMasterProvider"',
     );
   }
   return data;
 };
 
-CatalogueMasterProvider.propTypes = {
+ShopPageMasterProvider.propTypes = {
   children: PropTypes.element,
 };
