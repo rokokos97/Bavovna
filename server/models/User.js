@@ -14,6 +14,7 @@ const schema = new Schema({
   orders: [{type: Object}],
   isVerified: {type: Boolean},
   emailVerificationToken: {type: String},
+  isAdmin: {type: Boolean},
 }, {
   timestamps: true,
 });
