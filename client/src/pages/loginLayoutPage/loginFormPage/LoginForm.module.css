@@ -4,13 +4,11 @@
   gap: 2.4rem;
 }
 .loginForm p {
-  color: #000000;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
 .loginForm p span {
-  color: #000000;
   font-family: "Fixel Display Semibold";
   font-size: 16px;
   line-height: 110%;
