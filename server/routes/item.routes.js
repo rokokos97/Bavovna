@@ -2,7 +2,7 @@ const express = require('express');
 const Item = require('../models/Item');
 // eslint-disable-next-line new-cap
 const router = express.Router({mergeParams: true});
-const auth = require('../middleware/auth.middleware');
+//const auth = require('../middleware/auth.middleware');
 
 router.get('/', async (req, res) => {
   try {
