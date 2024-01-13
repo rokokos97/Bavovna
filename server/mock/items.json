@@ -27,7 +27,7 @@
     "sale": 80,
     "modelParams": "Timeless black denim jeans with a stylish look.",
     "favorite": false,
-    "status": "sale"
+    "status": ""
   },
   {
     "_id": "efg789hij012klm345nopqrs",
@@ -42,7 +42,7 @@
     "sale": 0,
     "modelParams": "Elegant genuine leather jacket for a fashionable outfit.",
     "favorite": false,
-    "status": "new"
+    "status": ""
   },
   {
     "_id": "tuv456wxy789zab0cdefghij",
@@ -57,7 +57,7 @@
     "sale": 90,
     "modelParams": "",
     "favorite": false,
-    "status": "sale"
+    "status": ""
   },
   {
     "_id": "klm123nop456qrs789tu0vwx",
@@ -72,7 +72,7 @@
     "sale": 0,
     "modelParams": "",
     "favorite": false,
-    "status": "new"
+    "status": ""
   },
   {
     "_id": "xyz123456789abcdefgihklm",
