@@ -22,7 +22,6 @@ const INITIAL_FILTERS = {
 
 export const ShopPageMasterProvider = ({children}) => {
   const items = useSelector(getItems());
-  // console.log('items: ', items);
   const location = useLocation();
   const query = queryString.parse(location.search);
   const navigate = useNavigate();
@@ -30,11 +29,9 @@ export const ShopPageMasterProvider = ({children}) => {
   const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
-  // console.log(filteredItems);
   const [selectedFilters, setSelectedFilters] = useState(INITIAL_FILTERS);
   const [statusKey, setStatusKey] = useState(query.status);
-  // console.log('statusKey: ', statusKey);
-  // const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
@@ -42,13 +39,11 @@ export const ShopPageMasterProvider = ({children}) => {
   const onSortItems = (sortOrder) => {
     let sortedItems = [];
     if (sortOrder === 'lowToHigh') {
-      sortedItems = [...filteredItems];
-      sortedItems.sort((a, b) => a.price - b.price);
+      sortedItems = filteredItems.toSorted((a, b) => a.price - b.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'highToLow') {
-      sortedItems = [...items];
-      sortedItems.sort((a, b) => b.price - a.price);
+      sortedItems = filteredItems.toSorted((a, b) => b.price - a.price);
       setFilteredItems(sortedItems);
     }
     if (sortOrder === 'best') {
@@ -74,9 +69,23 @@ export const ShopPageMasterProvider = ({children}) => {
     setSelectedFilters(INITIAL_FILTERS);
   };
 
+  useEffect(() =>{
+    setStatusKey(query.status);
+  }, [location.search]);
+
+  useEffect(() => {
+    if (!STATUS_KEYS.includes(statusKey) || query.status === undefined) {
+      navigate('.');
+      setStatusKey(undefined);
+      setFilteredItems(items);
+    } else if (items) {
+      setFilteredItems(() => items.filter((item) => item.status === statusKey));
+    }
+  }, [statusKey, navigate]);
+
   useEffect(() => {
     if (items) {
-      const newItems = [...items].filter((item) => {
+      const newItems = items.filter((item) => {
         return (
           (selectedFilters.category.length === 0 ||
           selectedFilters.category.some((category) =>
@@ -87,25 +96,16 @@ export const ShopPageMasterProvider = ({children}) => {
         (selectedFilters.color.length === 0 ||
           selectedFilters.color.some((color) => item.color.includes(color))) &&
         (selectedFilters.status.length === 0 ||
-          selectedFilters.status.some((status) => item.status.includes(status)))
+          selectedFilters.status.some((status) =>
+            item.status.includes(status),
+          ))
         );
       });
+      setStatusKey(undefined);
       setFilteredItems(newItems);
     }
   }, [selectedFilters, items]);
 
-  useEffect(() => {
-    if (!STATUS_KEYS.includes(statusKey) || query.status === undefined) {
-      navigate('.');
-      setStatusKey(undefined);
-      setFilteredItems(items);
-    } else {
-      setFilteredItems((prevItems) => {
-        return prevItems.filter((item) => item.status === statusKey);
-      });
-      // setStatusKey(query.status);
-    }
-  }, [statusKey, navigate]);
 
   return (
     <DataCatalogueContext.Provider

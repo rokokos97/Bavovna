@@ -9,10 +9,6 @@ import styles from './filterSelectionBlock.module.scss';
 const FilterSelectionBlock = () => {
   const {changeIsFilter, handleCleanFilter, categories, colors} =
     useDataShopPage();
-  // const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-  // console.log('FilterCheckboxes: ', filterCheckboxes);
-  // console.log('Categories: ', categories);
-  // console.log('Colors: ', colors);
 
   const {sizeValues, availabilityValues, statusValues} = filtersValues;
 
@@ -75,7 +71,7 @@ const FilterSelectionBlock = () => {
                 id={availabilityValue.value}
                 value={availabilityValue.value}
                 label={availabilityValue.label}
-                option='availability'
+                option='status'
               />
             ))}
           />

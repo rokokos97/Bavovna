@@ -23,7 +23,7 @@ export const filtersValues = {
       label: 'In Stock',
     },
     {
-      value: 'sold',
+      value: 'sold-out',
       label: 'Sold Out',
     },
   ],
