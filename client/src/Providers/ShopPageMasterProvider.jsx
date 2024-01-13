@@ -71,20 +71,20 @@ export const ShopPageMasterProvider = ({children}) => {
 
   useEffect(() =>{
     setStatusKey(query.status);
-  }, [location.search]);
+  }, [statusKey, query]);
 
   useEffect(() => {
-    if (!STATUS_KEYS.includes(statusKey) || query.status === undefined) {
+    if (!STATUS_KEYS.includes(statusKey)) {
       navigate('.');
       setStatusKey(undefined);
       setFilteredItems(items);
-    } else if (items) {
+    } else if (items && statusKey) {
       setFilteredItems(() => items.filter((item) => item.status === statusKey));
     }
   }, [statusKey, navigate]);
 
   useEffect(() => {
-    if (items) {
+    if (items && isFilter) {
       const newItems = items.filter((item) => {
         return (
           (selectedFilters.category.length === 0 ||
