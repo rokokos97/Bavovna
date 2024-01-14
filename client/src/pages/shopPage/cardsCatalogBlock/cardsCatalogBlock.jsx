@@ -26,7 +26,7 @@ const CardsCatalogBlock = () => {
   }
 
   useEffect(() => {
-    if (items?.length === 1) {
+    if (items?.length < itemsPerPage) {
       setCurrentPage(1);
     }
   });
@@ -42,15 +42,11 @@ const CardsCatalogBlock = () => {
 
   return (
     <div className={styles.catalog} data-testid='CardsCatalogBlock'>
-      {isFilter ? (
-          <FilterSelectionBlock />
-        ) : null}
+      {isFilter ? <FilterSelectionBlock /> : null}
       <div className={styles.cardsContainer}>
         <ul
           className={
-              !isFilter ?
-                styles.cards :
-                `${styles.cards} ${styles.cardsPadding}`
+            !isFilter ? styles.cards : `${styles.cards} ${styles.cardsPadding}`
           }
         >
           {visibleItems.map((item) => (
@@ -59,53 +55,54 @@ const CardsCatalogBlock = () => {
             </li>
           ))}
         </ul>
-        {endIndex ?
-        (<div className={styles.pagination}>
-          <div
-            className={
+        {endIndex ? (
+          <div className={styles.pagination}>
+            <div
+              className={
                 currentPage !== 1 ?
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
-            }
-            onClick={currentPage === 1 ?
-            null :
-            () => setCurrentPage(currentPage - 1)}
-          >
-            <ArrowBackIcon />
-            <span>Previous</span>
-          </div>
-          <div className={styles.btnBlock}>
-            {Array.from({length: totalPages}).map((_, index) => (
-              <button
-                key={index}
-                className={
+              }
+              onClick={
+                currentPage === 1 ? null : () => setCurrentPage(currentPage - 1)
+              }
+            >
+              <ArrowBackIcon />
+              <span>Previous</span>
+            </div>
+            <div className={styles.btnBlock}>
+              {Array.from({length: totalPages}).map((_, index) => (
+                <button
+                  key={index}
+                  className={
                     index + 1 === currentPage ?
                       `${styles.pageButton} ${styles.activeBtn}` :
                       styles.pageButton
-                }
-                onClick={handlerPageChange}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
-          <div
-            className={
+                  }
+                  onClick={handlerPageChange}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+            <div
+              className={
                 currentPage !== totalPages ?
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
-            }
-            // disabled={currentPage === 1 || currentPage === totalPages}
-            onClick={currentPage === totalPages ?
-              null :
-              () => setCurrentPage(currentPage + 1)}
-          >
-            <span>Next</span>
-            <ArrowForwardIcon />
+              }
+              // disabled={currentPage === 1 || currentPage === totalPages}
+              onClick={
+                currentPage === totalPages ?
+                  null :
+                  () => setCurrentPage(currentPage + 1)
+              }
+            >
+              <span>Next</span>
+              <ArrowForwardIcon />
+            </div>
           </div>
-        </div>) :
-        null
-        }
+        ) : null}
       </div>
     </div>
   );
