@@ -11,7 +11,19 @@ import ModalCookies from '../../components/modal/modalContent/ModalCookies/modal
 import {Modal} from '../../components/modal';
 import {showBodyOverflow} from '../../services/modal.service';
 import Cookies from 'js-cookie';
+import {getCategoriesError} from '../../store/categorySlice';
+import {useSelector} from 'react-redux';
+import {getColorsError} from '../../store/colorsSlice';
+import {getCitiesError} from '../../store/citiesSlice';
+import {getItemsError} from '../../store/itemsSlice';
+import ModalError from '../../components/modal/modalContent/modalError/modalError';
 const MainPage = () => {
+  const categoriesError = useSelector(getCategoriesError());
+  const colorsError = useSelector(getColorsError());
+  const itemsError = useSelector(getItemsError());
+  const citiesErrors = useSelector(getCitiesError());
+  const [error, setError] = useState(null);
+  const [showErrorModal, setShowErrorModal] = useState(false);
   const [showCookiesModal, setShowCookiesModal] = useState(false);
   useEffect(() => {
     const userConsent = Cookies.get('userConsent');
@@ -19,8 +31,15 @@ const MainPage = () => {
       setShowCookiesModal(true);
     }
   }, []);
+  useEffect(() => {
+    if (categoriesError || colorsError || itemsError || citiesErrors) {
+      setError(categoriesError || colorsError || itemsError || citiesErrors);
+      setShowErrorModal(true);
+    }
+  }, [categoriesError, colorsError, itemsError, citiesErrors]);
   const closeModal = () => {
     setShowCookiesModal(false);
+    setShowErrorModal(false);
     showBodyOverflow();
   };
   const confirmCookies = () => {
@@ -31,6 +50,12 @@ const MainPage = () => {
   return (
     <>
       <div className={styles.mainPage} data-testid='MainPage'>
+        <Modal
+          isOpen={showErrorModal}
+          handleCloseModal={closeModal}
+        >
+          <ModalError error={error} handleCloseModal={closeModal}/>
+        </Modal>
         <NewCollectionBlock />
         <NewArrivalsBlock />
         <SaleBlock />

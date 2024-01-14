@@ -40,6 +40,7 @@ export const uploadColorsList = () => async (dispatch) => {
 
 export const getColors = () => (state) => state.colors.entities;
 export const getColorsLoadingStatus = () => (state) => state.colors.isLoading;
+export const getColorsError = () => (state) => state.colors.error;
 export const {colorsRequested, colorsReceived, colorsRequestFailed} =
   colorsSlice.actions;
 

@@ -80,6 +80,7 @@ export const uploadItemList = () => async (dispatch) => {
 export const getItems = () => (state) => state.items.entities;
 export const getItemsById = (id) => (state) => state.items.entities.find((item)=> item._id === id);
 export const getItemsLoadingStatus = () => (state) => state.items.isLoading;
+export const getItemsError = () => (state) => state.items.error;
 export const {
   itemsRequested,
   itemsReceived,
