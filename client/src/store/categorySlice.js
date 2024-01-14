@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import categoryService from '../services/category.service';
+import generateErrorMessage from '../utils/generateErrorMessage';
 
 const categoriesSlice = createSlice({
   name: 'categories',
@@ -29,12 +30,17 @@ export const uploadCategoriesList = () => async (dispatch) => {
     const data = await categoryService.get();
     dispatch(categoriesReceived(data));
   } catch (error) {
-    dispatch(categoriesRequestFailed(error));
+    if (error.code === 'ERR_NETWORK') {
+      dispatch(categoriesRequestFailed(generateErrorMessage[error.code]));
+    } else {
+      dispatch(categoriesRequestFailed(error));
+    }
   }
 };
 
 export const getCategories = () => (state) => state.categories.entities;
 export const getCategoriesLoadingStatus = () => (state) => state.categories.isLoading;
+export const getCategoriesError = () => (state) => state.categories.error;
 export const {
   categoriesRequested,
   categoriesReceived,
