@@ -1,9 +1,14 @@
 .loader {
-  font-family: "Fixel Display Extra Bold";
-  font-size: 56px;
-  line-height: 150%;
-  letter-spacing: 4%;
-  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
 }
 
 /*# sourceMappingURL=loader.module.css.map */
