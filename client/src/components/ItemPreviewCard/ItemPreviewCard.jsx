@@ -30,7 +30,7 @@ const ItemPreviewCard = ({id}) => {
       navigate('/logIn');
     }
   };
-  return (
+  return (item &&
     <div
       className={styles.itemPreviewCard}
       data-testid="ItemPreviewCard"
