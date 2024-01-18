@@ -11,17 +11,22 @@ import ModalCookies from '../../components/modal/modalContent/ModalCookies/modal
 import {Modal} from '../../components/modal';
 import {showBodyOverflow} from '../../services/modal.service';
 import Cookies from 'js-cookie';
-import {getCategoriesError} from '../../store/categorySlice';
+import {getCategoriesError, getCategoriesLoadingStatus} from '../../store/categorySlice';
 import {useSelector} from 'react-redux';
-import {getColorsError} from '../../store/colorsSlice';
-import {getCitiesError} from '../../store/citiesSlice';
-import {getItemsError} from '../../store/itemsSlice';
+import {getColorsError, getColorsLoadingStatus} from '../../store/colorsSlice';
+import {getCitiesError, getCitiesIsLoadingStatus} from '../../store/citiesSlice';
+import {getItemsError, getItemsLoadingStatus} from '../../store/itemsSlice';
 import ModalError from '../../components/modal/modalContent/modalError/modalError';
+import Loader from '../../components/loader/loader';
 const MainPage = () => {
   const categoriesError = useSelector(getCategoriesError());
+  const categoriesListIsLoading = useSelector(getCategoriesLoadingStatus());
   const colorsError = useSelector(getColorsError());
+  const colorsListIsLoading = useSelector(getColorsLoadingStatus());
   const itemsError = useSelector(getItemsError());
+  const itemsListIsLoading = useSelector(getItemsLoadingStatus());
   const citiesErrors = useSelector(getCitiesError());
+  const citiesIsLoading = useSelector(getCitiesIsLoadingStatus());
   const [error, setError] = useState(null);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showCookiesModal, setShowCookiesModal] = useState(false);
@@ -50,11 +55,20 @@ const MainPage = () => {
   return (
     <>
       <div className={styles.mainPage} data-testid='MainPage'>
+        {
+          categoriesListIsLoading && colorsListIsLoading && itemsListIsLoading && citiesIsLoading && <Loader/>
+        }
         <Modal
           isOpen={showErrorModal}
           handleCloseModal={closeModal}
         >
           <ModalError error={error} handleCloseModal={closeModal}/>
+        </Modal>
+        <Modal
+          isOpen={showCookiesModal}
+          handleCloseModal={closeModal}
+        >
+          <ModalCookies handleCloseModal={closeModal} handleConfirmModal={confirmCookies}/>
         </Modal>
         <NewCollectionBlock />
         <NewArrivalsBlock />
@@ -63,12 +77,6 @@ const MainPage = () => {
         <BavovnaCoverImageBlock />
         <CategoriesBlock />
         <NewsLettersBlock />
-        <Modal
-          isOpen={showCookiesModal}
-          handleCloseModal={closeModal}
-        >
-          <ModalCookies handleCloseModal={closeModal} handleConfirmModal={confirmCookies}/>
-        </Modal>
       </div>
     </>
   );
