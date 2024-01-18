@@ -52,11 +52,12 @@ const MainPage = () => {
     setShowCookiesModal(false);
     showBodyOverflow();
   };
+  //  !categoriesListIsLoading && !colorsListIsLoading && !citiesIsLoading&& !itemsListIsLoading
   return (
     <>
       <div className={styles.mainPage} data-testid='MainPage'>
         {
-          categoriesListIsLoading && colorsListIsLoading && itemsListIsLoading && citiesIsLoading && <Loader/>
+          (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
         }
         <Modal
           isOpen={showErrorModal}
