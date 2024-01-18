@@ -44,5 +44,6 @@ export const uploadCitiesList = () => async (dispatch) => {
 };
 export const getCitiesList = () => (state) => state.cities.entities;
 export const getCitiesError = () => (state) => state.cities.error;
+export const getCitiesIsLoadingStatus = () => (state) => state.cities.isLoading;
 
 export default citiesSlice.reducer;
