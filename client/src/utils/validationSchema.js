@@ -94,7 +94,10 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
       .matches(/^[0-9A-Za-z]+S?$/, 'Flat number must consist only numbers and latin letters'),
 });
 export const validationSchemaPromoCode = Yup.object().shape({
-  promoCode: Yup.string().matches(/5|7|10|15|20|25|30/, 'Invalid promo code. Please check the code and try again'),
+  promoCode: Yup.string()
+      .min(5, 'Promo code must be at least 5 character long')
+      .max(15, 'Promo code must be at most 15 characters long'),
+//      .matches(/^(BAVOVNA5|BAVOVNA10|BAVOVNA15)$/, 'Invalid promo code. Please check the code and try again'),
 });
 export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
   phoneNumber: Yup.string()
