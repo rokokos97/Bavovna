@@ -18,6 +18,7 @@ import {useGoogleLogin} from '@react-oauth/google';
 import googleService from '../../../../services/google.service';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
 import Loader from '../../../loader/loader';
+import {useLocation} from 'react-router-dom';
 
 const LoginFormBlock = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,8 @@ const LoginFormBlock = () => {
   const response = useSelector(getResponse());
   const isLoggedIn = useSelector(getIsLoggedIn);
   const [isLoading, setIsLoading] = useState(null);
+  const location = useLocation();
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -57,7 +60,8 @@ const LoginFormBlock = () => {
       dispatch(clearUserResponse());
     }
     if (isLoggedIn) {
-      navigate('/');
+      setIsLoading(false);
+      navigate(location.pathname==='/cart/checkout' ? '/cart/checkout' : '/');
     }
   }, [formik.values, dispatch, isLoggedIn]);
   const renderMessagesBlockStyle = () => {
