@@ -12,6 +12,7 @@ import {Modal} from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
 import {showBodyOverflow} from '../../../services/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/registerFormBlock/registerFormBlock';
+import Loader from '../../../components/loader/loader';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const RegisterForm = () => {
   const navigate = useNavigate();
   const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
   const [email, setEmail] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -30,12 +32,14 @@ const RegisterForm = () => {
     },
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
+      setIsLoading(true);
       setEmail(values.email);
       dispatch(signUp({...values, email: values.email.toLowerCase()}));
     },
   });
   const googleRegister = useGoogleLogin({
     onSuccess: (tokenResponse) => {
+      setIsLoading(true);
       const accessToken = tokenResponse.access_token;
       googleService.get(accessToken).then((userInfo) => {
         dispatch(signUpWithGoogle({
@@ -52,9 +56,12 @@ const RegisterForm = () => {
     navigate('/');
   };
   useEffect(()=>{
-    if (response && response.code === 201) {
-      setShowVerifyEmailModal(true);
-      formik.resetForm();
+    if (response) {
+      setIsLoading(false);
+      if (response.code === 201) {
+        setShowVerifyEmailModal(true);
+        formik.resetForm();
+      }
     }
   }, [response]);
   useEffect(() => {
@@ -62,8 +69,10 @@ const RegisterForm = () => {
       dispatch(clearUserResponse());
     }
   }, [formik.values, dispatch]);
+  console.log(isLoading);
   return (
     <div className={styles.registerForm}>
+      {isLoading && <Loader/>}
       <div className={styles.titleBlock}>
         <p>
           Sign up
