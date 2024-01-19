@@ -93,7 +93,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
         totalPrice: totalPrice,
         _id: generateNumericId(),
         date: formatDate(new Date()),
-        paymentStatus: 'paid',
+        paymentStatus: paymentMethod==='1'? 'paid': 'pending payment',
         deliveryStatus: 'pending',
       };
       if (user) {
@@ -184,6 +184,7 @@ const CheckOutUserInfoBlock = ({selectedValue, selectedDeliveryMethod, userCurre
       formik.setFieldValue('currentDeliveryAddress', user? currentDeliveryAddress[0] : '');
     }
   }, [user, userCurrentDelivery]);
+  console.log(paymentMethod);
   return (
     <div className={styles.checkOutUserInfoBlock}>
       <p className={styles.title}>Contact details</p>
