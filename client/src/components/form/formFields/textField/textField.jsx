@@ -20,7 +20,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, placehold
         className={disabled? disabledStyles.label : styles.label}
       >
         {label}
-        <span>*</span>
+        <span>{label?'*':''}</span>
       </label>
       <div className={disabled? disabledStyles.inputBlock :styles.inputBlock}>
         <input
@@ -66,10 +66,10 @@ TextField.defaultProps = {
   type: 'text',
 };
 TextField.propTypes = {
-  label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  label: PropTypes.string,
   value: PropTypes.string,
   onBlur: PropTypes.func,
   error: PropTypes.string,

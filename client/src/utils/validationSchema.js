@@ -261,5 +261,9 @@ export const validationSchemaIntDeliveryForm = Yup.object().shape({
       .max(100, 'Address must be at most 100 characters long')
       .required('Address is required'),
 });
+export const validationSchemaNewsletterForm = Yup.object().shape({
+  email: Yup.string()
+      .email('Invalid email address'),
+});
 
 
