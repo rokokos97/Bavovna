@@ -22,8 +22,8 @@ const Footer = () => {
             <div className={styles.footerShop}>
               <h3>Shop</h3>
               <div className={styles.footerList}>
-                <Link to='/'>Sale</Link>
-                <Link to='/'>New</Link>
+                <Link to='/shop?status=sale'>Sale</Link>
+                <Link to='/shop?status=new'>New</Link>
                 <Link to='/'>T-Shirts</Link>
                 <Link to='/'>Dress</Link>
                 <Link to='/'>Pants</Link>

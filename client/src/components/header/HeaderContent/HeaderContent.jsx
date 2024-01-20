@@ -12,7 +12,7 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart, handleIsSearch}) => {
   return (
     <>
       <div className={styles.banner}>
-        <Link to='/shop?status=sale'>
+        <Link to='/shop?status=sale_10%'>
           <span>10% discount on the summer collection</span>
         </Link>
       </div>
