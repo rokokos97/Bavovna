@@ -227,6 +227,11 @@ export const loadUser = () => async (dispatch) => {
 };
 const selectUserEntities = (state) => state.user.entities;
 const selectIsLoggedIn = (state) => state.user.isLoggedIn;
+const selectUserLoadingStatus = (state) => state.user.isLoading;
+export const getUserLoadingStatus = createSelector(
+    [selectUserLoadingStatus],
+    (isLoading) => isLoading,
+);
 export const getUser = createSelector(
     [selectUserEntities], // Масив селекторів, результати яких будуть аргументами для функції нижче
     (entities) => entities, // Функція, яка отримує результати вищезазначених селекторів
