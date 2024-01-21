@@ -10,6 +10,11 @@
   flex-direction: column;
 }
 
+.errorMessage{
+  @include fonts($body-2);
+  margin-bottom: 2.4rem;
+}
+
 .cards {
   display: flex;
   justify-content: space-evenly;

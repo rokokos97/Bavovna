@@ -4,8 +4,18 @@ import InstagrammIcon from '../svg/instagrammIcon/instagrammIcon';
 import FacebookIcon from '../svg/facebookIcon/facebookIcon';
 import TiktokIcon from '../svg/tiktokIcon/tiktokIcon';
 import styles from './Footer.module.scss';
+import {useSelector} from 'react-redux';
+import {getCategories} from '../../store/categorySlice';
 
 const Footer = () => {
+  const categories = useSelector(getCategories());
+
+  function getCategoryId(categoryName) {
+    if (categories) {
+      return categories.filter((category) => category.name === categoryName)[0]._id;
+    }
+  };
+
   return (
     <footer className={styles.container} data-testid='Footer'>
       <div className={styles.footer}>
@@ -24,10 +34,10 @@ const Footer = () => {
               <div className={styles.footerList}>
                 <Link to='/shop?status=sale'>Sale</Link>
                 <Link to='/shop?status=new'>New</Link>
-                <Link to='/'>T-Shirts</Link>
-                <Link to='/'>Dress</Link>
-                <Link to='/'>Pants</Link>
-                <Link to='/'>Skirts</Link>
+                <Link to={`/shop?status=${getCategoryId('t-shirts')}`}>T-Shirts</Link>
+                <Link to={`/shop?status=${getCategoryId('dresses')}`}>Dresses</Link>
+                <Link to={`/shop?status=${getCategoryId('pants')}`}>Pants</Link>
+                <Link to={`/shop?status=${getCategoryId('skirts')}`}>Skirts</Link>
               </div>
             </div>
             <div className={styles.footerHelp}>

@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 
 const DataCatalogueContext = createContext(null);
 
-const STATUS_KEYS = ['new', 'sale', 'sale_10%', 'skirts', 'pants', 'dresses', 't-shirts'];
+// const STATUS_KEYS = ['new', 'sale', 'sale_10%', 'skirts', 'pants', 'dresses', 't-shirts'];
 const INITIAL_FILTERS = {
   category: [],
   size: [],
@@ -22,13 +22,13 @@ const INITIAL_FILTERS = {
 
 export const ShopPageMasterProvider = ({children}) => {
   const items = useSelector(getItems());
-  console.log(items);
+  // console.log(items);
   const location = useLocation();
   const query = queryString.parse(location.search);
-  console.log(query);
+  // console.log(query);
   const navigate = useNavigate();
   const categories = useSelector(getCategories());
-  console.log(categories);
+  // console.log(categories);
   const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
@@ -77,22 +77,22 @@ export const ShopPageMasterProvider = ({children}) => {
   }, [statusKey, query]);
 
   useEffect(() => {
-    if (!STATUS_KEYS.includes(statusKey)) {
+    if (statusKey === undefined) {
       navigate('.');
       setStatusKey(undefined);
       setFilteredItems(items);
     } else if (items && statusKey) {
       if (statusKey === 'sale_10%') {
         setFilteredItems(() => items.filter((item) => item.sale === 10));
-      } else if (statusKey === 'sale' || statusKey === 'new') {
+      } else if (statusKey === 'sale' || statusKey === 'new' || statusKey === 'sold-out') {
         setFilteredItems(() => items.filter((item) => item.status === statusKey));
+      } else {
+        setFilteredItems(() => items.filter((item) =>
+          item.category === statusKey,
+        ));
       }
-      // } else {
-      //   setFilteredItems(() => items.filter((item) =>
-      //     item.category === categories.map((category) =>
-      //       category.name === statusKey ? category._id : false)));
-      // }
     }
+    setIsFilter(false);
   }, [statusKey, navigate]);
 
   useEffect(() => {

@@ -49,11 +49,13 @@ const CardsCatalogBlock = () => {
             !isFilter ? styles.cards : `${styles.cards} ${styles.cardsPadding}`
           }
         >
-          {visibleItems.map((item) => (
+          {visibleItems.length > 0 ? visibleItems.map((item) => (
             <li key={item._id}>
               <ItemPreviewCard id={item._id} />
             </li>
-          ))}
+          )) :
+          <h2 className={styles.errorMessage}>Sorry, but Items is not found!</h2>
+          }
         </ul>
         {endIndex ? (
           <div className={styles.pagination}>
