@@ -31,7 +31,6 @@ function App() {
       sessionStorageService.setCurrentCart(cart);
     }
   }, [cart]);
-
   return (
     <div className={styles.App}>
       <AppLoader>
@@ -53,7 +52,6 @@ function App() {
             <Route path='main' element={<MainPage />} />
             <Route path='help/*' element={<HelpPage />} />
             <Route path='user/:id/*' element={<UserPage />} />
-
             {/* Fallback route for unmatched paths */}
             <Route path='*' element={<Page404 />} />
           </Route>

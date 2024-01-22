@@ -24,7 +24,14 @@ const CheckOutShoppingCartBlock = ({selectedDeliveryMethod, userCurrentDelivery,
       promoCode: '',
     }, validationSchema: validationSchemaPromoCode,
     onSubmit: (values) => {
-      setPromoCode(values.promoCode/100);
+      console.log(values);
+      if (values.promoCode === 'BAVOVNA5' || values.promoCode === 'BAVOVNA10' || values.promoCode === 'BAVOVNA15') {
+        const number = values.promoCode.slice(7);
+        console.log('number', number);
+        setPromoCode(number/100);
+      } else {
+        promoCodeFormik.setErrors({promoCode: 'Invalid promo code'});
+      }
     },
   });
   useEffect(()=> {

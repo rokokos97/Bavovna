@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './loginFormBlock.module.scss';
 import TextField from '../../formFields/textField/textField';
 import CheckboxField from '../../formFields/checkboxField/checkboxField';
@@ -17,12 +17,17 @@ import {
 import {useGoogleLogin} from '@react-oauth/google';
 import googleService from '../../../../services/google.service';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
+import Loader from '../../../loader/loader';
+import {useLocation} from 'react-router-dom';
 
 const LoginFormBlock = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const response = useSelector(getResponse());
   const isLoggedIn = useSelector(getIsLoggedIn);
+  const [isLoading, setIsLoading] = useState(null);
+  const location = useLocation();
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -32,6 +37,7 @@ const LoginFormBlock = () => {
     validationSchema: validationSchemaLoginForm,
     onSubmit: (values) => {
       dispatch(logInWithPassword({payload: values}));
+      setIsLoading(true);
     },
   });
 
@@ -40,7 +46,10 @@ const LoginFormBlock = () => {
       const accessToken = tokenResponse.access_token;
       googleService
           .get(accessToken)
-          .then((userInfo) => dispatch(loginWithGoogle(userInfo)));
+          .then((userInfo) => {
+            dispatch(loginWithGoogle(userInfo));
+            setIsLoading(true);
+          });
     },
   });
   const googleLogin = () => {
@@ -51,7 +60,8 @@ const LoginFormBlock = () => {
       dispatch(clearUserResponse());
     }
     if (isLoggedIn) {
-      navigate('/');
+      setIsLoading(false);
+      navigate(location.pathname==='/cart/checkout' ? '/cart/checkout' : '/');
     }
   }, [formik.values, dispatch, isLoggedIn]);
   const renderMessagesBlockStyle = () => {
@@ -61,12 +71,12 @@ const LoginFormBlock = () => {
       return styles.errorMessagesBlock;
     }
   };
-  return (
+  return (<>
     <div className={styles.loginFormBlock} data-testid="LoginFormBlock">
       {response ?
         <div className={renderMessagesBlockStyle()}>
           <p>{transformErrorMessage[response.message]}</p>
-        </div> : null}
+        </div> : (isLoading && <Loader/>)}
       <form
         className={styles.form}
         onSubmit={formik.handleSubmit}
@@ -100,6 +110,7 @@ const LoginFormBlock = () => {
           Remember me
         </CheckboxField>
         <button
+          type='submit'
           disabled={!formik.isValid || !formik.dirty}
           className={styles.button}
         >
@@ -138,6 +149,7 @@ const LoginFormBlock = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 

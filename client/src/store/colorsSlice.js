@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import colorsService from '../services/colors.service';
+import generateErrorMessage from '../utils/generateErrorMessage';
 
 const colorsSlice = createSlice({
   name: 'colors',
@@ -29,12 +30,17 @@ export const uploadColorsList = () => async (dispatch) => {
     const data = await colorsService.get();
     dispatch(colorsReceived(data));
   } catch (error) {
-    dispatch(colorsRequestFailed(error));
+    if (error.code === 'ERR_NETWORK') {
+      dispatch(colorsRequestFailed(generateErrorMessage[error.code]));
+    } else {
+      dispatch(colorsRequestFailed(error));
+    }
   }
 };
 
 export const getColors = () => (state) => state.colors.entities;
 export const getColorsLoadingStatus = () => (state) => state.colors.isLoading;
+export const getColorsError = () => (state) => state.colors.error;
 export const {colorsRequested, colorsReceived, colorsRequestFailed} =
   colorsSlice.actions;
 

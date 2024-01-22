@@ -11,17 +11,19 @@ const OrdersBlock = () => {
   if (!user) {
     return <Loader/>;
   }
-  return (
+  return (<>
     <div className={styles.ordersBlock} data-testid="OrdersBlock">
       <p className={styles.title}>orders</p>
       <div>
         {user.orders.length > 0?
-        <OrdersList
-          ordersArray={user.orders}
-        />:
-        <EmptyBlock description='You do not have any orders yet'/>}
+          <OrdersList
+            ordersArray={user.orders}
+          />:
+          <EmptyBlock description='You do not have any orders yet'/>}
       </div>
     </div>
+
+  </>
   );
 };
 

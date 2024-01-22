@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getColors} from '../../store/colorsSlice';
+import {getColors, getColorsLoadingStatus} from '../../store/colorsSlice';
 import {useDataCard} from '../../Providers/CardMasterProvider';
 import styles from './ColorsList.module.scss';
 
@@ -9,6 +9,7 @@ const noColor = 'Choose a color';
 
 const ColorsList = ({itemColors, selectedColor, setSelectedColor}) => {
   const {itemData, setItemData} = useDataCard();
+  const isColorLoaded = useSelector(getColorsLoadingStatus());
   const allColors = useSelector(getColors());
 
   const handleChange = (event) => {
@@ -27,7 +28,7 @@ const ColorsList = ({itemColors, selectedColor, setSelectedColor}) => {
         )}
       </pre>
       <ul className={styles.colorList}>
-        {allColors.map((color) => (
+        {!isColorLoaded && allColors.map((color) => (
           <li key={color.name} className={styles.colorListItem}>
             <input
               type='radio'

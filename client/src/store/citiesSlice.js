@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import npService from '../services/np.service';
+import generateErrorMessage from '../utils/generateErrorMessage';
 
 const citiesSlice = createSlice({
   name: 'cities',
@@ -16,7 +17,7 @@ const citiesSlice = createSlice({
       state.isLoading = false;
       state.entities = action.payload;
     },
-    categoriesRequestFailed: (state, action) => {
+    citiesRequestFailed: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
     },
@@ -34,10 +35,15 @@ export const uploadCitiesList = () => async (dispatch) => {
     const data = await npService.get();
     dispatch(citiesReceived(data));
   } catch (error) {
-    dispatch(citiesRequestFailed(error));
+    if (error.code === 'ERR_NETWORK') {
+      dispatch(citiesRequestFailed(generateErrorMessage[error.code]));
+    } else {
+      dispatch(citiesRequestFailed(error));
+    }
   }
 };
-
 export const getCitiesList = () => (state) => state.cities.entities;
+export const getCitiesError = () => (state) => state.cities.error;
+export const getCitiesIsLoadingStatus = () => (state) => state.cities.isLoading;
 
 export default citiesSlice.reducer;

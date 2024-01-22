@@ -94,7 +94,10 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
       .matches(/^[0-9A-Za-z]+S?$/, 'Flat number must consist only numbers and latin letters'),
 });
 export const validationSchemaPromoCode = Yup.object().shape({
-  promoCode: Yup.string().matches(/5|7|10|15|20|25|30/, 'Invalid promo code. Please check the code and try again'),
+  promoCode: Yup.string()
+      .min(5, 'Promo code must be at least 5 character long')
+      .max(15, 'Promo code must be at most 15 characters long'),
+//      .matches(/^(BAVOVNA5|BAVOVNA10|BAVOVNA15)$/, 'Invalid promo code. Please check the code and try again'),
 });
 export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
   phoneNumber: Yup.string()
@@ -122,7 +125,7 @@ export const validationSchemaCheckOutCurrentDeliveryAddress = Yup.object().shape
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   phoneNumber: Yup.string()
       .matches(/^\d{12}$/, 'Phone number must be 12 digits')
@@ -149,7 +152,7 @@ export const validationSchemaCheckOutNPWDC = Yup.object().shape({
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   city: Yup.object().test('object-length', 'City is required', (obj) => {
     return Object.keys(obj).length === 2;
@@ -182,7 +185,7 @@ export const validationSchemaCheckOutNPAD = Yup.object().shape({
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   city: Yup.object().test('object-length', 'City is required', (obj) => {
     return Object.keys(obj).length === 2;
@@ -227,7 +230,7 @@ export const validationSchemaCheckOutNPID = Yup.object().shape({
       .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
       .required('Validity data is required'),
   cardNumber: Yup.string()
-      .matches(/^\d{4}-\d{4}-\d{4}-\d{4}$/, 'Card number must be 16 numbers long')
+      .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
   intDeliveryAddress: Yup.string()
       .matches(/^[a-zA-Z0-9.,/ ]*$/, 'Address must consist only numbers and latin letters')
@@ -257,6 +260,10 @@ export const validationSchemaIntDeliveryForm = Yup.object().shape({
       .min(40, 'Address must be at least 40 characters long')
       .max(100, 'Address must be at most 100 characters long')
       .required('Address is required'),
+});
+export const validationSchemaNewsletterForm = Yup.object().shape({
+  email: Yup.string()
+      .email('Invalid email address'),
 });
 
 
