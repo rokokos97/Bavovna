@@ -6,6 +6,7 @@ import OrdersBlock from './ordersBlock/ordersBlock';
 import WishListBlock from './wishListBlock/wishListBlock';
 import Page404 from '../../page404/page404';
 import UserPersonalDataBlock from './userPersonalDataBlock/userPersonalDataBlock';
+import CompleteOrderPage from '../../completeOrderPage/completeOrderPage';
 
 const SideNavigation = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const SideNavigation = () => {
           <Route index element={<OrdersBlock/>}/>
           <Route path="wishList" element={<WishListBlock/>}/>
           <Route path="personalData" element={<UserPersonalDataBlock/>}/>
+          <Route path="order/:id" element={<CompleteOrderPage />} />
           <Route path="*" element={<Page404/>}/>
         </Routes>
       </div>

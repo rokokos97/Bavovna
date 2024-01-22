@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ordersList.module.scss';
 import {useSelector} from 'react-redux';
 import {getUser} from '../../store/userSlice';
+import {Link} from 'react-router-dom';
 
 const OrdersList = () => {
   const user = useSelector(getUser);
@@ -20,7 +21,11 @@ const OrdersList = () => {
         <tbody>
           {user.orders.map((order)=>
             <tr key={order._id} >
-              <td>{`#${order._id}`}</td>
+              <td>
+                <Link to={`order/${order._id}`}>
+                  {`#${order._id}`}
+                </Link>
+              </td>
               <td>{order.date}</td>
               <td>{order.paymentStatus}</td>
               <td>{order.deliveryStatus}</td>
