@@ -8,6 +8,13 @@
   flex-direction: column;
 }
 
+.errorMessage {
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+  margin-bottom: 2.4rem;
+}
+
 .cards {
   display: flex;
   justify-content: space-evenly;

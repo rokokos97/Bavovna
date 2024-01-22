@@ -77,7 +77,7 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart, handleIsSearch}) => {
 };
 
 HeaderContent.propTypes = {
-  user: PropTypes.array.isRequired,
+  user: PropTypes.object,
   cart: PropTypes.array.isRequired,
   isLoggedIn: PropTypes.bool,
   navigate: PropTypes.func,
