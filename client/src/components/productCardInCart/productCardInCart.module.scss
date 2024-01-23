@@ -5,93 +5,216 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-.infoBlock {
-  width: 73.6rem;
-  height: 13.8rem;
-  display: flex;
-  flex-direction: row;
-}
-.image {
-  width: 14rem;
-  height: 13.8rem;
-  overflow: hidden;
-  img {
-    max-width: 100%;
-    height: auto;
-    object-fit: fill;
+  .imageBlock {
+    width: 14rem;
+    height: 13.8rem;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: fill;
+    }
   }
-}
-.deleteButton {
-  margin-top: 8.7rem;
-  background: transparent;
-  &:hover {
+  .infoBlock {
+    width: 73.6rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    margin-left: 2.4rem;
+    margin-top: 2.4rem;
+    .name {
+      @include fonts($headline-9);
+    }
+    .priceSizeColorQuantityBlock {
+      width: 51.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .price {
+        display: flex;
+        flex-direction: row;
+        gap: 1.6rem;
+        @include fonts($headline-8);
+      }
+      .discount {
+        display: flex;
+        flex-direction: row;
+        gap: 1.6rem;
+        @include fonts($headline-8);
+        span:first-child {
+          text-decoration: line-through;
+          color: $gray-30
+        }
+        span:last-child {
+          color: $error;
+        }
+      }
+      .sizeColorQuantityBlock {
+        @include fonts($headline-9);
+        width: 51.7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .block {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          .sizeBlock {
+            display: flex;
+            flex-direction: row;
+            gap: 1.6rem;
+          }
+          .fakeDiv {
+            width: 5.6rem;
+          }
+          .colorBlock {
+            width: 14.2rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1.6rem;
+            .colorRectangle {
+              width: 1.5rem;
+              height: 1.5rem;
+              justify-content: center;
+              align-items: center;
+              border: $black 1px solid;
+            }
+          }
+          .quantityBlock {
+            width: 18.4rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1.6rem;
+            .quantity {
+              display: flex;
+              flex-direction: row;
+              gap: 1.2rem;
+              .button {
+                background: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .buttonBlock {
+    margin-top: 8.7rem;
+    background: transparent;
+    &:hover {
       svg {
         path {
           stroke: $accent-a-3
         }
       }
-  }
-  &:active {
+    }
+    &:active {
       svg {
         path {
           stroke: $accent-a-5
         }
       }
+    }
+  }
+}
+.productCardInCart[type='1'] {
+  width: 100%;
+  height: 100%;
+  column-gap: 1.7rem;
+  justify-content: flex-start;
+  .imageBlock {
+    width: 10rem;
+    height: 10rem;
+  }
+  .infoBlock {
+    width: 26.6rem;
+    row-gap: 1.2rem;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    .priceSizeColorQuantityBlock {
+      width: 26.6rem;
+      gap: 1.2rem;
+      .sizeColorQuantityBlock {
+        @include fonts($headline-9);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .block {
+          align-items: flex-start;
+          .fakeDiv {
+            display: none;
+          }
+          .colorBlock {
+            width: fit-content;
+            margin-right: 0.8rem;
+          }
+          .quantityBlock {
+            width: fit-content;
+            .quantity {
+              .button {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.productCardInCart[type='2'] {
+  height: fit-content;
+  align-items: center;
+  margin-bottom: 2.4rem;
+  .imageBlock {
+    width: 10rem;
+    height: 10rem;
+  }
+  .infoBlock {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    .priceSizeColorQuantityBlock {
+      width: 65.4rem;
+      flex-direction: row-reverse;
+      gap: 0;
+      justify-content: space-between;
+      .price {
+        width: fit-content;
+        display: flex;
+      }
+      .sizeColorQuantityBlock {
+        width: fit-content;
+        gap: 3.2rem;
+        .block {
+          .fakeDiv {
+            display: none;
+          }
+          .colorBlock {
+            width: fit-content;
+          }
+          .quantityBlock {
+            width: fit-content;
+            margin-left: 4.8rem;
+            .quantity {
+              .button {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .buttonBlock {
+    display: none;
   }
 }
 
-.titleBlock {
-  margin-top: 2.4rem;
-  margin-left: 2.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  justify-content: flex-start;
-  text-align: start;
-}
-.title {
-  @include fonts($headline-9);
-}
-.price {
-  display: flex;
-  flex-direction: row;
-  gap: 1.6rem;
-  @include fonts($headline-8);
-}
-.discount {
-  display: flex;
-  flex-direction: row;
-  gap: 1.6rem;
-  @include fonts($headline-8);
-  span:first-child {
-    text-decoration: line-through;
-    color: $gray-30
-  }
-  span:last-child {
-    color: $error;
-  }
-}
-.titleBlockLine {
-  @include fonts($headline-9);
-  width: 51.7rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.6rem;
-  }
-}
-.colorRectangle {
-  width: 1.5rem;
-  height: 1.5rem;
-  justify-content: center;
-  align-items: center;
-}
-.button {
-  background: transparent;
-}
+
+
+

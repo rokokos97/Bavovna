@@ -15,12 +15,12 @@
   justify-content: flex-start;
 }
 
-.image {
+.imageBlock {
   width: 14rem;
   height: 13.8rem;
   overflow: hidden;
 }
-.image img {
+.imageBlock img {
   max-width: 100%;
   height: auto;
   object-fit: fill;

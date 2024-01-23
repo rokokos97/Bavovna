@@ -22,7 +22,7 @@ const CompleteOrderPage = () => {
         </button>
       </div>
       <div>
-        {currentOrder.items.map((item) =>(<ProductCardInCart key={item._id} item={item}/>))}
+        {currentOrder.items.map((item) =>(<ProductCardInCart key={item._id} item={item} type='2'/>))}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 import {addItemToCart, removeItemFromCart, removeOneItemFromCart} from '../../store/cartSlice';
 
-const ProductCardInCart = ({item}) => {
+const ProductCardInCart = ({item, type}) => {
   const dispatch = useDispatch();
   const handleItemDelete = () => {
     dispatch(removeItemFromCart(item.itemIdentifier));
@@ -17,15 +17,14 @@ const ProductCardInCart = ({item}) => {
     dispatch(removeOneItemFromCart(item.itemIdentifier));
   };
   return (
-    <div className={styles.productCardInCart} data-testid="ProductCardInCart">
+    <div className={styles.productCardInCart} data-testid="ProductCardInCart" type={type}>
+      <div className={styles.imageBlock}>
+        <img src={item.itemImg} alt='item picture'/>
+      </div>
       <div className={styles.infoBlock}>
-        <div className={styles.image}>
-          <img src={item.itemImg} alt='item picture'/>
-        </div>
-        <div className={styles.titleBlock}>
-          <p className={styles.title}>{item.itemName}</p>
-          <p className={(item.discountPrice===item.itemPrice)? styles.price : styles.discount}
-          >
+        <p className={styles.name}>{item.itemName}</p>
+        <div className={styles.priceSizeColorQuantityBlock}>
+          <p className={(item.discountPrice===item.itemPrice)? styles.price : styles.discount}>
             <span>
               {item.itemPrice} $
             </span>
@@ -33,40 +32,44 @@ const ProductCardInCart = ({item}) => {
               {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + '$'}
             </span>
           </p>
-          <div className={styles.titleBlockLine}>
-            <div>
-              <p>size: </p>
-              <p>{item.itemSize}</p>
-            </div>
-            <div>
-              <p>color:</p>
-              <div style={{'backgroundColor': `${item.itemColor}`}} className={styles.colorRectangle}></div>
-            </div>
-            <div>
-              <p>quantity:</p>
-              <div>
-                <button
-                  onClick={handleQuantityLess}
-                  className={styles.button}>
-                  -
-                </button>
-                <p>
-                  {item.itemQuantity}
-                </p>
-                <button
-                  onClick={handleQuantityAdd}
-                  className={styles.button}>
-                  +
-                </button>
+          <div className={styles.sizeColorQuantityBlock}>
+            <div className={styles.block}>
+              <div className={styles.sizeBlock}>
+                <p>size: </p>
+                <p>{item.itemSize}</p>
               </div>
-
+              <div className={styles.fakeDiv}/>
+            </div>
+            <div className={styles.block}>
+              <div className={styles.colorBlock}>
+                <p>color:</p>
+                <div style={{'backgroundColor': `${item.itemColor}`}} className={styles.colorRectangle}></div>
+              </div>
+              <div className={styles.quantityBlock}>
+                <p>quantity:</p>
+                <div className={styles.quantity}>
+                  <button
+                    onClick={handleQuantityLess}
+                    className={styles.button}>
+                      -
+                  </button>
+                  <p>
+                    {item.itemQuantity}
+                  </p>
+                  <button
+                    onClick={handleQuantityAdd}
+                    className={styles.button}>
+                      +
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
         onClick={handleItemDelete}
-        className={styles.deleteButton}>
+        className={styles.buttonBlock}>
         <DeleteIcon />
       </div>
     </div>
@@ -75,5 +78,6 @@ const ProductCardInCart = ({item}) => {
 
 ProductCardInCart.propTypes = {
   item: PropTypes.object.isRequired,
+  type: PropTypes.string,
 };
 export default ProductCardInCart;
