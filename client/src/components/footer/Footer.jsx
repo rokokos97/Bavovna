@@ -22,7 +22,8 @@ const Footer = () => {
 
   function getCategoryId(categoryName) {
     if (categories) {
-      return categories.filter((category) => category.name === categoryName)[0]._id;
+      return categories.filter((category) => category.name === categoryName)[0]
+          ._id;
     }
   }
   return (
@@ -43,10 +44,16 @@ const Footer = () => {
               <div className={styles.footerList}>
                 <Link to='/shop?status=sale'>Sale</Link>
                 <Link to='/shop?status=new'>New</Link>
-                <Link to={`/shop?status=${getCategoryId('t-shirts')}`}>T-Shirts</Link>
-                <Link to={`/shop?status=${getCategoryId('dresses')}`}>Dresses</Link>
+                <Link to={`/shop?status=${getCategoryId('t-shirts')}`}>
+                  T-Shirts
+                </Link>
+                <Link to={`/shop?status=${getCategoryId('dresses')}`}>
+                  Dresses
+                </Link>
                 <Link to={`/shop?status=${getCategoryId('pants')}`}>Pants</Link>
-                <Link to={`/shop?status=${getCategoryId('skirts')}`}>Skirts</Link>
+                <Link to={`/shop?status=${getCategoryId('skirts')}`}>
+                  Skirts
+                </Link>
               </div>
             </div>
             <div className={styles.footerHelp}>
@@ -60,10 +67,8 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.footerTopRight}>
-            <button
-              onClick={navigateToHome}
-            >
-              <LogoIcon/>
+            <button onClick={navigateToHome}>
+              <LogoIcon />
             </button>
             <div className={styles.socialList}>
               <Link to='/' className={styles.socialListItem}>
@@ -84,7 +89,7 @@ const Footer = () => {
               © 2023 Bavovna | All Rights Reserved
             </p>
             <div
-              className={`${styles.footerBottomItem} ${styles.footerBottomLink}`}
+              className={`${styles.footerBottomItem} ${styles.footerBottomCookies}`}
             >
               <Link to='/help/cookies'>Cookies settings</Link>
             </div>

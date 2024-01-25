@@ -32,7 +32,7 @@ const ProposeBlock = () => {
         </div>
         <button
           className={styles.button}
-          onClick={() => navigate('/catalogue')}
+          onClick={() => navigate('/shop?status=new')}
         >
           <span>View new</span>
         </button>
