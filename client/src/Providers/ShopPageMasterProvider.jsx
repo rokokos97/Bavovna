@@ -25,15 +25,14 @@ export const ShopPageMasterProvider = ({children}) => {
   // console.log(items);
   const location = useLocation();
   const query = queryString.parse(location.search);
-  // console.log(query);
   const navigate = useNavigate();
   const categories = useSelector(getCategories());
-  // console.log(categories);
   const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(INITIAL_FILTERS);
   const [statusKey, setStatusKey] = useState(query.status);
+  console.log(statusKey);
 
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
@@ -70,6 +69,7 @@ export const ShopPageMasterProvider = ({children}) => {
 
   const handleCleanFilter = () => {
     setSelectedFilters(INITIAL_FILTERS);
+    setFilteredItems(items);
   };
 
   useEffect(() =>{
@@ -79,8 +79,8 @@ export const ShopPageMasterProvider = ({children}) => {
   useEffect(() => {
     if (statusKey === undefined) {
       navigate('.');
-      setStatusKey(undefined);
       setFilteredItems(items);
+      setIsFilter(false);
     } else if (items && statusKey) {
       if (statusKey === 'sale_10%') {
         setFilteredItems(() => items.filter((item) => item.sale === 10));
@@ -91,8 +91,8 @@ export const ShopPageMasterProvider = ({children}) => {
           item.category === statusKey,
         ));
       }
+      setIsFilter(false);
     }
-    setIsFilter(false);
   }, [statusKey, navigate]);
 
   useEffect(() => {
@@ -128,6 +128,7 @@ export const ShopPageMasterProvider = ({children}) => {
         colors,
         selectedFilters,
         setSelectedFilters,
+        setStatusKey,
         changeIsFilter,
         onSortItems,
         handleFilterChange,

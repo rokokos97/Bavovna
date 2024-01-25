@@ -21,6 +21,9 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart, handleIsSearch}) => {
           <Link to='/shop?status=sale'>
             <span>Sale</span>
           </Link>
+          <Link to='/shop?status=new'>
+            <span>New</span>
+          </Link>
           <Link to='/shop'>
             <span>Shop</span>
           </Link>

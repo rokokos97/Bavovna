@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
 import styles from './headShopPageBlock.module.scss';
+import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
 
 const HeadCatalogBlock = () => {
+  const {setStatusKey} = useDataShopPage();
   const [isActiveButton, setIsActiveButton] = useState(false);
 
-  const handleOnClick = () => setIsActiveButton(true);
+  const handleOnClick = () => {
+    setIsActiveButton(true);
+    setStatusKey('sale_10%');
+  };
 
   return (
     <div className={styles.head} data-testid='HeadCatalogBlock'>

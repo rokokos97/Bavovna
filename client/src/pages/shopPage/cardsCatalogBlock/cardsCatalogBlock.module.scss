@@ -10,9 +10,20 @@
   flex-direction: column;
 }
 
-.errorMessage{
+.noFound {
+  max-width: 62.8rem;
+  width: 100%;
+  text-align: center;
+  margin: 2.4rem auto;
+}
+
+.noFoundTitle {
+  @include fonts($headline-3);
+}
+
+.noFoundText{
   @include fonts($body-2);
-  margin-bottom: 2.4rem;
+  margin-top: 4rem;
 }
 
 .cards {

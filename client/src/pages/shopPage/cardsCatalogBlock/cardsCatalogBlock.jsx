@@ -54,7 +54,11 @@ const CardsCatalogBlock = () => {
               <ItemPreviewCard id={item._id} />
             </li>
           )) :
-          <h2 className={styles.errorMessage}>Sorry, but Items is not found!</h2>
+          <div className={styles.noFound}>
+            <h2 className={styles.noFoundTitle}>No Results Found</h2>
+            <p className={styles.noFoundText}>Unfortunately, nothing could be found for your search.
+           Please try altering your search criteria or using less specific filters. We are always here to help you find what you need.</p>
+          </div>
           }
         </ul>
         {endIndex ? (
