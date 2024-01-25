@@ -12,6 +12,16 @@ const CategoriesBlock = () => {
   const swiperRef = useRef();
   const isCategoriesLoading = useSelector(getCategoriesLoadingStatus());
   const categories = useSelector(getCategories());
+  const categoryNew = {
+    name: 'new',
+    status: 'new',
+    image: 'uploads/categoryNew.png',
+  };
+  const categorySale = {
+    name: 'sale',
+    status: 'sale',
+    image: 'uploads/categorySale.png',
+  };
   return (
     <div className={styles.categoriesBlock} data-testid="CategoriesBlock">
       <div className={styles.title}>
@@ -47,22 +57,22 @@ const CategoriesBlock = () => {
             {!isCategoriesLoading && categories &&
               <>
                 <SwiperSlide>
-                  <CategoryPreviewCard item={categories[2]}/>
+                  <CategoryPreviewCard item={categorySale}/>
                 </SwiperSlide>
-                {/* <SwiperSlide>*/}
-                {/*   <CategoryPreviewCard item={categories[5]}/>*/}
-                {/* </SwiperSlide>*/}
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categoryNew}/>
+                </SwiperSlide>
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[3]}/>
                 </SwiperSlide>
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[1]}/>
                 </SwiperSlide>
-                {/* <SwiperSlide>*/}
-                {/*   <CategoryPreviewCard item={categories[4]}/>*/}
-                {/* </SwiperSlide>*/}
                 <SwiperSlide>
                   <CategoryPreviewCard item={categories[0]}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <CategoryPreviewCard item={categories[2]}/>
                 </SwiperSlide>
               </>
             }
