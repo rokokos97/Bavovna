@@ -17,7 +17,7 @@ const NewCollectionBlock = () => {
         <button
           className={styles.button}
           onClick={()=>{
-            navigate('/catalogue');
+            navigate('/shop');
           }}
         >
           <span>shop now</span>
