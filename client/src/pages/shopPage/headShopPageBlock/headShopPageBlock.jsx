@@ -1,19 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './headShopPageBlock.module.scss';
 import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import {useNavigate} from 'react-router-dom';
 
 const HeadCatalogBlock = () => {
-  const {setStatusKey} = useDataShopPage();
-  const [isActiveButton, setIsActiveButton] = useState(false);
+  const navigate = useNavigate();
+  const {isDiscountVisible, setIsDiscountVisible} = useDataShopPage();
 
-  const handleOnClick = () => {
-    setIsActiveButton(true);
-    setStatusKey('sale_10%');
+  const handleOnDiscountBtnClick = () => {
+    setIsDiscountVisible(true);
+    navigate('.?status=sale_10%');
   };
 
   return (
     <div className={styles.head} data-testid='HeadCatalogBlock'>
-      {isActiveButton ? (
+      {isDiscountVisible ? (
         <div className={styles.heroActive}>
           <h2 className={styles.heroTitle}>
             10% discount on the summer collection
@@ -32,7 +33,7 @@ const HeadCatalogBlock = () => {
           <h2 className={styles.heroTitle}>
             10% discount on the summer collection
           </h2>
-          <button className={styles.heroBtn} onClick={handleOnClick}>
+          <button className={styles.heroBtn} onClick={handleOnDiscountBtnClick}>
             <span>View more</span>
           </button>
         </div>
