@@ -30,3 +30,15 @@
     }
   }
 }
+.orderInfoBlock {
+  width: 72.8rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  @include fonts($headline-8);
+  div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -37,4 +37,20 @@
   color: #15503a;
 }
 
+.orderInfoBlock {
+  width: 72.8rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.orderInfoBlock div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=completeOrderPage.module.css.map */

@@ -1,4 +1,23 @@
 @import '../../../styles/variables.module';
+.messageLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $accent-a-3;
+  color: $white;
+  @include fonts($menu-2);
+  .closeButton {
+    background-color: $accent-a-3;
+    position: relative;
+    left: 5rem;
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}
 .newsLettersBlock {
   display: flex;
   flex-direction: column;

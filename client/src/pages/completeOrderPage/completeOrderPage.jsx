@@ -10,6 +10,7 @@ const CompleteOrderPage = () => {
   const user = useSelector(getUser);
   const currentOrder = user?user.orders.find((order)=> order._id ===id):null;
   console.log(currentOrder);
+  const {totalPrice} = currentOrder? currentOrder : 0;
   return ( currentOrder &&
     <div className={styles.completeOrderPage} data-testid="CompleteOrderPage">
       <div className={styles.titleBlock}>
@@ -23,6 +24,15 @@ const CompleteOrderPage = () => {
       </div>
       <div>
         {currentOrder.items.map((item) =>(<ProductCardInCart key={item._id} item={item} type='2'/>))}
+      </div>
+      <div className={styles.orderInfoBlock}>
+        <div>
+          <p>order amount</p>
+          <p>{totalPrice}$</p>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );

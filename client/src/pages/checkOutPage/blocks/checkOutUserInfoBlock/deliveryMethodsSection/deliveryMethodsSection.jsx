@@ -18,7 +18,7 @@ const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCu
               className={styles.radioButton}
               type='button'
               disabled={!isLoggedIn}
-              onClick = {()=> setUserCurrentDelivery(method.id) }
+              onClick = {()=> setUserCurrentDelivery(method.id)}
             >
               {userCurrentDelivery === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
