@@ -12,8 +12,7 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const categories = useSelector(getCategories());
-  console.log(location.pathname);
-  const navigatetoHome = () => {
+  const navigateToHome = () => {
     if (location.pathname !== '/') {
       navigate('/');
     } else {
@@ -62,7 +61,7 @@ const Footer = () => {
           </div>
           <div className={styles.footerTopRight}>
             <button
-              onClick={navigatetoHome}
+              onClick={navigateToHome}
             >
               <LogoIcon/>
             </button>
