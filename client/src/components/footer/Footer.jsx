@@ -1,21 +1,30 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import InstagrammIcon from '../svg/instagrammIcon/instagrammIcon';
 import FacebookIcon from '../svg/facebookIcon/facebookIcon';
 import TiktokIcon from '../svg/tiktokIcon/tiktokIcon';
 import styles from './Footer.module.scss';
 import {useSelector} from 'react-redux';
 import {getCategories} from '../../store/categorySlice';
+import LogoIcon from '../svg/logoIcon/logoIcon';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const categories = useSelector(getCategories());
+  const navigateToHome = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  };
 
   function getCategoryId(categoryName) {
     if (categories) {
       return categories.filter((category) => category.name === categoryName)[0]._id;
     }
-  };
-
+  }
   return (
     <footer className={styles.container} data-testid='Footer'>
       <div className={styles.footer}>
@@ -24,9 +33,9 @@ const Footer = () => {
             <div className={styles.footerContact}>
               <h3>Contact</h3>
               <div className={styles.footerList}>
-                <Link to='tel:+380441234567'>1-888-963-8944</Link>
+                <Link to='tel:+380441234567'>+38(044)123-45-67</Link>
                 <Link to='mailto:help@email.com'>help@email.com</Link>
-                <Link to='/'>Contact Us</Link>
+                <Link to='mailto:bavovna19@gmail.com'>Contact Us</Link>
               </div>
             </div>
             <div className={styles.footerShop}>
@@ -51,7 +60,11 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.footerTopRight}>
-            <Link to='/'>Logo</Link>
+            <button
+              onClick={navigateToHome}
+            >
+              <LogoIcon/>
+            </button>
             <div className={styles.socialList}>
               <Link to='/' className={styles.socialListItem}>
                 <InstagrammIcon />

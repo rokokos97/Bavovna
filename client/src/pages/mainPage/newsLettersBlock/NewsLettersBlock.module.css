@@ -1,3 +1,24 @@
+.messageLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #5a9b83;
+  color: #fafafa;
+  font-family: "Fixel Display Regular";
+  font-size: 14px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.messageLine .closeButton {
+  background-color: #5a9b83;
+  position: relative;
+  left: 5rem;
+}
+.messageLine .closeButton svg path {
+  stroke: #fafafa;
+}
+
 .newsLettersBlock {
   display: flex;
   flex-direction: column;

@@ -5,6 +5,10 @@ const ordersSlice = createSlice({
   name: 'orders',
   initialState: {
     entities: [],
+    orderAmount: 0,
+    isSavedDelivery: false,
+    deliveryMethod: '',
+    paymentMethod: '',
     isLoading: false,
     error: null,
   },
@@ -32,18 +36,21 @@ const ordersSlice = createSlice({
       state.isLoading = false;
       state.entities = [...state.entities, action.payload];
     },
+    changeDeliveryOption: (state, action) => {
+      state.isSavedDelivery = action.payload;
+    },
   },
 });
 
-export const uploadOrdersList = () => async (dispatch) => {
-  dispatch(ordersRequested());
-  try {
-    const data = await ordersService.get();
-    dispatch(ordersReceived(data));
-  } catch (error) {
-    dispatch(ordersRequestFailed(error));
-  }
-};
+// export const uploadOrdersList = () => async (dispatch) => {
+//  dispatch(ordersRequested());
+//  try {
+//    const data = await ordersService.get();
+//    dispatch(ordersReceived(data));
+//  } catch (error) {
+//    dispatch(ordersRequestFailed(error));
+//  }
+// };
 export const addOrder = (order) => async (dispatch) => {
   dispatch(addOrderRequested());
   try {
@@ -53,13 +60,17 @@ export const addOrder = (order) => async (dispatch) => {
     dispatch(addOrderReceiveFailed(error));
   }
 };
+export const changeDeliveryOption = (option) => async (dispatch) => {
+  dispatch(changeDeliveryOption(option));
+};
 
 export const getOrders = () => (state) => state.orders.entities;
 export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
+export const getIsSavedDelivery = () => (state)=> state.orders.isSavedDelivery;
 export const {
-  ordersRequested,
-  ordersReceived,
-  ordersRequestFailed,
+//  ordersRequested,
+//  ordersReceived,
+//  ordersRequestFailed,
   addOrderRequested,
   addOrderReceived,
   addOrderReceiveFailed,

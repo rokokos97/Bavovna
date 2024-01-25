@@ -64,6 +64,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  button {
+    background: transparent;
+    border: none;
+    div {
+      svg {
+        path {
+          fill: $white!important;
+        }
+      }
+    }
+    &:hover {
+      coursor: pointer;
+    }
+  }
+
 }
 
 .socialList {

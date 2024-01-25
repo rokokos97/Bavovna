@@ -66,6 +66,16 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.footerTopRight button {
+  background: transparent;
+  border: none;
+}
+.footerTopRight button div svg path {
+  fill: #fafafa !important;
+}
+.footerTopRight button:hover {
+  coursor: pointer;
+}
 
 .socialList {
   display: flex;
