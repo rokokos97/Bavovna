@@ -32,7 +32,8 @@ export const ShopPageMasterProvider = ({children}) => {
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedFilters, setSelectedFilters] = useState(INITIAL_FILTERS);
   const [statusKey, setStatusKey] = useState(query.status);
-  console.log(statusKey);
+  const [isDiscountVisible, setIsDiscountVisible] = useState(false);
+  // console.log(statusKey);
 
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
@@ -40,19 +41,19 @@ export const ShopPageMasterProvider = ({children}) => {
 
   const onSortItems = (sortOrder) => {
     let sortedItems = [];
-    if (sortOrder === 'lowToHigh') {
+    if (filteredItems && sortOrder === 'lowToHigh') {
       sortedItems = filteredItems.toSorted((a, b) => a.price - b.price);
       setFilteredItems(sortedItems);
     }
-    if (sortOrder === 'highToLow') {
+    if (filteredItems && sortOrder === 'highToLow') {
       sortedItems = filteredItems.toSorted((a, b) => b.price - a.price);
       setFilteredItems(sortedItems);
     }
-    if (sortOrder === 'best') {
+    if (filteredItems && sortOrder === 'best') {
       sortedItems = items.filter((item) => item.status === 'sold-out');
       setFilteredItems(sortedItems);
     }
-    if (sortOrder === 'new') {
+    if (filteredItems && sortOrder === 'new') {
       sortedItems = items.filter((item) => item.status === 'new');
       setFilteredItems(sortedItems);
     }
@@ -81,15 +82,18 @@ export const ShopPageMasterProvider = ({children}) => {
       navigate('.');
       setFilteredItems(items);
       setIsFilter(false);
+      setIsDiscountVisible(false);
     } else if (items && statusKey) {
       if (statusKey === 'sale_10%') {
         setFilteredItems(() => items.filter((item) => item.sale === 10));
       } else if (statusKey === 'sale' || statusKey === 'new' || statusKey === 'sold-out') {
         setFilteredItems(() => items.filter((item) => item.status === statusKey));
+        setIsDiscountVisible(false);
       } else {
         setFilteredItems(() => items.filter((item) =>
           item.category === statusKey,
         ));
+        setIsDiscountVisible(false);
       }
       setIsFilter(false);
     }
@@ -133,6 +137,8 @@ export const ShopPageMasterProvider = ({children}) => {
         onSortItems,
         handleFilterChange,
         handleCleanFilter,
+        isDiscountVisible,
+        setIsDiscountVisible,
       }}
     >
       {children}

@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
+import {useSelector} from 'react-redux';
 import FilterSelectionBlock from '../filterSelectionBlock/filterSelectionBlock';
 import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
 import ArrowBackIcon from '../../../components/svg/arrowBackIcon/arrowBackIcon';
 import ArrowForwardIcon from '../../../components/svg/arrowForwardIcon/arrowForwardIcon';
 import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import {getItemsLoadingStatus} from '../../../store/itemsSlice';
 import styles from './cardsCatalogBlock.module.scss';
 
 const CardsCatalogBlock = () => {
   const {filteredItems: items, isFilter} = useDataShopPage();
+  const isItemsLoading = useSelector(getItemsLoadingStatus());
 
   const itemsPerPage = 9;
   let totalPages = null;
@@ -17,7 +20,7 @@ const CardsCatalogBlock = () => {
   let visibleItems = [];
   const [currentPage, setCurrentPage] = useState(1);
 
-  if (items) {
+  if (items && !isItemsLoading) {
     totalItems = items.length;
     totalPages = Math.ceil(totalItems / itemsPerPage);
     startIndex = (currentPage - 1) * itemsPerPage;
@@ -49,7 +52,7 @@ const CardsCatalogBlock = () => {
             !isFilter ? styles.cards : `${styles.cards} ${styles.cardsPadding}`
           }
         >
-          {visibleItems.length > 0 ? visibleItems.map((item) => (
+          {visibleItems.length ? visibleItems.map((item) => (
             <li key={item._id}>
               <ItemPreviewCard id={item._id} />
             </li>
