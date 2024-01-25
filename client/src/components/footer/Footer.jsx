@@ -1,21 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import InstagrammIcon from '../svg/instagrammIcon/instagrammIcon';
 import FacebookIcon from '../svg/facebookIcon/facebookIcon';
 import TiktokIcon from '../svg/tiktokIcon/tiktokIcon';
 import styles from './Footer.module.scss';
 import {useSelector} from 'react-redux';
 import {getCategories} from '../../store/categorySlice';
+import LogoIcon from '../svg/logoIcon/logoIcon';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const categories = useSelector(getCategories());
+  console.log(location.pathname);
+  const navigatetoHome = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  };
 
   function getCategoryId(categoryName) {
     if (categories) {
       return categories.filter((category) => category.name === categoryName)[0]._id;
     }
-  };
-
+  }
   return (
     <footer className={styles.container} data-testid='Footer'>
       <div className={styles.footer}>
@@ -51,7 +61,11 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.footerTopRight}>
-            <Link to='/'>Logo</Link>
+            <button
+              onClick={navigatetoHome}
+            >
+              <LogoIcon/>
+            </button>
             <div className={styles.socialList}>
               <Link to='/' className={styles.socialListItem}>
                 <InstagrammIcon />
