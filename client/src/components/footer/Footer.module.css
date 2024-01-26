@@ -74,7 +74,7 @@
   fill: #fafafa !important;
 }
 .footerTopRight button:hover {
-  coursor: pointer;
+  cursor: pointer;
 }
 
 .socialList {
@@ -105,21 +105,18 @@
 
 .footerBottomItem {
   display: flex;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4rem;
-  letter-spacing: 0.01rem;
-  text-transform: uppercase;
   flex-basis: 33.3%;
-  opacity: 0.48;
-}
-
-.footerBottomLink {
   font-family: "Fixel Display Medium";
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
+  opacity: 0.48;
+}
+
+.footerBottomCookies {
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
 }
 
 .footerBottomRight {
