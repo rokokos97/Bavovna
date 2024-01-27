@@ -13,7 +13,7 @@
 
   span {
     color: $white;
-    @include fonts($headline-11)
+    @include fonts($headline-11);
   }
 }
 .header {
@@ -46,15 +46,15 @@
     @include fonts($menu-4);
 
     button {
-        background: transparent;
-        @include fonts($menu-4)
+      background: transparent;
+      @include fonts($menu-4);
     }
   }
   button {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    background:  transparent;
+    background: transparent;
     @include fonts($menu-4);
 
     &:hover {

@@ -1,0 +1,36 @@
+@import '../../../styles/variables.module.scss';
+
+.inputContainer {
+  width: 144rem;
+  padding: 1.2rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $max-width;
+  color: $black;
+  // background-color: $white;
+  // border-bottom: 0.1rem solid $gray-80;
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
+
+.input {
+  max-width: 66.7rem;
+  width: 100%;
+  display: flex;
+  gap: 1.6rem;
+
+  input {
+    flex: 1 0 auto;
+    padding: 0.5rem 0;
+    @include fonts($body-3);
+    border: none;
+  }
+}
+
+.closeIcon {
+  background-color: transparent;
+  height: 3.2rem;
+}

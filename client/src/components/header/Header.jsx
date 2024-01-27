@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import HeaderInput from './HeaderInput/HeaderInput';
 import HeaderContent from './HeaderContent/HeaderContent';
 
 // import AccountIcon from '../svg/accountIcon/accountIcon';
@@ -18,25 +17,16 @@ const Header = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(getUser);
   const cart = useSelector(getCart, shallowEqual);
-  const [isSearch, setIsSearch] = useState(false);
 
-  const handleIsSearch = () => {
-    setIsSearch(!isSearch);
-  };
 
   return (
     <header className={styles.container} data-testid='Header'>
-      {isSearch ? (
-        <HeaderInput handleIsSearch={handleIsSearch} />
-      ) : (
-        <HeaderContent
-          navigate={navigate}
-          isLoggedIn={isLoggedIn}
-          user={user}
-          cart={cart}
-          handleIsSearch={handleIsSearch}
-        />
-      )}
+      <HeaderContent
+        navigate={navigate}
+        isLoggedIn={isLoggedIn}
+        user={user}
+        cart={cart}
+      />
     </header>
   );
 };

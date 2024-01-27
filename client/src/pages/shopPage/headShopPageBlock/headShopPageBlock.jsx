@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './headShopPageBlock.module.scss';
 import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
 import {useNavigate} from 'react-router-dom';
+import {SearchContext} from '../../../app/App';
 
 const HeadCatalogBlock = () => {
   const navigate = useNavigate();
+  const {setSearchValue} = useContext(SearchContext );
   const {isDiscountVisible, setIsDiscountVisible} = useDataShopPage();
 
   const handleOnDiscountBtnClick = () => {
     setIsDiscountVisible(true);
+    setSearchValue('');
     navigate('.?status=sale_10%');
   };
 
