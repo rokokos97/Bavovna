@@ -73,7 +73,7 @@ export const ShopPageMasterProvider = ({children}) => {
     setFilteredItems(items);
   };
 
-  useEffect(() =>{
+  useEffect(() => {
     setStatusKey(query.status);
   }, [statusKey, query]);
 
@@ -86,13 +86,19 @@ export const ShopPageMasterProvider = ({children}) => {
     } else if (items && statusKey) {
       if (statusKey === 'sale_10%') {
         setFilteredItems(() => items.filter((item) => item.sale === 10));
-      } else if (statusKey === 'sale' || statusKey === 'new' || statusKey === 'sold-out') {
-        setFilteredItems(() => items.filter((item) => item.status === statusKey));
+      } else if (
+        statusKey === 'sale' ||
+        statusKey === 'new' ||
+        statusKey === 'sold-out'
+      ) {
+        setFilteredItems(() =>
+          items.filter((item) => item.status === statusKey),
+        );
         setIsDiscountVisible(false);
       } else {
-        setFilteredItems(() => items.filter((item) =>
-          item.category === statusKey,
-        ));
+        setFilteredItems(() =>
+          items.filter((item) => item.category === statusKey),
+        );
         setIsDiscountVisible(false);
       }
       setIsFilter(false);
@@ -104,24 +110,25 @@ export const ShopPageMasterProvider = ({children}) => {
       const newItems = items.filter((item) => {
         return (
           (selectedFilters.category.length === 0 ||
-          selectedFilters.category.some((category) =>
-            item.category.includes(category),
-          )) &&
-        (selectedFilters.size.length === 0 ||
-          selectedFilters.size.some((size) => item.size.includes(size))) &&
-        (selectedFilters.color.length === 0 ||
-          selectedFilters.color.some((color) => item.color.includes(color))) &&
-        (selectedFilters.status.length === 0 ||
-          selectedFilters.status.some((status) =>
-            item.status.includes(status),
-          ))
+            selectedFilters.category.some((category) =>
+              item.category.includes(category),
+            )) &&
+          (selectedFilters.size.length === 0 ||
+            selectedFilters.size.some((size) => item.size.includes(size))) &&
+          (selectedFilters.color.length === 0 ||
+            selectedFilters.color.some((color) =>
+              item.color.includes(color),
+            )) &&
+          (selectedFilters.status.length === 0 ||
+            selectedFilters.status.some((status) =>
+              item.status.includes(status),
+            ))
         );
       });
       setStatusKey(undefined);
       setFilteredItems(newItems);
     }
   }, [selectedFilters, items]);
-
 
   return (
     <DataCatalogueContext.Provider
@@ -157,5 +164,5 @@ export const useDataShopPage = () => {
 };
 
 ShopPageMasterProvider.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.array,
 };

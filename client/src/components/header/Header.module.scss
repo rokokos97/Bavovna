@@ -1,7 +1,8 @@
 @import '../../styles/variables.module.scss';
 
 .container {
-  background: $gray-90;
+  background-color: $white;
+  border-bottom: 0.1rem solid $gray-80;
   display: flex;
   position: fixed;
   top: 0;

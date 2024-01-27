@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import {useSelector} from 'react-redux';
@@ -22,9 +22,11 @@ import CheckOutPage from '../pages/checkOutPage/checkOutPage';
 import OrderSuccessPage from '../pages/orderSuccessPage/orderSuccessPage';
 import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
 
-function App() {
-  const cart = useSelector(getCart);
+export const SearchContext = React.createContext();
 
+function App() {
+  const [searchValue, setSearchValue] = useState('');
+  const cart = useSelector(getCart);
   // Effect for updating session storage when cart changes
   useEffect(() => {
     if (cart.length !== 0) {
@@ -34,28 +36,30 @@ function App() {
   return (
     <div className={styles.App}>
       <AppLoader>
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            {/* Main page route */}
-            <Route index element={<MainPage />} />
-            {/* Routes for various pages in the application */}
-            <Route path='sale' element={<SalePage />} />
-            <Route path='shop' element={<ShopPage />} />
-            <Route path='aboutus' element={<AboutUsPage />} />
-            <Route path='cart/checkout' element={<CheckOutPage />} />
-            <Route path='orderSuccess' element={<OrderSuccessPage />} />
-            <Route path='cart' element={<ShoppingCartPage />} />
-            <Route path='shop/:id' element={<Card />} />
-            {/* Nested routes for user authentication */}
-            <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
-            {/* Additional routes for various functionalities */}
-            <Route path='main' element={<MainPage />} />
-            <Route path='help/*' element={<HelpPage />} />
-            <Route path='user/:id/*' element={<UserPage />} />
-            {/* Fallback route for unmatched paths */}
-            <Route path='*' element={<Page404 />} />
-          </Route>
-        </Routes>
+        <SearchContext.Provider value={{searchValue, setSearchValue}}>
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              {/* Main page route */}
+              <Route index element={<MainPage />} />
+              {/* Routes for various pages in the application */}
+              <Route path='sale' element={<SalePage />} />
+              <Route path='shop' element={<ShopPage />} />
+              <Route path='aboutus' element={<AboutUsPage />} />
+              <Route path='cart/checkout' element={<CheckOutPage />} />
+              <Route path='orderSuccess' element={<OrderSuccessPage />} />
+              <Route path='cart' element={<ShoppingCartPage />} />
+              <Route path='shop/:id' element={<Card />} />
+              {/* Nested routes for user authentication */}
+              <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
+              {/* Additional routes for various functionalities */}
+              <Route path='main' element={<MainPage />} />
+              <Route path='help/*' element={<HelpPage />} />
+              <Route path='user/:id/*' element={<UserPage />} />
+              {/* Fallback route for unmatched paths */}
+              <Route path='*' element={<Page404 />} />
+            </Route>
+          </Routes>
+        </SearchContext.Provider>
       </AppLoader>
     </div>
   );
