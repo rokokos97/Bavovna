@@ -1,19 +1,16 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
 import FilterSelectionBlock from '../filterSelectionBlock/filterSelectionBlock';
 import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
 import ArrowBackIcon from '../../../components/svg/arrowBackIcon/arrowBackIcon';
 import ArrowForwardIcon from '../../../components/svg/arrowForwardIcon/arrowForwardIcon';
 import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
-import {getItemsLoadingStatus} from '../../../store/itemsSlice';
 import {SearchContext} from '../../../app/App';
 import styles from './cardsCatalogBlock.module.scss';
 
 const CardsCatalogBlock = () => {
   const {filteredItems, isFilter} = useDataShopPage();
-  const [items, setItems] = useState(filteredItems);
+  const [items, setItems] = useState([]);
   const {searchValue} = useContext(SearchContext);
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
   const itemsPerPage = 9;
   let totalPages = null;
   let totalItems = null;
@@ -22,15 +19,21 @@ const CardsCatalogBlock = () => {
   let visibleItems = [];
   const [currentPage, setCurrentPage] = useState(1);
 
+
   useEffect(() => {
-    if (items && searchValue) {
-      setItems(items.filter((item) => item.description.toLowerCase().includes(searchValue.toLowerCase())));
+    if (filteredItems) setItems([...filteredItems]);
+  }, [filteredItems]);
+
+
+  useEffect(() => {
+    if (searchValue !== '') {
+      setItems(filteredItems.filter((item) => item.description.toLowerCase().includes(searchValue.toLowerCase())));
     } else {
       setItems(filteredItems);
     }
   }, [searchValue, filteredItems]);
 
-  if (items && !isItemsLoading) {
+  if (items) {
     totalItems = items.length;
     totalPages = Math.ceil(totalItems / itemsPerPage);
     startIndex = (currentPage - 1) * itemsPerPage;
