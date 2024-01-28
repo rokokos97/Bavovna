@@ -86,7 +86,7 @@ const Footer = () => {
         <div className={styles.footerBottom}>
           <div className={styles.footerBottomLeft}>
             <p className={styles.footerBottomItem}>
-              © 2023 Bavovna | All Rights Reserved
+              © 2024 Bavovna | All Rights Reserved
             </p>
             <div
               className={`${styles.footerBottomItem} ${styles.footerBottomCookies}`}

@@ -1,3 +1,35 @@
+.inputContainer {
+  width: 144rem;
+  padding: 1.2rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 144rem;
+  color: #000000;
+}
+.inputContainer svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
 
+.input {
+  max-width: 66.7rem;
+  width: 100%;
+  display: flex;
+  gap: 1.6rem;
+}
+.input input {
+  flex: 1 0 auto;
+  padding: 0.5rem 0;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+  border: none;
+}
+
+.closeIcon {
+  background-color: transparent;
+  height: 3.2rem;
+}
 
 /*# sourceMappingURL=HeaderInput.module.css.map */
