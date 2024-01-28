@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import LogoIcon from '../../svg/logoIcon/logoIcon';
 import AccountIcon from '../../svg/accountIcon/accountIcon';
@@ -10,11 +10,16 @@ import styles from './HeaderContent.module.scss';
 import HeaderInput from '../HeaderInput/HeaderInput';
 
 const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
+  const location = useLocation();
   const [isSearch, setIsSearch] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname !== '/shop' || location.search !== '') setIsSearch(false);
+  }, [location]);
 
   const handleIsSearch = () => {
     setIsSearch(!isSearch);
-    navigate('./shop');
+    if (!isSearch) navigate('./shop');
   };
 
   return (

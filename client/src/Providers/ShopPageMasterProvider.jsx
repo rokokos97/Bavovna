@@ -3,15 +3,12 @@ import {useSelector} from 'react-redux';
 import {getItems} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
 import {getColors} from '../store/colorsSlice';
-
 import {useLocation, useNavigate} from 'react-router-dom';
 import queryString from 'query-string';
-
 import PropTypes from 'prop-types';
 
 const DataCatalogueContext = createContext(null);
 
-// const STATUS_KEYS = ['new', 'sale', 'sale_10%', 'skirts', 'pants', 'dresses', 't-shirts'];
 const INITIAL_FILTERS = {
   category: [],
   size: [],
@@ -22,40 +19,37 @@ const INITIAL_FILTERS = {
 
 export const ShopPageMasterProvider = ({children}) => {
   const items = useSelector(getItems());
-  // console.log(items);
   const location = useLocation();
   const query = queryString.parse(location.search);
   const navigate = useNavigate();
   const categories = useSelector(getCategories());
   const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
-  const [filteredItems, setFilteredItems] = useState(items);
+  const [filteredItems, setFilteredItems] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState(INITIAL_FILTERS);
   const [statusKey, setStatusKey] = useState(query.status);
   const [isDiscountVisible, setIsDiscountVisible] = useState(false);
-  // console.log(statusKey);
+
+  useEffect(()=>{
+    if (items) setFilteredItems([...items]);
+  }, [items]);
 
   const changeIsFilter = () => {
     setIsFilter((prevValue) => !prevValue);
   };
 
   const onSortItems = (sortOrder) => {
-    let sortedItems = [];
     if (filteredItems && sortOrder === 'lowToHigh') {
-      sortedItems = filteredItems.toSorted((a, b) => a.price - b.price);
-      setFilteredItems(sortedItems);
+      setFilteredItems(items.toSorted((a, b) => a.price - b.price));
     }
     if (filteredItems && sortOrder === 'highToLow') {
-      sortedItems = filteredItems.toSorted((a, b) => b.price - a.price);
-      setFilteredItems(sortedItems);
+      setFilteredItems(items.toSorted((a, b) => b.price - a.price));
     }
     if (filteredItems && sortOrder === 'best') {
-      sortedItems = items.filter((item) => item.status === 'sold-out');
-      setFilteredItems(sortedItems);
+      setFilteredItems(items.filter((item) => item.status === 'sold-out'));
     }
     if (filteredItems && sortOrder === 'new') {
-      sortedItems = items.filter((item) => item.status === 'new');
-      setFilteredItems(sortedItems);
+      setFilteredItems(items.filter((item) => item.status === 'new'));
     }
   };
 
@@ -107,7 +101,7 @@ export const ShopPageMasterProvider = ({children}) => {
 
   useEffect(() => {
     if (items && isFilter) {
-      const newItems = items.filter((item) => {
+      setFilteredItems(items.filter((item) => {
         return (
           (selectedFilters.category.length === 0 ||
             selectedFilters.category.some((category) =>
@@ -124,9 +118,8 @@ export const ShopPageMasterProvider = ({children}) => {
               item.status.includes(status),
             ))
         );
-      });
+      }));
       setStatusKey(undefined);
-      setFilteredItems(newItems);
     }
   }, [selectedFilters, items]);
 
