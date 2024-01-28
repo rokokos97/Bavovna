@@ -2,15 +2,14 @@ import {createSlice} from '@reduxjs/toolkit';
 import ordersService from '../services/orders.service';
 
 const ordersSlice = createSlice({
-  name: 'orders',
+  name: 'currentOrder',
   initialState: {
     entities: [],
     orderAmount: 0,
+    deliveryPrice: 0,
     isSavedDelivery: false,
     deliveryMethod: '',
     paymentMethod: '',
-    deliveryPrice: '',
-    totalAmount: '',
     isLoading: false,
     error: null,
   },
@@ -42,7 +41,7 @@ const ordersSlice = createSlice({
       state.isSavedDelivery = action.payload;
     },
     setTotalAmount: (state, action) => {
-      state.totalAmount = action.payload;
+      state.orderAmount = action.payload;
     },
     setDeliveryPrice: (state, action) => {
       state.deliveryPrice = action.payload;
