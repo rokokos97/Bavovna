@@ -9,6 +9,8 @@ const ordersSlice = createSlice({
     isSavedDelivery: false,
     deliveryMethod: '',
     paymentMethod: '',
+    deliveryPrice: '',
+    totalAmount: '',
     isLoading: false,
     error: null,
   },
@@ -39,6 +41,12 @@ const ordersSlice = createSlice({
     changeDeliveryOption: (state, action) => {
       state.isSavedDelivery = action.payload;
     },
+    setTotalAmount: (state, action) => {
+      state.totalAmount = action.payload;
+    },
+    setDeliveryPrice: (state, action) => {
+      state.deliveryPrice = action.payload;
+    },
   },
 });
 
@@ -67,10 +75,14 @@ export const changeDeliveryOption = (option) => async (dispatch) => {
 export const getOrders = () => (state) => state.orders.entities;
 export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
 export const getIsSavedDelivery = () => (state)=> state.orders.isSavedDelivery;
+export const getDeliveryPrice = () => (state) => state.orders.deliveryPrice;
+export const getTotalAmount = () => (state) => state.orders.totalAmount;
 export const {
 //  ordersRequested,
 //  ordersReceived,
 //  ordersRequestFailed,
+  setDeliveryPrice,
+  setTotalAmount,
   addOrderRequested,
   addOrderReceived,
   addOrderReceiveFailed,
