@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import AlertIcon from '../../../svg/alertIcon/alertIcon';
 
 const ModalError = ({handleCloseModal}) => (
-  <div className={styles.ModalError} data-testid="ModalCookies">
+  <div className={styles.ModalError} data-testid="ModalEducationProject">
     <div className={styles.container}>
       <div className={styles.titleBlock}>
         <AlertIcon/>

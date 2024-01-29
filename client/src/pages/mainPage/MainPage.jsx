@@ -18,6 +18,7 @@ import {getCitiesError, getCitiesIsLoadingStatus} from '../../store/citiesSlice'
 import {getItemsError, getItemsLoadingStatus} from '../../store/itemsSlice';
 import ModalError from '../../components/modal/modalContent/modalError/modalError';
 import Loader from '../../components/loader/loader';
+import ModalEducationProject from '../../components/modal/modalContent/ModalEducationProject/modalEducationProject';
 const MainPage = () => {
   const categoriesError = useSelector(getCategoriesError());
   const categoriesListIsLoading = useSelector(getCategoriesLoadingStatus());
@@ -28,6 +29,7 @@ const MainPage = () => {
   const citiesErrors = useSelector(getCitiesError());
   const citiesIsLoading = useSelector(getCitiesIsLoadingStatus());
   const [error, setError] = useState(null);
+  const [showEducationModal, setShowEducationModal] = useState(true);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showCookiesModal, setShowCookiesModal] = useState(false);
   useEffect(() => {
@@ -45,6 +47,7 @@ const MainPage = () => {
   const closeModal = () => {
     setShowCookiesModal(false);
     setShowErrorModal(false);
+    setShowEducationModal(false);
     showBodyOverflow();
   };
   const confirmCookies = () => {
@@ -59,6 +62,12 @@ const MainPage = () => {
         {
           (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
         }
+        <Modal
+          isOpen={showEducationModal}
+          handleCloseModal={closeModal}
+        >
+          <ModalEducationProject handleConfirmModal={closeModal}/>
+        </Modal>
         <Modal
           isOpen={showErrorModal}
           handleCloseModal={closeModal}

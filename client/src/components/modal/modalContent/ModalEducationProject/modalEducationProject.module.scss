@@ -1,0 +1,28 @@
+@import "../../../../styles/variables.module";
+.modalCookies {
+  width: 60.4rem;
+  height: 46.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  background: $gray-90;
+  padding: 3.2rem;
+  position: absolute;
+  left: 8rem;
+  top: 20rem;
+  .text {
+    @include fonts($body-2)
+  }
+}
+.title {
+  @include fonts($headline-3);
+}
+.button {
+  @include button(17rem, $black, $white, $accent-a-3, $accent-a-5);
+}
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 2.4rem;
+}

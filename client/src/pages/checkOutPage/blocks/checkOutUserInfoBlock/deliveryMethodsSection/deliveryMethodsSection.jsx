@@ -11,6 +11,7 @@ const DeliveryMethodsSection = ({deliveryMethods}) => {
   const userCurrentDeliveryOption = useSelector(getDeliveryOption());
   const dispatch = useDispatch();
   const user = useSelector(getUser);
+  console.log('deliveryMethods', deliveryMethods);
   return user && (
     <div className={styles.deliveryMethodsSection} data-testid="DeliveryMethodsSection">
       <div className={styles.radioBlock}>

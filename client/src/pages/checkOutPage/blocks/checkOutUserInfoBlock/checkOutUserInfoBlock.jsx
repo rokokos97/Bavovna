@@ -148,7 +148,7 @@ const CheckOutUserInfoBlock = () => {
   const deliveryMethods = {
     1: {
       _id: '1',
-      label: 'Nova poshta delivery to the post office',
+      label: 'Nova post delivery to the post office',
       value: <NpWarehouseDeliveryFormCheckout
         formik={formik}
         warehousesList={warehousesList}
@@ -159,7 +159,7 @@ const CheckOutUserInfoBlock = () => {
     },
     2: {
       _id: '2',
-      label: 'Nova poshta delivery to the address',
+      label: 'Nova post delivery to the address',
       value: <NpHomeDeliveryFormCheckout
         formik={formik}
         handleCityChange={handleCityChange}/>,

@@ -26,7 +26,7 @@
   position: relative;
   overflow: hidden;
   background: #000000;
-  padding: 2.1rem 2.6rem;
+  padding: 1.6rem 2.4rem;
 }
 .arrowButton span {
   font-family: "Fixel Display Semibold";
@@ -119,7 +119,7 @@
   position: relative;
   overflow: hidden;
   background: #000000;
-  padding: 2.1rem 2.6rem;
+  padding: 1.6rem 2.4rem;
 }
 .buttonsBlock button:first-child span {
   font-family: "Fixel Display Semibold";
@@ -197,7 +197,7 @@
   position: relative;
   overflow: hidden;
   background: #fafafa;
-  padding: 2.1rem 2.6rem;
+  padding: 1.6rem 2.4rem;
 }
 .buttonsBlock button:last-child span {
   font-family: "Fixel Display Semibold";

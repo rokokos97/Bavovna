@@ -4,7 +4,7 @@ import styles from './modalCookies.module.scss';
 import CloseIcon from '../../../svg/closeIcon/CloseIcon';
 
 const ModalCookies = ({handleCloseModal, handleConfirmModal}) => (
-  <div className={styles.ModalCookies} data-testid="ModalCookies">
+  <div className={styles.modalCookies} data-testid="ModalEducationProject">
     <div className={styles.container}>
       <p className={styles.content}>BAVOVNA uses cookies to give you the best
           shopping experience. If you continue to use
