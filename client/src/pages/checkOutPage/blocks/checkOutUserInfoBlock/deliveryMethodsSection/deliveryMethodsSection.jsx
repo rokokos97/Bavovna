@@ -3,10 +3,13 @@ import styles from './deliveryMethodsSection.module.scss';
 import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import PropTypes from 'prop-types';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getIsLoggedIn} from '../../../../../store/userSlice';
-const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCurrentDelivery}) => {
+import {getDeliveryOption, setDeliveryOption} from '../../../../../store/ordersSlice';
+const DeliveryMethodsSection = ({deliveryMethods}) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
+  const userCurrentDelivery = useSelector(getDeliveryOption());
+  const dispatch = useDispatch();
   return (
     <div className={styles.deliveryMethodsSection} data-testid="DeliveryMethodsSection">
       <div className={styles.radioBlock}>
@@ -18,7 +21,7 @@ const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCu
               className={styles.radioButton}
               type='button'
               disabled={!isLoggedIn}
-              onClick = {()=> setUserCurrentDelivery(method.id)}
+              onClick = {()=> dispatch(setDeliveryOption(method.id))}
             >
               {userCurrentDelivery === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
@@ -36,7 +39,5 @@ const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCu
 };
 DeliveryMethodsSection.propTypes = {
   deliveryMethods: PropTypes.array.isRequired,
-  setUserCurrentDelivery: PropTypes.func.isRequired,
-  userCurrentDelivery: PropTypes.string.isRequired,
 };
 export default DeliveryMethodsSection;

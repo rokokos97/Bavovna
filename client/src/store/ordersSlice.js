@@ -6,10 +6,11 @@ const ordersSlice = createSlice({
   initialState: {
     entities: [],
     orderAmount: 0,
-    deliveryPrice: 0,
-    isSavedDelivery: false,
-    deliveryMethod: '',
-    paymentMethod: '',
+    shippingPrice: 2,
+    promoCodeSale: null,
+    deliveryOption: '1',
+    deliveryMethod: '1',
+    paymentMethod: '1',
     isLoading: false,
     error: null,
   },
@@ -37,14 +38,23 @@ const ordersSlice = createSlice({
       state.isLoading = false;
       state.entities = [...state.entities, action.payload];
     },
-    changeDeliveryOption: (state, action) => {
-      state.isSavedDelivery = action.payload;
+    setDeliveryOption: (state, action) => {
+      state.deliveryOption = action.payload;
     },
-    setTotalAmount: (state, action) => {
+    setDeliveryMethod: (state, action) => {
+      state.deliveryMethod = action.payload;
+    },
+    setPaymentMethod: (state, action) => {
+      state.paymentMethod = action.payload;
+    },
+    setOrderAmount: (state, action) => {
       state.orderAmount = action.payload;
     },
-    setDeliveryPrice: (state, action) => {
-      state.deliveryPrice = action.payload;
+    setPromoCodeSale: (state, action) => {
+      state.promoCodeSale = action.payload;
+    },
+    setShippingPrice: (state, action) => {
+      state.shippingPrice = action.payload;
     },
   },
 });
@@ -73,15 +83,21 @@ export const changeDeliveryOption = (option) => async (dispatch) => {
 
 export const getOrders = () => (state) => state.orders.entities;
 export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
-export const getIsSavedDelivery = () => (state)=> state.orders.isSavedDelivery;
-export const getDeliveryPrice = () => (state) => state.orders.deliveryPrice;
-export const getTotalAmount = () => (state) => state.orders.totalAmount;
+export const getDeliveryOption = () => (state)=> state.orders.deliveryOption;
+export const getShippingPrice = () => (state) => state.orders.shippingPrice;
+export const getPaymentMethod = () => (state) => state.orders.paymentMethod;
+export const getPromoCodeSale = () => (state) => state.orders.promoCodeSale;
+export const getOrderAmount = () => (state) => state.orders.orderAmount;
 export const {
 //  ordersRequested,
 //  ordersReceived,
 //  ordersRequestFailed,
-  setDeliveryPrice,
-  setTotalAmount,
+  setPromoCodeSale,
+  setPaymentMethod,
+  setDeliveryMethod,
+  setDeliveryOption,
+  setShippingPrice,
+  setOrderAmount,
   addOrderRequested,
   addOrderReceived,
   addOrderReceiveFailed,

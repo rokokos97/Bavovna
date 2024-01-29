@@ -179,13 +179,15 @@
     margin-top: 0;
     margin-bottom: 0;
     .priceSizeColorQuantityBlock {
-      width: 65.4rem;
+      width: 61.5rem;
       flex-direction: row-reverse;
       gap: 0;
       justify-content: space-between;
       .price {
-        width: fit-content;
+        width: 11.8rem;
         display: flex;
+        gap:0;
+        justify-content: flex-end;
       }
       .sizeColorQuantityBlock {
         width: fit-content;

@@ -29,7 +29,7 @@ const ProductCardInCart = ({item, type}) => {
               {item.itemPrice} $
             </span>
             <span>
-              {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + '$'}
+              {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + ' $'}
             </span>
           </p>
           <div className={styles.sizeColorQuantityBlock}>

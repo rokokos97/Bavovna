@@ -187,14 +187,16 @@
   margin-bottom: 0;
 }
 .productCardInCart[type="2"] .infoBlock .priceSizeColorQuantityBlock {
-  width: 65.4rem;
+  width: 61.5rem;
   flex-direction: row-reverse;
   gap: 0;
   justify-content: space-between;
 }
 .productCardInCart[type="2"] .infoBlock .priceSizeColorQuantityBlock .price {
-  width: fit-content;
+  width: 11.8rem;
   display: flex;
+  gap: 0;
+  justify-content: flex-end;
 }
 .productCardInCart[type="2"] .infoBlock .priceSizeColorQuantityBlock .sizeColorQuantityBlock {
   width: fit-content;
