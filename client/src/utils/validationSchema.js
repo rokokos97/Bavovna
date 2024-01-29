@@ -97,7 +97,6 @@ export const validationSchemaPromoCode = Yup.object().shape({
   promoCode: Yup.string()
       .min(5, 'Promo code must be at least 5 character long')
       .max(15, 'Promo code must be at most 15 characters long'),
-//      .matches(/^(BAVOVNA5|BAVOVNA10|BAVOVNA15)$/, 'Invalid promo code. Please check the code and try again'),
 });
 export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
   phoneNumber: Yup.string()
@@ -116,6 +115,33 @@ export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
       .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long')
       .required('First name is required'),
+});
+export const validationSchemaCheckOutCardPayment = Yup.object().shape({
+  phoneNumber: Yup.string()
+      .matches(/^\d{12}$/, 'Phone number must be 12 digits')
+      .required('Phone number is required'),
+  email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required'),
+  lastName: Yup.string()
+      .min(2, 'Last name has to be longer than 2 characters')
+      .matches(/^[A-Z][a-z]+$/, 'The Last name must begin with a capital letter and consist only of latin letters')
+      .max(15, 'Last name must be at most 15 characters long')
+      .required('Last name is required'),
+  firstName: Yup.string()
+      .min(2, 'First name has to be longer than 2 characters')
+      .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
+      .max(15, 'First name must be at most 15 characters long')
+      .required('First name is required'),
+  cvvCvc: Yup.string()
+      .matches(/^\d{3}$/, 'CVV/CVC must be 3 numbers long')
+      .required('CVV/CVC is required'),
+  validityDate: Yup.string()
+      .matches(/^(0[1-9]|1[0-2])\/([0-9]{2})$/, 'Invalid data format')
+      .required('Validity data is required'),
+  cardNumber: Yup.string()
+      .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
+      .required('Card number is required'),
 });
 export const validationSchemaCheckOutCurrentDeliveryAddress = Yup.object().shape({
   cvvCvc: Yup.string()
@@ -192,10 +218,10 @@ export const validationSchemaCheckOutNPAD = Yup.object().shape({
   }),
   street: Yup.string()
       .matches(streetNameRegex, 'Street name must start with a capital latin letter, can include one space or hyphen and must be up to two words')
-      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
+      .matches(/^[0-9A-Za-z/]+S?$/, 'Street name must consist only numbers and latin letters')
       .min(1, 'Street name must be at least 1 character long')
       .max(30, 'Street name must be at most 30 characters long')
-      .required('House number is required'),
+      .required('Street name is required'),
   houseNumber: Yup.string()
       .min(1, 'House number must be at least 1 character long')
       .max(5, 'House number must be at most 5 characters long')

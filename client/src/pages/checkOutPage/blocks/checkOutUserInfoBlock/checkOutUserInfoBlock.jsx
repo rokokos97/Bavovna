@@ -7,7 +7,6 @@ import UnknownUserContactFormBlock
   from '../../../../components/form/formBlocks/anonimUserContactFormBlock/unknownUserContactFormBlock';
 import PaymentMethodSection from './paymentMethodSection/paymentMethodSection';
 import {
-  validationSchemaCheckOutCardPayment,
   validationSchemaCheckOutNPAD, validationSchemaCheckOutNPID,
   validationSchemaCheckOutNPWDC, validationSchemaCheckOutReceiptPayment,
 } from '../../../../utils/validationSchema';
@@ -53,7 +52,7 @@ const CheckOutUserInfoBlock = () => {
   const generateNumericId = customAlphabet(numbers, 15);
   const getValidationSchema = () => {
     if (paymentMethod === '2' && userCurrentDeliveryOption === '2') return validationSchemaCheckOutReceiptPayment;
-    if (paymentMethod === '1' && userCurrentDeliveryOption === '2') return validationSchemaCheckOutCardPayment;
+    //    if (paymentMethod === '2' && userCurrentDeliveryOption === '1') return validationSchemaCheckOutCardPayment;
     //    if () return validationSchemaCheckOutCurrentDeliveryAddress;
     switch (selectedDeliveryMethod) {
       case '1': // Nova poshta delivery to the post office
@@ -223,7 +222,6 @@ const CheckOutUserInfoBlock = () => {
     if (userCurrentDeliveryOption === '2') {
       const currentDeliveryAddress = user && user.deliveryAddress.filter((item)=> item._id === user.currentDeliveryAddress);
       formik.setFieldValue('currentDeliveryAddress', user? currentDeliveryAddress[0] : '');
-      currentDeliveryAddress && setShippingPrice(currentDeliveryAddress[0].price);
     }
   }, [user, userCurrentDeliveryOption]);
   return (
