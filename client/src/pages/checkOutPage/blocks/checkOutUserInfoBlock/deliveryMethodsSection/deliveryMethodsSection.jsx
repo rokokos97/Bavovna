@@ -4,13 +4,14 @@ import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonChe
 import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
-import {getIsLoggedIn} from '../../../../../store/userSlice';
+import {getIsLoggedIn, getUser} from '../../../../../store/userSlice';
 import {getDeliveryOption, setDeliveryOption} from '../../../../../store/ordersSlice';
 const DeliveryMethodsSection = ({deliveryMethods}) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  const userCurrentDelivery = useSelector(getDeliveryOption());
+  const userCurrentDeliveryOption = useSelector(getDeliveryOption());
   const dispatch = useDispatch();
-  return (
+  const user = useSelector(getUser);
+  return user && (
     <div className={styles.deliveryMethodsSection} data-testid="DeliveryMethodsSection">
       <div className={styles.radioBlock}>
         {deliveryMethods.map((method, index)=> <div key={index}>
@@ -20,10 +21,10 @@ const DeliveryMethodsSection = ({deliveryMethods}) => {
             <button
               className={styles.radioButton}
               type='button'
-              disabled={!isLoggedIn}
+              disabled={!isLoggedIn || user.deliveryAddress.length === 0}
               onClick = {()=> dispatch(setDeliveryOption(method.id))}
             >
-              {userCurrentDelivery === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+              {userCurrentDeliveryOption === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
             <label
               className={styles.label}
@@ -33,7 +34,7 @@ const DeliveryMethodsSection = ({deliveryMethods}) => {
           </div>
         </div>)}
       </div>
-      {deliveryMethods.map((method)=>userCurrentDelivery === method.id ? <div key={method.id}>{method.value}</div> : null)}
+      {deliveryMethods.map((method)=>userCurrentDeliveryOption === method.id ? <div key={method.id}>{method.value}</div> : null)}
     </div>
   );
 };
