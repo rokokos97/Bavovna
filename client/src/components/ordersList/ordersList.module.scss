@@ -9,9 +9,12 @@
   width: 100%;
 }
 th {
-  width: 13.3rem;
+  width: 19%;
   padding-bottom: 1.8rem;
   border-bottom: 1px solid $gray-30;
+  &:last-child {
+    width: 5%;
+  }
 }
 td {
   padding: 2.4rem 0;
