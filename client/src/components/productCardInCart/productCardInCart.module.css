@@ -125,7 +125,7 @@
 
 .productCardInCart[type="1"] {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   column-gap: 1.7rem;
   justify-content: flex-start;
 }
@@ -135,6 +135,7 @@
 }
 .productCardInCart[type="1"] .infoBlock {
   width: 26.6rem;
+  height: fit-content;
   row-gap: 1.2rem;
   margin-top: 0;
   margin-left: 0;
@@ -171,6 +172,21 @@
 .productCardInCart[type="1"] .infoBlock .priceSizeColorQuantityBlock .sizeColorQuantityBlock .block .quantityBlock .quantity .button {
   display: none;
 }
+.productCardInCart[type="1"] .buttonBlock {
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  coursor: pointer;
+}
+.productCardInCart[type="1"] .buttonBlock svg path {
+  stroke: #9b9b9b;
+}
+.productCardInCart[type="1"] .buttonBlock:hover svg path {
+  stroke: #5a9b83;
+}
+.productCardInCart[type="1"] .buttonBlock:active svg path {
+  stroke: #1a6449;
+}
 
 .productCardInCart[type="2"] {
   height: fit-content;
@@ -187,14 +203,16 @@
   margin-bottom: 0;
 }
 .productCardInCart[type="2"] .infoBlock .priceSizeColorQuantityBlock {
-  width: 65.4rem;
+  width: 61.5rem;
   flex-direction: row-reverse;
   gap: 0;
   justify-content: space-between;
 }
 .productCardInCart[type="2"] .infoBlock .priceSizeColorQuantityBlock .price {
-  width: fit-content;
+  width: 11.8rem;
   display: flex;
+  gap: 0;
+  justify-content: flex-end;
 }
 .productCardInCart[type="2"] .infoBlock .priceSizeColorQuantityBlock .sizeColorQuantityBlock {
   width: fit-content;

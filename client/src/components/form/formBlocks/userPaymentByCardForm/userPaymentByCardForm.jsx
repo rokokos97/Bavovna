@@ -18,6 +18,12 @@ const UserPaymentByCardForm = ({formik}) => {
 
     formik.setFieldValue('cardNumber', value);
   };
+  const handleCvvCvcChange = (e) => {
+    let {value} = e.target;
+    value = value.replace('\D', '');
+    value = value.slice(0, 3);
+    formik.setFieldValue('cvvCvc', value);
+  };
   const handleValidityDateChange = (e) => {
     let {value} = e.target;
     value = value.replace(/\D/g, '');
@@ -25,7 +31,7 @@ const UserPaymentByCardForm = ({formik}) => {
     if (value.length > 2) {
       value = `${value.slice(0, 2)}/${value.slice(2)}`;
     }
-    if (e.nativeEvent.inputType === 'deleteContentBackward' && value.length === 3) {
+    if (value.length === 3) {
       value = value.slice(0, 2);
     }
     formik.setFieldValue('validityDate', value);
@@ -57,7 +63,7 @@ const UserPaymentByCardForm = ({formik}) => {
           label='CVV/CVC'
           name='cvvCvc'
           placeholder='3 numbers'
-          onChange={formik.handleChange}
+          onChange={handleCvvCvcChange}
           value={formik.values.cvvCvc}
           error={formik.errors.cvvCvc}
           onBlur={formik.handleBlur}

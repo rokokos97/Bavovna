@@ -31,7 +31,7 @@ const ShoppingCartPage = () => {
         {(cart.length === 0) && <button
           className={styles.button}
           onClick={() => {
-            navigate('/catalogue');
+            navigate('/shop');
           }}
         >
           <LeftArrowIcon/>

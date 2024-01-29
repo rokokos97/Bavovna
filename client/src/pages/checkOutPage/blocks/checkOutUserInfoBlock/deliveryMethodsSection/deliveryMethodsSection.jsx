@@ -3,11 +3,15 @@ import styles from './deliveryMethodsSection.module.scss';
 import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import PropTypes from 'prop-types';
-import {useSelector} from 'react-redux';
-import {getIsLoggedIn} from '../../../../../store/userSlice';
-const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCurrentDelivery}) => {
+import {useDispatch, useSelector} from 'react-redux';
+import {getIsLoggedIn, getUser} from '../../../../../store/userSlice';
+import {getDeliveryOption, setDeliveryOption} from '../../../../../store/ordersSlice';
+const DeliveryMethodsSection = ({deliveryMethods}) => {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  return (
+  const userCurrentDeliveryOption = useSelector(getDeliveryOption());
+  const dispatch = useDispatch();
+  const user = useSelector(getUser);
+  return user && (
     <div className={styles.deliveryMethodsSection} data-testid="DeliveryMethodsSection">
       <div className={styles.radioBlock}>
         {deliveryMethods.map((method, index)=> <div key={index}>
@@ -17,10 +21,10 @@ const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCu
             <button
               className={styles.radioButton}
               type='button'
-              disabled={!isLoggedIn}
-              onClick = {()=> setUserCurrentDelivery(method.id)}
+              disabled={!isLoggedIn || user.deliveryAddress.length === 0}
+              onClick = {()=> dispatch(setDeliveryOption(method.id))}
             >
-              {userCurrentDelivery === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+              {userCurrentDeliveryOption === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
             <label
               className={styles.label}
@@ -30,13 +34,11 @@ const DeliveryMethodsSection = ({deliveryMethods, setUserCurrentDelivery, userCu
           </div>
         </div>)}
       </div>
-      {deliveryMethods.map((method)=>userCurrentDelivery === method.id ? <div key={method.id}>{method.value}</div> : null)}
+      {deliveryMethods.map((method)=>userCurrentDeliveryOption === method.id ? <div key={method.id}>{method.value}</div> : null)}
     </div>
   );
 };
 DeliveryMethodsSection.propTypes = {
   deliveryMethods: PropTypes.array.isRequired,
-  setUserCurrentDelivery: PropTypes.func.isRequired,
-  userCurrentDelivery: PropTypes.string.isRequired,
 };
 export default DeliveryMethodsSection;

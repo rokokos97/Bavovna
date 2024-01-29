@@ -3,6 +3,7 @@ import styles from './ordersList.module.scss';
 import {useSelector} from 'react-redux';
 import {getUser} from '../../store/userSlice';
 import {Link} from 'react-router-dom';
+import ChevronDown from '../svg/chevronDown/ChevronDown';
 
 const OrdersList = () => {
   const user = useSelector(getUser);
@@ -16,20 +17,22 @@ const OrdersList = () => {
             <th>PAYMENT STATUS</th>
             <th>SHIPPING STATUS</th>
             <th>TOTAL</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {user.orders.map((order)=>
             <tr key={order._id} >
-              <td>
-                <Link to={`order/${order._id}`}>
-                  {`#${order._id}`}
-                </Link>
-              </td>
+              <td>{`#${order._id}`}</td>
               <td>{order.date}</td>
               <td>{order.paymentStatus}</td>
               <td>{order.deliveryStatus}</td>
-              <td>{`$ ${order.totalPrice}`}</td>
+              <td>{`$ ${order.orderAmount}`}</td>
+              <td>
+                <Link to={`order/${order._id}`}>
+                  {<ChevronDown/>}
+                </Link>
+              </td>
             </tr>)}
         </tbody>
       </table>

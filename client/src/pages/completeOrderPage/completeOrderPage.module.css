@@ -1,5 +1,6 @@
 .completeOrderPage {
   width: 100%;
+  margin-bottom: 17rem;
 }
 
 .titleBlock {
@@ -42,15 +43,52 @@
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
+}
+.orderInfoBlock .title {
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
+  justify-content: space-between;
 }
 .orderInfoBlock div {
   display: flex;
   flex-direction: row;
+}
+
+.totalPrice {
+  display: flex;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
   justify-content: space-between;
+  width: 73.5rem;
+  padding: 0.8rem;
+  background-color: #d7d7d7;
+}
+
+.deliveryInfoBlock {
+  width: 73.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  justify-content: space-between;
+}
+.deliveryInfoBlock div {
+  padding-right: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+
+.infoSection {
+  width: 20rem;
+  align-items: flex-start;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
 }
 
 /*# sourceMappingURL=completeOrderPage.module.css.map */

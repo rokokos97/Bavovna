@@ -121,7 +121,7 @@
 }
 .productCardInCart[type='1'] {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   column-gap: 1.7rem;
   justify-content: flex-start;
   .imageBlock {
@@ -130,6 +130,7 @@
   }
   .infoBlock {
     width: 26.6rem;
+    height: fit-content;
     row-gap: 1.2rem;
     margin-top: 0;
     margin-left: 0;
@@ -165,6 +166,31 @@
       }
     }
   }
+  .buttonBlock {
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    coursor: pointer;
+    svg {
+      path {
+        stroke: $gray-50
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: $accent-a-3
+        }
+      }
+    }
+    &:active {
+      svg {
+        path {
+          stroke: $accent-a-5
+        }
+      }
+    }
+  }
 }
 .productCardInCart[type='2'] {
   height: fit-content;
@@ -179,13 +205,15 @@
     margin-top: 0;
     margin-bottom: 0;
     .priceSizeColorQuantityBlock {
-      width: 65.4rem;
+      width: 61.5rem;
       flex-direction: row-reverse;
       gap: 0;
       justify-content: space-between;
       .price {
-        width: fit-content;
+        width: 11.8rem;
         display: flex;
+        gap:0;
+        justify-content: flex-end;
       }
       .sizeColorQuantityBlock {
         width: fit-content;

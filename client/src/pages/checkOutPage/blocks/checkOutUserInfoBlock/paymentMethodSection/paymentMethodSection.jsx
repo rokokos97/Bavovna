@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './paymentMethodSection.module.scss';
 import PropTypes from 'prop-types';
 import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import UserPaymentByCardForm
   from '../../../../../components/form/formBlocks/userPaymentByCardForm/userPaymentByCardForm';
+import {useDispatch, useSelector} from 'react-redux';
+import {getPaymentMethod, setPaymentMethod} from '../../../../../store/ordersSlice';
 
-const PaymentMethodSection = ({formik, onPaymentMethodChange}) => {
-  const [currentPaymentMethod, setCurrentPaymentMethod] = useState('1');
+const PaymentMethodSection = ({formik}) => {
+  const dispatch = useDispatch();
+  const currentPaymentMethod = useSelector(getPaymentMethod());
   const paymentMethodsList = [
     {
       id: '1',
@@ -20,11 +23,7 @@ const PaymentMethodSection = ({formik, onPaymentMethodChange}) => {
       value: <></>,
     },
   ];
-  const handlePaymentMethodSelect = (methodId) => {
-    setCurrentPaymentMethod(methodId);
-    onPaymentMethodChange(methodId);
-  };
-  return (
+  return currentPaymentMethod && (
     <div className={styles.userPaymentMethodsList} data-testid="PaymentMethodSection">
       {paymentMethodsList.map((method)=> (
         <div
@@ -34,7 +33,7 @@ const PaymentMethodSection = ({formik, onPaymentMethodChange}) => {
             <button
               className={styles.radioButton}
               type='button'
-              onClick = {() => handlePaymentMethodSelect(method.id)}
+              onClick = {() => dispatch(setPaymentMethod(method.id))}
             >
               {currentPaymentMethod === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
@@ -50,7 +49,6 @@ const PaymentMethodSection = ({formik, onPaymentMethodChange}) => {
   );
 };
 PaymentMethodSection.propTypes = {
-  onPaymentMethodChange: PropTypes.func.isRequired,
   formik: PropTypes.object.isRequired,
 };
 export default PaymentMethodSection;
