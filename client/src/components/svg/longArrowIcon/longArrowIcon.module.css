@@ -1,0 +1,9 @@
+.longArrowIcon {
+  width: 8.7rem;
+  height: 0;
+}
+.longArrowIcon svg path {
+  stroke: #000000;
+}
+
+/*# sourceMappingURL=longArrowIcon.module.css.map */

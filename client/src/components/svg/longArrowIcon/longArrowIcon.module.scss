@@ -1,0 +1,10 @@
+@import '../../../styles/variables.module';
+.longArrowIcon {
+  width: 8.7rem;
+  height: 0;
+  svg {
+    path {
+      stroke: $black
+    }
+  }
+}
