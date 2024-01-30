@@ -30,49 +30,54 @@ const ItemPreviewCard = ({id}) => {
       navigate('/logIn');
     }
   };
-  return (item &&
-    <div
-      className={styles.itemPreviewCard}
-      data-testid="ItemPreviewCard"
-    >
+  return (
+    item && (
       <div
-        className={styles.itemPreviewCard__image}
-        onClick={()=> navigate(`/shop/${item._id}`)}
+        className={
+          item.status !== 'sold-out' ?
+            `${styles.itemPreviewCard}` :
+            `${styles.itemPreviewCard} ${styles.disabledItemPreviewCard}`
+        }
+        data-testid='ItemPreviewCard'
       >
-        <img
-          src={`${config.apiEndpoint}${item.images[0]}`}
-          alt="item image"
-        />
-      </div>
-      {
-        item.status &&
         <div
-          className={styles.itemPreviewCard__status}
-          onClick={()=> navigate(`/shop?status=${item.status}`)}
+          className={
+            item.status !== 'sold-out' ?
+              `${styles.itemPreviewCard__image}` :
+              `${styles.itemPreviewCard__image} ${styles.disabledItemPreviewCard__image}`
+          }
+          onClick={() => navigate(`/shop/${item._id}`)}
         >
-          <div className={styles.itemPreviewCard__statusText}>
-            {item.status}
-          </div>
+          <img
+            src={`${config.apiEndpoint}${item.images[0]}`}
+            alt='item image'
+          />
         </div>
-      }
-      <div
-        className={styles.itemPreviewCard__heart}
-        onClick = {handleChangeFavorite}
-      >
-        {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+        {item.status && (
+          <div
+            className={styles.itemPreviewCard__status}
+            onClick={() => navigate(`/shop?status=${item.status}`)}
+          >
+            <div className={styles.itemPreviewCard__statusText}>
+              {item.status}
+            </div>
+          </div>
+        )}
+        <div
+          className={styles.itemPreviewCard__heart}
+          onClick={handleChangeFavorite}
+        >
+          {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+        </div>
+        <div
+          className={styles.itemPreviewCard__description}
+          onClick={() => navigate(`/shop/${item._id}`)}
+        >
+          <span>{item.name}</span>
+          <p>${item.price}</p>
+        </div>
       </div>
-      <div
-        className={styles.itemPreviewCard__description}
-        onClick={()=> navigate(`/shop/${item._id}`)}
-      >
-        <span>
-          {item.name}
-        </span>
-        <p>
-          ${item.price}
-        </p>
-      </div>
-    </div>
+    )
   );
 };
 
