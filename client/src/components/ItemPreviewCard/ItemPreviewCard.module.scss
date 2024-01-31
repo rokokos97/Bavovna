@@ -29,6 +29,14 @@
     }
   }
 }
+
+.disabledItemPreviewCard{
+  pointer-events: none;
+}
+.disabledItemPreviewCard__image{
+  opacity: 0.5;
+  // background: linear-gradient(0deg, rgba(245, 245, 245, 0.30) 0%, rgba(245, 245, 245, 0.30) 100%), lightgray -66.288px -276.028px / 127.435% 156.726% no-repeat;
+}
 .itemPreviewCard__image {
   width: 41rem;
   height: 50rem;

@@ -21,14 +21,13 @@
   @include fonts($headline-3);
 }
 
-.noFoundText{
+.noFoundText {
   @include fonts($body-2);
   margin-top: 4rem;
 }
 
 .cards {
   display: flex;
-  justify-content: space-evenly;
   gap: 2.4rem;
   flex-wrap: wrap;
   padding-top: 2.4rem;
@@ -36,6 +35,11 @@
   &.cardsPadding {
     padding-left: 2.4rem;
   }
+}
+
+.disabledCard {
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .pagination {
