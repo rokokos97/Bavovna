@@ -143,16 +143,16 @@ const CreatorsPage = () => {
         {data.map((col, index) =>
           <div key={index} className={styles.column}>
             <p className={styles.department}>{col.department}</p>
-            {Object.values(col.members).map((member)=>
-              <div key={col.members[member]} className={styles.member}>
+            {Object.values(col.members).map((member, index)=>
+              <div key={index} className={styles.member}>
                 <p className={styles.name}>{member.name}</p>
                 <p className={styles.mail} style={{display: `${!member.email&&'none'}`}}>{member.email}</p>
-                <p className={styles.social}>
+                <div className={styles.social}>
                   {member.social.linkedIn && <a target='_blank' href={member.social.linkedIn} rel="noreferrer"><LinkedinIcon/></a>}
                   {member.social.telegram && <a target='_blank' href={member.social.telegram} rel="noreferrer"><TelegramIcon/></a>}
                   {member.social.behance && <a target='_blank' href={member.social.behance} rel="noreferrer"><BehanceIcon/></a>}
                   {member.social.gitHub && <a target='_blank' href={member.social.gitHub} rel="noreferrer"><GithubIcon/></a>}
-                </p>
+                </div>
               </div>,
             )}
           </div>)
