@@ -89,11 +89,11 @@ const CreatorsPage = () => {
           },
         },
         vitalii: {
-          name: 'Vitalii Mamchu',
+          name: 'Vitalii Mamchur',
           email: 'mamchur243@gmail.com',
           social: {
             linkedIn: 'https://linkedin.com/in/vitalii-mamchur-ua',
-            telegram: 'https://t.me/@mou5ville',
+            telegram: 'https://t.me/mou5ville',
             behance: '',
             gitHub: 'https://github.com/Vitalii-Mamchur',
           },

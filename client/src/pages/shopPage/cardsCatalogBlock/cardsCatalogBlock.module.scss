@@ -28,7 +28,8 @@
 
 .cards {
   display: flex;
-  gap: 2.4rem;
+  gap: 1.6rem;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 2.4rem;
 
@@ -84,5 +85,11 @@
   &.activeBtn {
     color: $accent_4;
     background-color: $transparent-30-a-05;
+  }
+}
+
+@media screen and (max-width: 1438px) {
+  .cards {
+    justify-content: space-evenly;
   }
 }
