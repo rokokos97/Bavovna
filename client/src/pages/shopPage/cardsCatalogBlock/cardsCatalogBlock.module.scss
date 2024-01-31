@@ -29,9 +29,10 @@
 .cards {
   display: flex;
   gap: 1.6rem;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding-top: 2.4rem;
+  outline: 1px solid red;
 
   &.cardsPadding {
     padding-left: 2.4rem;
@@ -88,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 1438px) {
+@media screen and (max-width: 1439px) {
   .cards {
     justify-content: space-evenly;
   }
