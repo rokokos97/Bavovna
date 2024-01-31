@@ -1,0 +1,61 @@
+@import '../../styles/variables.module';
+.creatorsPage {
+  width: 128rem;
+  margin: 1.6rem auto 17rem;
+}
+.navigationBlock {
+ @include fonts($breadcrumb);
+}
+.title {
+  margin-top: 2.4rem;
+  margin-bottom: 2rem;
+  @include fonts($headline-2)
+}
+.text {
+  @include fonts($body-2);
+  margin-bottom: 1.6rem;
+}
+.title2 {
+  margin-top: 4rem;
+  margin-bottom: 3.2rem;
+  @include fonts($headline-3);
+}
+.membersBlock {
+  display: grid;
+  grid-template-columns: repeat(4, 30.3rem);
+  column-gap: 2.4rem;
+}
+.column:nth-child(5) {
+  margin-top: -6rem;
+  grid-column: 4;
+  grid-row: 2;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  .department {
+    @include fonts($headline-5);
+  }
+  .member {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    .name {
+      @include fonts($headline-7);
+    }
+    .mail {
+      @include fonts($body-3);
+    }
+    .social {
+      display: flex;
+      flex-direction: row;
+      column-gap: 0.8rem;
+      .iconsBlock {
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.8rem;
+      }
+    }
+  }
+}

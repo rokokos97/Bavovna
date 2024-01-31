@@ -1,0 +1,88 @@
+.creatorsPage {
+  width: 128rem;
+  margin: 1.6rem auto 17rem;
+}
+
+.navigationBlock {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+}
+
+.title {
+  margin-top: 2.4rem;
+  margin-bottom: 2rem;
+  font-family: "Fixel Display Medium";
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.text {
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+  margin-bottom: 1.6rem;
+}
+
+.title2 {
+  margin-top: 4rem;
+  margin-bottom: 3.2rem;
+  font-family: "Fixel Display Bold";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.membersBlock {
+  display: grid;
+  grid-template-columns: repeat(4, 30.3rem);
+  column-gap: 2.4rem;
+}
+
+.column:nth-child(5) {
+  margin-top: -6rem;
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.column .department {
+  font-family: "Fixel Text Medium";
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.column .member {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+}
+.column .member .name {
+  font-family: "Fixel Text Semibold";
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.column .member .mail {
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.column .member .social {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+.column .member .social .iconsBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+
+/*# sourceMappingURL=creatorsPage.module.css.map */

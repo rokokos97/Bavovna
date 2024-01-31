@@ -21,6 +21,8 @@ import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
 import CheckOutPage from '../pages/checkOutPage/checkOutPage';
 import OrderSuccessPage from '../pages/orderSuccessPage/orderSuccessPage';
 import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
+import CreatorsPage from '../pages/creatorsPage/creatorsPage';
+
 
 export const SearchContext = React.createContext();
 
@@ -43,6 +45,7 @@ function App() {
               <Route index element={<MainPage />} />
               {/* Routes for various pages in the application */}
               <Route path='sale' element={<SalePage />} />
+              <Route path='creators' element={<CreatorsPage />} />
               <Route path='shop' element={<ShopPage />} />
               <Route path='aboutus' element={<AboutUsPage />} />
               <Route path='cart/checkout' element={<CheckOutPage />} />
