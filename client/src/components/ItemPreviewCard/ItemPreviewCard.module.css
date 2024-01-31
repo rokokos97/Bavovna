@@ -28,6 +28,14 @@
   color: #3a7f66;
 }
 
+.disabledItemPreviewCard {
+  pointer-events: none;
+}
+
+.disabledItemPreviewCard__image {
+  opacity: 0.5;
+}
+
 .itemPreviewCard__image {
   width: 41rem;
   height: 50rem;
