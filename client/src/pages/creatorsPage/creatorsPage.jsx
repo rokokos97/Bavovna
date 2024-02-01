@@ -61,9 +61,8 @@ const CreatorsPage = () => {
           name: 'Ruslan Likhina',
           email: 'sportman21061988@gmail.com',
           social: {
-          // eslint-disable-next-line max-len
-            linkedIn: 'https://www.linkedin.com/in/%D1%80%D1%83%D1%81%D0%BB%D0%B0%D0%BD-%D0%BB%D1%96%D1%85%D1%96%D0%BD%D0%B0-589b5927a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-            telegram: 'https://telegram.org/dl',
+            linkedIn: 'https://www.linkedin.com/in/ruslan-likhina-589b5927a/',
+            telegram: 'https://t.me/Ruslan_Likhina',
           },
         },
         bohdan: {
@@ -71,6 +70,8 @@ const CreatorsPage = () => {
           email: 'bogdankharkov483@gmail.com',
           social: {
             linkedIn: 'https://www.linkedin.com/in/bohdan-koshkarov-21150413a/',
+            telegram: 'https://t.me/FF_Bogdan',
+            gitHub: 'https://github.com/BogdanKoshkarov',
           },
         },
       },

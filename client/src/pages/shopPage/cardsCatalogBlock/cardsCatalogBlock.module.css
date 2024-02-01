@@ -31,7 +31,8 @@
 
 .cards {
   display: flex;
-  gap: 2.4rem;
+  gap: 1.6rem;
+  justify-content: center;
   flex-wrap: wrap;
   padding-top: 2.4rem;
 }
@@ -85,6 +86,12 @@
 .pageButton.activeBtn {
   color: #3a7f66;
   background-color: rgba(169, 223, 203, 0.3);
+}
+
+@media screen and (max-width: 1439px) {
+  .cards {
+    justify-content: space-evenly;
+  }
 }
 
 /*# sourceMappingURL=cardsCatalogBlock.module.css.map */
