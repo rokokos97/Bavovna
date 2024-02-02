@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
     //    data.forEach((item) => {
     //      warehousesList.push({label: item.description, value: item.ref});
     //    });
-    console.log(warehousesList[cityRef]);
+
     return res.status(200).send(warehousesList[cityRef]);
   } catch (error) {
     return res.status(500).json({

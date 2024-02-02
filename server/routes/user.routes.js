@@ -42,7 +42,7 @@ router.patch('/:userId', auth,
           updatedUser,
         });
       } catch (error) {
-        console.log(error);
+    
         return res.status(500).json({
           response: {
             errors: error,
