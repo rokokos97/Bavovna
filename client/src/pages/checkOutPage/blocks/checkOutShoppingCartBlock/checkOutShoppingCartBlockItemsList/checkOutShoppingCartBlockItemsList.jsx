@@ -8,7 +8,6 @@ const CheckOutShoppingCartBlockItemsList = () => {
   const normalizeCart = useSelector(getNormalizedCart);
   return (
     <div className={styles.checkOutShoppingCartBlockItemsList} data-testid="CheckOutShoppingCartBlockItemsList">
-
       {normalizeCart && normalizeCart.map((item, index)=> (
         <ProductCardInCart item={item} key={index} type='1'/>
       ))}

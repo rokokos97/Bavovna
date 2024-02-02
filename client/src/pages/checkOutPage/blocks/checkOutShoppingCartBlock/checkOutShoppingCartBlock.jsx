@@ -9,6 +9,7 @@ import CheckOutShoppingCartBlockItemsList
   from './checkOutShoppingCartBlockItemsList/checkOutShoppingCartBlockItemsList';
 import PropTypes from 'prop-types';
 import {getPromoCodeSale, getShippingPrice, setOrderAmount, setPromoCodeSale} from '../../../../store/ordersSlice';
+import RightArrowIcon from '../../../../components/svg/rightArrowIcon/rightArrowIcon';
 
 const CheckOutShoppingCartBlock = () => {
   const dispatch = useDispatch();
@@ -62,9 +63,7 @@ const CheckOutShoppingCartBlock = () => {
           className={styles.arrowButton}
           type='submit'
         >
-          <span>
-            -&gt;
-          </span>
+          <RightArrowIcon/>
         </button>
       </form>
       <div className={styles.price}>
