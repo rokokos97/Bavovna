@@ -82,6 +82,15 @@ const CheckOutShoppingCartBlock = () => {
         <p>total</p>
         <p>{`${finalPrice} $`}</p>
       </div>
+      <button
+        type='submit'
+        //        disabled={!formik.dirty || !formik.isValid}
+        className={styles.button}
+      >
+        <span>
+                  place the order
+        </span>
+      </button>
     </div>
   );
 };
