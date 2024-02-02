@@ -289,7 +289,7 @@ export const validationSchemaIntDeliveryForm = Yup.object().shape({
 });
 export const validationSchemaNewsletterForm = Yup.object().shape({
   email: Yup.string()
-      .email('Invalid promo code. Please check the code and try again'),
+      .email('Invalid email address'),
 });
 
 

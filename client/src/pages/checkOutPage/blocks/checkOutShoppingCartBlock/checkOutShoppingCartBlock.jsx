@@ -29,7 +29,7 @@ const CheckOutShoppingCartBlock = () => {
         const number = values.promoCode.slice(7);
         dispatch(setPromoCodeSale(number/100));
       } else {
-        promoCodeFormik.setErrors({promoCode: 'Invalid promo code'});
+        promoCodeFormik.setErrors({promoCode: 'Invalid promo code. Please check the code and try again'});
       }
     },
   });
