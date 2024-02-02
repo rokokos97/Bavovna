@@ -98,7 +98,7 @@ export const validationSchemaPromoCode = Yup.object().shape({
       .min(5, 'Promo code must be at least 5 character long')
       .max(15, 'Promo code must be at most 15 characters long'),
 });
-export const validationSchemaCheckOutReceiptPayment = Yup.object().shape({
+export const validationSchemaCheckOutUserInfo = Yup.object().shape({
   phoneNumber: Yup.string()
       .matches(/^\d{12}$/, 'Phone number must be 12 digits')
       .required('Phone number is required'),
