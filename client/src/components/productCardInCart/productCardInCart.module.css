@@ -122,6 +122,12 @@
 .productCardInCart .buttonBlock:active svg path {
   stroke: #1a6449;
 }
+.productCardInCart .buttonBlock:disabled {
+  cursor: not-allowed;
+}
+.productCardInCart .buttonBlock:disabled svg path {
+  stroke: rgba(74, 74, 74, 0.7);
+}
 
 .productCardInCart[type="1"] {
   width: 100%;
@@ -177,15 +183,6 @@
   display: flex;
   align-items: flex-end;
   coursor: pointer;
-}
-.productCardInCart[type="1"] .buttonBlock svg path {
-  stroke: #9b9b9b;
-}
-.productCardInCart[type="1"] .buttonBlock:hover svg path {
-  stroke: #5a9b83;
-}
-.productCardInCart[type="1"] .buttonBlock:active svg path {
-  stroke: #1a6449;
 }
 
 .productCardInCart[type="2"] {

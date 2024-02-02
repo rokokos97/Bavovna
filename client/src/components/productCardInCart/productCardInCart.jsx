@@ -16,6 +16,7 @@ const ProductCardInCart = ({item, type}) => {
   const handleQuantityLess = () => {
     dispatch(removeOneItemFromCart(item.itemIdentifier));
   };
+  console.log('type', type);
   return (
     <div className={styles.productCardInCart} data-testid="ProductCardInCart" type={type}>
       <div className={styles.imageBlock}>
@@ -67,11 +68,13 @@ const ProductCardInCart = ({item, type}) => {
           </div>
         </div>
       </div>
-      <div
+      <button
         onClick={handleItemDelete}
-        className={styles.buttonBlock}>
+        className={styles.buttonBlock}
+        disabled={type==='1'}
+      >
         <DeleteIcon />
-      </div>
+      </button>
     </div>
   );
 };

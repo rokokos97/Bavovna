@@ -117,6 +117,14 @@
         }
       }
     }
+    &:disabled {
+      cursor: not-allowed;
+      svg {
+        path {
+          stroke: $transparent70-gray10
+        }
+      }
+    }
   }
 }
 .productCardInCart[type='1'] {
@@ -171,25 +179,6 @@
     display: flex;
     align-items: flex-end;
     coursor: pointer;
-    svg {
-      path {
-        stroke: $gray-50
-      }
-    }
-    &:hover {
-      svg {
-        path {
-          stroke: $accent-a-3
-        }
-      }
-    }
-    &:active {
-      svg {
-        path {
-          stroke: $accent-a-5
-        }
-      }
-    }
   }
 }
 .productCardInCart[type='2'] {
