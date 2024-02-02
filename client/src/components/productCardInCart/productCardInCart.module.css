@@ -179,10 +179,16 @@
   display: none;
 }
 .productCardInCart[type="1"] .buttonBlock {
+  width: 4.5rem;
   margin: 0;
   display: flex;
   align-items: flex-end;
+  justify-content: flex-end;
   coursor: pointer;
+}
+.productCardInCart[type="1"] .buttonBlock svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .productCardInCart[type="2"] {
