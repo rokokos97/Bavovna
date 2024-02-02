@@ -22,6 +22,7 @@ import CheckOutPage from '../pages/checkOutPage/checkOutPage';
 import OrderSuccessPage from '../pages/orderSuccessPage/orderSuccessPage';
 import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
 import CreatorsPage from '../pages/creatorsPage/creatorsPage';
+import CheckOutUserInfoPage from '../pages/checkOutUserInfoPage/checkOutUserInfoPage';
 
 
 export const SearchContext = React.createContext();
@@ -49,6 +50,7 @@ function App() {
               <Route path='shop' element={<ShopPage />} />
               <Route path='aboutus' element={<AboutUsPage />} />
               <Route path='cart/checkout' element={<CheckOutPage />} />
+              <Route path='cart/checkout/checkoutUserInfo' element={<CheckOutUserInfoPage />} />
               <Route path='orderSuccess' element={<OrderSuccessPage />} />
               <Route path='cart' element={<ShoppingCartPage />} />
               <Route path='shop/:id' element={<Card />} />
