@@ -8,6 +8,7 @@ const ordersSlice = createSlice({
     orderAmount: 0,
     shippingPrice: 2,
     promoCodeSale: null,
+    userInfo: {},
     deliveryOption: '1',
     deliveryMethod: '1',
     paymentMethod: '1',
@@ -37,6 +38,9 @@ const ordersSlice = createSlice({
     addOrderReceived: (state, action) => {
       state.isLoading = false;
       state.entities = [...state.entities, action.payload];
+    },
+    setUserInfo: (state, action) => {
+      state.userInfo = action.payload;
     },
     setDeliveryOption: (state, action) => {
       state.deliveryOption = action.payload;
@@ -92,6 +96,7 @@ export const {
 //  ordersRequested,
 //  ordersReceived,
 //  ordersRequestFailed,
+  setUserInfo,
   setPromoCodeSale,
   setPaymentMethod,
   setDeliveryMethod,

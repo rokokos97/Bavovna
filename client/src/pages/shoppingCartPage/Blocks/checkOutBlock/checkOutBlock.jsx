@@ -16,7 +16,7 @@ const CheckOutBlock = () => {
       <div className={styles.buttonsBlock}>
         <button
           type='button'
-          onClick={() => navigate('/cart/checkout')}
+          onClick={() => navigate('/cart/checkoutUserInfo')}
         >
           <span>
             Continue to check out
