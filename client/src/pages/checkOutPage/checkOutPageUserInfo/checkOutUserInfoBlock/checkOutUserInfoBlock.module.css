@@ -67,27 +67,27 @@
   display: block;
   margin: 0 auto;
   display: flex;
-  width: 41rem;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 63rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #000000;
   padding: 1.6rem 2.4rem;
+  background: #000000;
 }
 .button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #fafafa;
   text-align: center;
   position: relative;
 }
 .button::before {
   content: "";
-  background: #5a9b83;
   width: 4.8rem;
   height: 4.8rem;
   opacity: 0;
@@ -96,11 +96,10 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 0.4rem;
-  left: 18.1rem;
+  left: 29.1rem;
 }
 .button::after {
   content: "";
-  background: #1a6449;
   width: 0.6rem;
   height: 0.6rem;
   opacity: 0;
@@ -109,38 +108,293 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 2.5rem;
-  left: 20.2rem;
+  left: 31.2rem;
 }
 .button:hover::before {
   content: "";
-  width: 45.1rem;
-  height: 45.1rem;
-  background: #5a9b83;
+  width: 69.3rem;
+  height: 69.3rem;
   opacity: 1;
   position: absolute;
-  top: -20.15rem;
+  top: -32.25rem;
   left: -1rem;
 }
 .button:active::after {
   content: "";
-  width: 45.1rem;
-  height: 45.1rem;
+  width: 69.3rem;
+  height: 69.3rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
-  top: -20.15rem;
+  top: -32.25rem;
   left: -1.1rem;
 }
 .button:disabled {
-  border: 1px solid #868686;
+  border-color: #868686;
   background: #f5f5f5;
   pointer-events: none;
   cursor: not-allowed;
 }
 .button:disabled span {
   color: #9b9b9b;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.button::before {
+  background: #5a9b83;
+}
+.button::after {
+  background: #1a6449;
+}
+.button:hover::before {
+  background: #5a9b83;
+}
+.button:active::after {
+  border: 1px solid #5a9b83;
+}
+
+.buttonLeft {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 19rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: transparent;
+  border: none;
+}
+.buttonLeft span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.buttonLeft::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 7.1rem;
+}
+.buttonLeft::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 9.2rem;
+}
+.buttonLeft:hover::before {
+  content: "";
+  width: 20.9rem;
+  height: 20.9rem;
+  opacity: 1;
+  position: absolute;
+  top: -8.05rem;
+  left: -1rem;
+}
+.buttonLeft:active::after {
+  content: "";
+  width: 20.9rem;
+  height: 20.9rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -8.05rem;
+  left: -1.1rem;
+}
+.buttonLeft:disabled {
+  border-color: #868686;
+  background: #f5f5f5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.buttonLeft:disabled span {
+  color: #9b9b9b;
+}
+.buttonLeft svg path {
+  fill: #000000;
+}
+.buttonLeft span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.buttonLeft:hover svg path {
+  fill: #3a7f66;
+}
+.buttonLeft:hover span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #3a7f66;
+}
+.buttonLeft:active svg path {
+  fill: #15503a;
+}
+.buttonLeft:active span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #15503a;
+}
+.buttonLeft:disabled {
+  background: transparent;
+}
+.buttonLeft:disabled svg path {
+  fill: #868686;
+}
+.buttonLeft:disabled span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #868686;
+}
+
+.buttonRight {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 19rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: transparent;
+  border: none;
+}
+.buttonRight span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.buttonRight::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 7.1rem;
+}
+.buttonRight::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 9.2rem;
+}
+.buttonRight:hover::before {
+  content: "";
+  width: 20.9rem;
+  height: 20.9rem;
+  opacity: 1;
+  position: absolute;
+  top: -8.05rem;
+  left: -1rem;
+}
+.buttonRight:active::after {
+  content: "";
+  width: 20.9rem;
+  height: 20.9rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -8.05rem;
+  left: -1.1rem;
+}
+.buttonRight:disabled {
+  border-color: #868686;
+  background: #f5f5f5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.buttonRight:disabled span {
+  color: #9b9b9b;
+}
+.buttonRight svg path {
+  fill: #000000;
+}
+.buttonRight span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.buttonRight:hover svg path {
+  fill: #3a7f66;
+}
+.buttonRight:hover span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #3a7f66;
+}
+.buttonRight:active svg path {
+  fill: #15503a;
+}
+.buttonRight:active span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #15503a;
+}
+.buttonRight:disabled {
+  background: transparent;
+}
+.buttonRight:disabled svg path {
+  fill: #868686;
+}
+.buttonRight:disabled span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #868686;
 }
 
 /*# sourceMappingURL=checkOutUserInfoBlock.module.css.map */

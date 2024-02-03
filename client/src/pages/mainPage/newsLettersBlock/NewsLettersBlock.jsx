@@ -56,6 +56,7 @@ const NewsLettersBlock = () => {
           />
           <button
             className={styles.button}
+            disabled={!formik.isValid || !formik.dirty}
             type='submit'
           >
             <span>

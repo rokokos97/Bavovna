@@ -5,5 +5,5 @@
   gap: 1.6rem;
 }
 .button {
-  @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include buttons(24rem, $black, $white, $accent-a-3, $accent-a-5);
 }

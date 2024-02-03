@@ -79,6 +79,6 @@
   @include fonts($body-3);
 }
 .button {
-  @include button(42.3rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include buttons(42.3rem, $black, $white, $accent-a-3, $accent-a-5);
 }
 

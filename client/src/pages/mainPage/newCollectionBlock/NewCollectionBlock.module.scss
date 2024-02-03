@@ -33,6 +33,7 @@
   text-align: start;
 }
 .button {
-  @include button(19.5rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button($medium);
+  @include buttonBlack();
 }
 

@@ -148,7 +148,7 @@
   width: 100%;
 
   .activeBtn {
-    @include button(51.7rem, $black, $white, $accent-a-3, $accent-a-5);
+    @include buttons(51.7rem, $black, $white, $accent-a-3, $accent-a-5);
   }
 
   .disableBtn {

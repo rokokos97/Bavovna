@@ -87,6 +87,7 @@ const CheckOutUserInfoBlock = () => {
           <button
             type='button'
             onClick={()=> navigate(-1) }
+            className={styles.buttonLeft}
           >
             <LeftArrowIcon/>
             <span>
@@ -94,13 +95,14 @@ const CheckOutUserInfoBlock = () => {
             </span>
           </button>
           <button
+            className={styles.buttonRight}
             type='submit'
             disabled={!formik.isValid || !formik.dirty}
           >
             <span>
-              <RightArrowIcon/>
               next step
             </span>
+            <RightArrowIcon/>
           </button>
         </div>
       </form>

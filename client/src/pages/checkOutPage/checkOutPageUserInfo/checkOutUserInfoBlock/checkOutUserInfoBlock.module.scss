@@ -35,7 +35,6 @@
 }
 .radioButton {
   background: transparent;
-
   &:hover {
     div {
       svg {
@@ -72,5 +71,14 @@
 .button {
   display: block;
   margin: 0 auto;
-  @include button(41rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button($large);
+  @include buttonBlack();
+}
+.buttonLeft {
+  @include button($small);
+  @include buttonTransparent();
+}
+.buttonRight {
+  @include button($small);
+  @include buttonTransparent();
 }
