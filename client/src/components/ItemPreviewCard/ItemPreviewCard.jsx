@@ -5,31 +5,17 @@ import config from '../../config.json';
 import FillHeartIcon from '../svg/fillHeartIcon/fillHeartIcon';
 import EmptyHeartIcon from '../svg/emptyHeartIcon/emptyHeartIcon';
 import {useNavigate} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {getItemsById} from '../../store/itemsSlice';
-import {getUser, updateUser} from '../../store/userSlice';
+import {getUser} from '../../store/userSlice';
+import useChangeFavorite from '../../services/useChangeFavorite';
 
 const ItemPreviewCard = ({id}) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const user = useSelector(getUser);
+  const navigate = useNavigate();
   const item = useSelector(getItemsById(id));
-  let isFavorite = false;
-  if (user) {
-    isFavorite = user.favorite.includes(id);
-  }
-  const handleChangeFavorite = () => {
-    if (user) {
-      if (isFavorite) {
-        const userFavorite = user.favorite.filter((item) => item !== id);
-        dispatch(updateUser({...user, favorite: userFavorite}));
-      } else {
-        dispatch(updateUser({...user, favorite: [...user.favorite, id]}));
-      }
-    } else {
-      navigate('/logIn');
-    }
-  };
+  const [isFavorite, handleIsFavorite] = useChangeFavorite(user, id);
+
   return (
     item && (
       <div
@@ -65,7 +51,7 @@ const ItemPreviewCard = ({id}) => {
         )}
         <div
           className={styles.itemPreviewCard__heart}
-          onClick={handleChangeFavorite}
+          onClick={() => handleIsFavorite()}
         >
           {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
         </div>

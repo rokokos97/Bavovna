@@ -1,23 +1,27 @@
 /* eslint-disable operator-linebreak */
 import React, {useState, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
+import useChangeFavorite from '../../services/useChangeFavorite';
+import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import config from '../../config.json';
+import {addItemToCart} from '../../store/cartSlice';
+import {getUser} from '../../store/userSlice';
+import {useDataCard} from '../../Providers/CardMasterProvider';
 import {SizesList} from '../../components/sizeList/SizesList';
 import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import Dropdown from '../../components/dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
-import {useDataCard} from '../../Providers/CardMasterProvider';
 import ColorsList from '../../components/colorsList/ColorsList';
 import EmptyHeartIcon from '../../components/svg/emptyHeartIcon/emptyHeartIcon';
 import FillHeartIcon from '../../components/svg/fillHeartIcon/fillHeartIcon';
-import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import styles from './Card.module.scss';
-import {addItemToCart} from '../../store/cartSlice';
-import {useDispatch} from 'react-redux';
 
 const CardContext = ({item}) => {
+  const dispatch = useDispatch();
+  const user = useSelector(getUser);
   const {itemData, setItemData, collectData} = useDataCard();
   const {
     _id,
@@ -30,12 +34,10 @@ const CardContext = ({item}) => {
     modelParams,
     composition,
     sale,
-    favorite,
   } = item;
-  const dispatch = useDispatch();
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
-  const [isFavorite, setIsFavorite] = useState(favorite);
+  const [isFavorite, handleIsFavorite] = useChangeFavorite(user, _id);
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
@@ -67,10 +69,6 @@ const CardContext = ({item}) => {
       setShowCheckoutModal(true);
       hideBodyOverflow();
     }
-  };
-
-  const handleIsFavorite = () => {
-    setIsFavorite(!isFavorite);
   };
 
   const changeImage = (imgUrl) => {
