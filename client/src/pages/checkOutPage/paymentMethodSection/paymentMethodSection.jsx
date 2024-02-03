@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './paymentMethodSection.module.scss';
 import PropTypes from 'prop-types';
-import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
-import UserPaymentByCardForm
-  from '../../../../../components/form/formBlocks/userPaymentByCardForm/userPaymentByCardForm';
 import {useDispatch, useSelector} from 'react-redux';
-import {getPaymentMethod, setPaymentMethod} from '../../../../../store/ordersSlice';
+import {getPaymentMethod, setPaymentMethod} from '../../../store/ordersSlice';
+import UserPaymentByCardForm from '../../../components/form/formBlocks/userPaymentByCardForm/userPaymentByCardForm';
+import RadioButtonCheckedIcon from '../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import RadioButtonEmptyIcon from '../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 
 const PaymentMethodSection = ({formik}) => {
   const dispatch = useDispatch();
