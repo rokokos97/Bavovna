@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './npWarehouseDeliveryFormCheckout.module.scss';
-import SelectField from '../../../../../../components/form/formFields/selectField/selectField';
 import {useSelector} from 'react-redux';
-import {getCitiesList} from '../../../../../../store/citiesSlice';
 import PropTypes from 'prop-types';
+import {getCitiesList} from '../../../../../../../store/citiesSlice';
+import SelectField from '../../../../../../../components/form/formFields/selectField/selectField';
 
 const NpWarehouseDeliveryFormCheckout = ({formik, handleCityChange, handleWarehouseChange, warehousesList}) => {
   const citiesList = useSelector(getCitiesList());

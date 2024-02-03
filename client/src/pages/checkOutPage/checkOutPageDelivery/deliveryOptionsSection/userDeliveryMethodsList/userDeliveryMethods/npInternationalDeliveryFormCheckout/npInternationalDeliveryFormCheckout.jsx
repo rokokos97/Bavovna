@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './npInternationalDeliveryFormCheckout.module.scss';
-import TextAreaField from '../../../../../../components/form/formFields/textAreaField/textAreaField';
 import PropTypes from 'prop-types';
+import TextAreaField from '../../../../../../../components/form/formFields/textAreaField/textAreaField';
 const NpInternationalDeliveryFormCheckout = ({formik}) => {
   return (
     <div className={styles.npInternationalDeliveryFormCheckout} data-testid="NpInternationalDeliveryFormCheckout">

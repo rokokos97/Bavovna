@@ -1,12 +1,10 @@
 import React, {useEffect} from 'react';
 import styles from './checkOutPageDelivery.module.scss';
-
 import {useSelector} from 'react-redux';
 import {getCart} from '../../../store/cartSlice';
 import {useNavigate} from 'react-router-dom';
-import DeliveryMethodsSection from './checkOutUserDeliveryBlock/deliveryMethodsSection/deliveryMethodsSection';
-import deliveryMethodsList from '../../../utils/deliveryMethodsList';
 import CheckOutShoppingCartBlock from '../ShoppingCartBlock/checkOutShoppingCartBlock';
+import DeliveryOptionsSection from './deliveryOptionsSection/deliveryOptionsSection';
 const CheckOutPageDelivery = () => {
   const cart = useSelector(getCart);
   const navigate = useNavigate();
@@ -17,7 +15,7 @@ const CheckOutPageDelivery = () => {
   }, [cart]);
   return (
     <div className={styles.checkOutPage} data-testid="CheckOutPageDelivery">
-      <DeliveryMethodsSection deliveryMethods={deliveryMethodsList[1]}/>
+      <DeliveryOptionsSection/>
       <CheckOutShoppingCartBlock/>
     </div>
   );

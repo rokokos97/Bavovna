@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './npHomeDeliveryFormCheckout.module.scss';
 import PropTypes from 'prop-types';
-import SelectField from '../../../../../../components/form/formFields/selectField/selectField';
-import TextField from '../../../../../../components/form/formFields/textField/textField';
 import {useSelector} from 'react-redux';
-import {getCitiesList} from '../../../../../../store/citiesSlice';
+import {getCitiesList} from '../../../../../../../store/citiesSlice';
+import SelectField from '../../../../../../../components/form/formFields/selectField/selectField';
+import TextField from '../../../../../../../components/form/formFields/textField/textField';
+
 
 const NpHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
   const citiesList = useSelector(getCitiesList());

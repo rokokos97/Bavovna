@@ -1,4 +1,4 @@
-.deliveryMethodsSection {
+.deliveryOptionsSection {
   display: flex;
   flex-direction: column;
   row-gap: 2.4rem;
@@ -42,4 +42,4 @@
   fill: #c3c3c3;
 }
 
-/*# sourceMappingURL=deliveryMethodsSection.module.css.map */
+/*# sourceMappingURL=deliveryOptionsSection.module.css.map */
