@@ -37,6 +37,13 @@ export const validationSchemaRegisterForm = Yup.object().shape({
         ' letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long'),
 });
+export const validationSchemaLoginForm = Yup.object().shape({
+  password: Yup.string()
+      .required('Password is required'),
+  email: Yup.string()
+      .matches( /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Email format is not valid')
+      .required('Email is required'),
+});
 export const validationSchemaUserDataForm = Yup.object().shape({
   currentPassword: Yup.string(),
   newPassword: Yup.string()
@@ -58,13 +65,7 @@ export const validationSchemaUserDataForm = Yup.object().shape({
       .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
       .max(15, 'First name must be at most 15 characters long'),
 });
-export const validationSchemaLoginForm = Yup.object().shape({
-  password: Yup.string()
-      .required('Password is required'),
-  email: Yup.string()
-      .matches( /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Email format is not valid')
-      .required('Email is required'),
-});
+
 export const validationSchemaNPDeliveryWarehouse = Yup.object().shape({
   city: Yup.object().test('object-length', 'City is required', (obj) => {
     return Object.keys(obj).length === 2;
@@ -93,6 +94,14 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
       .max(5, 'Flat number must be at most 5 characters long')
       .matches(/^[0-9A-Za-z]+S?$/, 'Flat number must consist only numbers and latin letters'),
 });
+export const validationSchemaNPDeliveryInternational = Yup.object().shape({
+  intDeliveryAddress: Yup.string()
+      .matches(/^[a-zA-Z0-9.,/ ]*$/, 'Address must consist only numbers and latin letters')
+      .min(40, 'Address must be at least 40 characters long')
+      .max(100, 'Address must be at most 100 characters long')
+      .required('Address is required'),
+});
+
 export const validationSchemaPromoCode = Yup.object().shape({
   promoCode: Yup.string()
       .min(5, 'Promo code must be at least 5 character long')

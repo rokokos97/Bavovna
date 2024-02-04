@@ -63,6 +63,7 @@ const deliveryOptionsSection = () => {
         }
       });
       newValues.deliveryMethod = userCurrentDeliveryMethod;
+      newValues.deliveryPrice = deliveryMethodsList[2][userCurrentDeliveryMethod].price;
       dispatch(setUserDeliveryInfo(newValues));
       navigate('/cart/checkoutPayment');
     },
@@ -95,6 +96,9 @@ const deliveryOptionsSection = () => {
       },
     });
   }, [userCurrentDeliveryMethod, formik.resetForm]);
+  useEffect(()=>{
+    dispatch(setDeliveryMethod('Nova post delivery to the post office'));
+  }, []);
   const deliveryOptionsList = [
     {
       id: '1',
