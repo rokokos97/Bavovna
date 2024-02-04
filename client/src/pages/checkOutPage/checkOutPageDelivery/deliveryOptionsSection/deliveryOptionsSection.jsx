@@ -54,18 +54,23 @@ const deliveryOptionsSection = () => {
   };
   const formik = useFormik({
     initialValues: initialValues,
-    validationSchema: validationSchema(userCurrentDeliveryMethod),
+    validationSchema: userCurrentDeliveryOption !== 'saved address'? validationSchema(userCurrentDeliveryMethod): null,
     onSubmit: (values) => {
-      const newValues = {};
-      Object.keys(values).forEach((key)=> {
-        if (Object.keys(values[key]).length !==0) {
-          newValues[key] = values[key];
-        }
-      });
-      newValues.deliveryMethod = userCurrentDeliveryMethod;
-      newValues.deliveryPrice = deliveryMethodsList[2][userCurrentDeliveryMethod].price;
-      dispatch(setUserDeliveryInfo(newValues));
-      navigate('/cart/checkoutPayment');
+      if (userCurrentDeliveryOption === 'new address') {
+        const newValues = {};
+        Object.keys(values).forEach((key)=> {
+          if (Object.keys(values[key]).length !==0) {
+            newValues[key] = values[key];
+          }
+        });
+        newValues.deliveryMethod = userCurrentDeliveryMethod;
+        newValues.deliveryPrice = deliveryMethodsList[2][userCurrentDeliveryMethod].price;
+        dispatch(setUserDeliveryInfo(newValues));
+        navigate('/cart/checkoutPayment');
+      } else {
+        dispatch(setUserDeliveryInfo(user.deliveryAddress.find((address)=> address._id === user.currentDeliveryAddress)));
+        navigate('/cart/checkoutPayment');
+      }
     },
   });
   const handleCityChange = (value) => {
@@ -158,7 +163,7 @@ const deliveryOptionsSection = () => {
           <button
             className={styles.buttonRight}
             type='submit'
-            disabled={!formik.isValid || !formik.dirty}
+            disabled={userCurrentDeliveryOption === 'new address'?!formik.isValid || !formik.dirty:false}
           >
             <span>
                 next step
