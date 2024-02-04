@@ -132,7 +132,7 @@
 }
 .button:disabled {
   border-color: #868686;
-  background: #f5f5f5;
+  background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
@@ -157,6 +157,12 @@
 }
 .button:active::after {
   border: 1px solid #5a9b83;
+}
+
+.navigationButtonsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .buttonLeft {
@@ -227,7 +233,7 @@
 }
 .buttonLeft:disabled {
   border-color: #868686;
-  background: #f5f5f5;
+  background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
@@ -346,7 +352,7 @@
 }
 .buttonRight:disabled {
   border-color: #868686;
-  background: #f5f5f5;
+  background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }

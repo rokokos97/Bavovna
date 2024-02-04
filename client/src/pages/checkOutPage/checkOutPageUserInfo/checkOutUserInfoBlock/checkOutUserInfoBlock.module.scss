@@ -74,6 +74,11 @@
   @include button($large);
   @include buttonBlack();
 }
+.navigationButtonsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .buttonLeft {
   @include button($small);
   @include buttonTransparent();

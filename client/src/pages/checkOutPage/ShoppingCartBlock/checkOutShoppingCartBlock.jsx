@@ -83,7 +83,7 @@ const CheckOutShoppingCartBlock = () => {
       </div>
       <button
         type='submit'
-        //        disabled={!formik.dirty || !formik.isValid}
+        disabled={true}
         className={styles.button}
       >
         <span>

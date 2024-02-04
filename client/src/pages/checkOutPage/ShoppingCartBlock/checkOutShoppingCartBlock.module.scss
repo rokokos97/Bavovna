@@ -21,7 +21,7 @@
 .form {
   display: flex;
   flex-direction: row;
-  gap: 2.4rem
+  align-items: flex-end;
 }
 .arrowButton {
   @include button($extra-small);
@@ -47,6 +47,7 @@
   @include fonts($body-3);
 }
 .button {
-  @include button($medium);
+  margin-inline: auto;
+  @include button(41.1rem);
   @include buttonBlack();
 }
