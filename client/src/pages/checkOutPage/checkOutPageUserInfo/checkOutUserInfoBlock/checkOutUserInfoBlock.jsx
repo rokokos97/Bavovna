@@ -56,6 +56,7 @@ const CheckOutUserInfoBlock = () => {
       });
     }
   }, [user]);
+  console.log(userCurrentDetails);
   return (
     <div className={styles.checkOutUserInfoBlock}>
       <p className={styles.title}>Contact details</p>
@@ -80,7 +81,7 @@ const CheckOutUserInfoBlock = () => {
           </div>
         </div>)}
       </div>
-      {userCurrentDetails === '2' && userCurrentDetailsList[0].value}
+      {userCurrentDetails === '2' && userCurrentDetailsList[1].value}
       <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
         {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
         <div className={styles.navigationButtonsSection}>

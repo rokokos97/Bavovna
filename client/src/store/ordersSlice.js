@@ -9,8 +9,10 @@ const ordersSlice = createSlice({
     shippingPrice: 2,
     promoCodeSale: null,
     userInfo: {},
-    deliveryOption: '1',
-    deliveryMethod: '1',
+    userDeliveryInfo: {},
+    userPaymentInfo: {},
+    deliveryOption: 'new address',
+    deliveryMethod: 'Nova poshta delivery to the post office',
     paymentMethod: '1',
     isLoading: false,
     error: null,
@@ -41,6 +43,9 @@ const ordersSlice = createSlice({
     },
     setUserInfo: (state, action) => {
       state.userInfo = action.payload;
+    },
+    setUserDeliveryInfo: (state, action) => {
+      state.userDeliveryInfo = action.payload;
     },
     setDeliveryOption: (state, action) => {
       state.deliveryOption = action.payload;
@@ -88,6 +93,7 @@ export const changeDeliveryOption = (option) => async (dispatch) => {
 export const getOrders = () => (state) => state.orders.entities;
 export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
 export const getDeliveryOption = () => (state)=> state.orders.deliveryOption;
+export const getDeliveryMethod = () => (state)=> state.orders.deliveryMethod;
 export const getShippingPrice = () => (state) => state.orders.shippingPrice;
 export const getPaymentMethod = () => (state) => state.orders.paymentMethod;
 export const getPromoCodeSale = () => (state) => state.orders.promoCodeSale;
@@ -96,6 +102,7 @@ export const {
 //  ordersRequested,
 //  ordersReceived,
 //  ordersRequestFailed,
+  setUserDeliveryInfo,
   setUserInfo,
   setPromoCodeSale,
   setPaymentMethod,

@@ -54,3 +54,16 @@
     }
   }
 }
+.navigationButtonsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttonLeft {
+  @include button($small);
+  @include buttonTransparent();
+}
+.buttonRight {
+  @include button($small);
+  @include buttonTransparent();
+}

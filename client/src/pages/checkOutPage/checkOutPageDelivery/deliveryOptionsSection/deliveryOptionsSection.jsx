@@ -1,23 +1,111 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './deliveryOptionsSection.module.scss';
 import {useDispatch, useSelector} from 'react-redux';
-import {getIsLoggedIn} from '../../../../store/userSlice';
-import {getDeliveryOption, setDeliveryOption} from '../../../../store/ordersSlice';
+import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
+import {
+  getDeliveryMethod,
+  getDeliveryOption,
+  setDeliveryMethod,
+  setDeliveryOption, setUserDeliveryInfo,
+} from '../../../../store/ordersSlice';
 import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/userDeliveryAddressList/userDeliveryAddressList';
 import UserDeliveryMethodsList from './userDeliveryMethodsList/userDeliveryMethodsList';
+import LeftArrowIcon from '../../../../components/svg/leftArrowIcon/leftArrowIcon';
+import RightArrowIcon from '../../../../components/svg/rightArrowIcon/rightArrowIcon';
+import {useFormik} from 'formik';
+import npService from '../../../../services/np.service';
+import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
+import {
+  validationSchemaNPDeliveryAddress, validationSchemaNPDeliveryInternational,
+  validationSchemaNPDeliveryWarehouse,
+} from '../../../../utils/validationSchema';
+import {useNavigate} from 'react-router-dom';
 const deliveryOptionsSection = () => {
+  const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
+  const user = useSelector(getUser);
   const userCurrentDeliveryOption = useSelector(getDeliveryOption());
+  const userCurrentDeliveryMethod = useSelector(getDeliveryMethod());
   const dispatch = useDispatch();
-
+  const [selectedCity, setSelectedCity] = useState();
+  const [warehousesList, setWarehousesList] = useState([]);
+  const initialValues= {
+    city: {},
+    warehouse: {},
+    street: '',
+    houseNumber: '',
+    flatNumber: '',
+    intDeliveryAddress: '',
+  };
+  const validationSchema = (deliveryMethod) => {
+    switch (deliveryMethod) {
+      case 'Nova post delivery to the post office':
+        return validationSchemaNPDeliveryWarehouse;
+      case 'Nova post delivery to the address':
+        return validationSchemaNPDeliveryAddress;
+      case 'International delivery':
+        return validationSchemaNPDeliveryInternational;
+      default:
+        return validationSchemaNPDeliveryWarehouse;
+    }
+  };
+  const formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: validationSchema(userCurrentDeliveryMethod),
+    onSubmit: (values) => {
+      const newValues = {};
+      Object.keys(values).forEach((key)=> {
+        if (Object.keys(values[key]).length !==0) {
+          newValues[key] = values[key];
+        }
+      });
+      newValues.deliveryMethod = userCurrentDeliveryMethod;
+      dispatch(setUserDeliveryInfo(newValues));
+      navigate('/cart/checkoutPayment');
+    },
+  });
+  const handleCityChange = (value) => {
+    setSelectedCity(value);
+    formik.setFieldValue('city', value);
+  };
+  const handleWarehouseChange = (value) => {
+    formik.setFieldValue('warehouse', value);
+  };
+  const selectedValue = (id) => {
+    dispatch(setDeliveryMethod(deliveryMethodsList[1][id].label));
+  };
+  useEffect(()=>{
+    if (selectedCity) {
+      npService.post({cityRef: selectedCity?.value}).then(async (data)=> {
+        setWarehousesList(await data);
+      });
+    }
+  }, [selectedCity]);
+  useEffect(()=>{
+    formik.resetForm({
+      values: {
+        city: {},
+        warehouse: {},
+        street: '',
+        houseNumber: '',
+        flatNumber: '',
+      },
+    });
+  }, [userCurrentDeliveryMethod, formik.resetForm]);
   const deliveryOptionsList = [
     {
       id: '1',
       label: 'new address',
-      value: <UserDeliveryMethodsList/>,
+      value: <UserDeliveryMethodsList
+        formik={formik}
+        warehouseList={warehousesList}
+        selectedValue={selectedValue}
+        handleCityChange={handleCityChange}
+        handleWarehouseChange={handleWarehouseChange}
+      />,
     },
     {
       id: '2',
@@ -35,10 +123,10 @@ const deliveryOptionsSection = () => {
             <button
               className={styles.radioButton}
               type='button'
-              disabled={!isLoggedIn || user.deliveryAddress.length === 0}
-              onClick = {()=> dispatch(setDeliveryOption(method.id))}
+              disabled={!isLoggedIn || user?.deliveryAddress?.length === 0}
+              onClick = {()=> dispatch(setDeliveryOption(method.label))}
             >
-              {userCurrentDeliveryOption === method.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+              {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
             <label
               className={styles.label}
@@ -48,7 +136,33 @@ const deliveryOptionsSection = () => {
           </div>
         </div>)}
       </div>
-      {deliveryOptionsList.map((method)=>userCurrentDeliveryOption === method.id ? <div key={method.id}>{method.value}</div> : null)}
+      <form
+        onSubmit={formik.handleSubmit}
+      >
+        {deliveryOptionsList.map((method)=>userCurrentDeliveryOption === method.label ? <div key={method.id}>{method.value}</div> : null)}
+        <div className={styles.navigationButtonsSection}>
+          <button
+            type='button'
+            onClick={()=> navigate(-1) }
+            className={styles.buttonLeft}
+          >
+            <LeftArrowIcon/>
+            <span>
+                go back
+            </span>
+          </button>
+          <button
+            className={styles.buttonRight}
+            type='submit'
+            disabled={!formik.isValid || !formik.dirty}
+          >
+            <span>
+                next step
+            </span>
+            <RightArrowIcon/>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

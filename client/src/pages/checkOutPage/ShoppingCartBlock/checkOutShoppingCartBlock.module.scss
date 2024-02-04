@@ -47,7 +47,7 @@
   @include fonts($body-3);
 }
 .button {
-  margin-inline: auto;
+  //margin-inline: auto;
   @include button(41.1rem);
   @include buttonBlack();
 }

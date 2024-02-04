@@ -9,13 +9,13 @@ const deliveryMethodsList = {
     {
       1: {
         _id: '1',
-        label: 'Nova poshta delivery to the post office',
+        label: 'Nova post delivery to the post office',
         value: <NovaPoshtaWarehouseForm isButton={true}/>,
         price: 2,
       },
       2: {
         _id: '2',
-        label: 'Nova poshta delivery to the address',
+        label: 'Nova post delivery to the address',
         value: <NovaPoshtaAddressDeliveryForm isButton={true}/>,
         price: 3,
       },
@@ -29,13 +29,13 @@ const deliveryMethodsList = {
   2: {
     1: {
       _id: '1',
-      label: 'Nova poshta delivery to the post office',
+      label: 'Nova post delivery to the post office',
       value: <NovaPoshtaWarehouseForm isButton={false}/>,
       price: 2,
     },
     2: {
       _id: '2',
-      label: 'Nova poshta delivery to the address',
+      label: 'Nova post delivery to the address',
       value: <NovaPoshtaAddressDeliveryForm isButton={false}/>,
       price: 3,
     },

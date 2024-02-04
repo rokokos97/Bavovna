@@ -181,7 +181,6 @@
 }
 
 .button {
-  margin-inline: auto;
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;

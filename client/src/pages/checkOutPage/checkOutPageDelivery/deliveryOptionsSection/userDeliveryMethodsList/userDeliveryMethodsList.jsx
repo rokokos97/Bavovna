@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './userDeliveryMethodsList.module.scss';
 import ListWithRadioButtons from '../../../../../components/listWithRadioButtons/listWithRadioButtons';
 import NpWarehouseDeliveryFormCheckout
@@ -6,41 +6,16 @@ import NpWarehouseDeliveryFormCheckout
 import NpHomeDeliveryFormCheckout from './userDeliveryMethods/npHomeDeliveryFormCheckout/npHomeDeliveryFormCheckout';
 import NpInternationalDeliveryFormCheckout
   from './userDeliveryMethods/npInternationalDeliveryFormCheckout/npInternationalDeliveryFormCheckout';
-import {useFormik} from 'formik';
-import npService from '../../../../../services/np.service';
+import PropTypes from 'prop-types';
 
-const UserDeliveryMethodsList = () => {
-  const [selectedCity, setSelectedCity] = useState();
-  const [warehousesList, setWarehousesList] = useState([]);
-  const formik = useFormik({
-    initialValues: {
-      city: {},
-      warehouse: {},
-      street: '',
-      houseNumber: '',
-      flatNumber: '',
-      intDeliveryAddress: '',
-      deliveryMethod: '',
-    },
-  });
-  const handleCityChange = (value) => {
-    setSelectedCity(value);
-    formik.setFieldValue('city', value);
-  };
-  const handleWarehouseChange = (value) => {
-    formik.setFieldValue('warehouse', value);
-  };
-  const selectedValue = (id) => {
-    formik.setFieldValue('deliveryMethod', deliveryMethods[id].label);
-    console.log('formik values', formik.values);
-  };
+const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selectedValue, warehouseList, formik}) => {
   const deliveryMethods = {
     1: {
       _id: '1',
       label: 'Nova post delivery to the post office',
       value: <NpWarehouseDeliveryFormCheckout
         formik={formik}
-        warehousesList={warehousesList}
+        warehousesList={warehouseList}
         handleCityChange={handleCityChange}
         handleWarehouseChange={handleWarehouseChange}
       />,
@@ -61,13 +36,6 @@ const UserDeliveryMethodsList = () => {
       price: 20,
     },
   };
-  useEffect(()=>{
-    if (selectedCity) {
-      npService.post({cityRef: selectedCity.value}).then(async (data)=> {
-        setWarehousesList(await data);
-      });
-    }
-  }, [selectedCity]);
   return (
     <div className={styles.userDeliveryMethodsList} data-testid="UserDeliveryMethodsList">
       <ListWithRadioButtons
@@ -79,5 +47,11 @@ const UserDeliveryMethodsList = () => {
     </div>
   );
 };
-
+UserDeliveryMethodsList.propTypes = {
+  handleCityChange: PropTypes.func,
+  handleWarehouseChange: PropTypes.func,
+  selectedValue: PropTypes.func,
+  warehouseList: PropTypes.array,
+  formik: PropTypes.object,
+};
 export default UserDeliveryMethodsList;
