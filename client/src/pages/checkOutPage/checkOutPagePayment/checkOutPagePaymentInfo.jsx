@@ -23,6 +23,7 @@ const CheckOutPagePaymentInfo = () => {
   const userInfo = useSelector(getUserInfo());
   const deliveryMethod = useSelector(getDeliveryMethod());
   const deliveryInfo = useSelector(getDeliveryInfo());
+  const navigate = useNavigate();
   const orderAmount = useSelector(getOrderAmount());
   const dispatch = useDispatch();
   const promoCodeDiscount = useSelector(getPromoCodeSale());
@@ -30,7 +31,7 @@ const CheckOutPagePaymentInfo = () => {
   const cart = useSelector(getNormalizedCart);
   const navigation = useNavigate();
   const numbers = '0123456789';
-  const generateNumericId = customAlphabet(numbers, 15);
+  const generateId = customAlphabet(numbers, 15);
   const formik = useFormik({
     initialValues: {
       cardNumber: '',
@@ -48,7 +49,7 @@ const CheckOutPagePaymentInfo = () => {
         items: cart,
         userInfo: userInfo,
         orderAmount: orderAmount,
-        _id: generateNumericId(),
+        _id: generateId(),
         date: formatDate(new Date()),
         paymentStatus: currentPaymentMethod ==='Pay by card'? 'paid': 'pending payment',
         deliveryStatus: 'pending',
@@ -63,8 +64,9 @@ const CheckOutPagePaymentInfo = () => {
       dispatch(addOrder(newOrder));
       await dispatch(clearCart());
       clearCartSessionStorage();
+      sessionStorage.addItem('orders' );
       dispatch(setOrderToInitialState());
-      navigation('/orderSuccess');
+      navigation('/orderSuccess/');
     }});
   function formatDate(date) {
     const day = date.getDate().toString().padStart(2, '0');
@@ -85,7 +87,14 @@ const CheckOutPagePaymentInfo = () => {
       cardHolderName: true,
     });
   }, [currentPaymentMethod, formik.resetForm]);
-
+  useEffect(() => {
+    if (cart.length === 0) {
+      navigate('/');
+    }
+    if (!userInfo.firstName || !deliveryInfo.deliveryMethod) {
+      navigate('/cart');
+    }
+  }, [cart]);
   return (
     <div className={styles.checkOutPagePaymentInfo} data-testid="CheckOutPagePaymentInfo">
       <PaymentMethodSection formik={formik}/>
