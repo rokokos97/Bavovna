@@ -64,9 +64,8 @@ const CheckOutPagePaymentInfo = () => {
       dispatch(addOrder(newOrder));
       await dispatch(clearCart());
       clearCartSessionStorage();
-      sessionStorage.addItem('orders' );
       dispatch(setOrderToInitialState());
-      navigation('/orderSuccess/');
+      navigation('/orderSuccess');
     }});
   function formatDate(date) {
     const day = date.getDate().toString().padStart(2, '0');
