@@ -2,18 +2,26 @@ import React from 'react';
 import styles from './productCardInCart.module.scss';
 import DeleteIcon from '../svg/deleteIcon/deleteIcon';
 import PropTypes from 'prop-types';
-import {useDispatch} from 'react-redux';
-import {addItemToCart, removeItemFromCart, removeOneItemFromCart} from '../../store/cartSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {addItemToCart, getCart, removeItemFromCart, removeOneItemFromCart} from '../../store/cartSlice';
+import {clearCartSessionStorage} from '../../services/sessionStorage.service';
 
 const ProductCardInCart = ({item, type}) => {
   const dispatch = useDispatch();
+  const cart = useSelector(getCart);
   const handleItemDelete = () => {
+    if (cart.length === 1) {
+      clearCartSessionStorage();
+    }
     dispatch(removeItemFromCart(item.itemIdentifier));
   };
   const handleQuantityAdd = () => {
     dispatch(addItemToCart({...item, itemQuantity: 1}));
   };
   const handleQuantityLess = () => {
+    if (cart.length === 1) {
+      clearCartSessionStorage();
+    }
     dispatch(removeOneItemFromCart(item.itemIdentifier));
   };
 
