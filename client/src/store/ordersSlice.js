@@ -65,7 +65,6 @@ const ordersSlice = createSlice({
       state.shippingPrice = action.payload;
     },
     setOrderToInitialState: (state) => {
-      state.entities = [];
       state.orderAmount = 0;
       state.shippingPrice = 2;
       state.promoCodeSale = null;
@@ -74,7 +73,6 @@ const ordersSlice = createSlice({
       state.deliveryOption = 'new address';
       state.deliveryMethod = 'Nova poshta delivery to the post office';
       state.paymentMethod = 'Pay by card';
-      state.isLoading = false;
       state.error = null;
     },
   },
