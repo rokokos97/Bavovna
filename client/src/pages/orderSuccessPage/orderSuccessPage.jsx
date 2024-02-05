@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './orderSuccessPage.module.scss';
 import {useSelector} from 'react-redux';
 import {getOrders, getOrdersLoadingStatus} from '../../store/ordersSlice';
@@ -11,6 +11,11 @@ const OrderSuccessPage = () => {
   const orders = useSelector(getOrders());
   const navigate = useNavigate();
   const user = useSelector(getUser);
+  useEffect(() => {
+    if (orders.length === 0) {
+      navigate('/shop');
+    }
+  }, []);
   return (!isLoadingOrders &&
     <div className={styles.orderCompletePage} data-testid="OrderCompletePage">
       <div className={styles.titleBlock}>
@@ -27,7 +32,7 @@ const OrderSuccessPage = () => {
       </div>
       <div className={styles.buttonsBlock}>
         <button
-          onClick={()=> navigate('/catalogue')}
+          onClick={()=> navigate('/shop')}
         >
           <span>
             &lt;- go to shop
