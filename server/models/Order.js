@@ -1,20 +1,18 @@
 const {Schema, model} = require('mongoose');
 
 const schema = new Schema({
+  deliveryInfo: {type: Object},
+  paymentMethod: {type: String},
+  promoCodeDiscount: {type: Number},
   items: [{
     type: String,
   }],
-  userData: {type: Object},
+  userInfo: {type: Object},
   orderAmount: {type: Number},
-  shippingPrice: {type: Number},
-  deliveryOption: {type: String},
-  deliveryMethod: {type: String},
   _id: {type: String},
   date: {type: String},
+  paymentStatus: {type: String},
   shippingStatus: {
-    type: String,
-  },
-  paymentStatus: {
     type: String,
   },
 }, {
