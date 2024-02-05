@@ -12,7 +12,6 @@ import RightArrowIcon from '../../../components/svg/rightArrowIcon/rightArrowIco
 
 
 const NewArrivalsBlock = () => {
-  // Створюємо ref для зберігання swiper
   const swiperRef = useRef();
   const isItemsLoading = useSelector(getItemsLoadingStatus());
   const items = useSelector(getItems());
@@ -27,19 +26,20 @@ const NewArrivalsBlock = () => {
             new arrivals
         </span>
         <div className={styles.newArrivalsBlock__arrows}>
-          {/* Кнопка для переходу до попереднього слайда */}
-          <button onClick={() => swiperRef.current?.slidePrev()}>
+          <button
+            className={styles.button}
+            onClick={() => swiperRef.current?.slidePrev()}>
             <LeftArrowIcon />
           </button>
-          {/* Кнопка переходу до наступного слайда */}
-          <button onClick={() => swiperRef.current?.slideNext()}>
+          <button
+            className={styles.button}
+            onClick={() => swiperRef.current?.slideNext()}>
             <RightArrowIcon />
           </button>
         </div>
       </div>
       {!isItemsLoading && newArrivalItems &&
             <div className={styles.newArrivalsBlock__box}>
-              {/* Swiper для відображення елементів */}
               <Swiper
                 onSwiper={(swiper) => swiperRef.current = swiper}
                 slidesPerView={3}

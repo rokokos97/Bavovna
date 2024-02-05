@@ -121,7 +121,7 @@ const CreatorsPage = () => {
     <div className={styles.creatorsPage} data-testid="CreatorsPage">
       <p className={styles.navigationBlock}>
         <span>Home</span>
-        <span>/</span>
+        <span> / </span>
         <span>Creators</span>
       </p>
       <p className={styles.title}>Contact us</p>

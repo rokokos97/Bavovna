@@ -5,7 +5,8 @@
   align-items: flex-start;
   gap: 0.8rem;
 }
-.categoryPreviewCard p {
+.categoryPreviewCard .title {
+  text-transform: capitalize;
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;

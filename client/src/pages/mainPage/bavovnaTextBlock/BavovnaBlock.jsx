@@ -6,7 +6,10 @@ const BavovnaBlock = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.bavovnaBlock} data-testid="BavovnaBlock">
-      <span className={styles.title}>BAVOVNA IS A UKRAINIAN BRAND of sustainable clothes</span>
+      <div className={styles.title}>
+        <p>BAVOVNA IS A UKRAINIAN BRAND of</p>
+        <p>sustainable clothes</p>
+      </div>
       <span className={styles.content}>
         We are dedicated to bringing you a wide range of sustainable
         products that help reduce your ecological footprint without compromising on quality or style.

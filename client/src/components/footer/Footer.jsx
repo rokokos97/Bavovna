@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
-import InstagrammIcon from '../svg/instagrammIcon/instagrammIcon';
+import InstagramIcon from '../svg/instagrammIcon/instagrammIcon';
 import FacebookIcon from '../svg/facebookIcon/facebookIcon';
 import TiktokIcon from '../svg/tiktokIcon/tiktokIcon';
 import styles from './Footer.module.scss';
@@ -72,15 +72,15 @@ const Footer = () => {
               <LogoIcon />
             </button>
             <div className={styles.socialList}>
-              <Link to='/' className={styles.socialListItem}>
-                <InstagrammIcon />
-              </Link>
-              <Link to='/' className={styles.socialListItem}>
+              <a href='https://www.instagram.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
+                <InstagramIcon />
+              </a>
+              <a href='https://www.facebook.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
                 <FacebookIcon />
-              </Link>
-              <Link to='/' className={styles.socialListItem}>
+              </a>
+              <a href='https://www.tiktok.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
                 <TiktokIcon />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

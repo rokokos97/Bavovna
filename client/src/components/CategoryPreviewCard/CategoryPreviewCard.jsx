@@ -14,7 +14,7 @@ const CategoryPreviewCard = ({item}) => {
       onClick={()=> navigate(item.status ? `/shop?status=${item.status}`: `/shop?status=${item._id}`)}
     >
       <img src={`${config.apiEndpoint}${item.image}`} alt="category cover image"/>
-      <p>{item.name}</p>
+      <p className={styles.title}>{item.name}</p>
     </div>
   );
 };

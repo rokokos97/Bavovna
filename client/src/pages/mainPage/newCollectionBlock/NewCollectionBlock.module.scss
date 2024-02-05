@@ -33,7 +33,7 @@
   text-align: start;
 }
 .button {
-  @include button($medium);
+  @include button(19.5rem);
   @include buttonBlack();
 }
 

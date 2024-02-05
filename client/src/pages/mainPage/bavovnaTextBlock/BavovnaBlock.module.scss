@@ -22,6 +22,6 @@
 }
 .button {
   margin: 0 auto;
-  border: 1px solid $black;
-  @include buttons(17.3rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  @include button(19.5rem);
+  @include buttonWhite();
 }
