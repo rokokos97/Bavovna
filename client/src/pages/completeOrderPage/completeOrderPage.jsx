@@ -40,30 +40,36 @@ const CompleteOrderPage = () => {
           <p>order amount</p>
           <p>{currentOrder.orderAmount} $</p>
         </div>
+        {currentOrder.promoCodeDiscount && <div className={styles.title}>
+          <p>Promo code discount</p>
+          <p>{`-${currentOrder.orderAmount * currentOrder.promoCodeDiscount} $`}</p>
+        </div>}
         <div className={styles.title}>
           <p>delivery</p>
-          <p>{currentOrder.shippingPrice} $</p>
+          <p>{currentOrder.deliveryInfo.deliveryPrice} $</p>
         </div>
         <div className={styles.totalPrice}>
           <p>total</p>
-          <p>{currentOrder.totalPrice+currentOrder.shippingPrice} $</p>
+          <p>{currentOrder.promoCodeDiscount?
+            currentOrder.orderAmount-(currentOrder.orderAmount * currentOrder.promoCodeDiscount)+currentOrder.deliveryInfo.deliveryPrice:
+            currentOrder.orderAmount+currentOrder.deliveryInfo.deliveryPrice} $</p>
         </div>
         <div className={styles.deliveryInfoBlock}>
           <div className={styles.infoSection}>
             <p className={styles.title}>delivery method</p>
-            <p>{currentOrder.deliveryMethods}</p>
+            <p>{currentOrder.deliveryInfo.deliveryMethod}</p>
           </div>
           <div
             className={styles.infoSection}>
             <p className={styles.title}>selection point</p>
-            <p>{currentOrder.deliveryAddress}</p>
+            <p>{currentOrder.deliveryInfo.label}</p>
           </div>
           <div className={styles.infoSection}>
             <p className={styles.title}>contact details</p>
             <div>
-              <p>{currentOrder.userData.firstName} {currentOrder.userData.lastName}</p>
-              <p>+{currentOrder.userData.phoneNumber}</p>
-              <p>{currentOrder.userData.email}</p>
+              <p>{currentOrder.userInfo.firstName} {currentOrder.userInfo.lastName}</p>
+              <p>+{currentOrder.userInfo.phoneNumber}</p>
+              <p>{currentOrder.userInfo.email}</p>
             </div>
           </div>
         </div>

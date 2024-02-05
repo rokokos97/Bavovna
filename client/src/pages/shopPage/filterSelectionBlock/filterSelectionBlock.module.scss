@@ -51,5 +51,5 @@
 .filterBtn {
   margin: 0 auto;
   border: 1px solid $black;
-  @include button(18.9rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  @include buttons(18.9rem, $white, $black, $transparent-30-a-05, $accent-a-3);
 }

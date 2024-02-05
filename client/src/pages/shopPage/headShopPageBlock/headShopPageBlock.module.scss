@@ -31,5 +31,5 @@
 }
 
 .heroBtn {
-  @include button(17.4rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include buttons(17.4rem, $black, $white, $accent-a-3, $accent-a-5);
 }

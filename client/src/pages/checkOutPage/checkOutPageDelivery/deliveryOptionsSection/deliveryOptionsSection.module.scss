@@ -1,0 +1,75 @@
+@import '../../../../styles/variables.module.scss';
+.deliveryOptionsSection {
+  box-sizing: border-box;
+  width: 52.1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+}
+.title {
+  @include fonts($headline-3);
+  text-align: start;
+}
+.radioBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.4rem;
+}
+.radioWrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+}
+.label {
+  display: flex;
+  flex-direction: row;
+  width: 19.3rem;
+  @include fonts($headline-9);
+  text-align: start;
+  word-wrap: inherit;
+  margin-left: 0.8rem;
+}
+.radioButton {
+  background: transparent;
+
+  &:hover {
+    div {
+      svg {
+        path {
+          fill: $accent-a-3
+        }
+      }
+    }
+  }
+  &:active {
+    div {
+      svg {
+        path {
+          fill: $accent-a-5
+        }
+      }
+    }
+  }
+  &:disabled {
+    div {
+      svg {
+        path {
+          fill: $gray-70;
+        }
+      }
+    }
+  }
+}
+.navigationButtonsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttonLeft {
+  @include button($small);
+  @include buttonTransparent();
+}
+.buttonRight {
+  @include button($small);
+  @include buttonTransparent();
+}

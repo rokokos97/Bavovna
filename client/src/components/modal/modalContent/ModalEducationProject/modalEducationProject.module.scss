@@ -18,7 +18,8 @@
   @include fonts($headline-3);
 }
 .button {
-  @include button(17rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button($small);
+  @include buttonBlack();
 }
 .block {
   display: flex;

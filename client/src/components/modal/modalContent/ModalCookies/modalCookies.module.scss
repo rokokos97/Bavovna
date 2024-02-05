@@ -22,5 +22,5 @@
   background: $gray-80;
 }
 .button {
-  @include button(19.5rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include buttons(19.5rem, $black, $white, $accent-a-3, $accent-a-5);
 }

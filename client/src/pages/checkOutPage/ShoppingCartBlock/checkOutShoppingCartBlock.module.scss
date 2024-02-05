@@ -1,0 +1,53 @@
+@import '../../../styles/variables.module.scss';
+.checkOutShoppingCartBlock {
+  width: 51.9rem;
+  height: min-content;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  background: $white;
+  box-sizing: border-box;
+}
+.titleBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.2rem;
+  @include fonts($headline-5);
+}
+.title {
+  @include fonts($headline-3);
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.arrowButton {
+  @include button($extra-small);
+  @include buttonTransparent();
+}
+.priceBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include fonts($headline-3);
+}
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include fonts($body-3);
+}
+.discount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $error;
+  @include fonts($body-3);
+}
+.button {
+  //margin-inline: auto;
+  @include button(41.1rem);
+  @include buttonBlack();
+}

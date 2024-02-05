@@ -15,11 +15,14 @@
 .blockLabel {
   @include fonts($headline-6);
   text-align: start;
-  margin-bottom: 1.8rem;
 };
 .column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.8rem;
   width: 30rem;
 }
 .button {
-  @include button(24rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button(19.3rem);
+  @include buttonBlack();
 }

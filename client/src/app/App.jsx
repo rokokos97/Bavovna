@@ -18,10 +18,12 @@ import Page404 from '../pages/page404/page404';
 import HelpPage from '../pages/helpPage/HelpPage';
 import UserPage from '../pages/userPage/userPage';
 import ShoppingCartPage from '../pages/shoppingCartPage/shoppingCartPage';
-import CheckOutPage from '../pages/checkOutPage/checkOutPage';
 import OrderSuccessPage from '../pages/orderSuccessPage/orderSuccessPage';
 import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
 import CreatorsPage from '../pages/creatorsPage/creatorsPage';
+import CheckOutPageUserInfo from '../pages/checkOutPage/checkOutPageUserInfo/checkOutPageUserInfo';
+import CheckOutPageDeliveryInfo from '../pages/checkOutPage/checkOutPageDelivery/checkOutPageDeliveryInfo';
+import CheckOutPagePaymentInfo from '../pages/checkOutPage/checkOutPagePayment/checkOutPagePaymentInfo';
 
 
 export const SearchContext = React.createContext();
@@ -48,7 +50,9 @@ function App() {
               <Route path='creators' element={<CreatorsPage />} />
               <Route path='shop' element={<ShopPage />} />
               <Route path='aboutus' element={<AboutUsPage />} />
-              <Route path='cart/checkout' element={<CheckOutPage />} />
+              <Route path='cart/checkoutUserInfo' element={<CheckOutPageUserInfo />} />
+              <Route path='cart/checkoutDelivery' element={<CheckOutPageDeliveryInfo />} />
+              <Route path='cart/checkoutPayment' element={<CheckOutPagePaymentInfo />} />
               <Route path='orderSuccess' element={<OrderSuccessPage />} />
               <Route path='cart' element={<ShoppingCartPage />} />
               <Route path='shop/:id' element={<Card />} />

@@ -9,7 +9,7 @@
   gap: 1.6rem;
 }
 .button {
-  @include button(41rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include buttons(41rem, $black, $white, $accent-a-3, $accent-a-5);
 }
 .socialButtonsBlock {
   display: flex;
@@ -26,5 +26,5 @@
   display: flex;
   gap: 1.2rem;
   border: 1px solid $black;
-  @include button(41rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  @include buttons(41rem, $white, $black, $transparent-30-a-05, $accent-a-3);
 }

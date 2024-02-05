@@ -2,6 +2,11 @@
 $headerHeight: 9rem;
 $max-width: 144rem;
 $form-width: 40.9rem;
+$extra-small: 6.4rem;
+$small: 19rem;
+$medium: 41.1rem;
+$large: 63rem;
+
 
 $white-color: #ffffff;
 $black-color: #040404;
@@ -219,7 +224,7 @@ $light-pink: #dfc5c5;
   letter-spacing: map-get($font-map, letter-spacing);
   text-transform: map-get($font-map, text-transform);
 }
-@mixin button ($width,$background-color,$text-color,$hover-color, $active-color ) {
+@mixin buttons($width,$background-color,$text-color,$hover-color, $active-color ) {
   display: flex;
   width: $width;
   height: 5.6rem;
@@ -294,6 +299,7 @@ $light-pink: #dfc5c5;
     }
   }
 }
+
 @mixin divider() {
   display: flex;
   justify-content: center;
@@ -367,5 +373,164 @@ $light-pink: #dfc5c5;
     text-align: start;
     padding: 1.2rem;
     color: $text-color;
+  }
+}
+
+@mixin button($width) {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: $width;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  span {
+    @include fonts($button);
+    text-align: center;
+    position: relative;
+    //z-index: 10;
+  }
+  &::before {
+    content: '';
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition:  300ms ease-in;
+    top: 0.4rem;
+    left: math.div($width, 2)-2.4rem;
+  }
+  &::after {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition:  300ms ease-in;
+    top: 2.5rem;
+    left: math.div($width, 2)-0.3rem;
+  }
+  &:hover::before {
+    content: '';
+    width: 1.1*$width;
+    height: 1.1*$width;
+    opacity: 1;
+    position: absolute;
+    top: (math.div(-1.1*$width, 2)+2.4rem);
+    left: -1rem;
+  }
+  &:active::after {
+    content: '';
+    width: 1.1*$width;
+    height: 1.1*$width;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: (math.div(-1.1*$width, 2)+2.4rem);
+    left: -1.1rem;
+  }
+  &:disabled {
+    border-color: $gray-40;
+    background: $gray-70;
+    pointer-events: none;
+    cursor: not-allowed;
+    span {
+      color: $gray-50;
+    }
+  }
+}
+@mixin buttonBlack {
+  background: $black;
+  span {
+    @include fonts($button);
+    color: $white;
+  }
+  &::before {
+    background: $accent-a-3;
+  }
+  &::after {
+    background: $accent-a-5;
+  }
+  &:hover::before {
+    background: $accent-a-3;
+  }
+  &:active::after {
+    border: 1px solid $accent-a-3;
+  }
+}
+@mixin buttonWhite {
+  background: $white;
+  border: 0.1rem solid $black;
+  span {
+    @include fonts($button);
+    color: $black;
+  }
+  &::before {
+    background: $transparent-30-a-05;
+  }
+  &::after {
+    background: $accent-a-05;
+  }
+  &:hover::before {
+    background: $transparent-30-a-05;
+  }
+  &:active::after {
+    border: 1px solid $transparent-30-a-05;
+  }
+}
+
+@mixin buttonTransparent {
+  background: transparent;
+  border: none;
+  svg {
+    path {
+      fill: $black;
+    }
+  }
+  span {
+    @include fonts($button);
+    color: $black;
+  }
+  &:hover {
+    svg {
+      path {
+        fill: $accent-a-4;
+      }
+    }
+    span {
+      @include fonts($button);
+      color: $accent-a-4;
+    }
+  }
+  &:active {
+    svg {
+      path {
+        fill: $accent-a-6;
+      }
+    }
+    span {
+      @include fonts($button);
+      color: $accent-a-6;
+    }
+  }
+  &:disabled {
+    background: transparent;
+    svg {
+      path {
+        fill: $gray-40;
+      }
+    }
+    span {
+      @include fonts($button);
+      color: $gray-40;
+    }
   }
 }

@@ -32,7 +32,7 @@
   text-wrap: none;
 }
 .button {
-  @include button(29.2rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  @include buttons(29.2rem, $white, $black, $transparent-30-a-05, $accent-a-3);
   border: 1px solid $black;
   display: flex;
   flex-direction: row;
