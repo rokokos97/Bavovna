@@ -23,6 +23,7 @@ import {
   validationSchemaNPDeliveryWarehouse,
 } from '../../../../utils/validationSchema';
 import {useNavigate} from 'react-router-dom';
+import createDeliveryLabel from '../../../../utils/createDeliveryLabel';
 const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -63,6 +64,7 @@ const deliveryOptionsSection = () => {
             newValues[key] = values[key];
           }
         });
+        newValues.label = createDeliveryLabel(newValues);
         newValues.deliveryMethod = userCurrentDeliveryMethod;
         newValues.deliveryPrice = deliveryMethodsList[2][userCurrentDeliveryMethod].price;
         dispatch(setUserDeliveryInfo(newValues));

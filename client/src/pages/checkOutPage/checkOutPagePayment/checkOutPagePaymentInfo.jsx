@@ -8,7 +8,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {
   addOrder,
   getDeliveryInfo,
-  getDeliveryMethod,
   getOrderAmount,
   getPaymentMethod, getPromoCodeSale, getUserInfo, setOrderToInitialState,
 } from '../../../store/ordersSlice';
@@ -21,7 +20,6 @@ import {useNavigate} from 'react-router-dom';
 const CheckOutPagePaymentInfo = () => {
   const currentPaymentMethod = useSelector(getPaymentMethod());
   const userInfo = useSelector(getUserInfo());
-  const deliveryMethod = useSelector(getDeliveryMethod());
   const deliveryInfo = useSelector(getDeliveryInfo());
   const navigate = useNavigate();
   const orderAmount = useSelector(getOrderAmount());
@@ -42,7 +40,6 @@ const CheckOutPagePaymentInfo = () => {
     validationSchema: currentPaymentMethod ==='Pay by card' ? validationSchemaCardPayment: null,
     onSubmit: async ()=> {
       const newOrder = {
-        deliveryMethod: deliveryMethod,
         deliveryInfo: deliveryInfo,
         paymentMethod: currentPaymentMethod,
         promoCodeDiscount: promoCodeDiscount,
