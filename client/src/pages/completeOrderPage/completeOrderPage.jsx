@@ -16,8 +16,6 @@ const CompleteOrderPage = () => {
       setCurrentOrder(user.orders.find((order)=> order._id ===id));
     }
   }, [user]);
-  //  const {orderAmount, shippingPrice, userData, deliveryMethods, deliveryAddress} = currentOrder;
-  //  const totalPrice = orderAmount + shippingPrice;
   return (user && currentOrder &&
     <div className={styles.completeOrderPage} data-testid="CompleteOrderPage">
       <div className={styles.titleBlock}>
