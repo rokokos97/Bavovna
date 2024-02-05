@@ -5,12 +5,18 @@ import TextField from '../../../components/form/formFields/textField/textField';
 import {useFormik} from 'formik';
 import CheckOutShoppingCartBlockItemsList
   from './checkOutShoppingCartBlockItemsList/checkOutShoppingCartBlockItemsList';
-import {getPromoCodeSale, getShippingPrice, setOrderAmount, setPromoCodeSale} from '../../../store/ordersSlice';
+import {
+  getPromoCodeSale,
+  getShippingPrice,
+  setOrderAmount,
+  setPromoCodeSale,
+} from '../../../store/ordersSlice';
 import RightArrowIcon from '../../../components/svg/rightArrowIcon/rightArrowIcon';
 import {validationSchemaPromoCode} from '../../../utils/validationSchema';
 import {getCartLength, getCartTotalPrice} from '../../../store/cartSlice';
+import PropTypes from 'prop-types';
 
-const CheckOutShoppingCartBlock = () => {
+const CheckOutShoppingCartBlock = ({formik}) => {
   const dispatch = useDispatch();
   const cartLength = useSelector(getCartLength);
   const itemPrice = useSelector(getCartTotalPrice);
@@ -82,8 +88,9 @@ const CheckOutShoppingCartBlock = () => {
         <p>{`${finalPrice} $`}</p>
       </div>
       <button
-        type='submit'
-        disabled={true}
+        type='button'
+        onClick={()=> formik.handleSubmit()}
+        disabled={!formik?.isValid}
         className={styles.button}
       >
         <span>
@@ -92,5 +99,8 @@ const CheckOutShoppingCartBlock = () => {
       </button>
     </div>
   );
+};
+CheckOutShoppingCartBlock.propTypes = {
+  formik: PropTypes.object,
 };
 export default CheckOutShoppingCartBlock;

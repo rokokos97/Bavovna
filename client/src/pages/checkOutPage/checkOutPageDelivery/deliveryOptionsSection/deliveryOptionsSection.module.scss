@@ -1,8 +1,14 @@
 @import '../../../../styles/variables.module.scss';
 .deliveryOptionsSection {
+  box-sizing: border-box;
+  width: 52.1rem;
   display: flex;
   flex-direction: column;
-  row-gap: 2.4rem;
+  row-gap: 3.2rem;
+}
+.title {
+  @include fonts($headline-3);
+  text-align: start;
 }
 .radioBlock {
   display: flex;

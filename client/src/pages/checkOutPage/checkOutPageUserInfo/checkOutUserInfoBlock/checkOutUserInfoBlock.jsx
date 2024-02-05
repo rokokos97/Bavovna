@@ -29,7 +29,6 @@ const CheckOutUserInfoBlock = () => {
     },
     validationSchema: validationSchemaCheckOutUserInfo,
     onSubmit: async (values)=> {
-      console.log(values);
       dispatch(setUserInfo(values));
       navigate('/cart/checkoutDelivery');
     },
@@ -56,7 +55,6 @@ const CheckOutUserInfoBlock = () => {
       });
     }
   }, [user]);
-  console.log(userCurrentDetails);
   return (
     <div className={styles.checkOutUserInfoBlock}>
       <p className={styles.title}>Contact details</p>

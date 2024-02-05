@@ -124,6 +124,7 @@ const deliveryOptionsSection = () => {
   ];
   return (
     <div className={styles.deliveryOptionsSection} data-testid="deliveryOptionsSection">
+      <p className={styles.title}>Delivery</p>
       <div className={styles.radioBlock}>
         {deliveryOptionsList.map((method, index)=> <div key={index}>
           <div

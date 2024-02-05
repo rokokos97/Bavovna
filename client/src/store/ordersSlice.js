@@ -10,10 +10,9 @@ const ordersSlice = createSlice({
     promoCodeSale: null,
     userInfo: {},
     userDeliveryInfo: {},
-    userPaymentInfo: {},
     deliveryOption: 'new address',
     deliveryMethod: 'Nova poshta delivery to the post office',
-    paymentMethod: '1',
+    paymentMethod: 'Pay by card',
     isLoading: false,
     error: null,
   },
@@ -65,6 +64,19 @@ const ordersSlice = createSlice({
     setShippingPrice: (state, action) => {
       state.shippingPrice = action.payload;
     },
+    setOrderToInitialState: (state) => {
+      state.entities = [];
+      state.orderAmount = 0;
+      state.shippingPrice = 2;
+      state.promoCodeSale = null;
+      state.userInfo = {};
+      state.userDeliveryInfo = {};
+      state.deliveryOption = 'new address';
+      state.deliveryMethod = 'Nova poshta delivery to the post office';
+      state.paymentMethod = 'Pay by card';
+      state.isLoading = false;
+      state.error = null;
+    },
   },
 });
 
@@ -95,6 +107,8 @@ export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
 export const getDeliveryOption = () => (state)=> state.orders.deliveryOption;
 export const getDeliveryMethod = () => (state)=> state.orders.deliveryMethod;
 export const getShippingPrice = () => (state) => state.orders.shippingPrice;
+export const getDeliveryInfo = () => (state) => state.orders.userDeliveryInfo;
+export const getUserInfo = () => (state) => state.orders.userInfo;
 export const getPaymentMethod = () => (state) => state.orders.paymentMethod;
 export const getPromoCodeSale = () => (state) => state.orders.promoCodeSale;
 export const getOrderAmount = () => (state) => state.orders.orderAmount;
@@ -102,6 +116,7 @@ export const {
 //  ordersRequested,
 //  ordersReceived,
 //  ordersRequestFailed,
+  setOrderToInitialState,
   setUserDeliveryInfo,
   setUserInfo,
   setPromoCodeSale,

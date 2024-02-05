@@ -22,7 +22,8 @@ import OrderSuccessPage from '../pages/orderSuccessPage/orderSuccessPage';
 import LoginLayout from '../pages/loginLayoutPage/LoginLayout';
 import CreatorsPage from '../pages/creatorsPage/creatorsPage';
 import CheckOutPageUserInfo from '../pages/checkOutPage/checkOutPageUserInfo/checkOutPageUserInfo';
-import CheckOutPageDelivery from '../pages/checkOutPage/checkOutPageDelivery/checkOutPageDelivery';
+import CheckOutPageDeliveryInfo from '../pages/checkOutPage/checkOutPageDelivery/checkOutPageDeliveryInfo';
+import CheckOutPagePaymentInfo from '../pages/checkOutPage/checkOutPagePayment/checkOutPagePaymentInfo';
 
 
 export const SearchContext = React.createContext();
@@ -50,7 +51,8 @@ function App() {
               <Route path='shop' element={<ShopPage />} />
               <Route path='aboutus' element={<AboutUsPage />} />
               <Route path='cart/checkoutUserInfo' element={<CheckOutPageUserInfo />} />
-              <Route path='cart/checkoutDelivery' element={<CheckOutPageDelivery />} />
+              <Route path='cart/checkoutDelivery' element={<CheckOutPageDeliveryInfo />} />
+              <Route path='cart/checkoutPayment' element={<CheckOutPagePaymentInfo />} />
               <Route path='orderSuccess' element={<OrderSuccessPage />} />
               <Route path='cart' element={<ShoppingCartPage />} />
               <Route path='shop/:id' element={<Card />} />

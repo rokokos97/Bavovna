@@ -1,1 +1,1 @@
-export * from './checkOutPageDelivery';
+export * from './checkOutPageDeliveryInfo';
