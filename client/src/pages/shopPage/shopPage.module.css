@@ -5,6 +5,8 @@
 
 .block {
   max-width: 144rem;
+  min-width: 112rem;
+  width: 100%;
   padding: 1.6rem 8rem 0;
 }
 

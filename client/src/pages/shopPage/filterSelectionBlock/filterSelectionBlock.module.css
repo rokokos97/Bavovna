@@ -1,10 +1,12 @@
 .filterContainer {
   background-color: #f5f5f5;
+  max-width: 39rem;
+  width: 45%;
 }
 
 .filterSelection {
   position: relative;
-  width: 41rem;
+  width: 100%;
   min-height: 100%;
   padding: 7.2rem 4rem;
   border-right: 0.1rem solid #000000;
