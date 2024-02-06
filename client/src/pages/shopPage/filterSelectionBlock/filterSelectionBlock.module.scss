@@ -2,11 +2,15 @@
 
 .filterContainer {
   background-color: $gray-90;
+  max-width: 39rem;
+  width: 45%;
 }
 
 .filterSelection {
   position: relative;
-  width: 41rem;
+  // max-width: 41rem;
+  // min-width: 31rem;
+  width: 100%;
   min-height: 100%;
   padding: 7.2rem 4rem;
   border-right: 0.1rem solid $black;

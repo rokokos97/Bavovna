@@ -2,9 +2,11 @@
 
 .catalog {
   display: flex;
+  width: 100%;
 }
 
 .cardsContainer {
+  width: 100%;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -28,13 +30,20 @@
 
 .cards {
   display: flex;
-  gap: 1.6rem;
-  justify-content: center;
+  gap: 2.4rem;
   flex-wrap: wrap;
   padding-top: 2.4rem;
 
   &.cardsPadding {
     padding-left: 2.4rem;
+  }
+}
+
+.card{
+  width: 32%;
+  &.doubleColumn{
+    width: 48.5%;
+    max-width: 41rem;
   }
 }
 
@@ -88,8 +97,13 @@
   }
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1416px) {
   .cards {
-    justify-content: space-evenly;
+    gap: 2.2rem;
+  }
+}
+@media screen and (max-width: 1311px) {
+  .cards {
+    gap: 2.1rem;
   }
 }
