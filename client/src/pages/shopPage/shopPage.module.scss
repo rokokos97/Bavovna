@@ -6,7 +6,9 @@
 }
 
 .block {
-  max-width: 144rem;
+  max-width: $max-width;
+  min-width: $min-width;
+  width: 100%;
   padding: 1.6rem 8rem 0;
 }
 

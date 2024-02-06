@@ -66,7 +66,7 @@ const CardsCatalogBlock = () => {
           }
         >
           {visibleItems.length ? visibleItems.map((item) => (
-            <li key={item._id}>
+            <li key={item._id} className={!isFilter ? styles.card : `${styles.card} ${styles.doubleColumn}`}>
               <ItemPreviewCard id={item._id} />
             </li>
           )) :
@@ -113,7 +113,6 @@ const CardsCatalogBlock = () => {
                   styles.arrow :
                   `${styles.arrow} ${styles.arrowDisable}`
               }
-              // disabled={currentPage === 1 || currentPage === totalPages}
               onClick={
                 currentPage === totalPages ?
                   null :
