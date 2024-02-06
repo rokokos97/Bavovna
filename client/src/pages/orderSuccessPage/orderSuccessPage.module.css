@@ -1,4 +1,5 @@
 .orderCompletePage {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   row-gap: 2.7rem;

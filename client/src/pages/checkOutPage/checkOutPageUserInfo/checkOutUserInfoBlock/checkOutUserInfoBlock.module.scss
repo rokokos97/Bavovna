@@ -18,6 +18,7 @@
 .radioWrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
   column-gap: 0.8rem;
 }
 .label {
@@ -78,8 +79,12 @@
 .buttonLeft {
   @include button($small);
   @include buttonTransparent();
+  justify-content: flex-start;
+  padding-left: 0;
 }
 .buttonRight {
   @include button($small);
   @include buttonTransparent();
+  justify-content: flex-end;
+  padding-right: 0;
 }

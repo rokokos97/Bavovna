@@ -1,4 +1,4 @@
-.label {
+.selectField .label {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -9,15 +9,13 @@
   font-size: 16px;
   line-height: 140%;
 }
-.label span {
+.selectField .label span {
   color: #ea001b;
 }
-
-input {
+.selectField input {
   autoComplete: "off";
 }
-
-.error {
+.selectField .error {
   color: #ea001b;
   padding-left: 0.8rem;
   font-size: 1.6rem;
@@ -25,14 +23,13 @@ input {
   font-weight: 400;
   line-height: normal;
 }
-
-.selectField.hasError .label {
+.selectField .selectField.hasError .label {
   color: #ea001b;
 }
-.selectField.hasError div {
+.selectField .selectField.hasError div {
   border-color: red !important;
 }
-.selectField.hasError div div {
+.selectField .selectField.hasError div div {
   color: red !important;
 }
 

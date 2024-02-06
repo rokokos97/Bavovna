@@ -43,60 +43,62 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   }, [itemPrice]);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
-      <div className={styles.titleBlock}>
-        <p className={styles.title}>shopping bag</p>
-        <p>({cartLength} {cartLength===1?'item':'items'})</p>
-      </div>
-      <div>
-        <CheckOutShoppingCartBlockItemsList/>
-      </div>
-      <form
-        onSubmit={promoCodeFormik.handleSubmit}
-        className={styles.form}>
-        <TextField
-          label='Promo code'
-          name='promoCode'
-          placeholder='Enter your promo code'
-          value={promoCodeFormik.values.promoCode}
-          onChange={promoCodeFormik.handleChange}
-          onBlur={promoCodeFormik.handleBlur}
-          error={promoCodeFormik.errors.promoCode}
-          touched={promoCodeFormik.touched.promoCode}
-        />
+      <div className={styles.wrapper}>
+        <div className={styles.titleBlock}>
+          <p className={styles.title}>shopping bag</p>
+          <p>({cartLength} {cartLength===1?'item':'items'})</p>
+        </div>
+        <div>
+          <CheckOutShoppingCartBlockItemsList/>
+        </div>
+        <form
+          onSubmit={promoCodeFormik.handleSubmit}
+          className={styles.form}>
+          <TextField
+            label='Promo code'
+            name='promoCode'
+            placeholder='Enter your promo code'
+            value={promoCodeFormik.values.promoCode}
+            onChange={promoCodeFormik.handleChange}
+            onBlur={promoCodeFormik.handleBlur}
+            error={promoCodeFormik.errors.promoCode}
+            touched={promoCodeFormik.touched.promoCode}
+          />
+          <button
+            disabled={!promoCodeFormik.isValid || !promoCodeFormik.dirty}
+            className={styles.arrowButton}
+            type='submit'
+          >
+            <RightArrowIcon/>
+          </button>
+        </form>
+        <div className={styles.price}>
+          <p>Order value</p>
+          <p>{`${itemPrice} $`}</p>
+        </div>
+        {finalDiscount && <div className={styles.discount}>
+          <p>Promo code</p>
+          <p>{`-${finalDiscount} $`}</p>
+        </div>}
+        <div className={styles.price}>
+          <p>Shipping</p>
+          <p>{`${deliveryPrice} $`}</p>
+        </div>
+        <div className={styles.priceBlock}>
+          <p>total</p>
+          <p>{`${finalPrice} $`}</p>
+        </div>
         <button
-          disabled={!promoCodeFormik.isValid || !promoCodeFormik.dirty}
-          className={styles.arrowButton}
-          type='submit'
+          type='button'
+          onClick={()=> formik.handleSubmit()}
+          disabled={!formik?.isValid}
+          className={styles.button}
         >
-          <RightArrowIcon/>
-        </button>
-      </form>
-      <div className={styles.price}>
-        <p>Order value</p>
-        <p>{`${itemPrice} $`}</p>
-      </div>
-      {finalDiscount && <div className={styles.discount}>
-        <p>Promo code</p>
-        <p>{`-${finalDiscount} $`}</p>
-      </div>}
-      <div className={styles.price}>
-        <p>Shipping</p>
-        <p>{`${deliveryPrice} $`}</p>
-      </div>
-      <div className={styles.priceBlock}>
-        <p>total</p>
-        <p>{`${finalPrice} $`}</p>
-      </div>
-      <button
-        type='button'
-        onClick={()=> formik.handleSubmit()}
-        disabled={!formik?.isValid}
-        className={styles.button}
-      >
-        <span>
+          <span>
                   place the order
-        </span>
-      </button>
+          </span>
+        </button>
+      </div>
     </div>
   );
 };

@@ -137,14 +137,15 @@
     height: 10rem;
   }
   .infoBlock {
-    width: 26.6rem;
+    display: flex;;
+    width: 24.6rem;
     height: fit-content;
-    row-gap: 1.2rem;
+    //row-gap: 1.2rem;
     margin-top: 0;
     margin-left: 0;
     margin-bottom: 0;
     .priceSizeColorQuantityBlock {
-      width: 26.6rem;
+      width: 24.6rem;
       gap: 1.2rem;
       .sizeColorQuantityBlock {
         @include fonts($headline-9);
@@ -159,6 +160,8 @@
             display: none;
           }
           .colorBlock {
+            display: flex;
+            align-items: center;
             width: fit-content;
             margin-right: 0.8rem;
           }
@@ -179,8 +182,7 @@
     margin: 0;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
-    coursor: pointer;
+    justify-content: flex-start;
     svg {
       width: 1.6rem;
       height: 1.6rem;
