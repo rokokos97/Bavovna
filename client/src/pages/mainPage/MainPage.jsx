@@ -9,7 +9,7 @@ import BavovnaCoverImageBlock from './bavovnaCoverImageBlock/BavovnaCoverImageBl
 import CategoriesBlock from './categoriesBlock/CategoriesBlock';
 import ModalCookies from '../../components/modal/modalContent/ModalCookies/modalCookies';
 import {Modal} from '../../components/modal';
-import {showBodyOverflow} from '../../services/modal.service';
+import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import Cookies from 'js-cookie';
 import {getCategoriesError, getCategoriesLoadingStatus} from '../../store/categorySlice';
 import {useSelector} from 'react-redux';
@@ -37,16 +37,19 @@ const MainPage = () => {
     const userConsent = Cookies.get('userConsent');
     if (!userConsent) {
       setShowCookiesModal(true);
+      hideBodyOverflow();
     }
     const userModal = sessionStorageService.getModalConfirm();
     if (!userModal) {
       setShowEducationModal(true);
+      hideBodyOverflow();
     }
   }, []);
   useEffect(() => {
     if (categoriesError || colorsError || itemsError || citiesErrors) {
       setError(categoriesError || colorsError || itemsError || citiesErrors);
       setShowErrorModal(true);
+      hideBodyOverflow();
     }
   }, [categoriesError, colorsError, itemsError, citiesErrors]);
   const closeModal = () => {
