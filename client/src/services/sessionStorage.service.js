@@ -25,6 +25,13 @@ export function removeAuthData() {
 export function setCurrentCart(cart) {
   sessionStorage.setItem('cart', JSON.stringify(cart));
 }
+export function setModalConfirm() {
+  sessionStorage.setItem('modalConfirm', JSON.stringify(true));
+}
+export function getModalConfirm() {
+  return JSON.parse(sessionStorage.getItem('modalConfirm'));
+}
+
 export function getCurrentCart() {
   return JSON.parse(sessionStorage.getItem('cart'));
 }
@@ -46,6 +53,8 @@ const sessionStorageService = {
   removeAuthData,
   setCurrentCart,
   getCurrentCart,
+  setModalConfirm,
+  getModalConfirm,
   clearCartSessionStorage,
 };
 export default sessionStorageService;

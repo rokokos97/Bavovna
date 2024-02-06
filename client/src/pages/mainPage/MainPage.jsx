@@ -19,6 +19,7 @@ import {getItemsError, getItemsLoadingStatus} from '../../store/itemsSlice';
 import ModalError from '../../components/modal/modalContent/modalError/modalError';
 import Loader from '../../components/loader/loader';
 import ModalEducationProject from '../../components/modal/modalContent/ModalEducationProject/modalEducationProject';
+import sessionStorageService from '../../services/sessionStorage.service';
 const MainPage = () => {
   const categoriesError = useSelector(getCategoriesError());
   const categoriesListIsLoading = useSelector(getCategoriesLoadingStatus());
@@ -29,13 +30,17 @@ const MainPage = () => {
   const citiesErrors = useSelector(getCitiesError());
   const citiesIsLoading = useSelector(getCitiesIsLoadingStatus());
   const [error, setError] = useState(null);
-  const [showEducationModal, setShowEducationModal] = useState(true);
+  const [showEducationModal, setShowEducationModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showCookiesModal, setShowCookiesModal] = useState(false);
   useEffect(() => {
     const userConsent = Cookies.get('userConsent');
     if (!userConsent) {
       setShowCookiesModal(true);
+    }
+    const userModal = sessionStorageService.getModalConfirm();
+    if (!userModal) {
+      setShowEducationModal(true);
     }
   }, []);
   useEffect(() => {
@@ -47,12 +52,16 @@ const MainPage = () => {
   const closeModal = () => {
     setShowCookiesModal(false);
     setShowErrorModal(false);
-    setShowEducationModal(false);
     showBodyOverflow();
   };
   const confirmCookies = () => {
     Cookies.set('userConsent', 'true', {expires: 365});
     setShowCookiesModal(false);
+    showBodyOverflow();
+  };
+  const confirmModal = () => {
+    sessionStorageService.setModalConfirm();
+    setShowEducationModal(false);
     showBodyOverflow();
   };
   //  !categoriesListIsLoading && !colorsListIsLoading && !citiesIsLoading&& !itemsListIsLoading
@@ -66,7 +75,7 @@ const MainPage = () => {
           isOpen={showEducationModal}
           handleCloseModal={closeModal}
         >
-          <ModalEducationProject handleConfirmModal={closeModal}/>
+          <ModalEducationProject handleConfirmModal={confirmModal}/>
         </Modal>
         <Modal
           isOpen={showErrorModal}
