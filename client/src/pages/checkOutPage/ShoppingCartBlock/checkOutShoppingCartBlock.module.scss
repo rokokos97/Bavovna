@@ -1,13 +1,17 @@
 @import '../../../styles/variables.module.scss';
 .checkOutShoppingCartBlock {
   width: 51.9rem;
-  height: min-content;
   padding: 1.6rem;
+  background: $white;
+  height: min-content;
+}
+.wrapper {
   display: flex;
+  width: 41.1rem;
   flex-direction: column;
   gap: 1.7rem;
-  background: $white;
   box-sizing: border-box;
+  margin-inline: auto;
 }
 .titleBlock {
   display: flex;

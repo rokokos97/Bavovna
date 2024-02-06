@@ -1,12 +1,17 @@
 .checkOutShoppingCartBlock {
   width: 51.9rem;
-  height: min-content;
   padding: 1.6rem;
+  background: #fafafa;
+  height: min-content;
+}
+
+.wrapper {
   display: flex;
+  width: 41.1rem;
   flex-direction: column;
   gap: 1.7rem;
-  background: #fafafa;
   box-sizing: border-box;
+  margin-inline: auto;
 }
 
 .titleBlock {

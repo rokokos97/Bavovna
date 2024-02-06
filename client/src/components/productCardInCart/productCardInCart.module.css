@@ -140,15 +140,15 @@
   height: 10rem;
 }
 .productCardInCart[type="1"] .infoBlock {
-  width: 26.6rem;
+  display: flex;
+  width: 24.6rem;
   height: fit-content;
-  row-gap: 1.2rem;
   margin-top: 0;
   margin-left: 0;
   margin-bottom: 0;
 }
 .productCardInCart[type="1"] .infoBlock .priceSizeColorQuantityBlock {
-  width: 26.6rem;
+  width: 24.6rem;
   gap: 1.2rem;
 }
 .productCardInCart[type="1"] .infoBlock .priceSizeColorQuantityBlock .sizeColorQuantityBlock {
@@ -169,6 +169,8 @@
   display: none;
 }
 .productCardInCart[type="1"] .infoBlock .priceSizeColorQuantityBlock .sizeColorQuantityBlock .block .colorBlock {
+  display: flex;
+  align-items: center;
   width: fit-content;
   margin-right: 0.8rem;
 }
@@ -183,8 +185,7 @@
   margin: 0;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
-  coursor: pointer;
+  justify-content: flex-start;
 }
 .productCardInCart[type="1"] .buttonBlock svg {
   width: 1.6rem;
