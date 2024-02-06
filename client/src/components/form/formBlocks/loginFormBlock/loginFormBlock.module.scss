@@ -9,7 +9,8 @@
 .button {
   display: block;
   margin: 0 auto;
-  @include buttons(41rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button(41rem);
+  @include buttonBlack();
 }
 .googleButtonBlock {
   display: block;
@@ -20,7 +21,8 @@
   gap: 1.2rem;
   border: 1px solid $black;
   margin: 0 auto;
-  @include buttons(41rem, $white, $black, $transparent-30-a-05, $accent-a-3);
+  @include button (41rem);
+  @include buttonWhite();
 }
 .divider {
   @include divider();

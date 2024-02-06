@@ -53,7 +53,8 @@
 }
 
 .button {
-  @include buttons(24rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button(24rem);
+  @include buttonBlack();
 }
 .inputContainer {
   border: 1px solid red;

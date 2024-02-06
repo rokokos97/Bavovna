@@ -19,7 +19,8 @@
     align-items: center;
     gap: 3.2rem;
     button {
-      @include buttons(41rem, $black, $white, $accent-a-3, $accent-a-5);
+      @include button(41rem);
+      @include buttonBlack();
     }
     svg {
       position: absolute;

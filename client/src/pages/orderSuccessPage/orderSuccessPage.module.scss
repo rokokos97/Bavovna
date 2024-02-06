@@ -33,11 +33,12 @@
   margin-top: 2.1rem;
 
   button:first-child {
-    @include buttons(20rem, $black, $white, $accent-a-3, $accent-a-5);
+    @include button(20rem);
+    @include buttonBlack();
   }
 
   button:last-child {
-    border: 1px solid $black;
-    @include buttons(20rem, $white, $black, $transparent-30-a-05, $accent-a-05);
+    @include button(20rem);
+    @include buttonWhite();
   }
 }

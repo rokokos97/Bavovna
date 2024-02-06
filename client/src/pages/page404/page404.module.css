@@ -13,27 +13,27 @@
 }
 .page404 button {
   display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
   width: 18.2rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #000000;
   padding: 1.6rem 2.4rem;
+  background: #000000;
 }
 .page404 button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #fafafa;
   text-align: center;
   position: relative;
 }
 .page404 button::before {
   content: "";
-  background: #5a9b83;
   width: 4.8rem;
   height: 4.8rem;
   opacity: 0;
@@ -46,7 +46,6 @@
 }
 .page404 button::after {
   content: "";
-  background: #1a6449;
   width: 0.6rem;
   height: 0.6rem;
   opacity: 0;
@@ -61,7 +60,6 @@
   content: "";
   width: 20.02rem;
   height: 20.02rem;
-  background: #5a9b83;
   opacity: 1;
   position: absolute;
   top: -7.61rem;
@@ -73,20 +71,38 @@
   height: 20.02rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
   top: -7.61rem;
   left: -1.1rem;
 }
 .page404 button:disabled {
-  border: 1px solid #868686;
-  background: #f5f5f5;
+  border-color: #868686;
+  background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
 .page404 button:disabled span {
   color: #9b9b9b;
+}
+.page404 button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.page404 button::before {
+  background: #5a9b83;
+}
+.page404 button::after {
+  background: #1a6449;
+}
+.page404 button:hover::before {
+  background: #5a9b83;
+}
+.page404 button:active::after {
+  border: 1px solid #5a9b83;
 }
 
 /*# sourceMappingURL=page404.module.css.map */

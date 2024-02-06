@@ -23,7 +23,8 @@
   background: $gray-80;
 }
 .button {
-  @include buttons(19.5rem, $black, $white, $accent-a-3, $accent-a-5);
+  @include button(19.5rem);
+  @include buttonBlack();
 }
 .titleBlock {
   display: flex;

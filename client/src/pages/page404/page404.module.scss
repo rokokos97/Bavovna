@@ -11,6 +11,7 @@
     @include fonts($body-2);
   }
   button {
-    @include buttons(18.2rem, $black, $white, $accent-a-3, $accent-a-5);
+    @include button(18.2rem);
+    @include buttonBlack()
   }
 }

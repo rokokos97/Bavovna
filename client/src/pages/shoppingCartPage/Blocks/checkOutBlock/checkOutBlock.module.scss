@@ -17,7 +17,8 @@
 }
 .arrowButton {
   margin-top: auto;
-  @include buttons(7.5rem,  $black, $white, $accent-a-3, $accent-a-5);
+  @include button(7.5rem);
+  @include buttonBlack();
 }
 .totalPriceBlock {
   display: flex;
@@ -30,11 +31,12 @@
   flex-direction: column;
   gap: 2.4rem;
   button:first-child {
-    @include buttons(36.3rem, $black, $white, $accent-a-3, $accent-a-5);
+    @include button(36.3rem);
+    @include buttonBlack();
   }
   button:last-child {
-    border: 1px solid $black;
-    @include buttons(36.3rem, $white, $black, $transparent-30-a-05, $accent-a-05);
+    @include button(36.3rem);
+    @include buttonWhite();
   }
 }
 

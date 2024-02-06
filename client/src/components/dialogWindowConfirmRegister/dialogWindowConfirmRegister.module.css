@@ -21,27 +21,27 @@
 }
 .dialogWindowConfirmRegister div button {
   display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
   width: 41rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #000000;
   padding: 1.6rem 2.4rem;
+  background: #000000;
 }
 .dialogWindowConfirmRegister div button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #fafafa;
   text-align: center;
   position: relative;
 }
 .dialogWindowConfirmRegister div button::before {
   content: "";
-  background: #5a9b83;
   width: 4.8rem;
   height: 4.8rem;
   opacity: 0;
@@ -54,7 +54,6 @@
 }
 .dialogWindowConfirmRegister div button::after {
   content: "";
-  background: #1a6449;
   width: 0.6rem;
   height: 0.6rem;
   opacity: 0;
@@ -69,7 +68,6 @@
   content: "";
   width: 45.1rem;
   height: 45.1rem;
-  background: #5a9b83;
   opacity: 1;
   position: absolute;
   top: -20.15rem;
@@ -81,20 +79,38 @@
   height: 45.1rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #5a9b83;
   opacity: 1;
   position: absolute;
   top: -20.15rem;
   left: -1.1rem;
 }
 .dialogWindowConfirmRegister div button:disabled {
-  border: 1px solid #868686;
-  background: #f5f5f5;
+  border-color: #868686;
+  background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
 .dialogWindowConfirmRegister div button:disabled span {
   color: #9b9b9b;
+}
+.dialogWindowConfirmRegister div button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.dialogWindowConfirmRegister div button::before {
+  background: #5a9b83;
+}
+.dialogWindowConfirmRegister div button::after {
+  background: #1a6449;
+}
+.dialogWindowConfirmRegister div button:hover::before {
+  background: #5a9b83;
+}
+.dialogWindowConfirmRegister div button:active::after {
+  border: 1px solid #5a9b83;
 }
 .dialogWindowConfirmRegister div svg {
   position: absolute;
