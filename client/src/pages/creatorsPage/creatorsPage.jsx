@@ -15,7 +15,7 @@ const CreatorsPage = () => {
           email: 'polinazhyhailo@gmail.com',
           social: {
             linkedIn: 'https://linkedin.com/in/polina-zhyhailo',
-            telegram: 'https://t.me/polinazhyhailo',
+            telegram: 'https://t.me/polina_zhy',
             behance: '',
             gitHub: '',
           },
