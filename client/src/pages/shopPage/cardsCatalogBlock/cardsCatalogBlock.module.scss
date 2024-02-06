@@ -31,7 +31,6 @@
 .cards {
   display: flex;
   gap: 2.4rem;
-  // justify-content: flex-start;
   flex-wrap: wrap;
   padding-top: 2.4rem;
 
@@ -42,9 +41,9 @@
 
 .card{
   width: 32%;
-
   &.doubleColumn{
     width: 48.5%;
+    max-width: 41rem;
   }
 }
 
@@ -98,8 +97,13 @@
   }
 }
 
-@media screen and (max-width: 1377px) {
+@media screen and (max-width: 1416px) {
   .cards {
     gap: 2.2rem;
+  }
+}
+@media screen and (max-width: 1311px) {
+  .cards {
+    gap: 2.1rem;
   }
 }
