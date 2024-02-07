@@ -10,7 +10,7 @@ import googleService from '../../../services/google.service';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import {Modal} from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
-import {showBodyOverflow} from '../../../services/modal.service';
+import {showBodyOverflow, hideBodyOverflow} from '../../../services/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/registerFormBlock/registerFormBlock';
 import Loader from '../../../components/loader/loader';
 
@@ -60,6 +60,7 @@ const RegisterForm = () => {
       setIsLoading(false);
       if (response.code === 201) {
         setShowVerifyEmailModal(true);
+        hideBodyOverflow();
         formik.resetForm();
       }
     }
