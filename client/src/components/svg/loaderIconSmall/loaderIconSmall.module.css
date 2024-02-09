@@ -1,0 +1,15 @@
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loaderIconSmall {
+  width: 3.2rem;
+  height: 3.2rem;
+  animation: rotation 2.5s linear infinite;
+}
+
+/*# sourceMappingURL=loaderIconSmall.module.css.map */
