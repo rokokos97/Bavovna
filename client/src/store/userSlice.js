@@ -147,10 +147,14 @@ export const signUpWithGoogle = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.registerWithGoogle(payload);
-    sessionStorageService.setTokens(data);
-    dispatch(authRequestSuccess(data.user));
+    setTimeout(()=>{
+      sessionStorageService.setTokens(data);
+      dispatch(authRequestSuccess(data.user));
+    }, 2000);
   } catch (error) {
-    dispatch(authRequestFailed(error.response.data.response));
+    setTimeout(()=>{
+      dispatch(authRequestFailed(error.response.data.response));
+    }, 2000);
   }
 };
 export const loginWithGoogle = (payload) =>async (dispatch) =>{

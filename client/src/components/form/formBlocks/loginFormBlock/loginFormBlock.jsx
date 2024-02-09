@@ -144,10 +144,16 @@ const LoginFormBlock = () => {
             className={styles.googleButton}
             onClick={googleLogin}
           >
-            <GoogleIcon />
-            <span>
-                Sign in with Google
-            </span>
+            {
+              (isLoading) ?
+                <LoaderIconSmall/> :
+                  <>
+                    <GoogleIcon />
+                    <span>
+                      Sign in with Google
+                    </span>
+                  </>
+            }
           </button>
         </div>
       </div>
