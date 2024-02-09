@@ -18,7 +18,7 @@ if (localStorageService.getAccessToken()) {
 const initialState = sessionStorageService.getAccessToken() ?
 {
   entities: null,
-  isLoading: true,
+  isLoading: false,
   response: null,
   auth: {userId: sessionStorageService.getUserId()},
   isLoggedIn: true,
@@ -36,17 +36,20 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     authRequested: (state) => {
+      state.isLoading = true;
       state.error = null;
     },
     authRequestSuccess: (state, action) => {
       state.entities = action.payload;
       state.auth = action.payload._id;
+      state.isLoading = false;
       state.isLoggedIn = true;
       state.response = null;
     },
     authRequestFailed: (state, action) => {
       state.entities = null;
       state.auth = null;
+      state.isLoading = false;
       state.response = action.payload;
     },
     userCreated: (state, action) => {
@@ -107,6 +110,7 @@ const {
   userResetPasswordRequestFailed,
   userSetNewPasswordRequestSuccess,
   userSetNewPasswordRequestFailed,
+  authRequested,
   authRequestFailed,
   authRequestSuccess,
   userLoggedOut,
@@ -119,7 +123,6 @@ const {
 
 const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
 const userResetPasswordRequested = createAction('user/userResetPasswordRequested');
-const authRequested = createAction('users/authRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');
@@ -131,9 +134,13 @@ export const signUp = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.register(payload);
-    dispatch(userCreated(data.response));
+    setTimeout(()=>{
+      dispatch(userCreated(data.response));
+    }, 3000);
   } catch (error) {
-    dispatch(authRequestFailed(error.response.data.response));
+    setTimeout(()=>{
+      dispatch(authRequestFailed(error.response.data.response));
+    }, 3000);
   }
 };
 export const signUpWithGoogle = (payload) => async (dispatch) => {
@@ -162,14 +169,18 @@ export const logInWithPassword = ({payload}) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.login({email, password});
-    if (rememberMe) {
-      localStorageService.setTokens(data);
-    } else {
-      sessionStorageService.setTokens(data);
-    }
-    dispatch(authRequestSuccess(data.user));
+    setTimeout(()=>{
+      if (rememberMe) {
+        localStorageService.setTokens(data);
+      } else {
+        sessionStorageService.setTokens(data);
+      }
+      dispatch(authRequestSuccess(data.user));
+    }, 3000);
   } catch (error) {
-    dispatch(authRequestFailed(error.response.data.response));
+    setTimeout(()=>{
+      dispatch(authRequestFailed(error.response.data.response));
+    }, 3000);
   }
 };
 export const verifyEmail = (token, email) => async (dispatch) => {

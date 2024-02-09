@@ -121,7 +121,6 @@ router.post('/signUpWithGoogle', [
       const {email} = req.body;
       const existingUser = await User.findOne({email});
       if (existingUser) {
-        await delay(4000); // Затримка на 4 секунди
         return res.status(400).json({
           response: {
             code: 400,

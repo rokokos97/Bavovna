@@ -1,9 +1,9 @@
 @import "../../../styles/variables.module";
-@keyframes spin {
-  from {
+@keyframes rotation {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -11,6 +11,6 @@
 .loaderIcon {
   width: 14.3rem;
   height: 14.3rem;
-  animation: spin 1.5s linear infinite;
+  animation: rotation 1.5s linear infinite;
 }
 
