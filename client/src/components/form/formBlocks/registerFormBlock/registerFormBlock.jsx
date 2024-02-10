@@ -4,8 +4,12 @@ import TextField from '../../formFields/textField/textField';
 import GoogleIcon from '../../../svg/googleIcon/googleIcon';
 import PropTypes from 'prop-types';
 import CheckboxField from '../../formFields/checkboxField/checkboxField';
+import {useSelector} from 'react-redux';
+import {getUserLoadingStatus} from '../../../../store/userSlice';
+import LoaderIconSmall from '../../../svg/loaderIconSmall/loaderIconSmall';
 
 const RegisterFormBlock = ({formik, googleRegister}) => {
+  const isLoading = useSelector(getUserLoadingStatus);
   return (
     <div className={styles.registerFormBlock} data-testid="RegisterFormBlock">
       <form
@@ -77,10 +81,16 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
           disabled={!formik.isValid || !formik.dirty}
           className={styles.button}
         >
-          <span>
-              Sign up
-          </span>
-          <div/>
+          {
+          (isLoading) ?
+            <LoaderIconSmall/> :
+            <>
+              <span>
+                    Sign up
+              </span>
+              <div/>
+            </>
+          }
         </button>
       </form>
       <div className={styles.socialButtonsBlock}>
@@ -97,10 +107,16 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
             type='button'
             onClick={() => googleRegister()}
           >
-            <GoogleIcon/>
-            <span>
-                Sign up with Google
-            </span>
+            {
+              (isLoading) ?
+                <LoaderIconSmall/>:
+                <>
+                  <GoogleIcon/>
+                  <span>
+                      Sign up with Google
+                  </span>
+                </>
+            }
           </button>
         </div>
       </div>

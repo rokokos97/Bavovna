@@ -7,14 +7,15 @@ import {useDispatch, useSelector} from 'react-redux';
 import * as Yup from 'yup';
 import {
   clearUserResponse,
-  getResponse,
+  getResponse, getUserLoadingStatus,
   resetPassword,
 } from '../../../store/userSlice';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
+import LoaderIconSmall from '../../../components/svg/loaderIconSmall/loaderIconSmall';
 
 const ForgotPasswordForm = () => {
   const dispatch = useDispatch();
-
+  const isLoading = useSelector(getUserLoadingStatus);
   // Використання селектора для отримання відповіді з redux store
   const response = useSelector(getResponse());
 
@@ -73,10 +74,13 @@ const ForgotPasswordForm = () => {
         <button
           className={styles.button}
           disabled={!formik.isValid || !formik.dirty}
-        >
+        >{
+          isLoading ?
+            <LoaderIconSmall/> :
           <span>
             recover
           </span>
+          }
         </button>
       </form>
       <p>

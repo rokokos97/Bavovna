@@ -73,11 +73,16 @@ const usersSlice = createSlice({
       state.isLoggedIn = true;
       state.isLoading = false;
     },
+    userResetPasswordRequested: (state) => {
+      state.isLoading = true;
+    },
     userResetPasswordRequestSuccess: (state, action) => {
       state.response = action.payload;
+      state.isLoading = false;
     },
     userResetPasswordRequestFailed: (state, action) => {
       state.response = action.payload;
+      state.isLoading = false;
     },
     userSetNewPasswordRequestSuccess: (state, action) => {
       state.response = action.payload;
@@ -106,6 +111,7 @@ const {reducer: userReducer, actions} = usersSlice;
 const {
   userCreated,
   userResponseCleared,
+  userResetPasswordRequested,
   userResetPasswordRequestSuccess,
   userResetPasswordRequestFailed,
   userSetNewPasswordRequestSuccess,
@@ -122,7 +128,6 @@ const {
 } = actions;
 
 const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
-const userResetPasswordRequested = createAction('user/userResetPasswordRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');

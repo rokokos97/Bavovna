@@ -12,7 +12,6 @@ import {Modal} from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
 import {showBodyOverflow, hideBodyOverflow} from '../../../services/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/registerFormBlock/registerFormBlock';
-import Loader from '../../../components/loader/loader';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -73,7 +72,6 @@ const RegisterForm = () => {
   console.log(isLoading);
   return (
     <div className={styles.registerForm}>
-      {isLoading && <Loader/>}
       <div className={styles.titleBlock}>
         <p>
           Sign up

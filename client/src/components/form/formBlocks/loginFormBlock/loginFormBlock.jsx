@@ -17,7 +17,6 @@ import {
 import {useGoogleLogin} from '@react-oauth/google';
 import googleService from '../../../../services/google.service';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
-// import Loader from '../../../loader/loader';
 import {useLocation} from 'react-router-dom';
 import LoaderIconSmall from '../../../svg/loaderIconSmall/loaderIconSmall';
 
@@ -27,7 +26,6 @@ const LoginFormBlock = () => {
   const response = useSelector(getResponse());
   const isLoggedIn = useSelector(getIsLoggedIn);
   const isLoading = useSelector(getUserLoadingStatus);
-  //  const [isLoading, setIsLoading] = useState(null);
   const location = useLocation();
   console.log(isLoading);
   const formik = useFormik({
@@ -39,7 +37,6 @@ const LoginFormBlock = () => {
     validationSchema: validationSchemaLoginForm,
     onSubmit: (values) => {
       dispatch(logInWithPassword({payload: values}));
-      //      setIsLoading(true);
     },
   });
 
@@ -50,7 +47,6 @@ const LoginFormBlock = () => {
           .get(accessToken)
           .then((userInfo) => {
             dispatch(loginWithGoogle(userInfo));
-            //            setIsLoading(true);
           });
     },
   });
@@ -59,11 +55,9 @@ const LoginFormBlock = () => {
   };
   useEffect(() => {
     if (response) {
-      //      setIsLoading(false);
       dispatch(clearUserResponse());
     }
     if (isLoggedIn) {
-      //      setIsLoading(false);
       navigate(location.pathname==='/cart/checkout' ? '/cart/checkout' : '/');
     }
   }, [formik.values, dispatch, isLoggedIn]);
