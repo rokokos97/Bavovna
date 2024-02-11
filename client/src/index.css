@@ -151,10 +151,8 @@ body {
   height: 100%;
 }
 
-.swiper-android .swiper-slide,
-.swiper-ios .swiper-slide,
 .swiper-wrapper {
-  transform: translate3d(3px, 0, 0) !important;
+  margin-left: 3px;
 }
 
 /*# sourceMappingURL=index.css.map */

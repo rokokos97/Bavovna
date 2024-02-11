@@ -1,5 +1,7 @@
 .checkOutShoppingCartBlockItemsList {
   display: flex;
+  min-height: 10rem;
+  max-height: 34.8rem;
   overflow: hidden;
   flex-direction: column;
   row-gap: 2.4rem;
@@ -90,6 +92,30 @@
 }
 .discount span:last-child {
   color: #ea001b;
+}
+
+.buttonsBlock {
+  position: absolute;
+  top: 49rem;
+  right: 32rem;
+  z-index: 2;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.6rem;
+}
+
+.button {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a9dfcb;
+}
+
+.buttonDown {
+  transform: rotate(180deg);
 }
 
 .deleteButton {
