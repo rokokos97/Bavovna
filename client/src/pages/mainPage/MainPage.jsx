@@ -32,7 +32,7 @@ const MainPage = () => {
   const [error, setError] = useState(null);
   const [showEducationModal, setShowEducationModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
-  const [showCookiesModal, setShowCookiesModal] = useState(false);
+  const [showCookiesModal, setShowCookiesModal] = useState(true);
   useEffect(() => {
     const userConsent = Cookies.get('userConsent');
     if (!userConsent) {
