@@ -135,7 +135,7 @@ const deliveryOptionsSection = () => {
             <button
               className={styles.radioButton}
               type='button'
-              disabled={!isLoggedIn || user.deliveryAddress.length === 0}
+              disabled={!isLoggedIn || user?.deliveryAddress.length === 0}
               onClick = {()=> dispatch(setDeliveryOption(method.label))}
             >
               {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}

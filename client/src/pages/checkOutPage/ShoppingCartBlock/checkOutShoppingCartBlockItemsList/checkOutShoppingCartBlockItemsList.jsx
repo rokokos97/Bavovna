@@ -29,8 +29,7 @@ const CheckOutShoppingCartBlockItemsList = () => {
         direction={'vertical'}
         onSwiper={(swiper) => swiperRef.current = swiper}
         slidesPerView={3}
-        spaceBetween={3}
-        //                loop={true}
+        spaceBetween={2.4}
         modules={[Navigation]}
         navigation={{
           // Відключаємо вбудовану навігацію swiper
@@ -38,11 +37,13 @@ const CheckOutShoppingCartBlockItemsList = () => {
           prevEl: '.swiper-button-prev',
         }}
       >
-        {normalizeCart && normalizeCart.map((item, index)=> (
-          <SwiperSlide key={index}>
-            <ProductCardInCart item={item} type='1'/>
-          </SwiperSlide>
-        ))}
+        <div className={styles.wrapper}>
+          {normalizeCart && normalizeCart.map((item, index)=> (
+            <SwiperSlide key={index}>
+              <ProductCardInCart item={item} type='1'/>
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
     </div>
   );
