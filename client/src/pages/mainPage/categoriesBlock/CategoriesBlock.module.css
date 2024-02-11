@@ -1,7 +1,8 @@
 .categoriesBlock {
   margin: 0 auto;
   display: flex;
-  width: 132.1rem;
+  max-width: 128rem;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 3.2rem;
@@ -36,7 +37,7 @@
 }
 
 .newArrivalsBlock__box {
-  width: 128rem;
+  width: 100%;
   display: flex;
   align-items: flex-start;
   gap: 2.4rem;
