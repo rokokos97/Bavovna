@@ -16,7 +16,7 @@ const BavovnaBlock = () => {
       </span>
       <button
         className={styles.button}
-        onClick={()=> navigate(('/catalogue'))}>
+        onClick={()=> navigate(('/shop'))}>
         <span>
           shop now
         </span>
