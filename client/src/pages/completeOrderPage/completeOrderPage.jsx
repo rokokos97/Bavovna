@@ -40,7 +40,7 @@ const CompleteOrderPage = () => {
         </div>
         {currentOrder.promoCodeDiscount && <div className={styles.title}>
           <p>Promo code discount</p>
-          <p>{`-${currentOrder.orderAmount * currentOrder.promoCodeDiscount} $`}</p>
+          <p>{`-${parseFloat((currentOrder.orderAmount * currentOrder.promoCodeDiscount).toFixed(1))} $`}</p>
         </div>}
         <div className={styles.title}>
           <p>delivery</p>
