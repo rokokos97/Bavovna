@@ -1,4 +1,4 @@
-.ModalCookies {
+.modalCookies {
   width: 51.9rem;
   display: flex;
   flex-direction: column;
@@ -6,8 +6,8 @@
   background: #d7d7d7;
   padding: 2.4rem;
   position: absolute;
-  left: 84.1rem;
-  bottom: 0;
+  right: 7rem;
+  bottom: 9.2rem;
 }
 
 .container {
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
-  width: 19.5rem;
+  width: 19rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 0.4rem;
-  left: 7.35rem;
+  left: 7.1rem;
 }
 .button::after {
   content: "";
@@ -69,26 +69,26 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 2.5rem;
-  left: 9.45rem;
+  left: 9.2rem;
 }
 .button:hover::before {
   content: "";
-  width: 21.45rem;
-  height: 21.45rem;
+  width: 20.9rem;
+  height: 20.9rem;
   opacity: 1;
   position: absolute;
-  top: -8.325rem;
+  top: -8.05rem;
   left: -1rem;
 }
 .button:active::after {
   content: "";
-  width: 21.45rem;
-  height: 21.45rem;
+  width: 20.9rem;
+  height: 20.9rem;
   border-radius: 50%;
   background: transparent;
   opacity: 1;
   position: absolute;
-  top: -8.325rem;
+  top: -8.05rem;
   left: -1.1rem;
 }
 .button:disabled {
