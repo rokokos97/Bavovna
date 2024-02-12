@@ -1,36 +1,39 @@
-@import '../../styles/variables.module.scss';
+@import '../../../styles/variables.module.scss';
 
-.fashionBlock {
+.aboutBlock {
   display: flex;
-  gap: 5.2rem;
+  gap: 2.7rem;
 }
 
 .imgs {
   display: block;
   position: relative;
   width: 100%;
-  aspect-ratio: 4/3.2;
+  text-align: start;
+  aspect-ratio: 3/2;
   flex: 50% 1 1;
-
-  img {
-    display: block;
-    aspect-ratio: 4.1/4;
-    width: 95%;
-  }
 }
 
 .mainImg {
   display: block;
-  width: 65.4%;
-  aspect-ratio: 4.1/4;
+  width: 100%;
+
+  img {
+    width: 95.5%;
+    aspect-ratio: 3/2;
+  }
 }
 
 .secondImg {
   display: block;
   position: absolute;
+  width: 30.5%;
   bottom: 0;
-  right: -2rem;
-  width: 65.4%;
+  right: 0;
+
+  img {
+    width: 100%;
+  }
 }
 
 .description {
@@ -39,7 +42,6 @@
   gap: 3.2rem;
   flex: 50% 1 1;
   justify-content: center;
-  order: -1;
   text-align: start;
 }
 
@@ -47,7 +49,7 @@
   max-width: 28rem;
   padding-bottom: 0.8rem;
   @include fonts($headline-4);
-  border-bottom: 0.1rem solid $black-color;
+  border-bottom: 0.1rem solid $black;
 
   span {
     @include fonts($headline-3);
@@ -55,6 +57,6 @@
 }
 
 .text {
-  max-width: 60rem;
   @include fonts($body-3);
+  max-width: 60rem;
 }

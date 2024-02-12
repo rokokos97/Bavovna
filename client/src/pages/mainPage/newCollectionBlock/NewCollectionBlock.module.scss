@@ -6,15 +6,14 @@
           lightgray 50% / cover no-repeat;
   width: 100%;
   height: 84.1rem;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8rem;
 }
 .newCollectionBlock__wrapper {
   display: flex;
-  //max-width: 1280px;
-  position: relative;
-  top: 28.4rem;
-  left: 55.5%;
-  transform: translateX(-50%);
+  max-width: 57.8rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;

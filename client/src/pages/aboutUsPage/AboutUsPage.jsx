@@ -1,7 +1,7 @@
 import React from 'react';
-import AboutBlock from '../../blocks/AboutBlock/AboutBlock';
-import ProposeBlock from '../../blocks/ProposeBlock/ProposeBlock';
-import FashionBlock from '../../blocks/FashionBlock/FashionBlock';
+import AboutBlock from './AboutBlock/AboutBlock';
+import ProposeBlock from './ProposeBlock/ProposeBlock';
+import FashionBlock from './FashionBlock/FashionBlock';
 
 import styles from './AboutUsPage.module.scss';
 
