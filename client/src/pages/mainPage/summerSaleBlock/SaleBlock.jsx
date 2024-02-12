@@ -11,7 +11,7 @@ const SaleBlock = () => {
         <button
           className={styles.button}
           onClick={() => {
-            navigate('/catalogue');
+            navigate('/shop?status=sale');
           }}
         >
           <span>shop now</span>
