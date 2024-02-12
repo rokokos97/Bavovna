@@ -77,7 +77,7 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
                 }
               >
                 <AccountIcon />
-                <span>{isLoggedIn && user ? user.firstName : 'account'}</span>
+                <span className={styles.accountName}>{isLoggedIn && user ? user.firstName : 'account'}</span>
               </button>
               {/* <div>*/}
               {/*  <button style={{fontWeight: 'bold'}}>*/}
