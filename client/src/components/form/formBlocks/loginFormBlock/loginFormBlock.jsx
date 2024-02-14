@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './loginFormBlock.module.scss';
 import TextField from '../../formFields/textField/textField';
 import CheckboxField from '../../formFields/checkboxField/checkboxField';
@@ -26,6 +26,8 @@ const LoginFormBlock = () => {
   const response = useSelector(getResponse());
   const isLoggedIn = useSelector(getIsLoggedIn);
   const isLoading = useSelector(getUserLoadingStatus);
+  const [isRegularLogin, setIsRegularLogin] = useState(false);
+  const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
   const location = useLocation();
   console.log(isLoading);
   const formik = useFormik({
@@ -36,6 +38,8 @@ const LoginFormBlock = () => {
     },
     validationSchema: validationSchemaLoginForm,
     onSubmit: (values) => {
+      setIsLoadingGoogle(false);
+      setIsRegularLogin(true);
       dispatch(logInWithPassword({payload: values}));
     },
   });
@@ -51,6 +55,8 @@ const LoginFormBlock = () => {
     },
   });
   const googleLogin = () => {
+    setIsRegularLogin(false);
+    setIsLoadingGoogle(true);
     googleLoginHook();
   };
   useEffect(() => {
@@ -111,7 +117,7 @@ const LoginFormBlock = () => {
           disabled={!formik.isValid || !formik.dirty}
           className={styles.button}
         >{
-          (isLoading) ? <LoaderIconSmall/>:<span>
+          (isLoading && isRegularLogin) ? <LoaderIconSmall/>:<span>
                 Sign In
           </span>
           }
@@ -139,7 +145,7 @@ const LoginFormBlock = () => {
             onClick={googleLogin}
           >
             {
-              (isLoading) ?
+              (isLoading && isLoadingGoogle) ?
                 <LoaderIconSmall/> :
                   <>
                     <GoogleIcon />
