@@ -19,6 +19,12 @@ module.exports = {
   // Підключені плагіни
   plugins: ['react'],
   // Власні правила (overrides може також використовуватись для цього, але тут вони загальні для всього проєкту)
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  root: true,
   rules: {
     'linebreak-style': 0, // Відключаємо правило про стиль перенесення рядків
     'require-jsdoc': [
