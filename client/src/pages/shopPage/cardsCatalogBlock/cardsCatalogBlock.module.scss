@@ -75,9 +75,15 @@
   line-height: 110%;
   cursor: pointer;
 
+
   &.arrowDisable {
     opacity: 0;
     cursor: default;
+  }
+}
+.arrowForward {
+  svg {
+    transform: rotate(180deg);
   }
 }
 

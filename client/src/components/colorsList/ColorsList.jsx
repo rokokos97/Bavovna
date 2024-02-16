@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getColors, getColorsLoadingStatus} from '../../store/colorsSlice';
-import {useDataCard} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../providers/CardMasterProvider';
 import styles from './ColorsList.module.scss';
 
 const noColor = 'Choose a color';

@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
-import AsideHelpBlock from '../../blocks/AsideHelpBlock/AsideHelpBlock';
-import DeliveryBlock from '../../blocks/helpDescription/DeliveryBlock/DeliveryBlock/DeliveryBlock';
-import ReturnBlock from '../../blocks/helpDescription/ReturnBlock/ReturnBlock';
-import PaymentBlock from '../../blocks/helpDescription/PaymentBlock/PaymentBlock';
-import FaqBlock from '../../blocks/helpDescription/FaqBlock/FaqBlock';
-import PolicyBlock from '../../blocks/helpDescription/PolicyBlock/PolicyBlock';
-import CookiesBlock from '../../blocks/helpDescription/CookiesBlock/CookiesBlock';
+import AsideHelpBlock from '../../blocks/asideHelpBlock/AsideHelpBlock';
+import DeliveryBlock from '../../blocks/helpDescription/deliveryBlock/DeliveryBlock/DeliveryBlock';
+import ReturnBlock from '../../blocks/helpDescription/returnBlock/ReturnBlock';
+import PaymentBlock from '../../blocks/helpDescription/paymentBlock/PaymentBlock';
+import FaqBlock from '../../blocks/helpDescription/faqBlock/FaqBlock';
+import PolicyBlock from '../../blocks/helpDescription/policyBlock/PolicyBlock';
+import CookiesBlock from '../../blocks/helpDescription/cookiesBlock/CookiesBlock';
 import styles from './HelpPage.module.scss';
 
 const HelpPage = () => {

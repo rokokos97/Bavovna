@@ -2,13 +2,12 @@ import React, {useRef} from 'react';
 import styles from './NewArrivalsBlock.module.scss';
 import {useSelector} from 'react-redux';
 import {getItems, getItemsLoadingStatus} from '../../../store/itemsSlice';
-import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
+import ItemPreviewCard from '../../../components/itemPreviewCard/ItemPreviewCard';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {Navigation} from 'swiper/modules';
-import LeftArrowIcon from '../../../components/svg/leftArrowIcon/leftArrowIcon';
-import RightArrowIcon from '../../../components/svg/rightArrowIcon/rightArrowIcon';
+import LeftArrowIcon from '../../../components/svg/arrowIcons/leftArrowIcon/leftArrowIcon';
 
 
 const NewArrivalsBlock = () => {
@@ -32,9 +31,9 @@ const NewArrivalsBlock = () => {
             <LeftArrowIcon />
           </button>
           <button
-            className={styles.button}
+            className={`${styles.button} ${styles.buttonRight}`}
             onClick={() => swiperRef.current?.slideNext()}>
-            <RightArrowIcon />
+            <LeftArrowIcon />
           </button>
         </div>
       </div>

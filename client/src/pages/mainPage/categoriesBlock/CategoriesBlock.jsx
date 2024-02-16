@@ -2,11 +2,10 @@ import React, {useRef} from 'react';
 import styles from './CategoriesBlock.module.scss';
 import {useSelector} from 'react-redux';
 import {getCategories, getCategoriesLoadingStatus} from '../../../store/categorySlice';
-import CategoryPreviewCard from '../../../components/CategoryPreviewCard/CategoryPreviewCard';
-import LeftArrowIcon from '../../../components/svg/leftArrowIcon/leftArrowIcon';
-import RightArrowIcon from '../../../components/svg/rightArrowIcon/rightArrowIcon';
+import CategoryPreviewCard from '../../../components/categoryPreviewCard/CategoryPreviewCard';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper/modules';
+import LeftArrowIcon from '../../../components/svg/arrowIcons/leftArrowIcon/leftArrowIcon';
 
 const CategoriesBlock = () => {
   const swiperRef = useRef();
@@ -35,7 +34,7 @@ const CategoriesBlock = () => {
           </button>
           {/* Кнопка переходу до наступного слайда */}
           <button onClick={() => swiperRef.current?.slideNext()}>
-            <RightArrowIcon />
+            <LeftArrowIcon />
           </button>
         </div> : <></>}
       </div>

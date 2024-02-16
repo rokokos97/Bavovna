@@ -28,6 +28,7 @@
   align-items: flex-end;
 }
 .arrowButton {
+  transform: rotate(180deg);
   @include button($extra-small);
   @include buttonTransparent();
 }

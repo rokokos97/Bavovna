@@ -6,7 +6,7 @@ import './index.scss';
 import App from './app/App';
 import config from './config.json';
 import {GoogleOAuthProvider} from '@react-oauth/google';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 
 import {Provider} from 'react-redux';
 import store from './store';

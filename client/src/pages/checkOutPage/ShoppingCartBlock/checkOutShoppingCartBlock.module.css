@@ -38,6 +38,7 @@
 }
 
 .arrowButton {
+  transform: rotate(180deg);
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;

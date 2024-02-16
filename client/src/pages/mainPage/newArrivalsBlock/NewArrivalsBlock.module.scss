@@ -23,9 +23,9 @@
   .button {
     @include button(4rem);
     @include buttonTransparent();
-    svg {
-        width: 4rem!important;
-      }
+  }
+  .buttonRight {
+    transform: rotate(180deg);
   }
 }
 

@@ -1,0 +1,27 @@
+@import '../../../../styles/variables.module.scss';
+.fillHeartIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+
+  &:hover {
+    svg {
+      path[stroke] {
+        stroke: $accent-a-4;
+      }
+      path[fill] {
+        fill: $accent-a-4;
+      }
+    }
+  }
+
+  &:active {
+    svg {
+      path[stroke] {
+        stroke: $accent-a-8;
+      }
+      path[fill] {
+        fill: $accent-a-8;
+      }
+    }
+  }
+}

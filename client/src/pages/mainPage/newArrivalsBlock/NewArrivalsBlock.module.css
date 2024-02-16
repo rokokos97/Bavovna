@@ -143,8 +143,8 @@
   text-transform: uppercase;
   color: #868686;
 }
-.newArrivalsBlock__arrows .button svg {
-  width: 4rem !important;
+.newArrivalsBlock__arrows .buttonRight {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=NewArrivalsBlock.module.css.map */

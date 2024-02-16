@@ -2,7 +2,7 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
-import {CardMasterProvider} from '../../Providers/CardMasterProvider';
+import {CardMasterProvider} from '../../providers/CardMasterProvider';
 import CardContext from './CardContext';
 
 const Card = () => {

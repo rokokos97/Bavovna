@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 
 import styles from './checkboxBlock.module.scss';
 

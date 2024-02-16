@@ -82,6 +82,10 @@
   cursor: default;
 }
 
+.arrowForward svg {
+  transform: rotate(180deg);
+}
+
 .pageButton {
   font-size: 1.6rem;
   font-style: normal;

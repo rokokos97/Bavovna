@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import styles from './shoppingCartPage.module.scss';
-import LeftArrowIcon from '../../components/svg/leftArrowIcon/leftArrowIcon';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getCart, getNormalizedCart} from '../../store/cartSlice';
@@ -8,8 +7,9 @@ import ProductCardInCart from '../../components/productCardInCart/productCardInC
 import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
-import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
-import CheckOutBlock from './Blocks/checkOutBlock/checkOutBlock';
+import ItemPreviewCard from '../../components/itemPreviewCard/ItemPreviewCard';
+import CheckOutBlock from './blocks/checkOutBlock/checkOutBlock';
+import LeftArrowIcon from '../../components/svg/arrowIcons/leftArrowIcon/leftArrowIcon';
 
 const ShoppingCartPage = () => {
   const cart = useSelector(getCart);

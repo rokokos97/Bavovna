@@ -1,11 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
 import FilterSelectionBlock from '../filterSelectionBlock/filterSelectionBlock';
-import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
-import ArrowBackIcon from '../../../components/svg/arrowBackIcon/arrowBackIcon';
-import ArrowForwardIcon from '../../../components/svg/arrowForwardIcon/arrowForwardIcon';
-import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import ItemPreviewCard from '../../../components/itemPreviewCard/ItemPreviewCard';
+import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 import {SearchContext} from '../../../app/App';
 import styles from './cardsCatalogBlock.module.scss';
+import ArrowBackIcon from '../../../components/svg/arrowIcons/arrowBackIcon/arrowBackIcon';
 
 const CardsCatalogBlock = () => {
   const {filteredItems, isFilter} = useDataShopPage();
@@ -110,8 +109,8 @@ const CardsCatalogBlock = () => {
             <div
               className={
                 currentPage !== totalPages ?
-                  styles.arrow :
-                  `${styles.arrow} ${styles.arrowDisable}`
+                  `${styles.arrow} ${styles.arrowForward}` :
+                  `${styles.arrow} ${styles.arrowForward} ${styles.arrowDisable}`
               }
               onClick={
                 currentPage === totalPages ?
@@ -120,7 +119,7 @@ const CardsCatalogBlock = () => {
               }
             >
               <span>Next</span>
-              <ArrowForwardIcon />
+              <ArrowBackIcon />
             </div>
           </div>
         ) : null}

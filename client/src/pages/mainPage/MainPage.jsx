@@ -7,7 +7,7 @@ import BavovnaBlock from './bavovnaTextBlock/BavovnaBlock';
 import NewsLettersBlock from './newsLettersBlock/NewsLettersBlock';
 import BavovnaCoverImageBlock from './bavovnaCoverImageBlock/BavovnaCoverImageBlock';
 import CategoriesBlock from './categoriesBlock/CategoriesBlock';
-import ModalCookies from '../../components/modal/modalContent/ModalCookies/modalCookies';
+import ModalCookies from '../../components/modal/modalContent/modalCookies/modalCookies';
 import {Modal} from '../../components/modal';
 import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import Cookies from 'js-cookie';
@@ -18,7 +18,7 @@ import {getCitiesError, getCitiesIsLoadingStatus} from '../../store/citiesSlice'
 import {getItemsError, getItemsLoadingStatus} from '../../store/itemsSlice';
 import ModalError from '../../components/modal/modalContent/modalError/modalError';
 import Loader from '../../components/loader/loader';
-import ModalEducationProject from '../../components/modal/modalContent/ModalEducationProject/modalEducationProject';
+import ModalEducationProject from '../../components/modal/modalContent/modalEducationProject/modalEducationProject';
 import sessionStorageService from '../../services/sessionStorage.service';
 const MainPage = () => {
   const categoriesError = useSelector(getCategoriesError());

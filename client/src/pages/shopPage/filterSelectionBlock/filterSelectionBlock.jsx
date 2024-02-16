@@ -2,7 +2,7 @@ import React from 'react';
 import CloseIcon from '../../../components/svg/closeIcon/CloseIcon';
 import Dropdown from '../../../components/dropdown/Dropdown';
 import CheckboxBlock from '../checkboxBlock/checkboxBlock';
-import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 import {filtersValues} from '../../../services/filtersValues.service';
 import styles from './filterSelectionBlock.module.scss';
 

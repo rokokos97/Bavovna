@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import FilterIcon from '../../../components/svg/filterIcon/filterIcon';
 import SortIcon from '../../../components/svg/sortIcon/sortIcon';
-import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 
 import styles from './selectionBlock.module.scss';
 

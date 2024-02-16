@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
-import InstagramIcon from '../svg/instagrammIcon/instagrammIcon';
-import FacebookIcon from '../svg/facebookIcon/facebookIcon';
-import TiktokIcon from '../svg/tiktokIcon/tiktokIcon';
 import styles from './Footer.module.scss';
 import {useSelector} from 'react-redux';
 import {getCategories} from '../../store/categorySlice';
 import LogoIcon from '../svg/logoIcon/logoIcon';
+import TiktokIcon from '../svg/socialMediaIcons/tiktokIcon/tiktokIcon';
+import FacebookIcon from '../svg/socialMediaIcons/facebookIcon/facebookIcon';
+import InstagrammIcon from '../svg/socialMediaIcons/instagrammIcon/instagrammIcon';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ const Footer = () => {
             </button>
             <div className={styles.socialList}>
               <a href='https://www.instagram.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
-                <InstagramIcon />
+                <InstagrammIcon />
               </a>
               <a href='https://www.facebook.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
                 <FacebookIcon />

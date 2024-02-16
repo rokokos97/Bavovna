@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import styles from './listWithRadioButtons.module.scss';
 import PropTypes from 'prop-types';
-import RadioButtonCheckedIcon from '../svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import DeleteIcon from '../svg/deleteIcon/deleteIcon';
 import {getUser, updateUser} from '../../store/userSlice';
 import {useDispatch, useSelector} from 'react-redux';
+import RadioButtonCheckedIcon from '../svg/radioButtonIcons/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import RadioButtonEmptyIcon from '../svg/radioButtonIcons/radioButtonEmptyIcon/radioButtonEmptyIcon';
 
 const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) => {
   const dispatch = useDispatch();

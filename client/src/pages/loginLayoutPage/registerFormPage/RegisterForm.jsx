@@ -9,7 +9,7 @@ import {validationSchemaRegisterForm} from '../../../utils/validationSchema';
 import googleService from '../../../services/google.service';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import {Modal} from '../../../components/modal';
-import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
+import ModalVerifyEmail from '../../../components/modal/modalContent/modalVerifyEmail/ModalVerifyEmail';
 import {showBodyOverflow, hideBodyOverflow} from '../../../services/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/registerFormBlock/registerFormBlock';
 

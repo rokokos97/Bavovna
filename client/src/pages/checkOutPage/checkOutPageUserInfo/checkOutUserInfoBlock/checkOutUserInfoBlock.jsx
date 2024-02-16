@@ -4,15 +4,16 @@ import LoginFormBlock from '../../../../components/form/formBlocks/loginFormBloc
 import {useFormik} from 'formik';
 import UnknownUserContactFormBlock
   from '../../../../components/form/formBlocks/anonimUserContactFormBlock/unknownUserContactFormBlock';
-import LeftArrowIcon from '../../../../components/svg/leftArrowIcon/leftArrowIcon';
-import RightArrowIcon from '../../../../components/svg/rightArrowIcon/rightArrowIcon';
 import {useNavigate} from 'react-router-dom';
-import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import {useDispatch, useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
 import {validationSchemaCheckOutUserInfo} from '../../../../utils/validationSchema';
 import {setUserInfo} from '../../../../store/ordersSlice';
+import RadioButtonCheckedIcon
+  from '../../../../components/svg/radioButtonIcons/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import RadioButtonEmptyIcon
+  from '../../../../components/svg/radioButtonIcons/radioButtonEmptyIcon/radioButtonEmptyIcon';
+import LeftArrowIcon from '../../../../components/svg/arrowIcons/leftArrowIcon/leftArrowIcon';
 
 const CheckOutUserInfoBlock = () => {
   const navigate = useNavigate();
@@ -101,7 +102,7 @@ const CheckOutUserInfoBlock = () => {
             <span>
               next step
             </span>
-            <RightArrowIcon/>
+            <LeftArrowIcon/>
           </button>
         </div>
       </form>

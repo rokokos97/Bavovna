@@ -7,17 +7,17 @@ import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
 import config from '../../config.json';
 import {addItemToCart} from '../../store/cartSlice';
 import {getUser} from '../../store/userSlice';
-import {useDataCard} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../providers/CardMasterProvider';
 import {SizesList} from '../../components/sizeList/SizesList';
-import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
+import AlsoBoughtBlock from '../../blocks/alsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import Dropdown from '../../components/dropdown/Dropdown';
-import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
-import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
+import CheckoutModal from '../../components/modal/modalContent/checkoutModal/CheckoutModal';
+import SizeGuide from '../../components/modal/modalContent/sizeGuide/SizeGuide';
 import ColorsList from '../../components/colorsList/ColorsList';
-import EmptyHeartIcon from '../../components/svg/emptyHeartIcon/emptyHeartIcon';
-import FillHeartIcon from '../../components/svg/fillHeartIcon/fillHeartIcon';
 import styles from './Card.module.scss';
+import FillHeartIcon from '../../components/svg/favoriteIcons/fillHeartIcon/fillHeartIcon';
+import EmptyHeartIcon from '../../components/svg/favoriteIcons/emptyHeartIcon/emptyHeartIcon';
 
 const CardContext = ({item}) => {
   const dispatch = useDispatch();

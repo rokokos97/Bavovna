@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './loader.module.scss';
-import LoaderIcon from '../svg/loaderIcon/loaderIcon';
+import LoaderIcon from '../svg/loaderIcons/loaderBigIcon/loaderIcon';
 
 const Loader = () => (
   <div className={styles.loader} data-testid="Loader">

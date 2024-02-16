@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useDataCard} from '../../Providers/CardMasterProvider';
+import {useDataCard} from '../../providers/CardMasterProvider';
 import {filtersValues} from '../../services/filtersValues.service';
 
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './registerFormBlock.module.scss';
 import TextField from '../../formFields/textField/textField';
-import GoogleIcon from '../../../svg/googleIcon/googleIcon';
 import PropTypes from 'prop-types';
 import CheckboxField from '../../formFields/checkboxField/checkboxField';
 import {useSelector} from 'react-redux';
 import {getUserLoadingStatus} from '../../../../store/userSlice';
-import LoaderIconSmall from '../../../svg/loaderIconSmall/loaderIconSmall';
+import LoaderIconSmall from '../../../svg/loaderIcons/loaderSmallIcon/loaderIconSmall';
+import GoogleIcon from '../../../svg/socialMediaIcons/googleIcon/googleIcon';
 
 const RegisterFormBlock = ({formik, googleRegister}) => {
   const isLoading = useSelector(getUserLoadingStatus);
@@ -83,7 +83,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
         >
           {
           (isLoading) ?
-            <LoaderIconSmall/> :
+            <LoaderIconSmall /> :
             <>
               <span>
                     Sign up
@@ -111,7 +111,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
               (isLoading) ?
                 <LoaderIconSmall/>:
                 <>
-                  <GoogleIcon/>
+                  <GoogleIcon />
                   <span>
                       Sign up with Google
                   </span>

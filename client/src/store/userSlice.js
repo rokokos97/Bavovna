@@ -9,7 +9,9 @@ const transferDataToSessionStorage = () => {
   const keys = Object.keys(localStorage);
   keys.forEach((key) => {
     const value = localStorage.getItem(key);
-    sessionStorage.setItem(key, value);
+    if (value !== null) {
+      sessionStorage.setItem(key, value);
+    }
   });
 };
 if (localStorageService.getAccessToken()) {
@@ -245,23 +247,21 @@ export const loadUser = () => async (dispatch) => {
     dispatch(userLoadRequestFailed(error.message));
   }
 };
-const selectUserEntities = (state) => state.user.entities;
-const selectIsLoggedIn = (state) => state.user.isLoggedIn;
 const selectUserLoadingStatus = (state) => state.user.isLoading;
 export const getUserLoadingStatus = createSelector(
     [selectUserLoadingStatus],
     (isLoading) => isLoading,
 );
+const selectUserEntities = (state) => state.user.entities;
 export const getUser = createSelector(
-    [selectUserEntities], // Масив селекторів, результати яких будуть аргументами для функції нижче
-    (entities) => entities, // Функція, яка отримує результати вищезазначених селекторів
+    [selectUserEntities],
+    (entities) => entities,
 );
-// export const getUser = () => (state) => state.user.entities;
+const selectIsLoggedIn = (state) => state.user.isLoggedIn;
 export const getIsLoggedIn = createSelector(
-    [selectIsLoggedIn], // Масив селекторів, результати яких будуть аргументами для функції нижче
-    (isLoggedIn) => isLoggedIn, // Функція, яка отримує результати вищезазначених селекторів
+    [selectIsLoggedIn],
+    (isLoggedIn) => isLoggedIn,
 );
-// export const getIsLoggedIn = () => (state) => state.user.isLoggedIn;
 export const getResponse = () => (state) => state.user.response;
 
 

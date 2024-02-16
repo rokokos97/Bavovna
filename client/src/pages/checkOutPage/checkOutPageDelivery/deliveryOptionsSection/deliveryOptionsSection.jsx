@@ -8,13 +8,9 @@ import {
   setDeliveryMethod,
   setDeliveryOption, setUserDeliveryInfo,
 } from '../../../../store/ordersSlice';
-import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonCheckedIcon/radioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonEmptyIcon/radioButtonEmptyIcon';
 import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/userDeliveryAddressList/userDeliveryAddressList';
 import UserDeliveryMethodsList from './userDeliveryMethodsList/userDeliveryMethodsList';
-import LeftArrowIcon from '../../../../components/svg/leftArrowIcon/leftArrowIcon';
-import RightArrowIcon from '../../../../components/svg/rightArrowIcon/rightArrowIcon';
 import {useFormik} from 'formik';
 import npService from '../../../../services/np.service';
 import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
@@ -24,6 +20,11 @@ import {
 } from '../../../../utils/validationSchema';
 import {useNavigate} from 'react-router-dom';
 import createDeliveryLabel from '../../../../utils/createDeliveryLabel';
+import RadioButtonCheckedIcon
+  from '../../../../components/svg/radioButtonIcons/radioButtonCheckedIcon/radioButtonCheckedIcon';
+import RadioButtonEmptyIcon
+  from '../../../../components/svg/radioButtonIcons/radioButtonEmptyIcon/radioButtonEmptyIcon';
+import LeftArrowIcon from '../../../../components/svg/arrowIcons/leftArrowIcon/leftArrowIcon';
 const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -171,7 +172,7 @@ const deliveryOptionsSection = () => {
             <span>
                 next step
             </span>
-            <RightArrowIcon/>
+            <LeftArrowIcon/>
           </button>
         </div>
       </form>

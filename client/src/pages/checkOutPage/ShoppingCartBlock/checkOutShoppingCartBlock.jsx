@@ -11,10 +11,10 @@ import {
   setOrderAmount,
   setPromoCodeSale,
 } from '../../../store/ordersSlice';
-import RightArrowIcon from '../../../components/svg/rightArrowIcon/rightArrowIcon';
 import {validationSchemaPromoCode} from '../../../utils/validationSchema';
 import {getCartLength, getCartTotalPrice} from '../../../store/cartSlice';
 import PropTypes from 'prop-types';
+import LeftArrowIcon from '../../../components/svg/arrowIcons/leftArrowIcon/leftArrowIcon';
 
 const CheckOutShoppingCartBlock = ({formik}) => {
   const dispatch = useDispatch();
@@ -69,7 +69,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
             className={styles.arrowButton}
             type='submit'
           >
-            <RightArrowIcon/>
+            <LeftArrowIcon/>
           </button>
         </form>
         <div className={styles.price}>

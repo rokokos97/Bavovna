@@ -11,7 +11,7 @@ import {
   resetPassword,
 } from '../../../store/userSlice';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
-import LoaderIconSmall from '../../../components/svg/loaderIconSmall/loaderIconSmall';
+import LoaderIconSmall from '../../../components/svg/loaderIcons/loaderSmallIcon/loaderIconSmall';
 
 const ForgotPasswordForm = () => {
   const dispatch = useDispatch();

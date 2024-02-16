@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './creatorsPage.module.scss';
-import LinkedinIcon from '../../components/svg/linkedinIcon/linkedinIcon';
-import TelegramIcon from '../../components/svg/telegramIcon/telegramIcon';
-import BehanceIcon from '../../components/svg/behanceIcon/behanceIcon';
-import GithubIcon from '../../components/svg/githubIcon/githubIcon';
+import LinkedinIcon from '../../components/svg/socialMediaIcons/linkedinIcon/linkedinIcon';
+import BehanceIcon from '../../components/svg/socialMediaIcons/behanceIcon/behanceIcon';
+import GithubIcon from '../../components/svg/socialMediaIcons/githubIcon/githubIcon';
+import TelegramIcon from '../../components/svg/socialMediaIcons/telegramIcon/telegramIcon';
 
 const CreatorsPage = () => {
   const data = [

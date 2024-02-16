@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import styles from './headShopPageBlock.module.scss';
-import {useDataShopPage} from '../../../Providers/ShopPageMasterProvider';
+import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 import {useNavigate} from 'react-router-dom';
 import {SearchContext} from '../../../app/App';
 

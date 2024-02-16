@@ -7,7 +7,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {Navigation} from 'swiper/modules';
-import ArrowUpIcon from '../../../../components/svg/arrowUpIcon/arrowUpIcon';
+import ArrowUpIcon from '../../../../components/svg/arrowIcons/arrowUpIcon/arrowUpIcon';
 const CheckOutShoppingCartBlockItemsList = () => {
   const swiperRef = useRef();
   const normalizeCart = useSelector(getNormalizedCart);
@@ -28,7 +28,7 @@ const CheckOutShoppingCartBlockItemsList = () => {
       <Swiper
         direction={'vertical'}
         onSwiper={(swiper) => swiperRef.current = swiper}
-        slidesPerView={3}
+        slidesPerView={normalizeCart.length>3?3:normalizeCart.length}
         spaceBetween={2.4}
         modules={[Navigation]}
         navigation={{
