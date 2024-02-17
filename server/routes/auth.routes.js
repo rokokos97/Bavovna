@@ -11,16 +11,13 @@ function isTokenInvalid(data, dbToken) {
   return !data||!dbToken||data._id !== dbToken?.user?.toString();
 }
 const transporter = nodemailer.createTransport({
-  host: 'sandbox.smtp.mailtrap.io',
-  port: 2525,
-
+  host: config.bavovnaSpace.HOST,
+  port: config.bavovnaSpace.PORT,
   auth: {
-    user: config.mailTrap.user,
-    pass: config.mailTrap.password,
+    user: config.bavovnaSpace.login,
+    pass: config.bavovnaSpace.password,
   },
 });
-//const delay = (duration) => new Promise(resolve => setTimeout(resolve, duration));
-
 router.post('/signUp', [
   check('email', 'email is not correct')
       .isEmail(),
@@ -60,7 +57,7 @@ router.post('/signUp', [
       const encodedToken = encodeURIComponent(emailVerificationToken);
       const verifyEmailURL = `http://localhost:3000/user/${newUser._id}?token=${encodedToken}&email=${encodedEmail}`;
       const mailOptions = {
-        from: 'bavovna@mail.com',
+        from: 'no-repaly@bavovna.space',
         to: email,
         subject: 'Verification email',
         text: `Hello! Please verify your email. Follow the link to verify your email: `,
@@ -68,12 +65,13 @@ router.post('/signUp', [
                      <a href="${verifyEmailURL}"> Click here... </a>`,
       };
       await transporter.sendMail(mailOptions, function(error, info) {
+        console.log('error', error);
         if (error) {
           return res.status(500).json({
             response: {
-              errors: error,
+//              errors: error,
               code: 500,
-              message: 'SERVER_ERROR',
+              message: 'SERVER_ERROR_MAIL',
             },
           });
         } else {
@@ -95,6 +93,7 @@ router.post('/signUp', [
       });
     } catch (error) {
       res.status(500).json({
+        
         response: {
           errors: error,
           code: 500,
@@ -289,20 +288,21 @@ router.post('/forgotPassword', [
       const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
       const resetPasswordURL = `http://localhost:3000/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
       const mailOptions = {
-        from: 'bavovna@shop.com',
+        from: 'no-repaly@bavovna.space',
         to: email,
-        subject: 'Test Email',
+        subject: 'Reset password',
         text: `Hello. If you would like reset your password please enter the link!`,
         html: `<b>If you would like reset your password please enter the link</b>
                <a href="${resetPasswordURL}"> Click here... </a>`,
       };
       await transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
+          console.log('error', error, 'info', info);
           return res.status(500).json({
             response: {
-              errors: error,
+//              errors: error,
               code: 500,
-              message: 'SERVER_ERROR',
+              message: 'SERVER_ERROR_MAIL',
             },
           });
         } else {
