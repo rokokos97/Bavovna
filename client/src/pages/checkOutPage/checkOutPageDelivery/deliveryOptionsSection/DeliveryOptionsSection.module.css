@@ -299,5 +299,8 @@
   text-transform: uppercase;
   color: #868686;
 }
+.buttonRight div {
+  transform: rotate(180deg);
+}
 
 /*# sourceMappingURL=DeliveryOptionsSection.module.css.map */

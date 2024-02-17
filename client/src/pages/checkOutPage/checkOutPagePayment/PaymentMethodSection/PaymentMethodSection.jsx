@@ -9,9 +9,11 @@ import RadioButtonCheckedIcon
 import RadioButtonEmptyIcon
   from '../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
+import {useNavigate} from 'react-router-dom';
 
 const PaymentMethodSection = ({formik}) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const currentPaymentMethod = useSelector(getPaymentMethod());
   const paymentMethodsList = [
     {

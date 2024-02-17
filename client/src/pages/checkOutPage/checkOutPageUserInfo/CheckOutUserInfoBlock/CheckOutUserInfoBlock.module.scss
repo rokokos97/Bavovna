@@ -87,4 +87,7 @@
   @include buttonTransparent();
   justify-content: flex-end;
   padding-right: 0;
+  div {
+    transform: rotate(180deg);
+  }
 }

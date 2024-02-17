@@ -61,6 +61,8 @@
   padding: 1.6rem 2.4rem;
   background: transparent;
   border: none;
+  justify-content: flex-start;
+  padding-left: 0;
 }
 .buttonLeft span {
   font-family: "Fixel Display Semibold";
