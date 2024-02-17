@@ -124,7 +124,7 @@ const LoginFormBlock = () => {
           }
         </button>
         <Link
-          to='forgotPassword'
+          to='recoveryPassword'
           className={styles.forgotPassword}
         >
           <span>Forgot password?</span>
