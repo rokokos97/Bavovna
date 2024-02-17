@@ -88,9 +88,11 @@ const usersSlice = createSlice({
     },
     userSetNewPasswordRequestSuccess: (state, action) => {
       state.response = action.payload;
+      state.isLoading = false;
     },
     userSetNewPasswordRequestFailed: (state, action) => {
       state.error = action.payload;
+      state.isLoading = false;
     },
     userResponseCleared: (state) => {
       state.response = null;
@@ -106,6 +108,9 @@ const usersSlice = createSlice({
     },
     userAddressAddedFailed: (state, action) => {
       state.response = action.payload;
+    },
+    userSetNewPasswordRequested: (state) => {
+      state.isLoading =true;
     },
   },
 });
@@ -127,9 +132,9 @@ const {
   userLoadRequestSuccess,
   emailVerificationRequestedSuccess,
   emailVerificationRequestFailed,
+  userSetNewPasswordRequested,
 } = actions;
 
-const userSetNewPasswordRequested = createAction('userSetNewPasswordRequested');
 const userLoadRequested = createAction('users/userLoadRequested');
 const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
 const userUpdateRequested = createAction('users/userUpdateRequested');

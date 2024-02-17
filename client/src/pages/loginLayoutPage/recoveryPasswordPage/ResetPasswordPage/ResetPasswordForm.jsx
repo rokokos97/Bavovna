@@ -1,18 +1,21 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './ResetPasswordForm.module.scss';
 import TextField from '../../../../components/form/formFields/TextField/TextField';
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
-import {clearUserResponse, getResponse, setNewPassword} from '../../../../store/userSlice';
+import {clearUserResponse, getResponse, getUserLoadingStatus, setNewPassword} from '../../../../store/userSlice';
 import * as Yup from 'yup';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
+import LoaderIconSmall from '../../../../components/svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 
 const ResetPasswordForm = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get('token');
   const email = urlParams.get('email');
   const dispatch = useDispatch();
+  const isLoading = useSelector(getUserLoadingStatus);
   const response = useSelector(getResponse());
+  const [isLoaderRun, setIsLoaderRun] = useState(false);
   const formik = useFormik({
     initialValues: {
       password: '',
@@ -33,7 +36,6 @@ const ResetPasswordForm = () => {
           .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
     }),
     onSubmit: (values) => {
-      // console.log(JSON.stringify(values, null, 2));
       dispatch(setNewPassword(token, email, values.password));
       formik.resetForm();
     },
@@ -41,6 +43,13 @@ const ResetPasswordForm = () => {
   useEffect(() => {
     dispatch(clearUserResponse());
   }, []);
+  useEffect(() => {
+    if (isLoading) {
+      setIsLoaderRun(true);
+    } else {
+      setIsLoaderRun(false);
+    }
+  }, [isLoading]);
   return (
     <div className={styles.resetPasswordForm} data-testid="ResetPasswordForm">
       <div
@@ -83,9 +92,13 @@ const ResetPasswordForm = () => {
           className={styles.button}
           type="submit"
           disabled={!formik.isValid}>
+          {
+            isLoaderRun ?
+              <LoaderIconSmall/> :
           <span>
             Reset
           </span>
+          }
         </button>
       </form>
     </div>
