@@ -12,7 +12,7 @@ const LoginLayout = () => (
     <Routes>
       <Route index element={<LoginForm />} />
       <Route path="signUp" element={<RegisterForm />} />
-      <Route path="forgotPassword" element={<RecoveryPasswordForm />}/>
+      <Route path="recoveryPassword" element={<RecoveryPasswordForm />}/>
       <Route path="resetPassword" element={<ResetPasswordForm />}/>
       <Route path="*" element={<Page404 />}/>
     </Routes>

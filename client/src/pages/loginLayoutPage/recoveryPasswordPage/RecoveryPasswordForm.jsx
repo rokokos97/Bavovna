@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './RecoveryPasswordForm.module.scss';
 import TextField from '../../../components/form/formFields/TextField/TextField';
 import {useFormik} from 'formik';
@@ -17,6 +17,7 @@ const RecoveryPasswordForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getUserLoadingStatus);
   const response = useSelector(getResponse());
+  const [isLoaderRun, setIsLoaderRun] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -38,6 +39,13 @@ const RecoveryPasswordForm = () => {
       dispatch(clearUserResponse());
     }
   }, [formik.values, dispatch]);
+  useEffect(() => {
+    if (isLoading) {
+      setIsLoaderRun(true);
+    } else {
+      setIsLoaderRun(false);
+    }
+  }, [isLoading]);
   return (
     <div className={styles.forgotPasswordForm} data-testid="RecoveryPasswordForm">
       <div className={styles.titleBlock}>
@@ -70,7 +78,7 @@ const RecoveryPasswordForm = () => {
           className={styles.button}
           disabled={!formik.isValid || !formik.dirty}
         >{
-          isLoading ?
+          isLoaderRun ?
             <LoaderIconSmall/> :
           <span>
             recover

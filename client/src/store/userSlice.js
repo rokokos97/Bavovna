@@ -209,6 +209,7 @@ export const resetPassword = ({payload}) => async (dispatch) => {
   const {email} = payload;
   try {
     const data = await authService.reset({email});
+    console.log(data);
     dispatch(userResetPasswordRequestSuccess(data.response));
   } catch (error) {
     dispatch(userResetPasswordRequestFailed(error.response.data.response));
