@@ -75,7 +75,7 @@ router.post('/signUp', [
             },
           });
         } else {
-          if (info.response === '250 2.0.0 Ok: queued') {
+          if (info.response) {
             return res.status(200).json({
               response: {
                 code: 200,
