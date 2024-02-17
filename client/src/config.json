@@ -1,5 +1,6 @@
 {
-  "apiEndpoint": "http://localhost:8080/api/",
+  "apiEndpoint": "http://185.91.72.129/api/",
+  "apiEndpointServer": "http://185.91.72.129/api/",
   "googleClientId": "370372669438-ufur4oab8h7or61g5caqol2lcneu9kig.apps.googleusercontent.com",
   "npApiKey": "e4a79458f528b81267e51e59196b6a67"
 }

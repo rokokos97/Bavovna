@@ -202,7 +202,7 @@ export const logInWithPassword = ({payload}) => async (dispatch) => {
 export const verifyEmail = (token, email) => async (dispatch) => {
   dispatch(emailVerificationRequested());
   try {
-    const data = await authService.emailVerifiy(token, email);
+    const data = await authService.emailVerify(token, email);
     sessionStorageService.setTokens(data);
     dispatch(emailVerificationRequestedSuccess(data));
   } catch (error) {

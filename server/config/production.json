@@ -2,5 +2,16 @@
   "port": 8080,
   "mongoUri": "mongodb+srv://RostyslavLisovyi:8XhehApZqilGzDXF@cluster.wqp9fw1.mongodb.net/",
   "accessSecret": "super secret from backend",
-  "refreshSecret": "super refresh key"
+  "refreshSecret": "super refresh key",
+  "novaPochta": {
+    "apiKey": "e4a79458f528b81267e51e59196b6a67",
+    "NP_test_endpoint": "https://api-stage.novapost.pl/v.1.0/"
+  },
+  "bavovnaSpace": {
+    "login": "no-reply@bavovna.space",
+    "password": "Bavovna_1234",
+    "HOST": "eushared11.twinservers.net",
+    "PORT": "465"
+  }
 }
+
