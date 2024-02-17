@@ -24,7 +24,7 @@ const CheckOutBlock = () => {
         </button>
         <button
           type='button'
-          onClick={()=> navigate('/catalogue')}
+          onClick={()=> navigate('/shop')}
         >
           <span>
             Continue shopping

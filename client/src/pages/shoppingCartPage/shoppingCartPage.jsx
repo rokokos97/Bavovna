@@ -24,6 +24,7 @@ const ShoppingCartPage = () => {
   }
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
+      <p className={styles.shoppingCartPage_navigation}>Home / Shopping bag</p>
       <div className={styles.titleBlock}>
         <div className={styles.infoBlock}>
           <p className={styles.title}>{`shopping bag (${cart.length} items)`}</p>
