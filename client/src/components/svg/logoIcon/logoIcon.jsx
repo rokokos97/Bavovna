@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styles from './logoIcon.module.scss';
+import styles from './LogoIcon.module.scss';
 
 const LogoIcon = () => {
   return <div className={styles.logoIcon} data-testid='LogoIcon'>

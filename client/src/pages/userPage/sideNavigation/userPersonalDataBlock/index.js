@@ -1,1 +1,1 @@
-export * from './userPersonalDataBlock';
+export * from './UserPersonalDataBlock';

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import ChevronUp from '../svg/chevronUp/ChevronUp';
-import ChevronDown from '../svg/chevronDown/ChevronDown';
+import ChevronUp from '../svg/ChevronUp/ChevronUp';
+import ChevronDown from '../svg/ChevronDown/ChevronDown';
 import styles from './Dropdown.module.scss';
 
 const Dropdown = ({id, placeholder, name, inner}) => {

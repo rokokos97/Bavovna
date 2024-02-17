@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styles from './filterIcon.module.scss';
+import styles from './FilterIcon.module.scss';
 
 const FilterIcon = () => {
   return (

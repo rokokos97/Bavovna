@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import HeaderContent from './headerContent/HeaderContent';
+import HeaderContent from './HeaderContent/HeaderContent';
 import {shallowEqual, useSelector} from 'react-redux';
 import {getCart} from '../../store/cartSlice';
 import {getIsLoggedIn, getUser} from '../../store/userSlice';

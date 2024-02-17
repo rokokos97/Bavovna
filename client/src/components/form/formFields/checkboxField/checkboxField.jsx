@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './checkboxField.module.scss';
+import styles from './CheckboxField.module.scss';
 import PropTypes from 'prop-types';
 
 const CheckboxField = ({name, value, onChange, error, children}) => {

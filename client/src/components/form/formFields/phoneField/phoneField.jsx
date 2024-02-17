@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './phoneField.module.scss';
+import styles from './PhoneField.module.scss';
 import PhoneInput from 'react-phone-input-2';
 import PropTypes from 'prop-types';
 

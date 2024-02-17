@@ -1,7 +1,7 @@
 import React from 'react';
 import {ShopPageMasterProvider} from '../../providers/ShopPageMasterProvider';
 import ShopPageContext from './shopPageContext';
-import Loader from '../../components/loader/loader';
+import Loader from '../../components/Loader/Loader';
 import {useSelector} from 'react-redux';
 import {getItemsLoadingStatus} from '../../store/itemsSlice';
 

@@ -1,27 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import LogoIcon from '../../svg/logoIcon/logoIcon';
-import AccountIcon from '../../svg/accountIcon/accountIcon';
-import ShoppingCartIcon from '../../svg/shoppingCartIcon/shoppingCartIcon';
-import SearchIcon from '../../svg/searchIcon/searchIcon';
+import LogoIcon from '../../svg/LogoIcon/LogoIcon';
+import AccountIcon from '../../svg/AccountIcon/AccountIcon';
+import ShoppingCartIcon from '../../svg/ShoppingCartIcon/ShoppingCartIcon';
+import SearchIcon from '../../svg/SearchIcon/SearchIcon';
 import styles from './HeaderContent.module.scss';
-import HeaderInput from '../headerInput/HeaderInput';
-import EmptyHeartIcon from '../../svg/favoriteIcons/emptyHeartIcon/emptyHeartIcon';
+import HeaderInput from '../HeaderInput/HeaderInput';
+import EmptyHeartIcon from '../../svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 
 const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
   const location = useLocation();
   const [isSearch, setIsSearch] = useState(false);
-
   useEffect(() => {
     if (location.pathname !== '/shop' || location.search !== '') setIsSearch(false);
   }, [location]);
-
   const handleIsSearch = () => {
     setIsSearch(!isSearch);
     if (!isSearch) navigate('./shop');
   };
-
   return (
     <>
       <div className={styles.banner}>
@@ -79,14 +76,6 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
                 <AccountIcon />
                 <span className={styles.accountName}>{isLoggedIn && user ? user.firstName : 'account'}</span>
               </button>
-              {/* <div>*/}
-              {/*  <button style={{fontWeight: 'bold'}}>*/}
-              {/*    eng*/}
-              {/*  </button>*/}
-              {/*  <button>*/}
-              {/*    укр*/}
-              {/*  </button>*/}
-              {/* </div>*/}
             </div>
           </div>
           <div className={styles.logo}>

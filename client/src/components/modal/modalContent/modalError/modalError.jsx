@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './modalError.module.scss';
-import CloseIcon from '../../../svg/closeIcon/CloseIcon';
+import styles from './ModalError.module.scss';
+import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
 import PropTypes from 'prop-types';
-import AlertIcon from '../../../svg/alertIcon/alertIcon';
+import AlertIcon from '../../../svg/AlertIcon/AlertIcon';
 
 const ModalError = ({handleCloseModal}) => (
   <div className={styles.ModalError} data-testid="ModalEducationProject">

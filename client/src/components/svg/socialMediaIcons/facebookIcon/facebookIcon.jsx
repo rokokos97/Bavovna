@@ -1,12 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styles from './facebookIcon.module.scss';
-
 const FacebookIcon = () => {
   return (
     <>
       <svg
-        className={styles.facebookIcon}
         width='36'
         height='36'
         viewBox='0 0 36 36'

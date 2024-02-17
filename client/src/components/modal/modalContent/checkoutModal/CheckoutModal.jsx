@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CloseIcon from '../../../svg/closeIcon/CloseIcon';
+import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
 import {useDataCard} from '../../../../providers/CardMasterProvider';
 import styles from './CheckoutModal.module.scss';
 import {Link} from 'react-router-dom';
-import ArrowBackIcon from '../../../svg/arrowIcons/arrowBackIcon/arrowBackIcon';
+import ArrowBackIcon from '../../../svg/arrowIcons/ArrowBackIcon/ArrowBackIcon';
 
 const CheckoutModal = ({handleCloseModal}) => {
   const {itemData} = useDataCard();

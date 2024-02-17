@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './selectField.module.scss';
+import styles from './SelectField.module.scss';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 

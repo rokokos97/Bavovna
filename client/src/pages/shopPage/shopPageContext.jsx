@@ -1,7 +1,7 @@
 import React from 'react';
-import HeadShopPageBlock from './headShopPageBlock/headShopPageBlock';
-import SelectionBlock from './selectionBlock/selectionBlock';
-import CardsCatalogBlock from './cardsCatalogBlock/cardsCatalogBlock';
+import HeadShopPageBlock from './HeadShopPageBlock/HeadShopPageBlock';
+import SelectionBlock from './selectionBlock/SelectionBlock';
+import CardsCatalogBlock from './CardsCatalogBlock/CardsCatalogBlock';
 import styles from './shopPage.module.scss';
 
 const ShopPageContext = () => {

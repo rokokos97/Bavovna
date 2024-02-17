@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './sortIcon.module.scss';
+import styles from './SortIcon.module.scss';
 
 const SortIcon = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './emptyBlock.module.scss';
+import styles from './EmptyBlock.module.scss';
 import PropTypes from 'prop-types';
 import {useNavigate} from 'react-router-dom';
 

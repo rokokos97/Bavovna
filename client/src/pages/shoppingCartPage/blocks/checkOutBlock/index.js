@@ -1,1 +1,1 @@
-export * from './checkOutBlock';
+export * from './CheckOutBlock';

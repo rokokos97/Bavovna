@@ -1,1 +1,1 @@
-export * from './deliveryOptionsSection';
+export * from './DeliveryOptionsSection';

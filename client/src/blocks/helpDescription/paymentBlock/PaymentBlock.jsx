@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from '../../../components/dropdown/Dropdown';
+import Dropdown from '../../../components/Dropdown/Dropdown';
 import styles from './PaymentBlock.module.scss';
 
 const PaymentBlock = () => {

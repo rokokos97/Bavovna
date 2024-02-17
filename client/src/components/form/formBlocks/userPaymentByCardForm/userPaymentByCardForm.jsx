@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './userPaymentByCardForm.module.scss';
+import styles from './UserPaymentByCardForm.module.scss';
 import PropTypes from 'prop-types';
-import TextField from '../../formFields/textField/textField';
+import TextField from '../../formFields/TextField/TextField';
 
 const UserPaymentByCardForm = ({formik}) => {
   const handleCardNumberChange = (e) => {

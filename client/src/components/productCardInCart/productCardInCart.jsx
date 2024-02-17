@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './productCardInCart.module.scss';
-import DeleteIcon from '../svg/deleteIcon/deleteIcon';
+import styles from './ProductCardInCart.module.scss';
+import DeleteIcon from '../svg/DeleteIcon/DeleteIcon';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {addItemToCart, getCart, removeItemFromCart, removeOneItemFromCart} from '../../store/cartSlice';

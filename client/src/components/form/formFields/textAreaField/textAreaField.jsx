@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './textAreaField.module.scss';
+import styles from './TextAreaField.module.scss';
 import PropTypes from 'prop-types';
 
 const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder, disabled}) => {

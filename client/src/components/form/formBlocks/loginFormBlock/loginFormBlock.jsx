@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import styles from './loginFormBlock.module.scss';
-import TextField from '../../formFields/textField/textField';
-import CheckboxField from '../../formFields/checkboxField/checkboxField';
+import styles from './LoginFormBlock.module.scss';
+import TextField from '../../formFields/TextField/TextField';
+import CheckboxField from '../../formFields/CheckboxField/CheckboxField';
 import {Link, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
@@ -17,8 +17,8 @@ import {useGoogleLogin} from '@react-oauth/google';
 import googleService from '../../../../services/google.service';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
 import {useLocation} from 'react-router-dom';
-import LoaderIconSmall from '../../../svg/loaderIcons/loaderSmallIcon/loaderIconSmall';
-import GoogleIcon from '../../../svg/socialMediaIcons/googleIcon/googleIcon';
+import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
+import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 
 
 const LoginFormBlock = () => {

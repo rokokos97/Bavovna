@@ -1,12 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
-import styles from './tiktokIcon.module.scss';
-
-const TiktokIcon = () => {
+const TikTokIcon = () => {
   return (
     <>
       <svg
-        className={styles.tiktokIcon}
         width='36'
         height='36'
         viewBox='0 0 36 36'
@@ -27,4 +24,4 @@ const TiktokIcon = () => {
   );
 };
 
-export default TiktokIcon;
+export default TikTokIcon;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ModalVerifyEmail.module.scss';
-import CloseIcon from '../../../svg/closeIcon/CloseIcon';
+import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
 import PropTypes from 'prop-types';
 
 

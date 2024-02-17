@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './registerFormBlock.module.scss';
-import TextField from '../../formFields/textField/textField';
+import styles from './RegisterFormBlock.module.scss';
+import TextField from '../../formFields/TextField/TextField';
 import PropTypes from 'prop-types';
-import CheckboxField from '../../formFields/checkboxField/checkboxField';
+import CheckboxField from '../../formFields/CheckboxField/CheckboxField';
 import {useSelector} from 'react-redux';
 import {getUserLoadingStatus} from '../../../../store/userSlice';
-import LoaderIconSmall from '../../../svg/loaderIcons/loaderSmallIcon/loaderIconSmall';
-import GoogleIcon from '../../../svg/socialMediaIcons/googleIcon/googleIcon';
+import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
+import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 
 const RegisterFormBlock = ({formik, googleRegister}) => {
   const isLoading = useSelector(getUserLoadingStatus);

@@ -1,1 +1,1 @@
-export * from './userDeliveryBlock';
+export * from './UserDeliveryBlock';

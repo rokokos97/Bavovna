@@ -8,16 +8,16 @@ import config from '../../config.json';
 import {addItemToCart} from '../../store/cartSlice';
 import {getUser} from '../../store/userSlice';
 import {useDataCard} from '../../providers/CardMasterProvider';
-import {SizesList} from '../../components/sizeList/SizesList';
-import AlsoBoughtBlock from '../../blocks/alsoBoughtBlock/AlsoBoughtBlock';
+import {SizesList} from '../../components/SizeList/SizesList';
+import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
-import Dropdown from '../../components/dropdown/Dropdown';
-import CheckoutModal from '../../components/modal/modalContent/checkoutModal/CheckoutModal';
-import SizeGuide from '../../components/modal/modalContent/sizeGuide/SizeGuide';
-import ColorsList from '../../components/colorsList/ColorsList';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
+import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
+import ColorsList from '../../components/ColorsList/ColorsList';
 import styles from './Card.module.scss';
-import FillHeartIcon from '../../components/svg/favoriteIcons/fillHeartIcon/fillHeartIcon';
-import EmptyHeartIcon from '../../components/svg/favoriteIcons/emptyHeartIcon/emptyHeartIcon';
+import FillHeartIcon from '../../components/svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
+import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 
 const CardContext = ({item}) => {
   const dispatch = useDispatch();

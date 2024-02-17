@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './checkOutBlock.module.scss';
+import styles from './CheckOutBlock.module.scss';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getCartTotalPrice} from '../../../../store/cartSlice';

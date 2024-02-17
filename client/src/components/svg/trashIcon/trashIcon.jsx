@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './trashIcon.module.scss';
 
 const TrashIcon = () => {
   return (
-    <div className={styles.trashIcon}>
+    <div>
       <svg
         width='24'
         height='24'

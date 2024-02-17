@@ -1,1 +1,1 @@
-export * from './tiktokIcon';
+export * from './TikTokIcon';

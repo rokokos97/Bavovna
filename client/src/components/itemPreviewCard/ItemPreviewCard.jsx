@@ -7,8 +7,8 @@ import {useSelector} from 'react-redux';
 import {getItemsById} from '../../store/itemsSlice';
 import {getUser} from '../../store/userSlice';
 import useChangeFavorite from '../../services/useChangeFavorite';
-import FillHeartIcon from '../svg/favoriteIcons/fillHeartIcon/fillHeartIcon';
-import EmptyHeartIcon from '../svg/favoriteIcons/emptyHeartIcon/emptyHeartIcon';
+import FillHeartIcon from '../svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
+import EmptyHeartIcon from '../svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 
 const ItemPreviewCard = ({id}) => {
   const user = useSelector(getUser);

@@ -1,1 +1,1 @@
-export * from './modalEducationProject';
+export * from './ModalEducationProject';

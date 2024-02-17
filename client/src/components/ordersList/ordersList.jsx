@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './ordersList.module.scss';
+import styles from './OrdersList.module.scss';
 import {useSelector} from 'react-redux';
 import {getUser} from '../../store/userSlice';
 import {Link} from 'react-router-dom';
-import ChevronDown from '../svg/chevronDown/ChevronDown';
+import ChevronDown from '../svg/ChevronDown/ChevronDown';
 
 const OrdersList = () => {
   const user = useSelector(getUser);

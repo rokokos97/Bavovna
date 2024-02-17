@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
-import {SearchContext} from '../../../app/App';
-import SearchIcon from '../../svg/searchIcon/searchIcon';
-import CloseIcon from '../../svg/closeIcon/CloseIcon';
+import {SearchContext} from '../../../App/App';
+import SearchIcon from '../../svg/SearchIcon/SearchIcon';
+import CloseIcon from '../../svg/CloseIcon/CloseIcon';
 import styles from './HeaderInput.module.scss';
 
 const HeaderInput = ({handleIsSearch}) => {

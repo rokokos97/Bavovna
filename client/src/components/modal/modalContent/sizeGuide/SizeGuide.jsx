@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CloseIcon from '../../../svg/closeIcon/CloseIcon';
+import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
 import styles from './SizeGuide.module.scss';
 
 const SizeGuide = ({handleCloseModal}) => {

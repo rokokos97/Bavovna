@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './itemsList.module.scss';
-import ItemPreviewCard from '../itemPreviewCard/ItemPreviewCard';
+import styles from './ItemsList.module.scss';
+import ItemPreviewCard from '../ItemPreviewCard/ItemPreviewCard';
 import PropTypes from 'prop-types';
 
 const ItemsList = ({idArray}) => {

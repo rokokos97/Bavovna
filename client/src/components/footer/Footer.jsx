@@ -3,10 +3,10 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import styles from './Footer.module.scss';
 import {useSelector} from 'react-redux';
 import {getCategories} from '../../store/categorySlice';
-import LogoIcon from '../svg/logoIcon/logoIcon';
-import TiktokIcon from '../svg/socialMediaIcons/tiktokIcon/tiktokIcon';
-import FacebookIcon from '../svg/socialMediaIcons/facebookIcon/facebookIcon';
-import InstagrammIcon from '../svg/socialMediaIcons/instagrammIcon/instagrammIcon';
+import LogoIcon from '../svg/LogoIcon/LogoIcon';
+import TikTokIcon from '../svg/socialMediaIcons/TikTokIcon/TikTokIcon';
+import FacebookIcon from '../svg/socialMediaIcons/FacebookIcon/FacebookIcon';
+import InstagramIcon from '../svg/socialMediaIcons/InstagramIcon/InstagramIcon';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -72,13 +72,13 @@ const Footer = () => {
             </button>
             <div className={styles.socialList}>
               <a href='https://www.instagram.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
-                <InstagrammIcon />
+                <InstagramIcon />
               </a>
               <a href='https://www.facebook.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
                 <FacebookIcon />
               </a>
               <a href='https://www.tiktok.com/' target='_blank' className={styles.socialListItem} rel="noreferrer">
-                <TiktokIcon />
+                <TikTokIcon />
               </a>
             </div>
           </div>
