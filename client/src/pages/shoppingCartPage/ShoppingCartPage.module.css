@@ -7,9 +7,17 @@
   left: 50%;
   transform: translateX(-50%);
   flex-direction: column;
-  margin-top: 5rem;
   box-sizing: border-box;
   padding-bottom: 25rem;
+}
+
+.shoppingCartPage_navigation {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+  text-align: start;
+  margin: 1.6rem 0 1.4rem;
 }
 
 .titleBlock {
@@ -167,4 +175,4 @@
   padding-top: 2.4rem;
 }
 
-/*# sourceMappingURL=shoppingCartPage.module.css.map */
+/*# sourceMappingURL=ShoppingCartPage.module.css.map */
