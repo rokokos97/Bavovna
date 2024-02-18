@@ -2,10 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('config');
 const chalk = require('chalk');
-const cors = require('cors');
-const initDatabase = require(
-    './startUp/initDatabase'); // Ініціалізація бази даних
 const routes = require('./routes');
+const cors = require('cors');
+const initDatabase = require('./startUp/initDatabase');
 const path = require('path');
 const app = express();
 mongoose.set('strictQuery', false);
@@ -25,7 +24,6 @@ if (process.env.NODE_ENV === 'production') {
 
   const indexPath = path.join(__dirname, 'client', 'index.html');
 
-  // Запити на інші URL перенаправляють на index.html
   app.get('*', (req, res)=>{
     res.sendFile(indexPath);
   });
@@ -48,6 +46,5 @@ async function start() {
     process.exit(1);
   }
 }
-
 
 start();
