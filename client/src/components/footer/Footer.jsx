@@ -34,8 +34,7 @@ const Footer = () => {
             <div className={styles.footerContact}>
               <h3>Contact</h3>
               <div className={styles.footerList}>
-                <Link to='tel:+380441234567'>+38(044)123-45-67</Link>
-                <Link to='mailto:bavovna19@gmail.com'>Contact Us</Link>
+                <Link to='mailto:help@bavovna.space'>Contact Us</Link>
                 <Link to='/creators'>Project team</Link>
               </div>
             </div>
