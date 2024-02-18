@@ -69,7 +69,6 @@ router.post('/signUp', [
         if (error) {
           return res.status(500).json({
             response: {
-//              errors: error,
               code: 500,
               message: 'SERVER_ERROR_MAIL',
             },
@@ -93,7 +92,6 @@ router.post('/signUp', [
       });
     } catch (error) {
       res.status(500).json({
-        
         response: {
           errors: error,
           code: 500,
@@ -300,7 +298,6 @@ router.post('/forgotPassword', [
           console.log('error', error, 'info', info);
           return res.status(500).json({
             response: {
-//              errors: error,
               code: 500,
               message: 'SERVER_ERROR_MAIL',
             },
