@@ -146,27 +146,19 @@ export const signUp = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.register(payload);
-    setTimeout(()=>{
-      dispatch(userCreated(data.response));
-    }, 3000);
+    dispatch(userCreated(data.response));
   } catch (error) {
-    setTimeout(()=>{
-      dispatch(authRequestFailed(error.response.data.response));
-    }, 3000);
+    dispatch(authRequestFailed(error.response.data.response));
   }
 };
 export const signUpWithGoogle = (payload) => async (dispatch) => {
   dispatch(authRequested());
   try {
     const data = await authService.registerWithGoogle(payload);
-    setTimeout(()=>{
-      sessionStorageService.setTokens(data);
-      dispatch(authRequestSuccess(data.user));
-    }, 2000);
+    sessionStorageService.setTokens(data);
+    dispatch(authRequestSuccess(data.user));
   } catch (error) {
-    setTimeout(()=>{
-      dispatch(authRequestFailed(error.response.data.response));
-    }, 2000);
+    dispatch(authRequestFailed(error.response.data.response));
   }
 };
 export const loginWithGoogle = (payload) =>async (dispatch) =>{
@@ -214,7 +206,6 @@ export const resetPassword = ({payload}) => async (dispatch) => {
   const {email} = payload;
   try {
     const data = await authService.reset({email});
-    console.log(data);
     dispatch(userResetPasswordRequestSuccess(data.response));
   } catch (error) {
     dispatch(userResetPasswordRequestFailed(error.response.data.response));
@@ -269,6 +260,5 @@ export const getIsLoggedIn = createSelector(
     (isLoggedIn) => isLoggedIn,
 );
 export const getResponse = () => (state) => state.user.response;
-
 
 export default userReducer;

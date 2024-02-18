@@ -61,9 +61,6 @@ const ordersSlice = createSlice({
     setPromoCodeSale: (state, action) => {
       state.promoCodeSale = action.payload;
     },
-    setShippingPrice: (state, action) => {
-      state.shippingPrice = action.payload;
-    },
     setOrderToInitialState: (state) => {
       state.orderAmount = 0;
       state.shippingPrice = 2;
@@ -77,16 +74,6 @@ const ordersSlice = createSlice({
     },
   },
 });
-
-// export const uploadOrdersList = () => async (dispatch) => {
-//  dispatch(ordersRequested());
-//  try {
-//    const data = await ordersService.get();
-//    dispatch(ordersReceived(data));
-//  } catch (error) {
-//    dispatch(ordersRequestFailed(error));
-//  }
-// };
 export const addOrder = (order) => async (dispatch) => {
   dispatch(addOrderRequested());
   try {
@@ -111,9 +98,6 @@ export const getPaymentMethod = () => (state) => state.orders.paymentMethod;
 export const getPromoCodeSale = () => (state) => state.orders.promoCodeSale;
 export const getOrderAmount = () => (state) => state.orders.orderAmount;
 export const {
-//  ordersRequested,
-//  ordersReceived,
-//  ordersRequestFailed,
   setOrderToInitialState,
   setUserDeliveryInfo,
   setUserInfo,
@@ -121,7 +105,6 @@ export const {
   setPaymentMethod,
   setDeliveryMethod,
   setDeliveryOption,
-  setShippingPrice,
   setOrderAmount,
   addOrderRequested,
   addOrderReceived,

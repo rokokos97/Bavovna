@@ -48,13 +48,11 @@ const sessionStorageService = {
   setTokens,
   getAccessToken,
   getRefreshToken,
-  getTokenExpiresDate,
   getUserId,
   removeAuthData,
   setCurrentCart,
   getCurrentCart,
   setModalConfirm,
   getModalConfirm,
-  clearCartSessionStorage,
 };
 export default sessionStorageService;

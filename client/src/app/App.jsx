@@ -21,8 +21,6 @@ import CreatorsPage from '../pages/CreatorsPage/CreatorsPage';
 import CheckOutPageUserInfo from '../pages/checkOutPage/checkOutPageUserInfo/CheckOutPageUserInfo';
 import CheckOutPageDeliveryInfo from '../pages/checkOutPage/checkOutPageDelivery/CheckOutPageDeliveryInfo';
 import CheckOutPagePaymentInfo from '../pages/checkOutPage/checkOutPagePayment/CheckOutPagePaymentInfo';
-
-
 export const SearchContext = React.createContext();
 function App() {
   const [searchValue, setSearchValue] = useState('');

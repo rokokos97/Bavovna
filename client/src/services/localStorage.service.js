@@ -33,9 +33,6 @@ export function getUserId() {
 const localStorageService = {
   setTokens,
   getAccessToken,
-  getRefreshToken,
-  getTokenExpiresDate,
-  getUserId,
   removeAuthData,
 };
 export default localStorageService;
