@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './OrdersBlock.module.scss';
 import {useSelector} from 'react-redux';
+import {getUser} from '../../../../store/userSlice';
 import Loader from '../../../../components/Loader/Loader';
 import EmptyBlock from '../../../../blocks/EmptyBlock/EmptyBlock';
-import {getUser} from '../../../../store/userSlice';
 import OrdersList from '../../../../components/OrdersList/OrdersList';
 
 const OrdersBlock = () => {
@@ -11,19 +11,19 @@ const OrdersBlock = () => {
   if (!user) {
     return <Loader/>;
   }
-  return (<>
-    <div className={styles.ordersBlock} data-testid="OrdersBlock">
-      <p className={styles.title}>orders</p>
-      <div>
-        {user.orders.length > 0?
-          <OrdersList
-            ordersArray={user.orders}
-          />:
-          <EmptyBlock description='You do not have any orders yet'/>}
+  return (
+    <>
+      <div className={styles.ordersBlock} data-testid="OrdersBlock">
+        <p className={styles.title}>orders</p>
+        <div>
+          {user.orders.length > 0?
+            <OrdersList
+              ordersArray={user.orders}
+            />:
+            <EmptyBlock description='You do not have any orders yet'/>}
+        </div>
       </div>
-    </div>
-
-  </>
+    </>
   );
 };
 
