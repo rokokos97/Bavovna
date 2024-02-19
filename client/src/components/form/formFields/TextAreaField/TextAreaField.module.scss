@@ -22,12 +22,17 @@
 .textarea {
     min-width: 30rem;
     max-width: 30rem;
+    min-height: 3rem;
     height: 7.5rem;
     border: 1px solid $gray-30;
     padding: 1.4rem;
     background: $white;
     @include fonts($input-text);
   }
+.textarea[type='1'] {
+  min-width: 52.1rem;
+  max-width: 52.1rem;
+}
 .error {
   color: $error;
   padding-left: 0.8rem;

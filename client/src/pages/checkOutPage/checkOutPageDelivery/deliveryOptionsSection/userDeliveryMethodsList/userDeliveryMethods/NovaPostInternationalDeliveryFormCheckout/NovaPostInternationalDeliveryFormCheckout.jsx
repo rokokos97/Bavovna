@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './NovaPostInternationalDeliveryFormCheckout.module.scss';
 import PropTypes from 'prop-types';
 import TextAreaField from '../../../../../../../components/form/formFields/TextAreaField/TextAreaField';
-const NovaPostInternationalDeliveryFormCheckout = ({formik}) => {
+const NovaPostInternationalDeliveryFormCheckout = ({formik, type}) => {
   return (
     <div className={styles.npInternationalDeliveryFormCheckout} data-testid="NovaPostInternationalDeliveryFormCheckout">
       <TextAreaField
+        type={type}
         label='Delivery address '
         name='intDeliveryAddress'
         placeholder='Enter delivery address'
@@ -20,5 +21,6 @@ const NovaPostInternationalDeliveryFormCheckout = ({formik}) => {
 };
 NovaPostInternationalDeliveryFormCheckout.propTypes = {
   formik: PropTypes.object,
+  type: PropTypes.string,
 };
 export default NovaPostInternationalDeliveryFormCheckout;

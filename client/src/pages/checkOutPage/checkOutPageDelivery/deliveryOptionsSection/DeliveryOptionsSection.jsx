@@ -112,6 +112,7 @@ const deliveryOptionsSection = () => {
       id: '1',
       label: 'new address',
       value: <UserDeliveryMethodsList
+        type={'1'}
         formik={formik}
         warehouseList={warehousesList}
         selectedValue={selectedValue}

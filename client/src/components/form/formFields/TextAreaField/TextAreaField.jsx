@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './TextAreaField.module.scss';
 import PropTypes from 'prop-types';
 
-const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder, disabled}) => {
+const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder, disabled, type}) => {
   return (
     <div className={`${styles.textAreaField} ${error? styles.hasError: ''}`} data-testid="TextAreaField">
       <label
@@ -15,6 +15,7 @@ const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder
       <div
       >
         <textarea
+          type={type}
           className={styles.textarea}
           disabled={disabled}
           id={name}
@@ -42,6 +43,7 @@ TextAreaField.propTypes = {
   touched: PropTypes.bool,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 export default TextAreaField;

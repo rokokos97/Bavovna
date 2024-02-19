@@ -8,7 +8,7 @@ import NovaPostInternationalDeliveryFormCheckout
   from './userDeliveryMethods/NovaPostInternationalDeliveryFormCheckout/NovaPostInternationalDeliveryFormCheckout';
 import PropTypes from 'prop-types';
 
-const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selectedValue, warehouseList, formik}) => {
+const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selectedValue, warehouseList, formik, type}) => {
   const deliveryMethods = {
     1: {
       _id: '1',
@@ -32,7 +32,7 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selec
     3: {
       _id: '3',
       label: 'International delivery',
-      value: <NovaPostInternationalDeliveryFormCheckout formik={formik}/>,
+      value: <NovaPostInternationalDeliveryFormCheckout formik={formik} type={type}/>,
       price: 20,
     },
   };
@@ -48,6 +48,7 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selec
   );
 };
 UserDeliveryMethodsList.propTypes = {
+  type: PropTypes.string,
   handleCityChange: PropTypes.func,
   handleWarehouseChange: PropTypes.func,
   selectedValue: PropTypes.func,
