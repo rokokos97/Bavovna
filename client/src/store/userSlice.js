@@ -259,6 +259,10 @@ export const getIsLoggedIn = createSelector(
     [selectIsLoggedIn],
     (isLoggedIn) => isLoggedIn,
 );
-export const getResponse = () => (state) => state.user.response;
+const selectResponse = (state) => state.user.response;
+export const getResponse = createSelector(
+    [selectResponse],
+    (response)=> response,
+);
 
 export default userReducer;
