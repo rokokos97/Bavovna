@@ -8,8 +8,8 @@ import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
-import CheckOutBlock from './blocks/CheckOutBlock/CheckOutBlock';
 import LeftArrowIcon from '../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
+import CheckOutBlock from './Blocks/CheckOutBlock/CheckOutBlock';
 
 const ShoppingCartPage = () => {
   const cart = useSelector(getCart);
