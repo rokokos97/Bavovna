@@ -1,0 +1,319 @@
+.loginFormBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3.2rem;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 41rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #000000;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.button::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 18.1rem;
+}
+.button::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 20.2rem;
+}
+.button:hover::before {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1rem;
+}
+.button:active::after {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1.1rem;
+}
+.button:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.button:disabled span {
+  color: #9b9b9b;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.button::before {
+  background: #5a9b83;
+}
+.button::after {
+  background: #1a6449;
+}
+.button:hover::before {
+  background: #5a9b83;
+}
+.button:active::after {
+  border: 1px solid #5a9b83;
+}
+
+.googleButtonBlock {
+  display: block;
+  margin: 0 auto;
+}
+
+.googleButton {
+  display: flex;
+  gap: 1.2rem;
+  border: 1px solid #000000;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 41rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #fafafa;
+  border: 0.1rem solid #000000;
+}
+.googleButton span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.googleButton::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 18.1rem;
+}
+.googleButton::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 20.2rem;
+}
+.googleButton:hover::before {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1rem;
+}
+.googleButton:active::after {
+  content: "";
+  width: 45.1rem;
+  height: 45.1rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -20.15rem;
+  left: -1.1rem;
+}
+.googleButton:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.googleButton:disabled span {
+  color: #9b9b9b;
+}
+.googleButton span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.googleButton::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.googleButton::after {
+  background: #a9dfcb;
+}
+.googleButton:hover::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.googleButton:active::after {
+  border: 1px solid rgba(169, 223, 203, 0.3);
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+}
+.divider div {
+  width: 50%;
+  height: 0.1rem;
+  background: #d7d7d7;
+}
+.divider span {
+  color: #000000;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+
+.socialButtonsBlock {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.forgotPassword {
+  display: block;
+  margin: 0 auto;
+  font-family: "Fixel Display Semibold";
+  font-size: 12px;
+  line-height: 110%;
+  color: #4a4a4a;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.errorMessagesBlock {
+  display: flex;
+  align-self: stretch;
+  background: #dfc5c5;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.errorMessagesBlock p {
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #ea001b;
+}
+
+.successMessagesBlock {
+  display: flex;
+  align-self: stretch;
+  background: #a9dfcb;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.successMessagesBlock p {
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #2ab66a;
+}
+
+.loader {
+  background: conic-gradient(#fafafa, #79b6a0);
+  position: relative;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  animation: rotation 1.5s linear infinite;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: #000000;
+  border-radius: 50%;
+  top: 12.5%;
+  left: 12.5%;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: #79b6a0;
+  right: 45%;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=LoginFormBlock.module.css.map */

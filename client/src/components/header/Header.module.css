@@ -1,0 +1,13 @@
+.container {
+  background-color: #fafafa;
+  border-bottom: 0.1rem solid #d7d7d7;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  min-width: 105rem;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

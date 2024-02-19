@@ -1,0 +1,144 @@
+.checkOutShoppingCartBlockItemsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+  min-height: 10rem;
+  max-height: 35.6rem;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.card {
+  width: 42.3rem;
+  height: 14.2rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.7rem;
+  justify-content: flex-start;
+}
+
+.imageBlock {
+  width: 14rem;
+  height: 13.8rem;
+  overflow: hidden;
+}
+.imageBlock img {
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+}
+
+.infoBlock {
+  width: 26.6rem;
+  object-fit: fill;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.infoBlock p {
+  text-align: start;
+}
+
+.itemInfoBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.colorRectangle {
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  align-items: center;
+}
+.line:last-child {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.discount {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.discount span:first-child {
+  text-decoration: line-through;
+  color: #727272;
+}
+.discount span:last-child {
+  color: #ea001b;
+}
+
+.buttonsBlock {
+  position: absolute;
+  top: 13rem;
+  right: -4rem;
+  z-index: 2;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.6rem;
+}
+
+.button {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a9dfcb;
+}
+
+.buttonDown {
+  transform: rotate(180deg);
+}
+
+.deleteButton {
+  background: transparent;
+}
+.deleteButton:hover svg path {
+  stroke: #5a9b83;
+}
+.deleteButton:active svg path {
+  stroke: #1a6449;
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/*# sourceMappingURL=CheckOutShoppingCartBlockItemsList.module.css.map */

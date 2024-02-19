@@ -1,0 +1,14 @@
+@import '../../styles/variables.module.scss';
+.categoryPreviewCard {
+  display: flex;
+  width: 19.3rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+
+  .title {
+    text-transform: capitalize;
+    @include fonts($body-2)
+  };
+}

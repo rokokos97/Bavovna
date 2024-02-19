@@ -1,0 +1,136 @@
+.ModalError {
+  width: 49.9rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  background: #d7d7d7;
+  padding: 1.6rem;
+  position: absolute;
+  right: 8rem;
+  bottom: 8.2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  width: 43.6rem;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-align: start;
+}
+
+.closeButton {
+  background: #d7d7d7;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 19.5rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #000000;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.button::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 7.35rem;
+}
+.button::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 9.45rem;
+}
+.button:hover::before {
+  content: "";
+  width: 21.45rem;
+  height: 21.45rem;
+  opacity: 1;
+  position: absolute;
+  top: -8.325rem;
+  left: -1rem;
+}
+.button:active::after {
+  content: "";
+  width: 21.45rem;
+  height: 21.45rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -8.325rem;
+  left: -1.1rem;
+}
+.button:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.button:disabled span {
+  color: #9b9b9b;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.button::before {
+  background: #5a9b83;
+}
+.button::after {
+  background: #1a6449;
+}
+.button:hover::before {
+  background: #5a9b83;
+}
+.button:active::after {
+  border: 1px solid #5a9b83;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  align-items: center;
+  color: #ea001b;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=ModalError.module.css.map */

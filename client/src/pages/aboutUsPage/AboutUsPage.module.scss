@@ -1,0 +1,17 @@
+@import "../../styles/variables.module";
+
+.aboutUs {
+  padding: 1.6rem 8rem 4rem;
+}
+
+.aboutUsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.navigation{
+  @include fonts($breadcrumb);
+  text-align: start;
+  margin-bottom: 1.4rem;
+}

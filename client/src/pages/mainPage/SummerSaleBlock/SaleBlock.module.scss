@@ -1,0 +1,28 @@
+@import "../../../styles/variables.module";
+.saleBlock {
+  display: flex;
+  max-width: 144rem;
+  // min-width: 128rem;
+  width: 100%;
+  height: 37.6rem;
+  justify-content: center;
+  background-size: cover;
+  background: lightgray url("../../../../public/img/images/Sale/Rectangle 27.png") no-repeat right;
+}
+.contentBlock {
+  display: flex;
+  width: 22.3rem;
+  margin-top: 12.6rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.title {
+  margin: 0 auto;
+  color: $black;
+  @include fonts($headline-2)
+}
+.button {
+  @include button(19.5rem);
+  @include buttonWhite();
+}
