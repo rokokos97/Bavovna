@@ -1,0 +1,16 @@
+.wishListBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-bottom: 10rem;
+}
+
+.title {
+  font-family: "Fixel Display Medium";
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: start;
+}
+
+/*# sourceMappingURL=WishListBlock.module.css.map */

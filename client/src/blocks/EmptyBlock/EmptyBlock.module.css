@@ -1,0 +1,117 @@
+.emptyBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.title {
+  font-family: "Fixel Display Medium";
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: start;
+  padding: 1.2rem 0;
+}
+
+.description {
+  text-align: start;
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 22.6rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #000000;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.button::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 8.9rem;
+}
+.button::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 11rem;
+}
+.button:hover::before {
+  content: "";
+  width: 24.86rem;
+  height: 24.86rem;
+  opacity: 1;
+  position: absolute;
+  top: -10.03rem;
+  left: -1rem;
+}
+.button:active::after {
+  content: "";
+  width: 24.86rem;
+  height: 24.86rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -10.03rem;
+  left: -1.1rem;
+}
+.button:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.button:disabled span {
+  color: #9b9b9b;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.button::before {
+  background: #5a9b83;
+}
+.button::after {
+  background: #1a6449;
+}
+.button:hover::before {
+  background: #5a9b83;
+}
+.button:active::after {
+  border: 1px solid #5a9b83;
+}
+
+/*# sourceMappingURL=EmptyBlock.module.css.map */

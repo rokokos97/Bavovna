@@ -1,0 +1,174 @@
+.proposeBlock {
+  display: flex;
+  gap: 4rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  flex: 50% 1 1;
+  align-items: center;
+  justify-content: center;
+}
+.description a {
+  padding: 2.1rem 3.6rem;
+  color: #fafafa;
+  background-color: #000000;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease 0s;
+}
+.description a:hover, .description a:active {
+  background-color: #5a9b83;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.title {
+  max-width: 28rem;
+  width: 100%;
+  padding-bottom: 0.8rem;
+  font-family: "Fixel Display Regular";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+  border-bottom: 0.1rem solid #000000;
+}
+.title span {
+  font-family: "Fixel Display Bold";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.innerText {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 1.6rem;
+  width: 100%;
+  padding-bottom: 1.6rem;
+}
+
+.text {
+  width: 100%;
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+
+.img {
+  display: block;
+  aspect-ratio: 4/3;
+  max-width: 23.5%;
+  width: 100%;
+}
+.img img {
+  display: block;
+  width: 100%;
+}
+
+.lastChild {
+  order: 2;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 16.2rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #000000;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.button::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 5.7rem;
+}
+.button::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 7.8rem;
+}
+.button:hover::before {
+  content: "";
+  width: 17.82rem;
+  height: 17.82rem;
+  opacity: 1;
+  position: absolute;
+  top: -6.51rem;
+  left: -1rem;
+}
+.button:active::after {
+  content: "";
+  width: 17.82rem;
+  height: 17.82rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -6.51rem;
+  left: -1.1rem;
+}
+.button:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.button:disabled span {
+  color: #9b9b9b;
+}
+.button span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.button::before {
+  background: #5a9b83;
+}
+.button::after {
+  background: #1a6449;
+}
+.button:hover::before {
+  background: #5a9b83;
+}
+.button:active::after {
+  border: 1px solid #5a9b83;
+}
+
+/*# sourceMappingURL=ProposeBlock.module.css.map */

@@ -1,0 +1,115 @@
+.catalog {
+  display: flex;
+  width: 100%;
+}
+
+.cardsContainer {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.noFound {
+  max-width: 62.8rem;
+  width: 100%;
+  text-align: center;
+  margin: 2.4rem auto;
+}
+
+.noFoundTitle {
+  font-family: "Fixel Display Bold";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.noFoundText {
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+  margin-top: 4rem;
+}
+
+.cards {
+  display: flex;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  padding-top: 2.4rem;
+}
+.cards.cardsPadding {
+  padding-left: 2.4rem;
+}
+
+.card {
+  width: 32%;
+}
+.card.doubleColumn {
+  width: 48.5%;
+  max-width: 41rem;
+}
+
+.disabledCard {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 1.6rem 2.4rem 3.6rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-top: 0.1rem solid #d7d7d7;
+}
+
+.arrow {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 2.4rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  cursor: pointer;
+}
+.arrow.arrowDisable {
+  opacity: 0;
+  cursor: default;
+}
+
+.arrowForward svg {
+  transform: rotate(180deg);
+}
+
+.pageButton {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  padding: 1.2rem;
+  width: 4rem;
+  border-radius: 0.8rem;
+  background-color: inherit;
+}
+.pageButton.activeBtn {
+  color: #3a7f66;
+  background-color: rgba(169, 223, 203, 0.3);
+}
+
+@media screen and (max-width: 1416px) {
+  .cards {
+    gap: 2.2rem;
+  }
+}
+@media screen and (max-width: 1311px) {
+  .cards {
+    gap: 2.1rem;
+  }
+}
+
+/*# sourceMappingURL=CardsCatalogBlock.module.css.map */

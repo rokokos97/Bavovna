@@ -1,0 +1,27 @@
+@import '../styles/variables.module.scss';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  // max-width: 1440px;
+  min-width: $min-width;
+  margin: 0 auto;
+  background-color: $gray-90;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none; // Видалити підкреслення
+  transition: color 0.3s; // Плавна анімація зміни кольору
+  &:hover {
+    color: var(--accent-a-7, #103c2c); // Колір тексту при наведенні
+    text-decoration: underline;
+  }
+  &:active {
+    // Колір тексту при натисканні
+  }
+  &:disabled {
+    color: #c0c0c0; // Колір тексту в режимі disabled
+    pointer-events: none; // Вимкнення подій для вимкнених посилань
+  }
+}

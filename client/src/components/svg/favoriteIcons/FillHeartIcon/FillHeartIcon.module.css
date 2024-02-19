@@ -1,0 +1,18 @@
+.fillHeartIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.fillHeartIcon:hover svg path[stroke] {
+  stroke: #3a7f66;
+}
+.fillHeartIcon:hover svg path[fill] {
+  fill: #3a7f66;
+}
+.fillHeartIcon:active svg path[stroke] {
+  stroke: #0a281d;
+}
+.fillHeartIcon:active svg path[fill] {
+  fill: #0a281d;
+}
+
+/*# sourceMappingURL=FillHeartIcon.module.css.map */

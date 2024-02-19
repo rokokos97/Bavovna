@@ -1,0 +1,9 @@
+.container {
+  max-width: 144rem;
+  width: 100%;
+  padding-top: 8.6rem;
+  margin: auto;
+  flex: 1 0 auto;
+}
+
+/*# sourceMappingURL=Layout.module.css.map */

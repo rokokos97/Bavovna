@@ -1,0 +1,59 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.loginForm p {
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.loginForm p span {
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+.titleBlock p {
+  font-family: "Fixel Display Medium";
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #040404;
+}
+.titleBlock span {
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+  color: #4a4a4a;
+}
+
+.loginError {
+  width: 40.9rem;
+  display: flex;
+  padding: 1.2rem;
+  align-items: center;
+  align-self: stretch;
+  background: #dfc5c5;
+}
+.loginError span {
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+  color: #ea001b;
+}
+
+.forgotPassword {
+  font-family: "Fixel Display Semibold";
+  font-size: 12px;
+  line-height: 110%;
+  color: #4a4a4a;
+}
+
+/*# sourceMappingURL=LoginForm.module.css.map */

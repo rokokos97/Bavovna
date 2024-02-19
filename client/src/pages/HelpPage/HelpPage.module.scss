@@ -1,0 +1,26 @@
+@import '../../styles/variables.module.scss';
+
+.helpPage{
+  width: 100%;
+  padding: 1.6rem 8rem 4rem;
+}
+
+.navigation{
+  @include fonts($breadcrumb);
+  text-align: start;
+  margin-bottom: 1.7rem;
+}
+
+.helpPageContainer {
+  display: flex;
+  gap: 15.9rem;
+}
+
+.helpAside {
+  padding-top: 6rem;
+}
+
+.helpDescription {
+  flex: auto;
+  text-align: start;
+}

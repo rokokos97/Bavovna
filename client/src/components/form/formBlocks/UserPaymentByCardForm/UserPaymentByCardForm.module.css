@@ -1,0 +1,13 @@
+.userPaymentByCardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.4rem;
+}
+
+/*# sourceMappingURL=UserPaymentByCardForm.module.css.map */

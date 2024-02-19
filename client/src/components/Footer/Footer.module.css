@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #000000;
+  z-index: 1000;
+}
+.container a:hover {
+  color: #5a9b83;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 144rem;
+  width: 100%;
+  color: #fafafa;
+  padding: 7rem 8rem 4rem;
+  margin: auto;
+  z-index: 10000;
+}
+
+.footerTop {
+  height: 25.8rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.footerTopLeft {
+  display: flex;
+  width: 75%;
+  gap: 1.7rem;
+  text-align: start;
+  justify-content: space-between;
+}
+.footerTopLeft h3 {
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+.footerContact,
+.footerShop,
+.footerHelp {
+  flex-basis: 33.3%;
+}
+
+.footerList {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.footerTopRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footerTopRight button {
+  background: transparent;
+  border: none;
+}
+.footerTopRight button div svg path {
+  fill: #fafafa !important;
+}
+.footerTopRight button:hover {
+  cursor: pointer;
+}
+
+.socialList {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.socialListItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.1rem;
+}
+
+.footerBottomLeft {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.footerBottomItem {
+  display: flex;
+  flex-basis: 33.3%;
+  font-family: "Fixel Display Medium";
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
+  opacity: 0.48;
+}
+
+.footerBottomCookies {
+  font-family: "Fixel Display Regular";
+  font-size: 12px;
+  line-height: 110%;
+}
+
+.footerBottomRight {
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

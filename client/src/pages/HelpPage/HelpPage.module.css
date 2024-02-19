@@ -1,0 +1,29 @@
+.helpPage {
+  width: 100%;
+  padding: 1.6rem 8rem 4rem;
+}
+
+.navigation {
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+  text-align: start;
+  margin-bottom: 1.7rem;
+}
+
+.helpPageContainer {
+  display: flex;
+  gap: 15.9rem;
+}
+
+.helpAside {
+  padding-top: 6rem;
+}
+
+.helpDescription {
+  flex: auto;
+  text-align: start;
+}
+
+/*# sourceMappingURL=HelpPage.module.css.map */

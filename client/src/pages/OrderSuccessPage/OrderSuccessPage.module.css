@@ -1,0 +1,236 @@
+.orderCompletePage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.7rem;
+  width: 128rem;
+  margin: 3.2rem auto;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.6rem;
+}
+
+.title {
+  color: #1a6449;
+  font-family: "Fixel Display Regular";
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.numberBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10.8rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.buttonsBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+  margin-top: 2.1rem;
+}
+.buttonsBlock button:first-child {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 20rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #000000;
+}
+.buttonsBlock button:first-child span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.buttonsBlock button:first-child::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 7.6rem;
+}
+.buttonsBlock button:first-child::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 9.7rem;
+}
+.buttonsBlock button:first-child:hover::before {
+  content: "";
+  width: 22rem;
+  height: 22rem;
+  opacity: 1;
+  position: absolute;
+  top: -8.6rem;
+  left: -1rem;
+}
+.buttonsBlock button:first-child:active::after {
+  content: "";
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -8.6rem;
+  left: -1.1rem;
+}
+.buttonsBlock button:first-child:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.buttonsBlock button:first-child:disabled span {
+  color: #9b9b9b;
+}
+.buttonsBlock button:first-child span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.buttonsBlock button:first-child::before {
+  background: #5a9b83;
+}
+.buttonsBlock button:first-child::after {
+  background: #1a6449;
+}
+.buttonsBlock button:first-child:hover::before {
+  background: #5a9b83;
+}
+.buttonsBlock button:first-child:active::after {
+  border: 1px solid #5a9b83;
+}
+.buttonsBlock button:last-child {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 20rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  background: #fafafa;
+  border: 0.1rem solid #000000;
+}
+.buttonsBlock button:last-child span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.buttonsBlock button:last-child::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 7.6rem;
+}
+.buttonsBlock button:last-child::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 9.7rem;
+}
+.buttonsBlock button:last-child:hover::before {
+  content: "";
+  width: 22rem;
+  height: 22rem;
+  opacity: 1;
+  position: absolute;
+  top: -8.6rem;
+  left: -1rem;
+}
+.buttonsBlock button:last-child:active::after {
+  content: "";
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -8.6rem;
+  left: -1.1rem;
+}
+.buttonsBlock button:last-child:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.buttonsBlock button:last-child:disabled span {
+  color: #9b9b9b;
+}
+.buttonsBlock button:last-child span {
+  font-family: "Fixel Display Semibold";
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.buttonsBlock button:last-child::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.buttonsBlock button:last-child::after {
+  background: #a9dfcb;
+}
+.buttonsBlock button:last-child:hover::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.buttonsBlock button:last-child:active::after {
+  border: 1px solid rgba(169, 223, 203, 0.3);
+}
+
+/*# sourceMappingURL=OrderSuccessPage.module.css.map */

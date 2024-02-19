@@ -1,0 +1,11 @@
+@import "../../../../styles/variables.module";
+.wishListBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-bottom: 10rem;
+}
+.title {
+  @include fonts($headline-2);
+  text-align: start;
+}

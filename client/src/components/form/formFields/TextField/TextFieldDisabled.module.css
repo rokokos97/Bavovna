@@ -1,0 +1,76 @@
+.textField {
+  cursor: not-allowed;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.label {
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: stretch;
+  color: #d7d7d7;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+.label span {
+  color: #d7d7d7;
+}
+
+.inputBlock {
+  display: flex;
+  height: 4.8rem;
+  padding: 1.4rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+  border: 1px solid #d7d7d7;
+  background: #fafafa;
+}
+.inputBlock input {
+  cursor: not-allowed;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 0;
+  align-self: stretch;
+  background: #fafafa;
+  font-family: "Fixel Display Regular";
+  font-size: 16px;
+  line-height: 140%;
+}
+.inputBlock input::placeholder {
+  color: #d7d7d7;
+}
+.inputBlock input[type=password] div {
+  color: #d7d7d7;
+}
+.inputBlock button {
+  cursor: not-allowed;
+  background: #fafafa;
+  color: #d7d7d7;
+}
+.inputBlock button div svg path {
+  stroke: #d7d7d7;
+}
+
+.error {
+  color: var(--error, #EA001B);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.block {
+  display: inline;
+}
+
+/*# sourceMappingURL=TextFieldDisabled.module.css.map */

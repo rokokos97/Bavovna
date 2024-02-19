@@ -1,0 +1,51 @@
+@import '../../../styles/variables.module';
+.messageLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $accent-a-3;
+  color: $white;
+  @include fonts($menu-2);
+  .closeButton {
+    background-color: $accent-a-3;
+    position: relative;
+    left: 5rem;
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}
+.newsLettersBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 42.8rem;
+  padding-top: 10rem;
+  padding-left:4rem;
+  padding-right:4rem;
+  background-image: url("../../../../public/img/images/NewsLetter/newsletterBlock.png");
+  align-items: center;
+  gap: 2.4rem;
+}
+.title {
+  @include fonts($headline-2)
+}
+.content {
+  width: 51.8rem;
+  text-align: center;
+  @include fonts($headline-10)
+}
+.input {
+  display: flex;
+  width: 63rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+}
+.button {
+  @include button($large);
+  @include buttonBlack();
+}

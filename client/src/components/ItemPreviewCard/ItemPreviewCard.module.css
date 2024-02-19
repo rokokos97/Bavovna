@@ -1,0 +1,102 @@
+.itemPreviewCard {
+  position: relative;
+  max-width: 41rem;
+  min-width: 35rem;
+  width: 100%;
+  max-height: 57.8rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.itemPreviewCard:hover {
+  cursor: pointer;
+}
+.itemPreviewCard:hover .itemPreviewCard__description, .itemPreviewCard:hover .itemPreviewCard__price {
+  text-decoration: underline;
+  color: #03281c;
+}
+.itemPreviewCard:hover .itemPreviewCard__description span, .itemPreviewCard:hover .itemPreviewCard__price span {
+  color: #03281c;
+}
+.itemPreviewCard:active {
+  cursor: pointer;
+}
+.itemPreviewCard:active .itemPreviewCard__description, .itemPreviewCard:active .itemPreviewCard__price {
+  text-decoration: underline;
+  color: #3a7f66;
+}
+.itemPreviewCard:active .itemPreviewCard__description span, .itemPreviewCard:active .itemPreviewCard__price span {
+  color: #3a7f66;
+}
+
+.disabledItemPreviewCard {
+  pointer-events: none;
+}
+
+.disabledItemPreviewCard__image {
+  opacity: 0.5;
+}
+
+.itemPreviewCard__image {
+  width: 100%;
+  height: 50rem;
+}
+.itemPreviewCard__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemPreviewCard__status {
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  background: #000000;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  position: absolute;
+  top: 1.6rem;
+  left: -0.3rem;
+}
+.itemPreviewCard__status:hover {
+  background: #5a9b83;
+}
+.itemPreviewCard__status:active {
+  background: #1a6449;
+}
+
+.itemPreviewCard__statusText {
+  color: white;
+  font-size: 1.8rem;
+  font-family: Fixel Display, serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.itemPreviewCard__heart {
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+}
+
+.itemPreviewCard__description {
+  text-align: start;
+}
+.itemPreviewCard__description span {
+  padding-top: 0.8rem;
+  font-family: "Fixel Text Regular";
+  font-size: 18px;
+  line-height: 140%;
+}
+.itemPreviewCard__description p:last-child {
+  padding-top: 0.8rem;
+  font-family: "Fixel Text Medium";
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=ItemPreviewCard.module.css.map */
