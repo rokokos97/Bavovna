@@ -16,7 +16,7 @@ import LoaderIconSmall from '../../../components/svg/loaderIcons/LoaderSmallIcon
 const RecoveryPasswordForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getUserLoadingStatus);
-  const response = useSelector(getResponse());
+  const response = useSelector(getResponse);
   const [isLoaderRun, setIsLoaderRun] = useState(false);
   const formik = useFormik({
     initialValues: {
