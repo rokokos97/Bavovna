@@ -55,14 +55,19 @@ router.post('/signUp', [
       await newUser.save();
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken);
-      const verifyEmailURL = `http://localhost:3000/user/${newUser._id}?token=${encodedToken}&email=${encodedEmail}`;
+      const verifyEmailURL = `https://anvovab.space/user/${newUser._id}?token=${encodedToken}&email=${encodedEmail}`;
       const mailOptions = {
         from: 'no-repaly@bavovna.space',
         to: email,
-        subject: 'Verification email',
-        text: `Hello! Please verify your email. Follow the link to verify your email: `,
-        html: `<b>Hello! Please verify your email. Follow the link to verify your email:</b>
-                     <a href="${verifyEmailURL}"> Click here... </a>`,
+        subject: 'Confirm Your Registration at BAVOVNA',
+        text: `Greetings! Thank you for signing up with BAVOVNA. To complete your registration process and activate your account, please click on the link below: `,
+        html: `<p>Greetings!</p>
+               <p>Thank you for signing up with BAVOVNA. To complete your registration process and activate your account, please click on the link below:</p>
+               <a href="${verifyEmailURL}">To confirm registration click here... </a>
+               <p>If you did not sign up on our site, please disregard this email.</p>
+               <p>Welcome to the BAVOVNA community!</p>
+               <p>Best wishes,</p>
+               <p>The BAVOVNA Team</p>`,
       };
       await transporter.sendMail(mailOptions, function(error, info) {
         console.log('error', error);
@@ -284,14 +289,23 @@ router.post('/forgotPassword', [
       await existingUser.save();
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
-      const resetPasswordURL = `http://localhost:3000/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
+      const resetPasswordURL = `https://anvovab.space/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
       const mailOptions = {
         from: 'no-repaly@bavovna.space',
         to: email,
-        subject: 'Reset password',
-        text: `Hello. If you would like reset your password please enter the link!`,
-        html: `<b>If you would like reset your password please enter the link</b>
-               <a href="${resetPasswordURL}"> Click here... </a>`,
+        subject: 'Reset Your BAVOVNA Account Password',
+        text: `Hello,
+
+We received a request to reset the password for your BAVOVNA account. If you made this request, please click on the link below to set a new password:`,
+        html: `<p>Greetings!</p>
+               <p>We received a request to reset the password for your BAVOVNA account.</p>
+               <p>If you made this request, please click on the link below to set a new password:</p>
+               <a href="${resetPasswordURL}">To reset password click here... </a>\`
+               <p>If you did not request a password reset, please ignore this email or contact support if you have any concerns.</p>
+               <p>For your security, this password reset link will expire in 24 hours.</p>
+               <p>Thank you for being a part of the BAVOVNA community!</p>
+               <p>Best wishes,</p>
+               <p>The BAVOVNA Team</p>`,
       };
       await transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
