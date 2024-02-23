@@ -3,13 +3,11 @@
 .helpTitle {
   @include fonts($headline-2);
 }
-
 .helpParagraph {
   @include fonts($running_line);
   color: $gray-20;
   margin-top: 2.4rem;
 }
-
 .description {
   display: flex;
   flex-direction: column;
@@ -18,12 +16,29 @@
   width: 100%;
   margin-top: 3.2rem;
 }
-
 .detailsTitle {
   @include fonts($headline-8);
 }
-
 .detailsParagraph {
   @include fonts($body_3);
   margin-top: 0.8rem;
+  & p,
+  ol,
+  ul {
+    margin-bottom: 0.8rem;
+  }
+}
+.detailsNumberedList {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  & li + li {
+    margin-top: 1.2rem;
+  }
+}
+.detailsList {
+  list-style-type: circle;
+  padding-left: 2rem;
+  & li + li {
+    margin-top: 1.2rem;
+  }
 }

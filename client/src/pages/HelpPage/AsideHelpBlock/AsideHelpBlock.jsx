@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {helps} from '../../services/helps.service';
+import {helps} from '../helps.service';
 import styles from './AsideHelpBlock.module.scss';
 
 const AsideHelpBlock = () => {

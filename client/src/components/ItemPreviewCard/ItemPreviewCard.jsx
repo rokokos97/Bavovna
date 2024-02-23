@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getItemsById} from '../../store/itemsSlice';
 import {getUser} from '../../store/userSlice';
-import useChangeFavorite from '../../services/useChangeFavorite';
+import useChangeFavorite from '../../utils/useChangeFavorite';
 import FillHeartIcon from '../svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
 import EmptyHeartIcon from '../svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 
