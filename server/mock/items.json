@@ -80,7 +80,7 @@
     "price": 700,
     "description": "A comfortable and breathable cotton t-shirt in black.",
     "category": "659c66c7ddcd393da280c0b6",
-    "images": ["uploads/1.jpeg", "uploads/1.1.jpeg", "uploads/1.2.jpeg", "uploads/1.3.jpeg"],
+    "images": ["uploads/1.0.jpeg", "uploads/1.1.jpeg", "uploads/1.2.jpeg", "uploads/1.3.jpeg"],
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["100% cotton"],
