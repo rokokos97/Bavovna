@@ -9,7 +9,7 @@ import BavovnaCoverImageBlock from './BavovnaCoverImageBlock/BavovnaCoverImageBl
 import CategoriesBlock from './CategoriesBlock/CategoriesBlock';
 import ModalCookies from '../../components/modal/modalContent/ModalCookies/ModalCookies';
 import {Modal} from '../../components/modal';
-import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
+import {showBodyOverflow, hideBodyOverflow} from '../../utils/modal.service';
 import Cookies from 'js-cookie';
 import {getCategoriesError, getCategoriesLoadingStatus} from '../../store/categorySlice';
 import {useSelector} from 'react-redux';

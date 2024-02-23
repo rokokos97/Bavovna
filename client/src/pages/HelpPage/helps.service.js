@@ -1,10 +1,10 @@
 import React from 'react';
-import CookiesBlock from '../blocks/helpDescription/CookiesBlock/CookiesBlock';
-import DeliveryBlock from '../blocks/helpDescription/DeliveryBlock/DeliveryBlock';
-import FaqBlock from '../blocks/helpDescription/FaqBlock/FaqBlock';
-import ReturnBlock from '../blocks/helpDescription/ReturnBlock/ReturnBlock';
-import PaymentBlock from '../blocks/helpDescription/PaymentBlock/PaymentBlock';
-import PolicyBlock from '../blocks/helpDescription/PolicyBlock/PolicyBlock';
+import CookiesBlock from './CookiesBlock/CookiesBlock';
+import DeliveryBlock from './DeliveryBlock/DeliveryBlock';
+import FaqBlock from './FaqBlock/FaqBlock';
+import ReturnBlock from './ReturnBlock/ReturnBlock';
+import PaymentBlock from './PaymentBlock/PaymentBlock';
+import PolicyBlock from './PolicyBlock/PolicyBlock';
 
 export const helps = [
   {id: 0, path: 'delivery', name: 'Delivery information', description: <DeliveryBlock />},

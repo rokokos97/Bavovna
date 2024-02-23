@@ -3,7 +3,6 @@
 .helpTitle {
   @include fonts($headline-2);
 }
-
 .helpParagraph {
   @include fonts($running_line);
   color: $gray-20;

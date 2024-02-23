@@ -3,13 +3,11 @@
 .helpTitle {
   @include fonts($headline-2);
 }
-
 .helpParagraph {
   @include fonts($running_line);
   color: $gray-20;
   margin-top: 2.4rem;
 }
-
 .description {
   display: flex;
   flex-direction: column;
@@ -18,11 +16,14 @@
   width: 100%;
   margin-top: 3.2rem;
 }
-
+ul.dropdownList {
+  list-style-type: circle;
+  padding-left: 2rem;
+  margin-top: 0.8rem;
+}
 .detailsTitle {
   @include fonts($headline-8);
 }
-
 .detailsParagraph {
   @include fonts($body_3);
   margin-top: 0.8rem;

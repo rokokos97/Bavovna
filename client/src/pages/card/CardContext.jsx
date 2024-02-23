@@ -2,14 +2,14 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
-import useChangeFavorite from '../../services/useChangeFavorite';
-import {showBodyOverflow, hideBodyOverflow} from '../../services/modal.service';
+import useChangeFavorite from '../../utils/useChangeFavorite';
+import {showBodyOverflow, hideBodyOverflow} from '../../utils/modal.service';
 import config from '../../config.json';
 import {addItemToCart} from '../../store/cartSlice';
 import {getUser} from '../../store/userSlice';
 import {useDataCard} from '../../providers/CardMasterProvider';
 import {SizesList} from '../../components/SizeList/SizesList';
-import AlsoBoughtBlock from '../../blocks/AlsoBoughtBlock/AlsoBoughtBlock';
+import AlsoBoughtBlock from './AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
@@ -59,7 +59,6 @@ const CardContext = ({item}) => {
 
   const handleCollectData = () => {
     if (selectedColor && selectedSize) {
-      //      Додаю костиль бо тут треба переробити трохи
       const newItemData = {
         ...itemData,
         itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,

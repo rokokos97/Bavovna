@@ -10,7 +10,7 @@ import googleService from '../../../services/google.service';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import {Modal} from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
-import {showBodyOverflow, hideBodyOverflow} from '../../../services/modal.service';
+import {showBodyOverflow, hideBodyOverflow} from '../../../utils/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/RegisterFormBlock/RegisterFormBlock';
 
 const RegisterForm = () => {

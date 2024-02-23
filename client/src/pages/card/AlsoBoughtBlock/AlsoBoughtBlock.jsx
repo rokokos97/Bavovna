@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
-import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
+import {getItems, getItemsLoadingStatus} from '../../../store/itemsSlice';
+import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
 import styles from './AlsoBoughtBlock.module.scss';
 
 const AlsoBoughtBlock = () => {

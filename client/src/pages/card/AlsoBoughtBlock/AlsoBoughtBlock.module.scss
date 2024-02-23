@@ -7,13 +7,12 @@
   margin-bottom: 2.4rem;
   text-align: start;
 }
-
 .alsoBoughtList {
   width: 100%;
   display: flex;
   gap: 2.4rem;
+  & li{
+    flex: 1 0 0;
+  }
 }
 
-.alsoBoughtItem {
-  width: 100%;
-}
