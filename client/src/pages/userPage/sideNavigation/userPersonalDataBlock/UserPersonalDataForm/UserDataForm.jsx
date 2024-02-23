@@ -11,7 +11,7 @@ import transformErrorMessage from '../../../../../utils/generateErrorMessage';
 const UserDataForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  const response = useSelector(getResponse());
+  const response = useSelector(getResponse);
   const formik = useFormik({
     initialValues: {
       firstName: '',

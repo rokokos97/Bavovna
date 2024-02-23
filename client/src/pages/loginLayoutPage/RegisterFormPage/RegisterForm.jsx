@@ -15,7 +15,7 @@ import RegisterFormBlock from '../../../components/form/formBlocks/RegisterFormB
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const response = useSelector(getResponse());
+  const response = useSelector(getResponse);
   const navigate = useNavigate();
   const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
   const [email, setEmail] = useState(null);

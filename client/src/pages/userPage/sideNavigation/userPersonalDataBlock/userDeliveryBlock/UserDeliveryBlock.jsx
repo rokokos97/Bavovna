@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './UserDeliveryBlock.module.scss';
 import UserDeliveryAddressList from './UserDeliveryAddressList/UserDeliveryAddressList';
-// import ListWithRadioButtons from '../../../../../components/listWithRadioButtons/listWithRadioButtons';
-// import deliveryMethodsList from '../../../../../utils/deliveryMethodsList';
 import UserDeliveryMethodsList
   from '../../../../checkOutPage/checkOutPageDelivery/deliveryOptionsSection/userDeliveryMethodsList/UserDeliveryMethodsList';
 import {useDispatch, useSelector} from 'react-redux';
@@ -101,7 +99,7 @@ const UserDeliveryBlock = () => {
   useEffect(()=>{
     dispatch(setDeliveryMethod('Nova post delivery to the post office'));
   }, []);
-  return (
+  return user && (
     <div className={styles.userDeliveryBlock} data-testid="UserDeliveryBlock">
       <p
         className={styles.deliveryTitle}

@@ -14,7 +14,7 @@ const ResetPasswordForm = () => {
   const email = urlParams.get('email');
   const dispatch = useDispatch();
   const isLoading = useSelector(getUserLoadingStatus);
-  const response = useSelector(getResponse());
+  const response = useSelector(getResponse);
   const [isLoaderRun, setIsLoaderRun] = useState(false);
   const formik = useFormik({
     initialValues: {
