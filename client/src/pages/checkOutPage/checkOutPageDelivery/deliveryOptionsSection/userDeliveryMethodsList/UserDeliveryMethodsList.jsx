@@ -19,7 +19,7 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selec
         handleCityChange={handleCityChange}
         handleWarehouseChange={handleWarehouseChange}
       />,
-      price: 2,
+      price: 80,
     },
     2: {
       _id: '2',
@@ -27,13 +27,13 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selec
       value: <NovaPostHomeDeliveryFormCheckout
         formik={formik}
         handleCityChange={handleCityChange}/>,
-      price: 3,
+      price: 120,
     },
     3: {
       _id: '3',
       label: 'International delivery',
       value: <NovaPostInternationalDeliveryFormCheckout formik={formik} type={type}/>,
-      price: 20,
+      price: 780,
     },
   };
   return (

@@ -13,9 +13,8 @@
   display: flex;
   gap: 2.4rem;
 }
-
-.alsoBoughtItem {
-  width: 100%;
+.alsoBoughtList li {
+  flex: 1 0 0;
 }
 
 /*# sourceMappingURL=AlsoBoughtBlock.module.css.map */

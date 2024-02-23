@@ -37,4 +37,12 @@
   margin-top: 0.8rem;
 }
 
+.detailsList {
+  list-style-type: circle;
+  padding-left: 2rem;
+}
+.detailsList li + li {
+  margin-top: 1.2rem;
+}
+
 /*# sourceMappingURL=PaymentBlock.module.css.map */

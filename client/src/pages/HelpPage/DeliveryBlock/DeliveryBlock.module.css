@@ -23,6 +23,12 @@
   margin-top: 3.2rem;
 }
 
+ul.dropdownList {
+  list-style-type: circle;
+  padding-left: 2rem;
+  margin-top: 0.8rem;
+}
+
 .detailsTitle {
   font-family: "Fixel Text Medium";
   font-size: 18px;
