@@ -6,7 +6,7 @@ import {
   getDeliveryMethod,
   getDeliveryOption,
   setDeliveryMethod,
-  setDeliveryOption, setUserDeliveryInfo,
+  setDeliveryOption, setDeliveryPrice, setUserDeliveryInfo,
 } from '../../../../store/ordersSlice';
 import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
@@ -85,6 +85,7 @@ const deliveryOptionsSection = () => {
   };
   const selectedValue = (id) => {
     dispatch(setDeliveryMethod(deliveryMethodsList[1][id].label));
+    dispatch(setDeliveryPrice(deliveryMethodsList[1][id].price));
   };
   useEffect(()=>{
     if (selectedCity) {

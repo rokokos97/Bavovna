@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './CheckOutShoppingCartBlock.module.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import TextField from '../../../components/form/formFields/TextField/TextField';
@@ -6,6 +6,7 @@ import {useFormik} from 'formik';
 import CheckOutShoppingCartBlockItemsList
   from './CheckOutShoppingCartBlockItemsList/CheckOutShoppingCartBlockItemsList';
 import {
+  getDeliveryOption,
   getPromoCodeSale,
   getShippingPrice,
   setOrderAmount,
@@ -15,16 +16,20 @@ import {validationSchemaPromoCode} from '../../../utils/validationSchema';
 import {getCartLength, getCartTotalPrice} from '../../../store/cartSlice';
 import PropTypes from 'prop-types';
 import LeftArrowIcon from '../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
+import {getUser} from '../../../store/userSlice';
 
 const CheckOutShoppingCartBlock = ({formik}) => {
   const dispatch = useDispatch();
   const cartLength = useSelector(getCartLength);
   const itemPrice = useSelector(getCartTotalPrice);
+  const currentDeliveryOption = useSelector(getDeliveryOption());
+  const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState(80);
   const deliveryPrice = useSelector(getShippingPrice());
   const promoCode = useSelector(getPromoCodeSale());
+  const user = useSelector(getUser);
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount;
-  const finalPrice = totalPrice + deliveryPrice;
+  const finalPrice = totalPrice + currentDeliveryPrice;
   const promoCodeFormik = useFormik({
     initialValues: {
       promoCode: '',
@@ -38,6 +43,14 @@ const CheckOutShoppingCartBlock = ({formik}) => {
       }
     },
   });
+  useEffect(()=>{
+    if (currentDeliveryOption === 'saved address') {
+      const currentDeliveryAddress = user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress);
+      setCurrentDeliveryPrice(currentDeliveryAddress.deliveryPrice);
+    } else {
+      setCurrentDeliveryPrice(deliveryPrice);
+    }
+  }, [deliveryPrice, currentDeliveryOption]);
   useEffect(()=>{
     dispatch(setOrderAmount(totalPrice));
   }, [itemPrice]);
@@ -82,7 +95,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         </div>}
         <div className={styles.price}>
           <p>Shipping</p>
-          <p>{`${deliveryPrice} $`}</p>
+          <p>{`${currentDeliveryPrice} $`}</p>
         </div>
         <div className={styles.priceBlock}>
           <p>total</p>

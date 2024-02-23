@@ -6,7 +6,7 @@ const ordersSlice = createSlice({
   initialState: {
     entities: [],
     orderAmount: 0,
-    shippingPrice: 2,
+    shippingPrice: 80,
     promoCodeSale: null,
     userInfo: {},
     userDeliveryInfo: {},
@@ -55,6 +55,9 @@ const ordersSlice = createSlice({
     setPaymentMethod: (state, action) => {
       state.paymentMethod = action.payload;
     },
+    setDeliveryPrice: (state, action) => {
+      state.shippingPrice = action.payload;
+    },
     setOrderAmount: (state, action) => {
       state.orderAmount = action.payload;
     },
@@ -63,7 +66,7 @@ const ordersSlice = createSlice({
     },
     setOrderToInitialState: (state) => {
       state.orderAmount = 0;
-      state.shippingPrice = 2;
+      state.shippingPrice = 80;
       state.promoCodeSale = null;
       state.userInfo = {};
       state.userDeliveryInfo = {};
@@ -109,6 +112,7 @@ export const {
   addOrderRequested,
   addOrderReceived,
   addOrderReceiveFailed,
+  setDeliveryPrice,
 } = ordersSlice.actions;
 
 export default ordersSlice.reducer;
