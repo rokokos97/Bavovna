@@ -84,7 +84,7 @@
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["100% cotton"],
-    "sale": 20,
+    "sale": 80,
     "modelParams": "Oversize short-sleeve cotton t-shirt in black.",
     "favorite": false,
     "status": "sale"
@@ -129,7 +129,7 @@
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["98% cotton", "2% elastane"],
-    "sale": 10,
+    "sale": 90,
     "modelParams": "",
     "favorite": false,
     "status": "sale"
@@ -219,7 +219,7 @@
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["50% viscus", "50% linen"],
-    "sale": 10,
+    "sale": 90,
     "modelParams": "",
     "favorite": false,
     "status": "sale"
@@ -234,7 +234,7 @@
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["98% cotton", "2% elastane"],
-    "sale":10,
+    "sale":90,
     "modelParams": "",
     "favorite": false,
     "status": "sale"
@@ -249,7 +249,7 @@
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["98% polyester", "2% elastane"],
-    "sale": 30,
+    "sale": 70,
     "modelParams": "",
     "favorite": false,
     "status": "sale"
