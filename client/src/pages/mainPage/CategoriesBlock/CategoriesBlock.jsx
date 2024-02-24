@@ -14,12 +14,12 @@ const CategoriesBlock = () => {
   const categoryNew = {
     name: 'new',
     status: 'new',
-    image: 'uploads/categoryNew.png',
+    image: 'uploads/categoryNew.jpeg',
   };
   const categorySale = {
     name: 'sale',
     status: 'sale',
-    image: 'uploads/categorySale.png',
+    image: 'uploads/categorySale.jpeg',
   };
   return (
     <div className={styles.categoriesBlock} data-testid="CategoriesBlock">
