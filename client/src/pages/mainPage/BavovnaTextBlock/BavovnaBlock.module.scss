@@ -8,10 +8,13 @@
   text-align: center;
   gap: 4rem;
 }
-.title {
+.titleBox {
   width: 90rem;
+}
+.title2 {
   color: $black;
   text-align: center;
+  margin-block: 0;
   @include fonts($headline-2);
 }
 .content {
@@ -22,6 +25,7 @@
 }
 .button {
   margin: 0 auto;
+  text-decoration: none;
   @include button(19.5rem);
   @include buttonWhite();
 }

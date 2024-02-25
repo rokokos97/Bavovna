@@ -8,10 +8,14 @@
   gap: 4rem;
 }
 
-.title {
+.titleBox {
   width: 90rem;
+}
+
+.title2 {
   color: #000000;
   text-align: center;
+  margin-block: 0;
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
@@ -28,6 +32,7 @@
 
 .button {
   margin: 0 auto;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -107,6 +112,7 @@
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
+  text-decoration: none;
   color: #000000;
 }
 .button::before {

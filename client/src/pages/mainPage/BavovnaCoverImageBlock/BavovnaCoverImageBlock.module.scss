@@ -8,13 +8,12 @@
   background-image: url('../../../../public/img/images/Bavovna/bavovnaCoverImage.jpeg');
   background-position: 100% 194.739%;
   background-repeat: no-repeat;
-  div {
+  .div {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 50%;
     box-sizing: border-box;
-
     div {
       width: 25%;
       height: 100%;
