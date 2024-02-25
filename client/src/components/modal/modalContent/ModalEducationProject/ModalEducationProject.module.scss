@@ -17,7 +17,7 @@
 .title {
   @include fonts($headline-3);
 }
-.button {
+.newCollectionBlock__button {
   @include button($small);
   @include buttonBlack();
 }

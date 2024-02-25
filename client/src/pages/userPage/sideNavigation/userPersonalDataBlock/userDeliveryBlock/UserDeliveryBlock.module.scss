@@ -22,7 +22,7 @@
   row-gap: 1.8rem;
   width: 30rem;
 }
-.button {
+.newCollectionBlock__button {
   @include button(19.3rem);
   @include buttonBlack();
 }

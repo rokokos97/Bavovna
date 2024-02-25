@@ -36,7 +36,7 @@
   text-align: start;
   text-wrap: none;
 }
-.button {
+.newCollectionBlock__button {
   @include button(29.2rem);
   @include buttonWhite();
   display: flex;

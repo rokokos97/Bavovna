@@ -1,37 +1,36 @@
 @import "../../../styles/variables.module";
 .newCollectionBlock {
+  height: 84.1rem;
+}
+.newCollectionBlock__image {
   background:
           linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
-          url("../../../../public/img/images/NewCollection/newCollection.jpeg"),
           lightgray 50% / cover no-repeat;
-  width: 100%;
-  height: 84.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 8rem;
 }
-.newCollectionBlock__wrapper {
+.newCollectionBlock__section {
   display: flex;
   max-width: 57.8rem;
+  position: relative;
+  left: 8rem;
+  bottom: 55.5rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4rem;
 }
-.newCollectionBlock__title {
+.newCollectionBlock__title1 {
     color: $black;
     word-wrap: break-word;
     @include fonts($headline-1);
 }
-.newCollectionBlock__manifest {
+.newCollectionBlock__text {
   width: 57.8rem;
   color: $black;
   @include fonts($body-2);
   word-wrap: break-word;
   text-align: start;
 }
-.button {
+.newCollectionBlock__button {
   @include button(19.5rem);
   @include buttonBlack();
 }

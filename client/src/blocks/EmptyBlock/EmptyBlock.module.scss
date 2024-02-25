@@ -13,7 +13,7 @@
   text-align: start;
   @include fonts($body-2);
 }
-.button {
+.newCollectionBlock__button {
   @include button(22.6rem);
   @include buttonBlack();
 }

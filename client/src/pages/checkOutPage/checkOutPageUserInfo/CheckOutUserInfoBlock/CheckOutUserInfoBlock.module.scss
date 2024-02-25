@@ -65,7 +65,7 @@
   flex-direction: column;
   gap: 1.6rem;
 }
-.button {
+.newCollectionBlock__button {
   display: block;
   margin: 0 auto;
   @include button($large);

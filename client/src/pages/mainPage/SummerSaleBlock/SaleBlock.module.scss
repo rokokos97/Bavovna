@@ -22,7 +22,7 @@
   color: $black;
   @include fonts($headline-2)
 }
-.button {
+.newCollectionBlock__button {
   @include button(19.5rem);
   @include buttonWhite();
 }

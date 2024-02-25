@@ -26,7 +26,7 @@
   text-transform: uppercase;
 }
 
-.button {
+.newCollectionBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -40,7 +40,7 @@
   background: #fafafa;
   border: 0.1rem solid #000000;
 }
-.button span {
+.newCollectionBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -48,7 +48,7 @@
   text-align: center;
   position: relative;
 }
-.button::before {
+.newCollectionBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -60,7 +60,7 @@
   top: 0.4rem;
   left: 7.35rem;
 }
-.button::after {
+.newCollectionBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -72,7 +72,7 @@
   top: 2.5rem;
   left: 9.45rem;
 }
-.button:hover::before {
+.newCollectionBlock__button:hover::before {
   content: "";
   width: 21.45rem;
   height: 21.45rem;
@@ -81,7 +81,7 @@
   top: -8.325rem;
   left: -1rem;
 }
-.button:active::after {
+.newCollectionBlock__button:active::after {
   content: "";
   width: 21.45rem;
   height: 21.45rem;
@@ -92,16 +92,16 @@
   top: -8.325rem;
   left: -1.1rem;
 }
-.button:disabled {
+.newCollectionBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.button:disabled span {
+.newCollectionBlock__button:disabled span {
   color: #9b9b9b;
 }
-.button span {
+.newCollectionBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -109,16 +109,16 @@
   text-decoration: none;
   color: #000000;
 }
-.button::before {
+.newCollectionBlock__button::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.button::after {
+.newCollectionBlock__button::after {
   background: #a9dfcb;
 }
-.button:hover::before {
+.newCollectionBlock__button:hover::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.button:active::after {
+.newCollectionBlock__button:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
 

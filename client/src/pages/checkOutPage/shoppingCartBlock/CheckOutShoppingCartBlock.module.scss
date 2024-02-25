@@ -51,7 +51,7 @@
   color: $error;
   @include fonts($body-3);
 }
-.button {
+.newCollectionBlock__button {
   //margin-inline: auto;
   @include button(41.1rem);
   @include buttonBlack();
