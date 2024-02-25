@@ -68,38 +68,36 @@ const MainPage = () => {
     showBodyOverflow();
   };
   return (
-    <>
-      <div className={styles.mainPage} data-testid='MainPage'>
-        {
-          (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
-        }
-        <Modal
-          isOpen={showEducationModal}
-          handleCloseModal={closeModal}
-        >
-          <ModalEducationProject handleConfirmModal={confirmModal}/>
-        </Modal>
-        <Modal
-          isOpen={showErrorModal}
-          handleCloseModal={closeModal}
-        >
-          <ModalError error={error} handleCloseModal={closeModal}/>
-        </Modal>
-        <Modal
-          isOpen={showCookiesModal}
-          handleCloseModal={closeModal}
-        >
-          <ModalCookies handleCloseModal={closeModal} handleConfirmModal={confirmCookies}/>
-        </Modal>
-        <NewCollectionBlock />
-        <NewArrivalsBlock />
-        <SaleBlock />
-        <BavovnaBlock />
-        <BavovnaCoverImageBlock />
-        <CategoriesBlock />
-        <NewsLettersBlock />
-      </div>
-    </>
+    <section className={styles.mainPage} data-testid='MainPage'>
+      {
+        (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
+      }
+      <Modal
+        isOpen={showEducationModal}
+        handleCloseModal={closeModal}
+      >
+        <ModalEducationProject handleConfirmModal={confirmModal}/>
+      </Modal>
+      <Modal
+        isOpen={showErrorModal}
+        handleCloseModal={closeModal}
+      >
+        <ModalError error={error} handleCloseModal={closeModal}/>
+      </Modal>
+      <Modal
+        isOpen={showCookiesModal}
+        handleCloseModal={closeModal}
+      >
+        <ModalCookies handleCloseModal={closeModal} handleConfirmModal={confirmCookies}/>
+      </Modal>
+      <NewCollectionBlock />
+      <NewArrivalsBlock />
+      <SaleBlock />
+      <BavovnaBlock />
+      <BavovnaCoverImageBlock />
+      <CategoriesBlock />
+      <NewsLettersBlock />
+    </section>
   );
 };
 
