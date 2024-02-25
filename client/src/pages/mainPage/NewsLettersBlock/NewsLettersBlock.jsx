@@ -60,7 +60,7 @@ const NewsLettersBlock = () => {
             type='submit'
           >
             <span>
-        Subscribe to our newsletter
+              Subscribe to our newsletter
             </span>
           </button>
         </div>

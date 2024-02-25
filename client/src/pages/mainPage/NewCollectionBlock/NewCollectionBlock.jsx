@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 const NewCollectionBlock = () => {
   const navigate = useNavigate();
   return (
-    <div className={styles.newCollectionBlock} data-testid="NewCollectionBlock">
+    <section className={styles.newCollectionBlock} data-testid="NewCollectionBlock">
       <div className={styles.newCollectionBlock__wrapper}>
         <p className={styles.newCollectionBlock__title}>
             new collection
@@ -23,7 +23,7 @@ const NewCollectionBlock = () => {
           <span>shop now</span>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

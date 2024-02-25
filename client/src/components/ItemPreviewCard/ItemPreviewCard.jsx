@@ -36,7 +36,8 @@ const ItemPreviewCard = ({id}) => {
         >
           <img
             src={`${config.apiEndpoint}${item.images[0]}`}
-            alt='item image'
+            loading='lazy'
+            alt='clothes item image'
           />
         </div>
         {item.status && (

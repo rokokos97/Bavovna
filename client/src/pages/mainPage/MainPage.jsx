@@ -67,7 +67,6 @@ const MainPage = () => {
     setShowEducationModal(false);
     showBodyOverflow();
   };
-  //  !categoriesListIsLoading && !colorsListIsLoading && !citiesIsLoading&& !itemsListIsLoading
   return (
     <>
       <div className={styles.mainPage} data-testid='MainPage'>

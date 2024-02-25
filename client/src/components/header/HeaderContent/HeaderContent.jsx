@@ -53,6 +53,7 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
                 type='button'
                 className={styles.headerSearch}
                 onClick={handleIsSearch}
+                aria-label='search button'
               >
                 {/* <input name='search'></input> */}
                 <SearchIcon />
@@ -61,10 +62,16 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
                 onClick={() =>
                   user ? navigate(`/user/${user._id}/wishList`) : {}
                 }
+                type='button'
+                aria-label='wishlist button'
               >
                 <EmptyHeartIcon />
               </button>
-              <button onClick={() => navigate('/cart')}>
+              <button
+                onClick={() => navigate('/cart')}
+                type='button'
+                aria-label='cart button'
+              >
                 <ShoppingCartIcon />
                 <p>{`(${cart.length})`}</p>
               </button>
@@ -72,17 +79,22 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
                 onClick={() =>
                   user ? navigate('/user/' + user._id) : navigate('/login')
                 }
+                type='button'
+                aria-label='account button'
               >
                 <AccountIcon />
                 <span className={styles.accountName}>{isLoggedIn && user ? user.firstName : 'account'}</span>
               </button>
             </div>
           </div>
-          <div className={styles.logo}>
-            <Link to='/'>
-              <LogoIcon />
-            </Link>
-          </div>
+          <button
+            className={styles.logo}
+            type = 'button'
+            aria-label='logo button'
+            onClick={()=> navigate('/')}
+          >
+            <LogoIcon />
+          </button>
         </>
       )}
     </>

@@ -13,7 +13,7 @@ const CategoryPreviewCard = ({item}) => {
       data-testid="CategoryPreviewCard"
       onClick={()=> navigate(item.status ? `/shop?status=${item.status}`: `/shop?status=${item._id}`)}
     >
-      <img src={`${config.apiEndpoint}${item.image}`} alt="category cover image"/>
+      <img src={`${config.apiEndpoint}${item.image}`} loading='lazy' alt="category cover image"/>
       <p className={styles.title}>{item.name}</p>
     </div>
   );
