@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const BavovnaBlock = () => {
   return (
-    <articale className={styles.bavovnaBlock} data-testid="BavovnaBlock">
+    <article className={styles.bavovnaBlock} data-testid="BavovnaBlock">
       <header className={styles.titleBox}>
         <h2 className={styles.title2}>bavovna is a ukrainian brand of</h2>
         <h2 className={styles.title2}>sustainable clothes</h2>
@@ -20,7 +20,7 @@ const BavovnaBlock = () => {
           shop now
         </span>
       </Link>
-    </articale>
+    </article>
   );
 };
 

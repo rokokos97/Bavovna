@@ -8,13 +8,13 @@
   gap: 3.2rem;
 }
 
-.title {
+.newsLetterBlock__title2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
 }
-.title span {
+.newsLetterBlock__title2 span {
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;

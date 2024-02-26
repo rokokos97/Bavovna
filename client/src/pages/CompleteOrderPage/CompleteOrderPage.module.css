@@ -13,7 +13,7 @@
   margin-bottom: 4rem;
   border-bottom: #727272 solid 0.1rem;
 }
-.titleBlock .title {
+.titleBlock .newsLetterBlock__title2 {
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
@@ -44,7 +44,7 @@
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.orderInfoBlock .title {
+.orderInfoBlock .newsLetterBlock__title2 {
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;

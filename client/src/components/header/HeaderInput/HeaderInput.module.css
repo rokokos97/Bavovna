@@ -13,12 +13,12 @@
   height: 3.2rem;
 }
 
-.input {
+.newsLetterBlock__inputSection {
   width: 100%;
   display: flex;
   gap: 1.6rem;
 }
-.input input {
+.newsLetterBlock__inputSection input {
   display: flex;
   align-items: center;
   flex: 1 0 auto;
