@@ -8,11 +8,11 @@
   gap: 4rem;
 }
 
-.titleBox {
+.bavovnaBlock__titleBox {
   width: 90rem;
 }
 
-.title2 {
+.bavovnaBlock__title2 {
   color: #000000;
   text-align: center;
   margin-block: 0;
@@ -22,7 +22,7 @@
   text-transform: uppercase;
 }
 
-.content {
+.bavovnaBlock__content {
   width: 72.8rem;
   color: #000000;
   font-family: "Fixel Text Regular";
@@ -30,7 +30,7 @@
   line-height: 140%;
 }
 
-.newCollectionBlock__button {
+.bavovnaBlock__button {
   margin: 0 auto;
   text-decoration: none;
   display: flex;
@@ -46,7 +46,7 @@
   background: #fafafa;
   border: 0.1rem solid #000000;
 }
-.newCollectionBlock__button span {
+.bavovnaBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -54,7 +54,7 @@
   text-align: center;
   position: relative;
 }
-.newCollectionBlock__button::before {
+.bavovnaBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -66,7 +66,7 @@
   top: 0.4rem;
   left: 7.35rem;
 }
-.newCollectionBlock__button::after {
+.bavovnaBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -78,7 +78,7 @@
   top: 2.5rem;
   left: 9.45rem;
 }
-.newCollectionBlock__button:hover::before {
+.bavovnaBlock__button:hover::before {
   content: "";
   width: 21.45rem;
   height: 21.45rem;
@@ -87,7 +87,7 @@
   top: -8.325rem;
   left: -1rem;
 }
-.newCollectionBlock__button:active::after {
+.bavovnaBlock__button:active::after {
   content: "";
   width: 21.45rem;
   height: 21.45rem;
@@ -98,16 +98,16 @@
   top: -8.325rem;
   left: -1.1rem;
 }
-.newCollectionBlock__button:disabled {
+.bavovnaBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.newCollectionBlock__button:disabled span {
+.bavovnaBlock__button:disabled span {
   color: #9b9b9b;
 }
-.newCollectionBlock__button span {
+.bavovnaBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -115,16 +115,16 @@
   text-decoration: none;
   color: #000000;
 }
-.newCollectionBlock__button::before {
+.bavovnaBlock__button::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.newCollectionBlock__button::after {
+.bavovnaBlock__button::after {
   background: #a9dfcb;
 }
-.newCollectionBlock__button:hover::before {
+.bavovnaBlock__button:hover::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.newCollectionBlock__button:active::after {
+.bavovnaBlock__button:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
 
