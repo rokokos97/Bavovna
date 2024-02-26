@@ -5,16 +5,13 @@
   width: 100%;
   height: 49.4rem;
   box-sizing: border-box;
-  background-image: url('../../../../public/img/images/Bavovna/bavovnaCoverImage.jpeg');
-  background-position: 100% 194.739%;
-  background-repeat: no-repeat;
-  .div {
+  .bavovnaCoverImageBlock__imageLineSection {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 50%;
     box-sizing: border-box;
-    div {
+    .bavovnaCoverImageBlock__image {
       width: 25%;
       height: 100%;
       border: 1px solid $white;
