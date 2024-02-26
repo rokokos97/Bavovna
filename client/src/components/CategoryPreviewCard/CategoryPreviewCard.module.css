@@ -6,7 +6,7 @@
   gap: 0.8rem;
   cursor: pointer;
 }
-.categoryPreviewCard .newsLetterBlock__title2 {
+.categoryPreviewCard .categoryPreviewCard__title {
   text-transform: capitalize;
   font-family: "Fixel Text Regular";
   font-size: 18px;
