@@ -1,6 +1,5 @@
 const express = require('express');
 const Newsletter = require('../models/NewsletterEmail.js');
-const {check, validationResult} = require("express-validator");
 const nodemailer = require("nodemailer");
 const config = require("../config/default.json");
 // eslint-disable-next-line new-cap
@@ -14,21 +13,9 @@ const transporter = nodemailer.createTransport({
     pass: config.bavovnaSpace.password,
   },
 });
-router.post('/', [
-  check('email', 'email is not correct')
-    .isEmail,async (req, res) => {
+router.post('/', async (req, res) => {
+  const {email} = req.body;
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        response: {
-          errors: errors.array(),
-          code: 400,
-          message: 'INVALID_DATA',
-        },
-      });
-    }
-    const {email} = req.body;
     const existingEmail = await Newsletter.findOne({email});
     if (existingEmail) {
       return res.status(400).json({
@@ -38,6 +25,7 @@ router.post('/', [
         },
       });
     }
+    await Newsletter.create({email});
     const mailOptions = {
       from: 'no-repaly@bavovna.space',
       to: email,
@@ -79,6 +67,5 @@ router.post('/', [
       },
     });
   }
-}]);
-
+});
 module.exports = router;
