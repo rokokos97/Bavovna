@@ -1,24 +1,19 @@
 @import '../../../styles/variables.module.scss';
 
-.banner {
+.headerContent__banner {
   display: flex;
   width: 100%;
-  // position: relative;
-  // left: 50%;
-  // transform: translateX(-50%);
   padding: 1rem;
   justify-content: center;
   align-items: flex-start;
   background: $black;
-
-  span {
+  p {
     color: $white;
     @include fonts($headline-11);
   }
 }
-.header {
+.headerContent__header {
   max-width: $max-width;
-  // min-width: 128rem;
   width: 100%;
   padding: 1.6rem 8rem;
   display: flex;
@@ -26,30 +21,29 @@
   align-items: center;
   color: $black;
 }
-
-.headerNavBar {
+.headerContent__headerNavBar {
   display: flex;
   gap: 1.6rem;
   span {
     @include fonts($menu-2);
   }
 }
-.headerMenuBar {
+.headerContent__headerMenuBar {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
 
-  div {
+  .headerContent__linkBlock {
     display: flex;
     align-items: center;
     gap: 0.4rem;
     @include fonts($menu-4);
 
-    button {
-      background: transparent;
-      @include fonts($menu-4);
-    }
+    //button {
+    //  background: transparent;
+    //  @include fonts($menu-4);
+    //}
   }
   button {
     display: flex;
@@ -88,7 +82,7 @@
   }
 }
 
-.headerSearch {
+.headerContent__headerSearch {
   display: flex;
   align-items: center;
   position: relative;
