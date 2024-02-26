@@ -21,7 +21,7 @@ const CategoriesBlock = () => {
       <h2 className={styles.categoriesBlock__title2}>
           categories
       </h2>
-      <section className={styles.categoriesBlock__box}>
+      <nav className={styles.categoriesBlock__box}>
         {!isCategoriesLoading && categories &&
               <>
                 <CategoryPreviewCard item={categorySale}/>
@@ -31,7 +31,7 @@ const CategoriesBlock = () => {
                 <CategoryPreviewCard item={categories[0]}/>
                 <CategoryPreviewCard item={categories[2]}/>
               </>}
-      </section>
+      </nav>
     </article>
   );
 };
