@@ -68,7 +68,7 @@ const MainPage = () => {
     showBodyOverflow();
   };
   return (
-    <section className={styles.mainPage} data-testid='MainPage'>
+    <section className={styles.mainPage}>
       {
         (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
       }
