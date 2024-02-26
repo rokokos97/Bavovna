@@ -1,23 +1,29 @@
 import React from 'react';
 import styles from './SaleBlock.module.scss';
-import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const SaleBlock = () => {
-  const navigate = useNavigate();
   return (
-    <div className={styles.saleBlock} data-testid="SaleBlock">
-      <div className={styles.contentBlock}>
-        <span className={styles.title}>summer sale</span>
-        <button
-          className={styles.button}
-          onClick={() => {
-            navigate('/shop?status=sale');
-          }}
+    <article className={styles.saleBlock} data-testid="SaleBlock">
+      <img
+        src='/img/images/Sale/saleBlockImage.jpeg'
+        loading='lazy'
+        alt='Flat lay of a plain white T-shirt,
+         a lifestyle magazine with plants on the cover,
+         and a wooden board with fresh green leaves arranged on it,
+         suggesting a natural and minimalist lifestyle'
+      />
+      <section className={styles.saleBlock__contentBlock}>
+        <h2 className={styles.saleBlock__title2}>summer sale</h2>
+        <Link
+          className={styles.saleBlock__button}
+          aria-label='go to catalogue page'
+          to="/shop"
         >
           <span>shop now</span>
-        </button>
-      </div>
-    </div>
+        </Link>
+      </section>
+    </article>
   );
 };
 
