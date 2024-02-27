@@ -10,18 +10,18 @@
   position: absolute;
   left: 8rem;
   top: 20rem;
-  .text {
+  .modalCookies__text {
     @include fonts($body-2)
   }
 }
-.newsLetterBlock__title2 {
+.modalCookies__title2 {
   @include fonts($headline-3);
 }
-.newCollectionBlock__button {
+.modalCookies__button {
   @include button($small);
   @include buttonBlack();
 }
-.block {
+.modalCookies__block {
   display: flex;
   flex-direction: row;
   align-items: center;

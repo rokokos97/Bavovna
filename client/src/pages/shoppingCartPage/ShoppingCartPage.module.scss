@@ -31,7 +31,7 @@
 .newsLetterBlock__title2 {
   @include fonts($headline-3);
 }
-.text {
+.modalCookies__text {
   @include fonts($body-2);
   text-align: start;
   text-wrap: none;

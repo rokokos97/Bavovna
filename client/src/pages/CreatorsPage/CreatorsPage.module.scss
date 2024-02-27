@@ -11,7 +11,7 @@
   margin-bottom: 2rem;
   @include fonts($headline-2)
 }
-.text {
+.modalCookies__text {
   @include fonts($body-2);
   margin-bottom: 1.6rem;
 }
