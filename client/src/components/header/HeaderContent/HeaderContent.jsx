@@ -52,13 +52,14 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
             <nav className={styles.headerContent__headerMenuBar}>
               <button
                 type='button'
-                className={styles.headerContent__headerSearch}
+                className={`${styles.headerContent__headerSearch} ${styles.headerContent__button}`}
                 onClick={handleIsSearch}
                 aria-label='Search for products'
               >
                 <SearchIcon />
               </button>
               <Link
+                className={styles.headerContent__button}
                 to={user ? `/user/${user._id}/wishList`: {}}
                 aria-label='View your wishlist'
               >
@@ -67,7 +68,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
               <Link
                 to='/cart'
                 aria-label={`View your shopping cart, with ${cart.length} items`}
-                className={styles.headerContent__linkBlock}
+                className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
               >
                 <ShoppingCartIcon />
                 <p>{`(${cart.length})`}</p>
@@ -75,15 +76,15 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
               <Link
                 to={user?('/user/' + user._id) : '/login'}
                 aria-label={isLoggedIn && user ? `View ${user.firstName}'s account` : 'Log in to your account'}
-                className={styles.headerContent__linkBlock}
+                className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
               >
                 <AccountIcon />
-                <p className={styles.accountName}>{isLoggedIn && user ? user.firstName : 'account'}</p>
+                <p className={styles.headerContent__accountName}>{isLoggedIn && user ? user.firstName : 'account'}</p>
               </Link>
             </nav>
           </section>
           <Link
-            className={styles.logo}
+            className={styles.headerContent__logo}
             aria-label='Go to homepage'
             to='/'
           >

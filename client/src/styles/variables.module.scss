@@ -536,3 +536,19 @@ $light-pink: #dfc5c5;
     }
   }
 }
+@mixin link {
+  text-decoration: none;
+  transition: color 0.3s;
+  &:hover {
+    color: $accent-a-3;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $accent-a-5;
+    text-decoration: underline;
+  }
+  &:disabled {
+    color: $gray-70;
+    pointer-events: none;
+  }
+}

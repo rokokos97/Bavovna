@@ -22,11 +22,28 @@
   justify-content: space-between;
   align-items: center;
   color: #000000;
+  position: relative;
 }
 
 .headerContent__headerNavBar {
   display: flex;
   gap: 1.6rem;
+}
+.headerContent__headerNavBar a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.headerContent__headerNavBar a:hover {
+  color: #5a9b83;
+  text-decoration: underline;
+}
+.headerContent__headerNavBar a:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.headerContent__headerNavBar a:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
 }
 .headerContent__headerNavBar span {
   font-family: "Fixel Display Regular";
@@ -49,8 +66,22 @@
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-.headerContent__headerMenuBar button {
+.headerContent__headerMenuBar .headerContent__linkBlock:hover {
+  color: #5a9b83;
+  text-decoration: underline;
+}
+.headerContent__headerMenuBar .headerContent__linkBlock:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.headerContent__headerMenuBar .headerContent__linkBlock:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
+}
+.headerContent__headerMenuBar .headerContent__button {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -60,23 +91,23 @@
   line-height: 110%;
   text-transform: uppercase;
 }
-.headerContent__headerMenuBar button:hover {
+.headerContent__headerMenuBar .headerContent__button:hover {
   color: #5a9b83;
 }
-.headerContent__headerMenuBar button:hover span {
+.headerContent__headerMenuBar .headerContent__button:hover span {
   text-decoration: underline;
   color: #5a9b83;
 }
-.headerContent__headerMenuBar button:hover div svg path {
+.headerContent__headerMenuBar .headerContent__button:hover div svg path {
   stroke: #5a9b83;
 }
-.headerContent__headerMenuBar button:active {
+.headerContent__headerMenuBar .headerContent__button:active {
   color: #1a6449;
 }
-.headerContent__headerMenuBar button:active span {
+.headerContent__headerMenuBar .headerContent__button:active span {
   color: #1a6449;
 }
-.headerContent__headerMenuBar button:active div svg path {
+.headerContent__headerMenuBar .headerContent__button:active div svg path {
   stroke: #1a6449;
 }
 
@@ -84,6 +115,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  background: transparent;
 }
 .headerContent__headerSearch input {
   background: transparent;
@@ -92,13 +124,14 @@
   height: 2.4rem;
 }
 
-.logo {
-  position: relative;
-  top: -3.5rem;
-  margin-bottom: -1.5rem;
+.headerContent__logo {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.accountName {
+.headerContent__accountName {
   width: 6rem;
 }
 
