@@ -1,8 +1,11 @@
 /* eslint-disable max-len */
 import React from 'react';
+import styles from './ShoppingCartIcon.module.scss';
 const ShoppingCartIcon = () => (
   <div>
+
     <svg
+      className={styles.shoppingCartIcon}
       xmlns="http://www.w3.org/2000/svg"
       width="22"
       height="22"

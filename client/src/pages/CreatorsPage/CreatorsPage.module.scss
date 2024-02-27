@@ -6,12 +6,12 @@
 .navigationBlock {
  @include fonts($breadcrumb);
 }
-.title {
+.newsLetterBlock__title2 {
   margin-top: 2.4rem;
   margin-bottom: 2rem;
   @include fonts($headline-2)
 }
-.text {
+.modalCookies__text {
   @include fonts($body-2);
   margin-bottom: 1.6rem;
 }

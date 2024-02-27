@@ -19,7 +19,7 @@
   column-gap: 1.2rem;
   @include fonts($headline-5);
 }
-.title {
+.newsLetterBlock__title2 {
   @include fonts($headline-3);
 }
 .form {
@@ -51,7 +51,7 @@
   color: $error;
   @include fonts($body-3);
 }
-.button {
+.newCollectionBlock__button {
   //margin-inline: auto;
   @include button(41.1rem);
   @include buttonBlack();

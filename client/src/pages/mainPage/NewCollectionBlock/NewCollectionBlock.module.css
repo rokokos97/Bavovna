@@ -1,23 +1,24 @@
 .newCollectionBlock {
-  background: linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0) 45.58%), url("../../../../public/img/images/NewCollection/newCollection.jpeg"), lightgray 50%/cover no-repeat;
-  width: 100%;
   height: 84.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 8rem;
 }
 
-.newCollectionBlock__wrapper {
+.newCollectionBlock__image {
+  background: linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0) 45.58%), lightgray 50%/cover no-repeat;
+}
+
+.newCollectionBlock__section {
   display: flex;
   max-width: 57.8rem;
+  position: relative;
+  left: 8rem;
+  bottom: 55.5rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4rem;
 }
 
-.newCollectionBlock__title {
+.newCollectionBlock__title1 {
   color: #000000;
   word-wrap: break-word;
   font-family: "Fixel Display Extra Bold";
@@ -27,7 +28,7 @@
   text-transform: uppercase;
 }
 
-.newCollectionBlock__manifest {
+.newCollectionBlock__text {
   width: 57.8rem;
   color: #000000;
   font-family: "Fixel Text Regular";
@@ -37,7 +38,7 @@
   text-align: start;
 }
 
-.button {
+.newCollectionBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -50,7 +51,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.button span {
+.newCollectionBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -58,7 +59,7 @@
   text-align: center;
   position: relative;
 }
-.button::before {
+.newCollectionBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -70,7 +71,7 @@
   top: 0.4rem;
   left: 7.35rem;
 }
-.button::after {
+.newCollectionBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -82,7 +83,7 @@
   top: 2.5rem;
   left: 9.45rem;
 }
-.button:hover::before {
+.newCollectionBlock__button:hover::before {
   content: "";
   width: 21.45rem;
   height: 21.45rem;
@@ -91,7 +92,7 @@
   top: -8.325rem;
   left: -1rem;
 }
-.button:active::after {
+.newCollectionBlock__button:active::after {
   content: "";
   width: 21.45rem;
   height: 21.45rem;
@@ -102,32 +103,32 @@
   top: -8.325rem;
   left: -1.1rem;
 }
-.button:disabled {
+.newCollectionBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.button:disabled span {
+.newCollectionBlock__button:disabled span {
   color: #9b9b9b;
 }
-.button span {
+.newCollectionBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.button::before {
+.newCollectionBlock__button::before {
   background: #5a9b83;
 }
-.button::after {
+.newCollectionBlock__button::after {
   background: #1a6449;
 }
-.button:hover::before {
+.newCollectionBlock__button:hover::before {
   background: #5a9b83;
 }
-.button:active::after {
+.newCollectionBlock__button:active::after {
   border: 1px solid #5a9b83;
 }
 

@@ -7,7 +7,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {Navigation} from 'swiper/modules';
-import LeftArrowIcon from '../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
+import BigLeftArrowIcon from '../../../components/svg/arrowIcons/BigLeftArrowIcon/BigLeftArrowIcon';
 
 
 const NewArrivalsBlock = () => {
@@ -19,34 +19,35 @@ const NewArrivalsBlock = () => {
     newArrivalItems = items.filter((item) => item.status === 'new');
   }
   return (
-    <div className={styles.newArrivalsBlock} data-testid="NewArrivalsBlock">
-      <div className={styles.newArrivalsBlock__title}>
-        <span>
+    <article className={styles.newArrivalsBlock} data-testid="NewArrivalsBlock">
+      <section className={styles.newArrivalsBlock__titleSection}>
+        <h2 className={styles.newArrivalsBlock__title2}>
             new arrivals
-        </span>
-        <div className={styles.newArrivalsBlock__arrows}>
+        </h2>
+        <section className={styles.newArrivalsBlock__arrowSection}>
           <button
-            className={styles.button}
+            className={styles.newArrivalsBlock__button}
+            type = 'button'
+            aria-label='go to privious slide'
             onClick={() => swiperRef.current?.slidePrev()}>
-            <LeftArrowIcon />
+            <BigLeftArrowIcon/>
           </button>
           <button
-            className={`${styles.button} ${styles.buttonRight}`}
+            className={`${styles.newArrivalsBlock__button} ${styles.buttonRight}`}
+            type = 'button'
+            aria-label='go to privious slide'
             onClick={() => swiperRef.current?.slideNext()}>
-            <LeftArrowIcon />
+            <BigLeftArrowIcon />
           </button>
-        </div>
-      </div>
+        </section>
+      </section>
       {!isItemsLoading && newArrivalItems &&
-            <div className={styles.newArrivalsBlock__box}>
               <Swiper
                 onSwiper={(swiper) => swiperRef.current = swiper}
                 slidesPerView={3}
                 spaceBetween={3}
-                //                loop={true}
                 modules={[Navigation]}
                 navigation={{
-                  // Відключаємо вбудовану навігацію swiper
                   nextEl: '.swiper-button-next',
                   prevEl: '.swiper-button-prev',
                 }}
@@ -57,9 +58,8 @@ const NewArrivalsBlock = () => {
                   </SwiperSlide>,
                 )}
               </Swiper>
-            </div>
       }
-    </div>
+    </article>
   );
 };
 

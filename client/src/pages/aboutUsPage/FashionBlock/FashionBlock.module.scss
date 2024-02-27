@@ -43,7 +43,7 @@
   text-align: start;
 }
 
-.title {
+.newsLetterBlock__title2 {
   max-width: 28rem;
   padding-bottom: 0.8rem;
   @include fonts($headline-4);
@@ -54,7 +54,7 @@
   }
 }
 
-.text {
+.modalCookies__text {
   max-width: 60rem;
   @include fonts($body-3);
 }

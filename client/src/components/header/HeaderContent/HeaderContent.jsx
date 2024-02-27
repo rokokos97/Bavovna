@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import LogoIcon from '../../svg/LogoIcon/LogoIcon';
 import AccountIcon from '../../svg/AccountIcon/AccountIcon';
@@ -9,8 +9,9 @@ import styles from './HeaderContent.module.scss';
 import HeaderInput from '../HeaderInput/HeaderInput';
 import EmptyHeartIcon from '../../svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 
-const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
+const HeaderContent = ({isLoggedIn, user, cart}) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isSearch, setIsSearch] = useState(false);
   useEffect(() => {
     if (location.pathname !== '/shop' || location.search !== '') setIsSearch(false);
@@ -21,17 +22,17 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
   };
   return (
     <>
-      <div className={styles.banner}>
+      <section className={styles.headerContent__banner}>
         <Link to='/shop?status=sale_10%'>
-          <span>10% discount on the summer collection</span>
+          <p>10% discount on the summer collection</p>
         </Link>
-      </div>
+      </section>
       {isSearch ? (
         <HeaderInput handleIsSearch={handleIsSearch} />
       ) : (
         <>
-          <div className={styles.header}>
-            <div className={styles.headerNavBar}>
+          <section className={styles.headerContent__header}>
+            <nav className={styles.headerContent__headerNavBar}>
               <Link to='/shop?status=sale'>
                 <span>Sale</span>
               </Link>
@@ -47,54 +48,48 @@ const HeaderContent = ({navigate, isLoggedIn, user, cart}) => {
               <Link to='/help/delivery'>
                 <span>Help</span>
               </Link>
-            </div>
-            <div className={styles.headerMenuBar}>
+            </nav>
+            <nav className={styles.headerContent__headerMenuBar}>
               <button
                 type='button'
-                className={styles.headerSearch}
+                className={`${styles.headerContent__headerSearch} ${styles.headerContent__button}`}
                 onClick={handleIsSearch}
-                aria-label='search button'
+                aria-label='Search for products'
               >
-                {/* <input name='search'></input> */}
                 <SearchIcon />
               </button>
-              <button
-                onClick={() =>
-                  user ? navigate(`/user/${user._id}/wishList`) : {}
-                }
-                type='button'
-                aria-label='wishlist button'
+              <Link
+                className={styles.headerContent__button}
+                to={user ? `/user/${user._id}/wishList`: {}}
+                aria-label='View your wishlist'
               >
                 <EmptyHeartIcon />
-              </button>
-              <button
-                onClick={() => navigate('/cart')}
-                type='button'
-                aria-label='cart button'
+              </Link>
+              <Link
+                to='/cart'
+                aria-label={`View your shopping cart, with ${cart.length} items`}
+                className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
               >
                 <ShoppingCartIcon />
                 <p>{`(${cart.length})`}</p>
-              </button>
-              <button
-                onClick={() =>
-                  user ? navigate('/user/' + user._id) : navigate('/login')
-                }
-                type='button'
-                aria-label='account button'
+              </Link>
+              <Link
+                to={user?('/user/' + user._id) : '/login'}
+                aria-label={isLoggedIn && user ? `View ${user.firstName}'s account` : 'Log in to your account'}
+                className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
               >
                 <AccountIcon />
-                <span className={styles.accountName}>{isLoggedIn && user ? user.firstName : 'account'}</span>
-              </button>
-            </div>
-          </div>
-          <button
-            className={styles.logo}
-            type = 'button'
-            aria-label='logo button'
-            onClick={()=> navigate('/')}
+                <p className={styles.headerContent__accountName}>{isLoggedIn && user ? user.firstName : 'account'}</p>
+              </Link>
+            </nav>
+          </section>
+          <Link
+            className={styles.headerContent__logo}
+            aria-label='Go to homepage'
+            to='/'
           >
             <LogoIcon />
-          </button>
+          </Link>
         </>
       )}
     </>
@@ -105,7 +100,6 @@ HeaderContent.propTypes = {
   user: PropTypes.object,
   cart: PropTypes.array.isRequired,
   isLoggedIn: PropTypes.bool,
-  navigate: PropTypes.func,
 };
 
 export default HeaderContent;

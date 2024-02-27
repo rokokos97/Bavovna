@@ -34,7 +34,7 @@
   }
 }
 
-.title {
+.newsLetterBlock__title2 {
   max-width: 28rem;
   width: 100%;
   padding-bottom: 0.8rem;
@@ -55,7 +55,7 @@
   padding-bottom: 1.6rem;
 }
 
-.text {
+.modalCookies__text {
   width: 100%;
   @include fonts($body-3);
 }
@@ -75,7 +75,7 @@
 .lastChild {
   order: 2;
 }
-.button {
+.newCollectionBlock__button {
   @include button(16.2rem);
   @include buttonBlack();
 }

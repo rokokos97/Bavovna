@@ -4,9 +4,9 @@ import styles from './ModalCookies.module.scss';
 import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
 
 const ModalCookies = ({handleCloseModal, handleConfirmModal}) => (
-  <div className={styles.modalCookies} data-testid="ModalEducationProject">
-    <div className={styles.container}>
-      <p className={styles.content}>BAVOVNA uses cookies to give you the best
+  <article className={styles.modalCookies} data-testid="ModalEducationProject">
+    <section className={styles.modalCookies__container}>
+      <p className={styles.modalCookies__content}>BAVOVNA uses cookies to give you the best
           shopping experience. If you continue to use
           our services, we will assume that you agree
           to the use of such cookies. Find out more <
@@ -14,20 +14,25 @@ const ModalCookies = ({handleCloseModal, handleConfirmModal}) => (
         href={'https://www.aboutcookies.org/'}
         target='_blank'
         rel="noreferrer"
+        aria-label='Learn about cookies'
       >about cookies</a> and how
           you can refuse them</p>
       <button
-        className={styles.closeButton}
+        className={styles.modalCookies__closeButton}
+        type='button'
+        aria-label='close modal window'
         onClick={handleCloseModal}
       ><CloseIcon/></button>
-    </div>
+    </section>
     <button
-      className={styles.button}
+      type='button'
+      aria-label='confirm cookies and close modal window'
+      className={styles.modalCookies__button}
       onClick={handleConfirmModal}
     >
       <span>yes, i agree</span>
     </button>
-  </div>
+  </article>
 );
 ModalCookies.propTypes = {
   handleConfirmModal: PropTypes.func,

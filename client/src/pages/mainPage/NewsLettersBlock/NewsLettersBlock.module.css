@@ -1,4 +1,4 @@
-.messageLine {
+.newsLetterBlock__messageLine {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,12 +10,12 @@
   line-height: 110%;
   text-transform: uppercase;
 }
-.messageLine .closeButton {
+.newsLetterBlock__messageLine .newsLetterBlock__closeButton {
   background-color: #5a9b83;
   position: relative;
   left: 5rem;
 }
-.messageLine .closeButton svg path {
+.newsLetterBlock__messageLine .newsLetterBlock__closeButton svg path {
   stroke: #fafafa;
 }
 
@@ -32,7 +32,7 @@
   gap: 2.4rem;
 }
 
-.title {
+.newsLetterBlock__title2 {
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
@@ -48,7 +48,7 @@
   text-transform: uppercase;
 }
 
-.input {
+.newsLetterBlock__inputSection {
   display: flex;
   width: 63rem;
   flex-direction: column;
@@ -56,7 +56,7 @@
   gap: 2.4rem;
 }
 
-.button {
+.newsLetterBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -69,7 +69,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.button span {
+.newsLetterBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -77,7 +77,7 @@
   text-align: center;
   position: relative;
 }
-.button::before {
+.newsLetterBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -89,7 +89,7 @@
   top: 0.4rem;
   left: 29.1rem;
 }
-.button::after {
+.newsLetterBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -101,7 +101,7 @@
   top: 2.5rem;
   left: 31.2rem;
 }
-.button:hover::before {
+.newsLetterBlock__button:hover::before {
   content: "";
   width: 69.3rem;
   height: 69.3rem;
@@ -110,7 +110,7 @@
   top: -32.25rem;
   left: -1rem;
 }
-.button:active::after {
+.newsLetterBlock__button:active::after {
   content: "";
   width: 69.3rem;
   height: 69.3rem;
@@ -121,32 +121,32 @@
   top: -32.25rem;
   left: -1.1rem;
 }
-.button:disabled {
+.newsLetterBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.button:disabled span {
+.newsLetterBlock__button:disabled span {
   color: #9b9b9b;
 }
-.button span {
+.newsLetterBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.button::before {
+.newsLetterBlock__button::before {
   background: #5a9b83;
 }
-.button::after {
+.newsLetterBlock__button::after {
   background: #1a6449;
 }
-.button:hover::before {
+.newsLetterBlock__button:hover::before {
   background: #5a9b83;
 }
-.button:active::after {
+.newsLetterBlock__button:active::after {
   border: 1px solid #5a9b83;
 }
 

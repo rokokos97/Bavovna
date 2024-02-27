@@ -13,7 +13,7 @@
   column-gap: 1.6rem;
 }
 
-.title {
+.newsLetterBlock__title2 {
   color: #1a6449;
   font-family: "Fixel Display Regular";
   font-size: 24px;
@@ -218,6 +218,7 @@
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
+  text-decoration: none;
   color: #000000;
 }
 .buttonsBlock button:last-child::before {

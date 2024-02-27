@@ -1,57 +1,51 @@
 @import '../../../styles/variables.module.scss';
 
-.banner {
+.headerContent__banner {
   display: flex;
   width: 100%;
-  // position: relative;
-  // left: 50%;
-  // transform: translateX(-50%);
   padding: 1rem;
   justify-content: center;
   align-items: flex-start;
   background: $black;
-
-  span {
+  p {
     color: $white;
     @include fonts($headline-11);
   }
 }
-.header {
+.headerContent__header {
   max-width: $max-width;
-  // min-width: 128rem;
   width: 100%;
   padding: 1.6rem 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: $black;
+  position: relative;
 }
-
-.headerNavBar {
+.headerContent__headerNavBar {
   display: flex;
   gap: 1.6rem;
+  a {
+    @include link();
+  }
   span {
     @include fonts($menu-2);
   }
 }
-.headerMenuBar {
+.headerContent__headerMenuBar {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
 
-  div {
+  .headerContent__linkBlock {
     display: flex;
     align-items: center;
     gap: 0.4rem;
     @include fonts($menu-4);
-
-    button {
-      background: transparent;
-      @include fonts($menu-4);
-    }
+    @include link();
   }
-  button {
+  .headerContent__button {
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -88,11 +82,11 @@
   }
 }
 
-.headerSearch {
+.headerContent__headerSearch {
   display: flex;
   align-items: center;
   position: relative;
-
+  background: transparent;
   input {
     background: transparent;
     border: none;
@@ -100,11 +94,12 @@
     height: 2.4rem;
   }
 }
-.logo {
-  position: relative;
-  top: -3.5rem;
-  margin-bottom: -1.5rem;
+.headerContent__logo {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.accountName {
+.headerContent__accountName {
   width: 6rem;
 }

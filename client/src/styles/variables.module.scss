@@ -472,6 +472,7 @@ $light-pink: #dfc5c5;
   border: 0.1rem solid $black;
   span {
     @include fonts($button);
+    text-decoration: none;
     color: $black;
   }
   &::before {
@@ -533,5 +534,21 @@ $light-pink: #dfc5c5;
       @include fonts($button);
       color: $gray-40;
     }
+  }
+}
+@mixin link {
+  text-decoration: none;
+  transition: color 0.3s;
+  &:hover {
+    color: $accent-a-3;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $accent-a-5;
+    text-decoration: underline;
+  }
+  &:disabled {
+    color: $gray-70;
+    pointer-events: none;
   }
 }

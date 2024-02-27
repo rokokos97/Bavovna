@@ -1,5 +1,5 @@
 @import '../../../styles/variables.module';
-.messageLine {
+.newsLetterBlock__messageLine {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,7 +7,7 @@
   background-color: $accent-a-3;
   color: $white;
   @include fonts($menu-2);
-  .closeButton {
+  .newsLetterBlock__closeButton {
     background-color: $accent-a-3;
     position: relative;
     left: 5rem;
@@ -30,7 +30,7 @@
   align-items: center;
   gap: 2.4rem;
 }
-.title {
+.newsLetterBlock__title2 {
   @include fonts($headline-2)
 }
 .content {
@@ -38,14 +38,14 @@
   text-align: center;
   @include fonts($headline-10)
 }
-.input {
+.newsLetterBlock__inputSection {
   display: flex;
   width: 63rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 2.4rem;
 }
-.button {
+.newsLetterBlock__button {
   @include button($large);
   @include buttonBlack();
 }

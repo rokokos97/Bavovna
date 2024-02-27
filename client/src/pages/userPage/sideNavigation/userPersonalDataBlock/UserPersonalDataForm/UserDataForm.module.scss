@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
 }
-.title {
+.newsLetterBlock__title2 {
   @include fonts($headline-2);
   text-align: start;
   padding-bottom: 2.4rem;
@@ -52,7 +52,7 @@
   };
 }
 
-.button {
+.newCollectionBlock__button {
   @include button(24rem);
   @include buttonBlack();
 }

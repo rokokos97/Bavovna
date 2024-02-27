@@ -1,28 +1,30 @@
 @import "../../../styles/variables.module";
 .saleBlock {
-  display: flex;
+  display: grid;
   max-width: 144rem;
-  // min-width: 128rem;
   width: 100%;
   height: 37.6rem;
   justify-content: center;
-  background-size: cover;
-  background: lightgray url("../../../../public/img/images/Sale/saleBlockImage.jpeg") no-repeat right;
+  position: relative;
 }
-.contentBlock {
+.saleBlock__contentBlock {
   display: flex;
-  width: 22.3rem;
-  margin-top: 12.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23rem;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
 }
-.title {
+.saleBlock__title2 {
   margin: 0 auto;
   color: $black;
+  text-wrap: none;
   @include fonts($headline-2)
 }
-.button {
+.saleBlock__button {
   @include button(19.5rem);
   @include buttonWhite();
 }

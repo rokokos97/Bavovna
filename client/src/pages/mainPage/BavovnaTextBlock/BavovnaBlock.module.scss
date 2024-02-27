@@ -8,20 +8,24 @@
   text-align: center;
   gap: 4rem;
 }
-.title {
+.bavovnaBlock__titleBox {
   width: 90rem;
+}
+.bavovnaBlock__title2 {
   color: $black;
   text-align: center;
+  margin-block: 0;
   @include fonts($headline-2);
 }
-.content {
+.bavovnaBlock__content {
   width: 72.8rem;
   color: $black;
   @include fonts($body-2);
 
 }
-.button {
+.bavovnaBlock__button {
   margin: 0 auto;
+  text-decoration: none;
   @include button(19.5rem);
   @include buttonWhite();
 }

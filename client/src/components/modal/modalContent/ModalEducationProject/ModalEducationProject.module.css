@@ -10,20 +10,20 @@
   left: 8rem;
   top: 20rem;
 }
-.modalCookies .text {
+.modalCookies .modalCookies__text {
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
 }
 
-.title {
+.modalCookies__title2 {
   font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
-.button {
+.modalCookies__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -36,7 +36,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.button span {
+.modalCookies__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -44,7 +44,7 @@
   text-align: center;
   position: relative;
 }
-.button::before {
+.modalCookies__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -56,7 +56,7 @@
   top: 0.4rem;
   left: 7.1rem;
 }
-.button::after {
+.modalCookies__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -68,7 +68,7 @@
   top: 2.5rem;
   left: 9.2rem;
 }
-.button:hover::before {
+.modalCookies__button:hover::before {
   content: "";
   width: 20.9rem;
   height: 20.9rem;
@@ -77,7 +77,7 @@
   top: -8.05rem;
   left: -1rem;
 }
-.button:active::after {
+.modalCookies__button:active::after {
   content: "";
   width: 20.9rem;
   height: 20.9rem;
@@ -88,36 +88,36 @@
   top: -8.05rem;
   left: -1.1rem;
 }
-.button:disabled {
+.modalCookies__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.button:disabled span {
+.modalCookies__button:disabled span {
   color: #9b9b9b;
 }
-.button span {
+.modalCookies__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.button::before {
+.modalCookies__button::before {
   background: #5a9b83;
 }
-.button::after {
+.modalCookies__button::after {
   background: #1a6449;
 }
-.button:hover::before {
+.modalCookies__button:hover::before {
   background: #5a9b83;
 }
-.button:active::after {
+.modalCookies__button:active::after {
   border: 1px solid #5a9b83;
 }
 
-.block {
+.modalCookies__block {
   display: flex;
   flex-direction: row;
   align-items: center;

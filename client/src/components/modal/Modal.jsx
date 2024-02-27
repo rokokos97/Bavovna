@@ -29,9 +29,9 @@ const Modal = ({isOpen, handleCloseModal, children}) => {
 
   if (isOpen) {
     return createPortal(
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>{children}</div>
-        </div>,
+        <article className={styles.modal}>
+          <section className={styles.modalContent}>{children}</section>
+        </article>,
         element,
     );
   }

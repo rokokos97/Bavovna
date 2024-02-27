@@ -10,5 +10,6 @@ router.use('/user', require('./user.routes'));
 router.use('/uploads', require('./upload.routes'));
 router.use('/novaPoshta', require('./np.routes'));
 router.use('/orders', require('./orders.routes'));
+router.use('/newsletter', require('./newsletter.routes'));
 
 module.exports = router;

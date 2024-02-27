@@ -6,7 +6,7 @@
   flex-direction: column;
   row-gap: 3.2rem;
 }
-.title {
+.newsLetterBlock__title2 {
   @include fonts($headline-3);
   text-align: start;
 }
@@ -65,7 +65,7 @@
   flex-direction: column;
   gap: 1.6rem;
 }
-.button {
+.newCollectionBlock__button {
   display: block;
   margin: 0 auto;
   @include button($large);

@@ -1,27 +1,26 @@
 import React from 'react';
 import styles from './BavovnaBlock.module.scss';
-import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const BavovnaBlock = () => {
-  const navigate = useNavigate();
   return (
-    <div className={styles.bavovnaBlock} data-testid="BavovnaBlock">
-      <div className={styles.title}>
-        <p>BAVOVNA IS A UKRAINIAN BRAND of</p>
-        <p>sustainable clothes</p>
-      </div>
-      <span className={styles.content}>
+    <article className={styles.bavovnaBlock} data-testid="BavovnaBlock">
+      <header className={styles.bavovnaBlock__titleBox}>
+        <h2 className={styles.bavovnaBlock__title2}>bavovna is a ukrainian brand of</h2>
+        <h2 className={styles.bavovnaBlock__title2}>sustainable clothes</h2>
+      </header>
+      <p className={styles.bavovnaBlock__content}>
         We are dedicated to bringing you a wide range of sustainable
         products that help reduce your ecological footprint without compromising on quality or style.
-      </span>
-      <button
-        className={styles.button}
-        onClick={()=> navigate(('/shop'))}>
+      </p>
+      <Link
+        to='/shop'
+        className={styles.bavovnaBlock__button}>
         <span>
           shop now
         </span>
-      </button>
-    </div>
+      </Link>
+    </article>
   );
 };
 

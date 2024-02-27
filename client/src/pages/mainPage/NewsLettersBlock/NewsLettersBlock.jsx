@@ -4,6 +4,7 @@ import {useFormik} from 'formik';
 import {validationSchemaNewsletterForm} from '../../../utils/validationSchema';
 import TextField from '../../../components/form/formFields/TextField/TextField';
 import CloseIcon from '../../../components/svg/CloseIcon/CloseIcon';
+import newsletterService from '../../../services/newsletter.service';
 
 const NewsLettersBlock = () => {
   const [isMessageShowed, setIsMessageShowed] = useState(false);
@@ -14,20 +15,28 @@ const NewsLettersBlock = () => {
     validationSchema: validationSchemaNewsletterForm,
     onSubmit: () => {
       formik.resetForm();
-      setIsMessageShowed(true);
+      console.log('hello');
+      newsletterService.add({email: formik.values.email})
+          .then((result)=> {
+            console.log('result', result);
+            setIsMessageShowed(true);
+          })
+          .catch((error)=>{
+            console.log('error', error);
+          });
     },
   });
   return (
-    <div>
+    <article>
       <p
-        className={styles.messageLine}
+        className={styles.newsLetterBlock__messageLine}
         style={{display: isMessageShowed ? 'flex' : 'none'}}
       >
         <span>
           A subscription confirmation email has been sent to your email address
         </span>
         <button
-          className={styles.closeButton}
+          className={styles.newsLetterBlock__closeButton}
           onClick={()=> setIsMessageShowed(false)}
         >
           <CloseIcon/>
@@ -38,14 +47,14 @@ const NewsLettersBlock = () => {
         data-testid="NewsLettersBlock"
         onSubmit={formik.handleSubmit}
       >
-        <span className={styles.title}>
+        <h2 className={styles.newsLetterBlock__title2}>
       Newsletter
-        </span>
-        <span className={styles.content}>
+        </h2>
+        <p className={styles.content}>
         SIGN UP TO GET 10% OFF ON YOUR FIRST ORDER, RELEASE NOTIFICATIONS
         AND EXCLUSIVE ACCESS BEFORE EVERYONE ELSE
-        </span>
-        <div className={styles.input}>
+        </p>
+        <section className={styles.newsLetterBlock__inputSection}>
           <TextField
             onChange={formik.handleChange}
             name='email'
@@ -55,7 +64,7 @@ const NewsLettersBlock = () => {
             value={formik.values.email}
           />
           <button
-            className={styles.button}
+            className={styles.newsLetterBlock__button}
             disabled={!formik.isValid || !formik.dirty}
             type='submit'
           >
@@ -63,9 +72,9 @@ const NewsLettersBlock = () => {
               Subscribe to our newsletter
             </span>
           </button>
-        </div>
+        </section>
       </form>
-    </div>
+    </article>
   );
 };
 

@@ -10,7 +10,7 @@
   text-transform: none;
 }
 
-.title {
+.newsLetterBlock__title2 {
   margin-top: 2.4rem;
   margin-bottom: 2rem;
   font-family: "Fixel Display Medium";
@@ -19,7 +19,7 @@
   text-transform: uppercase;
 }
 
-.text {
+.modalCookies__text {
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;

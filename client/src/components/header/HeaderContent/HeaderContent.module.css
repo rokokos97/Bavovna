@@ -1,4 +1,4 @@
-.banner {
+.headerContent__banner {
   display: flex;
   width: 100%;
   padding: 1rem;
@@ -6,7 +6,7 @@
   align-items: flex-start;
   background: #000000;
 }
-.banner span {
+.headerContent__banner p {
   color: #fafafa;
   font-family: "Fixel Display Bold";
   font-size: 8px;
@@ -14,7 +14,7 @@
   text-transform: uppercase;
 }
 
-.header {
+.headerContent__header {
   max-width: 144rem;
   width: 100%;
   padding: 1.6rem 8rem;
@@ -22,26 +22,43 @@
   justify-content: space-between;
   align-items: center;
   color: #000000;
+  position: relative;
 }
 
-.headerNavBar {
+.headerContent__headerNavBar {
   display: flex;
   gap: 1.6rem;
 }
-.headerNavBar span {
+.headerContent__headerNavBar a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.headerContent__headerNavBar a:hover {
+  color: #5a9b83;
+  text-decoration: underline;
+}
+.headerContent__headerNavBar a:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.headerContent__headerNavBar a:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
+}
+.headerContent__headerNavBar span {
   font-family: "Fixel Display Regular";
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
 }
 
-.headerMenuBar {
+.headerContent__headerMenuBar {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
 }
-.headerMenuBar div {
+.headerContent__headerMenuBar .headerContent__linkBlock {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -49,15 +66,22 @@
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-.headerMenuBar div button {
-  background: transparent;
-  font-family: "Fixel Display Medium";
-  font-size: 12px;
-  line-height: 110%;
-  text-transform: uppercase;
+.headerContent__headerMenuBar .headerContent__linkBlock:hover {
+  color: #5a9b83;
+  text-decoration: underline;
 }
-.headerMenuBar button {
+.headerContent__headerMenuBar .headerContent__linkBlock:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.headerContent__headerMenuBar .headerContent__linkBlock:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
+}
+.headerContent__headerMenuBar .headerContent__button {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -67,45 +91,47 @@
   line-height: 110%;
   text-transform: uppercase;
 }
-.headerMenuBar button:hover {
+.headerContent__headerMenuBar .headerContent__button:hover {
   color: #5a9b83;
 }
-.headerMenuBar button:hover span {
+.headerContent__headerMenuBar .headerContent__button:hover span {
   text-decoration: underline;
   color: #5a9b83;
 }
-.headerMenuBar button:hover div svg path {
+.headerContent__headerMenuBar .headerContent__button:hover div svg path {
   stroke: #5a9b83;
 }
-.headerMenuBar button:active {
+.headerContent__headerMenuBar .headerContent__button:active {
   color: #1a6449;
 }
-.headerMenuBar button:active span {
+.headerContent__headerMenuBar .headerContent__button:active span {
   color: #1a6449;
 }
-.headerMenuBar button:active div svg path {
+.headerContent__headerMenuBar .headerContent__button:active div svg path {
   stroke: #1a6449;
 }
 
-.headerSearch {
+.headerContent__headerSearch {
   display: flex;
   align-items: center;
   position: relative;
+  background: transparent;
 }
-.headerSearch input {
+.headerContent__headerSearch input {
   background: transparent;
   border: none;
   outline: none;
   height: 2.4rem;
 }
 
-.logo {
-  position: relative;
-  top: -3.5rem;
-  margin-bottom: -1.5rem;
+.headerContent__logo {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.accountName {
+.headerContent__accountName {
   width: 6rem;
 }
 

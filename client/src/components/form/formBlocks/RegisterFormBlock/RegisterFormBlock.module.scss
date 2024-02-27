@@ -8,7 +8,7 @@
   align-items: flex-start;
   gap: 1.6rem;
 }
-.button {
+.newCollectionBlock__button {
   @include button (41rem);
   @include buttonBlack();
 }

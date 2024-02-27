@@ -7,17 +7,4 @@
   min-height: 100%;
 }
 
-a {
-  text-decoration: none;
-  transition: color 0.3s;
-}
-a:hover {
-  color: var(--accent-a-7, #103c2c);
-  text-decoration: underline;
-}
-a:disabled {
-  color: #c0c0c0;
-  pointer-events: none;
-}
-
 /*# sourceMappingURL=App.module.css.map */

@@ -7,7 +7,7 @@
   gap: 0.8rem;
   cursor: pointer;
 
-  .title {
+  .categoryPreviewCard__title {
     text-transform: capitalize;
     @include fonts($body-2)
   };

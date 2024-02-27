@@ -7,20 +7,20 @@
   width: 100%;
   height: 66.2rem;
 }
-.newArrivalsBlock__title {
+.newArrivalsBlock__titleSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4rem;
-  span {
+  .newArrivalsBlock__title2 {
     @include fonts($headline-2);
   }
 }
-.newArrivalsBlock__arrows {
+.newArrivalsBlock__arrowSection {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  .button {
+  .newArrivalsBlock__button {
     @include button(4rem);
     @include buttonTransparent();
   }
