@@ -6,9 +6,9 @@ import styles from './SizeGuide.module.scss';
 const SizeGuide = ({handleCloseModal}) => {
   return (
     <section className={styles.guideContainer} data-testid='SizeGuide'>
-      <div className={styles.closeIcon} onClick={handleCloseModal}>
+      <button type='button' aria-label='close modal window' className={styles.closeIcon} onClick={handleCloseModal}>
         <CloseIcon />
-      </div>
+      </button>
       <h2>Size Guide</h2>
       <div className={styles.guideContent}>
         <p>

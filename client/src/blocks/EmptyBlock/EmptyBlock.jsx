@@ -9,6 +9,7 @@ const EmptyBlock = ({description}) => {
     <div className={styles.emptyBlock} data-testid="EmptyBlock">
       <p className={styles.description}>{description}</p>
       <button
+        type='button'
         className={styles.button}
         onClick={() => navigate('/')}
       >

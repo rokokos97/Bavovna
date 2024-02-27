@@ -15,7 +15,7 @@ const HeaderInput = ({handleIsSearch}) => {
 
   return (
     <div className={styles.inputContainer}>
-      <div className={styles.input}>
+      <div className={styles.newsLetterBlock__inputSection}>
         <SearchIcon />
         <input
           value={searchValue}

@@ -6,7 +6,7 @@ const NewCollectionBlock = () => {
   return (
     <article className={styles.newCollectionBlock} data-testid="NewCollectionBlock">
       <img className={styles.newCollectionBlock__image}
-        src='/img/images/NewCollection/newCollection.jpeg'
+        src='/img/images/NewCollection/newCollection.webp'
         alt="Interior view with a clothes rack, potted cacti,
          and a framed motivational quote reading
           'GET UP DRESS UP SHOW UP NEVER GIVE UP'"

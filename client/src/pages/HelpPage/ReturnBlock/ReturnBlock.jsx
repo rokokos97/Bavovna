@@ -71,7 +71,7 @@ const ReturnBlock = () => {
                 <p>
                   If you encounter any issues or require assistance, our
                   customer service team is ready to help. Reach out to us via
-                  e-mail: bavovna19@gmail.com with your order details and reason
+                  e-mail: help@bavovna.space with your order details and reason
                   for return.
                 </p>
               </div>

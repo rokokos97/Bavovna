@@ -24,6 +24,7 @@ const Dropdown = ({id, placeholder, name, inner}) => {
         {!isOpen ? <ChevronDown /> : <ChevronUp />}
       </button>) :
             (<button
+              type='button'
               data-path={name}
               id={id}
               onClick={toggleIsOpen}
