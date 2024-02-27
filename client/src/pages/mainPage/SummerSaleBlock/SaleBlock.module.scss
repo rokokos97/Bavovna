@@ -13,7 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 22.3rem;
+  width: 23rem;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
@@ -21,6 +21,7 @@
 .saleBlock__title2 {
   margin: 0 auto;
   color: $black;
+  text-wrap: none;
   @include fonts($headline-2)
 }
 .saleBlock__button {

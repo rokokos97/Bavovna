@@ -13,7 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 22.3rem;
+  width: 23rem;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
@@ -22,6 +22,7 @@
 .saleBlock__title2 {
   margin: 0 auto;
   color: #000000;
+  text-wrap: none;
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
