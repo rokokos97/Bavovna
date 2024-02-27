@@ -10,18 +10,18 @@
   right: 7rem;
   bottom: 9.2rem;
 }
-.container {
+.modalCookies__container {
   display: flex;
   column-gap: 1.6rem;
 }
-.content {
+.modalCookies__content {
   @include fonts($body-3);
   text-align: start;
 }
-.newsLetterBlock__closeButton{
+.modalCookies__closeButton{
   background: $gray-80;
 }
-.newCollectionBlock__button {
+.modalCookies__button {
   @include button(19rem);
   @include buttonBlack();
 }
