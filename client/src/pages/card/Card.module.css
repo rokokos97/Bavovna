@@ -81,7 +81,7 @@
   align-items: flex-start;
 }
 
-.titleBlock {
+.registerForm__titleBlock {
   display: flex;
   width: 100%;
   align-items: center;

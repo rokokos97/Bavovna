@@ -1,18 +1,14 @@
 @import '../../../styles/variables.module';
 .registerForm {
-  @include form();
+  width: 41rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 }
-.titleBlock {
+.registerForm__titleBlock {
   @include form-title-block();
 }
-//.inputsBlock {
-//  width: 100%;
-//  display: flex;
-//  flex-direction: column;
-//  align-items: flex-start;
-//  gap: 3.2rem;
-//}
-.forgotPassword {
+.loginFormBlock__forgotPassword {
   @include fonts($link-2);
   color: $gray-10;
 }

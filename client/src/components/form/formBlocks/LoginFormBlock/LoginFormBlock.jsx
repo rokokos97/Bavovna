@@ -75,13 +75,13 @@ const LoginFormBlock = () => {
     }
   };
   return (<>
-    <div className={styles.loginFormBlock} data-testid="LoginFormBlock">
+    <section className={styles.loginFormBlock} data-testid="LoginFormBlock">
       {response &&
         <div className={renderMessagesBlockStyle()}>
           <p>{transformErrorMessage[response.message]}</p>
         </div>}
       <form
-        className={styles.form}
+        className={styles.loginFormBlock__form}
         onSubmit={formik.handleSubmit}
       >
         <TextField
@@ -114,8 +114,9 @@ const LoginFormBlock = () => {
         </CheckboxField>
         <button
           type='submit'
+          aria-label='button confirm sign in'
           disabled={!formik.isValid || !formik.dirty}
-          className={styles.button}
+          className={styles.loginFormBlock__button}
         >{
           (isLoading && isRegularLogin) ? <LoaderIconSmall/>:<span>
                 Sign In
@@ -124,24 +125,26 @@ const LoginFormBlock = () => {
         </button>
         <Link
           to='recoveryPassword'
-          className={styles.forgotPassword}
+          aria-label='go to recovery password page'
+          className={styles.loginFormBlock__forgotPassword}
         >
           <span>Forgot password?</span>
         </Link>
       </form>
-      <div className={styles.socialButtonsBlock}>
+      <section className={styles.loginFormBlock__socialButtonsBlock}>
         <div className={styles.divider}>
           <div></div>
           <span>or</span>
           <div></div>
         </div>
-        <div className={styles.googleButtonBlock}>
+        <div className={styles.loginFormBlock__googleButtonBlock}>
           <div
             id='signUpDiv'>
           </div>
           <button
             type='button'
-            className={styles.googleButton}
+            aria-label='go to sign in with google dialog window'
+            className={styles.loginFormBlock__googleButton}
             onClick={googleLogin}
           >
             {
@@ -156,8 +159,8 @@ const LoginFormBlock = () => {
             }
           </button>
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   </>
   );
 };

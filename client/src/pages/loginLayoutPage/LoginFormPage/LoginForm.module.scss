@@ -2,13 +2,13 @@
 .loginForm {
   @include form();
 }
-.titleBlock {
+.registerForm__titleBlock {
   @include form-title-block();
 }
 .loginError {
   @include form-expected-error();
 }
-.forgotPassword {
+.loginFormBlock__forgotPassword {
   @include fonts($link-2);
   color: $gray-10;
 }

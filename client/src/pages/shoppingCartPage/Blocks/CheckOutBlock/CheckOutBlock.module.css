@@ -10,7 +10,7 @@
   background: #fafafa;
 }
 
-.form {
+.loginFormBlock__form {
   display: flex;
   flex-direction: row;
   gap: 2.4rem;

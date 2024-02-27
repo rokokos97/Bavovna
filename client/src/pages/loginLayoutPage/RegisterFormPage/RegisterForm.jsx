@@ -71,21 +71,21 @@ const RegisterForm = () => {
   }, [formik.values, dispatch]);
   console.log(isLoading);
   return (
-    <div className={styles.registerForm}>
-      <div className={styles.titleBlock}>
+    <article className={styles.registerForm}>
+      <section className={styles.registerForm__titleBlock}>
         <p>
           Sign up
         </p>
         <span>
           Welcome! Please enter your details
         </span>
-      </div>
-      <div style={{display: response ? 'block' : 'none'}}>
+      </section>
+      <section style={{display: response ? 'block' : 'none'}}>
         {response ?
           <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
             <p>{transformErrorMessage[response.message]}</p>
           </div> : null}
-      </div>
+      </section>
       <RegisterFormBlock formik={formik} googleRegister={googleRegister}/>
       <p>
         Already have an account?{'  '}
@@ -103,7 +103,7 @@ const RegisterForm = () => {
       >
         <ModalVerifyEmail handleCloseModal={closeModal} email={email}/>
       </Modal>
-    </div>
+    </article>
   );
 };
 

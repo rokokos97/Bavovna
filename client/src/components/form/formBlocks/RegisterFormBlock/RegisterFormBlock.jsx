@@ -11,9 +11,9 @@ import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 const RegisterFormBlock = ({formik, googleRegister}) => {
   const isLoading = useSelector(getUserLoadingStatus);
   return (
-    <div className={styles.registerFormBlock} data-testid="RegisterFormBlock">
+    <section className={styles.registerFormBlock} data-testid="RegisterFormBlock">
       <form
-        className={styles.form}
+        className={styles.registerFormBlock__form}
         onSubmit={formik.handleSubmit}
       >
         <TextField
@@ -79,7 +79,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
         <button
           type='submit'
           disabled={!formik.isValid || !formik.dirty}
-          className={styles.button}
+          className={styles.registerFormBlock__button}
         >
           {
           (isLoading) ?
@@ -93,8 +93,8 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
           }
         </button>
       </form>
-      <div className={styles.socialButtonsBlock}>
-        <div className={styles.divider}>
+      <div className={styles.registerFormBlock__socialButtonsBlock}>
+        <div className={styles.registerFormBlock__divider}>
           <div></div>
           <span>or</span>
           <div></div>
@@ -103,7 +103,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
           <div
             id='signUpDiv'>
           </div>
-          <button className={styles.googleButton}
+          <button className={styles.registerFormBlock__googleButton}
             type='button'
             onClick={() => googleRegister()}
           >
@@ -120,7 +120,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 RegisterFormBlock.propTypes = {
