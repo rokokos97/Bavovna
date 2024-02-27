@@ -6,18 +6,18 @@ const AboutBlock = () => {
     <div className={styles.aboutBlock} data-testid='AboutBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
-          <img src='/img/images/AboutUs/aboutBlock_1.jpg' alt='img_1' />
+          <img src='/img/images/AboutUs/aboutBlock_1.webp' alt='img_1' />
         </div>
         <div className={styles.secondImg}>
-          <img src='/img/images/AboutUs/aboutBlock_2.jpg' alt='img_2' />
+          <img src='/img/images/AboutUs/aboutBlock_2.webp' alt='img_2' />
         </div>
       </div>
       <div className={styles.description}>
-        <h2 className={styles.title}>
+        <h2 className={styles.newsLetterBlock__title2}>
           <span>About&#x20;</span>
           bavovna
         </h2>
-        <p className={styles.text}>
+        <p className={styles.modalCookies__text}>
           BAVOVNA is a women&#39;s clothing brand that cares about the health
           and comfort of its customers. All products of this brand are made from
           organic cotton, which is grown without chemical fertilizers and

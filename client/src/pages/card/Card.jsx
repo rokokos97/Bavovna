@@ -8,6 +8,7 @@ import CardContext from './CardContext';
 const Card = () => {
   const {id} = useParams();
   const items = useSelector(getItems());
+  console.log(items);
   const isItemsLoading = useSelector(getItemsLoadingStatus());
 
   if (!isItemsLoading && items) {

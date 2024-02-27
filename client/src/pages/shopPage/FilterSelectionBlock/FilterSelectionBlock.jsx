@@ -10,7 +10,7 @@ const FilterSelectionBlock = () => {
   const {changeIsFilter, handleCleanFilter, categories, colors} =
     useDataShopPage();
 
-  const {sizeValues, availabilityValues, statusValues} = filtersValues;
+  const {sizeValues, statusValues} = filtersValues;
 
   return (
     <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
@@ -61,7 +61,7 @@ const FilterSelectionBlock = () => {
               />
             ))}
           />
-          <Dropdown
+          {/* <Dropdown
             id='availability'
             placeholder='Availability'
             name='availability'
@@ -74,7 +74,7 @@ const FilterSelectionBlock = () => {
                 option='status'
               />
             ))}
-          />
+          /> */}
         </div>
         <div className={styles.checkboxBlock}>
           {statusValues.map((statusValue) => (

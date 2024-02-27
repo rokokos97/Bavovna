@@ -6,7 +6,7 @@ const SaleBlock = () => {
   return (
     <article className={styles.saleBlock} data-testid="SaleBlock">
       <img
-        src='/img/images/Sale/saleBlockImage.jpeg'
+        src='/img/images/Sale/saleBlockImage.webp'
         loading='lazy'
         alt='Flat lay of a plain white T-shirt,
          a lifestyle magazine with plants on the cover,
