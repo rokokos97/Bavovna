@@ -12,11 +12,11 @@
   @include button(41rem);
   @include buttonBlack();
 }
-.googleButtonBlock {
+.loginFormBlock__googleButtonBlock {
   display: block;
   margin: 0 auto;
 }
-.googleButton {
+.loginFormBlock__googleButton {
   display: flex;
   gap: 1.2rem;
   border: 1px solid $black;
@@ -27,25 +27,29 @@
 .divider {
   @include divider();
 }
-.socialButtonsBlock {
+.loginFormBlock__socialButtonsBlock {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6rem;
 }
-.forgotPassword {
+.loginFormBlock__forgotPassword {
   display: block;
   margin: 0 auto;
   @include fonts($link-2);
   color: $gray-10;
 }
-.form {
+.loginFormBlock__form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6rem;
+}
+.loginFormBlock__button {
+  @include button(41rem);
+  @include buttonBlack();
 }
 .errorMessagesBlock {
   @include form-message-block($light-pink, $error);

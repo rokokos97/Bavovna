@@ -14,7 +14,7 @@
   margin-inline: auto;
 }
 
-.titleBlock {
+.registerForm__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.2rem;
@@ -31,7 +31,7 @@
   text-transform: uppercase;
 }
 
-.form {
+.loginFormBlock__form {
   display: flex;
   flex-direction: row;
   align-items: flex-end;

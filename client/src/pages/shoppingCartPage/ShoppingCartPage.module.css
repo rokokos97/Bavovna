@@ -20,7 +20,7 @@
   margin: 1.6rem 0 1.4rem;
 }
 
-.titleBlock {
+.registerForm__titleBlock {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

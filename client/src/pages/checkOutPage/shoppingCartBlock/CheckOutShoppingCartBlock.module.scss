@@ -13,7 +13,7 @@
   box-sizing: border-box;
   margin-inline: auto;
 }
-.titleBlock {
+.registerForm__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.2rem;
@@ -22,7 +22,7 @@
 .newsLetterBlock__title2 {
   @include fonts($headline-3);
 }
-.form {
+.loginFormBlock__form {
   display: flex;
   flex-direction: row;
   align-items: flex-end;

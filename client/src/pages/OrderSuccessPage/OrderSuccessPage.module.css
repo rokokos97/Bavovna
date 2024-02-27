@@ -7,7 +7,7 @@
   margin: 3.2rem auto;
 }
 
-.titleBlock {
+.registerForm__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.6rem;

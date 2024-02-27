@@ -4,27 +4,28 @@ import {NavLink} from 'react-router-dom';
 import LoginFormBlock from '../../../components/form/formBlocks/LoginFormBlock/LoginFormBlock';
 const LoginForm = () => {
   return (
-    <div className={styles.loginForm}>
-      <div className={styles.titleBlock}>
+    <article className={styles.loginForm}>
+      <section className={styles.titleBlock}>
         <p>
           Sign In
         </p>
         <span>
             Welcome back! Please enter your details
         </span>
-      </div>
+      </section>
       <LoginFormBlock/>
       <p>
         Don’t have an account?{'  '}
         <NavLink
           to="signUp"
+          aria-label='go to sign up page'
           role="button"
         >
           {' '}
           <span>Sign up</span>
         </NavLink>
       </p>
-    </div>
+    </article>
   );
 };
 export default LoginForm;

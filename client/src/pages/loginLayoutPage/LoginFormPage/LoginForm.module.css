@@ -14,20 +14,20 @@
   line-height: 110%;
 }
 
-.titleBlock {
+.registerForm__titleBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
 }
-.titleBlock p {
+.registerForm__titleBlock p {
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
   color: #040404;
 }
-.titleBlock span {
+.registerForm__titleBlock span {
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
@@ -49,7 +49,7 @@
   color: #ea001b;
 }
 
-.forgotPassword {
+.loginFormBlock__forgotPassword {
   font-family: "Fixel Display Semibold";
   font-size: 12px;
   line-height: 110%;

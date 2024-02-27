@@ -1,11 +1,20 @@
-.form {
+.registerFormBlock .registerFormBlock__form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 1.6rem;
+  gap: 2.4rem;
+}
+.registerFormBlock .registerFormBlock__form p {
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.registerFormBlock .registerFormBlock__form p span {
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
 }
 
-.newCollectionBlock__button {
+.registerFormBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -18,7 +27,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.newCollectionBlock__button span {
+.registerFormBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -26,7 +35,7 @@
   text-align: center;
   position: relative;
 }
-.newCollectionBlock__button::before {
+.registerFormBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -38,7 +47,7 @@
   top: 0.4rem;
   left: 18.1rem;
 }
-.newCollectionBlock__button::after {
+.registerFormBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -50,7 +59,7 @@
   top: 2.5rem;
   left: 20.2rem;
 }
-.newCollectionBlock__button:hover::before {
+.registerFormBlock__button:hover::before {
   content: "";
   width: 45.1rem;
   height: 45.1rem;
@@ -59,7 +68,7 @@
   top: -20.15rem;
   left: -1rem;
 }
-.newCollectionBlock__button:active::after {
+.registerFormBlock__button:active::after {
   content: "";
   width: 45.1rem;
   height: 45.1rem;
@@ -70,36 +79,36 @@
   top: -20.15rem;
   left: -1.1rem;
 }
-.newCollectionBlock__button:disabled {
+.registerFormBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.newCollectionBlock__button:disabled span {
+.registerFormBlock__button:disabled span {
   color: #9b9b9b;
 }
-.newCollectionBlock__button span {
+.registerFormBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.newCollectionBlock__button::before {
+.registerFormBlock__button::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button::after {
+.registerFormBlock__button::after {
   background: #1a6449;
 }
-.newCollectionBlock__button:hover::before {
+.registerFormBlock__button:hover::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button:active::after {
+.registerFormBlock__button:active::after {
   border: 1px solid #5a9b83;
 }
 
-.socialButtonsBlock {
+.registerFormBlock__socialButtonsBlock {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -107,7 +116,7 @@
   gap: 1.6rem;
 }
 
-.divider {
+.registerFormBlock__divider {
   margin-top: 3.2rem;
   display: flex;
   justify-content: center;
@@ -115,19 +124,19 @@
   gap: 0.4rem;
   align-self: stretch;
 }
-.divider div {
+.registerFormBlock__divider div {
   width: 50%;
   height: 0.1rem;
   background: #d7d7d7;
 }
-.divider span {
+.registerFormBlock__divider span {
   color: #000000;
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
 
-.googleButton {
+.registerFormBlock__googleButton {
   display: flex;
   gap: 1.2rem;
   border: 1px solid #000000;
@@ -144,7 +153,7 @@
   background: #fafafa;
   border: 0.1rem solid #000000;
 }
-.googleButton span {
+.registerFormBlock__googleButton span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -152,7 +161,7 @@
   text-align: center;
   position: relative;
 }
-.googleButton::before {
+.registerFormBlock__googleButton::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -164,7 +173,7 @@
   top: 0.4rem;
   left: 18.1rem;
 }
-.googleButton::after {
+.registerFormBlock__googleButton::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -176,7 +185,7 @@
   top: 2.5rem;
   left: 20.2rem;
 }
-.googleButton:hover::before {
+.registerFormBlock__googleButton:hover::before {
   content: "";
   width: 45.1rem;
   height: 45.1rem;
@@ -185,7 +194,7 @@
   top: -20.15rem;
   left: -1rem;
 }
-.googleButton:active::after {
+.registerFormBlock__googleButton:active::after {
   content: "";
   width: 45.1rem;
   height: 45.1rem;
@@ -196,16 +205,16 @@
   top: -20.15rem;
   left: -1.1rem;
 }
-.googleButton:disabled {
+.registerFormBlock__googleButton:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.googleButton:disabled span {
+.registerFormBlock__googleButton:disabled span {
   color: #9b9b9b;
 }
-.googleButton span {
+.registerFormBlock__googleButton span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -213,16 +222,16 @@
   text-decoration: none;
   color: #000000;
 }
-.googleButton::before {
+.registerFormBlock__googleButton::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.googleButton::after {
+.registerFormBlock__googleButton::after {
   background: #a9dfcb;
 }
-.googleButton:hover::before {
+.registerFormBlock__googleButton:hover::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.googleButton:active::after {
+.registerFormBlock__googleButton:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
 
