@@ -1,6 +1,6 @@
 @import "../../../../styles/variables.module";
 .modalCookies {
-  width: 60.4rem;
+  width: 61.4rem;
   height: 46.5rem;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@
   left: 8rem;
   top: 20rem;
   .modalCookies__text {
+    width: fit-content;
     @include fonts($body-2)
   }
 }
@@ -25,6 +26,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 2.4rem;
+  column-gap: 1.6rem;
 }
 

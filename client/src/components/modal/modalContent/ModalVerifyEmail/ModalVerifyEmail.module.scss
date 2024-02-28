@@ -8,25 +8,16 @@
   padding: 8rem;
   background: $white;
 }
-.link {
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
-}
-.newsLetterBlock__closeButton {
+.modalVerifyEmail__closeButton {
   position: relative;
   top: -7rem;
   left: 29rem;
   background: $white;
 }
-.content {
+.modalVerifyEmail__content {
   width: 40rem;
   @include fonts($body-3);
   text-align: center;
   margin-top: -3.5rem;
 }
-.newCollectionBlock__button {
-  @include button(41rem);
-  @include buttonBlack();
-}
+

@@ -11,7 +11,7 @@
   text-transform: uppercase;
 }
 .newsLetterBlock__messageLine .newsLetterBlock__closeButton {
-  background-color: #5a9b83;
+  background-color: transparent;
   position: relative;
   left: 5rem;
 }
@@ -148,6 +148,10 @@
 }
 .newsLetterBlock__button:active::after {
   border: 1px solid #5a9b83;
+}
+
+.newsLetterBlock__messageError {
+  background-color: #ea001b;
 }
 
 /*# sourceMappingURL=NewsLettersBlock.module.css.map */
