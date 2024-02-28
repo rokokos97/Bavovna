@@ -5,94 +5,103 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 3.2rem;
-}
-.newCollectionBlock__button {
-  display: block;
-  margin: 0 auto;
-  @include button(41rem);
-  @include buttonBlack();
-}
-.loginFormBlock__googleButtonBlock {
-  display: block;
-  margin: 0 auto;
-}
-.loginFormBlock__googleButton {
-  display: flex;
-  gap: 1.2rem;
-  border: 1px solid $black;
-  margin: 0 auto;
-  @include button (41rem);
-  @include buttonWhite();
-}
-.divider {
-  @include divider();
-}
-.loginFormBlock__socialButtonsBlock {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.6rem;
-}
-.loginFormBlock__forgotPassword {
-  display: block;
-  margin: 0 auto;
-  @include fonts($link-2);
-  color: $gray-10;
-}
-.loginFormBlock__form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.6rem;
-}
-.loginFormBlock__button {
-  @include button(41rem);
-  @include buttonBlack();
-}
-.errorMessagesBlock {
-  @include form-message-block($light-pink, $error);
-  @include fonts($body-3)
-}
-.successMessagesBlock {
-  @include form-message-block($accent-a-05, $success);
-  @include fonts($body-3)
-}
-.loader {
-  background: conic-gradient($white, $accent-a-2);
-  position: relative;
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  animation: rotation 1.5s linear infinite;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background-color: $black;
+  .loginFormBlock__button {
+    display: block;
+    margin: 0 auto;
+    @include button(41rem);
+    @include buttonBlack();
+  }
+  .loginFormBlock__googleButtonBlock {
+    display: block;
+    margin: 0 auto;
+  }
+  .loginFormBlock__googleButton {
+    display: flex;
+    gap: 1.2rem;
+    border: 1px solid $black;
+    margin: 0 auto;
+    @include button (41rem);
+    @include buttonWhite();
+  }
+  .divider {
+    @include divider();
+  }
+  .loginFormBlock__socialButtonsBlock {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+  .loginFormBlock__forgotPassword {
+    display: block;
+    @include fonts($link-2);
+    color: $gray-10;
+  }
+  .loginFormBlock__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+  .loginFormBlock__button {
+    @include button(41rem);
+    @include buttonBlack();
+  }
+  .errorMessagesBlock {
+    @include form-message-block($light-pink, $error);
+    @include fonts($body-3)
+  }
+  .successMessagesBlock {
+    @include form-message-block($accent-a-05, $success);
+    @include fonts($body-3)
+  }
+  .loader {
+    background: conic-gradient($white, $accent-a-2);
+    position: relative;
     border-radius: 50%;
-    top: 12.5%;
-    left: 12.5%;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    background-color: $accent-a-2;
-    right: 45%;
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
+    width: 4rem;
+    height: 4rem;
+    animation: rotation 1.5s linear infinite;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background-color: $black;
+      border-radius: 50%;
+      top: 12.5%;
+      left: 12.5%;
     }
-    100% {
-      transform: rotate(360deg);
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background-color: $accent-a-2;
+      right: 45%;
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   }
 }
-
+.loginFormBlock[type='1'] {
+  .loginFormBlock__button {
+    @include button(52.1rem);
+  }
+  .loginFormBlock__googleButton {
+    @include button(52.1rem);
+  }
+  .loginFormBlock__forgotPassword {
+    margin: 0 auto;
+  }
+}
 

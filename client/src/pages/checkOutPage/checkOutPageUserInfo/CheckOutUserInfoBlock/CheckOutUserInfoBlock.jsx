@@ -43,7 +43,7 @@ const CheckOutUserInfoBlock = () => {
     {
       id: '2',
       label: 'registered user',
-      value: <LoginFormBlock/>,
+      value: <LoginFormBlock type='1'/>,
     },
   ];
   useEffect(() => {

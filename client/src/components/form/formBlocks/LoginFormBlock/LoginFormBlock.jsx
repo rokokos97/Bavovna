@@ -19,9 +19,10 @@ import transformErrorMessage from '../../../../utils/generateErrorMessage';
 import {useLocation} from 'react-router-dom';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
+import PropTypes from 'prop-types';
 
 
-const LoginFormBlock = () => {
+const LoginFormBlock = ({type}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const response = useSelector(getResponse);
@@ -75,7 +76,7 @@ const LoginFormBlock = () => {
     }
   };
   return (<>
-    <section className={styles.loginFormBlock} data-testid="LoginFormBlock">
+    <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
       {response &&
         <div className={renderMessagesBlockStyle()}>
           <p>{transformErrorMessage[response.message]}</p>
@@ -164,5 +165,7 @@ const LoginFormBlock = () => {
   </>
   );
 };
-
+LoginFormBlock.propTypes = {
+  type: PropTypes.string,
+};
 export default LoginFormBlock;

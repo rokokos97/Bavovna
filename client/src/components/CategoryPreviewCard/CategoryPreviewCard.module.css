@@ -6,6 +6,12 @@
   gap: 0.8rem;
   cursor: pointer;
 }
+.categoryPreviewCard img {
+  transition: scale 0.3s ease-in-out;
+}
+.categoryPreviewCard:hover img {
+  scale: 1.025;
+}
 .categoryPreviewCard .categoryPreviewCard__title {
   text-transform: capitalize;
   font-family: "Fixel Text Regular";
