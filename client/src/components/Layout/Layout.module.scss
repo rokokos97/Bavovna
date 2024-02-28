@@ -1,8 +1,18 @@
 @import '../../styles/variables.module.scss';
+
 .container {
   max-width: $max-width;
   width: 100%;
   padding-top: $headerHeight;
   margin: auto;
   flex: 1 0 auto;
+}
+
+.marqueeContainer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 4.9rem;
+  padding: 1rem 0;
+  background-color: $white-color;
 }
