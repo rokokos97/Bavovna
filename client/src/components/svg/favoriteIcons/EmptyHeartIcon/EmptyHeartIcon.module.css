@@ -1,6 +1,13 @@
 .emptyHeartIcon {
   width: 2.4rem;
   height: 2.4rem;
+  transition: color 0.3s;
+}
+.emptyHeartIcon:hover svg path[stroke] {
+  stroke: #3a7f66;
+}
+.emptyHeartIcon:active svg path[stroke] {
+  stroke: #0a281d;
 }
 
 /*# sourceMappingURL=EmptyHeartIcon.module.css.map */

@@ -20,7 +20,7 @@ const NewCollectionBlock = () => {
             and create a brighter, greener future for generations to come
         </p>
         <Link
-          to='/shop'
+          to='/shop?status=new'
           aria-label="Shop the new collection now"
           className={styles.newCollectionBlock__button}
         >

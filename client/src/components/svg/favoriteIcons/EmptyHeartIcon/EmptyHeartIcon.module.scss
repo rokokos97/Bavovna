@@ -2,20 +2,19 @@
 .emptyHeartIcon {
   width: 2.4rem;
   height: 2.4rem;
-  //transition: color 0.3s;
-  //&:hover {
-  //  svg {
-  //    path[stroke] {
-  //      stroke: $accent-a-4;
-  //    }
-  //  }
-  //}
-  //
-  //&:active {
-  //  svg {
-  //    path[stroke] {
-  //      stroke: $accent-a-8;
-  //    }
-  //  }
-  //}
+  transition: color 0.3s;
+  &:hover {
+    svg {
+      path[stroke] {
+        stroke: $accent-a-4;
+      }
+    }
+  }
+  &:active {
+    svg {
+      path[stroke] {
+        stroke: $accent-a-8;
+      }
+    }
+  }
 }
