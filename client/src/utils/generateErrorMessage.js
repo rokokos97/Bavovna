@@ -8,5 +8,6 @@ const transformErrorMessage = {
   INVALID_CURRENT_PASSWORD: 'Current password is incorrect.',
   PASSWORD_CHANGED: 'Your password has been changed.',
   ERR_NETWORK: 'Oops... There was a server error with your connection, please try again later.',
+  SERVER_ERROR_MAIL: 'Oops... There was a mail server error, please try again later.',
 };
 export default transformErrorMessage;

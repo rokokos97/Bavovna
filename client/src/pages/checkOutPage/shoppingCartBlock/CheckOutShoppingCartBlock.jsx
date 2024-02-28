@@ -56,9 +56,9 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   }, [itemPrice]);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
-      <div className={styles.wrapper}>
-        <div className={styles.titleBlock}>
-          <p className={styles.title}>shopping bag</p>
+      <div className={styles.checkOutShoppingCartBlock__wrapper}>
+        <div className={styles.checkOutShoppingCartBlock__titleBlock}>
+          <p className={styles.checkOutShoppingCartBlock__title}>shopping bag</p>
           <p>({cartLength} {cartLength===1?'item':'items'})</p>
         </div>
         <div>
@@ -66,7 +66,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         </div>
         <form
           onSubmit={promoCodeFormik.handleSubmit}
-          className={styles.form}>
+          className={styles.checkOutShoppingCartBlock__form}>
           <TextField
             label='Promo code'
             name='promoCode'
@@ -79,25 +79,25 @@ const CheckOutShoppingCartBlock = ({formik}) => {
           />
           <button
             disabled={!promoCodeFormik.isValid || !promoCodeFormik.dirty}
-            className={styles.arrowButton}
+            className={styles.checkOutShoppingCartBlock__arrowButton}
             type='submit'
           >
             <LeftArrowIcon/>
           </button>
         </form>
-        <div className={styles.price}>
+        <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Order value</p>
           <p>{`${itemPrice} $`}</p>
         </div>
-        {finalDiscount && <div className={styles.discount}>
+        {finalDiscount && <div className={styles.checkOutShoppingCartBlock__discount}>
           <p>Promo code</p>
           <p>{`-${finalDiscount} $`}</p>
         </div>}
-        <div className={styles.price}>
+        <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Shipping</p>
           <p>{`${currentDeliveryPrice} $`}</p>
         </div>
-        <div className={styles.priceBlock}>
+        <div className={styles.checkOutShoppingCartBlock__priceBlock}>
           <p>total</p>
           <p>{`${finalPrice} $`}</p>
         </div>
@@ -105,7 +105,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
           type='button'
           onClick={()=> formik.handleSubmit()}
           disabled={!formik?.isValid}
-          className={styles.button}
+          className={styles.checkOutShoppingCartBlock__button}
         >
           <span>
                   place the order

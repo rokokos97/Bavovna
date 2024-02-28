@@ -4,7 +4,7 @@
   margin-bottom: 17rem;
 }
 
-.registerForm__titleBlock {
+.completeOrderPage__titleBlock {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,14 +13,14 @@
   margin-bottom: 4rem;
   border-bottom: #727272 solid 0.1rem;
 }
-.registerForm__titleBlock .newsLetterBlock__title2 {
+.completeOrderPage__titleBlock .completeOrderPage__title {
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
   padding-bottom: 1.2rem;
 }
-.registerForm__titleBlock .backButton {
+.completeOrderPage__titleBlock .completeOrderPage__backButton {
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -31,32 +31,32 @@
   line-height: 140%;
   text-transform: uppercase;
 }
-.registerForm__titleBlock .backButton:hover {
+.completeOrderPage__titleBlock .completeOrderPage__backButton:hover {
   color: #3a7f66;
 }
-.registerForm__titleBlock .backButton:active {
+.completeOrderPage__titleBlock .completeOrderPage__backButton:active {
   color: #15503a;
 }
 
-.orderInfoBlock {
+.completeOrderPage__orderInfoBlock {
   width: 72.8rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.orderInfoBlock .newsLetterBlock__title2 {
+.completeOrderPage__orderInfoBlock .completeOrderPage__title {
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
   justify-content: space-between;
 }
-.orderInfoBlock div {
+.completeOrderPage__orderInfoBlock div {
   display: flex;
   flex-direction: row;
 }
 
-.totalPrice {
+.completeOrderPage__totalPrice {
   display: flex;
   font-family: "Fixel Text Medium";
   font-size: 18px;
@@ -68,14 +68,14 @@
   background-color: #d7d7d7;
 }
 
-.deliveryInfoBlock {
+.completeOrderPage__deliveryInfoBlock {
   width: 73.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
   justify-content: space-between;
 }
-.deliveryInfoBlock div {
+.completeOrderPage__deliveryInfoBlock div {
   padding-right: 0;
   padding-left: 0;
   display: flex;
@@ -83,7 +83,7 @@
   row-gap: 1.6rem;
 }
 
-.infoSection {
+.completeOrderPage__infoSection {
   width: 20rem;
   align-items: flex-start;
   font-family: "Fixel Text Regular";

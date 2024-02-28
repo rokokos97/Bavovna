@@ -1,31 +1,29 @@
 @import "../../../styles/variables.module";
 .navigationBlock {
-
   display: flex;
   flex-direction: row;
   column-gap: 21.7rem;
 }
-.sidebar {
-  //width: 21rem;
+.navigationBlock__sidebar {
   display: flex;
   flex-direction: column;
   row-gap: 2.4rem;
 }
-.navigation {
+.navigationBlock__navigation {
   @include fonts($breadcrumb);
   text-align: start;
 }
-.navigationContentSide {
+.navigationBlock__navigationContentSide {
   width: 84.5rem;
   display: flex;
   flex-direction: row;
 }
-.newsLetterBlock__title2 {
+.navigationBlock__title {
   width: 100%;
   @include fonts($headline-3);
   padding: 0 1.6rem 0;
 }
-.active {
+.navigationBlock__active {
   width: 100%;
   cursor: pointer;
   padding: 1.2rem 1.6rem;
@@ -33,7 +31,7 @@
   @include fonts($headline-4);
   background-color: $transparent-30-a-05;
 }
-.list {
+.navigationBlock__list {
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;

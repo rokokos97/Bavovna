@@ -6,21 +6,21 @@
   flex-direction: column;
   row-gap: 3.2rem;
 }
-.newsLetterBlock__title2 {
+.deliveryOptionsSection__title {
   @include fonts($headline-3);
   text-align: start;
 }
-.radioBlock {
+.deliveryOptionsSection__radioBlock {
   display: flex;
   flex-direction: row;
   column-gap: 2.4rem;
 }
-.radioWrapper {
+.deliveryOptionsSection__radioWrapper {
   display: flex;
   flex-direction: row;
   column-gap: 0.8rem;
 }
-.label {
+.deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
   width: 19.3rem;
@@ -29,9 +29,8 @@
   word-wrap: inherit;
   margin-left: 0.8rem;
 }
-.radioButton {
+.deliveryOptionsSection__radioButton {
   background: transparent;
-
   &:hover {
     div {
       svg {
@@ -60,18 +59,18 @@
     }
   }
 }
-.navigationButtonsSection {
+.deliveryOptionsSection__navigationButtonsSection {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.buttonLeft {
+.deliveryOptionsSection__buttonLeft {
   @include button($small);
   @include buttonTransparent();
   justify-content: flex-start;
   padding-left: 0;
 }
-.buttonRight {
+.deliveryOptionsSection__buttonRight {
   @include button($small);
   @include buttonTransparent();
   justify-content: flex-end;

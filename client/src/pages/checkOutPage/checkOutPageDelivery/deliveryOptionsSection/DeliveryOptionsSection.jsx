@@ -129,14 +129,14 @@ const deliveryOptionsSection = () => {
   ];
   return (
     <div className={styles.deliveryOptionsSection} data-testid="deliveryOptionsSection">
-      <p className={styles.title}>Delivery</p>
-      <div className={styles.radioBlock}>
+      <p className={styles.deliveryOptionsSection__title}>Delivery</p>
+      <div className={styles.deliveryOptionsSection__radioBlock}>
         {deliveryOptionsList.map((method, index)=> <div key={index}>
           <div
-            className={styles.radioWrapper}
+            className={styles.deliveryOptionsSection__radioWrapper}
           >
             <button
-              className={styles.radioButton}
+              className={styles.deliveryOptionsSection__radioButton}
               type='button'
               disabled={!isLoggedIn || user?.deliveryAddress.length === 0}
               onClick = {()=> dispatch(setDeliveryOption(method.label))}
@@ -144,7 +144,7 @@ const deliveryOptionsSection = () => {
               {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
             <label
-              className={styles.label}
+              className={styles.deliveryOptionsSection__label}
             >
               {method.label}
             </label>
@@ -155,11 +155,11 @@ const deliveryOptionsSection = () => {
         onSubmit={formik.handleSubmit}
       >
         {deliveryOptionsList.map((method)=>userCurrentDeliveryOption === method.label ? <div key={method.id}>{method.value}</div> : null)}
-        <div className={styles.navigationButtonsSection}>
+        <div className={styles.deliveryOptionsSection__navigationButtonsSection}>
           <button
             type='button'
             onClick={()=> navigate(-1) }
-            className={styles.buttonLeft}
+            className={styles.deliveryOptionsSection__buttonLeft}
           >
             <LeftArrowIcon/>
             <span>
@@ -167,7 +167,7 @@ const deliveryOptionsSection = () => {
             </span>
           </button>
           <button
-            className={styles.buttonRight}
+            className={styles.deliveryOptionsSection__buttonRight}
             type='submit'
             disabled={userCurrentDeliveryOption === 'new address'?!formik.isValid || !formik.dirty:false}
           >

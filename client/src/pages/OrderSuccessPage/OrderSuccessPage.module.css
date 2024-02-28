@@ -7,13 +7,13 @@
   margin: 3.2rem auto;
 }
 
-.registerForm__titleBlock {
+.orderCompletePage__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.6rem;
 }
 
-.newsLetterBlock__title2 {
+.orderCompletePage__title {
   color: #1a6449;
   font-family: "Fixel Display Regular";
   font-size: 24px;
@@ -21,7 +21,7 @@
   text-transform: uppercase;
 }
 
-.numberBlock {
+.orderCompletePage__numberBlock {
   display: flex;
   flex-direction: row;
   column-gap: 10.8rem;
@@ -31,7 +31,7 @@
   text-transform: uppercase;
 }
 
-.textBlock {
+.orderCompletePage__textBlock {
   display: flex;
   flex-direction: column;
   font-family: "Fixel Text Regular";
@@ -39,13 +39,13 @@
   line-height: 140%;
 }
 
-.buttonsBlock {
+.orderCompletePage__buttonsBlock {
   display: flex;
   flex-direction: row;
   gap: 2.4rem;
   margin-top: 2.1rem;
 }
-.buttonsBlock button:first-child {
+.orderCompletePage__buttonsBlock a:first-child {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -58,7 +58,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.buttonsBlock button:first-child span {
+.orderCompletePage__buttonsBlock a:first-child span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -66,7 +66,7 @@
   text-align: center;
   position: relative;
 }
-.buttonsBlock button:first-child::before {
+.orderCompletePage__buttonsBlock a:first-child::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -78,7 +78,7 @@
   top: 0.4rem;
   left: 7.6rem;
 }
-.buttonsBlock button:first-child::after {
+.orderCompletePage__buttonsBlock a:first-child::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -90,7 +90,7 @@
   top: 2.5rem;
   left: 9.7rem;
 }
-.buttonsBlock button:first-child:hover::before {
+.orderCompletePage__buttonsBlock a:first-child:hover::before {
   content: "";
   width: 22rem;
   height: 22rem;
@@ -99,7 +99,7 @@
   top: -8.6rem;
   left: -1rem;
 }
-.buttonsBlock button:first-child:active::after {
+.orderCompletePage__buttonsBlock a:first-child:active::after {
   content: "";
   width: 22rem;
   height: 22rem;
@@ -110,35 +110,35 @@
   top: -8.6rem;
   left: -1.1rem;
 }
-.buttonsBlock button:first-child:disabled {
+.orderCompletePage__buttonsBlock a:first-child:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.buttonsBlock button:first-child:disabled span {
+.orderCompletePage__buttonsBlock a:first-child:disabled span {
   color: #9b9b9b;
 }
-.buttonsBlock button:first-child span {
+.orderCompletePage__buttonsBlock a:first-child span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.buttonsBlock button:first-child::before {
+.orderCompletePage__buttonsBlock a:first-child::before {
   background: #5a9b83;
 }
-.buttonsBlock button:first-child::after {
+.orderCompletePage__buttonsBlock a:first-child::after {
   background: #1a6449;
 }
-.buttonsBlock button:first-child:hover::before {
+.orderCompletePage__buttonsBlock a:first-child:hover::before {
   background: #5a9b83;
 }
-.buttonsBlock button:first-child:active::after {
+.orderCompletePage__buttonsBlock a:first-child:active::after {
   border: 1px solid #5a9b83;
 }
-.buttonsBlock button:last-child {
+.orderCompletePage__buttonsBlock a:last-child {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -152,7 +152,7 @@
   background: #fafafa;
   border: 0.1rem solid #000000;
 }
-.buttonsBlock button:last-child span {
+.orderCompletePage__buttonsBlock a:last-child span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -160,7 +160,7 @@
   text-align: center;
   position: relative;
 }
-.buttonsBlock button:last-child::before {
+.orderCompletePage__buttonsBlock a:last-child::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -172,7 +172,7 @@
   top: 0.4rem;
   left: 7.6rem;
 }
-.buttonsBlock button:last-child::after {
+.orderCompletePage__buttonsBlock a:last-child::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -184,7 +184,7 @@
   top: 2.5rem;
   left: 9.7rem;
 }
-.buttonsBlock button:last-child:hover::before {
+.orderCompletePage__buttonsBlock a:last-child:hover::before {
   content: "";
   width: 22rem;
   height: 22rem;
@@ -193,7 +193,7 @@
   top: -8.6rem;
   left: -1rem;
 }
-.buttonsBlock button:last-child:active::after {
+.orderCompletePage__buttonsBlock a:last-child:active::after {
   content: "";
   width: 22rem;
   height: 22rem;
@@ -204,16 +204,16 @@
   top: -8.6rem;
   left: -1.1rem;
 }
-.buttonsBlock button:last-child:disabled {
+.orderCompletePage__buttonsBlock a:last-child:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.buttonsBlock button:last-child:disabled span {
+.orderCompletePage__buttonsBlock a:last-child:disabled span {
   color: #9b9b9b;
 }
-.buttonsBlock button:last-child span {
+.orderCompletePage__buttonsBlock a:last-child span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -221,16 +221,16 @@
   text-decoration: none;
   color: #000000;
 }
-.buttonsBlock button:last-child::before {
+.orderCompletePage__buttonsBlock a:last-child::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.buttonsBlock button:last-child::after {
+.orderCompletePage__buttonsBlock a:last-child::after {
   background: #a9dfcb;
 }
-.buttonsBlock button:last-child:hover::before {
+.orderCompletePage__buttonsBlock a:last-child:hover::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.buttonsBlock button:last-child:active::after {
+.orderCompletePage__buttonsBlock a:last-child:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
 

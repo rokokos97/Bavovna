@@ -58,14 +58,14 @@ const CheckOutUserInfoBlock = () => {
   }, [user]);
   return (
     <div className={styles.checkOutUserInfoBlock}>
-      <p className={styles.title}>Contact details</p>
-      <div className={styles.radioBlock}>
+      <p className={styles.checkOutUserInfoBlock__title}>Contact details</p>
+      <div className={styles.checkOutUserInfoBlock__radioBlock}>
         {userCurrentDetailsList.map((detail, index)=> <div key={index}>
           <div
-            className={styles.radioWrapper}
+            className={styles.checkOutUserInfoBlock__radioWrapper}
           >
             <button
-              className={styles.radioButton}
+              className={styles.checkOutUserInfoBlock__radioButton}
               type='button'
               disabled={isLoggedIn}
               onClick = {()=> setUserCurrentDetails(detail.id) }
@@ -73,7 +73,7 @@ const CheckOutUserInfoBlock = () => {
               {userCurrentDetails === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
             </button>
             <label
-              className={styles.label}
+              className={styles.checkOutUserInfoBlock__label}
             >
               {detail.label}
             </label>
@@ -81,13 +81,13 @@ const CheckOutUserInfoBlock = () => {
         </div>)}
       </div>
       {userCurrentDetails === '2' && userCurrentDetailsList[1].value}
-      <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
+      <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock__checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
         {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
-        <div className={styles.navigationButtonsSection}>
+        <div className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
           <button
             type='button'
             onClick={()=> navigate(-1) }
-            className={styles.buttonLeft}
+            className={styles.checkOutUserInfoBlock__buttonLeft}
           >
             <LeftArrowIcon/>
             <span>
@@ -95,7 +95,7 @@ const CheckOutUserInfoBlock = () => {
             </span>
           </button>
           <button
-            className={styles.buttonRight}
+            className={styles.checkOutUserInfoBlock__buttonRight}
             type='submit'
             disabled={!formik.isValid || !formik.dirty}
           >

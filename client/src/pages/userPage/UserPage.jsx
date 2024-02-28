@@ -14,9 +14,9 @@ const UserPage = () => {
     dispatch(verifyEmail(token, email));
   }
   return (
-    <div className={styles.userPage} data-testid="UserPage">
+    <section className={styles.userPage} data-testid="UserPage">
       <SideNavigation/>
-    </div>
+    </section>
   );
 };
 export default UserPage;

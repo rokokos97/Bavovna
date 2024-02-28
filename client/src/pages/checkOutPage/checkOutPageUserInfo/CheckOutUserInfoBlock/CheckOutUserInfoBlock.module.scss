@@ -6,22 +6,22 @@
   flex-direction: column;
   row-gap: 3.2rem;
 }
-.newsLetterBlock__title2 {
+.checkOutUserInfoBlock__title {
   @include fonts($headline-3);
   text-align: start;
 }
-.radioBlock {
+.checkOutUserInfoBlock__radioBlock {
   display: flex;
   flex-direction: row;
   column-gap: 2.4rem;
 }
-.radioWrapper {
+.checkOutUserInfoBlock__radioWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   column-gap: 0.8rem;
 }
-.label {
+.checkOutUserInfoBlock__label {
   display: flex;
   flex-direction: row;
   width: 19.3rem;
@@ -30,7 +30,7 @@
   word-wrap: inherit;
   margin-left: 0.8rem;
 }
-.radioButton {
+.checkOutUserInfoBlock__radioButton {
   background: transparent;
   &:hover {
     div {
@@ -60,29 +60,29 @@
     }
   }
 }
-.userPaymentMethodsList {
+.checkOutUserInfoBlock__userPaymentMethodsList {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
-.newCollectionBlock__button {
+.checkOutUserInfoBlock__newCollectionBlock__button {
   display: block;
   margin: 0 auto;
   @include button($large);
   @include buttonBlack();
 }
-.navigationButtonsSection {
+.checkOutUserInfoBlock__navigationButtonsSection {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.buttonLeft {
+.checkOutUserInfoBlock__buttonLeft {
   @include button($small);
   @include buttonTransparent();
   justify-content: flex-start;
   padding-left: 0;
 }
-.buttonRight {
+.checkOutUserInfoBlock__buttonRight {
   @include button($small);
   @include buttonTransparent();
   justify-content: flex-end;

@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 
-.newsLetterBlock__title2 {
+.userDataForm__title {
   font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
@@ -13,34 +13,34 @@
   padding-bottom: 2.4rem;
 }
 
-.userPersonalDataForm {
+.userDataForm__userPersonalDataForm {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
 
-.submitWrapper {
+.userDataForm__submitWrapper {
   width: 62.4rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
 
-.column {
+.userDataForm__column {
   width: 51.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
 }
 
-.deliveryForm {
+.userDataForm__deliveryForm {
   margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
   column-gap: 2.4rem;
 }
 
-.deliveryTitle {
+.userDataForm__deliveryTitle {
   font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
@@ -49,18 +49,18 @@
   margin-bottom: 2.4rem;
 }
 
-.deliveryBlock {
+.userDataForm__deliveryBlock {
   display: flex;
   column-gap: 2.4rem;
 }
 
-.deliveryBlockColumn {
+.userDataForm__deliveryBlockColumn {
   display: flex;
   width: 30rem;
   flex-direction: column;
   flex-grow: 1;
 }
-.deliveryBlockColumn .blockLabel {
+.userDataForm__deliveryBlockColumn .userDataForm__blockLabel {
   font-family: "Fixel Text Regular";
   font-size: 20px;
   line-height: 120%;
@@ -68,7 +68,7 @@
   margin-bottom: 1.8rem;
 }
 
-.newCollectionBlock__button {
+.userDataForm__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -81,7 +81,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.newCollectionBlock__button span {
+.userDataForm__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -89,7 +89,7 @@
   text-align: center;
   position: relative;
 }
-.newCollectionBlock__button::before {
+.userDataForm__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -101,7 +101,7 @@
   top: 0.4rem;
   left: 9.6rem;
 }
-.newCollectionBlock__button::after {
+.userDataForm__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -113,7 +113,7 @@
   top: 2.5rem;
   left: 11.7rem;
 }
-.newCollectionBlock__button:hover::before {
+.userDataForm__button:hover::before {
   content: "";
   width: 26.4rem;
   height: 26.4rem;
@@ -122,7 +122,7 @@
   top: -10.8rem;
   left: -1rem;
 }
-.newCollectionBlock__button:active::after {
+.userDataForm__button:active::after {
   content: "";
   width: 26.4rem;
   height: 26.4rem;
@@ -133,101 +133,33 @@
   top: -10.8rem;
   left: -1.1rem;
 }
-.newCollectionBlock__button:disabled {
+.userDataForm__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.newCollectionBlock__button:disabled span {
+.userDataForm__button:disabled span {
   color: #9b9b9b;
 }
-.newCollectionBlock__button span {
+.userDataForm__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.newCollectionBlock__button::before {
+.userDataForm__button::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button::after {
+.userDataForm__button::after {
   background: #1a6449;
 }
-.newCollectionBlock__button:hover::before {
+.userDataForm__button:hover::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button:active::after {
+.userDataForm__button:active::after {
   border: 1px solid #5a9b83;
-}
-
-.inputContainer {
-  border: 1px solid red;
-}
-
-.phoneInput {
-  border: 1px solid red;
-}
-
-.phoneLabel {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  align-self: stretch;
-  color: #030a07;
-  margin-bottom: 0.8rem;
-  font-family: "Fixel Display Regular";
-  font-size: 16px;
-  line-height: 140%;
-}
-.phoneLabel span {
-  color: #ea001b;
-}
-
-.phoneInputContainer {
-  height: 4.8rem;
-  border-radius: 0;
-  border: 1px solid #727272;
-  background: #fafafa;
-  display: flex;
-  align-items: center;
-}
-
-.phoneInputInput {
-  padding-left: 6rem !important;
-  border: 1px solid #fafafa !important;
-  background: #fafafa !important;
-  font-family: "Fixel Display Regular";
-  font-size: 16px;
-  line-height: 140%;
-  font-size: 1.6rem !important;
-}
-.phoneInputInput:hover {
-  background: #fafafa !important;
-}
-
-.phoneInputButton {
-  background: #fafafa !important;
-  border: none !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-.phoneInputButton:hover {
-  background: #fafafa !important;
-}
-
-.phoneInputDropdown {
-  text-align: start;
-}
-
-.error {
-  color: var(--error, #EA001B);
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: start;
 }
 
 /*# sourceMappingURL=UserDataForm.module.css.map */

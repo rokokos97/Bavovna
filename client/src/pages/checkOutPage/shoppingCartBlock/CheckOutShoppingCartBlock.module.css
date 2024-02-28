@@ -5,7 +5,7 @@
   height: min-content;
 }
 
-.wrapper {
+.checkOutShoppingCartBlock__wrapper {
   display: flex;
   width: 41.1rem;
   flex-direction: column;
@@ -14,7 +14,7 @@
   margin-inline: auto;
 }
 
-.registerForm__titleBlock {
+.checkOutShoppingCartBlock__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.2rem;
@@ -24,20 +24,20 @@
   text-transform: uppercase;
 }
 
-.newsLetterBlock__title2 {
+.checkOutShoppingCartBlock__title {
   font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
-.loginFormBlock__form {
+.checkOutShoppingCartBlock__form {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
 
-.arrowButton {
+.checkOutShoppingCartBlock__arrowButton {
   transform: rotate(180deg);
   display: flex;
   flex-direction: row;
@@ -52,7 +52,7 @@
   background: transparent;
   border: none;
 }
-.arrowButton span {
+.checkOutShoppingCartBlock__arrowButton span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -60,7 +60,7 @@
   text-align: center;
   position: relative;
 }
-.arrowButton::before {
+.checkOutShoppingCartBlock__arrowButton::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -72,7 +72,7 @@
   top: 0.4rem;
   left: 0.8rem;
 }
-.arrowButton::after {
+.checkOutShoppingCartBlock__arrowButton::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -84,7 +84,7 @@
   top: 2.5rem;
   left: 2.9rem;
 }
-.arrowButton:hover::before {
+.checkOutShoppingCartBlock__arrowButton:hover::before {
   content: "";
   width: 7.04rem;
   height: 7.04rem;
@@ -93,7 +93,7 @@
   top: -1.12rem;
   left: -1rem;
 }
-.arrowButton:active::after {
+.checkOutShoppingCartBlock__arrowButton:active::after {
   content: "";
   width: 7.04rem;
   height: 7.04rem;
@@ -104,52 +104,52 @@
   top: -1.12rem;
   left: -1.1rem;
 }
-.arrowButton:disabled {
+.checkOutShoppingCartBlock__arrowButton:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.arrowButton:disabled span {
+.checkOutShoppingCartBlock__arrowButton:disabled span {
   color: #9b9b9b;
 }
-.arrowButton svg path {
+.checkOutShoppingCartBlock__arrowButton svg path {
   fill: #000000;
 }
-.arrowButton span {
+.checkOutShoppingCartBlock__arrowButton span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #000000;
 }
-.arrowButton:hover svg path {
+.checkOutShoppingCartBlock__arrowButton:hover svg path {
   fill: #3a7f66;
 }
-.arrowButton:hover span {
+.checkOutShoppingCartBlock__arrowButton:hover span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #3a7f66;
 }
-.arrowButton:active svg path {
+.checkOutShoppingCartBlock__arrowButton:active svg path {
   fill: #15503a;
 }
-.arrowButton:active span {
+.checkOutShoppingCartBlock__arrowButton:active span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #15503a;
 }
-.arrowButton:disabled {
+.checkOutShoppingCartBlock__arrowButton:disabled {
   background: transparent;
 }
-.arrowButton:disabled svg path {
+.checkOutShoppingCartBlock__arrowButton:disabled svg path {
   fill: #868686;
 }
-.arrowButton:disabled span {
+.checkOutShoppingCartBlock__arrowButton:disabled span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -157,7 +157,7 @@
   color: #868686;
 }
 
-.priceBlock {
+.checkOutShoppingCartBlock__priceBlock {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -167,7 +167,7 @@
   text-transform: uppercase;
 }
 
-.price {
+.checkOutShoppingCartBlock__price {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -176,7 +176,7 @@
   line-height: 110%;
 }
 
-.discount {
+.checkOutShoppingCartBlock__discount {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -186,7 +186,7 @@
   line-height: 110%;
 }
 
-.newCollectionBlock__button {
+.checkOutShoppingCartBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -199,7 +199,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.newCollectionBlock__button span {
+.checkOutShoppingCartBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -207,7 +207,7 @@
   text-align: center;
   position: relative;
 }
-.newCollectionBlock__button::before {
+.checkOutShoppingCartBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -219,7 +219,7 @@
   top: 0.4rem;
   left: 18.15rem;
 }
-.newCollectionBlock__button::after {
+.checkOutShoppingCartBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -231,7 +231,7 @@
   top: 2.5rem;
   left: 20.25rem;
 }
-.newCollectionBlock__button:hover::before {
+.checkOutShoppingCartBlock__button:hover::before {
   content: "";
   width: 45.21rem;
   height: 45.21rem;
@@ -240,7 +240,7 @@
   top: -20.205rem;
   left: -1rem;
 }
-.newCollectionBlock__button:active::after {
+.checkOutShoppingCartBlock__button:active::after {
   content: "";
   width: 45.21rem;
   height: 45.21rem;
@@ -251,32 +251,32 @@
   top: -20.205rem;
   left: -1.1rem;
 }
-.newCollectionBlock__button:disabled {
+.checkOutShoppingCartBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.newCollectionBlock__button:disabled span {
+.checkOutShoppingCartBlock__button:disabled span {
   color: #9b9b9b;
 }
-.newCollectionBlock__button span {
+.checkOutShoppingCartBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.newCollectionBlock__button::before {
+.checkOutShoppingCartBlock__button::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button::after {
+.checkOutShoppingCartBlock__button::after {
   background: #1a6449;
 }
-.newCollectionBlock__button:hover::before {
+.checkOutShoppingCartBlock__button:hover::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button:active::after {
+.checkOutShoppingCartBlock__button:active::after {
   border: 1px solid #5a9b83;
 }
 

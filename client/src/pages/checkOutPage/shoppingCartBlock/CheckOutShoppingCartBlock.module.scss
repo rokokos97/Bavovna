@@ -5,7 +5,7 @@
   background: $white;
   height: min-content;
 }
-.wrapper {
+.checkOutShoppingCartBlock__wrapper {
   display: flex;
   width: 41.1rem;
   flex-direction: column;
@@ -13,46 +13,45 @@
   box-sizing: border-box;
   margin-inline: auto;
 }
-.registerForm__titleBlock {
+.checkOutShoppingCartBlock__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.2rem;
   @include fonts($headline-5);
 }
-.newsLetterBlock__title2 {
+.checkOutShoppingCartBlock__title {
   @include fonts($headline-3);
 }
-.loginFormBlock__form {
+.checkOutShoppingCartBlock__form {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
-.arrowButton {
+.checkOutShoppingCartBlock__arrowButton {
   transform: rotate(180deg);
   @include button($extra-small);
   @include buttonTransparent();
 }
-.priceBlock {
+.checkOutShoppingCartBlock__priceBlock {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   @include fonts($headline-3);
 }
-.price {
+.checkOutShoppingCartBlock__price {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   @include fonts($body-3);
 }
-.discount {
+.checkOutShoppingCartBlock__discount {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: $error;
   @include fonts($body-3);
 }
-.newCollectionBlock__button {
-  //margin-inline: auto;
+.checkOutShoppingCartBlock__button {
   @include button(41.1rem);
   @include buttonBlack();
 }

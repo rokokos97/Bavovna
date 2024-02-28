@@ -18,10 +18,10 @@ const CompleteOrderPage = () => {
   }, [user]);
   return (user && currentOrder &&
     <div className={styles.completeOrderPage} data-testid="CompleteOrderPage">
-      <div className={styles.titleBlock}>
-        <p className={styles.title}>orders</p>
+      <div className={styles.completeOrderPage__titleBlock}>
+        <p className={styles.completeOrderPage__title}>orders</p>
         <button
-          className={styles.backButton}
+          className={styles.completeOrderPage__backButton}
           onClick={()=>navigate(-1)}
         >
           <span>&larr;</span>
@@ -33,37 +33,37 @@ const CompleteOrderPage = () => {
       <div>
         {currentOrder.items.map((item) =>(<ProductCardInCart key={item._id} item={item} type='2'/>))}
       </div>
-      <div className={styles.orderInfoBlock}>
-        <div className={styles.title}>
+      <div className={styles.completeOrderPage__orderInfoBlock}>
+        <div className={styles.completeOrderPage__title}>
           <p>order amount</p>
           <p>{currentOrder.orderAmount} $</p>
         </div>
-        {currentOrder.promoCodeDiscount && <div className={styles.title}>
+        {currentOrder.promoCodeDiscount && <div className={styles.completeOrderPage__title}>
           <p>Promo code discount</p>
           <p>{`-${parseFloat((currentOrder.orderAmount * currentOrder.promoCodeDiscount).toFixed(1))} $`}</p>
         </div>}
-        <div className={styles.title}>
+        <div className={styles.completeOrderPage__title}>
           <p>delivery</p>
           <p>{currentOrder.deliveryInfo.deliveryPrice} $</p>
         </div>
-        <div className={styles.totalPrice}>
+        <div className={styles.completeOrderPage__totalPrice}>
           <p>total</p>
           <p>{currentOrder.promoCodeDiscount?
             currentOrder.orderAmount-(currentOrder.orderAmount * currentOrder.promoCodeDiscount)+currentOrder.deliveryInfo.deliveryPrice:
             currentOrder.orderAmount+currentOrder.deliveryInfo.deliveryPrice} $</p>
         </div>
-        <div className={styles.deliveryInfoBlock}>
-          <div className={styles.infoSection}>
-            <p className={styles.title}>delivery method</p>
+        <div className={styles.completeOrderPage__deliveryInfoBlock}>
+          <div className={styles.completeOrderPage__infoSection}>
+            <p className={styles.completeOrderPage__title}>delivery method</p>
             <p>{currentOrder.deliveryInfo.deliveryMethod}</p>
           </div>
           <div
-            className={styles.infoSection}>
-            <p className={styles.title}>selection point</p>
+            className={styles.completeOrderPage__infoSection}>
+            <p className={styles.completeOrderPage__title}>selection point</p>
             <p>{currentOrder.deliveryInfo.label}</p>
           </div>
-          <div className={styles.infoSection}>
-            <p className={styles.title}>contact details</p>
+          <div className={styles.completeOrderPage__infoSection}>
+            <p className={styles.completeOrderPage__title}>contact details</p>
             <div>
               <p>{currentOrder.userInfo.firstName} {currentOrder.userInfo.lastName}</p>
               <p>+{currentOrder.userInfo.phoneNumber}</p>

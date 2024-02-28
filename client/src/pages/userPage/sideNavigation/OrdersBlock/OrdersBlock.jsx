@@ -14,7 +14,7 @@ const OrdersBlock = () => {
   return (
     <>
       <div className={styles.ordersBlock} data-testid="OrdersBlock">
-        <p className={styles.title}>orders</p>
+        <p className={styles.ordersBlock__title}>orders</p>
         <div>
           {user.orders.length > 0?
             <OrdersList

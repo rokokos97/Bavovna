@@ -12,10 +12,10 @@ const SideNavigation = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.navigationBlock} data-testid="SideNavigation">
-      <div className={styles.sidebar}>
-        <p className={styles.navigation}>Home / My account</p>
-        <p className={styles.title}>my account</p>
-        <ul className={styles.list}>
+      <div className={styles.navigationBlock__sidebar}>
+        <p className={styles.navigationBlock__navigation}>Home / My account</p>
+        <p className={styles.navigationBlock__title}>my account</p>
+        <ul className={styles.navigationBlock__list}>
           <li onClick={()=>{
             navigate('');
           }}>orders</li>
@@ -32,7 +32,7 @@ const SideNavigation = () => {
           <li><ExitString/></li>
         </ul>
       </div>
-      <div className={styles.navigationContentSide}>
+      <div className={styles.navigationBlock__navigationContentSide}>
         <Routes>
           <Route index element={<OrdersBlock/>}/>
           <Route path="wishList" element={<WishListBlock/>}/>

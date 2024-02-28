@@ -6,23 +6,22 @@
   flex-direction: column;
   row-gap: 3.2rem;
 }
-.block {
+.userPaymentMethodsList__title {
+  text-align: start;
+  @include fonts($headline-3);
+}
+.userPaymentMethodsList__block {
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
 }
-.newsLetterBlock__title2 {
-  text-align: start;
-  @include fonts($headline-3);
-}
-.radioWrapper {
+.userPaymentMethodsList__radioWrapper {
   display: flex;
   flex-direction: row;
   column-gap: 0.8rem;
 }
-.radioButton {
+.userPaymentMethodsList__radioButton {
   background: transparent;
-
   &:hover {
     div {
       svg {
@@ -42,7 +41,7 @@
     }
   }
 }
-.label {
+.userPaymentMethodsList__label {
   display: flex;
   flex-direction: row;
   width: 30rem;
@@ -51,7 +50,7 @@
   word-wrap: inherit;
   margin-left: 0.8rem;
 }
-.buttonLeft {
+.userPaymentMethodsList__buttonLeft {
   @include button($small);
   @include buttonTransparent();
   justify-content: flex-start;

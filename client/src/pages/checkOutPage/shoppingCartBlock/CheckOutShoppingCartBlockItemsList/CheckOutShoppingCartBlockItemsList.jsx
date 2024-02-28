@@ -12,20 +12,20 @@ const CheckOutShoppingCartBlockItemsList = () => {
   const swiperRef = useRef();
   const normalizeCart = useSelector(getNormalizedCart);
   return (
-    <div className={styles.checkOutShoppingCartBlockItemsList} data-testid="CheckOutShoppingCartBlockItemsList">
+    <article className={styles.checkOutShoppingCartBlockItemsList} data-testid="CheckOutShoppingCartBlockItemsList">
       {normalizeCart.length > 3 ? <>
-        <div className={styles.buttonsBlock}>
+        <section className={styles.checkOutShoppingCartBlockItemsList__buttonsBlock}>
           <button
-            className={styles.button}
+            className={styles.checkOutShoppingCartBlockItemsList__button}
             onClick={() => swiperRef.current?.slidePrev()}>
             <ArrowUpIcon/>
           </button>
           <button
-            className={`${styles.button} ${styles.buttonDown}`}
+            className={`${styles.checkOutShoppingCartBlockItemsList__button} ${styles.checkOutShoppingCartBlockItemsList__buttonDown}`}
             onClick={() => swiperRef.current?.slideNext()}>
             <ArrowUpIcon/>
           </button>
-        </div>
+        </section>
         <Swiper
           direction={'vertical'}
           onSwiper={(swiper) => swiperRef.current = swiper}
@@ -33,23 +33,22 @@ const CheckOutShoppingCartBlockItemsList = () => {
           spaceBetween={2.4}
           modules={[Navigation]}
           navigation={{
-          // Відключаємо вбудовану навігацію swiper
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           }}
         >
-          <div className={styles.wrapper}>
+          <section className={styles.checkOutShoppingCartBlockItemsList__wrapper}>
             {normalizeCart && normalizeCart.map((item, index)=> (
               <SwiperSlide key={index}>
                 <ProductCardInCart item={item} type='1'/>
               </SwiperSlide>
             ))}
-          </div>
+          </section>
         </Swiper>
-      </> : <ul className={styles.cartList}>
+      </> : <ul className={styles.checkOutShoppingCartBlockItemsList__cartList}>
         {normalizeCart && normalizeCart.map((item, index)=> <li key={index}><ProductCardInCart item={item} type='1'/></li>)}
       </ul> }
-    </div>
+    </article>
   );
 };
 

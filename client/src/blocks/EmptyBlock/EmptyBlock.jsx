@@ -1,19 +1,19 @@
 import React from 'react';
 import styles from './EmptyBlock.module.scss';
 import PropTypes from 'prop-types';
-import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const EmptyBlock = ({description}) => {
-  const navigate = useNavigate();
   return (
     <div className={styles.emptyBlock} data-testid="EmptyBlock">
-      <p className={styles.description}>{description}</p>
-      <button
-        className={styles.button}
-        onClick={() => navigate('/')}
+      <p className={styles.emptyBlock__description}>{description}</p>
+      <Link
+        className={styles.emptyBlock__button}
+        to='/shop'
+        aria-label='go to shopping'
       >
         <span>go to shopping</span>
-      </button>
+      </Link>
     </div>
   );
 };

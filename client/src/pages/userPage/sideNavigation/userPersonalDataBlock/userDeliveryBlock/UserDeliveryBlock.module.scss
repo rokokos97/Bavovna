@@ -2,27 +2,27 @@
 .userDeliveryBlock {
   width: 100%;
 }
-.deliveryTitle {
+.userDeliveryBlock__deliveryTitle {
   @include fonts($headline-3);
   text-align: start;
   margin-bottom: 2.4rem;
 }
-.section {
+.userDeliveryBlock__section {
   display: flex;
   flex-direction: row;
   column-gap: 13.4rem;
 }
-.blockLabel {
+.userDeliveryBlock__blockLabel {
   @include fonts($headline-6);
   text-align: start;
 };
-.column {
+.userDeliveryBlock__column {
   display: flex;
   flex-direction: column;
   row-gap: 1.8rem;
   width: 30rem;
 }
-.newCollectionBlock__button {
+.userDeliveryBlock__button {
   @include button(19.3rem);
   @include buttonBlack();
 }

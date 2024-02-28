@@ -48,7 +48,7 @@ const RecoveryPasswordForm = () => {
   }, [isLoading]);
   return (
     <div className={styles.forgotPasswordForm} data-testid="RecoveryPasswordForm">
-      <div className={styles.titleBlock}>
+      <div className={styles.forgotPasswordForm__titleBlock}>
         <p>
           recover password
         </p>
@@ -57,11 +57,11 @@ const RecoveryPasswordForm = () => {
         </span>
       </div>
       {response ?
-        <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+        <div className={(response.code !== 200) ? styles.forgotPasswordForm__errorMessagesBlock : styles.forgotPasswordForm__successMessagesBlock}>
           <p>{transformErrorMessage[response.message]}</p>
         </div> : null}
       <form
-        className={styles.form}
+        className={styles.forgotPasswordForm__form}
         onSubmit={formik.handleSubmit}
       >
         <TextField
@@ -75,7 +75,7 @@ const RecoveryPasswordForm = () => {
           touched={formik.touched.email}
         />
         <button
-          className={styles.button}
+          className={styles.forgotPasswordForm__button}
           disabled={!formik.isValid || !formik.dirty}
         >{
           isLoaderRun ?

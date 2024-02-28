@@ -7,38 +7,38 @@
   width: 128rem;
   margin: 3.2rem auto;
 }
-.registerForm__titleBlock {
+.orderCompletePage__titleBlock {
   display: flex;
   flex-direction: row;
   column-gap: 1.6rem;
 }
-.newsLetterBlock__title2 {
+.orderCompletePage__title {
   color: $accent-a-5;
   @include fonts($headline-4)
 }
-.numberBlock {
+.orderCompletePage__numberBlock {
   display: flex;
   flex-direction: row;
   column-gap: 10.8rem;
   @include fonts($headline-8)
 }
-.textBlock {
+.orderCompletePage__textBlock {
   display: flex;
   flex-direction: column;
   @include fonts($body-2);
 }
-.buttonsBlock {
+.orderCompletePage__buttonsBlock {
   display: flex;
   flex-direction: row;
   gap: 2.4rem;
   margin-top: 2.1rem;
 
-  button:first-child {
+  a:first-child {
     @include button(20rem);
     @include buttonBlack();
   }
 
-  button:last-child {
+  a:last-child {
     @include button(20rem);
     @include buttonWhite();
   }
