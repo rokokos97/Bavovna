@@ -11,38 +11,11 @@ const CheckoutModal = ({handleCloseModal}) => {
   const {itemName, discountPrice, itemColor, itemSize, itemImg, itemQuantity} =
     itemData;
 
-  // const [currentQuantity, setCurrentQuantity] = useState(itemQuantity);
-  // const [currentPrice, setCurrentPrice] = useState(itemPrice);
-
-  // const handleSub = () => {
-  //   if (currentQuantity > 1) {
-  //     setCurrentQuantity(currentQuantity - 1);
-  //     setCurrentPrice(+(parseFloat(currentPrice - itemPrice).toFixed(2)));
-  //   }
-  // };
-
-  // const handleAdd = () => {
-  //   setCurrentQuantity(currentQuantity + 1);
-  //   setCurrentPrice(+((parseFloat(currentPrice) + parseFloat(itemPrice)).toFixed(2)));
-  // };
-
-  // const handleCheckout = () => {
-  //   handleCloseModal();
-  //   const checkoutData = {
-  //     itemId: _id,
-  //     name: itemName,
-  //     price: currentPrice,
-  //     chosenColorId: itemColor,
-  //     chosenSizeId: itemSize,
-  //     quantity: itemQuantity,
-  //   };
-  // };
-
   return (
     <section className={styles.checkout} data-testid='CheckoutModal'>
-      <div className={styles.closeIcon} onClick={handleCloseModal}>
+      <button type='button' aria-label='close modal window' className={styles.closeIcon} onClick={handleCloseModal}>
         <CloseIcon />
-      </div>
+      </button>
       <h2>The item was successfully added to your bag!</h2>
       <div className={styles.checkoutContainer}>
         <img src={itemImg} alt='model' />
@@ -67,21 +40,7 @@ const CheckoutModal = ({handleCloseModal}) => {
             <div className={styles.paramsBlock}>
               <span>Quantity:</span>
               <div className={styles.quantityBlock}>
-                {/* <button
-                  className={styles.quantityBtn}
-                  type='button'
-                  onClick={handleSub}
-                >
-                  -
-                </button> */}
                 {itemQuantity}
-                {/* <button
-                  className={styles.quantityBtn}
-                  type='button'
-                  onClick={handleAdd}
-                >
-                  +
-                </button> */}
               </div>
             </div>
           </div>

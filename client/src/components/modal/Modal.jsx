@@ -12,16 +12,16 @@ const Modal = ({isOpen, handleCloseModal, children}) => {
     if (isOpen) {
       modalRootElement.appendChild(element);
 
-      const handleEscapeKeyPress = (event) => {
-        if (event.key === 'Escape') {
+      const handleCloseModalKeysPress = (event) => {
+        if (event.key === 'Escape' || event.key === 'Enter') {
           handleCloseModal();
         }
       };
 
-      document.addEventListener('keydown', handleEscapeKeyPress);
+      document.addEventListener('keydown', handleCloseModalKeysPress);
 
       return () => {
-        document.removeEventListener('keydown', handleEscapeKeyPress);
+        document.removeEventListener('keydown', handleCloseModalKeysPress);
         modalRootElement.removeChild(element);
       };
     }

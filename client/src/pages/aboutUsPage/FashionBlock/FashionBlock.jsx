@@ -6,18 +6,18 @@ const FashionBlock = () => {
     <div className={styles.fashionBlock} data-testid='FashionBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
-          <img src='/img/images/AboutUs/fashion_1.jpg' alt='img_5' />
+          <img src='/img/images/AboutUs/fashion_1.webp' alt='img_5' />
         </div>
         <div className={styles.secondImg}>
-          <img src='/img/images/AboutUs/fashion_2.jpg' alt='img_6' />
+          <img src='/img/images/AboutUs/fashion_2.webp' alt='img_6' />
         </div>
       </div>
       <div className={styles.description}>
-        <h2 className={styles.title}>
+        <h2 className={styles.newsLetterBlock__title2}>
           <span>Why&#x20;</span>
           slow-fashion
         </h2>
-        <p className={styles.text}>
+        <p className={styles.modalCookies__text}>
           Nowadays, fashion is changing at the speed of light. Each new season
           brings new trends that require us to update our wardrobes. However,
           more and more people are beginning to think about the cost of such an

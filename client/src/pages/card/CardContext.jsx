@@ -112,7 +112,7 @@ const CardContext = ({item}) => {
           <div className={styles.about}>
             <div className={styles.aboutInner}>
               <form className={styles.buyForm}>
-                <div className={styles.titleBlock}>
+                <div className={styles.registerForm__titleBlock}>
                   <h2 className={styles.buyFormTitle}>{name}</h2>
                   <div className={styles.heart} onClick={handleIsFavorite}>
                     {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
