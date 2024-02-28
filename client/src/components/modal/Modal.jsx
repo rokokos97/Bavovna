@@ -18,10 +18,10 @@ const Modal = ({isOpen, handleCloseModal, children}) => {
         }
       };
 
-      document.addEventListener('keydown', handleCloseModalKeysPress);
+      document.addEventListener('keyup', handleCloseModalKeysPress);
 
       return () => {
-        document.removeEventListener('keydown', handleCloseModalKeysPress);
+        document.removeEventListener('keyup', handleCloseModalKeysPress);
         modalRootElement.removeChild(element);
       };
     }
