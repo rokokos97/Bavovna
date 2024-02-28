@@ -6,7 +6,7 @@
   row-gap: 3.2rem;
 }
 
-.newsLetterBlock__title2 {
+.checkOutUserInfoBlock__title {
   font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
@@ -14,20 +14,20 @@
   text-align: start;
 }
 
-.radioBlock {
+.checkOutUserInfoBlock__radioBlock {
   display: flex;
   flex-direction: row;
   column-gap: 2.4rem;
 }
 
-.radioWrapper {
+.checkOutUserInfoBlock__radioWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   column-gap: 0.8rem;
 }
 
-.label {
+.checkOutUserInfoBlock__label {
   display: flex;
   flex-direction: row;
   width: 19.3rem;
@@ -40,26 +40,26 @@
   margin-left: 0.8rem;
 }
 
-.radioButton {
+.checkOutUserInfoBlock__radioButton {
   background: transparent;
 }
-.radioButton:hover div svg path {
+.checkOutUserInfoBlock__radioButton:hover div svg path {
   fill: #5a9b83;
 }
-.radioButton:active div svg path {
+.checkOutUserInfoBlock__radioButton:active div svg path {
   fill: #1a6449;
 }
-.radioButton:disabled div svg path {
+.checkOutUserInfoBlock__radioButton:disabled div svg path {
   fill: #c3c3c3;
 }
 
-.userPaymentMethodsList {
+.checkOutUserInfoBlock__userPaymentMethodsList {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
 
-.newCollectionBlock__button {
+.checkOutUserInfoBlock__newCollectionBlock__button {
   display: block;
   margin: 0 auto;
   display: flex;
@@ -74,7 +74,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.newCollectionBlock__button span {
+.checkOutUserInfoBlock__newCollectionBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -82,7 +82,7 @@
   text-align: center;
   position: relative;
 }
-.newCollectionBlock__button::before {
+.checkOutUserInfoBlock__newCollectionBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -94,7 +94,7 @@
   top: 0.4rem;
   left: 29.1rem;
 }
-.newCollectionBlock__button::after {
+.checkOutUserInfoBlock__newCollectionBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -106,7 +106,7 @@
   top: 2.5rem;
   left: 31.2rem;
 }
-.newCollectionBlock__button:hover::before {
+.checkOutUserInfoBlock__newCollectionBlock__button:hover::before {
   content: "";
   width: 69.3rem;
   height: 69.3rem;
@@ -115,7 +115,7 @@
   top: -32.25rem;
   left: -1rem;
 }
-.newCollectionBlock__button:active::after {
+.checkOutUserInfoBlock__newCollectionBlock__button:active::after {
   content: "";
   width: 69.3rem;
   height: 69.3rem;
@@ -126,42 +126,42 @@
   top: -32.25rem;
   left: -1.1rem;
 }
-.newCollectionBlock__button:disabled {
+.checkOutUserInfoBlock__newCollectionBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.newCollectionBlock__button:disabled span {
+.checkOutUserInfoBlock__newCollectionBlock__button:disabled span {
   color: #9b9b9b;
 }
-.newCollectionBlock__button span {
+.checkOutUserInfoBlock__newCollectionBlock__button span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.newCollectionBlock__button::before {
+.checkOutUserInfoBlock__newCollectionBlock__button::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button::after {
+.checkOutUserInfoBlock__newCollectionBlock__button::after {
   background: #1a6449;
 }
-.newCollectionBlock__button:hover::before {
+.checkOutUserInfoBlock__newCollectionBlock__button:hover::before {
   background: #5a9b83;
 }
-.newCollectionBlock__button:active::after {
+.checkOutUserInfoBlock__newCollectionBlock__button:active::after {
   border: 1px solid #5a9b83;
 }
 
-.navigationButtonsSection {
+.checkOutUserInfoBlock__navigationButtonsSection {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.buttonLeft {
+.checkOutUserInfoBlock__buttonLeft {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -177,7 +177,7 @@
   justify-content: flex-start;
   padding-left: 0;
 }
-.buttonLeft span {
+.checkOutUserInfoBlock__buttonLeft span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -185,7 +185,7 @@
   text-align: center;
   position: relative;
 }
-.buttonLeft::before {
+.checkOutUserInfoBlock__buttonLeft::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -197,7 +197,7 @@
   top: 0.4rem;
   left: 7.1rem;
 }
-.buttonLeft::after {
+.checkOutUserInfoBlock__buttonLeft::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -209,7 +209,7 @@
   top: 2.5rem;
   left: 9.2rem;
 }
-.buttonLeft:hover::before {
+.checkOutUserInfoBlock__buttonLeft:hover::before {
   content: "";
   width: 20.9rem;
   height: 20.9rem;
@@ -218,7 +218,7 @@
   top: -8.05rem;
   left: -1rem;
 }
-.buttonLeft:active::after {
+.checkOutUserInfoBlock__buttonLeft:active::after {
   content: "";
   width: 20.9rem;
   height: 20.9rem;
@@ -229,52 +229,52 @@
   top: -8.05rem;
   left: -1.1rem;
 }
-.buttonLeft:disabled {
+.checkOutUserInfoBlock__buttonLeft:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.buttonLeft:disabled span {
+.checkOutUserInfoBlock__buttonLeft:disabled span {
   color: #9b9b9b;
 }
-.buttonLeft svg path {
+.checkOutUserInfoBlock__buttonLeft svg path {
   fill: #000000;
 }
-.buttonLeft span {
+.checkOutUserInfoBlock__buttonLeft span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #000000;
 }
-.buttonLeft:hover svg path {
+.checkOutUserInfoBlock__buttonLeft:hover svg path {
   fill: #3a7f66;
 }
-.buttonLeft:hover span {
+.checkOutUserInfoBlock__buttonLeft:hover span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #3a7f66;
 }
-.buttonLeft:active svg path {
+.checkOutUserInfoBlock__buttonLeft:active svg path {
   fill: #15503a;
 }
-.buttonLeft:active span {
+.checkOutUserInfoBlock__buttonLeft:active span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #15503a;
 }
-.buttonLeft:disabled {
+.checkOutUserInfoBlock__buttonLeft:disabled {
   background: transparent;
 }
-.buttonLeft:disabled svg path {
+.checkOutUserInfoBlock__buttonLeft:disabled svg path {
   fill: #868686;
 }
-.buttonLeft:disabled span {
+.checkOutUserInfoBlock__buttonLeft:disabled span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -282,7 +282,7 @@
   color: #868686;
 }
 
-.buttonRight {
+.checkOutUserInfoBlock__buttonRight {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -298,7 +298,7 @@
   justify-content: flex-end;
   padding-right: 0;
 }
-.buttonRight span {
+.checkOutUserInfoBlock__buttonRight span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
@@ -306,7 +306,7 @@
   text-align: center;
   position: relative;
 }
-.buttonRight::before {
+.checkOutUserInfoBlock__buttonRight::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -318,7 +318,7 @@
   top: 0.4rem;
   left: 7.1rem;
 }
-.buttonRight::after {
+.checkOutUserInfoBlock__buttonRight::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -330,7 +330,7 @@
   top: 2.5rem;
   left: 9.2rem;
 }
-.buttonRight:hover::before {
+.checkOutUserInfoBlock__buttonRight:hover::before {
   content: "";
   width: 20.9rem;
   height: 20.9rem;
@@ -339,7 +339,7 @@
   top: -8.05rem;
   left: -1rem;
 }
-.buttonRight:active::after {
+.checkOutUserInfoBlock__buttonRight:active::after {
   content: "";
   width: 20.9rem;
   height: 20.9rem;
@@ -350,59 +350,59 @@
   top: -8.05rem;
   left: -1.1rem;
 }
-.buttonRight:disabled {
+.checkOutUserInfoBlock__buttonRight:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.buttonRight:disabled span {
+.checkOutUserInfoBlock__buttonRight:disabled span {
   color: #9b9b9b;
 }
-.buttonRight svg path {
+.checkOutUserInfoBlock__buttonRight svg path {
   fill: #000000;
 }
-.buttonRight span {
+.checkOutUserInfoBlock__buttonRight span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #000000;
 }
-.buttonRight:hover svg path {
+.checkOutUserInfoBlock__buttonRight:hover svg path {
   fill: #3a7f66;
 }
-.buttonRight:hover span {
+.checkOutUserInfoBlock__buttonRight:hover span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #3a7f66;
 }
-.buttonRight:active svg path {
+.checkOutUserInfoBlock__buttonRight:active svg path {
   fill: #15503a;
 }
-.buttonRight:active span {
+.checkOutUserInfoBlock__buttonRight:active span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #15503a;
 }
-.buttonRight:disabled {
+.checkOutUserInfoBlock__buttonRight:disabled {
   background: transparent;
 }
-.buttonRight:disabled svg path {
+.checkOutUserInfoBlock__buttonRight:disabled svg path {
   fill: #868686;
 }
-.buttonRight:disabled span {
+.checkOutUserInfoBlock__buttonRight:disabled span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
   color: #868686;
 }
-.buttonRight div {
+.checkOutUserInfoBlock__buttonRight div {
   transform: rotate(180deg);
 }
 

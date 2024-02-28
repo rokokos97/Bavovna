@@ -32,25 +32,25 @@ const PaymentMethodSection = ({formik}) => {
       className={styles.userPaymentMethodsList}
       data-testid="PaymentMethodSection"
     >
-      <p className={styles.title}>Payment</p>
+      <p className={styles.userPaymentMethodsList__title}>Payment</p>
       <form
         onSubmit={formik.handleSubmit}
-        className={styles.block}
+        className={styles.userPaymentMethodsList__block}
       >
         {paymentMethodsList.map((method)=> (
           <div
             style={{display: 'block'}}
             key={method.id}>
-            <div className={styles.radioWrapper}>
+            <div className={styles.userPaymentMethodsList__radioWrapper}>
               <button
-                className={styles.radioButton}
+                className={styles.userPaymentMethodsList__radioButton}
                 type='button'
                 onClick = {() => dispatch(setPaymentMethod(method.label))}
               >
                 {currentPaymentMethod === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
               </button>
               <label
-                className={styles.label}
+                className={styles.userPaymentMethodsList__label}
               >
                 {method.label}
               </label>
@@ -61,7 +61,7 @@ const PaymentMethodSection = ({formik}) => {
       <button
         type='button'
         onClick={()=> navigate(-1) }
-        className={styles.buttonLeft}
+        className={styles.userPaymentMethodsList__buttonLeft}
       >
         <LeftArrowIcon/>
         <span>

@@ -4,16 +4,11 @@
   flex-direction: column;
   gap: 2.4rem;
 }
-.newsLetterBlock__title2 {
-  @include fonts($headline-2);
-  text-align: start;
-  padding: 1.2rem 0;
-}
-.description {
+.emptyBlock__description {
   text-align: start;
   @include fonts($body-2);
 }
-.newCollectionBlock__button {
+.emptyBlock__button {
   @include button(22.6rem);
   @include buttonBlack();
 }

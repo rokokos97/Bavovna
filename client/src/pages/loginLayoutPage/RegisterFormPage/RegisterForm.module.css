@@ -1,8 +1,17 @@
 .registerForm {
-  width: 41rem;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 2.4rem;
+}
+.registerForm p {
+  font-family: "Fixel Text Regular";
+  font-size: 16px;
+  line-height: 110%;
+}
+.registerForm p span {
+  font-family: "Fixel Display Semibold";
+  font-size: 16px;
+  line-height: 110%;
 }
 
 .registerForm__titleBlock {
@@ -32,24 +41,24 @@
   color: #4a4a4a;
 }
 
-.errorMessagesBlock {
+.registerForm__errorMessagesBlock {
   display: flex;
   align-self: stretch;
   background: #dfc5c5;
 }
-.errorMessagesBlock p {
+.registerForm__errorMessagesBlock p {
   width: 100%;
   text-align: start;
   padding: 1.2rem;
   color: #ea001b;
 }
 
-.successMessagesBlock {
+.registerForm__successMessagesBlock {
   display: flex;
   align-self: stretch;
   background: #a9dfcb;
 }
-.successMessagesBlock p {
+.registerForm__successMessagesBlock p {
   width: 100%;
   text-align: start;
   padding: 1.2rem;

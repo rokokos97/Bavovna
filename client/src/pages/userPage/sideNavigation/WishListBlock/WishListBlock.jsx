@@ -12,9 +12,9 @@ const WishListBlock = () => {
     return <Loader/>;
   }
   return (
-    <div className={styles.wishListBlock} data-testid="WishListBlock">
-      <p className={styles.title}>wishlist</p>
-      <div>
+    <article className={styles.wishListBlock} data-testid="WishListBlock">
+      <h2 className={styles.wishListBlock__title}>wishlist</h2>
+      <section>
         {(user.favorite.length > 0) ?
           <ItemsList
             idArray={user.favorite}
@@ -23,8 +23,8 @@ const WishListBlock = () => {
               description='Your wishlist is empty.'
             />
         }
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

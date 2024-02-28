@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 2.4rem;
 }
-.newsLetterBlock__title2 {
+.ordersBlock__title {
   @include fonts($headline-2);
   text-align: start;
 }

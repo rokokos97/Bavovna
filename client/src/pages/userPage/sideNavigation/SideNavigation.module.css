@@ -4,13 +4,13 @@
   column-gap: 21.7rem;
 }
 
-.sidebar {
+.navigationBlock__sidebar {
   display: flex;
   flex-direction: column;
   row-gap: 2.4rem;
 }
 
-.navigation {
+.navigationBlock__navigation {
   font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
@@ -18,13 +18,13 @@
   text-align: start;
 }
 
-.navigationContentSide {
+.navigationBlock__navigationContentSide {
   width: 84.5rem;
   display: flex;
   flex-direction: row;
 }
 
-.newsLetterBlock__title2 {
+.navigationBlock__title {
   width: 100%;
   font-family: "Fixel Display Bold";
   font-size: 24px;
@@ -33,7 +33,7 @@
   padding: 0 1.6rem 0;
 }
 
-.active {
+.navigationBlock__active {
   width: 100%;
   cursor: pointer;
   padding: 1.2rem 1.6rem;
@@ -45,12 +45,12 @@
   background-color: rgba(169, 223, 203, 0.3);
 }
 
-.list {
+.navigationBlock__list {
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
 }
-.list li {
+.navigationBlock__list li {
   width: 100%;
   cursor: pointer;
   padding: 1.2rem 1.6rem;
@@ -60,7 +60,7 @@
   line-height: 120%;
   text-transform: uppercase;
 }
-.list li:hover {
+.navigationBlock__list li:hover {
   background-color: rgba(169, 223, 203, 0.3);
 }
 

@@ -5,7 +5,7 @@ import LoginFormBlock from '../../../components/form/formBlocks/LoginFormBlock/L
 const LoginForm = () => {
   return (
     <article className={styles.loginForm}>
-      <section className={styles.titleBlock}>
+      <section className={styles.loginForm__titleBlock}>
         <p>
           Sign In
         </p>

@@ -53,17 +53,17 @@ const ResetPasswordForm = () => {
   return (
     <div className={styles.resetPasswordForm} data-testid="ResetPasswordForm">
       <div
-        className={styles.titleBlock}
+        className={styles.resetPasswordForm__titleBlock}
       >
-        <p className={styles.title}>Reset PASSWORD</p>
+        <p className={styles.resetPasswordForm__title}>Reset PASSWORD</p>
         <p>Please enter a new password:</p>
       </div>
       {response ?
-        <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+        <div className={(response.code !== 200) ? styles.resetPasswordForm__errorMessagesBlock : styles.resetPasswordForm__successMessagesBlock}>
           <p>{transformErrorMessage[response.message]}</p>
         </div> : null}
       <form
-        className={styles.form}
+        className={styles.resetPasswordForm__form}
         onSubmit={formik.handleSubmit}
       >
         <TextField
@@ -89,7 +89,7 @@ const ResetPasswordForm = () => {
           touched={formik.touched.confirmPassword}
         />
         <button
-          className={styles.button}
+          className={styles.resetPasswordForm__button}
           type="submit"
           disabled={!formik.isValid}>
           {

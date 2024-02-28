@@ -1,9 +1,6 @@
 @import '../../../styles/variables.module';
 .registerForm {
-  width: 41rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
+  @include form();
 }
 .registerForm__titleBlock {
   @include form-title-block();
@@ -12,9 +9,9 @@
   @include fonts($link-2);
   color: $gray-10;
 }
-.errorMessagesBlock {
+.registerForm__errorMessagesBlock {
   @include form-message-block($light-pink, $error);
 }
-.successMessagesBlock {
+.registerForm__successMessagesBlock {
   @include form-message-block($accent-a-05, $success);
 }

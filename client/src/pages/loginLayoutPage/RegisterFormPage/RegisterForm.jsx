@@ -82,7 +82,7 @@ const RegisterForm = () => {
       </section>
       <section style={{display: response ? 'block' : 'none'}}>
         {response ?
-          <div className={(response.code !== 200) ? styles.errorMessagesBlock : styles.successMessagesBlock}>
+          <div className={(response.code !== 200) ? styles.registerForm__errorMessagesBlock : styles.registerForm__successMessagesBlock}>
             <p>{transformErrorMessage[response.message]}</p>
           </div> : null}
       </section>

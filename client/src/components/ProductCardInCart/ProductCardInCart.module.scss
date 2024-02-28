@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .imageBlock {
+  .productCardInCart__imageBlock {
     width: 14rem;
     height: 13.8rem;
     overflow: hidden;
@@ -15,28 +15,28 @@
       object-fit: fill;
     }
   }
-  .infoBlock {
+  .productCardInCart__infoBlock {
     width: 73.6rem;
     display: flex;
     flex-direction: column;
     row-gap: 1.6rem;
     margin-left: 2.4rem;
     margin-top: 2.4rem;
-    .name {
+    .productCardInCart__name {
       @include fonts($headline-9);
     }
-    .priceSizeColorQuantityBlock {
+    .productCardInCart__priceSizeColorQuantityBlock {
       width: 51.7rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      .price {
+      .productCardInCart__price {
         display: flex;
         flex-direction: row;
         gap: 1.6rem;
         @include fonts($headline-8);
       }
-      .discount {
+      .productCardInCart__discount {
         display: flex;
         flex-direction: row;
         gap: 1.6rem;
@@ -49,32 +49,32 @@
           color: $error;
         }
       }
-      .sizeColorQuantityBlock {
+      .productCardInCart__sizeColorQuantityBlock {
         @include fonts($headline-9);
         width: 51.7rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        .block {
+        .productCardInCart__block {
           display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
-          .sizeBlock {
+          .productCardInCart__sizeBlock {
             display: flex;
             flex-direction: row;
             gap: 1.6rem;
           }
-          .fakeDiv {
+          .productCardInCart__fakeDiv {
             width: 5.6rem;
           }
-          .colorBlock {
+          .productCardInCart__colorBlock {
             width: 14.2rem;
             display: flex;
             flex-direction: row;
             gap: 1.6rem;
-            .colorRectangle {
+            .productCardInCart__colorRectangle {
               width: 1.5rem;
               height: 1.5rem;
               justify-content: center;
@@ -82,16 +82,16 @@
               border: $black 1px solid;
             }
           }
-          .quantityBlock {
+          .productCardInCart__quantityBlock {
             width: 18.4rem;
             display: flex;
             flex-direction: row;
             gap: 1.6rem;
-            .quantity {
+            .productCardInCart__quantity {
               display: flex;
               flex-direction: row;
               gap: 1.2rem;
-              .newCollectionBlock__button {
+              .productCardInCart__button {
                 background: transparent;
               }
             }
@@ -100,7 +100,7 @@
       }
     }
   }
-  .buttonBlock {
+  .productCardInCart__buttonBlock {
     margin-top: 8.7rem;
     background: transparent;
     &:hover {
@@ -132,43 +132,42 @@
   height: fit-content;
   column-gap: 1.7rem;
   justify-content: flex-start;
-  .imageBlock {
+  .productCardInCart__imageBlock {
     width: 10rem;
     height: 10rem;
   }
-  .infoBlock {
+  .productCardInCart__infoBlock {
     display: flex;;
     width: 24.6rem;
     height: fit-content;
-    //row-gap: 1.2rem;
     margin-top: 0;
     margin-left: 0;
     margin-bottom: 0;
-    .priceSizeColorQuantityBlock {
+    .productCardInCart__priceSizeColorQuantityBlock {
       width: 24.6rem;
       gap: 1.2rem;
-      .sizeColorQuantityBlock {
+      .productCardInCart__sizeColorQuantityBlock {
         @include fonts($headline-9);
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        .block {
+        .productCardInCart__block {
           align-items: flex-start;
-          .fakeDiv {
+          .productCardInCart__fakeDiv {
             display: none;
           }
-          .colorBlock {
+          .productCardInCart__colorBlock {
             display: flex;
             align-items: center;
             width: fit-content;
             margin-right: 0.8rem;
           }
-          .quantityBlock {
+          .productCardInCart__quantityBlock {
             width: fit-content;
-            .quantity {
-              .newCollectionBlock__button {
+            .productCardInCart__quantity {
+              .productCardInCart__button {
                 display: none;
               }
             }
@@ -177,7 +176,7 @@
       }
     }
   }
-  .buttonBlock {
+  .productCardInCart__buttonBlock {
     width: 4.5rem;
     margin: 0;
     display: flex;
@@ -189,44 +188,44 @@
     }
   }
 }
-.productCardInCart[type='2'] {
+.productCardInCart__productCardInCart[type='2'] {
   height: fit-content;
   align-items: center;
   margin-bottom: 2.4rem;
-  .imageBlock {
+  .productCardInCart__imageBlock {
     width: 10rem;
     height: 10rem;
   }
-  .infoBlock {
+  .productCardInCart__infoBlock {
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 0;
-    .priceSizeColorQuantityBlock {
+    .productCardInCart__priceSizeColorQuantityBlock {
       width: 61.5rem;
       flex-direction: row-reverse;
       gap: 0;
       justify-content: space-between;
-      .price {
+      .productCardInCart__price {
         width: 11.8rem;
         display: flex;
         gap:0;
         justify-content: flex-end;
       }
-      .sizeColorQuantityBlock {
+      .productCardInCart__sizeColorQuantityBlock {
         width: fit-content;
         gap: 3.2rem;
-        .block {
-          .fakeDiv {
+        .productCardInCart__block {
+          .productCardInCart__fakeDiv {
             display: none;
           }
-          .colorBlock {
+          .productCardInCart__colorBlock {
             width: fit-content;
           }
-          .quantityBlock {
+          .productCardInCart__quantityBlock {
             width: fit-content;
             margin-left: 4.8rem;
-            .quantity {
-              .newCollectionBlock__button {
+            .productCardInCart__quantity {
+              .productCardInCart__button {
                 display: none;
               }
             }
@@ -235,7 +234,7 @@
       }
     }
   }
-  .buttonBlock {
+  .productCardInCart__buttonBlock {
     display: none;
   }
 }

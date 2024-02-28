@@ -102,16 +102,16 @@ const UserDeliveryBlock = () => {
   return user && (
     <div className={styles.userDeliveryBlock} data-testid="UserDeliveryBlock">
       <p
-        className={styles.deliveryTitle}
+        className={styles.userDeliveryBlock__deliveryTitle}
       >
         delivery
       </p>
-      <section className={styles.section}>
+      <section className={styles.userDeliveryBlock__section}>
         <form
-          className={styles.column}
+          className={styles.userDeliveryBlock__column}
           onSubmit={formik.handleSubmit}
         >
-          <p className={styles.blockLabel}>
+          <p className={styles.userDeliveryBlock__blockLabel}>
               Add new delivery method
           </p>
           <UserDeliveryMethodsList
@@ -122,7 +122,7 @@ const UserDeliveryBlock = () => {
             handleWarehouseChange={handleWarehouseChange}
           />
           <button
-            className={styles.button}
+            className={styles.userDeliveryBlock__button}
             type='submit'
           >
             <span>
@@ -130,8 +130,8 @@ const UserDeliveryBlock = () => {
             </span>
           </button>
         </form>
-        <div className={styles.column}>
-          <p className={styles.blockLabel}>
+        <div className={styles.userDeliveryBlock__column}>
+          <p className={styles.userDeliveryBlock__blockLabel}>
             Saved delivery method
           </p>
           <UserDeliveryAddressList hiddenButton={false}/>

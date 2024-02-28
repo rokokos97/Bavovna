@@ -24,13 +24,13 @@ const ShoppingCartPage = () => {
   }
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
-      <p className={styles.shoppingCartPage_navigation}>Home / Shopping bag</p>
-      <div className={styles.titleBlock}>
-        <div className={styles.infoBlock}>
-          <p className={styles.title}>{`shopping bag (${cart.length} items)`}</p>
+      <p className={styles.shoppingCartPage__navigation}>Home / Shopping bag</p>
+      <div className={styles.shoppingCartPage__titleBlock}>
+        <div className={styles.shoppingCartPage__infoBlock}>
+          <p className={styles.shoppingCartPage__title}>{`shopping bag (${cart.length} items)`}</p>
         </div>
         {(cart.length === 0) && <button
-          className={styles.button}
+          className={styles.shoppingCartPage__button}
           onClick={() => {
             navigate('/shop');
           }}
@@ -42,16 +42,16 @@ const ShoppingCartPage = () => {
         </button>}
       </div>
       {cart.length !== 0 ?
-        <div className={styles.fillCartBlock}>
-          <div className={styles.itemsBlock}>
+        <div className={styles.shoppingCartPage__fillCartBlock}>
+          <div className={styles.shoppingCartPage__itemsBlock}>
             {
               normalizedCart.map((item) => <ProductCardInCart key={item._id+item.itemIdentifier} item={item}/>)
             }
           </div>
           <CheckOutBlock />
         </div> :
-        <div className={styles.emptyCartBlock}>
-          <p className={styles.text}>Your shopping bag is empty</p>
+        <div className={styles.shoppingCartPage__emptyCartBlock}>
+          <p className={styles.shoppingCartPage__text}>Your shopping bag is empty</p>
           {!isItemsLoading && sliderItems &&
             <div>
               <Swiper

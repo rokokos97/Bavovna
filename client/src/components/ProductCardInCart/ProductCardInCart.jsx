@@ -27,13 +27,13 @@ const ProductCardInCart = ({item, type}) => {
 
   return (
     <div className={styles.productCardInCart} data-testid="ProductCardInCart" type={type}>
-      <div className={styles.imageBlock}>
+      <div className={styles.productCardInCart__imageBlock}>
         <img src={item.itemImg} alt='item picture'/>
       </div>
-      <div className={styles.infoBlock}>
-        <p className={styles.name}>{item.itemName}</p>
-        <div className={styles.priceSizeColorQuantityBlock}>
-          <p className={(item.discountPrice===item.itemPrice)? styles.price : styles.discount}>
+      <div className={styles.productCardInCart__infoBlock}>
+        <p className={styles.productCardInCart__name}>{item.itemName}</p>
+        <div className={styles.productCardInCart__priceSizeColorQuantityBlock}>
+          <p className={(item.discountPrice===item.itemPrice)? styles.productCardInCart__price : styles.productCardInCart__discount}>
             <span>
               {item.itemPrice} $
             </span>
@@ -41,25 +41,25 @@ const ProductCardInCart = ({item, type}) => {
               {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + ' $'}
             </span>
           </p>
-          <div className={styles.sizeColorQuantityBlock}>
-            <div className={styles.block}>
-              <div className={styles.sizeBlock}>
+          <div className={styles.productCardInCart__sizeColorQuantityBlock}>
+            <div className={styles.productCardInCart__block}>
+              <div className={styles.productCardInCart__sizeBlock}>
                 <p>size: </p>
                 <p>{item.itemSize}</p>
               </div>
-              <div className={styles.fakeDiv}/>
+              <div className={styles.productCardInCart__fakeDiv}/>
             </div>
-            <div className={styles.block}>
-              <div className={styles.colorBlock}>
+            <div className={styles.productCardInCart__block}>
+              <div className={styles.productCardInCart__colorBlock}>
                 <p>color:</p>
-                <div style={{'backgroundColor': `${item.itemColor}`}} className={styles.colorRectangle}></div>
+                <div style={{'backgroundColor': `${item.itemColor}`}} className={styles.productCardInCart__colorRectangle}></div>
               </div>
-              <div className={styles.quantityBlock}>
+              <div className={styles.productCardInCart__quantityBlock}>
                 <p>quantity:</p>
-                <div className={styles.quantity}>
+                <div className={styles.productCardInCart__quantity}>
                   <button
                     onClick={handleQuantityLess}
-                    className={styles.button}>
+                    className={styles.productCardInCart__button}>
                       -
                   </button>
                   <p>
@@ -67,7 +67,7 @@ const ProductCardInCart = ({item, type}) => {
                   </p>
                   <button
                     onClick={handleQuantityAdd}
-                    className={styles.button}>
+                    className={styles.productCardInCart__button}>
                       +
                   </button>
                 </div>
@@ -78,7 +78,7 @@ const ProductCardInCart = ({item, type}) => {
       </div>
       <button
         onClick={handleItemDelete}
-        className={styles.buttonBlock}
+        className={styles.productCardInCart__buttonBlock}
         disabled={type==='1'}
       >
         <DeleteIcon />

@@ -11,32 +11,32 @@
   box-sizing: border-box;
   padding-bottom: 25rem;
 }
-.shoppingCartPage_navigation{
+.shoppingCartPage__navigation{
   @include fonts($breadcrumb);
   text-align: start;
   margin: 1.6rem 0 1.4rem;
 }
-.registerForm__titleBlock {
+.shoppingCartPage__titleBlock {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.infoBlock {
+.shoppingCartPage__infoBlock {
   width: 39.8rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   row-gap: 2.4rem;
 }
-.newsLetterBlock__title2 {
+.shoppingCartPage__title {
   @include fonts($headline-3);
 }
-.modalCookies__text {
+.shoppingCartPage__text {
   @include fonts($body-2);
   text-align: start;
   text-wrap: none;
 }
-.newCollectionBlock__button {
+.shoppingCartPage__button {
   @include button(29.2rem);
   @include buttonWhite();
   display: flex;
@@ -53,12 +53,12 @@
     }
   }
 }
-.emptyCartBlock {
+.shoppingCartPage__emptyCartBlock {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
-.fillCartBlock {
+.shoppingCartPage__fillCartBlock {
   margin-top: 1.6rem;
   display: flex;
   flex-direction: row;
@@ -66,6 +66,6 @@
   gap: 2.4rem;
 
 }
-.itemsBlock {
+.shoppingCartPage__itemsBlock {
   padding-top: 2.4rem;
 }

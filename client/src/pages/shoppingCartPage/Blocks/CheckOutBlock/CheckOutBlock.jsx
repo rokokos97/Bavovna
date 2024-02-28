@@ -1,35 +1,34 @@
 import React from 'react';
 import styles from './CheckOutBlock.module.scss';
-import {useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getCartTotalPrice} from '../../../../store/cartSlice';
 
 const CheckOutBlock = () => {
   const totalPrice = useSelector(getCartTotalPrice);
-  const navigate = useNavigate();
   return (
     <div className={styles.checkOutBlock} data-testid="CheckOutBlock">
-      <div className={styles.totalPriceBlock}>
+      <div className={styles.checkOutBlock__totalPriceBlock}>
         <p>total</p>
         {totalPrice}$
       </div>
-      <div className={styles.buttonsBlock}>
-        <button
-          type='button'
-          onClick={() => navigate('/cart/checkoutUserInfo')}
+      <div className={styles.checkOutBlock__buttonsBlock}>
+        <Link
+          to='/cart/checkoutUserInfo'
+          aria-label='continue to checkout'
         >
           <span>
             Continue to check out
           </span>
-        </button>
-        <button
-          type='button'
-          onClick={()=> navigate('/shop')}
+        </Link>
+        <Link
+          aria-label='continue shopping'
+          to='/shop'
         >
           <span>
             Continue shopping
           </span>
-        </button>
+        </Link>
       </div>
     </div>
   );

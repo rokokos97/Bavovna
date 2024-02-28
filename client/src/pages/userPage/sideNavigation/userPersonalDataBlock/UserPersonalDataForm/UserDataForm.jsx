@@ -43,14 +43,14 @@ const UserDataForm = () => {
     }
   }, [formik.values.currentPassword, dispatch]);
   return ( user && (
-    <div className={styles.userDataForm} data-testid="UserDataForm">
-      <p className={styles.title}>personal data</p>
+    <article className={styles.userDataForm} data-testid="UserDataForm">
+      <p className={styles.userDataForm__title}>personal data</p>
       <form
-        className={styles.userPersonalDataForm}
+        className={styles.userDataForm__userPersonalDataForm}
         onSubmit={formik.handleSubmit}
       >
-        <div className={styles.submitWrapper}>
-          <div className={styles.column}>
+        <div className={styles.userDataForm__submitWrapper}>
+          <section className={styles.userDataForm__column}>
             <TextField
               label='First name'
               name='firstName'
@@ -82,9 +82,9 @@ const UserDataForm = () => {
               error={formik.errors.email}
               touched={formik.touched.email}
             />
-          </div>
-          <div
-            className={styles.column}
+          </section>
+          <section
+            className={styles.userDataForm__column}
           >
             <PhoneField
               value={formik.values.phoneNumber || user.phoneNumber}
@@ -118,19 +118,19 @@ const UserDataForm = () => {
               error={formik.errors.newPassword}
               touched={formik.touched.newPassword}
             />
-          </div>
+          </section>
         </div>
         <button
           type="submit"
           disabled={!formik.isValid || !formik.dirty}
-          className={styles.button}
+          className={styles.userDataForm__button}
         >
           <span>
             save changes
           </span>
         </button>
       </form>
-    </div>
+    </article>
   ));
 };
 
