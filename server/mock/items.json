@@ -230,7 +230,7 @@
     "price": 980,
     "description": "The \"Mad Cat\" t-shirt features playful embroidery on a classic black cotton tee, providing a comfortable fit with a touch of whimsy.",
     "category": "659c66c7ddcd393da280c0b6",
-    "images": ["uploads/16.jpeg", "uploads/16.1.jpeg", "uploads/16.2.jpeg", "uploads/16.3.jpeg"],
+    "images": ["uploads/16.jpeg", "uploads/16.3.jpeg", "uploads/16.2.jpeg", "uploads/16.3.jpeg"],
     "color": ["6570505dc9a656e23d59a932", "6570505dc9a656e23d59a933", "6570505dc9a656e23d59a935"],
     "size": ["s", "m", "l"],
     "composition": ["98% cotton", "2% elastane"],
