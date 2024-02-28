@@ -18,7 +18,7 @@ const SaleBlock = () => {
         <Link
           className={styles.saleBlock__button}
           aria-label='go to catalogue page'
-          to="/shop"
+          to="/shop?status=sale"
         >
           <span>shop now</span>
         </Link>

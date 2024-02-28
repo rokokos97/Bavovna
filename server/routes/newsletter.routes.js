@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({
         response: {
           code: 400,
-          message: 'EMAIL_EXIST',
+          message: 'NEWSLETTER_EMAIL_EXIST',
         },
       });
     }
@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
                <p>The BAVOVNA Team</p>`,
     };
     await transporter.sendMail(mailOptions, function(error, info) {
-      console.log('error', error);
       if (error) {
         return res.status(500).json({
           response: {

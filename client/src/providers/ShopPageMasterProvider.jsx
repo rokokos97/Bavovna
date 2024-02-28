@@ -60,7 +60,6 @@ export const ShopPageMasterProvider = ({children}) => {
         prevFilters[categoryType].filter((item) => item !== value) :
         [...prevFilters[categoryType], value],
     }));
-    console.log(selectedFilters);
   };
 
   const handleCleanFilter = () => {

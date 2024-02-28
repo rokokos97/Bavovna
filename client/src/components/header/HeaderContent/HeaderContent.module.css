@@ -37,6 +37,10 @@
   color: #5a9b83;
   text-decoration: underline;
 }
+.headerContent__headerNavBar a:focus {
+  color: #5a9b83;
+  text-decoration: underline;
+}
 .headerContent__headerNavBar a:active {
   color: #1a6449;
   text-decoration: underline;
@@ -70,6 +74,10 @@
   transition: color 0.3s;
 }
 .headerContent__headerMenuBar .headerContent__linkBlock:hover {
+  color: #5a9b83;
+  text-decoration: underline;
+}
+.headerContent__headerMenuBar .headerContent__linkBlock:focus {
   color: #5a9b83;
   text-decoration: underline;
 }

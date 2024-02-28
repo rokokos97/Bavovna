@@ -543,6 +543,10 @@ $light-pink: #dfc5c5;
     color: $accent-a-3;
     text-decoration: underline;
   }
+  &:focus {
+    color: $accent-a-3;
+    text-decoration: underline;
+  }
   &:active {
     color: $accent-a-5;
     text-decoration: underline;
