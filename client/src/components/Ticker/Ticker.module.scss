@@ -1,0 +1,6 @@
+@import '../../styles/variables.module.scss';
+
+.text {
+  @include fonts($headline_3);
+  margin-right: 2rem;
+}
