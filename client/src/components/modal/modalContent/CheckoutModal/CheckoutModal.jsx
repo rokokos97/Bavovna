@@ -48,8 +48,9 @@ const CheckoutModal = ({handleCloseModal}) => {
       </div>
       <div className={styles.btnContainer}>
         <button
-          type='button'
           className={styles.continueBtn}
+          type='button'
+          aria-label='continue shopping'
           onClick={handleCloseModal}
         >
           <ArrowBackIcon />

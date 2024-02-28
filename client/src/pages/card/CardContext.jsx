@@ -22,7 +22,7 @@ import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/Em
 const CardContext = ({item}) => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  const {itemData, setItemData, collectData} = useDataCard();
+  const {itemData, setItemData} = useDataCard();
   const {
     _id,
     name,
@@ -64,7 +64,6 @@ const CardContext = ({item}) => {
         itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,
       };
       dispatch(addItemToCart(newItemData));
-      collectData(itemData);
       setShowCheckoutModal(true);
       hideBodyOverflow();
     }
@@ -142,8 +141,9 @@ const CardContext = ({item}) => {
                     setSelectedSize={setSelectedSize}
                   />
                   <button
-                    type='button'
                     className={styles.btnGuide}
+                    type='button'
+                    aria-label='open size guide'
                     onClick={openShowGuideModal}
                   >
                     Size guide
@@ -151,8 +151,9 @@ const CardContext = ({item}) => {
                 </div>
                 <div className={styles.formBag}>
                   <button
-                    type='button'
                     onClick={handleCollectData}
+                    type='button'
+                    aria-label='add to bag'
                     className={styles.activeBtn}
                     disabled={!selectedColor || !selectedSize}
                   >
