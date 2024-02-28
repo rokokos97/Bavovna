@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
                <p>The BAVOVNA Team</p>`,
     };
     await transporter.sendMail(mailOptions, function(error, info) {
-      console.log('error', error);
       if (error) {
         return res.status(500).json({
           response: {
