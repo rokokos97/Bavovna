@@ -6,10 +6,10 @@ const FashionBlock = () => {
     <div className={styles.fashionBlock} data-testid='FashionBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
-          <img src='/img/images/AboutUs/fashion_1.webp' alt='img_5' />
+          <img loading='lazy' src='/img/images/AboutUs/fashion_1.webp' alt='Flea market' />
         </div>
         <div className={styles.secondImg}>
-          <img src='/img/images/AboutUs/fashion_2.webp' alt='img_6' />
+          <img loading='lazy' src='/img/images/AboutUs/fashion_2.webp' alt='Rolls of fabric' />
         </div>
       </div>
       <div className={styles.description}>

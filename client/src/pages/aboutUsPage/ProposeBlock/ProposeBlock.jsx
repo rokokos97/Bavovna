@@ -7,10 +7,10 @@ const ProposeBlock = () => {
   return (
     <div className={styles.proposeBlock} data-testid='ProposeBlock'>
       <div className={styles.img}>
-        <img src='/img/images/AboutUs/propose_1.webp' alt='img_3' />
+        <img loading='lazy' src='/img/images/AboutUs/propose_1.webp' alt='Model on the beach' />
       </div>
       <div className={`${styles.img} ${styles.lastChild}`}>
-        <img src='/img/images/AboutUs/propose_2.webp' alt='img_4' />
+        <img loading='lazy' src='/img/images/AboutUs/propose_2.webp' alt='Model with a bouquet in her hands' />
       </div>
       <div className={styles.description}>
         <h2 className={styles.newsLetterBlock__title2}>
@@ -33,6 +33,7 @@ const ProposeBlock = () => {
         <button
           className={styles.newCollectionBlock__button}
           type='button'
+          aria-label='go to new collection page'
           onClick={() => navigate('/shop?status=new')}
         >
           <span>View new</span>

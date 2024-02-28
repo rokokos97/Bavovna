@@ -29,6 +29,7 @@ const HeaderInput = ({handleIsSearch}) => {
       <button
         className={styles.closeIcon}
         type='button'
+        aria-label='Closes the search input'
         onClick={onCloseSearch}
       >
         <CloseIcon />

@@ -52,6 +52,8 @@ const NewsLettersBlock = () => {
         </span>
         <button
           className={styles.newsLetterBlock__closeButton}
+          type='button'
+          aria-label='close message'
           onClick={()=> setIsMessageShowed(false)}
         >
           <CloseIcon/>
@@ -82,6 +84,7 @@ const NewsLettersBlock = () => {
             className={styles.newsLetterBlock__button}
             disabled={!formik.isValid || !formik.dirty}
             type='submit'
+            aria-label='form submit'
           >
             <span>
               Subscribe to our newsletter

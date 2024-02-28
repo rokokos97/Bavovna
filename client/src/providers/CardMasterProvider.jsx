@@ -17,13 +17,8 @@ const initialItemData = {
 export const CardMasterProvider = ({children}) => {
   const [itemData, setItemData] = useState(initialItemData);
 
-  const collectData = (data) => {
-    const jsonData = {...data};
-    console.log(jsonData);
-  };
-
   return (
-    <DataContext.Provider value={{itemData, setItemData, collectData}}>
+    <DataContext.Provider value={{itemData, setItemData}}>
       {children}
     </DataContext.Provider>
   );

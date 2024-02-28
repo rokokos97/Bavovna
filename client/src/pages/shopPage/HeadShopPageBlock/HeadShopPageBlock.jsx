@@ -36,7 +36,7 @@ const HeadCatalogBlock = () => {
           <h2 className={styles.heroTitle}>
             10% discount on the summer collection
           </h2>
-          <button className={styles.heroBtn} onClick={handleOnDiscountBtnClick}>
+          <button className={styles.heroBtn} type='button' aria-label='go to 10%-discount page' onClick={handleOnDiscountBtnClick}>
             <span>View more</span>
           </button>
         </div>
