@@ -1,5 +1,5 @@
 .modalCookies {
-  width: 60.4rem;
+  width: 61.4rem;
   height: 46.5rem;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@
   top: 20rem;
 }
 .modalCookies .modalCookies__text {
+  width: fit-content;
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
@@ -121,7 +122,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 2.4rem;
+  column-gap: 1.6rem;
 }
 
 /*# sourceMappingURL=ModalEducationProject.module.css.map */

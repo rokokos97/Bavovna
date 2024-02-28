@@ -9,5 +9,6 @@ const transformErrorMessage = {
   PASSWORD_CHANGED: 'Your password has been changed.',
   ERR_NETWORK: 'Oops... There was a server error with your connection, please try again later.',
   SERVER_ERROR_MAIL: 'Oops... There was a mail server error, please try again later.',
+  NEWSLETTER_EMAIL_EXIST: 'You are already subscribed to our updates',
 };
 export default transformErrorMessage;

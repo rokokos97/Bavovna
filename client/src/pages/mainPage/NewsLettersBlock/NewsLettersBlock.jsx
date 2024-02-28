@@ -5,9 +5,14 @@ import {validationSchemaNewsletterForm} from '../../../utils/validationSchema';
 import TextField from '../../../components/form/formFields/TextField/TextField';
 import CloseIcon from '../../../components/svg/CloseIcon/CloseIcon';
 import newsletterService from '../../../services/newsletter.service';
+import generateErrorMessage from '../../../utils/generateErrorMessage';
 
 const NewsLettersBlock = () => {
   const [isMessageShowed, setIsMessageShowed] = useState(false);
+  const [message, setMessage] = useState({
+    message: '',
+    isError: false,
+  });
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -15,25 +20,35 @@ const NewsLettersBlock = () => {
     validationSchema: validationSchemaNewsletterForm,
     onSubmit: () => {
       formik.resetForm();
-      console.log('hello');
       newsletterService.add({email: formik.values.email})
           .then((result)=> {
-            console.log('result', result);
-            setIsMessageShowed(true);
+            if (result) {
+              setIsMessageShowed(true);
+              setMessage({
+                message: 'A subscription confirmation email has been sent to your email address',
+                isError: false,
+              });
+            }
           })
           .catch((error)=>{
-            console.log('error', error);
+            if (error) {
+              setIsMessageShowed(true);
+              setMessage({
+                message: generateErrorMessage[error.response.data.response.message],
+                isError: true,
+              });
+            }
           });
     },
   });
   return (
     <article>
       <p
-        className={styles.newsLetterBlock__messageLine}
+        className={`${styles.newsLetterBlock__messageLine} ` + (message.isError ? `${styles.newsLetterBlock__messageError}`: '')}
         style={{display: isMessageShowed ? 'flex' : 'none'}}
       >
         <span>
-          A subscription confirmation email has been sent to your email address
+          {message.message}
         </span>
         <button
           className={styles.newsLetterBlock__closeButton}
