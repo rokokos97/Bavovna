@@ -70,7 +70,6 @@ router.post('/signUp', [
                <p>The BAVOVNA Team</p>`,
       };
       await transporter.sendMail(mailOptions, function(error, info) {
-        console.log('error', error);
         if (error) {
           return res.status(500).json({
             response: {
@@ -309,7 +308,6 @@ We received a request to reset the password for your BAVOVNA account. If you mad
       };
       await transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-          console.log('error', error, 'info', info);
           return res.status(500).json({
             response: {
               code: 500,
@@ -317,7 +315,6 @@ We received a request to reset the password for your BAVOVNA account. If you mad
             },
           });
         } else {
-          console.log(info);
           if (info.response) {
             return res.status(200).json({
               response: {
