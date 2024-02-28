@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 const ModalVerifyEmail = ({handleCloseModal, email}) => (
   <div className={styles.modalVerifyEmail} data-testid="ModalVerifyEmail">
     <button
-      className={styles.modalVerifyEmail__closeButton}
+      className={styles.closeButton}
+      type='button'
+      aria-label='close modal window'
       onClick={handleCloseModal}
     >
       <CloseIcon/>

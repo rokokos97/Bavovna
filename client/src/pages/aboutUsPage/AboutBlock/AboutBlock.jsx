@@ -6,10 +6,10 @@ const AboutBlock = () => {
     <div className={styles.aboutBlock} data-testid='AboutBlock'>
       <div className={styles.imgs}>
         <div className={styles.mainImg}>
-          <img src='/img/images/AboutUs/aboutBlock_1.webp' alt='img_1' />
+          <img loading='lazy' src='/img/images/AboutUs/aboutBlock_1.webp' alt='White hoodie and jeans' />
         </div>
         <div className={styles.secondImg}>
-          <img src='/img/images/AboutUs/aboutBlock_2.webp' alt='img_2' />
+          <img loading='lazy' src='/img/images/AboutUs/aboutBlock_2.webp' alt='Cotton flowers' />
         </div>
       </div>
       <div className={styles.description}>

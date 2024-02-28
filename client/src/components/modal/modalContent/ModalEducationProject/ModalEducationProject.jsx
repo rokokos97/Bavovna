@@ -26,8 +26,9 @@ const ModalEducationProject = ({handleConfirmModal}) => (
       <LongArrowIcon/>
       <button
         className={styles.modalCookies__button}
+        type='button'
+        aria-label='go to shop'
         onClick={handleConfirmModal}
-        aria-label='close modal window'
       >
         <span>go to shop</span>
       </button>

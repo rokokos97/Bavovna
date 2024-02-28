@@ -13,6 +13,8 @@ const ModalError = ({handleCloseModal}) => (
       </div>
       <button
         className={styles.closeButton}
+        type='button'
+        aria-label='close modal window'
         onClick={handleCloseModal}
       >
         <CloseIcon/>

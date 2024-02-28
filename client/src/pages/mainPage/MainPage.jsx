@@ -37,7 +37,6 @@ const MainPage = () => {
     const userConsent = Cookies.get('userConsent');
     if (!userConsent) {
       setShowCookiesModal(true);
-      hideBodyOverflow();
     }
     const userModal = sessionStorageService.getModalConfirm();
     if (!userModal) {
@@ -52,8 +51,11 @@ const MainPage = () => {
       hideBodyOverflow();
     }
   }, [categoriesError, colorsError, itemsError, citiesErrors]);
-  const closeModal = () => {
+  const closeCookiesModal = () => {
     setShowCookiesModal(false);
+  };
+  const closeModal = () => {
+    setShowEducationModal(false);
     setShowErrorModal(false);
     showBodyOverflow();
   };
@@ -88,7 +90,7 @@ const MainPage = () => {
         isOpen={showCookiesModal}
         handleCloseModal={closeModal}
       >
-        <ModalCookies handleCloseModal={closeModal} handleConfirmModal={confirmCookies}/>
+        <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>
       </Modal>
       <NewCollectionBlock />
       <NewArrivalsBlock />
