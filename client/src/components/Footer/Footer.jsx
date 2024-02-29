@@ -115,9 +115,20 @@ const Footer = () => {
             </div>
           </section>
           <section className={styles.footerBottomRight}>
-            <img src='/img/svg/liqpay.png' alt='liqpay' />
-            <img src='/img/svg/mastercard.svg' alt='mastercard' />
-            <img src='/img/svg/visa.svg' alt='visa' />
+            <img
+              src='/img/svg/liqpay.png'
+              loading='lazy'
+              alt='liqpay logo image'
+            />
+            <img
+              src='/img/svg/mastercard.svg'
+              alt='mastercard logo image'
+              loading='lazy'/>
+            <img
+              src='/img/svg/visa.svg'
+              alt='visa logo image'
+              loading='lazy'
+            />
           </section>
         </section>
       </article>

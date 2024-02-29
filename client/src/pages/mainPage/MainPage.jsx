@@ -28,18 +28,17 @@ const MainPage = () => {
   const citiesErrors = useSelector(getCitiesError());
   const citiesIsLoading = useSelector(getCitiesIsLoadingStatus());
   const [error, setError] = useState(null);
-  // const [showEducationModal, setShowEducationModal] = useState(false);
+  //  const [showEducationModal, setShowEducationModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showCookiesModal, setShowCookiesModal] = useState(false);
   useEffect(() => {
     const userConsent = Cookies.get('userConsent');
     if (!userConsent) {
       setShowCookiesModal(true);
-    }
-    // const userModal = sessionStorageService.getModalConfirm();
-    // if (!userModal) {
-    //   setShowEducationModal(true);
-    // }
+    //    const userModal = sessionStorageService.getModalConfirm();
+    //    if (!userModal) {
+    //      setShowEducationModal(true);
+    //    }
   }, []);
   useEffect(() => {
     if (categoriesError || colorsError || itemsError || citiesErrors) {
@@ -57,16 +56,16 @@ const MainPage = () => {
     Cookies.set('userConsent', 'true', {expires: 365});
     setShowCookiesModal(false);
   };
-  // const confirmModal = () => {
-  //   sessionStorageService.setModalConfirm();
-  //   setShowEducationModal(false);
-  // };
+  //  const confirmModal = () => {
+  //    sessionStorageService.setModalConfirm();
+  //    setShowEducationModal(false);
+  //  };
   return (
     <section className={styles.mainPage}>
       {
         (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
       }
-      {/* {showEducationModal && <ModalEducationProject handleConfirmModal={confirmModal}/>} */}
+      {/* {showEducationModal && <ModalEducationProject handleConfirmModal={confirmModal}/>}*/}
       {showErrorModal && <ModalError error={error} handleCloseModal={closeErrorModal}/>}
       {showCookiesModal && <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>}
       <NewCollectionBlock />
