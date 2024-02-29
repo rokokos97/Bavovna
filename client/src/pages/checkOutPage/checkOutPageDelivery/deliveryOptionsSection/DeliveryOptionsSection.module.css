@@ -155,15 +155,15 @@
   text-transform: uppercase;
   color: #3a7f66;
 }
-.deliveryOptionsSection__buttonLeft:active svg path {
-  fill: #15503a;
+.deliveryOptionsSection__buttonLeft:focus svg path {
+  fill: #081e16;
 }
-.deliveryOptionsSection__buttonLeft:active span {
+.deliveryOptionsSection__buttonLeft:focus span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #15503a;
+  color: #081e16;
 }
 .deliveryOptionsSection__buttonLeft:disabled {
   background: transparent;
@@ -276,15 +276,15 @@
   text-transform: uppercase;
   color: #3a7f66;
 }
-.deliveryOptionsSection__buttonRight:active svg path {
-  fill: #15503a;
+.deliveryOptionsSection__buttonRight:focus svg path {
+  fill: #081e16;
 }
-.deliveryOptionsSection__buttonRight:active span {
+.deliveryOptionsSection__buttonRight:focus span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #15503a;
+  color: #081e16;
 }
 .deliveryOptionsSection__buttonRight:disabled {
   background: transparent;

@@ -38,7 +38,7 @@
   text-decoration: underline;
 }
 .headerContent__headerNavBar a:focus {
-  color: #5a9b83;
+  color: #081e16;
   text-decoration: underline;
 }
 .headerContent__headerNavBar a:active {
@@ -78,7 +78,7 @@
   text-decoration: underline;
 }
 .headerContent__headerMenuBar .headerContent__linkBlock:focus {
-  color: #5a9b83;
+  color: #081e16;
   text-decoration: underline;
 }
 .headerContent__headerMenuBar .headerContent__linkBlock:active {
