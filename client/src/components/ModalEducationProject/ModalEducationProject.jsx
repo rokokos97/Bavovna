@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ModalEducationProject.module.scss';
-import LongArrowIcon from '../../../svg/arrowIcons/LongArrowIcon/LongArrowIcon';
+import LongArrowIcon from '../svg/arrowIcons/LongArrowIcon/LongArrowIcon';
 
 const ModalEducationProject = ({handleConfirmModal}) => (
   <article className={styles.modalCookies} data-testid="ModalEducationProject">

@@ -7,14 +7,14 @@ import BavovnaBlock from './BavovnaTextBlock/BavovnaBlock';
 import NewsLettersBlock from './NewsLettersBlock/NewsLettersBlock';
 import BavovnaCoverImageBlock from './BavovnaCoverImageBlock/BavovnaCoverImageBlock';
 import CategoriesBlock from './CategoriesBlock/CategoriesBlock';
-import ModalCookies from '../../components/modal/modalContent/ModalCookies/ModalCookies';
 import Cookies from 'js-cookie';
 import {getCategoriesError, getCategoriesLoadingStatus} from '../../store/categorySlice';
 import {useSelector} from 'react-redux';
 import {getColorsError, getColorsLoadingStatus} from '../../store/colorsSlice';
 import {getCitiesError, getCitiesIsLoadingStatus} from '../../store/citiesSlice';
 import {getItemsError, getItemsLoadingStatus} from '../../store/itemsSlice';
-import ModalError from '../../components/modal/modalContent/ModalError/ModalError';
+import ModalError from '../../components/ModalError/ModalError';
+import ModalCookies from '../../components/ModalCookies/ModalCookies';
 import Loader from '../../components/Loader/Loader';
 // import ModalEducationProject from '../../components/modal/modalContent/ModalEducationProject/ModalEducationProject';
 // import sessionStorageService from '../../services/sessionStorage.service';
@@ -35,11 +35,11 @@ const MainPage = () => {
     const userConsent = Cookies.get('userConsent');
     if (!userConsent) {
       setShowCookiesModal(true);
-    }
     //    const userModal = sessionStorageService.getModalConfirm();
     //    if (!userModal) {
     //      setShowEducationModal(true);
     //    }
+    }
   }, []);
   useEffect(() => {
     if (categoriesError || colorsError || itemsError || citiesErrors) {

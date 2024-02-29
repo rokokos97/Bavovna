@@ -40,7 +40,7 @@
 
   & h3 {
     @include fonts($menu-1);
-    text-transform: uppercase;
+    font-size: 16px;
     padding-bottom: 2rem;
   }
 }
