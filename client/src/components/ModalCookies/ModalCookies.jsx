@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ModalCookies.module.scss';
-import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
+import CloseIcon from '../svg/CloseIcon/CloseIcon';
 
 const ModalCookies = ({handleCloseModal, handleConfirmModal}) => (
   <article className={styles.modalCookies} data-testid="ModalEducationProject">
