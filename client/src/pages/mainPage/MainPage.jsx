@@ -8,8 +8,6 @@ import NewsLettersBlock from './NewsLettersBlock/NewsLettersBlock';
 import BavovnaCoverImageBlock from './BavovnaCoverImageBlock/BavovnaCoverImageBlock';
 import CategoriesBlock from './CategoriesBlock/CategoriesBlock';
 import ModalCookies from '../../components/modal/modalContent/ModalCookies/ModalCookies';
-import {Modal} from '../../components/modal';
-import {showBodyOverflow, hideBodyOverflow} from '../../utils/modal.service';
 import Cookies from 'js-cookie';
 import {getCategoriesError, getCategoriesLoadingStatus} from '../../store/categorySlice';
 import {useSelector} from 'react-redux';
@@ -41,57 +39,36 @@ const MainPage = () => {
     const userModal = sessionStorageService.getModalConfirm();
     if (!userModal) {
       setShowEducationModal(true);
-      hideBodyOverflow();
     }
   }, []);
   useEffect(() => {
     if (categoriesError || colorsError || itemsError || citiesErrors) {
       setError(categoriesError || colorsError || itemsError || citiesErrors);
       setShowErrorModal(true);
-      hideBodyOverflow();
     }
   }, [categoriesError, colorsError, itemsError, citiesErrors]);
   const closeCookiesModal = () => {
     setShowCookiesModal(false);
   };
-  const closeModal = () => {
-    setShowEducationModal(false);
+  const closeErrorModal = () => {
     setShowErrorModal(false);
-    showBodyOverflow();
   };
   const confirmCookies = () => {
     Cookies.set('userConsent', 'true', {expires: 365});
     setShowCookiesModal(false);
-    showBodyOverflow();
   };
   const confirmModal = () => {
     sessionStorageService.setModalConfirm();
     setShowEducationModal(false);
-    showBodyOverflow();
   };
   return (
     <section className={styles.mainPage}>
       {
         (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
       }
-      <Modal
-        isOpen={showEducationModal}
-        handleCloseModal={closeModal}
-      >
-        <ModalEducationProject handleConfirmModal={confirmModal}/>
-      </Modal>
-      <Modal
-        isOpen={showErrorModal}
-        handleCloseModal={closeModal}
-      >
-        <ModalError error={error} handleCloseModal={closeModal}/>
-      </Modal>
-      <Modal
-        isOpen={showCookiesModal}
-        handleCloseModal={closeModal}
-      >
-        <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>
-      </Modal>
+      {showEducationModal && <ModalEducationProject handleConfirmModal={confirmModal}/>}
+      {showErrorModal && <ModalError error={error} handleCloseModal={closeErrorModal}/>}
+      {showCookiesModal && <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>}
       <NewCollectionBlock />
       <NewArrivalsBlock />
       <SaleBlock />

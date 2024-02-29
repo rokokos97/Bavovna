@@ -1,4 +1,4 @@
-@import "../../../../styles/variables.module";
+@import '../../../../styles/variables.module';
 .modalCookies {
   width: 61.4rem;
   height: 46.5rem;
@@ -7,12 +7,16 @@
   row-gap: 2rem;
   background: $gray-90;
   padding: 3.2rem;
-  position: absolute;
+  position: fixed;
   left: 8rem;
-  top: 20rem;
+  top: 19rem;
+  z-index: 100;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
   .modalCookies__text {
     width: fit-content;
-    @include fonts($body-2)
+    @include fonts($body-2);
   }
 }
 .modalCookies__title2 {
@@ -28,4 +32,3 @@
   align-items: center;
   column-gap: 1.6rem;
 }
-

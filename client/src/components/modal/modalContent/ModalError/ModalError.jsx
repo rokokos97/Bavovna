@@ -7,12 +7,12 @@ import AlertIcon from '../../../svg/AlertIcon/AlertIcon';
 const ModalError = ({handleCloseModal}) => (
   <div className={styles.ModalError} data-testid="ModalEducationProject">
     <div className={styles.container}>
-      <div className={styles.titleBlock}>
+      <div className={styles.registerForm__titleBlock}>
         <AlertIcon/>
         <p>Server Error</p>
       </div>
       <button
-        className={styles.closeButton}
+        className={styles.newsLetterBlock__closeButton}
         type='button'
         aria-label='close modal window'
         onClick={handleCloseModal}
