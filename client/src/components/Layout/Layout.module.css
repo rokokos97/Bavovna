@@ -8,7 +8,7 @@
 
 .marqueeContainer {
   width: 100%;
-  position: fixed;
+  position: fixed !important;
   bottom: 0;
   height: 4.9rem;
   padding: 1rem 0;

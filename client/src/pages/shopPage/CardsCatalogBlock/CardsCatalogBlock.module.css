@@ -111,5 +111,14 @@
     gap: 2.1rem;
   }
 }
+@media screen and (max-width: 1227px) {
+  .cards {
+    justify-content: center;
+    gap: 5rem;
+  }
+  .card {
+    width: 40%;
+  }
+}
 
 /*# sourceMappingURL=CardsCatalogBlock.module.css.map */
