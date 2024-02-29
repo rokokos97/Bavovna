@@ -119,36 +119,36 @@ const CreatorsPage = () => {
   ];
   return (
     <div className={styles.creatorsPage} data-testid="CreatorsPage">
-      <p className={styles.navigationBlock}>
+      <p className={styles.creatorsPage__navigationBlock}>
         <span>Home</span>
         <span> / </span>
         <span>Creators</span>
       </p>
-      <p className={styles.title}>Contact us</p>
-      <div className={styles.text}>
+      <p className={styles.creatorsPage__title}>Contact us</p>
+      <div className={styles.creatorsPage__text}>
         <p>We are always open to communication and welcome any questions or suggestions!</p>
         <p>Our project is the result of the diligent and creative work of a team of enthusiasts who strive to implement innovative</p>
         <p>ideas and introduce cutting-edge technologies.</p>
       </div>
-      <div className={styles.text}>
+      <div className={styles.creatorsPage__text}>
         <p>
           If you have questions, ideas for collaboration, or just want to learn
           more about our project, please don&apos;t hesitate to
         </p>
         <p>contact us. We are always ready for new challenges and interesting projects!</p>
       </div>
-      <p className={styles.title2}>
+      <p className={styles.creatorsPage__title2}>
         project team
       </p>
-      <div className={styles.membersBlock}>
+      <div className={styles.creatorsPage__membersBlock}>
         {data.map((col, index) =>
-          <div key={index} className={styles.column}>
-            <p className={styles.department}>{col.department}</p>
+          <div key={index} className={styles.creatorsPage__column}>
+            <p className={styles.creatorsPage__department}>{col.department}</p>
             {Object.values(col.members).map((member, index)=>
-              <div key={index} className={styles.member}>
-                <p className={styles.name}>{member.name}</p>
-                <p className={styles.mail} style={{display: `${!member.email&&'none'}`}}>{member.email}</p>
-                <div className={styles.social}>
+              <div key={index} className={styles.creatorsPage__member}>
+                <p className={styles.creatorsPage__name}>{member.name}</p>
+                <p className={styles.creatorsPage__mail} style={{display: `${!member.email&&'none'}`}}>{member.email}</p>
+                <div className={styles.creatorsPage__social}>
                   {member.social.linkedIn && <a target='_blank' href={member.social.linkedIn} rel="noreferrer"><LinkedinIcon/></a>}
                   {member.social.telegram && <a target='_blank' href={member.social.telegram} rel="noreferrer"><TelegramIcon/></a>}
                   {member.social.behance && <a target='_blank' href={member.social.behance} rel="noreferrer"><BehanceIcon/></a>}

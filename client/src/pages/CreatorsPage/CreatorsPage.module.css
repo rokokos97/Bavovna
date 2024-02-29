@@ -3,14 +3,14 @@
   margin: 1.6rem auto 17rem;
 }
 
-.navigationBlock {
+.creatorsPage__navigationBlock {
   font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
   text-transform: none;
 }
 
-.newsLetterBlock__title2 {
+.creatorsPage__title {
   margin-top: 2.4rem;
   margin-bottom: 2rem;
   font-family: "Fixel Display Medium";
@@ -19,14 +19,14 @@
   text-transform: uppercase;
 }
 
-.modalCookies__text {
+.creatorsPage__text {
   font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
   margin-bottom: 1.6rem;
 }
 
-.title2 {
+.creatorsPage__title2 {
   margin-top: 4rem;
   margin-bottom: 3.2rem;
   font-family: "Fixel Display Bold";
@@ -35,51 +35,51 @@
   text-transform: uppercase;
 }
 
-.membersBlock {
+.creatorsPage__membersBlock {
   display: grid;
   grid-template-columns: repeat(4, 30.3rem);
   column-gap: 2.4rem;
 }
 
-.column:nth-child(5) {
+.creatorsPage__column:nth-child(5) {
   margin-top: -6rem;
   grid-column: 4;
   grid-row: 2;
 }
 
-.column {
+.creatorsPage__column {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
 }
-.column .department {
+.creatorsPage__column .creatorsPage__department {
   font-family: "Fixel Text Medium";
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
 }
-.column .member {
+.creatorsPage__column .creatorsPage__member {
   display: flex;
   flex-direction: column;
   row-gap: 1.2rem;
 }
-.column .member .name {
+.creatorsPage__column .creatorsPage__member .creatorsPage__name {
   font-family: "Fixel Text Semibold";
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
 }
-.column .member .mail {
+.creatorsPage__column .creatorsPage__member .creatorsPage__mail {
   font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
-.column .member .social {
+.creatorsPage__column .creatorsPage__member .creatorsPage__social {
   display: flex;
   flex-direction: row;
   column-gap: 0.8rem;
 }
-.column .member .social .iconsBlock {
+.creatorsPage__column .creatorsPage__member .creatorsPage__social .creatorsPage__iconsBlock {
   display: flex;
   flex-direction: row;
   column-gap: 0.8rem;
