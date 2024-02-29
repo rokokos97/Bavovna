@@ -258,15 +258,15 @@
   text-transform: uppercase;
   color: #3a7f66;
 }
-.checkOutUserInfoBlock__buttonLeft:active svg path {
-  fill: #15503a;
+.checkOutUserInfoBlock__buttonLeft:focus svg path {
+  fill: #081e16;
 }
-.checkOutUserInfoBlock__buttonLeft:active span {
+.checkOutUserInfoBlock__buttonLeft:focus span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #15503a;
+  color: #081e16;
 }
 .checkOutUserInfoBlock__buttonLeft:disabled {
   background: transparent;
@@ -379,15 +379,15 @@
   text-transform: uppercase;
   color: #3a7f66;
 }
-.checkOutUserInfoBlock__buttonRight:active svg path {
-  fill: #15503a;
+.checkOutUserInfoBlock__buttonRight:focus svg path {
+  fill: #081e16;
 }
-.checkOutUserInfoBlock__buttonRight:active span {
+.checkOutUserInfoBlock__buttonRight:focus span {
   font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-  color: #15503a;
+  color: #081e16;
 }
 .checkOutUserInfoBlock__buttonRight:disabled {
   background: transparent;
