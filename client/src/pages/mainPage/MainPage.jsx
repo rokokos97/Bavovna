@@ -39,6 +39,7 @@ const MainPage = () => {
     //    if (!userModal) {
     //      setShowEducationModal(true);
     //    }
+    }
   }, []);
   useEffect(() => {
     if (categoriesError || colorsError || itemsError || citiesErrors) {
