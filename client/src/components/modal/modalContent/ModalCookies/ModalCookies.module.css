@@ -3,11 +3,15 @@
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
-  background: #d7d7d7;
+  background: #f5f5f5;
   padding: 2.4rem;
-  position: absolute;
+  position: fixed;
   right: 7rem;
   bottom: 9.2rem;
+  z-index: 1001;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
 }
 
 .modalCookies__container {
@@ -23,7 +27,7 @@
 }
 
 .modalCookies__closeButton {
-  background: #d7d7d7;
+  background: inherit;
 }
 
 .modalCookies__button {

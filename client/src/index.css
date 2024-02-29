@@ -59,13 +59,14 @@
   font-display: swap;
 }
 html {
+  display: flex;
   height: 100%;
   font-size: 10px;
 }
 
 body {
   height: 100%;
-  font-family: "Fixel", "Fixel Display", "Fixel Display Extra Bold", "Fixel Display Bold", "Fixel Display Semibold", "Fixel Display Regular", "Fixel Text Semibold", "Fixel Text Regular", "Fixel Display Medium", "Fixel Text Medium", "Roboto", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Fixel", "Fixel Display", "Fixel Display Extra Bold", "Fixel Display Bold", "Fixel Display Semibold", "Fixel Display Regular", "Fixel Text Semibold", "Fixel Text Regular", "Fixel Display Medium", "Fixel Text Medium", Verdana, Arial, Trebuchet MS, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
