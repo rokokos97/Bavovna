@@ -85,7 +85,8 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
   houseNumber: Yup.string()
       .min(1, 'House number must be at least 1 character long')
       .max(5, 'House number must be at most 5 characters long')
-      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
+      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers, latin letters and dont include spaces or hyphens')
+      .matches(/^[0-9A-Za-z]+(\/[0-9A-Za-z]+)?$/, 'House number format must be number of number/number')
       .required('House number is required'),
   flatNumber: Yup.string()
       .min(1, 'Flat number must be at least 1 character long')
@@ -94,9 +95,10 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
 });
 export const validationSchemaNPDeliveryInternational = Yup.object().shape({
   intDeliveryAddress: Yup.string()
-      .matches(/^[a-zA-Z0-9.,/ ]*$/, 'Address must consist only numbers and latin letters')
-      .min(40, 'Address must be at least 40 characters long')
-      .max(100, 'Address must be at most 100 characters long')
+      .matches(/^[a-zA-Z0-9.,/ ]*$/, 'Address must consist only numbers and latin letters and include postal code, city, street and house number')
+      .min(40, 'Address must be at least 40 characters long and include postal code, city, street and house number')
+      .max(100, 'Address must be at most 100 characters long and include postal code, city, street and house number')
+      .matches(/^(?!\s*$).+/, 'Address must not be empty and include postal code, city, street and house number')
       .required('Address is required'),
 });
 export const validationSchemaPromoCode = Yup.object().shape({
