@@ -79,7 +79,6 @@ export const validationSchemaNPDeliveryAddress = Yup.object().shape({
   }),
   street: Yup.string()
       .matches(streetNameRegex, 'Street name must start with a capital latin letter, can include one space or hyphen and must be up to two words')
-      .matches(/^[0-9A-Za-z/]+S?$/, 'House number must consist only numbers and latin letters')
       .min(1, 'Street name must be at least 1 character long')
       .max(30, 'Street name must be at most 30 characters long')
       .required('House number is required'),
