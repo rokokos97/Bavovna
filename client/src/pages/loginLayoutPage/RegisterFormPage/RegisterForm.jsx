@@ -87,14 +87,13 @@ const RegisterForm = () => {
           </div> : null}
       </section>
       <RegisterFormBlock formik={formik} googleRegister={googleRegister}/>
-      <p>
-        Already have an account?{'  '}
+      <p className={styles.toLoginForm}>
+        Already have an account?
         <NavLink
           to="/login"
           role="button"
         >
-          {' '}
-          <span>Sign in</span>
+          <span>&nbsp;Sign in</span>
         </NavLink>
       </p>
       <Modal

@@ -5,4 +5,13 @@
 .loginForm__titleBlock {
   @include form-title-block();
 }
+.toRegisterForm {
+  display: flex;
+  justify-content: center;
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 

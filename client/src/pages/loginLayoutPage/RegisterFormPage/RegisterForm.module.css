@@ -60,4 +60,12 @@
   color: #2ab66a;
 }
 
+.toLoginForm {
+  display: flex;
+  justify-content: center;
+}
+.toLoginForm a:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=RegisterForm.module.css.map */
