@@ -4,7 +4,6 @@
 }
 
 .creatorsPage__navigationBlock {
-  font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
   text-transform: none;
@@ -13,14 +12,12 @@
 .creatorsPage__title {
   margin-top: 2.4rem;
   margin-bottom: 2rem;
-  font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
 .creatorsPage__text {
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
   margin-bottom: 1.6rem;
@@ -29,7 +26,6 @@
 .creatorsPage__title2 {
   margin-top: 4rem;
   margin-bottom: 3.2rem;
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -53,7 +49,6 @@
   row-gap: 2rem;
 }
 .creatorsPage__column .creatorsPage__department {
-  font-family: "Fixel Text Medium";
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
@@ -64,13 +59,11 @@
   row-gap: 1.2rem;
 }
 .creatorsPage__column .creatorsPage__member .creatorsPage__name {
-  font-family: "Fixel Text Semibold";
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
 }
 .creatorsPage__column .creatorsPage__member .creatorsPage__mail {
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }

@@ -5,7 +5,6 @@
   justify-content: center;
   background-color: #5a9b83;
   color: #fafafa;
-  font-family: "Fixel Display Regular";
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
@@ -33,7 +32,6 @@
 }
 
 .newsLetterBlock__title2 {
-  font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -42,7 +40,6 @@
 .content {
   width: 51.8rem;
   text-align: center;
-  font-family: "Fixel Display Regular";
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
@@ -70,7 +67,6 @@
   background: #000000;
 }
 .newsLetterBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -131,7 +127,6 @@
   color: #9b9b9b;
 }
 .newsLetterBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

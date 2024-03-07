@@ -8,7 +8,6 @@
 }
 .headerContent__banner p {
   color: #fafafa;
-  font-family: "Fixel Display Bold";
   font-size: 8px;
   line-height: 110%;
   text-transform: uppercase;
@@ -50,7 +49,6 @@
   pointer-events: none;
 }
 .headerContent__headerNavBar span {
-  font-family: "Fixel Display Regular";
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
@@ -66,7 +64,6 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: "Fixel Display Medium";
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
@@ -94,7 +91,6 @@
   align-items: center;
   gap: 0.4rem;
   background: transparent;
-  font-family: "Fixel Display Medium";
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;

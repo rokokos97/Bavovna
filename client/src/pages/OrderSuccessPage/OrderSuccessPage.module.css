@@ -15,7 +15,6 @@
 
 .orderCompletePage__title {
   color: #1a6449;
-  font-family: "Fixel Display Regular";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -25,7 +24,6 @@
   display: flex;
   flex-direction: row;
   column-gap: 10.8rem;
-  font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
@@ -34,7 +32,6 @@
 .orderCompletePage__textBlock {
   display: flex;
   flex-direction: column;
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
 }
@@ -59,7 +56,6 @@
   background: #000000;
 }
 .orderCompletePage__buttonsBlock a:first-child span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -120,7 +116,6 @@
   color: #9b9b9b;
 }
 .orderCompletePage__buttonsBlock a:first-child span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -153,7 +148,6 @@
   border: 0.1rem solid #000000;
 }
 .orderCompletePage__buttonsBlock a:last-child span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -214,7 +208,6 @@
   color: #9b9b9b;
 }
 .orderCompletePage__buttonsBlock a:last-child span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

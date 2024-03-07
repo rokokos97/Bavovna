@@ -23,7 +23,6 @@
   margin: 0 auto;
   color: #000000;
   text-wrap: none;
-  font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -44,7 +43,6 @@
   border: 0.1rem solid #000000;
 }
 .saleBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -105,7 +103,6 @@
   color: #9b9b9b;
 }
 .saleBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

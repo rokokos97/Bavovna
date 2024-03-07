@@ -11,7 +11,6 @@
 }
 
 .navigationBlock__navigation {
-  font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
   text-transform: none;
@@ -26,7 +25,6 @@
 
 .navigationBlock__title {
   width: 100%;
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -38,7 +36,6 @@
   cursor: pointer;
   padding: 1.2rem 1.6rem;
   text-align: start;
-  font-family: "Fixel Display Regular";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -55,7 +52,6 @@
   cursor: pointer;
   padding: 1.2rem 1.6rem;
   text-align: start;
-  font-family: "Fixel Display Regular";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;

@@ -44,21 +44,18 @@
 .newsLetterBlock__title2 {
   max-width: 28rem;
   padding-bottom: 0.8rem;
-  font-family: "Fixel Display Regular";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
   border-bottom: 0.1rem solid #000000;
 }
 .newsLetterBlock__title2 span {
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
 .modalCookies__text {
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
   max-width: 60rem;

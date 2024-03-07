@@ -67,9 +67,8 @@
 
 .itemPreviewCard__statusText {
   color: white;
-  font-size: 1.8rem;
-  font-family: Fixel Display, serif;
-  font-weight: 500;
+  font-size: 18px;
+  line-height: 110%;
   text-transform: uppercase;
   word-wrap: break-word;
 }
@@ -87,13 +86,11 @@
 }
 .itemPreviewCard__description span {
   padding-top: 0.8rem;
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
 }
 .itemPreviewCard__description p:last-child {
   padding-top: 0.8rem;
-  font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;

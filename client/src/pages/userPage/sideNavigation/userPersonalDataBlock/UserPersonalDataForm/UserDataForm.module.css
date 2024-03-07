@@ -5,7 +5,6 @@
 }
 
 .userDataForm__title {
-  font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -41,7 +40,6 @@
 }
 
 .userDataForm__deliveryTitle {
-  font-family: "Fixel Text Medium";
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
@@ -61,7 +59,6 @@
   flex-grow: 1;
 }
 .userDataForm__deliveryBlockColumn .userDataForm__blockLabel {
-  font-family: "Fixel Text Regular";
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
@@ -82,7 +79,6 @@
   background: #000000;
 }
 .userDataForm__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -143,7 +139,6 @@
   color: #9b9b9b;
 }
 .userDataForm__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
