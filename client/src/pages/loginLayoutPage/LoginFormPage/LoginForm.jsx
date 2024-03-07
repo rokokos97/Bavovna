@@ -14,15 +14,14 @@ const LoginForm = () => {
         </span>
       </section>
       <LoginFormBlock/>
-      <p>
-        Don’t have an account?{'  '}
+      <p className={styles.toRegisterForm}>
+        Don’t have an account?
         <NavLink
           to="signUp"
           aria-label='go to sign up page'
           role="button"
         >
-          {' '}
-          <span>Sign up</span>
+          <span>&nbsp;Sign up</span>
         </NavLink>
       </p>
     </article>
