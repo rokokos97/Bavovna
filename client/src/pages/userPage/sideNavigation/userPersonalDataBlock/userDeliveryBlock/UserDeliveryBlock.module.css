@@ -3,7 +3,6 @@
 }
 
 .userDeliveryBlock__deliveryTitle {
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -18,7 +17,6 @@
 }
 
 .userDeliveryBlock__blockLabel {
-  font-family: "Fixel Text Regular";
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
@@ -46,7 +44,6 @@
   background: #000000;
 }
 .userDeliveryBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -107,7 +104,6 @@
   color: #9b9b9b;
 }
 .userDeliveryBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

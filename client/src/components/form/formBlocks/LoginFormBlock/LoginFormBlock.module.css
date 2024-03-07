@@ -21,7 +21,6 @@
   background: #000000;
 }
 .loginFormBlock .loginFormBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -82,7 +81,6 @@
   color: #9b9b9b;
 }
 .loginFormBlock .loginFormBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -123,7 +121,6 @@
   border: 0.1rem solid #000000;
 }
 .loginFormBlock .loginFormBlock__googleButton span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -184,7 +181,6 @@
   color: #9b9b9b;
 }
 .loginFormBlock .loginFormBlock__googleButton span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -217,7 +213,6 @@
 }
 .loginFormBlock .divider span {
   color: #000000;
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
@@ -230,7 +225,6 @@
 }
 .loginFormBlock .loginFormBlock__forgotPassword {
   display: block;
-  font-family: "Fixel Display Semibold";
   font-size: 12px;
   line-height: 110%;
   color: #4a4a4a;
@@ -256,7 +250,6 @@
   background: #000000;
 }
 .loginFormBlock .loginFormBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -317,7 +310,6 @@
   color: #9b9b9b;
 }
 .loginFormBlock .loginFormBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -339,7 +331,6 @@
   display: flex;
   align-self: stretch;
   background: #dfc5c5;
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
@@ -353,7 +344,6 @@
   display: flex;
   align-self: stretch;
   background: #a9dfcb;
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
@@ -412,7 +402,6 @@
   padding: 1.6rem 2.4rem;
 }
 .loginFormBlock[type="1"] .loginFormBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -485,7 +474,6 @@
   padding: 1.6rem 2.4rem;
 }
 .loginFormBlock[type="1"] .loginFormBlock__googleButton span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

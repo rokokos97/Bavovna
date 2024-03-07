@@ -68,10 +68,7 @@
 }
 .itemPreviewCard__statusText {
   color: white;
-  font-size: 1.8rem;
-  font-family: Fixel Display, serif;
-  font-weight: 500;
-  text-transform: uppercase;
+  @include fonts($headline-8);
   word-wrap: break-word;
 }
 .itemPreviewCard__heart {

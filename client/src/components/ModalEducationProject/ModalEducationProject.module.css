@@ -16,13 +16,11 @@
 }
 .modalCookies .modalCookies__text {
   width: fit-content;
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
 }
 
 .modalCookies__title2 {
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -42,7 +40,6 @@
   background: #000000;
 }
 .modalCookies__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -103,7 +100,6 @@
   color: #9b9b9b;
 }
 .modalCookies__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

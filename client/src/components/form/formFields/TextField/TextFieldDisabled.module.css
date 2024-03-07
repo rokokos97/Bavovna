@@ -14,7 +14,6 @@
   gap: 0.4rem;
   align-self: stretch;
   color: #d7d7d7;
-  font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
 }
@@ -42,7 +41,6 @@
   flex: 1 0 0;
   align-self: stretch;
   background: #fafafa;
-  font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
 }

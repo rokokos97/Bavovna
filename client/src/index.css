@@ -1,63 +1,3 @@
-@font-face {
-  font-family: "Fixel Display Extra Bold";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-ExtraBold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Display Bold";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-Bold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Display Semibold";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-SemiBold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Display Medium";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-Medium.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Display Regular";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Display Light";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-Light.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Text Semibold";
-  src: url("../public/fonts/fixelText/FixelText-SemiBold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Text Regular";
-  src: url("../public/fonts/fixelText/FixelText-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Text Medium";
-  src: url("../public/fonts/fixelText/FixelText-Medium.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel Display";
-  src: url("../public/fonts/fixelDisplay/FixelDisplay-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel";
-  src: url("../public/fonts/fixelVariable/FixelVariable.ttf") format("ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Fixel-Text";
-  src: url("../public/fonts/fixelText/FixelText-Regular.woff2") format("woff2");
-  font-display: swap;
-}
 html {
   height: 100%;
   font-size: 10px;
@@ -65,7 +5,7 @@ html {
 
 body {
   height: 100%;
-  font-family: "Fixel", "Fixel Display", "Fixel Display Extra Bold", "Fixel Display Bold", "Fixel Display Semibold", "Fixel Display Regular", "Fixel Text Semibold", "Fixel Text Regular", "Fixel Display Medium", "Fixel Text Medium", Verdana, Arial, Trebuchet MS, sans-serif;
+  font-family: Poppins, Verdana, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -88,7 +28,6 @@ body {
   padding-left: 1.4rem !important;
 }
 .custom__single-value {
-  font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
   color: #868686 !important;
@@ -109,7 +48,6 @@ body {
   box-sizing: border-box !important;
 }
 .custom__option {
-  font-family: "Fixel Display Regular";
   font-size: 16px;
   line-height: 140%;
   font-size: 16px !important;

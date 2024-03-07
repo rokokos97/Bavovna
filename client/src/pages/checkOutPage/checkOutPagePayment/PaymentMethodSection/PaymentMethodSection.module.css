@@ -8,7 +8,6 @@
 
 .userPaymentMethodsList__title {
   text-align: start;
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -40,7 +39,6 @@
   display: flex;
   flex-direction: row;
   width: 30rem;
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
   text-align: start;
@@ -65,7 +63,6 @@
   padding-left: 0;
 }
 .userPaymentMethodsList__buttonLeft span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -129,7 +126,6 @@
   fill: #000000;
 }
 .userPaymentMethodsList__buttonLeft span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -139,7 +135,6 @@
   fill: #3a7f66;
 }
 .userPaymentMethodsList__buttonLeft:hover span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -149,7 +144,6 @@
   fill: #081e16;
 }
 .userPaymentMethodsList__buttonLeft:focus span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -162,7 +156,6 @@
   fill: #868686;
 }
 .userPaymentMethodsList__buttonLeft:disabled span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

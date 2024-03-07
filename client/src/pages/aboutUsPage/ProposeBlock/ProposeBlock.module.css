@@ -33,14 +33,12 @@
   max-width: 28rem;
   width: 100%;
   padding-bottom: 0.8rem;
-  font-family: "Fixel Display Regular";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
   border-bottom: 0.1rem solid #000000;
 }
 .newsLetterBlock__title2 span {
-  font-family: "Fixel Display Bold";
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -57,7 +55,6 @@
 
 .modalCookies__text {
   width: 100%;
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
@@ -91,7 +88,6 @@
   background: #000000;
 }
 .newCollectionBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -152,7 +148,6 @@
   color: #9b9b9b;
 }
 .newCollectionBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

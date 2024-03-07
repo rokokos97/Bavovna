@@ -6,7 +6,6 @@
 
 .emptyBlock__description {
   text-align: start;
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
 }
@@ -25,7 +24,6 @@
   background: #000000;
 }
 .emptyBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -86,7 +84,6 @@
   color: #9b9b9b;
 }
 .emptyBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

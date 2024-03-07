@@ -21,7 +21,6 @@
 .newCollectionBlock__title1 {
   color: #000000;
   word-wrap: break-word;
-  font-family: "Fixel Display Extra Bold";
   font-size: 56px;
   line-height: 150%;
   letter-spacing: 4%;
@@ -31,7 +30,6 @@
 .newCollectionBlock__text {
   width: 57.8rem;
   color: #000000;
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
   word-wrap: break-word;
@@ -52,7 +50,6 @@
   background: #000000;
 }
 .newCollectionBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -113,7 +110,6 @@
   color: #9b9b9b;
 }
 .newCollectionBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

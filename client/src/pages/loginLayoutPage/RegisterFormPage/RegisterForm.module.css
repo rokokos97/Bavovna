@@ -4,12 +4,10 @@
   gap: 2.4rem;
 }
 .registerForm p {
-  font-family: "Fixel Text Regular";
   font-size: 16px;
   line-height: 110%;
 }
 .registerForm p span {
-  font-family: "Fixel Display Semibold";
   font-size: 16px;
   line-height: 110%;
 }
@@ -21,21 +19,18 @@
   gap: 1.6rem;
 }
 .registerForm__titleBlock p {
-  font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
   color: #040404;
 }
 .registerForm__titleBlock span {
-  font-family: "Fixel Text Regular";
   font-size: 18px;
   line-height: 140%;
   color: #4a4a4a;
 }
 
 .loginFormBlock__forgotPassword {
-  font-family: "Fixel Display Semibold";
   font-size: 12px;
   line-height: 110%;
   color: #4a4a4a;

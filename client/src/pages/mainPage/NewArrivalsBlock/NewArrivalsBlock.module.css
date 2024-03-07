@@ -14,7 +14,6 @@
   margin-bottom: 4rem;
 }
 .newArrivalsBlock__titleSection .newArrivalsBlock__title2 {
-  font-family: "Fixel Display Medium";
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -40,7 +39,6 @@
   border: none;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -104,7 +102,6 @@
   fill: #000000;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -114,7 +111,6 @@
   fill: #3a7f66;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:hover span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -124,7 +120,6 @@
   fill: #081e16;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:focus span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -137,7 +132,6 @@
   fill: #868686;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled span {
-  font-family: "Fixel Display Semibold";
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
