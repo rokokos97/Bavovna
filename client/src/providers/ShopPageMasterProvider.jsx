@@ -26,11 +26,12 @@ export const ShopPageMasterProvider = ({children}) => {
   const colors = useSelector(getColors());
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
+  const [sortedItems, setSortedItems] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState(INITIAL_FILTERS);
   const [statusKey, setStatusKey] = useState(query.status);
   const [isDiscountVisible, setIsDiscountVisible] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (items) setFilteredItems([...items]);
   }, [items]);
 
@@ -40,16 +41,20 @@ export const ShopPageMasterProvider = ({children}) => {
 
   const onSortItems = (sortOrder) => {
     if (filteredItems && sortOrder === 'lowToHigh') {
-      setFilteredItems(items.toSorted((a, b) => a.price - b.price));
+      setSortedItems([]);
+      setFilteredItems(filteredItems.toSorted((a, b) => a.price - b.price));
     }
     if (filteredItems && sortOrder === 'highToLow') {
-      setFilteredItems(items.toSorted((a, b) => b.price - a.price));
+      setSortedItems([]);
+      setFilteredItems(filteredItems.toSorted((a, b) => b.price - a.price));
     }
     if (filteredItems && sortOrder === 'best') {
-      setFilteredItems(items.filter((item) => item.status === 'sold-out'));
+      setSortedItems(
+          filteredItems.filter((item) => item.status === 'sold-out'),
+      );
     }
     if (filteredItems && sortOrder === 'new') {
-      setFilteredItems(items.filter((item) => item.status === 'new'));
+      setSortedItems(filteredItems.filter((item) => item.status === 'new'));
     }
   };
 
@@ -101,24 +106,26 @@ export const ShopPageMasterProvider = ({children}) => {
 
   useEffect(() => {
     if (items && isFilter) {
-      setFilteredItems(items.filter((item) => {
-        return (
-          (selectedFilters.category.length === 0 ||
-            selectedFilters.category.some((category) =>
-              item.category.includes(category),
-            )) &&
-          (selectedFilters.size.length === 0 ||
-            selectedFilters.size.some((size) => item.size.includes(size))) &&
-          (selectedFilters.color.length === 0 ||
-            selectedFilters.color.some((color) =>
-              item.color.includes(color),
-            )) &&
-          (selectedFilters.status.length === 0 ||
-            selectedFilters.status.some((status) =>
-              item.status.includes(status),
-            ))
-        );
-      }));
+      setFilteredItems(
+          items.filter((item) => {
+            return (
+              (selectedFilters.category.length === 0 ||
+              selectedFilters.category.some((category) =>
+                item.category.includes(category),
+              )) &&
+            (selectedFilters.size.length === 0 ||
+              selectedFilters.size.some((size) => item.size.includes(size))) &&
+            (selectedFilters.color.length === 0 ||
+              selectedFilters.color.some((color) =>
+                item.color.includes(color),
+              )) &&
+            (selectedFilters.status.length === 0 ||
+              selectedFilters.status.some((status) =>
+                item.status.includes(status),
+              ))
+            );
+          }),
+      );
       setStatusKey(undefined);
     }
   }, [selectedFilters, items]);
@@ -128,6 +135,7 @@ export const ShopPageMasterProvider = ({children}) => {
       value={{
         isFilter,
         filteredItems,
+        sortedItems,
         categories,
         colors,
         selectedFilters,

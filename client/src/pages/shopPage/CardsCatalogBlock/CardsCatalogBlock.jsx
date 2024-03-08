@@ -7,7 +7,7 @@ import styles from './CardsCatalogBlock.module.scss';
 import ArrowBackIcon from '../../../components/svg/arrowIcons/ArrowBackIcon/ArrowBackIcon';
 
 const CardsCatalogBlock = () => {
-  const {filteredItems, isFilter} = useDataShopPage();
+  const {filteredItems, sortedItems, isFilter} = useDataShopPage();
   const [items, setItems] = useState([]);
   const {searchValue} = useContext(SearchContext);
   const itemsPerPage = 9;
@@ -20,8 +20,11 @@ const CardsCatalogBlock = () => {
 
 
   useEffect(() => {
-    if (filteredItems) setItems([...filteredItems]);
-  }, [filteredItems]);
+    if (sortedItems) {
+      return setItems([...sortedItems]);
+    }
+    setItems([...filteredItems]);
+  }, [filteredItems, sortedItems]);
 
 
   useEffect(() => {
