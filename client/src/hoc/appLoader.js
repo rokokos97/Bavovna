@@ -3,7 +3,7 @@ import {uploadItemList} from '../store/itemsSlice';
 import PropTypes from 'prop-types';
 import {fetchCategoriesList} from '../store/categorySlice';
 import {fetchColorsList} from '../store/colorsSlice';
-import {getIsLoggedIn, loadUser} from '../store/userSlice';
+import {getIsLoggedIn, fetchUserData} from '../store/userSlice';
 import {useEffect} from 'react';
 import {uploadCitiesList} from '../store/citiesSlice';
 
@@ -18,7 +18,7 @@ const AppLoader = ({children}) => {
   }, []);
   useEffect(() => {
     if (isLoggedIn) {
-      dispatch(loadUser());
+      dispatch(fetchUserData());
     }
   }, [isLoggedIn]);
   return children;

@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import PropTypes from 'prop-types';
-import {updateUser} from '../store/userSlice';
+import {updateUserData} from '../store/userSlice';
 
 const useChangeFavorite = (user, id) => {
   const dispatch = useDispatch();
@@ -17,9 +17,9 @@ const useChangeFavorite = (user, id) => {
   const handleIsFavorite = (() => {
     if (user) {
       if (isFavorite) {
-        dispatch(updateUser({...user, favorite: user.favorite.filter((item) => item !== id)}));
+        dispatch(updateUserData({...user, favorite: user.favorite.filter((item) => item !== id)}));
       } else {
-        dispatch(updateUser({...user, favorite: [...user.favorite, id]}));
+        dispatch(updateUserData({...user, favorite: [...user.favorite, id]}));
       }
     } else {
       navigate('/logIn');
