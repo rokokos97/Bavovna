@@ -52,7 +52,7 @@ export const signUpWithGoogle = createAsyncThunk(
     },
 );
 export const signInWithGoogle = createAsyncThunk(
-    'user/logInWithGoogle',
+    'user/signInWithGoogle',
     async (userData, {rejectWithValue}) => {
       const {email} = userData;
       try {
