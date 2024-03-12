@@ -121,3 +121,47 @@
   display: flex;
   align-items: center;
 }
+
+@media (min-width: 481px) and (max-width: 768px){
+  .footer{
+    padding: 3.2rem;
+  }
+
+  .footerTop{
+    height: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .footerTopLeft{
+    width: 100%;
+  }
+
+  .footerTopRight{
+    flex-direction: row;
+    margin-bottom: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer{
+    padding: 2.4rem 1.4rem;
+  }
+
+  .footerTop{
+    display: block;
+    height: 100%;
+
+    & h3{
+      padding-bottom: 1.6rem;
+    }
+  }
+
+  .footerTopLeft{
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .footerList{
+    flex-direction: row;
+  }
+}

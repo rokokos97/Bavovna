@@ -9,3 +9,10 @@
   min-height: 100%;
 }
 
+@media (min-width: 320px) and (max-width: 768px) {
+  .App{
+    min-width: 32rem;
+    width: 100%;
+  }
+}
+
