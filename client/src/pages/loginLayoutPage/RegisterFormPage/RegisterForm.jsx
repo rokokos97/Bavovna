@@ -18,6 +18,8 @@ const RegisterForm = () => {
   const error = useSelector(getError);
   const response = useSelector(getResponse);
   const navigate = useNavigate();
+  const [isRegularSignUp, setIsRegularSignUp] = useState(false);
+  const [isGoogleSignUp, setIsGoogleSignUp] = useState(false);
   const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
   const [email, setEmail] = useState(null);
   const formik = useFormik({
@@ -31,14 +33,16 @@ const RegisterForm = () => {
     },
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
-      setIsLoading(true);
+      setIsRegularSignUp(true);
+      setIsGoogleSignUp(false);
       setEmail(values.email);
-      dispatch(signUpUser({...values, email: values.email.toLowerCase()}));
+      dispatch(signUpUser({...values, email: values.email.toLowerCase()})).then(()=>{
+        setIsRegularSignUp(true);
+      });
     },
   });
   const googleRegister = useGoogleLogin({
     onSuccess: (tokenResponse) => {
-      setIsLoading(true);
       const accessToken = tokenResponse.access_token;
       googleService.get(accessToken).then((userInfo) => {
         dispatch(signUpWithGoogle({
@@ -52,7 +56,7 @@ const RegisterForm = () => {
   const closeModal = () => {
     setShowVerifyEmailModal(false);
     showBodyOverflow();
-    navigate('/shop');
+    navigate('/signIn');
   };
   useEffect(()=>{
     if (response) {
@@ -79,11 +83,11 @@ const RegisterForm = () => {
             <p>{transformErrorMessage[error.message]}</p>
           </div> : null}
       </section>
-      <RegisterFormBlock formik={formik} googleRegister={googleRegister}/>
+      <RegisterFormBlock formik={formik} googleRegister={googleRegister} isRegularSignUp={isRegularSignUp} isGoogleSignUp={isGoogleSignUp}/>
       <p className={styles.toLoginForm}>
         Already have an account?
         <NavLink
-          to="/login"
+          to="/signIn"
           role="button"
         >
           <span>&nbsp;Sign in</span>

@@ -42,7 +42,7 @@ const LoginFormBlock = ({type}) => {
       setIsLoadingGoogle(false);
       setIsRegularLogin(true);
       dispatch(signInUser(values)).then((response)=>{
-        response && navigate(redirectPath, {replace: true});
+        response.type=== 'user/signIn/fulfilled'&& navigate(redirectPath, {replace: true});
         setIsRegularLogin(false);
       });
       formik.resetForm();
@@ -55,7 +55,7 @@ const LoginFormBlock = ({type}) => {
           .get(accessToken)
           .then((userInfo) => {
             dispatch(signInWithGoogle(userInfo)).then((response)=>{
-              response && navigate(redirectPath, {replace: true});
+              response.type=== 'user/signInWithGoogle/fulfilled'&& navigate(redirectPath, {replace: true});
               setIsLoadingGoogle(false);
             });
           });
