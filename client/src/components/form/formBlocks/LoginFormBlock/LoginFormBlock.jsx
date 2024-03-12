@@ -7,30 +7,30 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
 import {validationSchemaLoginForm} from '../../../../utils/validationSchema';
 import {
-  clearUserResponse,
-  getIsLoggedIn,
-  getResponse, getUserLoadingStatus,
-  loginWithGoogle,
-  logInWithPassword,
+  getUserLoadingStatus,
+  signInWithGoogle,
+  signInUser,
+  getError, userClearResponse,
 } from '../../../../store/userSlice';
 import {useGoogleLogin} from '@react-oauth/google';
 import googleService from '../../../../services/google.service';
-import transformErrorMessage from '../../../../utils/generateErrorMessage';
 import {useLocation} from 'react-router-dom';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 import PropTypes from 'prop-types';
+import generateErrorMessage from '../../../../utils/generateErrorMessage';
 
 
 const LoginFormBlock = ({type}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const response = useSelector(getResponse);
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const authError = useSelector(getError);
   const isLoading = useSelector(getUserLoadingStatus);
   const [isRegularLogin, setIsRegularLogin] = useState(false);
   const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
   const location = useLocation();
+  const redirectPath = location.pathname ==='/cart/checkoutUserInfo' ? '/cart/checkoutUserInfo' : '/shop/';
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -41,17 +41,24 @@ const LoginFormBlock = ({type}) => {
     onSubmit: (values) => {
       setIsLoadingGoogle(false);
       setIsRegularLogin(true);
-      dispatch(logInWithPassword({payload: values}));
+      dispatch(signInUser(values)).then(()=>{
+        setIsLoadingGoogle(false);
+        navigate(redirectPath);
+      });
+      formik.resetForm();
     },
   });
-
+  console.log('location', location);
   const googleLoginHook = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
       googleService
           .get(accessToken)
           .then((userInfo) => {
-            dispatch(loginWithGoogle(userInfo));
+            dispatch(signInWithGoogle(userInfo)).then(()=>{
+              setIsLoadingGoogle(false);
+              navigate(redirectPath);
+            });
           });
     },
   });
@@ -61,25 +68,22 @@ const LoginFormBlock = ({type}) => {
     googleLoginHook();
   };
   useEffect(() => {
-    if (response) {
-      dispatch(clearUserResponse());
+    const message = authError ? generateErrorMessage[authError.message]:null;
+    console.log('message', message, 'authError', authError);
+    setErrorMessage(message);
+  }, [authError]);
+
+  useEffect(() => {
+    if (errorMessage) {
+      setErrorMessage(null);
+      dispatch(userClearResponse());
     }
-    if (isLoggedIn) {
-      navigate(location.pathname==='/cart/checkout' ? '/cart/checkout' : '/');
-    }
-  }, [formik.values, dispatch, isLoggedIn]);
-  const renderMessagesBlockStyle = () => {
-    if (response && response.code === 200) {
-      return styles.successMessagesBlock;
-    } else {
-      return styles.errorMessagesBlock;
-    }
-  };
+  }, [formik.values.email, formik.values.password, formik.values.rememberMe]);
   return (<>
     <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
-      {response &&
-        <div className={renderMessagesBlockStyle()}>
-          <p>{transformErrorMessage[response.message]}</p>
+      {errorMessage &&
+        <div className={styles.errorMessagesBlock}>
+          <p>{errorMessage}</p>
         </div>}
       <form
         className={styles.loginFormBlock__form}
