@@ -8,7 +8,7 @@ import {getUserLoadingStatus} from '../../../../store/userSlice';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 
-const RegisterFormBlock = ({formik, googleRegister}) => {
+const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSignUp}) => {
   const isLoading = useSelector(getUserLoadingStatus);
   return (
     <section className={styles.registerFormBlock} data-testid="RegisterFormBlock">
@@ -82,7 +82,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
           className={styles.registerFormBlock__button}
         >
           {
-          (isLoading) ?
+          (isLoading && isRegularSignUp) ?
             <LoaderIconSmall /> :
             <>
               <span>
@@ -108,7 +108,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
             onClick={() => googleRegister()}
           >
             {
-              (isLoading) ?
+              (isLoading &&isGoogleSignUp) ?
                 <LoaderIconSmall/>:
                 <>
                   <GoogleIcon />
@@ -126,5 +126,7 @@ const RegisterFormBlock = ({formik, googleRegister}) => {
 RegisterFormBlock.propTypes = {
   formik: PropTypes.object.isRequired,
   googleRegister: PropTypes.func.isRequired,
+  isGoogleSignUp: PropTypes.bool,
+  isRegularSignUp: PropTypes.bool,
 };
 export default RegisterFormBlock;

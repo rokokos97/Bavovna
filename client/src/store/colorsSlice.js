@@ -11,7 +11,7 @@ export const fetchColorsList = createAsyncThunk(
         if (error.code === 'ERR_NETWORK') {
           return rejectWithValue(generateErrorMessage[error.code]);
         }
-        return rejectWithValue(error || 'Something went wrong.');
+        return rejectWithValue(error || 'SERVER_ERROR');
       }
     },
 );

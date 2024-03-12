@@ -13,7 +13,7 @@ import {getDeliveryMethod, setDeliveryMethod} from '../../../../../store/ordersS
 import deliveryMethodsList from '../../../../../utils/deliveryMethodsList';
 import npService from '../../../../../services/np.service';
 import {nanoid} from 'nanoid/non-secure';
-import {getUser, updateUser} from '../../../../../store/userSlice';
+import {getUser, updateUserData} from '../../../../../store/userSlice';
 import createDeliveryLabel from '../../../../../utils/createDeliveryLabel';
 const UserDeliveryBlock = () => {
   const dispatch = useDispatch();
@@ -55,7 +55,7 @@ const UserDeliveryBlock = () => {
       newValues.deliveryPrice = deliveryMethodsList[2][userCurrentDeliveryMethod].price;
       newValues._id = nanoid(12);
       newValues.label = createDeliveryLabel(newValues);
-      dispatch(updateUser({...user, deliveryAddress: [...user.deliveryAddress, newValues], currentDeliveryAddress: newValues._id}));
+      dispatch(updateUserData({...user, deliveryAddress: [...user.deliveryAddress, newValues], currentDeliveryAddress: newValues._id}));
       formik.resetForm({
         values: {
           city: {},

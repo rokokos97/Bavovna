@@ -340,19 +340,6 @@
   padding: 1.2rem;
   color: #ea001b;
 }
-.loginFormBlock .successMessagesBlock {
-  display: flex;
-  align-self: stretch;
-  background: #a9dfcb;
-  font-size: 16px;
-  line-height: 110%;
-}
-.loginFormBlock .successMessagesBlock p {
-  width: 100%;
-  text-align: start;
-  padding: 1.2rem;
-  color: #2ab66a;
-}
 .loginFormBlock .loader {
   background: conic-gradient(#fafafa, #79b6a0);
   position: relative;

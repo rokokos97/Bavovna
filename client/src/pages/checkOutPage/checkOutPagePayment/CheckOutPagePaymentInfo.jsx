@@ -13,7 +13,7 @@ import {
 } from '../../../store/ordersSlice';
 import {customAlphabet} from 'nanoid/non-secure';
 import {clearCart, getNormalizedCart} from '../../../store/cartSlice';
-import {getUser, updateUser} from '../../../store/userSlice';
+import {getUser, updateUserData} from '../../../store/userSlice';
 import {clearCartSessionStorage} from '../../../services/sessionStorage.service';
 import {useNavigate} from 'react-router-dom';
 
@@ -56,7 +56,7 @@ const CheckOutPagePaymentInfo = () => {
           ...user,
           orders: [...user.orders, newOrder],
         };
-        await dispatch(updateUser(newUser));
+        await dispatch(updateUserData(newUser));
       }
       dispatch(addOrder(newOrder));
       await dispatch(clearCart());
