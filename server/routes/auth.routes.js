@@ -189,6 +189,14 @@ router.post('/signInWithPassword', [
           },
         });
       }
+      if (!existingUser.isVerified) {
+        return res.status(400).json({
+          response: {
+            code: 400,
+            message: 'EMAIL_NOT_VERIFIER',
+          },
+        });
+      }
       const isPasswordEqual = await bcrypt.compare(
           password, existingUser.password);
       if (!isPasswordEqual) {
