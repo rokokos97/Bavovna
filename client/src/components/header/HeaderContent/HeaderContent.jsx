@@ -74,7 +74,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
                 <p>{`(${cart.length})`}</p>
               </Link>
               <Link
-                to={user?('/user/' + user._id) : '/login'}
+                to={user?('/user/' + user._id) : '/signIn'}
                 aria-label={isLoggedIn && user ? `View ${user.firstName}'s account` : 'Log in to your account'}
                 className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
               >

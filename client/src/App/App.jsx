@@ -46,7 +46,7 @@ function App() {
               <Route path='orderSuccess' element={<OrderSuccessPage />} />
               <Route path='cart' element={<ShoppingCartPage />} />
               <Route path='shop/:id' element={<Card />} />
-              <Route path='login/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
+              <Route path='signIn/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
               <Route path='main' element={<MainPage />} />
               <Route path='help/*' element={<HelpPage />} />
               <Route path='user/:id/*' element={<UserPage />} />
