@@ -3,7 +3,7 @@ import styles from './ResetPasswordForm.module.scss';
 import TextField from '../../../../components/form/formFields/TextField/TextField';
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
-import {clearUserResponse, getResponse, getUserLoadingStatus, setNewPassword} from '../../../../store/userSlice';
+import {userClearResponse, getResponse, getUserLoadingStatus, setNewUserPassword} from '../../../../store/userSlice';
 import * as Yup from 'yup';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
 import LoaderIconSmall from '../../../../components/svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
@@ -36,12 +36,12 @@ const ResetPasswordForm = () => {
           .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
     }),
     onSubmit: (values) => {
-      dispatch(setNewPassword(token, email, values.password));
+      dispatch(setNewUserPassword(token, email, values.password));
       formik.resetForm();
     },
   });
   useEffect(() => {
-    dispatch(clearUserResponse());
+    dispatch(userClearResponse());
   }, []);
   useEffect(() => {
     if (isLoading) {
