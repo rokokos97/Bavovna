@@ -330,10 +330,10 @@ export const getUserLoadingStatus = createSelector(
     [selectUserLoadingStatus],
     (isLoading) => isLoading,
 );
-const selectUserEntities = (state) => state.user.entities;
+const selectUserData = (state) => state.user.user;
 export const getUser = createSelector(
-    [selectUserEntities],
-    (entities) => entities,
+    [selectUserData],
+    (user) => user,
 );
 const selectIsLoggedIn = (state) => state.user.isLoggedIn;
 export const getIsLoggedIn = createSelector(
