@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import 'react-phone-input-2/lib/style.css';
 import styles from './UserDataForm.module.scss';
 import TextField from '../../../../../components/form/formFields/TextField/TextField';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
-import {clearUserResponse, getResponse, getUser, updateUser} from '../../../../../store/userSlice';
+import {getResponse, getUser, updateUserData} from '../../../../../store/userSlice';
 import {validationSchemaUserDataForm} from '../../../../../utils/validationSchema';
 import PhoneField from '../../../../../components/form/formFields/PhoneField/PhoneField';
 import transformErrorMessage from '../../../../../utils/generateErrorMessage';
@@ -25,7 +25,7 @@ const UserDataForm = () => {
     onSubmit: () => {
       const changedFields = getChangedFields(formik.values);
       const updatedUser = {...user, ...changedFields};
-      dispatch(updateUser(updatedUser));
+      dispatch(updateUserData(updatedUser));
     }},
   );
   const getChangedFields = (values) => {
@@ -37,11 +37,11 @@ const UserDataForm = () => {
     }
     return changes;
   };
-  useEffect(() => {
-    if (response) {
-      dispatch(clearUserResponse());
-    }
-  }, [formik.values.currentPassword, dispatch]);
+  //  useEffect(() => {
+  //    if (response) {
+  //      dispatch(userClearResponse());
+  //    }
+  //  }, [formik.values.currentPassword, dispatch]);
   return ( user && (
     <article className={styles.userDataForm} data-testid="UserDataForm">
       <p className={styles.userDataForm__title}>personal data</p>
