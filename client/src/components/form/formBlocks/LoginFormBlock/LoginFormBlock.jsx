@@ -41,23 +41,22 @@ const LoginFormBlock = ({type}) => {
     onSubmit: (values) => {
       setIsLoadingGoogle(false);
       setIsRegularLogin(true);
-      dispatch(signInUser(values)).then(()=>{
-        setIsLoadingGoogle(false);
-        navigate(redirectPath);
+      dispatch(signInUser(values)).then((response)=>{
+        response && navigate(redirectPath, {replace: true});
+        setIsRegularLogin(false);
       });
       formik.resetForm();
     },
   });
-  console.log('location', location);
   const googleLoginHook = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
       googleService
           .get(accessToken)
           .then((userInfo) => {
-            dispatch(signInWithGoogle(userInfo)).then(()=>{
+            dispatch(signInWithGoogle(userInfo)).then((response)=>{
+              response && navigate(redirectPath, {replace: true});
               setIsLoadingGoogle(false);
-              navigate(redirectPath);
             });
           });
     },
@@ -69,7 +68,6 @@ const LoginFormBlock = ({type}) => {
   };
   useEffect(() => {
     const message = authError ? generateErrorMessage[authError.message]:null;
-    console.log('message', message, 'authError', authError);
     setErrorMessage(message);
   }, [authError]);
 
@@ -78,7 +76,7 @@ const LoginFormBlock = ({type}) => {
       setErrorMessage(null);
       dispatch(userClearResponse());
     }
-  }, [formik.values.email, formik.values.password, formik.values.rememberMe]);
+  }, [formik.values]);
   return (<>
     <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
       {errorMessage &&

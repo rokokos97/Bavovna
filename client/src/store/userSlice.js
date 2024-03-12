@@ -27,7 +27,6 @@ export const signInUser = createAsyncThunk(
       const {email, password, rememberMe} = userData;
       try {
         const response = await authService.login({email, password});
-        console.log('response', response);
         if (rememberMe) {
           localStorageService.setTokens(response);
         } else {
