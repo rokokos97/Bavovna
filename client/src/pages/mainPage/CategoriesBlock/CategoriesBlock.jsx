@@ -4,8 +4,8 @@ import {useSelector} from 'react-redux';
 import {getCategories, getCategoriesLoadingStatus} from '../../../store/categorySlice';
 import CategoryPreviewCard from '../../../components/CategoryPreviewCard/CategoryPreviewCard';
 const CategoriesBlock = () => {
-  const isCategoriesLoading = useSelector(getCategoriesLoadingStatus());
-  const categories = useSelector(getCategories());
+  const isCategoriesLoading = useSelector(getCategoriesLoadingStatus);
+  const categories = useSelector(getCategories);
   const categoryNew = {
     name: 'new',
     status: 'new',

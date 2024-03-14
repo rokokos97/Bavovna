@@ -38,17 +38,17 @@ const citiesSlice = createSlice({
           state.error = action.payload;
         });
   }});
-const selectCitiesList = () => (state) => state.cities.entities;
+const selectCitiesList =(state) => state.cities.entities;
 export const getCitiesList = createSelector(
     [selectCitiesList],
     (entities)=> entities,
 );
-const selectCitiesError = () => (state) => state.cities.error;
+const selectCitiesError =(state) => state.cities.error;
 export const getCitiesError = createSelector(
     [selectCitiesError],
     (error) => error,
 );
-const selectIsLoadingStatus = () => (state) => state.cities.isLoading;
+const selectIsLoadingStatus = (state) => state.cities.isLoading;
 export const getCitiesIsLoadingStatus = createSelector(
     [selectIsLoadingStatus],
     (isLoading) => isLoading,

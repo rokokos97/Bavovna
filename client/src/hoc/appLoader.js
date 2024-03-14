@@ -13,8 +13,8 @@ const AppLoader = ({children}) => {
   useEffect(() => {
     dispatch(fetchCategoriesList());
     dispatch(fetchColorsList());
-    dispatch(fetchItemsList);
-    dispatch(fetchCitiesList);
+    dispatch(fetchItemsList());
+    dispatch(fetchCitiesList());
   }, []);
   useEffect(() => {
     if (isLoggedIn) {

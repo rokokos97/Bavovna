@@ -38,17 +38,17 @@ const categoriesSlice = createSlice({
         });
   }});
 
-const selectCategories = () => (state) => state.categories.entities;
+const selectCategories = (state) => state.categories.entities;
 export const getCategories = createSelector(
     [selectCategories],
     (entities)=> entities,
 );
-const selectIsCategoriesLoading = () => (state) => state.categories.isLoading;
+const selectIsCategoriesLoading = (state) => state.categories.isLoading;
 export const getCategoriesLoadingStatus = createSelector(
     [selectIsCategoriesLoading],
     (isLoading)=> isLoading,
 );
-const selectCategoriesError = () => (state) => state.categories.error;
+const selectCategoriesError = (state) => state.categories.error;
 export const getCategoriesError = createSelector(
     [selectCategoriesError],
     (error) => error,

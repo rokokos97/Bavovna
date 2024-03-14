@@ -11,7 +11,7 @@ import InstagramIcon from '../svg/socialMediaIcons/InstagramIcon/InstagramIcon';
 const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const categories = useSelector(getCategories());
+  const categories = useSelector(getCategories);
   const navigateToHome = () => {
     if (location.pathname !== '/') {
       navigate('/');

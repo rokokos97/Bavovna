@@ -14,7 +14,7 @@ export const fetchItemsList = createAsyncThunk(
 const itemsSlice = createSlice({
   name: 'items',
   initialState: {
-    entities: null,
+    entities: [],
     isLoading: false,
     error: null,
   },
@@ -36,19 +36,18 @@ const itemsSlice = createSlice({
         });
   },
 });
+export const getItemsById = (id) => (state) => state.items.entities.find((item)=> item._id === id);
 const selectItemsList = (state) => state.items.entities;
 export const getItemsList = createSelector(
     [selectItemsList],
     (entities) => entities,
 );
-export const getItemsById = (id) => (state) => state.items.entities.find((item)=> item._id === id);
-
-const selectItemsLoadingStatus = () => (state) => state.items.isLoading;
+const selectItemsLoadingStatus =(state) => state.items.isLoading;
 export const getItemsLoadingStatus = createSelector(
     [selectItemsLoadingStatus],
     (isLoading)=> isLoading,
 );
-const selectItemsError = () => (state) => state.items.error;
+const selectItemsError = (state) => state.items.error;
 export const getItemsError = createSelector(
     [selectItemsError],
     (error) => error,
