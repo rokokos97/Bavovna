@@ -5,7 +5,7 @@ import {fetchCategoriesList} from '../store/categorySlice';
 import {fetchColorsList} from '../store/colorsSlice';
 import {getIsLoggedIn, fetchUserData} from '../store/userSlice';
 import {useEffect} from 'react';
-import {uploadCitiesList} from '../store/citiesSlice';
+import {fetchCitiesList} from '../store/citiesSlice';
 
 const AppLoader = ({children}) => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const AppLoader = ({children}) => {
     dispatch(fetchCategoriesList());
     dispatch(fetchColorsList());
     dispatch(fetchItemsList);
-    dispatch(uploadCitiesList());
+    dispatch(fetchCitiesList);
   }, []);
   useEffect(() => {
     if (isLoggedIn) {
