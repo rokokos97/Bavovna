@@ -103,3 +103,15 @@
 .headerContent__accountName {
   width: 6rem;
 }
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .headerContent__header {
+    height: 7.8rem;
+    padding: 1.2rem 3.2rem;
+    align-items: flex-end;
+  }
+
+  .headerContent__logo {
+    top: 50%;
+  }
+}

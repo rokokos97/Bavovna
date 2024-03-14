@@ -11,3 +11,10 @@
   align-items: center;
   z-index: 9999;
 }
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    min-width: 48.1rem;
+    width: 100vw;
+  }
+}
