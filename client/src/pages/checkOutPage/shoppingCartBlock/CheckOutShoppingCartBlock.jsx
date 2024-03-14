@@ -20,13 +20,13 @@ import {getUser} from '../../../store/userSlice';
 
 const CheckOutShoppingCartBlock = ({formik}) => {
   const dispatch = useDispatch();
-  const cartLength = useSelector(getCartLength);
+  const user= useSelector(getUser);
+  const promoCode = useSelector(getPromoCodeSale);
   const itemPrice = useSelector(getCartTotalPrice);
-  const currentDeliveryOption = useSelector(getDeliveryOption());
+  const cartLength = useSelector(getCartLength);
+  const deliveryPrice = useSelector(getShippingPrice);
+  const currentDeliveryOption = useSelector(getDeliveryOption);
   const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState(80);
-  const deliveryPrice = useSelector(getShippingPrice());
-  const promoCode = useSelector(getPromoCodeSale());
-  const user = useSelector(getUser);
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount;
   const finalPrice = totalPrice + currentDeliveryPrice;

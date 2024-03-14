@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom';
 import {getUser} from '../../store/userSlice';
 
 const OrderSuccessPage = () => {
-  const isLoadingOrders = useSelector(getOrdersLoadingStatus());
-  const orders = useSelector(getOrders());
+  const isLoadingOrders = useSelector(getOrdersLoadingStatus);
+  const orders = useSelector(getOrders);
   const user = useSelector(getUser);
   return (!isLoadingOrders &&
     <div className={styles.orderCompletePage} data-testid="OrderCompletePage">

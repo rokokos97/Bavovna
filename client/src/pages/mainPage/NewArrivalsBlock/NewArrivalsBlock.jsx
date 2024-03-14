@@ -12,7 +12,7 @@ import BigLeftArrowIcon from '../../../components/svg/arrowIcons/BigLeftArrowIco
 
 const NewArrivalsBlock = () => {
   const swiperRef = useRef();
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  const isItemsLoading = useSelector(getItemsLoadingStatus);
   const items = useSelector(getItemsList);
   let newArrivalItems = [];
   if (!isItemsLoading && items) {

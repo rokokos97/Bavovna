@@ -9,8 +9,8 @@ const noColor = 'Choose a color';
 
 const ColorsList = ({itemColors, selectedColor, setSelectedColor}) => {
   const {itemData, setItemData} = useDataCard();
-  const isColorLoaded = useSelector(getColorsLoadingStatus());
-  const allColors = useSelector(getColors());
+  const isColorLoaded = useSelector(getColorsLoadingStatus);
+  const allColors = useSelector(getColors);
 
   const handleChange = (event) => {
     setSelectedColor(event.target.id);

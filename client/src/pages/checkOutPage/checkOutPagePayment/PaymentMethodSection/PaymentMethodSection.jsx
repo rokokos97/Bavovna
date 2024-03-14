@@ -14,7 +14,7 @@ import {useNavigate} from 'react-router-dom';
 const PaymentMethodSection = ({formik}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const currentPaymentMethod = useSelector(getPaymentMethod());
+  const currentPaymentMethod = useSelector(getPaymentMethod);
   const paymentMethodsList = [
     {
       id: '1',

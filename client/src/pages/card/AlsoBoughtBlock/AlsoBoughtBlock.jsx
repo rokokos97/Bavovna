@@ -6,7 +6,7 @@ import styles from './AlsoBoughtBlock.module.scss';
 
 const AlsoBoughtBlock = () => {
   const items = useSelector(getItemsList);
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  const isItemsLoading = useSelector(getItemsLoadingStatus);
   let alsoBought = [];
 
   if (!isItemsLoading) {

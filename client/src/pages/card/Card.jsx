@@ -8,7 +8,7 @@ import CardContext from './CardContext';
 const Card = () => {
   const {id} = useParams();
   const items = useSelector(getItemsList);
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  const isItemsLoading = useSelector(getItemsLoadingStatus);
 
   if (!isItemsLoading && items) {
     const searchingItem = items.filter((item) => item._id === id)[0];
