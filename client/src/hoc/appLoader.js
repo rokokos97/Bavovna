@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {uploadItemList} from '../store/itemsSlice';
+import {fetchItemsList} from '../store/itemsSlice';
 import PropTypes from 'prop-types';
 import {fetchCategoriesList} from '../store/categorySlice';
 import {fetchColorsList} from '../store/colorsSlice';
@@ -13,7 +13,7 @@ const AppLoader = ({children}) => {
   useEffect(() => {
     dispatch(fetchCategoriesList());
     dispatch(fetchColorsList());
-    dispatch(uploadItemList());
+    dispatch(fetchItemsList);
     dispatch(uploadCitiesList());
   }, []);
   useEffect(() => {

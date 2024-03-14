@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getCart, getNormalizedCart} from '../../store/cartSlice';
 import ProductCardInCart from '../../components/ProductCardInCart/ProductCardInCart';
-import {getItems, getItemsLoadingStatus} from '../../store/itemsSlice';
+import {getItemsList, getItemsLoadingStatus} from '../../store/itemsSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
@@ -16,7 +16,7 @@ const ShoppingCartPage = () => {
   const navigate = useNavigate();
   const swiperRef = useRef();
   const isItemsLoading = useSelector(getItemsLoadingStatus());
-  const items = useSelector(getItems());
+  const items = useSelector(getItemsList);
   const normalizedCart = useSelector(getNormalizedCart);
   let sliderItems = [];
   if (!isItemsLoading && items) {

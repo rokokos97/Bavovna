@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import {getItems} from '../store/itemsSlice';
+import {getItemsList} from '../store/itemsSlice';
 import {getCategories} from '../store/categorySlice';
 import {getColors} from '../store/colorsSlice';
 import {useLocation, useNavigate} from 'react-router-dom';
@@ -18,7 +18,7 @@ const INITIAL_FILTERS = {
 };
 
 export const ShopPageMasterProvider = ({children}) => {
-  const items = useSelector(getItems());
+  const items = useSelector(getItemsList);
   const location = useLocation();
   const query = queryString.parse(location.search);
   const navigate = useNavigate();
