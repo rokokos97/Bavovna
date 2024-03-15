@@ -6,9 +6,8 @@ import {NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import * as Yup from 'yup';
 import {
-  clearUserResponse,
   getResponse, getUserLoadingStatus,
-  resetPassword,
+  recoveryUserPassword,
 } from '../../../store/userSlice';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import LoaderIconSmall from '../../../components/svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
@@ -29,16 +28,16 @@ const RecoveryPasswordForm = () => {
     }),
     onSubmit: (values) => {
       if (!formik.isValid) return;
-      dispatch(resetPassword({payload: values}));
+      dispatch(recoveryUserPassword({payload: values}));
       formik.setFieldValue('email', '');
       formik.setFieldTouched('email', false);
     },
   });
-  useEffect(() => {
-    if (response) {
-      dispatch(clearUserResponse());
-    }
-  }, [formik.values, dispatch]);
+  //  useEffect(() => {
+  //    if (response) {
+  //      dispatch(userClearResponse());
+  //    }
+  //  }, [formik.values, dispatch]);
   useEffect(() => {
     if (isLoading) {
       setIsLoaderRun(true);

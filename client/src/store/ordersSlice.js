@@ -1,5 +1,19 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSelector, createSlice} from '@reduxjs/toolkit';
 import ordersService from '../services/orders.service';
+import generateErrorMessage from '../utils/generateErrorMessage';
+
+export const addOrder = createAsyncThunk(
+    'order/addOrder',
+    async (order, {rejectWithValue} ) => {
+      try {
+        return await ordersService.add(order);
+      } catch (error) {
+        if (error.code === 'ERR_NETWORK') {
+          return rejectWithValue(generateErrorMessage[error.code]);
+        }
+        return rejectWithValue(error || 'SERVER_ERROR');
+      }
+    });
 
 const ordersSlice = createSlice({
   name: 'currentOrder',
@@ -17,29 +31,6 @@ const ordersSlice = createSlice({
     error: null,
   },
   reducers: {
-    ordersRequested: (state) => {
-      state.isLoading = true;
-    },
-    ordersReceived: (state, action) => {
-      state.isLoading = false;
-      state.entities = action.payload;
-    },
-    ordersRequestFailed: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    addOrderRequested: (state) => {
-      state.isLoading = true;
-      state.error = null;
-    },
-    addOrderReceiveFailed: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    addOrderReceived: (state, action) => {
-      state.isLoading = false;
-      state.entities = [...state.entities, action.payload];
-    },
     setUserInfo: (state, action) => {
       state.userInfo = action.payload;
     },
@@ -76,30 +67,75 @@ const ordersSlice = createSlice({
       state.error = null;
     },
   },
+  extraReducers: (builder) => {
+    builder
+        .addCase(addOrder.pending, (state) => {
+          state.isLoading = true;
+        })
+        .addCase(addOrder.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.entities = action.payload;
+        })
+        .addCase(addOrder.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        });
+  },
 });
-export const addOrder = (order) => async (dispatch) => {
-  dispatch(addOrderRequested());
-  try {
-    const data = await ordersService.add(order);
-    dispatch(addOrderReceived(data));
-  } catch (error) {
-    dispatch(addOrderReceiveFailed(error));
-  }
-};
 export const changeDeliveryOption = (option) => async (dispatch) => {
   dispatch(changeDeliveryOption(option));
 };
 
-export const getOrders = () => (state) => state.orders.entities;
-export const getOrdersLoadingStatus = () => (state) => state.orders.isLoading;
-export const getDeliveryOption = () => (state)=> state.orders.deliveryOption;
-export const getDeliveryMethod = () => (state)=> state.orders.deliveryMethod;
-export const getShippingPrice = () => (state) => state.orders.shippingPrice;
-export const getDeliveryInfo = () => (state) => state.orders.userDeliveryInfo;
-export const getUserInfo = () => (state) => state.orders.userInfo;
-export const getPaymentMethod = () => (state) => state.orders.paymentMethod;
-export const getPromoCodeSale = () => (state) => state.orders.promoCodeSale;
-export const getOrderAmount = () => (state) => state.orders.orderAmount;
+const selectOrders = (state) => state.orders.entities;
+export const getOrders = createSelector(
+    [selectOrders],
+    (entities) => entities,
+);
+const selectOrdersLoadingStatus = (state) => state.orders.isLoading;
+export const getOrdersLoadingStatus = createSelector(
+    [selectOrdersLoadingStatus],
+    (isLoading)=> isLoading,
+);
+const selectDeliveryOption = (state)=> state.orders.deliveryOption;
+export const getDeliveryOption= createSelector(
+    [selectDeliveryOption],
+    (deliveryOption) => deliveryOption,
+);
+const selectDeliveryMethod= (state)=> state.orders.deliveryMethod;
+export const getDeliveryMethod = createSelector(
+    [selectDeliveryMethod],
+    (deliveryMethod) => deliveryMethod,
+);
+const selectShippingPrice= (state) => state.orders.shippingPrice;
+export const getShippingPrice = createSelector(
+    [selectShippingPrice],
+    (shippingPrice)=> shippingPrice,
+);
+const selectDeliveryInfo=(state) => state.orders.userDeliveryInfo;
+export const getDeliveryInfo = createSelector(
+    [selectDeliveryInfo],
+    (userDeliveryInfo)=> userDeliveryInfo,
+);
+const selectUserInfo = (state) => state.orders.userInfo;
+export const getUserInfo = createSelector(
+    [selectUserInfo],
+    (userInfo)=> userInfo,
+);
+const selectPaymentMethod= (state) => state.orders.paymentMethod;
+export const getPaymentMethod = createSelector(
+    [selectPaymentMethod],
+    (paymentMethod)=> paymentMethod,
+);
+const selectPromoCodeSale=(state) => state.orders.promoCodeSale;
+export const getPromoCodeSale = createSelector(
+    [selectPromoCodeSale],
+    (promoCodeSale)=> promoCodeSale,
+);
+const selectOrderAmount = (state) => state.orders.orderAmount;
+export const getOrderAmount = createSelector(
+    [selectOrderAmount],
+    (orderAmount)=> orderAmount,
+);
 export const {
   setOrderToInitialState,
   setUserDeliveryInfo,
@@ -109,9 +145,6 @@ export const {
   setDeliveryMethod,
   setDeliveryOption,
   setOrderAmount,
-  addOrderRequested,
-  addOrderReceived,
-  addOrderReceiveFailed,
   setDeliveryPrice,
 } = ordersSlice.actions;
 

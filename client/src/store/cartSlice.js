@@ -1,6 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
 import sessionStorageService from '../services/sessionStorage.service';
-import _ from 'lodash';
 import {createSelector} from '@reduxjs/toolkit';
 const storedCart = sessionStorageService.getCurrentCart('cart');
 
@@ -72,7 +71,7 @@ export const getNormalizedCart = createSelector(
         }
       }
 
-      return _.sortBy(newNormalizedCart, 'itemName');
+      return newNormalizedCart;
     },
 );
 export const getCartLength = createSelector(

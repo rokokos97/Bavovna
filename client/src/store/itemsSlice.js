@@ -1,71 +1,55 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSelector, createSlice} from '@reduxjs/toolkit';
 import itemService from '../services/item.service';
-import generateErrorMessage from '../utils/generateErrorMessage';
 
+export const fetchItemsList = createAsyncThunk(
+    'items/fetchItemsList',
+    async (_, {rejectWithValue}) => {
+      try {
+        return await itemService.get();
+      } catch (error) {
+        return rejectWithValue(error.response.data.response || 'SERVER_ERROR');
+      }
+    },
+);
 const itemsSlice = createSlice({
   name: 'items',
   initialState: {
-    entities: null,
+    entities: [],
     isLoading: false,
     error: null,
   },
-  reducers: {
-    itemsRequested: (state) => {
-      state.isLoading = true;
-    },
-    itemsReceived: (state, action) => {
-      state.isLoading = false;
-      state.entities = action.payload;
-    },
-    itemsRequestFailed: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    itemCreatRequested: (state) => {
-      state.isLoading = true;
-    },
-    itemCreateReceived: (state, action) => {
-      state.isLoading = false;
-      state.entities.push(action.payload);
-    },
-    itemCreateFailed: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    itemDeleteRequested: (state) => {
-      state.isLoading = true;
-    },
-    itemDeleteReceived: (state, action) => {
-      state.isLoading = false;
-      state.entities = state
-          .entities.filter((item)=> item._id !== action.payload);
-    },
-    itemDeleteFailed: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  reducers: {},
+  extraReducers: (builder)=> {
+    builder
+        .addCase(fetchItemsList.pending, (state) => {
+          state.isLoading = true;
+          state.error = null;
+        })
+        .addCase(fetchItemsList.fulfilled, (state, action)=> {
+          state.isLoading = false;
+          state.entities = action.payload;
+          state.error = null;
+        })
+        .addCase(fetchItemsList.rejected, (state, action)=> {
+          state.isLoading = false;
+          state.error = action.payload;
+        });
   },
 });
-export const uploadItemList = () => async (dispatch) => {
-  dispatch(itemsRequested());
-  try {
-    const data = await itemService.get();
-    dispatch(itemsReceived(data));
-  } catch (error) {
-    if (error.code === 'ERR_NETWORK') {
-      dispatch(itemsRequestFailed(generateErrorMessage[error.code]));
-    } else {
-      dispatch(itemsRequestFailed(error));
-    }
-  }
-};
-export const getItems = () => (state) => state.items.entities;
 export const getItemsById = (id) => (state) => state.items.entities.find((item)=> item._id === id);
-export const getItemsLoadingStatus = () => (state) => state.items.isLoading;
-export const getItemsError = () => (state) => state.items.error;
-export const {
-  itemsRequested,
-  itemsReceived,
-  itemsRequestFailed,
-} = itemsSlice.actions;
+const selectItemsList = (state) => state.items.entities;
+export const getItemsList = createSelector(
+    [selectItemsList],
+    (entities) => entities,
+);
+const selectItemsLoadingStatus =(state) => state.items.isLoading;
+export const getItemsLoadingStatus = createSelector(
+    [selectItemsLoadingStatus],
+    (isLoading)=> isLoading,
+);
+const selectItemsError = (state) => state.items.error;
+export const getItemsError = createSelector(
+    [selectItemsError],
+    (error) => error,
+);
 export default itemsSlice.reducer;

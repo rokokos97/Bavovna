@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom';
 import {getUser} from '../../store/userSlice';
 
 const OrderSuccessPage = () => {
-  const isLoadingOrders = useSelector(getOrdersLoadingStatus());
-  const orders = useSelector(getOrders());
+  const isLoadingOrders = useSelector(getOrdersLoadingStatus);
+  const order = useSelector(getOrders);
   const user = useSelector(getUser);
   return (!isLoadingOrders &&
     <div className={styles.orderCompletePage} data-testid="OrderCompletePage">
@@ -17,8 +17,8 @@ const OrderSuccessPage = () => {
         <p className={styles.orderCompletePage__title}>Your order has been confirmed</p>
       </div>
       <div className={styles.orderCompletePage__numberBlock}>
-        <p>order # {orders[0]._id}</p>
-        <p>date: {orders[0].date}</p>
+        <p>order # {order._id}</p>
+        <p>date: {order.date}</p>
       </div>
       <div className={styles.orderCompletePage__textBlock}>
         <p>Thank you for shopping in our store!</p>

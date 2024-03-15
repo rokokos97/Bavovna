@@ -6,7 +6,7 @@ import {getCitiesList} from '../../../../../../../store/citiesSlice';
 import SelectField from '../../../../../../../components/form/formFields/SelectField/SelectField';
 
 const NovaPostWarehouseDeliveryFormCheckout = ({formik, handleCityChange, handleWarehouseChange, warehousesList}) => {
-  const citiesList = useSelector(getCitiesList());
+  const citiesList = useSelector(getCitiesList);
   return (
     <div className={styles.npWarehouseDeliveryFormCheckout} data-testid="NovaPostWarehouseDeliveryFormCheckout">
       <SelectField

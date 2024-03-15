@@ -3,7 +3,7 @@ import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {clearUserResponse, getResponse, signUp, signUpWithGoogle} from '../../../store/userSlice';
+import {getError, getResponse, signUpUser, signUpWithGoogle} from '../../../store/userSlice';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../../utils/validationSchema';
 import googleService from '../../../services/google.service';
@@ -15,11 +15,13 @@ import RegisterFormBlock from '../../../components/form/formBlocks/RegisterFormB
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const error = useSelector(getError);
   const response = useSelector(getResponse);
   const navigate = useNavigate();
+  const [isRegularSignUp, setIsRegularSignUp] = useState(false);
+  const [isGoogleSignUp, setIsGoogleSignUp] = useState(false);
   const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
   const [email, setEmail] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -31,14 +33,16 @@ const RegisterForm = () => {
     },
     validationSchema: validationSchemaRegisterForm,
     onSubmit: (values) => {
-      setIsLoading(true);
+      setIsRegularSignUp(true);
+      setIsGoogleSignUp(false);
       setEmail(values.email);
-      dispatch(signUp({...values, email: values.email.toLowerCase()}));
+      dispatch(signUpUser({...values, email: values.email.toLowerCase()})).then(()=>{
+        setIsRegularSignUp(true);
+      });
     },
   });
   const googleRegister = useGoogleLogin({
     onSuccess: (tokenResponse) => {
-      setIsLoading(true);
       const accessToken = tokenResponse.access_token;
       googleService.get(accessToken).then((userInfo) => {
         dispatch(signUpWithGoogle({
@@ -52,11 +56,10 @@ const RegisterForm = () => {
   const closeModal = () => {
     setShowVerifyEmailModal(false);
     showBodyOverflow();
-    navigate('/');
+    navigate('/signIn');
   };
   useEffect(()=>{
     if (response) {
-      setIsLoading(false);
       if (response.code === 201) {
         setShowVerifyEmailModal(true);
         hideBodyOverflow();
@@ -64,12 +67,6 @@ const RegisterForm = () => {
       }
     }
   }, [response]);
-  useEffect(() => {
-    if (response) {
-      dispatch(clearUserResponse());
-    }
-  }, [formik.values, dispatch]);
-  console.log(isLoading);
   return (
     <article className={styles.registerForm}>
       <section className={styles.registerForm__titleBlock}>
@@ -80,17 +77,17 @@ const RegisterForm = () => {
           Welcome! Please enter your details
         </span>
       </section>
-      <section style={{display: response ? 'block' : 'none'}}>
-        {response ?
-          <div className={(response.code !== 200) ? styles.registerForm__errorMessagesBlock : styles.registerForm__successMessagesBlock}>
-            <p>{transformErrorMessage[response.message]}</p>
+      <section style={{display: error ? 'block' : 'none'}}>
+        {error ?
+          <div className={styles.registerForm__errorMessagesBlock}>
+            <p>{transformErrorMessage[error.message]}</p>
           </div> : null}
       </section>
-      <RegisterFormBlock formik={formik} googleRegister={googleRegister}/>
+      <RegisterFormBlock formik={formik} googleRegister={googleRegister} isRegularSignUp={isRegularSignUp} isGoogleSignUp={isGoogleSignUp}/>
       <p className={styles.toLoginForm}>
         Already have an account?
         <NavLink
-          to="/login"
+          to="/signIn"
           role="button"
         >
           <span>&nbsp;Sign in</span>

@@ -47,6 +47,9 @@ const CheckOutUserInfoBlock = () => {
     },
   ];
   useEffect(() => {
+    if (isLoggedIn) {
+      setUserCurrentDetails('1');
+    }
     if (user) {
       formik.setValues({
         firstName: user.firstName,
@@ -55,7 +58,7 @@ const CheckOutUserInfoBlock = () => {
         phoneNumber: user.phoneNumber,
       });
     }
-  }, [user]);
+  }, [user, isLoggedIn]);
   return (
     <div className={styles.checkOutUserInfoBlock}>
       <p className={styles.checkOutUserInfoBlock__title}>Contact details</p>

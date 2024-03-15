@@ -7,27 +7,29 @@ import {validationSchemaCardPayment} from '../../../utils/validationSchema';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   addOrder,
+  getUserInfo,
   getDeliveryInfo,
   getOrderAmount,
-  getPaymentMethod, getPromoCodeSale, getUserInfo, setOrderToInitialState,
+  getPaymentMethod,
+  getPromoCodeSale,
+  setOrderToInitialState,
 } from '../../../store/ordersSlice';
 import {customAlphabet} from 'nanoid/non-secure';
 import {clearCart, getNormalizedCart} from '../../../store/cartSlice';
-import {getUser, updateUser} from '../../../store/userSlice';
+import {getUser, updateUserData} from '../../../store/userSlice';
 import {clearCartSessionStorage} from '../../../services/sessionStorage.service';
 import {useNavigate} from 'react-router-dom';
 
 const CheckOutPagePaymentInfo = () => {
-  const currentPaymentMethod = useSelector(getPaymentMethod());
-  const userInfo = useSelector(getUserInfo());
-  const deliveryInfo = useSelector(getDeliveryInfo());
-  const navigate = useNavigate();
-  const orderAmount = useSelector(getOrderAmount());
-  const dispatch = useDispatch();
-  const promoCodeDiscount = useSelector(getPromoCodeSale());
   const user = useSelector(getUser);
   const cart = useSelector(getNormalizedCart);
-  const navigation = useNavigate();
+  const userInfo = useSelector(getUserInfo);
+  const orderAmount = useSelector(getOrderAmount);
+  const deliveryInfo = useSelector(getDeliveryInfo);
+  const promoCodeDiscount = useSelector(getPromoCodeSale);
+  const currentPaymentMethod = useSelector(getPaymentMethod);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const numbers = '0123456789';
   const generateId = customAlphabet(numbers, 15);
   const formik = useFormik({
@@ -37,7 +39,7 @@ const CheckOutPagePaymentInfo = () => {
       cvvCvc: '',
       cardHolderName: '',
     },
-    validationSchema: currentPaymentMethod ==='Pay by card' ? validationSchemaCardPayment: null,
+    validationSchema: currentPaymentMethod === 'Pay by card' ? validationSchemaCardPayment: null,
     onSubmit: async ()=> {
       const newOrder = {
         deliveryInfo: deliveryInfo,
@@ -51,22 +53,23 @@ const CheckOutPagePaymentInfo = () => {
         paymentStatus: currentPaymentMethod ==='Pay by card'? 'paid': 'pending payment',
         deliveryStatus: 'pending',
       };
+      console.log('newOrder', newOrder);
       if (user) {
         const newUser = await {
           ...user,
           orders: [...user.orders, newOrder],
         };
-        await dispatch(updateUser(newUser));
+        await dispatch(updateUserData(newUser));
       }
       dispatch(addOrder(newOrder));
       await dispatch(clearCart());
       clearCartSessionStorage();
       dispatch(setOrderToInitialState());
-      navigation('/orderSuccess');
+      navigate('/orderSuccess');
     }});
   function formatDate(date) {
     const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Місяці від 0 до 11
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
   }

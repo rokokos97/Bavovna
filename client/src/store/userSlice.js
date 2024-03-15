@@ -1,259 +1,339 @@
-import {createAction, createSlice} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import sessionStorageService from '../services/sessionStorage.service';
 import authService from '../services/auth.service';
 import userService from '../services/user.service';
 import localStorageService from '../services/localStorage.service';
 import {createSelector} from '@reduxjs/toolkit';
+import transferDataToSessionStorage from '../utils/transformDataToSessionStorage';
 
-const transferDataToSessionStorage = () => {
-  const keys = Object.keys(localStorage);
-  keys.forEach((key) => {
-    const value = localStorage.getItem(key);
-    if (value !== null) {
-      sessionStorage.setItem(key, value);
-    }
-  });
-};
 if (localStorageService.getAccessToken()) {
   transferDataToSessionStorage();
 }
+
+export const signUpUser = createAsyncThunk(
+    'user/signUp',
+    async (userData, {rejectWithValue})=> {
+      try {
+        const {response} = await authService.register(userData);
+        return response;
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+export const signInUser = createAsyncThunk(
+    'user/signIn',
+    async (userData, {rejectWithValue})=>{
+      const {email, password, rememberMe} = userData;
+      try {
+        const response = await authService.login({email, password});
+        if (rememberMe) {
+          localStorageService.setTokens(response);
+        } else {
+          sessionStorageService.setTokens(response);
+        }
+        return response;
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+export const signUpWithGoogle = createAsyncThunk(
+    'user/signUpWithGoogle',
+    async (userData, {rejectWithValue}) => {
+      try {
+        const data = await authService.registerWithGoogle(userData);
+        sessionStorageService.setTokens(data);
+        return data.user;
+      } catch (error) {
+        console.log('error.response.data.response', error.response.data.response);
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+export const signInWithGoogle = createAsyncThunk(
+    'user/signInWithGoogle',
+    async (userData, {rejectWithValue}) => {
+      const {email} = userData;
+      try {
+        const data = await authService.loginWithGoogle({email});
+        sessionStorageService.setTokens(data);
+        return (data.user);
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+export const updateUserData = createAsyncThunk(
+    'user/updateUserData',
+    async (userData, {rejectWithValue}) => {
+      try {
+        console.log('userData', userData);
+        return await userService.update(userData);
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+
+export const verifyUserEmail = createAsyncThunk(
+    'user/verifyUserEmail',
+    async ({token, email}, {rejectWithValue}) => {
+      try {
+        const data = await authService.emailVerify(token, email);
+        sessionStorageService.setTokens(data);
+        return data;
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+export const recoveryUserPassword = createAsyncThunk(
+    'user/recoveryUserPassword',
+    async ({email}, {rejectWithValue}) => {
+      try {
+        const {response} = await authService.reset({email});
+        return response;
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
+export const setNewUserPassword = createAsyncThunk(
+    'user/setNewUserPassword',
+    async ({token, email, values}, {rejectWithValue}) => {
+      try {
+        const {response} = await authService.setNewPassword(token, email, values);
+        return response;
+      } catch (error) {
+        return rejectWithValue(error.response.data.response || 'SERVER_ERROR');
+      }
+    },
+);
+
+export const fetchUserData = createAsyncThunk(
+    'user/fetchUser',
+    async (_, {rejectWithValue}) => {
+      try {
+        const content = await userService.getCurrentUser();
+        return {...content};
+      } catch (error) {
+        return rejectWithValue(error.message);
+      }
+    },
+);
+
 const initialState = sessionStorageService.getAccessToken() ?
 {
-  entities: null,
+  user: null,
   isLoading: false,
+  error: null,
   response: null,
-  auth: {userId: sessionStorageService.getUserId()},
   isLoggedIn: true,
+  auth: {userId: sessionStorageService.getUserId()},
 }:
 {
-  entities: null,
+  user: null,
   isLoading: false,
+  error: null,
   response: null,
-  auth: null,
   isLoggedIn: false,
+  auth: null,
 };
 
 const usersSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    authRequested: (state) => {
-      state.isLoading = true;
-      state.error = null;
-    },
-    authRequestSuccess: (state, action) => {
-      state.entities = action.payload;
-      state.auth = action.payload._id;
-      state.isLoading = false;
-      state.isLoggedIn = true;
-      state.response = null;
-    },
-    authRequestFailed: (state, action) => {
-      state.entities = null;
-      state.auth = null;
-      state.isLoading = false;
-      state.response = action.payload;
-    },
-    userCreated: (state, action) => {
-      state.response = action.payload;
-      state.isLoading = false;
-    },
     userLoggedOut: (state) => {
-      state.entities = null;
+      state.user = null;
       state.isLoggedIn = false;
       state.auth = null;
     },
-    userUpdateSuccess: (state, action) => {
-      state.entities = action.payload.updatedUser;
-      state.response = action.payload.response;
-    },
-    userUpdateFailed: (state, action) => {
-      state.response = action.payload;
-    },
-    userLoadRequestSuccess: (state, action) => {
-      state.entities = action.payload;
-      state.auth = action.payload._id;
-      state.isLoggedIn = true;
-      state.isLoading = false;
-    },
-    userResetPasswordRequested: (state) => {
-      state.isLoading = true;
-    },
-    userResetPasswordRequestSuccess: (state, action) => {
-      state.response = action.payload;
-      state.isLoading = false;
-    },
-    userResetPasswordRequestFailed: (state, action) => {
-      state.response = action.payload;
-      state.isLoading = false;
-    },
-    userSetNewPasswordRequestSuccess: (state, action) => {
-      state.response = action.payload;
-      state.isLoading = false;
-    },
-    userSetNewPasswordRequestFailed: (state, action) => {
-      state.error = action.payload;
-      state.isLoading = false;
-    },
-    userResponseCleared: (state) => {
+    clearedResponse: (state) => {
+      state.error = null;
       state.response = null;
     },
-    emailVerificationRequestedSuccess: (state, action) => {
-      state.entities = action.payload.user;
-      state.auth = action.payload._id;
-      state.isLoggedIn = true;
-      state.response = action.payload.response;
-    },
-    emailVerificationRequestFailed: (state, action) => {
-      state.response = action.payload;
-    },
-    userAddressAddedFailed: (state, action) => {
-      state.response = action.payload;
-    },
-    userSetNewPasswordRequested: (state) => {
-      state.isLoading =true;
-    },
+  },
+  extraReducers: (builder)=> {
+    builder
+        .addCase(signUpUser.pending, (state)=> {
+          state.isLoading = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signUpUser.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.error = null;
+          state.response = action.payload;
+        })
+        .addCase(signUpUser.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(signInUser.pending, (state)=> {
+          state.isLoading = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signInUser.fulfilled, (state, action)=>{
+          state.isLoading = false;
+          state.user = action.payload.user;
+          state.auth = action.payload.userId;
+          state.isLoggedIn = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signInUser.rejected, (state, action)=> {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(signUpWithGoogle.pending, (state)=>{
+          state.isLoading = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signUpWithGoogle.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.isLoggedIn = true;
+          state.user = action.payload.user;
+          state.auth = action.payload.userId;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signUpWithGoogle.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(signInWithGoogle.pending, (state)=>{
+          state.isLoading = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signInWithGoogle.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.isLoggedIn = true;
+          state.user = action.payload.user;
+          state.auth = action.payload.userId;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(signInWithGoogle.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(updateUserData.pending, (state)=>{
+          state.isLoading = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(updateUserData.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.user = action.payload;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(updateUserData.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(verifyUserEmail.pending, (state)=>{
+          state.isLoading =true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(verifyUserEmail.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.user = action.payload.user;
+          state.auth = action.payload._id;
+          state.isLoggedIn = true;
+          state.error = null;
+          state.response = action.payload.response;
+        })
+        .addCase(verifyUserEmail.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(recoveryUserPassword.pending, (state)=>{
+          state.isLoading =true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(recoveryUserPassword.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.error = null;
+          state.response = action.payload.response;
+        })
+        .addCase(recoveryUserPassword.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(setNewUserPassword.pending, (state)=>{
+          state.isLoading =true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(setNewUserPassword.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.error = null;
+          state.response = action.payload.response;
+        })
+        .addCase(setNewUserPassword.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
+        .addCase(fetchUserData.pending, (state)=>{
+          state.isLoading =true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(fetchUserData.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.user = action.payload;
+          state.auth = action.payload._id;
+          state.isLoggedIn = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(fetchUserData.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        });
   },
 });
 const {reducer: userReducer, actions} = usersSlice;
 const {
-  userCreated,
-  userResponseCleared,
-  userResetPasswordRequested,
-  userResetPasswordRequestSuccess,
-  userResetPasswordRequestFailed,
-  userSetNewPasswordRequestSuccess,
-  userSetNewPasswordRequestFailed,
-  authRequested,
-  authRequestFailed,
-  authRequestSuccess,
   userLoggedOut,
-  userUpdateSuccess,
-  userUpdateFailed,
-  userLoadRequestSuccess,
-  emailVerificationRequestedSuccess,
-  emailVerificationRequestFailed,
-  userSetNewPasswordRequested,
+  clearedResponse,
 } = actions;
 
-const userLoadRequested = createAction('users/userLoadRequested');
-const userLoadRequestFailed = createAction('users/userLoadRequestFailed');
-const userUpdateRequested = createAction('users/userUpdateRequested');
-const emailVerificationRequested = createAction('user/emailVerificationRequested');
-export const clearUserResponse = () => (dispatch) => {
-  dispatch(userResponseCleared());
-};
-export const signUp = (payload) => async (dispatch) => {
-  dispatch(authRequested());
-  try {
-    const data = await authService.register(payload);
-    dispatch(userCreated(data.response));
-  } catch (error) {
-    dispatch(authRequestFailed(error.response.data.response));
-  }
-};
-export const signUpWithGoogle = (payload) => async (dispatch) => {
-  dispatch(authRequested());
-  try {
-    const data = await authService.registerWithGoogle(payload);
-    sessionStorageService.setTokens(data);
-    dispatch(authRequestSuccess(data.user));
-  } catch (error) {
-    dispatch(authRequestFailed(error.response.data.response));
-  }
-};
-export const loginWithGoogle = (payload) =>async (dispatch) =>{
-  const {email} = payload;
-  dispatch(authRequested());
-  try {
-    const data = await authService.loginWithGoogle({email});
-    sessionStorageService.setTokens(data);
-    dispatch(authRequestSuccess(data.user));
-  } catch (error) {
-    dispatch(authRequestFailed(error.response.data.response));
-  }
-};
-export const logInWithPassword = ({payload}) => async (dispatch) => {
-  const {email, password, rememberMe} = payload;
-  dispatch(authRequested());
-  try {
-    const data = await authService.login({email, password});
-    setTimeout(()=>{
-      if (rememberMe) {
-        localStorageService.setTokens(data);
-      } else {
-        sessionStorageService.setTokens(data);
-      }
-      dispatch(authRequestSuccess(data.user));
-    }, 3000);
-  } catch (error) {
-    setTimeout(()=>{
-      dispatch(authRequestFailed(error.response.data.response));
-    }, 3000);
-  }
-};
-export const verifyEmail = (token, email) => async (dispatch) => {
-  dispatch(emailVerificationRequested());
-  try {
-    const data = await authService.emailVerify(token, email);
-    sessionStorageService.setTokens(data);
-    dispatch(emailVerificationRequestedSuccess(data));
-  } catch (error) {
-    dispatch(emailVerificationRequestFailed(error.response.data.response));
-  }
-};
-export const resetPassword = ({payload}) => async (dispatch) => {
-  dispatch(userResetPasswordRequested());
-  const {email} = payload;
-  try {
-    const data = await authService.reset({email});
-    dispatch(userResetPasswordRequestSuccess(data.response));
-  } catch (error) {
-    dispatch(userResetPasswordRequestFailed(error.response.data.response));
-  }
-};
-export const setNewPassword = (token, email, values) => async (dispatch) => {
-  dispatch(userSetNewPasswordRequested());
-  try {
-    const data = await authService.setNewPassword(token, email, values);
-    dispatch(userSetNewPasswordRequestSuccess(data.response));
-  } catch (error) {
-    dispatch(userSetNewPasswordRequestFailed(error));
-  }
-};
-export const logOut = () => (dispatch) => {
+export const userLogOut = () => (dispatch) => {
   sessionStorageService.removeAuthData();
   localStorageService.removeAuthData();
   dispatch(userLoggedOut());
 };
-export const updateUser = (payload) => async (dispatch) => {
-  dispatch(userUpdateRequested());
-  try {
-    const content = await userService.update(payload);
-    dispatch(userUpdateSuccess(content));
-    dispatch(loadUser());
-  } catch (error) {
-    dispatch(userUpdateFailed(error.response.data.response));
-  }
+export const userClearResponse = () => (dispatch) => {
+  dispatch(clearedResponse());
 };
-export const loadUser = () => async (dispatch) => {
-  dispatch(userLoadRequested());
-  try {
-    const content = await userService.getCurrentUser();
-    dispatch(userLoadRequestSuccess({...content}));
-  } catch (error) {
-    dispatch(userLoadRequestFailed(error.message));
-  }
-};
+
 const selectUserLoadingStatus = (state) => state.user.isLoading;
 export const getUserLoadingStatus = createSelector(
     [selectUserLoadingStatus],
     (isLoading) => isLoading,
 );
-const selectUserEntities = (state) => state.user.entities;
+const selectUserData = (state) => state.user.user;
 export const getUser = createSelector(
-    [selectUserEntities],
-    (entities) => entities,
+    [selectUserData],
+    (user) => user,
 );
 const selectIsLoggedIn = (state) => state.user.isLoggedIn;
 export const getIsLoggedIn = createSelector(
@@ -263,6 +343,12 @@ export const getIsLoggedIn = createSelector(
 const selectResponse = (state) => state.user.response;
 export const getResponse = createSelector(
     [selectResponse],
+    (response)=> response,
+);
+
+const selectError = (state) => state.user.error;
+export const getError = createSelector(
+    [selectError],
     (response)=> response,
 );
 

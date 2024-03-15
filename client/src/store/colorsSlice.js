@@ -11,7 +11,7 @@ export const fetchColorsList = createAsyncThunk(
         if (error.code === 'ERR_NETWORK') {
           return rejectWithValue(generateErrorMessage[error.code]);
         }
-        return rejectWithValue(error || 'Something went wrong.');
+        return rejectWithValue(error || 'SERVER_ERROR');
       }
     },
 );
@@ -40,17 +40,17 @@ const colorsSlice = createSlice({
   },
 });
 
-const selectColors = () => (state) => state.colors.entities;
+const selectColors =(state) => state.colors.entities;
 export const getColors = createSelector(
     [selectColors],
     (entities) => entities,
 );
-const selectIsColorsLoading = () => (state) => state.colors.isLoading;
+const selectIsColorsLoading =(state) => state.colors.isLoading;
 export const getColorsLoadingStatus = createSelector(
     [selectIsColorsLoading],
     (isLoading) => isLoading,
 );
-const selectColorsError =() => (state) => state.colors.error;
+const selectColorsError = (state) => state.colors.error;
 export const getColorsError = createSelector(
     [selectColorsError],
     (error) => error,

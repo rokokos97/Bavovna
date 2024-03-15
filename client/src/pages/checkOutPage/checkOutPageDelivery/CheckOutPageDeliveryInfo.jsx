@@ -9,7 +9,7 @@ import {getUserInfo} from '../../../store/ordersSlice';
 const CheckOutPageDeliveryInfo = () => {
   const cart = useSelector(getCart);
   const navigate = useNavigate();
-  const userInfo = useSelector(getUserInfo());
+  const userInfo = useSelector(getUserInfo);
   useEffect(() => {
     if (cart.length === 0) {
       navigate('/');

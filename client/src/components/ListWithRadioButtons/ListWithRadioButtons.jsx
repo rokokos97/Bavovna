@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './ListWithRadioButtons.module.scss';
 import PropTypes from 'prop-types';
 import DeleteIcon from '../svg/DeleteIcon/DeleteIcon';
-import {getUser, updateUser} from '../../store/userSlice';
+import {getUser, updateUserData} from '../../store/userSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import RadioButtonCheckedIcon from '../svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
@@ -17,12 +17,12 @@ const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) =>
       onSelectValue(id);
     }
     if (isList) {
-      dispatch(updateUser({...user, currentDeliveryAddress: id}));
+      dispatch(updateUserData({...user, currentDeliveryAddress: id}));
     }
   };
   const deleteDeliveryAddress = (id) => {
     const newDeliveryAddressList = user.deliveryAddress.filter((address)=>address._id !== id);
-    dispatch(updateUser({...user, currentDeliveryAddress: '', deliveryAddress: newDeliveryAddressList}));
+    dispatch(updateUserData({...user, currentDeliveryAddress: '', deliveryAddress: newDeliveryAddressList}));
   };
   return (
     <div className={styles.listWithRadioButtons}>

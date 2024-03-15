@@ -53,10 +53,6 @@
     @include form-message-block($light-pink, $error);
     @include fonts($body-3)
   }
-  .successMessagesBlock {
-    @include form-message-block($accent-a-05, $success);
-    @include fonts($body-3)
-  }
   .loader {
     background: conic-gradient($white, $accent-a-2);
     position: relative;

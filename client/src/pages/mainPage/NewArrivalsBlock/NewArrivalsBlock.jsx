@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styles from './NewArrivalsBlock.module.scss';
 import {useSelector} from 'react-redux';
-import {getItems, getItemsLoadingStatus} from '../../../store/itemsSlice';
+import {getItemsList, getItemsLoadingStatus} from '../../../store/itemsSlice';
 import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
@@ -12,8 +12,8 @@ import BigLeftArrowIcon from '../../../components/svg/arrowIcons/BigLeftArrowIco
 
 const NewArrivalsBlock = () => {
   const swiperRef = useRef();
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
-  const items = useSelector(getItems());
+  const isItemsLoading = useSelector(getItemsLoadingStatus);
+  const items = useSelector(getItemsList);
   let newArrivalItems = [];
   if (!isItemsLoading && items) {
     newArrivalItems = items.filter((item) => item.status === 'new');

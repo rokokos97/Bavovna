@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {uploadItemList} from '../store/itemsSlice';
+import {fetchItemsList} from '../store/itemsSlice';
 import PropTypes from 'prop-types';
 import {fetchCategoriesList} from '../store/categorySlice';
 import {fetchColorsList} from '../store/colorsSlice';
-import {getIsLoggedIn, loadUser} from '../store/userSlice';
+import {getIsLoggedIn, fetchUserData} from '../store/userSlice';
 import {useEffect} from 'react';
-import {uploadCitiesList} from '../store/citiesSlice';
+import {fetchCitiesList} from '../store/citiesSlice';
 
 const AppLoader = ({children}) => {
   const dispatch = useDispatch();
@@ -13,12 +13,12 @@ const AppLoader = ({children}) => {
   useEffect(() => {
     dispatch(fetchCategoriesList());
     dispatch(fetchColorsList());
-    dispatch(uploadItemList());
-    dispatch(uploadCitiesList());
+    dispatch(fetchItemsList());
+    dispatch(fetchCitiesList());
   }, []);
   useEffect(() => {
     if (isLoggedIn) {
-      dispatch(loadUser());
+      dispatch(fetchUserData());
     }
   }, [isLoggedIn]);
   return children;
