@@ -22,8 +22,8 @@ export const ShopPageMasterProvider = ({children}) => {
   const location = useLocation();
   const query = queryString.parse(location.search);
   const navigate = useNavigate();
-  const categories = useSelector(getCategories());
-  const colors = useSelector(getColors());
+  const categories = useSelector(getCategories);
+  const colors = useSelector(getColors);
   const [isFilter, setIsFilter] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
   const [sortedItems, setSortedItems] = useState([]);

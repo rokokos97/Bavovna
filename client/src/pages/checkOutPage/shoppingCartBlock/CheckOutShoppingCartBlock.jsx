@@ -53,6 +53,9 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   }, [deliveryPrice, currentDeliveryOption]);
   useEffect(()=>{
     dispatch(setOrderAmount(totalPrice));
+    if (itemPrice > 1000) {
+      setCurrentDeliveryPrice(0);
+    }
   }, [itemPrice]);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">

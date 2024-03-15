@@ -30,7 +30,7 @@ const deliveryOptionsSection = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(getUser);
   const userCurrentDeliveryOption = useSelector(getDeliveryOption);
-  const userCurrentDeliveryMethod = useSelector(getDeliveryMethod());
+  const userCurrentDeliveryMethod = useSelector(getDeliveryMethod);
   const dispatch = useDispatch();
   const [selectedCity, setSelectedCity] = useState();
   const [warehousesList, setWarehousesList] = useState([]);

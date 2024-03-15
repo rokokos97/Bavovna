@@ -15,7 +15,7 @@ const ShoppingCartPage = () => {
   const cart = useSelector(getCart);
   const navigate = useNavigate();
   const swiperRef = useRef();
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  const isItemsLoading = useSelector(getItemsLoadingStatus);
   const items = useSelector(getItemsList);
   const normalizedCart = useSelector(getNormalizedCart);
   let sliderItems = [];

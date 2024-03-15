@@ -86,52 +86,52 @@ export const changeDeliveryOption = (option) => async (dispatch) => {
   dispatch(changeDeliveryOption(option));
 };
 
-const selectOrders = () => (state) => state.orders.entities;
+const selectOrders = (state) => state.orders.entities;
 export const getOrders = createSelector(
     [selectOrders],
     (entities) => entities,
 );
-const selectOrdersLoadingStatus = () => (state) => state.orders.isLoading;
+const selectOrdersLoadingStatus = (state) => state.orders.isLoading;
 export const getOrdersLoadingStatus = createSelector(
     [selectOrdersLoadingStatus],
     (isLoading)=> isLoading,
 );
-const selectDeliveryOption = () => (state)=> state.orders.deliveryOption;
+const selectDeliveryOption = (state)=> state.orders.deliveryOption;
 export const getDeliveryOption= createSelector(
     [selectDeliveryOption],
     (deliveryOption) => deliveryOption,
 );
-const selectDeliveryMethod= () => (state)=> state.orders.deliveryMethod;
+const selectDeliveryMethod= (state)=> state.orders.deliveryMethod;
 export const getDeliveryMethod = createSelector(
     [selectDeliveryMethod],
     (deliveryMethod) => deliveryMethod,
 );
-const selectShippingPrice= () => (state) => state.orders.shippingPrice;
+const selectShippingPrice= (state) => state.orders.shippingPrice;
 export const getShippingPrice = createSelector(
     [selectShippingPrice],
     (shippingPrice)=> shippingPrice,
 );
-const selectDeliveryInfo = () => (state) => state.orders.userDeliveryInfo;
+const selectDeliveryInfo=(state) => state.orders.userDeliveryInfo;
 export const getDeliveryInfo = createSelector(
     [selectDeliveryInfo],
     (userDeliveryInfo)=> userDeliveryInfo,
 );
-const selectUserInfo = () => (state) => state.orders.userInfo;
+const selectUserInfo = (state) => state.orders.userInfo;
 export const getUserInfo = createSelector(
     [selectUserInfo],
     (userInfo)=> userInfo,
 );
-const selectPaymentMethod= () => (state) => state.orders.paymentMethod;
+const selectPaymentMethod= (state) => state.orders.paymentMethod;
 export const getPaymentMethod = createSelector(
     [selectPaymentMethod],
     (paymentMethod)=> paymentMethod,
 );
-const selectPromoCodeSale= () => (state) => state.orders.promoCodeSale;
+const selectPromoCodeSale=(state) => state.orders.promoCodeSale;
 export const getPromoCodeSale = createSelector(
     [selectPromoCodeSale],
     (promoCodeSale)=> promoCodeSale,
 );
-const selectOrderAmount = () => (state) => state.orders.orderAmount;
+const selectOrderAmount = (state) => state.orders.orderAmount;
 export const getOrderAmount = createSelector(
     [selectOrderAmount],
     (orderAmount)=> orderAmount,

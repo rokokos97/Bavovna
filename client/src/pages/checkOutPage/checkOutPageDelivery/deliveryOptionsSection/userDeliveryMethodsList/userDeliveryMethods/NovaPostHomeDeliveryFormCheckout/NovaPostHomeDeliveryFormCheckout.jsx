@@ -8,7 +8,7 @@ import TextField from '../../../../../../../components/form/formFields/TextField
 
 
 const NovaPostHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
-  const citiesList = useSelector(getCitiesList());
+  const citiesList = useSelector(getCitiesList);
   return (
     <div className={styles.npHomeDeliveryFormCheckout} data-testid="NovaPostHomeDeliveryFormCheckout">
       <SelectField

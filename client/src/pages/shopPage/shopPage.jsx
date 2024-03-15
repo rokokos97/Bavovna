@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux';
 import {getItemsLoadingStatus} from '../../store/itemsSlice';
 
 const ShopPage = () => {
-  const isItemsLoading = useSelector(getItemsLoadingStatus());
+  const isItemsLoading = useSelector(getItemsLoadingStatus);
   return (
     <ShopPageMasterProvider>
       {isItemsLoading && <Loader />}
