@@ -18,7 +18,7 @@ import createDeliveryLabel from '../../../../../utils/createDeliveryLabel';
 const UserDeliveryBlock = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  const userCurrentDeliveryMethod = useSelector(getDeliveryMethod());
+  const userCurrentDeliveryMethod = useSelector(getDeliveryMethod);
   const [selectedCity, setSelectedCity] = useState();
   const [warehousesList, setWarehousesList] = useState([]);
   const initialValues= {

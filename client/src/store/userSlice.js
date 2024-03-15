@@ -68,6 +68,7 @@ export const updateUserData = createAsyncThunk(
     'user/updateUserData',
     async (userData, {rejectWithValue}) => {
       try {
+        console.log('userData', userData);
         return await userService.update(userData);
       } catch (error) {
         return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
@@ -232,9 +233,9 @@ const usersSlice = createSlice({
         })
         .addCase(updateUserData.fulfilled, (state, action) => {
           state.isLoading = false;
-          state.user = action.payload.updatedUser;
+          state.user = action.payload;
           state.error = null;
-          state.response = action.payload.response;
+          state.response = null;
         })
         .addCase(updateUserData.rejected, (state, action) => {
           state.isLoading = false;
