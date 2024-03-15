@@ -37,10 +37,20 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
       ) : (
         <>
           <section className={styles.headerContent__header}>
-            <button type='button' onClick={() => setIsMenu(!isMenu)} className={styles.mobileButton}>
+            <button
+              type='button'
+              onClick={() => setIsMenu(!isMenu)}
+              className={styles.mobileButton}
+            >
               {isMenu ? <CloseIcon /> : <MenuIcon />}
             </button>
-            <section className={isMenu ? `${styles.headerContent__headerBlock}` : `${styles.headerContent__headerMobileBlock}`}>
+            <section
+              className={
+                isMenu ?
+                  `${styles.headerContent__headerBlock} ${styles.active}` :
+                  `${styles.headerContent__headerBlock}`
+              }
+            >
               <nav className={styles.headerContent__headerNavBar}>
                 <Link to='/shop?status=sale'>
                   <span>Sale</span>
