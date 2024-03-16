@@ -3,21 +3,22 @@ import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getError, getResponse, signUpUser, signUpWithGoogle} from '../../../store/userSlice';
+import {getError, getResponse, signUpUser, signUpWithGoogle, userClearResponse} from '../../../store/userSlice';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../../utils/validationSchema';
 import googleService from '../../../services/google.service';
-import transformErrorMessage from '../../../utils/generateErrorMessage';
 import {Modal} from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
 import {showBodyOverflow, hideBodyOverflow} from '../../../utils/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/RegisterFormBlock/RegisterFormBlock';
+import generateErrorMessage from '../../../utils/generateErrorMessage';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const error = useSelector(getError);
+  const authError = useSelector(getError);
   const response = useSelector(getResponse);
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(null);
   const [isRegularSignUp, setIsRegularSignUp] = useState(false);
   const [isGoogleSignUp, setIsGoogleSignUp] = useState(false);
   const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
@@ -39,6 +40,7 @@ const RegisterForm = () => {
       dispatch(signUpUser({...values, email: values.email.toLowerCase()})).then(()=>{
         setIsRegularSignUp(true);
       });
+      formik.resetForm();
     },
   });
   const googleRegister = useGoogleLogin({
@@ -67,6 +69,25 @@ const RegisterForm = () => {
       }
     }
   }, [response]);
+  useEffect(() => {
+    const message = authError ? generateErrorMessage[authError.message]:null;
+    setErrorMessage(message);
+  }, [authError]);
+  useEffect(() => {
+    const clearErrorMessage = () => {
+      if (errorMessage ) {
+        setErrorMessage(null);
+      }
+    };
+    window.addEventListener('click', clearErrorMessage);
+    return () => {
+      window.removeEventListener('click', clearErrorMessage);
+    };
+  }, [errorMessage]);
+  useEffect(() => {
+    setErrorMessage(null);
+    dispatch(userClearResponse());
+  }, []);
   return (
     <article className={styles.registerForm}>
       <section className={styles.registerForm__titleBlock}>
@@ -77,12 +98,11 @@ const RegisterForm = () => {
           Welcome! Please enter your details
         </span>
       </section>
-      <section style={{display: error ? 'block' : 'none'}}>
-        {error ?
+      {errorMessage ?
           <div className={styles.registerForm__errorMessagesBlock}>
-            <p>{transformErrorMessage[error.message]}</p>
-          </div> : null}
-      </section>
+            <p>{errorMessage}</p>
+          </div> : null
+      }
       <RegisterFormBlock formik={formik} googleRegister={googleRegister} isRegularSignUp={isRegularSignUp} isGoogleSignUp={isGoogleSignUp}/>
       <p className={styles.toLoginForm}>
         Already have an account?
