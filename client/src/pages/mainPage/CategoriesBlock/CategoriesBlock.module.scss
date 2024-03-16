@@ -1,6 +1,6 @@
 @import '../../../styles/variables.module';
 .categoriesBlock {
-  margin: 0 auto;
+  padding: 0 8rem;  
   display: flex;
   max-width: 128rem;
   width: 100%;
@@ -14,7 +14,8 @@
 .categoriesBlock__box {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 2.4rem;
   margin: 0 auto;
 }

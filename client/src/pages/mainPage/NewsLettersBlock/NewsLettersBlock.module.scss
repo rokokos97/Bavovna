@@ -34,13 +34,15 @@
   @include fonts($headline-2)
 }
 .content {
-  width: 51.8rem;
+  max-width: 51.8rem;
+  width: 100%;
   text-align: center;
   @include fonts($headline-10)
 }
 .newsLetterBlock__inputSection {
   display: flex;
-  width: 63rem;
+  max-width: 63rem;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 2.4rem;
@@ -48,6 +50,7 @@
 .newsLetterBlock__button {
   @include button($large);
   @include buttonBlack();
+  width: 100%;
 }
 .newsLetterBlock__messageError {
   background-color: $error;

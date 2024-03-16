@@ -1,22 +1,29 @@
 @import "../../../styles/variables.module";
 .newCollectionBlock {
-  height: 84.1rem;
+  max-height: 84.1rem;
+  position: relative;
 }
 .newCollectionBlock__image {
+  width: 100%;
   background:
           linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
           lightgray 50% / cover no-repeat;
+  img {
+    width: 100%;
+  }
 }
 .newCollectionBlock__section {
   display: flex;
   max-width: 57.8rem;
-  position: relative;
-  left: 8rem;
-  bottom: 55.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4rem;
+  margin-left: 8rem;
 }
 .newCollectionBlock__title1 {
     color: $black;
@@ -24,7 +31,7 @@
     @include fonts($headline-1);
 }
 .newCollectionBlock__text {
-  width: 57.8rem;
+  max-width: 57.8rem;
   color: $black;
   @include fonts($body-2);
   word-wrap: break-word;

@@ -5,12 +5,14 @@ import {Link} from 'react-router-dom';
 const NewCollectionBlock = () => {
   return (
     <article className={styles.newCollectionBlock} data-testid="NewCollectionBlock">
-      <img className={styles.newCollectionBlock__image}
-        src='/img/images/NewCollection/newCollection.webp'
-        alt="Interior view with a clothes rack, potted cacti,
+      <picture className={styles.newCollectionBlock__image}>
+        <source media="(min-width: 768px)" srcSet='/img/images/NewCollection/newCollection.webp' />
+        <img src='/img/images/NewCollection/mobileNewCollection.png'
+          alt="Interior view with a clothes rack, potted cacti,
          and a framed motivational quote reading
           'GET UP DRESS UP SHOW UP NEVER GIVE UP'"
-      />
+        />
+      </picture>
       <section className={styles.newCollectionBlock__section}>
         <h1 className={styles.newCollectionBlock__title1}>
             new collection

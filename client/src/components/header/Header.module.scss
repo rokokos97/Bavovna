@@ -5,7 +5,7 @@
   border-bottom: 0.1rem solid $gray-80;
   display: flex;
   position: fixed;
-  min-width: 105rem;
+  // min-width: 105rem;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -15,6 +15,6 @@
 @media (min-width: 581px) and (max-width: 768px) {
   .container {
     min-width: 58.1rem;
-    width: 100vw;
+    width: 100%;
   }
 }
