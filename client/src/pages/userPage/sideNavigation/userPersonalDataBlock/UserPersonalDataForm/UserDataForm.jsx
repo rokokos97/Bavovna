@@ -1,31 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import 'react-phone-input-2/lib/style.css';
 import styles from './UserDataForm.module.scss';
 import TextField from '../../../../../components/form/formFields/TextField/TextField';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
-import {getResponse, getUser, updateUserData} from '../../../../../store/userSlice';
+import {getError, getResponse, getUser, updateUserData, userClearResponse} from '../../../../../store/userSlice';
 import {validationSchemaUserDataForm} from '../../../../../utils/validationSchema';
 import PhoneField from '../../../../../components/form/formFields/PhoneField/PhoneField';
-import transformErrorMessage from '../../../../../utils/generateErrorMessage';
+import generateErrorMessage from '../../../../../utils/generateErrorMessage';
 const UserDataForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
+  const error = useSelector(getError);
   const response = useSelector(getResponse);
+  const [message, setMessage] = useState(null);
   const formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
+      firstName: user?.firstName || '',
+      lastName: user?.lastName ||'',
       email: '',
-      phoneNumber: '',
+      phoneNumber: user?.phoneNumber || '',
       currentPassword: '',
       newPassword: '',
     },
+    enableReinitialize: true,
     validationSchema: validationSchemaUserDataForm,
     onSubmit: () => {
       const changedFields = getChangedFields(formik.values);
       const updatedUser = {...user, ...changedFields};
       dispatch(updateUserData(updatedUser));
+      formik.resetForm();
     }},
   );
   const getChangedFields = (values) => {
@@ -37,14 +41,34 @@ const UserDataForm = () => {
     }
     return changes;
   };
-  //  useEffect(() => {
-  //    if (response) {
-  //      dispatch(userClearResponse());
-  //    }
-  //  }, [formik.values.currentPassword, dispatch]);
+  useEffect(() => {
+    const message = error ? generateErrorMessage[error.message]: response? generateErrorMessage[response.message]: null;
+    setMessage(message);
+  }, [error, response]);
+  useEffect(() => {
+    const clearErrorMessage = () => {
+      if (message ) {
+        setMessage(null);
+        dispatch(userClearResponse());
+      }
+    };
+    window.addEventListener('click', clearErrorMessage);
+    return () => {
+      window.removeEventListener('click', clearErrorMessage);
+    };
+  }, [message]);
+  useEffect(() => {
+    setMessage(null);
+    dispatch(userClearResponse());
+  }, []);
   return ( user && (
     <article className={styles.userDataForm} data-testid="UserDataForm">
       <p className={styles.userDataForm__title}>personal data</p>
+      {response ?
+        <div className={styles.userDataForm__responseMessage}>
+          <p>{message}</p>
+        </div> : null
+      }
       <form
         className={styles.userDataForm__userPersonalDataForm}
         onSubmit={formik.handleSubmit}
@@ -54,8 +78,7 @@ const UserDataForm = () => {
             <TextField
               label='First name'
               name='firstName'
-              placeholder={user.firstName}
-              value={formik.values.firstName || user.firstName}
+              value={formik.values.firstName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.firstName}
@@ -64,30 +87,26 @@ const UserDataForm = () => {
             <TextField
               label='Last name'
               name='lastName'
-              placeholder={user.lastName}
-              value={formik.values.lastName || user.lastName}
+              value={formik.values.lastName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.lastName}
               touched={formik.touched.lastName}
             />
             <TextField
-              disabled = {!user.isVerified}
+              disabled = {true}
               label='Email'
               name='email'
               placeholder={user.email}
               value={formik.values.email}
               onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.errors.email}
-              touched={formik.touched.email}
             />
           </section>
           <section
             className={styles.userDataForm__column}
           >
             <PhoneField
-              value={formik.values.phoneNumber || user.phoneNumber}
+              value={formik.values.phoneNumber}
               onChange={(value) => formik.setFieldValue('phoneNumber', value)}
               onBlur={()=> formik.setFieldTouched('phoneNumber', true)}
               touched={formik.touched.phoneNumber}
@@ -103,7 +122,7 @@ const UserDataForm = () => {
               value={formik.values.currentPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={response ? transformErrorMessage[response.message] : formik.errors.currentPassword}
+              error={error ? message : formik.errors.currentPassword}
               touched={formik.touched.currentPassword}
             />
             <TextField

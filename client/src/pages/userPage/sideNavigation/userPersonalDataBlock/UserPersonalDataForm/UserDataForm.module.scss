@@ -9,6 +9,11 @@
   text-align: start;
   padding-bottom: 2.4rem;
 }
+.userDataForm__responseMessage {
+  width: 51.5rem;
+  margin-bottom: 2.4rem;
+  @include form-message-block($accent-a-05, $success);
+}
 .userDataForm__userPersonalDataForm {
   display: flex;
   flex-direction: column;

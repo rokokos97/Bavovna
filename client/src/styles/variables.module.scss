@@ -370,6 +370,7 @@ $light-pink: #dfc5c5;
   align-self: stretch;
   background: $background-color;
   p {
+    @include fonts($body-3);
     width: 100%;
     text-align: start;
     padding: 1.2rem;

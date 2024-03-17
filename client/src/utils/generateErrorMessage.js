@@ -11,5 +11,6 @@ const transformErrorMessage = {
   SERVER_ERROR_MAIL: 'Oops... There was a mail server error, please try again later.',
   NEWSLETTER_EMAIL_EXIST: 'You are already subscribed to our updates.',
   EMAIL_NOT_VERIFIER: 'Please verify your email.',
+  USER_UPDATE: 'User info has been updated.',
 };
 export default transformErrorMessage;
