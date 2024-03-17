@@ -86,4 +86,8 @@
   color: #ea001b;
 }
 
+.textField.hasError[type=password] .inputBlock button div svg path {
+  stroke: #ea001b;
+}
+
 /*# sourceMappingURL=TextField.module.css.map */

@@ -100,3 +100,16 @@
     }
   }
 }
+.textField.hasError[type='password'] {
+  .inputBlock {
+    button {
+      div {
+        svg {
+          path {
+            stroke: $error;
+          }
+        }
+      }
+    }
+  }
+}
