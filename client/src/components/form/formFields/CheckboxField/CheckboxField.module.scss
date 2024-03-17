@@ -43,11 +43,23 @@
 }
 .error {
   color: $error;
-
   padding-left: 0.8rem;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+.checkboxField.hasError {
+  .checkbox {
+    input[type=checkbox] {
+      border-color: $error;
+    }
+    input[type=checkbox]:checked {
+      border-color: $error;
+    }
+    label {
+      color: $error;
+    }
+  }
 }
 

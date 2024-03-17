@@ -48,4 +48,14 @@
   line-height: normal;
 }
 
+.checkboxField.hasError .checkbox input[type=checkbox] {
+  border-color: #ea001b;
+}
+.checkboxField.hasError .checkbox input[type=checkbox]:checked {
+  border-color: #ea001b;
+}
+.checkboxField.hasError .checkbox label {
+  color: #ea001b;
+}
+
 /*# sourceMappingURL=CheckboxField.module.css.map */

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const CheckboxField = ({name, value, onChange, error, children}) => {
   return (
-    <div className={styles.checkboxField} data-testid="CheckboxField">
+    <div className={`${styles.checkboxField} ${error? styles.hasError: ''}`} data-testid="CheckboxField">
       <div className={styles.checkbox}>
         <input
           type='checkbox'
