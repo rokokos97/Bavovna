@@ -35,6 +35,7 @@
   background: #fafafa !important;
   font-size: 16px;
   line-height: 140%;
+  font-family: "Lato", sans-serif !important;
   font-size: 1.6rem !important;
 }
 .phoneField .phoneInputInput:hover {
