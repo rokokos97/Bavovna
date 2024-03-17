@@ -3,48 +3,38 @@ import * as Yup from 'yup';
 const streetNameRegex = /^[A-Z][a-z'-]*\s?([A-Z]?[a-z'-]*)?$/;
 const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 const passwordRegex = /^(?=.*[0-9])(?=.*[!_$%&*"])(?=.*[A-Z]).{8,}$/;
+const nameRegex = /^[A-Z][a-z]{1,14}$/;
+
 export const validationSchemaRegisterForm = Yup.object().shape({
   license: Yup.boolean()
-      .oneOf([true], 'You must agree to the terms and conditions')
-      .required('Accepting terms and conditions is required'),
+      .oneOf([true], 'You must agree to the terms and conditions'),
   confirmPassword: Yup.string()
-      .required('Password confirmation is required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Field is required'),
   password: Yup.string()
-      .required('Password is required')
+      .max(16, 'Password hasn\'t\' to be longer than 16 characters')
       .matches(passwordRegex, 'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&*')
-      .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
+      .required('Field is required'),
   email: Yup.string()
-      .required('Email is required')
-      .matches(emailRegex, 'Invalid email address'),
+      .matches(emailRegex, 'Invalid email address')
+      .required('Field is required'),
   lastName: Yup.string()
-      .required('Last name is required')
-      .min(2, 'Last name has to be longer than 2 characters')
-      .matches(
-          /^[A-Z][a-z]+$/,
-          'The Last name must begin with a capital' +
-      ' letter and consist only of latin letters')
-      .max(15, 'First name must be at most 15 characters long'),
+      .matches(nameRegex, 'The name must begin with a capital letter, consist only of latin letters and must be between 2 and 15 characters long')
+      .required('Field is required'),
   firstName: Yup.string()
-      .required('First name is required')
-      .min(2, 'First name has to be longer than 2 characters')
-      .matches(
-          /^[A-Z][a-z]+$/,
-          'The First name must begin with a capital' +
-        ' letter and consist only of latin letters')
-      .max(15, 'First name must be at most 15 characters long'),
+      .matches(nameRegex, 'The name must begin with a capital letter, consist only of latin letters and must be between 2 and 15 characters long')
+      .required('Field is required'),
 });
 export const validationSchemaLoginForm = Yup.object().shape({
   password: Yup.string()
-      .required('Password is required'),
+      .required('Field is required'),
   email: Yup.string()
-      .required('Email is required')
-      .matches( emailRegex, 'Email format is not valid'),
+      .matches( emailRegex, 'Email format is not valid')
+      .required('Field is required'),
 });
 export const validationSchemaUserDataForm = Yup.object().shape({
   currentPassword: Yup.string(),
   newPassword: Yup.string()
-      .required('Password is required')
       .matches(passwordRegex, 'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&*')
       .max(16, 'Password can\'t be longer than 16 characters'),
   phoneNumber: Yup.string()
@@ -52,13 +42,11 @@ export const validationSchemaUserDataForm = Yup.object().shape({
   email: Yup.string()
       .matches(emailRegex, 'Invalid email address'),
   lastName: Yup.string()
-      .min(2, 'Last name has to be longer than 2 characters')
-      .matches(/^[A-Z][a-z]+$/, 'The Last name must begin with a capital letter and consist only of latin letters')
-      .max(15, 'Last name must be at most 15 characters long'),
+      .matches(nameRegex, 'The name must begin with a capital letter, consist only of latin letters and must be between 2 and 15 characters long')
+      .required('Field is required'),
   firstName: Yup.string()
-      .min(2, 'First name has to be longer than 2 characters')
-      .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
-      .max(15, 'First name must be at most 15 characters long'),
+      .matches(nameRegex, 'The name must begin with a capital letter, consist only of latin letters and must be between 2 and 15 characters long')
+      .required('Field is required'),
 });
 export const validationSchemaNPDeliveryWarehouse = Yup.object().shape({
   city: Yup.object().test('object-length', 'City is required', (obj) => {
@@ -113,15 +101,11 @@ export const validationSchemaCheckOutUserInfo = Yup.object().shape({
       .matches(emailRegex, 'Invalid email address')
       .required('Email is required'),
   lastName: Yup.string()
-      .min(2, 'Last name has to be longer than 2 characters')
-      .matches(/^[A-Z][a-z]+$/, 'The Last name must begin with a capital letter and consist only of latin letters')
-      .max(15, 'Last name must be at most 15 characters long')
-      .required('Last name is required'),
-  firstName: Yup.string()
-      .min(2, 'First name has to be longer than 2 characters')
-      .matches(/^[A-Z][a-z]+$/, 'The First name must begin with a capital letter and consist only of latin letters')
-      .max(15, 'First name must be at most 15 characters long')
+      .matches(nameRegex, 'The name must begin with a capital letter, consist only of latin letters and must be between 2 and 15 characters long')
       .required('First name is required'),
+  firstName: Yup.string()
+      .matches(nameRegex, 'The name must begin with a capital letter, consist only of latin letters and must be between 2 and 15 characters long')
+      .required('Name is required'),
 });
 export const validationSchemaCardPayment = Yup.object().shape({
   cvvCvc: Yup.string()
