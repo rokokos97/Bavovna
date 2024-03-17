@@ -231,9 +231,9 @@ const usersSlice = createSlice({
         })
         .addCase(updateUserData.fulfilled, (state, action) => {
           state.isLoading = false;
-          state.user = action.payload;
+          state.user = action.payload.updatedUser;
           state.error = null;
-          state.response = null;
+          state.response = action.payload.response;
         })
         .addCase(updateUserData.rejected, (state, action) => {
           state.isLoading = false;
