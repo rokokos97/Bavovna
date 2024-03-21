@@ -10,8 +10,9 @@
   align-items: flex-start;
 
   &:hover {
-      cursor: pointer;
-    .itemPreviewCard__description, .itemPreviewCard__price {
+    cursor: pointer;
+    .itemPreviewCard__description,
+    .itemPreviewCard__price {
       span {
         color: $accent-a-7;
       }
@@ -21,7 +22,8 @@
   }
   &:active {
     cursor: pointer;
-    .itemPreviewCard__description, .itemPreviewCard__price {
+    .itemPreviewCard__description,
+    .itemPreviewCard__price {
       span {
         color: $accent-a-4;
       }
@@ -31,10 +33,10 @@
   }
 }
 
-.disabledItemPreviewCard{
+.disabledItemPreviewCard {
   pointer-events: none;
 }
-.disabledItemPreviewCard__image{
+.disabledItemPreviewCard__image {
   opacity: 0.5;
   // background: linear-gradient(0deg, rgba(245, 245, 245, 0.30) 0%, rgba(245, 245, 245, 0.30) 100%), lightgray -66.288px -276.028px / 127.435% 156.726% no-repeat;
 }
@@ -90,4 +92,7 @@
   }
 }
 
-
+@media (min-width: 581px) and (max-width: 768px) {
+}
+@media (max-width: 580px) {
+}

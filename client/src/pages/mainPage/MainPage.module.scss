@@ -3,5 +3,14 @@
   flex-direction: column;
   row-gap: 10rem;
   justify-content: center;
-  // position: relative;
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .mainPage {
+    row-gap: 3.2rem;
+  }
+}
+@media (max-width: 580px) {
+  .mainPage {
+    row-gap: 2.4rem;
+  }
 }

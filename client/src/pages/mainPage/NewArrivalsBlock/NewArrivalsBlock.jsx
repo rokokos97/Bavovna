@@ -28,14 +28,14 @@ const NewArrivalsBlock = () => {
           <button
             className={styles.newArrivalsBlock__button}
             type = 'button'
-            aria-label='go to privious slide'
+            aria-label='go to previous slide'
             onClick={() => swiperRef.current?.slidePrev()}>
             <BigLeftArrowIcon/>
           </button>
           <button
             className={`${styles.newArrivalsBlock__button} ${styles.buttonRight}`}
             type = 'button'
-            aria-label='go to privious slide'
+            aria-label='go to previous slide'
             onClick={() => swiperRef.current?.slideNext()}>
             <BigLeftArrowIcon />
           </button>
@@ -44,12 +44,22 @@ const NewArrivalsBlock = () => {
       {!isItemsLoading && newArrivalItems &&
               <Swiper
                 onSwiper={(swiper) => swiperRef.current = swiper}
-                slidesPerView={3}
-                spaceBetween={3}
                 modules={[Navigation]}
+                slidesPerView={1}
+                spaceBetween={1}
                 navigation={{
                   nextEl: '.swiper-button-next',
                   prevEl: '.swiper-button-prev',
+                }}
+                breakpoints={{
+                  769: {
+                    slidesPerView: 3,
+                    spaceBetween: 3,
+                  },
+                  581: {
+                    slidesPerView: 2,
+                    spaceBetween: 2,
+                  },
                 }}
               >
                 {newArrivalItems.map((item) =>

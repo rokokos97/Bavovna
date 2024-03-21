@@ -1,15 +1,28 @@
-@import "../../../styles/variables.module";
+@import '../../../styles/variables.module';
 .newCollectionBlock {
   max-height: 84.1rem;
   position: relative;
 }
 .newCollectionBlock__image {
   width: 100%;
-  background:
-          linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
-          lightgray 50% / cover no-repeat;
   img {
+    position: relative;
     width: 100%;
+  }
+  img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(
+        90deg,
+        rgba(222, 222, 222, 0.54) 14.47%,
+        rgba(225, 225, 225, 0) 45.58%
+      ),
+      lightgray 50% / cover no-repeat;
   }
 }
 .newCollectionBlock__section {
@@ -26,9 +39,10 @@
   margin-left: 8rem;
 }
 .newCollectionBlock__title1 {
-    color: $black;
-    word-wrap: break-word;
-    @include fonts($headline-1);
+  color: $black;
+  word-wrap: break-word;
+  @include fonts($headline-1);
+  font-weight: 800;
 }
 .newCollectionBlock__text {
   max-width: 57.8rem;
@@ -41,4 +55,35 @@
   @include button(19.5rem);
   @include buttonBlack();
 }
-
+@media (min-width: 581px) and (max-width: 768px) {
+  .newCollectionBlock {
+    max-height: 91.7rem;
+  }
+  .newCollectionBlock__section {
+    gap: 2.4rem;
+    margin-left: 3.2rem;
+  }
+  .newCollectionBlock__title1 {
+    @include fonts($tablet-headline-1);
+    font-weight: 800;
+    max-width: 42.4rem;
+  }
+  .newCollectionBlock__text {
+    max-width: 44rem;
+  }
+}
+@media (max-width: 580px) {
+  .newCollectionBlock__section {
+    gap: 2.4rem;
+    margin-left: 1.6rem;
+  }
+  .newCollectionBlock__title1 {
+    @include fonts($tablet-headline-1);
+    font-weight: 800;
+    max-width: 42.4rem;
+  }
+  .newCollectionBlock__text {
+    max-width: 28.5rem;
+    @include fonts($body-3);
+  }
+}
