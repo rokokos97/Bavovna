@@ -4,13 +4,8 @@ import {useSelector} from 'react-redux';
 import {getUser} from '../../../../store/userSlice';
 import ItemsList from '../../../../components/ItemsList/ItemsList';
 import EmptyBlock from '../../../../blocks/EmptyBlock/EmptyBlock';
-import Loader from '../../../../components/Loader/Loader';
-
 const WishListBlock = () => {
   const user = useSelector(getUser);
-  if (!user) {
-    return <Loader/>;
-  }
   return (
     <article className={styles.wishListBlock} data-testid="WishListBlock">
       <h2 className={styles.wishListBlock__title}>wishlist</h2>
