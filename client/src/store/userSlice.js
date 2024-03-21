@@ -77,12 +77,13 @@ export const updateUserData = createAsyncThunk(
 export const verifyUserEmail = createAsyncThunk(
     'user/verifyUserEmail',
     async ({token, email}, {rejectWithValue}) => {
+      console.log(token, email);
       try {
         const data = await authService.emailVerify(token, email);
         sessionStorageService.setTokens(data);
         return data;
       } catch (error) {
-        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+        return rejectWithValue(error.response.data.response || 'SERVER_ERROR');
       }
     },
 );
@@ -249,9 +250,9 @@ const usersSlice = createSlice({
           state.isLoading = false;
           state.user = action.payload.user;
           state.auth = action.payload._id;
-          state.isLoggedIn = true;
-          state.error = null;
           state.response = action.payload.response;
+          state.error = null;
+          state.isLoggedIn = true;
         })
         .addCase(verifyUserEmail.rejected, (state, action) => {
           state.isLoading = false;
