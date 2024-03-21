@@ -70,13 +70,21 @@ const LoginFormBlock = ({type}) => {
     const message = authError ? generateErrorMessage[authError.message]:null;
     setErrorMessage(message);
   }, [authError]);
-
   useEffect(() => {
-    if (errorMessage) {
-      setErrorMessage(null);
-      dispatch(userClearResponse());
-    }
-  }, [formik.values]);
+    const clearErrorMessage = () => {
+      if (errorMessage ) {
+        setErrorMessage(null);
+      }
+    };
+    window.addEventListener('click', clearErrorMessage);
+    return () => {
+      window.removeEventListener('click', clearErrorMessage);
+    };
+  }, [errorMessage]);
+  useEffect(() => {
+    setErrorMessage(null);
+    dispatch(userClearResponse());
+  }, []);
   return (<>
     <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
       {errorMessage &&

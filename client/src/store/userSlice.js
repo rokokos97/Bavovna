@@ -46,7 +46,6 @@ export const signUpWithGoogle = createAsyncThunk(
         sessionStorageService.setTokens(data);
         return data.user;
       } catch (error) {
-        console.log('error.response.data.response', error.response.data.response);
         return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
       }
     },
@@ -68,7 +67,6 @@ export const updateUserData = createAsyncThunk(
     'user/updateUserData',
     async (userData, {rejectWithValue}) => {
       try {
-        console.log('userData', userData);
         return await userService.update(userData);
       } catch (error) {
         return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
