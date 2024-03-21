@@ -77,7 +77,6 @@ export const updateUserData = createAsyncThunk(
 export const verifyUserEmail = createAsyncThunk(
     'user/verifyUserEmail',
     async ({token, email}, {rejectWithValue}) => {
-      console.log(token, email);
       try {
         const data = await authService.emailVerify(token, email);
         sessionStorageService.setTokens(data);
