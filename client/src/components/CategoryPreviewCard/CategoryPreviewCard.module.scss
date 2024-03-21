@@ -1,22 +1,37 @@
 @import '../../styles/variables.module.scss';
 .categoryPreviewCard {
   display: flex;
-  width: 19.3rem;
+  max-width: 19.3rem;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
   cursor: pointer;
 
-  img{
+  img {
+    width: 100%;
     transition: scale 0.3s ease-in-out;
+    object-fit: contain;
   }
 
-  &:hover img{
+  &:hover img {
     scale: 1.025;
   }
 
   .categoryPreviewCard__title {
     text-transform: capitalize;
-    @include fonts($body-2)
-  };
+    @include fonts($body-2);
+  }
+}
+@media (min-width: 581px) and (max-width: 1000px) {
+  .categoryPreviewCard {
+    max-width: 22.3rem;
+    width: 100%;
+  }
+}
+@media (max-width: 580px) {
+  .categoryPreviewCard {
+    max-width: 32.8rem;
+    width: 100%;
+  }
 }

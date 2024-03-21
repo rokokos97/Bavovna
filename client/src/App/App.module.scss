@@ -3,23 +3,23 @@
 .App {
   display: flex;
   flex-direction: column;
-  min-width: $min-width;
+  width: 100%;
+  // min-width: $min-width;
   margin: 0 auto;
   background-color: $gray-90;
   min-height: 100%;
 }
 
-@media (min-width: 481px) and (max-width: 768px){
-  .App{
-    min-width: 48.1rem;
-    width: 100%;
-  }
-}
+// @media (min-width: 481px) and (max-width: 768px){
+//   .App{
+//     min-width: 48.1rem;
+//     width: 100%;
+//   }
+// }
 
-@media (max-width: 480px) {
-  .App{
-    min-width: 32rem;
-    width: 100%;
-  }
-}
-
+// @media (max-width: 480px) {
+//   .App{
+//     min-width: 32rem;
+//     width: 100%;
+//   }
+// }

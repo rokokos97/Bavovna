@@ -55,6 +55,24 @@
   @include button(19.5rem);
   @include buttonBlack();
 }
+.newCollectionBlock__image {
+  display: block;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90.08deg,
+      rgba(222, 222, 222, 0.54) 14.47%,
+      rgba(225, 225, 225, 0) 45.58%
+    );
+  }
+}
 @media (min-width: 581px) and (max-width: 768px) {
   .newCollectionBlock {
     max-height: 91.7rem;

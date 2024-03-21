@@ -2,7 +2,6 @@
 .itemPreviewCard {
   position: relative;
   max-width: 41rem;
-  min-width: 35rem;
   width: 100%;
   max-height: 57.8rem;
   flex-direction: column;
@@ -42,6 +41,7 @@
 }
 .itemPreviewCard__image {
   width: 100%;
+  height: 100%;
   height: 50rem;
 
   img {
@@ -81,18 +81,71 @@
   right: 1.6rem;
 }
 .itemPreviewCard__description {
+  display: flex;
+  gap: 0.8rem;
+  flex-direction: column;
   text-align: start;
+  padding: 0.4rem 0.8rem;
+  margin-top: 0.8rem;
   span {
-    padding-top: 0.8rem;
     @include fonts($body-2);
   }
   p:last-child {
-    padding-top: 0.8rem;
     @include fonts($headline-8);
   }
 }
 
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 581px) and (max-width: 1000px) {
+  .itemPreviewCard {
+    max-width: 34.5rem;
+    max-height: 48rem;
+  }
+  .itemPreviewCard__image {
+    max-height: 42rem;
+    width: 100%;
+  }
+  .itemPreviewCard__description {
+    span {
+      @include fonts($body-3);
+    }
+  }
+  .itemPreviewCard__status {
+    padding: 0.7rem 1rem;
+  }
+  .itemPreviewCard__statusText {
+    @include fonts($headline-12);
+  }
 }
 @media (max-width: 580px) {
+  .itemPreviewCard {
+    max-width: 15.6rem;
+    max-height: 26rem;
+    height: 100%;
+  }
+  .itemPreviewCard__image {
+    max-height: 18.4rem;
+    max-width: 15.6rem;
+  }
+  .itemPreviewCard__description {
+    margin-top: 1rem;
+    span {
+      @include fonts($body-4);
+    }
+    p:last-child {
+      @include fonts($body-4);
+    }
+  }
+  .itemPreviewCard__status {
+    padding: 0.7rem 1rem;
+    top: 0.8rem;
+  }
+  .itemPreviewCard__heart {
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+  .itemPreviewCard__statusText {
+    @include fonts($headline-12);
+  }
 }

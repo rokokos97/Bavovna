@@ -11,7 +11,6 @@
     color: $accent-a-3;
   }
 }
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -22,7 +21,6 @@
   margin: auto;
   z-index: 10000;
 }
-
 .footerTop {
   height: 25.8rem;
   display: flex;
@@ -30,7 +28,6 @@
   padding-bottom: 3rem;
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
 }
-
 .footerTopLeft {
   display: flex;
   width: 75%;
@@ -44,13 +41,11 @@
     padding-bottom: 2rem;
   }
 }
-
 .footerContact,
 .footerShop,
 .footerHelp {
   flex-basis: 33.3%;
 }
-
 .footerList {
   display: flex;
   gap: 1.6rem;
@@ -59,7 +54,6 @@
   @include fonts($menu-3);
   text-transform: uppercase;
 }
-
 .footerTopRight {
   display: flex;
   flex-direction: column;
@@ -79,12 +73,10 @@
     }
   }
 }
-
 .socialList {
   display: flex;
   gap: 0.8rem;
 }
-
 .socialListItem {
   display: flex;
   align-items: center;
@@ -92,83 +84,67 @@
   height: 3.6rem;
   width: 3.6rem;
 }
-
 .footerBottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 2.1rem;
 }
-
 .footerBottomLeft {
   display: flex;
   justify-content: space-between;
   width: 75%;
 }
-
 .footerBottomItem {
   display: flex;
   flex-basis: 33.3%;
   @include fonts($menu-4);
   opacity: 0.48;
 }
-
 .footerBottomCookies {
   @include fonts($menu-3);
 }
-
 .footerBottomRight {
   display: flex;
   align-items: center;
 }
-
 @media (min-width: 581px) and (max-width: 768px) {
   .footer {
     padding: 3.2rem;
   }
-
   .footerTop {
     height: 100%;
     flex-direction: column-reverse;
   }
-
   .footerList {
     gap: 1.2rem;
-    text-transform: initial;
   }
-
   .footerTopLeft {
     width: 100%;
     & h3 {
       padding-bottom: 1.2rem;
     }
   }
-
   .footerTopRight {
     flex-direction: row;
     margin-bottom: 2.4rem;
   }
-
   .footerBottom {
     gap: 2.4rem;
   }
-
   .footerBottomLeft {
     gap: 0.5rem;
   }
-
   .footerBottomItem {
     flex-basis: content;
   }
 }
-
 @media (max-width: 580px) {
   .footer {
     position: relative;
     padding: 2.4rem 1.4rem;
     padding-top: 6rem;
   }
-
   .footerTop {
     display: block;
     height: 100%;
@@ -178,32 +154,27 @@
       padding-bottom: 1.6rem;
     }
   }
-
   .footerTopRight {
     button {
       position: absolute;
       top: 2.2rem;
     }
   }
-
   .footerTopLeft {
     flex-direction: column;
     gap: 1.6rem;
     margin-bottom: 1.6rem;
   }
-
   .footerList {
     flex-direction: row;
     gap: 0.8rem;
-    text-transform: initial;
     flex-basis: content;
+    flex-wrap: wrap;
   }
-
   .footerBottom {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .footerBottomLeft {
     flex-direction: column;
     gap: 0.8rem;

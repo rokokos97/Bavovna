@@ -25,11 +25,30 @@
   width: 100%;
   color: $black;
   @include fonts($body-2);
-
 }
 .bavovnaBlock__button {
   margin: 0 auto;
   text-decoration: none;
   @include button(19.5rem);
   @include buttonWhite();
+}
+@media (min-width: 581px) and (max-width: 1000px) {
+  .bavovnaBlock {
+    padding: 0 3.2rem;
+  }
+  .bavovnaBlock__button {
+    @include button(22.4rem);
+  }
+}
+@media (max-width: 580px) {
+  .bavovnaBlock {
+    padding: 0 1.6rem;
+  }
+  .bavovnaBlock__title2 {
+    @include fonts($tablet-headline-2);
+    font-weight: 800;
+  }
+  .bavovnaBlock__content {
+    @include fonts($body-3);
+  }
 }
