@@ -34,9 +34,8 @@
       width: 100%;
       height: 100%;
     }
-
     label {
-      @include fonts($menu-3);
+      @include fonts($label);
       color: $accent-a-95;
     }
   }
@@ -44,10 +43,7 @@
 .error {
   color: $error;
   padding-left: 0.8rem;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include fonts($menu-5);
 }
 .checkboxField.hasError {
   .checkbox {

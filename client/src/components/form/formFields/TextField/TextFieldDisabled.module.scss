@@ -69,10 +69,7 @@
 }
 .error {
   color: var(--error, #EA001B);
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include fonts($menu-5);
 }
 .block {
   display: inline;

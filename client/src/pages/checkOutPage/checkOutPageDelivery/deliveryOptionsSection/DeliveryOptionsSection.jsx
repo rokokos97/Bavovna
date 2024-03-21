@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
 import {
   getDeliveryMethod,
-  getDeliveryOption,
+  getDeliveryOption, getOrderAmount,
   setDeliveryMethod,
   setDeliveryOption, setDeliveryPrice, setUserDeliveryInfo,
 } from '../../../../store/ordersSlice';
@@ -29,6 +29,7 @@ const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(getUser);
+  const orderAmount = useSelector(getOrderAmount);
   const userCurrentDeliveryOption = useSelector(getDeliveryOption);
   const userCurrentDeliveryMethod = useSelector(getDeliveryMethod);
   const dispatch = useDispatch();
@@ -67,7 +68,7 @@ const deliveryOptionsSection = () => {
         });
         newValues.label = createDeliveryLabel(newValues);
         newValues.deliveryMethod = userCurrentDeliveryMethod;
-        newValues.deliveryPrice = deliveryMethodsList[2][userCurrentDeliveryMethod].price;
+        newValues.deliveryPrice =orderAmount > 1000 ? deliveryMethodsList[2][userCurrentDeliveryMethod].price : 0;
         dispatch(setUserDeliveryInfo(newValues));
         navigate('/cart/checkoutPayment');
       } else {
