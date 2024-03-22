@@ -187,50 +187,50 @@
   height: 1.6rem;
 }
 
-.productCardInCart__productCardInCart[type="2"] {
+.productCardInCart[type="2"] {
   height: fit-content;
   align-items: center;
   margin-bottom: 2.4rem;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__imageBlock {
+.productCardInCart[type="2"] .productCardInCart__imageBlock {
   width: 10rem;
   height: 10rem;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock {
+.productCardInCart[type="2"] .productCardInCart__infoBlock {
   margin-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock {
   width: 61.5rem;
   flex-direction: row-reverse;
   gap: 0;
   justify-content: space-between;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__price {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__price {
   width: 11.8rem;
   display: flex;
   gap: 0;
   justify-content: flex-end;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock {
   width: fit-content;
   gap: 3.2rem;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__fakeDiv {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__fakeDiv {
   display: none;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__colorBlock {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__colorBlock {
   width: fit-content;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock {
   width: fit-content;
   margin-left: 4.8rem;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock .productCardInCart__quantity .productCardInCart__button {
+.productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock .productCardInCart__quantity .productCardInCart__button {
   display: none;
 }
-.productCardInCart__productCardInCart[type="2"] .productCardInCart__buttonBlock {
+.productCardInCart[type="2"] .productCardInCart__buttonBlock {
   display: none;
 }
 

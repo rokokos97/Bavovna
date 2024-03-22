@@ -40,7 +40,7 @@ $headline-3:(
   text-transform: uppercase,
 );
 $headline-4:(
-  font-weight: 400,
+  font-weight: 500,
   size: 24px,
   line-height: 120%,
   text-transform: uppercase,
@@ -70,7 +70,7 @@ $headline-8:(
   text-transform: uppercase,
 );
 $headline-9:(
-  font-weight: 400,
+  font-weight: 500,
   size: 16px,
   line-height: 110%,
   text-transform: uppercase,
@@ -102,6 +102,7 @@ $body-3:(
   font-weight: 400,
   size: 16px,
   line-height: 110%,
+  paragraph-spacing: 8px,
 );
 $menu-1:(
   font-weight: 600,
@@ -125,6 +126,11 @@ $menu-4:(
   size: 12px,
   line-height: 110%,
   text-transform: uppercase,
+);
+$menu-5:(
+   font-weight: 400,
+   size: 12px,
+   line-height: 110%,
 );
 $link-1:(
   font-weight: 600,
@@ -370,6 +376,7 @@ $light-pink: #dfc5c5;
   align-self: stretch;
   background: $background-color;
   p {
+    @include fonts($body-3);
     width: 100%;
     text-align: start;
     padding: 1.2rem;

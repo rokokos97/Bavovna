@@ -84,9 +84,25 @@
     padding-top: 0.8rem;
     @include fonts($body-2);
   }
-  p:last-child {
+  .itemPreviewCard__price {
     padding-top: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
     @include fonts($headline-8);
+  }
+  .itemPreviewCard__discount {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    @include fonts($headline-8);
+    span:first-child {
+      text-decoration: line-through;
+      color: $gray-30
+    }
+    span:last-child {
+      color: $black;
+    }
   }
 }
 

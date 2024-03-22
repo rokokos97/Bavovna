@@ -11,7 +11,7 @@ const UserPage = () => {
   if ( urlParams.has('email') && urlParams.has('token') ) {
     const email = urlParams.get('email');
     const token = urlParams.get('token');
-    dispatch(verifyUserEmail(token, email));
+    dispatch(verifyUserEmail({token, email}));
   }
   return (
     <section className={styles.userPage} data-testid="UserPage">

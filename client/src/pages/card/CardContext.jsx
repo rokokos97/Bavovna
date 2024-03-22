@@ -1,7 +1,5 @@
-/* eslint-disable operator-linebreak */
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import PropTypes from 'prop-types';
 import useChangeFavorite from '../../utils/useChangeFavorite';
 import {showBodyOverflow, hideBodyOverflow} from '../../utils/modal.service';
 import config from '../../config.json';
@@ -18,9 +16,17 @@ import ColorsList from '../../components/ColorsList/ColorsList';
 import styles from './Card.module.scss';
 import FillHeartIcon from '../../components/svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
 import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
+import {useParams} from 'react-router-dom';
+import {getItemsById} from '../../store/itemsSlice';
+import Loader from '../../components/Loader/Loader';
 
-const CardContext = ({item}) => {
+const CardContext = () => {
+  const {id} = useParams();
   const dispatch = useDispatch();
+  const item = useSelector(getItemsById(id));
+  if (!item) {
+    return <Loader/>;
+  }
   const user = useSelector(getUser);
   const {itemData, setItemData} = useDataCard();
   const {
@@ -42,9 +48,7 @@ const CardContext = ({item}) => {
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
 
-  sale
-    ? (currentPrice = parseFloat(price * sale) / 100)
-    : (currentPrice = price);
+  sale ? (currentPrice = parseFloat(price * sale) / 100) : (currentPrice = price);
 
   useEffect(() => {
     setItemData({
@@ -200,10 +204,6 @@ const CardContext = ({item}) => {
       </section>
     </>
   );
-};
-
-CardContext.propTypes = {
-  item: PropTypes.object.isRequired,
 };
 
 export default CardContext;

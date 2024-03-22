@@ -21,7 +21,13 @@ router.patch('/:userId', auth,
         }
         if (!currentPassword) {
           const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true});
-          return res.send(updatedUser);
+          return res.status(200).send({
+            response: {
+              message: 'USER_UPDATE',
+              code: 200,
+            },
+            updatedUser,
+          });
         }
         const isPasswordEqual = await bcrypt.compare(
             currentPassword, existingUser.password);
@@ -33,16 +39,15 @@ router.patch('/:userId', auth,
             },
           });
         }
-        const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true});
-        return res.status(200).send({
-          response: {
-            message: 'USER_UPDATE',
-            code: 200,
-          },
-          updatedUser,
-        });
+//        const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true});
+//        return res.status(200).send({
+//          response: {
+//            message: 'USER_UPDATE',
+//            code: 200,
+//          },
+//          updatedUser,
+//        });
       } catch (error) {
-    
         return res.status(500).json({
           response: {
             errors: error,

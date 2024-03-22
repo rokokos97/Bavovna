@@ -82,7 +82,7 @@ export const verifyUserEmail = createAsyncThunk(
         sessionStorageService.setTokens(data);
         return data;
       } catch (error) {
-        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+        return rejectWithValue(error.response.data.response || 'SERVER_ERROR');
       }
     },
 );
@@ -231,9 +231,9 @@ const usersSlice = createSlice({
         })
         .addCase(updateUserData.fulfilled, (state, action) => {
           state.isLoading = false;
-          state.user = action.payload;
+          state.user = action.payload.updatedUser;
           state.error = null;
-          state.response = null;
+          state.response = action.payload.response;
         })
         .addCase(updateUserData.rejected, (state, action) => {
           state.isLoading = false;
@@ -249,9 +249,9 @@ const usersSlice = createSlice({
           state.isLoading = false;
           state.user = action.payload.user;
           state.auth = action.payload._id;
-          state.isLoggedIn = true;
-          state.error = null;
           state.response = action.payload.response;
+          state.error = null;
+          state.isLoggedIn = true;
         })
         .addCase(verifyUserEmail.rejected, (state, action) => {
           state.isLoading = false;

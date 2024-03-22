@@ -15,7 +15,7 @@ const ItemPreviewCard = ({id}) => {
   const navigate = useNavigate();
   const item = useSelector(getItemsById(id));
   const [isFavorite, handleIsFavorite] = useChangeFavorite(user, id);
-
+  const discountPrice = item.price*(item.sale/100);
   return (
     item && (
       <div
@@ -61,7 +61,14 @@ const ItemPreviewCard = ({id}) => {
           onClick={() => navigate(`/shop/${item._id}`)}
         >
           <span>{item.name}</span>
-          <p>${item.price}</p>
+          <p className={(discountPrice === 0)? styles.itemPreviewCard__price : styles.itemPreviewCard__discount}>
+            <span>
+              ${item.price}
+            </span>
+            {
+              item.sale !==0 && <span>${discountPrice}</span>
+            }
+          </p>
         </div>
       </div>
     )

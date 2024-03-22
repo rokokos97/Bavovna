@@ -35,6 +35,7 @@
     border: 1px solid $white !important;
     background: $white !important;
     @include fonts($input-text);
+    font-family: 'Lato', sans-serif !important;
     font-size: 1.6rem !important;
     &:hover {
       background: $white !important;
@@ -56,10 +57,7 @@
     margin-top: 0.8rem;
     padding-left: 0.8rem;
     color: var(--error, #EA001B);
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @include fonts($menu-5);
     text-align: start;
   }
 }
