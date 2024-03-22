@@ -88,9 +88,10 @@ export const verifyUserEmail = createAsyncThunk(
 );
 export const recoveryUserPassword = createAsyncThunk(
     'user/recoveryUserPassword',
-    async ({email}, {rejectWithValue}) => {
+    async ({payload}, {rejectWithValue}) => {
+      console.log('email', payload);
       try {
-        const {response} = await authService.reset({email});
+        const {response} = await authService.reset(payload);
         return response;
       } catch (error) {
         return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
@@ -264,9 +265,10 @@ const usersSlice = createSlice({
           state.response = null;
         })
         .addCase(recoveryUserPassword.fulfilled, (state, action) => {
+          console.log(action.payload);
           state.isLoading = false;
           state.error = null;
-          state.response = action.payload.response;
+          state.response = action.payload;
         })
         .addCase(recoveryUserPassword.rejected, (state, action) => {
           state.isLoading = false;
