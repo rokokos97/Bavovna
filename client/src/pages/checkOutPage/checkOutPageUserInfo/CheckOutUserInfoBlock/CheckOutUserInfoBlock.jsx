@@ -62,7 +62,9 @@ const CheckOutUserInfoBlock = () => {
   return (
     <div className={styles.checkOutUserInfoBlock}>
       <p className={styles.checkOutUserInfoBlock__title}>Contact details</p>
-      <div className={styles.checkOutUserInfoBlock__radioBlock}>
+      <div
+        style={{display: isLoggedIn ? 'none' : 'flex'}}
+        className={styles.checkOutUserInfoBlock__radioBlock}>
         {userCurrentDetailsList.map((detail, index)=> <div key={index}>
           <div
             className={styles.checkOutUserInfoBlock__radioWrapper}
@@ -70,7 +72,6 @@ const CheckOutUserInfoBlock = () => {
             <button
               className={styles.checkOutUserInfoBlock__radioButton}
               type='button'
-              disabled={isLoggedIn}
               onClick = {()=> setUserCurrentDetails(detail.id) }
             >
               {userCurrentDetails === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
