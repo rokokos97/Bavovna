@@ -102,7 +102,7 @@ export const setNewUserPassword = createAsyncThunk(
     'user/setNewUserPassword',
     async ({token, email, values}, {rejectWithValue}) => {
       try {
-        const {response} = await authService.setNewPassword(token, email, values);
+        const {response} = await authService.setNewPassword(token, email, values.password);
         return response;
       } catch (error) {
         return rejectWithValue(error.response.data.response || 'SERVER_ERROR');
@@ -283,12 +283,12 @@ const usersSlice = createSlice({
         .addCase(setNewUserPassword.fulfilled, (state, action) => {
           state.isLoading = false;
           state.error = null;
-          state.response = action.payload.response;
+          state.response = action.payload;
         })
         .addCase(setNewUserPassword.rejected, (state, action) => {
           state.isLoading = false;
           state.error = action.payload;
-          state.response = null;
+          state.response = action.payload;
         })
         .addCase(fetchUserData.pending, (state)=>{
           state.isLoading =true;

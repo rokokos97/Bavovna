@@ -36,7 +36,7 @@ const ResetPasswordForm = () => {
           .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
     }),
     onSubmit: (values) => {
-      dispatch(setNewUserPassword(token, email, values.password));
+      dispatch(setNewUserPassword({token, email, values}));
       formik.resetForm();
     },
   });

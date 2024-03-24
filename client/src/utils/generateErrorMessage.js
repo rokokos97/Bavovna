@@ -12,5 +12,6 @@ const transformErrorMessage = {
   NEWSLETTER_EMAIL_EXIST: 'You are already subscribed to our updates.',
   EMAIL_NOT_VERIFIER: 'Please verify your email.',
   USER_UPDATE: 'User info has been updated.',
+  INVALID_TOKEN: 'Token has already been used.',
 };
 export default transformErrorMessage;
