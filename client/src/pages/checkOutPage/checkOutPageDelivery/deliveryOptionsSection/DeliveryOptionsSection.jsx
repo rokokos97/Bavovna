@@ -112,7 +112,12 @@ const deliveryOptionsSection = () => {
   const deliveryOptionsList = [
     {
       id: '1',
-      label: 'new address',
+      label: 'saved delivery method',
+      value: <UserDeliveryAddressList hiddenButton={true}/>,
+    },
+    {
+      id: '2',
+      label: 'new delivery method',
       value: <UserDeliveryMethodsList
         type={'1'}
         formik={formik}
@@ -122,16 +127,13 @@ const deliveryOptionsSection = () => {
         handleWarehouseChange={handleWarehouseChange}
       />,
     },
-    {
-      id: '2',
-      label: 'saved address',
-      value: <UserDeliveryAddressList hiddenButton={true}/>,
-    },
   ];
   return (
     <div className={styles.deliveryOptionsSection} data-testid="deliveryOptionsSection">
       <p className={styles.deliveryOptionsSection__title}>Delivery</p>
-      <div className={styles.deliveryOptionsSection__radioBlock}>
+      <div
+        className={styles.deliveryOptionsSection__radioBlock}
+      >
         {deliveryOptionsList.map((method, index)=> <div key={index}>
           <div
             className={styles.deliveryOptionsSection__radioWrapper}

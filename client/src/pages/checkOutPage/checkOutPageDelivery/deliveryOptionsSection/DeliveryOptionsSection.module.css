@@ -28,7 +28,6 @@
 .deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
-  width: 19.3rem;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
