@@ -7,7 +7,8 @@ import CheckOutShoppingCartBlockItemsList
   from './CheckOutShoppingCartBlockItemsList/CheckOutShoppingCartBlockItemsList';
 import {
   getDeliveryMethod,
-  getDeliveryOption, getOrderAmount,
+  getDeliveryOption,
+  getOrderAmount,
   getPromoCodeSale,
   getShippingPrice,
   setOrderAmount,
@@ -29,7 +30,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   const currentDeliveryMethod = useSelector(getDeliveryMethod);
   const currentDeliveryOption = useSelector(getDeliveryOption);
   const orderAmount = useSelector(getOrderAmount);
-  const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState(80);
+  const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState();
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount;
   const finalPrice = totalPrice + currentDeliveryPrice;
@@ -41,24 +42,26 @@ const CheckOutShoppingCartBlock = ({formik}) => {
       if (values.promoCode === 'BAVOVNA5' || values.promoCode === 'BAVOVNA10' || values.promoCode === 'BAVOVNA15') {
         const number = values.promoCode.slice(7);
         dispatch(setPromoCodeSale(number/100));
+        promoCodeFormik.resetForm();
       } else {
         promoCodeFormik.setErrors({promoCode: 'Invalid promo code. Please check the code and try again'});
       }
     },
   });
   useEffect(()=>{
-    if (currentDeliveryOption === 'saved address') {
-      const currentDeliveryAddress = orderAmount>1000 ? 0 : user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress);
+    if (currentDeliveryOption === 'saved delivery method') {
+      const currentDeliveryAddress = user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress);
       setCurrentDeliveryPrice(currentDeliveryAddress.deliveryPrice);
     } else {
+      setCurrentDeliveryPrice(80);
       setCurrentDeliveryPrice(deliveryPrice);
     }
-  }, [deliveryPrice, currentDeliveryOption]);
-  useEffect(()=>{
-    dispatch(setOrderAmount(totalPrice));
-    if (itemPrice > 1000) {
+    if (orderAmount>1000) {
       setCurrentDeliveryPrice(0);
     }
+  }, [deliveryPrice, currentDeliveryOption, user]);
+  useEffect(()=>{
+    dispatch(setOrderAmount(totalPrice));
   }, [itemPrice, currentDeliveryMethod]);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
@@ -101,7 +104,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         </div>}
         <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Shipping</p>
-          <p>{currentDeliveryPrice !== 0 ? `${currentDeliveryPrice} $`: 'Free'}</p>
+          <p>{currentDeliveryPrice ? `${currentDeliveryPrice} $`: 'Select a delivery method'}</p>
         </div>
         <div className={styles.checkOutShoppingCartBlock__priceBlock}>
           <p>total</p>
