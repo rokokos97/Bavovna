@@ -7,10 +7,18 @@ const ProposeBlock = () => {
   return (
     <div className={styles.proposeBlock} data-testid='ProposeBlock'>
       <div className={styles.img}>
-        <img loading='lazy' src='/img/images/AboutUs/propose_1.webp' alt='Model on the beach' />
+        <img
+          loading='lazy'
+          src='/img/images/AboutUs/proposeBlock/propose_1.webp'
+          alt='Model on the beach'
+        />
       </div>
       <div className={`${styles.img} ${styles.lastChild}`}>
-        <img loading='lazy' src='/img/images/AboutUs/propose_2.webp' alt='Model with a bouquet in her hands' />
+        <img
+          loading='lazy'
+          src='/img/images/AboutUs/proposeBlock/propose_2.webp'
+          alt='Model with a bouquet in her hands'
+        />
       </div>
       <div className={styles.description}>
         <h2 className={styles.newsLetterBlock__title2}>

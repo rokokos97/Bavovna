@@ -4,7 +4,6 @@
   display: flex;
   gap: 5.2rem;
 }
-
 .imgs {
   display: block;
   position: relative;
@@ -18,13 +17,11 @@
     width: 95%;
   }
 }
-
 .mainImg {
   display: block;
   width: 65.4%;
   aspect-ratio: 4.1/4;
 }
-
 .secondImg {
   display: block;
   position: absolute;
@@ -32,7 +29,6 @@
   right: -2rem;
   width: 65.4%;
 }
-
 .description {
   display: flex;
   flex-direction: column;
@@ -42,7 +38,6 @@
   order: -1;
   text-align: start;
 }
-
 .newsLetterBlock__title2 {
   max-width: 28rem;
   padding-bottom: 0.8rem;
@@ -53,8 +48,15 @@
     @include fonts($headline-3);
   }
 }
-
 .modalCookies__text {
   max-width: 60rem;
   @include fonts($body-3);
+}
+.fashionBlock_innerText {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 1.6rem;
+  width: 100%;
+  padding-bottom: 1.6rem;
 }

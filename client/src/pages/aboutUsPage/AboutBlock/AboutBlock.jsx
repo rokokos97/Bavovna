@@ -5,11 +5,29 @@ const AboutBlock = () => {
   return (
     <div className={styles.aboutBlock} data-testid='AboutBlock'>
       <div className={styles.imgs}>
-        <div className={styles.mainImg}>
-          <img loading='lazy' src='/img/images/AboutUs/aboutBlock_1.webp' alt='White hoodie and jeans' />
-        </div>
+        <picture className={styles.mainImg}>
+          <source
+            media='(min-width: 769px)'
+            srcSet='/img/images/AboutUs/aboutBlock/aboutBlock_1.webp'
+            loading='lazy'
+          />
+          <source
+            media='(min-width: 581px)'
+            srcSet='/img/images/AboutUs/aboutBlock/tabletAboutBlock_1.webp'
+            loading='lazy'
+          />
+          <img
+            loading='lazy'
+            src='/img/images/AboutUs/aboutBlock/mobileAboutBlock_1.webp'
+            alt='White hoodie and jeans'
+          />
+        </picture>
         <div className={styles.secondImg}>
-          <img loading='lazy' src='/img/images/AboutUs/aboutBlock_2.webp' alt='Cotton flowers' />
+          <img
+            loading='lazy'
+            src='/img/images/AboutUs/aboutBlock/aboutBlock_2.webp'
+            alt='Cotton flowers'
+          />
         </div>
       </div>
       <div className={styles.description}>
