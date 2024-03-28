@@ -42,7 +42,7 @@ const NewsLettersBlock = () => {
     },
   });
   return (
-    <article>
+    <article className={styles.newsLettersBlock}>
       <p
         className={`${styles.newsLetterBlock__messageLine} ` + (message.isError ? `${styles.newsLetterBlock__messageError}`: '')}
         style={{display: isMessageShowed ? 'flex' : 'none'}}
@@ -60,7 +60,7 @@ const NewsLettersBlock = () => {
         </button>
       </p>
       <form
-        className={styles.newsLettersBlock}
+        className={styles.newsLettersBlock_form}
         data-testid="NewsLettersBlock"
         onSubmit={formik.handleSubmit}
       >

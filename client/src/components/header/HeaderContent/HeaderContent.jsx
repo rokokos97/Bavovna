@@ -37,13 +37,6 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
       ) : (
         <>
           <section className={styles.headerContent__header}>
-            <button
-              type='button'
-              onClick={() => setIsMenu(!isMenu)}
-              className={styles.mobileButton}
-            >
-              {isMenu ? <CloseIcon /> : <MenuIcon />}
-            </button>
             <section
               className={
                 isMenu ?
@@ -69,45 +62,68 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
                 </Link>
               </nav>
               <nav className={styles.headerContent__headerMenuBar}>
-                <button
-                  type='button'
-                  className={`${styles.headerContent__headerSearch} ${styles.headerContent__button}`}
-                  onClick={handleIsSearch}
-                  aria-label='Search for products'
-                >
-                  <SearchIcon />
-                </button>
-                <Link
-                  className={styles.headerContent__button}
-                  to={user ? `/user/${user._id}/wishList` : {}}
-                  aria-label='View your wishlist'
-                >
-                  <EmptyHeartIcon />
-                </Link>
-                <Link
-                  to='/cart'
-                  aria-label={`View your shopping cart, with ${cart.length} items`}
-                  className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
-                >
-                  <ShoppingCartIcon />
-                  <p>{`(${cart.length})`}</p>
-                </Link>
-                <Link
-                  to={user ? '/user/' + user._id : '/signIn'}
-                  aria-label={
-                    isLoggedIn && user ?
-                      `View ${user.firstName}'s account` :
-                      'Log in to your account'
-                  }
-                  className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
-                >
-                  <AccountIcon />
-                  <p className={styles.headerContent__accountName}>
-                    {isLoggedIn && user ? user.firstName : 'account'}
-                  </p>
-                </Link>
+                <div className={styles.headerContent__fixedHeaderMenuBar}>
+                  <button
+                    type='button'
+                    className={`${styles.headerContent__headerSearch} ${styles.headerContent__button}`}
+                    onClick={handleIsSearch}
+                    aria-label='Search for products'
+                  >
+                    <SearchIcon />
+                  </button>
+                  <Link
+                    to='/cart'
+                    aria-label={`View your shopping cart, with ${cart.length} items`}
+                    className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
+                  >
+                    <ShoppingCartIcon />
+                    <p
+                      className={styles.headerContent_cart}
+                    >{`(${cart.length})`}</p>
+                  </Link>
+                </div>
+                <div className={styles.headerContent__floatingHeaderMenuBar}>
+                  <Link
+                    className={styles.headerContent__button}
+                    to={user ? `/user/${user._id}/wishList` : {}}
+                    aria-label='View your wishlist'
+                  >
+                    <EmptyHeartIcon />
+                    <p className={styles.headerContent__wishlist}>
+                        Wishlist
+                    </p>
+                  </Link>
+                  <Link
+                    to={user ? '/user/' + user._id : '/signIn'}
+                    aria-label={
+                      isLoggedIn && user ?
+                        `View ${user.firstName}'s account` :
+                        'Log in to your account'
+                    }
+                    className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
+                  >
+                    <AccountIcon />
+                    <p className={styles.headerContent__accountName}>
+                      {isLoggedIn && user ? user.firstName : 'account'}
+                    </p>
+                  </Link>
+                </div>
               </nav>
             </section>
+            <button
+              type='button'
+              onClick={() => setIsMenu(!isMenu)}
+              className={styles.mobileButton}
+            >
+              {isMenu ? <CloseIcon /> : <MenuIcon />}
+            </button>
+            <div
+              className={
+                isMenu ?
+                  `${styles.headerContent__mobileHeaderBlock} ${styles.active}` :
+                  `${styles.headerContent__mobileHeaderBlock}`
+              }
+            ></div>
           </section>
           <Link
             className={styles.headerContent__logo}

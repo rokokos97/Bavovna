@@ -33,6 +33,10 @@
     padding: 0 1.6rem;
     gap: 2.4rem;
   }
+  .categoriesBlock__title2 {
+    @include fonts($tablet-headline-2);
+    font-weight: 500;
+  }
   .categoriesBlock__box {
     gap: 1.6rem;
     flex-wrap: wrap;

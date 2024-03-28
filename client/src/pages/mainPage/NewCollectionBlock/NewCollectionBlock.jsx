@@ -12,9 +12,16 @@ const NewCollectionBlock = () => {
         <source
           media='(min-width: 769px)'
           srcSet='/img/images/NewCollection/newCollection.webp'
+          loading='lazy'
+        />
+        <source
+          media='(min-width: 581px)'
+          srcSet='/img/images/NewCollection/tabletNewCollection.webp'
+          loading='lazy'
         />
         <img
-          src='/img/images/NewCollection/mobileNewCollection.png'
+          src='/img/images/NewCollection/mobileNewCollection.webp'
+          loading='lazy'
           alt="Interior view with a clothes rack, potted cacti,
          and a framed motivational quote reading
           'GET UP DRESS UP SHOW UP NEVER GIVE UP'"

@@ -1,4 +1,4 @@
-@import "../../../styles/variables.module";
+@import '../../../styles/variables.module';
 .saleBlock {
   display: grid;
   max-width: 144rem;
@@ -6,6 +6,13 @@
   max-height: 37.6rem;
   justify-content: center;
   position: relative;
+  img {
+    width: 100%;
+  }
+}
+.saleBlockBlock__image {
+  display: block;
+  width: 100%;
   img {
     width: 100%;
   }
@@ -25,10 +32,35 @@
 .saleBlock__title2 {
   margin: 0 auto;
   color: $black;
-  text-wrap: none;
-  @include fonts($headline-2)
+  text-wrap: unset;
+  @include fonts($headline-2);
 }
 .saleBlock__button {
   @include button(19.5rem);
   @include buttonWhite();
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .saleBlock {
+    max-height: none;
+  }
+}
+@media (max-width: 580px) {
+  .saleBlock {
+    justify-content: unset;
+  }
+  .saleBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    span {
+      @include fonts($button-s);
+    }
+  }
+  .saleBlock__title2 {
+    @include fonts($tablet-headline-2);
+    font-weight: 500;
+  }
+  .saleBlock__contentBlock {
+    gap: 2.4rem;
+  }
 }

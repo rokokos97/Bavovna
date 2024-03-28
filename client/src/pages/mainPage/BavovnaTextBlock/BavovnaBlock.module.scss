@@ -46,9 +46,17 @@
   }
   .bavovnaBlock__title2 {
     @include fonts($tablet-headline-2);
-    font-weight: 800;
+    font-weight: 500;
   }
   .bavovnaBlock__content {
     @include fonts($body-3);
+  }
+  .bavovnaBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    span {
+      @include fonts($button-s);
+    }
   }
 }

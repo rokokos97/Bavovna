@@ -12,7 +12,7 @@ const MenuIcon = () => {
         xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d='M1 7H15M1 1H19M1 13H19'
+          d='M19 7H5M19 1H1M19 13H1'
           stroke='#040404'
           strokeWidth='2'
           strokeLinecap='round'

@@ -7,7 +7,6 @@
   margin: auto;
   flex: 1 0 auto;
 }
-
 .marqueeContainer {
   width: 100%;
   position: fixed !important;
@@ -16,4 +15,9 @@
   padding: 1rem 0;
   background-color: $white-color;
   z-index: 100;
+}
+@media (max-width: 580px){
+  .container{
+    padding-top: 7.7rem;
+  }
 }
