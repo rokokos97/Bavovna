@@ -57,7 +57,7 @@ const ordersSlice = createSlice({
     },
     setOrderToInitialState: (state) => {
       state.orderAmount = 0;
-      state.shippingPrice = 80;
+      state.shippingPrice = null;
       state.promoCodeSale = null;
       state.userInfo = {};
       state.userDeliveryInfo = {};

@@ -7,6 +7,7 @@
 .userDataForm__title {
   font-size: 32px;
   line-height: 120%;
+  letter-spacing: 0%;
   text-transform: uppercase;
   text-align: start;
   padding-bottom: 2.4rem;

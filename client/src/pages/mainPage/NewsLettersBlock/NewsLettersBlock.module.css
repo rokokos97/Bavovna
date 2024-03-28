@@ -34,6 +34,7 @@
 .newsLetterBlock__title2 {
   font-size: 32px;
   line-height: 120%;
+  letter-spacing: 0%;
   text-transform: uppercase;
 }
 

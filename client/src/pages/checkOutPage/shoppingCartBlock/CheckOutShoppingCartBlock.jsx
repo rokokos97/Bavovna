@@ -10,7 +10,7 @@ import {
   getDeliveryOption,
   getOrderAmount,
   getPromoCodeSale,
-  getShippingPrice,
+  getShippingPrice, setDeliveryMethod, setDeliveryPrice,
   setOrderAmount,
   setPromoCodeSale,
 } from '../../../store/ordersSlice';
@@ -30,10 +30,10 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   const currentDeliveryMethod = useSelector(getDeliveryMethod);
   const currentDeliveryOption = useSelector(getDeliveryOption);
   const orderAmount = useSelector(getOrderAmount);
-  const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState();
+  const [currentDeliveryPrice] = useState();
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount;
-  const finalPrice = totalPrice + currentDeliveryPrice;
+  const finalPrice = totalPrice + (orderAmount>1000 ? 0: deliveryPrice);
   const promoCodeFormik = useFormik({
     initialValues: {
       promoCode: '',
@@ -51,15 +51,13 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   useEffect(()=>{
     if (currentDeliveryOption === 'saved delivery method') {
       const currentDeliveryAddress = user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress);
-      setCurrentDeliveryPrice(currentDeliveryAddress.deliveryPrice);
+      dispatch(setDeliveryPrice(currentDeliveryAddress.deliveryPrice));
+      dispatch(setDeliveryMethod(currentDeliveryAddress.deliveryMethod));
     } else {
-      setCurrentDeliveryPrice(80);
-      setCurrentDeliveryPrice(deliveryPrice);
+      dispatch(setDeliveryMethod('Nova post delivery to the post office'));
+      dispatch(setDeliveryPrice(80));
     }
-    if (orderAmount>1000) {
-      setCurrentDeliveryPrice(0);
-    }
-  }, [deliveryPrice, currentDeliveryOption, user]);
+  }, [currentDeliveryOption, user]);
   useEffect(()=>{
     dispatch(setOrderAmount(totalPrice));
   }, [itemPrice, currentDeliveryMethod]);
