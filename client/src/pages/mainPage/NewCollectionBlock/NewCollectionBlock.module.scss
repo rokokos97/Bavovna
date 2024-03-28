@@ -1,30 +1,51 @@
-@import "../../../styles/variables.module";
+@import '../../../styles/variables.module';
 .newCollectionBlock {
-  height: 84.1rem;
+  max-height: 84.1rem;
+  position: relative;
 }
 .newCollectionBlock__image {
-  background:
-          linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0.00) 45.58%),
-          lightgray 50% / cover no-repeat;
+  width: 100%;
+  img {
+    position: relative;
+    width: 100%;
+  }
+  img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(
+        90deg,
+        rgba(222, 222, 222, 0.54) 14.47%,
+        rgba(225, 225, 225, 0) 45.58%
+      ),
+      lightgray 50% / cover no-repeat;
+  }
 }
 .newCollectionBlock__section {
   display: flex;
   max-width: 57.8rem;
-  position: relative;
-  left: 8rem;
-  bottom: 55.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4rem;
+  margin-left: 8rem;
 }
 .newCollectionBlock__title1 {
-    color: $black;
-    word-wrap: break-word;
-    @include fonts($headline-1);
+  color: $black;
+  word-wrap: break-word;
+  @include fonts($headline-1);
+  font-weight: 800;
 }
 .newCollectionBlock__text {
-  width: 57.8rem;
+  max-width: 57.8rem;
   color: $black;
   @include fonts($body-2);
   word-wrap: break-word;
@@ -34,4 +55,61 @@
   @include button(19.5rem);
   @include buttonBlack();
 }
-
+.newCollectionBlock__image {
+  display: block;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90.08deg,
+      rgba(222, 222, 222, 0.54) 14.47%,
+      rgba(225, 225, 225, 0) 45.58%
+    );
+  }
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .newCollectionBlock {
+    max-height: 91.7rem;
+  }
+  .newCollectionBlock__section {
+    gap: 2.4rem;
+    margin-left: 3.2rem;
+  }
+  .newCollectionBlock__title1 {
+    @include fonts($tablet-headline-1);
+    font-weight: 800;
+    max-width: 42.4rem;
+  }
+  .newCollectionBlock__text {
+    max-width: 44rem;
+  }
+}
+@media (max-width: 580px) {
+  .newCollectionBlock__section {
+    gap: 2.4rem;
+    margin-left: 1.6rem;
+  }
+  .newCollectionBlock__title1 {
+    @include fonts($tablet-headline-1);
+    font-weight: 800;
+    max-width: 42.4rem;
+  }
+  .newCollectionBlock__text {
+    max-width: 28.5rem;
+    @include fonts($body-3);
+  }
+  .newCollectionBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    span {
+      @include fonts($button-s);
+    }
+  }
+}

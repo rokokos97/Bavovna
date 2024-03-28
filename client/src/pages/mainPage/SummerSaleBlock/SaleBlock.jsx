@@ -5,14 +5,24 @@ import {Link} from 'react-router-dom';
 const SaleBlock = () => {
   return (
     <article className={styles.saleBlock} data-testid="SaleBlock">
-      <img
-        src='/img/images/Sale/saleBlockImage.webp'
-        loading='lazy'
-        alt='Flat lay of a plain white T-shirt,
+      <picture className={styles.saleBlockBlock__image}>
+        <source
+          media='(min-width: 769px)'
+          srcSet='/img/images/Sale/saleBlockImage.webp'
+        />
+        <source
+          media='(min-width: 581px)'
+          srcSet='/img/images/Sale/tabletSaleBlockImage.webp'
+        />
+        <img
+          src='/img/images/Sale/mobileSaleBlockImage.webp'
+          loading='lazy'
+          alt='Flat lay of a plain white T-shirt,
          a lifestyle magazine with plants on the cover,
          and a wooden board with fresh green leaves arranged on it,
          suggesting a natural and minimalist lifestyle'
-      />
+        />
+      </picture>
       <section className={styles.saleBlock__contentBlock}>
         <h2 className={styles.saleBlock__title2}>summer sale</h2>
         <Link

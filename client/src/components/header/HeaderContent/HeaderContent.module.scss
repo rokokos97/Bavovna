@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: flex-start;
   background: $black;
+  z-index: 100;
   p {
     color: $white;
     @include fonts($headline-11);
@@ -21,6 +22,13 @@
   align-items: center;
   color: $black;
   position: relative;
+  z-index: 99;
+}
+.headerContent__headerBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .headerContent__headerNavBar {
   display: flex;
@@ -37,7 +45,11 @@
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
-
+  .headerContent__fixedHeaderMenuBar,
+  .headerContent__floatingHeaderMenuBar {
+    display: flex;
+    gap: 1.6rem;
+  }
   .headerContent__linkBlock {
     display: flex;
     align-items: center;
@@ -81,7 +93,6 @@
     }
   }
 }
-
 .headerContent__headerSearch {
   display: flex;
   align-items: center;
@@ -99,7 +110,111 @@
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 100;
 }
 .headerContent__accountName {
   width: 6rem;
+}
+.mobileButton {
+  display: none;
+}
+.headerContent__wishlist,
+.headerContent__mobileHeaderBlock {
+  display: none;
+}
+@media (min-width: 581px) and (max-width: 950px) {
+  .headerContent__header {
+    height: 7.8rem;
+    padding: 1.2rem 3.2rem;
+    align-items: flex-end;
+  }
+
+  .headerContent__logo {
+    top: 50%;
+  }
+}
+
+@media (max-width: 580px) {
+  .headerContent__header {
+    align-items: center;
+    position: relative;
+  }
+  .headerContent__logo {
+    left: 0;
+    transform: translate(12%, -40%);
+    -webkit-transform: translate(12%, -40%);
+    -ms-transform: translate(12%, -40%);
+  }
+  .mobileButton {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    display: block;
+    z-index: 100;
+    background-color: inherit;
+  }
+  .headerContent__header {
+    height: 4.8rem;
+    padding: 1.2rem;
+    width: 100%;
+  }
+  .headerContent__headerBlock {
+    justify-content: flex-end;
+  }
+  .headerContent__wishlist {
+    display: flex;
+  }
+  .headerContent__fixedHeaderMenuBar {
+    margin-right: 3.8rem;
+  }
+  .headerContent__headerNavBar,
+  .headerContent__floatingHeaderMenuBar {
+    position: absolute;
+    z-index: 100;
+    transition: left 0.5s ease-out;
+  }
+  .headerContent__headerNavBar {
+    flex-direction: column;
+    top: 8.8rem;
+    gap: 1.6rem;
+    left: -100%;
+    width: 100%;
+  }
+  .headerContent__floatingHeaderMenuBar {
+    flex-direction: column-reverse;
+    top: 28.8rem;
+    left: -100%;
+    width: 100%;
+    svg {
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+  .headerContent__headerNavBar span,
+  .headerContent__accountName,
+  .headerContent__wishlist {
+    @include fonts($headline-9);
+  }
+  .headerContent_cart {
+    @include fonts($menu-2);
+  }
+  .headerContent__mobileHeaderBlock {
+    display: block;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    right: 100%;
+    top: 7.8rem;
+    bottom: 0;
+    background-color: $gray-90;
+    transition: right 0.5s ease-out;
+  }
+  .active {
+    right: 0;
+  }
+  .active .headerContent__headerNavBar,
+  .active .headerContent__headerMenuBar .headerContent__floatingHeaderMenuBar {
+    left: 2rem;
+  }
 }

@@ -1,15 +1,18 @@
 @import '../../../styles/variables.module';
 .bavovnaBlock {
   display: flex;
-  width: 90rem;
+  max-width: 90rem;
+  width: 100%;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 4rem;
+  padding: 0 8rem;
 }
 .bavovnaBlock__titleBox {
-  width: 90rem;
+  max-width: 90rem;
+  width: 100%;
 }
 .bavovnaBlock__title2 {
   color: $black;
@@ -18,14 +21,42 @@
   @include fonts($headline-2);
 }
 .bavovnaBlock__content {
-  width: 72.8rem;
+  max-width: 72.8rem;
+  width: 100%;
   color: $black;
   @include fonts($body-2);
-
 }
 .bavovnaBlock__button {
   margin: 0 auto;
   text-decoration: none;
   @include button(19.5rem);
   @include buttonWhite();
+}
+@media (min-width: 581px) and (max-width: 1000px) {
+  .bavovnaBlock {
+    padding: 0 3.2rem;
+  }
+  .bavovnaBlock__button {
+    @include button(22.4rem);
+  }
+}
+@media (max-width: 580px) {
+  .bavovnaBlock {
+    padding: 0 1.6rem;
+  }
+  .bavovnaBlock__title2 {
+    @include fonts($tablet-headline-2);
+    font-weight: 500;
+  }
+  .bavovnaBlock__content {
+    @include fonts($body-3);
+  }
+  .bavovnaBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+    span {
+      @include fonts($button-s);
+    }
+  }
 }
