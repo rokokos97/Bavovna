@@ -59,10 +59,7 @@
 .error {
   color: $error;
   padding-left: 0.8rem;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include fonts($menu-5);
 }
 .block {
   display: inline;
@@ -97,6 +94,19 @@
 
     input::placeholder {
       color: $error;
+    }
+  }
+}
+.textField.hasError[type='password'] {
+  .inputBlock {
+    button {
+      div {
+        svg {
+          path {
+            stroke: $error;
+          }
+        }
+      }
     }
   }
 }

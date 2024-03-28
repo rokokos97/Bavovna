@@ -12,7 +12,7 @@ const PhoneField = ({value, phoneNumber, onChange, onBlur, error}) => {
         </span>
       </p>
       <PhoneInput
-        onlyCountries={['ua', 'pl', 'ru', 'cz', 'sk', 'de', 'es', 'it']}
+        onlyCountries={['ua', 'in', 'ng', 'eg', 'br']}
         placeholder={'+38 (067) 123 45 67'}
         country='ua'
         containerClass={styles.phoneInputContainer}

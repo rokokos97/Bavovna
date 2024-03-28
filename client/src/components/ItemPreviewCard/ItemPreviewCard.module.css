@@ -89,11 +89,29 @@
   font-size: 18px;
   line-height: 140%;
 }
-.itemPreviewCard__description p:last-child {
+.itemPreviewCard__description .itemPreviewCard__price {
   padding-top: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
+}
+.itemPreviewCard__description .itemPreviewCard__discount {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.itemPreviewCard__description .itemPreviewCard__discount span:first-child {
+  text-decoration: line-through;
+  color: #727272;
+}
+.itemPreviewCard__description .itemPreviewCard__discount span:last-child {
+  color: #000000;
 }
 
 /*# sourceMappingURL=ItemPreviewCard.module.css.map */

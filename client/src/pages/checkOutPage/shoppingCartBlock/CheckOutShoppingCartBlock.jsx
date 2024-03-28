@@ -6,7 +6,8 @@ import {useFormik} from 'formik';
 import CheckOutShoppingCartBlockItemsList
   from './CheckOutShoppingCartBlockItemsList/CheckOutShoppingCartBlockItemsList';
 import {
-  getDeliveryOption,
+  getDeliveryMethod,
+  getDeliveryOption, getOrderAmount,
   getPromoCodeSale,
   getShippingPrice,
   setOrderAmount,
@@ -25,7 +26,9 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   const itemPrice = useSelector(getCartTotalPrice);
   const cartLength = useSelector(getCartLength);
   const deliveryPrice = useSelector(getShippingPrice);
+  const currentDeliveryMethod = useSelector(getDeliveryMethod);
   const currentDeliveryOption = useSelector(getDeliveryOption);
+  const orderAmount = useSelector(getOrderAmount);
   const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState(80);
   const finalDiscount = promoCode ? itemPrice * promoCode : null;
   const totalPrice = itemPrice - finalDiscount;
@@ -45,7 +48,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   });
   useEffect(()=>{
     if (currentDeliveryOption === 'saved address') {
-      const currentDeliveryAddress = user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress);
+      const currentDeliveryAddress = orderAmount>1000 ? 0 : user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress);
       setCurrentDeliveryPrice(currentDeliveryAddress.deliveryPrice);
     } else {
       setCurrentDeliveryPrice(deliveryPrice);
@@ -56,7 +59,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
     if (itemPrice > 1000) {
       setCurrentDeliveryPrice(0);
     }
-  }, [itemPrice]);
+  }, [itemPrice, currentDeliveryMethod]);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
       <div className={styles.checkOutShoppingCartBlock__wrapper}>
@@ -98,7 +101,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         </div>}
         <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Shipping</p>
-          <p>{`${currentDeliveryPrice} $`}</p>
+          <p>{currentDeliveryPrice !== 0 ? `${currentDeliveryPrice} $`: 'Free'}</p>
         </div>
         <div className={styles.checkOutShoppingCartBlock__priceBlock}>
           <p>total</p>

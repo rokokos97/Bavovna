@@ -90,7 +90,10 @@
   span {
     @include fonts($body-2);
   }
-  p:last-child {
+  .itemPreviewCard__price {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
     @include fonts($headline-8);
   }
 }

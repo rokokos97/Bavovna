@@ -61,10 +61,8 @@
 
 .error {
   color: var(--error, #EA001B);
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 12px;
+  line-height: 110%;
 }
 
 .block {

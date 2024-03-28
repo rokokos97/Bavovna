@@ -35,17 +35,17 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, placehold
           autoComplete='off'
         />
         {value && type!=='password' && (
-          <div
+          <button
             aria-label='clear input'
             className={styles.clearButton}
             type='button'
             onClick={clearInput}
           >
             <CleatFormIcon/>
-          </div>
+          </button>
         )}
         {type === 'password' && value &&(
-          <div
+          <button
             aria-label='show/hide password'
             type='button'
             onClick={toggleShowPassword}>
@@ -53,7 +53,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, error, placehold
               <ShowPasswordIcon/> :
               <HidePasswordIcon/>
             }
-          </div>
+          </button>
         )}
       </div>
       {error ? (

@@ -296,7 +296,7 @@ router.post('/forgotPassword', [
       await existingUser.save();
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
-      const resetPasswordURL = `https://anvovab.space/login/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
+      const resetPasswordURL = `https://anvovab.space/signIn/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
       const mailOptions = {
         from: 'no-repaly@bavovna.space',
         to: email,
@@ -347,9 +347,13 @@ router.post('/resetPassword', async (req, res) => {
   try {
     const {token, email, password} = req.body;
     const currentUser = await User.findOne({email});
+    console.log('currentUser', currentUser);
     const isValidToken = (token === currentUser.emailVerificationToken);
     if (isValidToken) {
       currentUser.password = await bcrypt.hash(password, 12);
+      const newToken = tokenService.generate({_id: currentUser._id});
+      await tokenService.save(currentUser._id, newToken.refreshToken);
+      currentUser.emailVerificationToken = newToken.accessToken;
       await currentUser.save();
       return res.status(200).json({
         response: {

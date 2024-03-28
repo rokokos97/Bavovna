@@ -12,6 +12,22 @@
   padding-bottom: 2.4rem;
 }
 
+.userDataForm__responseMessage {
+  width: 51.5rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-self: stretch;
+  background: #a9dfcb;
+}
+.userDataForm__responseMessage p {
+  font-size: 16px;
+  line-height: 110%;
+  width: 100%;
+  text-align: start;
+  padding: 1.2rem;
+  color: #2ab66a;
+}
+
 .userDataForm__userPersonalDataForm {
   display: flex;
   flex-direction: column;
