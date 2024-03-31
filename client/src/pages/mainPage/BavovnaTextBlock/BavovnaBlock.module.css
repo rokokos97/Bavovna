@@ -21,7 +21,6 @@
   margin-block: 0;
   font-size: 32px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -99,9 +98,6 @@
   position: absolute;
   top: -8.325rem;
   left: -1.1rem;
-}
-.bavovnaBlock__button:focus {
-  border: 3px solid #5a9b83;
 }
 .bavovnaBlock__button:disabled {
   border-color: #868686;

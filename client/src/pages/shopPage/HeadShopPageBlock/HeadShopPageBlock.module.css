@@ -21,7 +21,6 @@
 .heroTitle {
   font-size: 32px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -95,9 +94,6 @@
   position: absolute;
   top: -7.17rem;
   left: -1.1rem;
-}
-.heroBtn:focus {
-  border: 3px solid #5a9b83;
 }
 .heroBtn:disabled {
   border-color: #868686;

@@ -10,7 +10,6 @@
   text-align: start;
   font-size: 24px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -113,9 +112,6 @@
   position: absolute;
   top: -8.05rem;
   left: -1.1rem;
-}
-.userPaymentMethodsList__buttonLeft:focus {
-  border: 3px solid #5a9b83;
 }
 .userPaymentMethodsList__buttonLeft:disabled {
   border-color: #868686;

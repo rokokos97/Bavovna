@@ -26,7 +26,6 @@
 .checkOutShoppingCartBlock__title {
   font-size: 24px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -102,9 +101,6 @@
   top: -1.12rem;
   left: -1.1rem;
 }
-.checkOutShoppingCartBlock__arrowButton:focus {
-  border: 3px solid #5a9b83;
-}
 .checkOutShoppingCartBlock__arrowButton:disabled {
   border-color: #868686;
   background: #c3c3c3;
@@ -160,7 +156,6 @@
   justify-content: space-between;
   font-size: 24px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -244,9 +239,6 @@
   position: absolute;
   top: -20.205rem;
   left: -1.1rem;
-}
-.checkOutShoppingCartBlock__button:focus {
-  border: 3px solid #5a9b83;
 }
 .checkOutShoppingCartBlock__button:disabled {
   border-color: #868686;

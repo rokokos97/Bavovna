@@ -14,7 +14,6 @@
 .newArrivalsBlock__title2 {
   font-size: 32px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -87,9 +86,6 @@
   position: absolute;
   top: 0.2rem;
   left: -1.1rem;
-}
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:focus {
-  border: 3px solid #5a9b83;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled {
   border-color: #868686;

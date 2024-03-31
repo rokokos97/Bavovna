@@ -23,7 +23,6 @@
 .modalCookies__title2 {
   font-size: 24px;
   line-height: 120%;
-  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -90,9 +89,6 @@
   position: absolute;
   top: -8.05rem;
   left: -1.1rem;
-}
-.modalCookies__button:focus {
-  border: 3px solid #5a9b83;
 }
 .modalCookies__button:disabled {
   border-color: #868686;
