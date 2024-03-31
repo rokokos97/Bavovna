@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './UserDeliveryMethodsList.module.scss';
-import ListWithRadioButtons from '../../../../../components/ListWithRadioButtons/ListWithRadioButtons';
 import NovaPostWarehouseDeliveryFormCheckout
   from './userDeliveryMethods/NovaPostWarehouseDeliveryFormCheckout/NovaPostWarehouseDeliveryFormCheckout';
 import NovaPostHomeDeliveryFormCheckout from './userDeliveryMethods/NovaPostHomeDeliveryFormCheckout/NovaPostHomeDeliveryFormCheckout';
 import NovaPostInternationalDeliveryFormCheckout
   from './userDeliveryMethods/NovaPostInternationalDeliveryFormCheckout/NovaPostInternationalDeliveryFormCheckout';
 import PropTypes from 'prop-types';
+import {useState} from 'react';
+import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
+import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 
-const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selectedValue, warehouseList, formik, type}) => {
+const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, warehouseList, formik, type}) => {
+  const [currentValue, setCurrentValue] = useState('1');
   const deliveryMethods = {
     1: {
       _id: '1',
@@ -38,20 +41,34 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, selec
   };
   return (
     <div className={styles.userDeliveryMethodsList} data-testid="UserDeliveryMethodsList">
-      <ListWithRadioButtons
-        onSelectValue={selectedValue}
-        options={deliveryMethods}
-        isList={false}
-        deleteButton={true}
-        key={2}/>
+      {Object.values(deliveryMethods).map((method) => {
+        return <section key={method._id} className={styles.radioOption}>
+          <input
+            id={method._id}
+            type="radio"
+            name="customRadio"
+            value={method.value}
+            checked={currentValue === method._id}
+            onChange={() => setCurrentValue(method._id)}
+            className={styles.radioInput}
+          />
+          <label htmlFor={method._id} className={styles.radioLabel}>
+            {currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
+            <p>{method.label}</p>
+          </label>
+          <div>{currentValue === method._id ? method.value : null}</div>
+        </section>;
+      },
+      )
+      }
     </div>
   );
 };
+
 UserDeliveryMethodsList.propTypes = {
   type: PropTypes.string,
   handleCityChange: PropTypes.func,
   handleWarehouseChange: PropTypes.func,
-  selectedValue: PropTypes.func,
   warehouseList: PropTypes.array,
   formik: PropTypes.object,
 };
