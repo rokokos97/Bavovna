@@ -25,10 +25,13 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
     setIsSearch(!isSearch);
     if (!isSearch) navigate('./shop');
   };
+  const closeMobileMenu = () => {
+    setIsMenu(false);
+  };
   return (
     <>
       <section className={styles.headerContent__banner}>
-        <Link to='/shop?status=sale_10%'>
+        <Link to='/shop?status=sale_10%' onClick={closeMobileMenu}>
           <p>10% discount on the summer collection</p>
         </Link>
       </section>
@@ -45,36 +48,37 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
               }
             >
               <nav className={styles.headerContent__headerNavBar}>
-                <Link to='/shop?status=sale'>
+                <Link to='/shop?status=sale' onClick={closeMobileMenu}>
                   <span>Sale</span>
                 </Link>
-                <Link to='/shop?status=new'>
+                <Link to='/shop?status=new' onClick={closeMobileMenu}>
                   <span>New</span>
                 </Link>
-                <Link to='/shop'>
+                <Link to='/shop' onClick={closeMobileMenu}>
                   <span>Shop</span>
                 </Link>
-                <Link to='/aboutus'>
+                <Link to='/aboutus' onClick={closeMobileMenu}>
                   <span>About us</span>
                 </Link>
-                <Link to='/help/delivery'>
+                <Link to='/help/delivery' onClick={closeMobileMenu}>
                   <span>Help</span>
                 </Link>
               </nav>
               <nav className={styles.headerContent__headerMenuBar}>
                 <div className={styles.headerContent__fixedHeaderMenuBar}>
                   <button
-                    type='button'
                     className={`${styles.headerContent__headerSearch} ${styles.headerContent__button}`}
+                    type='button'
                     onClick={handleIsSearch}
                     aria-label='Search for products'
                   >
                     <SearchIcon />
                   </button>
                   <Link
-                    to='/cart'
-                    aria-label={`View your shopping cart, with ${cart.length} items`}
                     className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
+                    to='/cart'
+                    onClick={closeMobileMenu}
+                    aria-label={`View your shopping cart, with ${cart.length} items`}
                   >
                     <ShoppingCartIcon />
                     <p
@@ -86,21 +90,21 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
                   <Link
                     className={styles.headerContent__button}
                     to={user ? `/user/${user._id}/wishList` : {}}
+                    onClick={closeMobileMenu}
                     aria-label='View your wishlist'
                   >
                     <EmptyHeartIcon />
-                    <p className={styles.headerContent__wishlist}>
-                        Wishlist
-                    </p>
+                    <p className={styles.headerContent__wishlist}>Wishlist</p>
                   </Link>
                   <Link
+                    className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
                     to={user ? '/user/' + user._id : '/signIn'}
+                    onClick={closeMobileMenu}
                     aria-label={
                       isLoggedIn && user ?
                         `View ${user.firstName}'s account` :
                         'Log in to your account'
                     }
-                    className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
                   >
                     <AccountIcon />
                     <p className={styles.headerContent__accountName}>
@@ -129,6 +133,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
             className={styles.headerContent__logo}
             aria-label='Go to homepage'
             to='/'
+            onClick={closeMobileMenu}
           >
             <LogoIcon />
           </Link>

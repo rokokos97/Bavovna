@@ -6,12 +6,40 @@ const ProposeBlock = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.proposeBlock} data-testid='ProposeBlock'>
-      <div className={styles.img}>
-        <img loading='lazy' src='/img/images/AboutUs/propose_1.webp' alt='Model on the beach' />
-      </div>
-      <div className={`${styles.img} ${styles.lastChild}`}>
-        <img loading='lazy' src='/img/images/AboutUs/propose_2.webp' alt='Model with a bouquet in her hands' />
-      </div>
+      <picture className={styles.img}>
+        <source
+          media='(min-width: 1000px)'
+          srcSet='/img/images/AboutUs/proposeBlock/propose_1.webp'
+          loading='lazy'
+        />
+        <source
+          media='(min-width: 581px)'
+          srcSet='/img/images/AboutUs/proposeBlock/tabletProposeBlock_1.webp'
+          loading='lazy'
+        />
+        <img
+          src='/img/images/AboutUs/proposeBlock/mobileProposeBlock_1.webp'
+          loading='lazy'
+          alt='Model on the beach'
+        />
+      </picture>
+      <picture className={`${styles.img} ${styles.lastChild}`}>
+        <source
+          media='(min-width: 1000px)'
+          srcSet='/img/images/AboutUs/proposeBlock/propose_2.webp'
+          loading='lazy'
+        />
+        <source
+          media='(min-width: 581px)'
+          srcSet='/img/images/AboutUs/proposeBlock/tabletProposeBlock_2.webp'
+          loading='lazy'
+        />
+        <img
+          src='/img/images/AboutUs/proposeBlock/mobileProposeBlock_2.webp'
+          loading='lazy'
+          alt='Model with a bouquet in her hands'
+        />
+      </picture>
       <div className={styles.description}>
         <h2 className={styles.newsLetterBlock__title2}>
           <span>What&#x20;</span>
