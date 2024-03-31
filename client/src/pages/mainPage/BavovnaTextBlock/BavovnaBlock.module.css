@@ -1,15 +1,18 @@
 .bavovnaBlock {
   display: flex;
-  width: 90rem;
+  max-width: 90rem;
+  width: 100%;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 4rem;
+  padding: 0 8rem;
 }
 
 .bavovnaBlock__titleBox {
-  width: 90rem;
+  max-width: 90rem;
+  width: 100%;
 }
 
 .bavovnaBlock__title2 {
@@ -22,7 +25,8 @@
 }
 
 .bavovnaBlock__content {
-  width: 72.8rem;
+  max-width: 72.8rem;
+  width: 100%;
   color: #000000;
   font-size: 18px;
   line-height: 140%;
@@ -122,6 +126,108 @@
 }
 .bavovnaBlock__button:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
+}
+
+@media (min-width: 581px) and (max-width: 1000px) {
+  .bavovnaBlock {
+    padding: 0 3.2rem;
+  }
+  .bavovnaBlock__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 22.4rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+  }
+  .bavovnaBlock__button span {
+    font-size: 2rem;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  .bavovnaBlock__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 8.8rem;
+  }
+  .bavovnaBlock__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 10.9rem;
+  }
+  .bavovnaBlock__button:hover::before {
+    content: "";
+    width: 24.64rem;
+    height: 24.64rem;
+    opacity: 1;
+    position: absolute;
+    top: -9.92rem;
+    left: -1rem;
+  }
+  .bavovnaBlock__button:active::after {
+    content: "";
+    width: 24.64rem;
+    height: 24.64rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -9.92rem;
+    left: -1.1rem;
+  }
+  .bavovnaBlock__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .bavovnaBlock__button:disabled span {
+    color: #9b9b9b;
+  }
+}
+@media (max-width: 580px) {
+  .bavovnaBlock {
+    padding: 0 1.6rem;
+  }
+  .bavovnaBlock__title2 {
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .bavovnaBlock__content {
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .bavovnaBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+  }
+  .bavovnaBlock__button span {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
 }
 
 /*# sourceMappingURL=BavovnaBlock.module.css.map */

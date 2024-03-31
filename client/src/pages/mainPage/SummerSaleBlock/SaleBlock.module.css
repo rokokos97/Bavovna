@@ -2,9 +2,20 @@
   display: grid;
   max-width: 144rem;
   width: 100%;
-  height: 37.6rem;
+  max-height: 37.6rem;
   justify-content: center;
   position: relative;
+}
+.saleBlock img {
+  width: 100%;
+}
+
+.saleBlockBlock__image {
+  display: block;
+  width: 100%;
+}
+.saleBlockBlock__image img {
+  width: 100%;
 }
 
 .saleBlock__contentBlock {
@@ -13,7 +24,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 23rem;
+  max-width: 23rem;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
@@ -22,7 +34,7 @@
 .saleBlock__title2 {
   margin: 0 auto;
   color: #000000;
-  text-wrap: none;
+  text-wrap: unset;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -120,6 +132,35 @@
 }
 .saleBlock__button:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .saleBlock {
+    max-height: none;
+  }
+}
+@media (max-width: 580px) {
+  .saleBlock {
+    justify-content: unset;
+  }
+  .saleBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+  }
+  .saleBlock__button span {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  .saleBlock__title2 {
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .saleBlock__contentBlock {
+    gap: 2.4rem;
+  }
 }
 
 /*# sourceMappingURL=SaleBlock.module.css.map */

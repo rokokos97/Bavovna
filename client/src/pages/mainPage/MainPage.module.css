@@ -5,4 +5,15 @@
   justify-content: center;
 }
 
+@media (min-width: 581px) and (max-width: 950px) {
+  .mainPage {
+    row-gap: 3.2rem;
+  }
+}
+@media (max-width: 580px) {
+  .mainPage {
+    row-gap: 2.4rem;
+  }
+}
+
 /*# sourceMappingURL=MainPage.module.css.map */

@@ -20,13 +20,18 @@
 
 .newsLettersBlock {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44.3rem;
+  padding: 0 4rem;
+  background-image: url("../../../../public/img/images/NewsLetter/newsletterBlock.webp");
+}
+
+.newsLettersBlock_form {
+  display: flex;
   flex-direction: column;
   width: 100%;
-  height: 42.8rem;
-  padding-top: 10rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  background-image: url("../../../../public/img/images/NewsLetter/newsletterBlock.webp");
   align-items: center;
   gap: 2.4rem;
 }
@@ -38,7 +43,8 @@
 }
 
 .content {
-  width: 51.8rem;
+  max-width: 51.8rem;
+  width: 100%;
   text-align: center;
   font-size: 14px;
   line-height: 110%;
@@ -47,7 +53,8 @@
 
 .newsLetterBlock__inputSection {
   display: flex;
-  width: 63rem;
+  max-width: 63rem;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 2.4rem;
@@ -65,6 +72,7 @@
   overflow: hidden;
   padding: 1.6rem 2.4rem;
   background: #000000;
+  width: 100%;
 }
 .newsLetterBlock__button span {
   font-size: 2rem;
@@ -147,6 +155,39 @@
 
 .newsLetterBlock__messageError {
   background-color: #ea001b;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .newsLettersBlock {
+    width: 100%;
+    height: 32.6rem;
+    padding: 3.6rem 3.2rem;
+    background-image: url("../../../../public/img/images/NewsLetter/tabletNewsletterBlock.webp");
+  }
+  .newsLettersBlock_form {
+    max-width: 46.5rem;
+    height: 24.4rem;
+    padding: 0;
+  }
+}
+@media (max-width: 580px) {
+  .newsLettersBlock {
+    padding: 1.6rem;
+  }
+  .newsLetterBlock__title2 {
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .newsLetterBlock__button {
+    height: 4.8rem;
+    padding: 1.2rem;
+  }
+  .newsLetterBlock__button span {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
 }
 
 /*# sourceMappingURL=NewsLettersBlock.module.css.map */

@@ -57,9 +57,9 @@ const deliveryOptionsSection = () => {
   };
   const formik = useFormik({
     initialValues: initialValues,
-    validationSchema: userCurrentDeliveryOption !== 'saved address'? validationSchema(userCurrentDeliveryMethod): null,
+    validationSchema: userCurrentDeliveryOption !== 'saved delivery method'? validationSchema(userCurrentDeliveryMethod): null,
     onSubmit: (values) => {
-      if (userCurrentDeliveryOption === 'new address') {
+      if (userCurrentDeliveryOption === 'new delivery method') {
         const newValues = {};
         Object.keys(values).forEach((key)=> {
           if (Object.keys(values[key]).length !==0) {
@@ -106,13 +106,10 @@ const deliveryOptionsSection = () => {
       },
     });
   }, [userCurrentDeliveryMethod, formik.resetForm]);
-  useEffect(()=>{
-    dispatch(setDeliveryMethod('Nova post delivery to the post office'));
-  }, []);
   const deliveryOptionsList = [
     {
       id: '1',
-      label: 'new address',
+      label: 'new delivery method',
       value: <UserDeliveryMethodsList
         type={'1'}
         formik={formik}
@@ -124,14 +121,17 @@ const deliveryOptionsSection = () => {
     },
     {
       id: '2',
-      label: 'saved address',
+      label: 'saved delivery method',
       value: <UserDeliveryAddressList hiddenButton={true}/>,
     },
   ];
   return (
     <div className={styles.deliveryOptionsSection} data-testid="deliveryOptionsSection">
       <p className={styles.deliveryOptionsSection__title}>Delivery</p>
-      <div className={styles.deliveryOptionsSection__radioBlock}>
+      <div
+        style={{display: !isLoggedIn ?'none': 'flex'}}
+        className={styles.deliveryOptionsSection__radioBlock}
+      >
         {deliveryOptionsList.map((method, index)=> <div key={index}>
           <div
             className={styles.deliveryOptionsSection__radioWrapper}
@@ -170,7 +170,7 @@ const deliveryOptionsSection = () => {
           <button
             className={styles.deliveryOptionsSection__buttonRight}
             type='submit'
-            disabled={userCurrentDeliveryOption === 'new address'?!formik.isValid || !formik.dirty:false}
+            disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:false}
           >
             <span>
                 next step
