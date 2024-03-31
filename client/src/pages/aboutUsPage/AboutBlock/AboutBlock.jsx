@@ -7,7 +7,7 @@ const AboutBlock = () => {
       <div className={styles.imgs}>
         <picture className={styles.mainImg}>
           <source
-            media='(min-width: 769px)'
+            media='(min-width: 1000px)'
             srcSet='/img/images/AboutUs/aboutBlock/aboutBlock_1.webp'
             loading='lazy'
           />
@@ -17,8 +17,8 @@ const AboutBlock = () => {
             loading='lazy'
           />
           <img
-            loading='lazy'
             src='/img/images/AboutUs/aboutBlock/mobileAboutBlock_1.webp'
+            loading='lazy'
             alt='White hoodie and jeans'
           />
         </picture>

@@ -8,6 +8,7 @@
   display: block;
   position: relative;
   width: 100%;
+  max-height: 50rem;
   aspect-ratio: 4/3.2;
   flex: 50% 1 1;
 
@@ -59,4 +60,21 @@
   gap: 1.6rem;
   width: 100%;
   padding-bottom: 1.6rem;
+}
+@media (min-width: 581px) and (max-width: 769px) {
+  .fashionBlock {
+    gap: 1.6rem;
+  }
+  .imgs {
+    width: 100%;
+    aspect-ratio: unset;
+    flex: 50% 1 1;
+
+    img {
+      width: fit-content;
+      aspect-ratio: unset;
+    }
+  }
+}
+@media (max-width: 580px) {
 }

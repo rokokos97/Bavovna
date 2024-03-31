@@ -5,20 +5,40 @@ const FashionBlock = () => {
   return (
     <div className={styles.fashionBlock} data-testid='FashionBlock'>
       <div className={styles.imgs}>
-        <div className={styles.mainImg}>
-          <img
+        <picture className={styles.mainImg}>
+          <source
+            media='(min-width: 769px)'
+            srcSet='/img/images/AboutUs/fashionBlock/fashion_1.webp'
             loading='lazy'
-            src='/img/images/AboutUs/fashionBlock/fashion_1.webp'
+          />
+          <source
+            media='(min-width: 581px)'
+            srcSet='/img/images/AboutUs/fashionBlock/tabletFashionBlock_1.webp'
+            loading='lazy'
+          />
+          <img
+            src='/img/images/AboutUs/fashionBlock/mobileFashionBlock_1.webp'
+            loading='lazy'
             alt='Flea market'
           />
-        </div>
-        <div className={styles.secondImg}>
-          <img
+        </picture>
+        <picture className={styles.secondImg}>
+          <source
+            media='(min-width: 769px)'
+            srcSet='/img/images/AboutUs/fashionBlock/fashion_2.webp'
             loading='lazy'
-            src='/img/images/AboutUs/fashionBlock/fashion_2.webp'
+          />
+          <source
+            media='(min-width: 581px)'
+            srcSet='/img/images/AboutUs/fashionBlock/tabletFashionBlock_2.webp'
+            loading='lazy'
+          />
+          <img
+            src='/img/images/AboutUs/fashionBlock/mobileFashionBlock_2.webp'
+            loading='lazy'
             alt='Rolls of fabric'
           />
-        </div>
+        </picture>
       </div>
       <div className={styles.description}>
         <h2 className={styles.newsLetterBlock__title2}>
