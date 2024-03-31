@@ -49,10 +49,10 @@ export const validationSchemaUserDataForm = Yup.object().shape({
       .required('Field is required'),
 });
 export const validationSchemaNPDeliveryWarehouse = Yup.object().shape({
-  city: Yup.object().test('object-length', 'City is required', (obj) => {
+  warehouse: Yup.object().test('object-length', 'Warehouse is required', (obj) => {
     return Object.keys(obj).length === 2;
   }),
-  warehouse: Yup.object().test('object-length', 'Warehouse is required', (obj) => {
+  city: Yup.object().test('object-length', 'City is required', (obj) => {
     return Object.keys(obj).length === 2;
   }),
 });

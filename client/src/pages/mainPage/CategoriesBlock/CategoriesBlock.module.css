@@ -1,7 +1,6 @@
 .categoriesBlock {
-  margin: 0 auto;
+  padding: 0 8rem;
   display: flex;
-  max-width: 128rem;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
@@ -17,9 +16,37 @@
 .categoriesBlock__box {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
   gap: 2.4rem;
   margin: 0 auto;
+}
+
+@media (min-width: 581px) and (max-width: 1000px) {
+  .categoriesBlock {
+    padding: 0 3.2rem;
+  }
+  .categoriesBlock__box {
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 580px) {
+  .categoriesBlock {
+    padding: 0 1.6rem;
+    gap: 2.4rem;
+  }
+  .categoriesBlock__title2 {
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .categoriesBlock__box {
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=CategoriesBlock.module.css.map */

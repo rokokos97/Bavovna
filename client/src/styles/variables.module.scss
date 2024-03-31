@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 $headerHeight: 8.6rem;
 $max-width: 144rem;
 $min-width: 112rem;
@@ -7,6 +7,12 @@ $extra-small: 6.4rem;
 $small: 19rem;
 $medium: 41.1rem;
 $large: 63rem;
+
+$xl: 2.4rem;
+$l: 1.6rem;
+$m: 1.2rem;
+$s: 0.8rem;
+$xs: 0.4rem;
 
 $white-color: #ffffff;
 $black-color: #040404;
@@ -20,200 +26,200 @@ $btn-bg-color: #6d6d6d;
 $transparent-30: rgba(169, 223, 203, 0.3);
 
 $headline-1: (
-  font-weight: 800,
-  size: 56px,
-  line-height: 150%,
-  letter-spacing: 4%,
-  text-transform: uppercase,
+        font-weight: 800,
+        size: 56px,
+        line-height: 150%,
+        letter-spacing: 4%,
+        text-transform: uppercase,
 );
 $tablet-headline-1: (
-  font-weight: 800,
-  size: 48px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 800,
+        size: 48px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-2: (
-  font-weight: 500,
-  size: 32px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 32px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $tablet-headline-2: (
-  font-weight: 500,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 24px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-3: (
-  font-weight: 700,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 700,
+        size: 24px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-4: (
-  font-weight: 400,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 400,
+        size: 24px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-5: (
-  font-weight: 500,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 20px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-6: (
-  font-weight: 400,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 400,
+        size: 20px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-7: (
-  font-weight: 600,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 600,
+        size: 20px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $headline-8: (
-  font-weight: 500,
-  size: 18px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 18px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $headline-9: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 400,
+        size: 16px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $headline-10: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 400,
+        size: 14px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $headline-11: (
-  font-weight: 700,
-  size: 8px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 700,
+        size: 8px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $headline-12: (
-  font-weight: 500,
-  size: 14px,
-  line-height: 100%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 14px,
+        line-height: 100%,
+        text-transform: uppercase,
 );
 
 $body-1: (
-  font-weight: 500,
-  size: 20px,
-  line-height: 120%,
+        font-weight: 500,
+        size: 20px,
+        line-height: 120%,
 );
 $body-2: (
-  font-weight: 400,
-  size: 18px,
-  line-height: 140%,
+        font-weight: 400,
+        size: 18px,
+        line-height: 140%,
 );
 $body-3: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 110%,
-  paragraph-spacing: 8px,
+        font-weight: 400,
+        size: 16px,
+        line-height: 110%,
+        paragraph-spacing: 8px,
 );
 $body-4: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 120%,
+        font-weight: 400,
+        size: 14px,
+        line-height: 120%,
 );
 $menu-1: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 600,
+        size: 16px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $menu-2: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 400,
+        size: 14px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $menu-3: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
+        font-weight: 400,
+        size: 12px,
+        line-height: 110%,
 );
 $menu-4: (
-  font-weight: 500,
-  size: 12px,
-  line-height: 110%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 12px,
+        line-height: 110%,
+        text-transform: uppercase,
 );
 $menu-5: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
+        font-weight: 400,
+        size: 12px,
+        line-height: 110%,
 );
 $link-1: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 110%,
+        font-weight: 600,
+        size: 16px,
+        line-height: 110%,
 );
 $link-2: (
-  font-weight: 600,
-  size: 12px,
-  line-height: 110%,
+        font-weight: 600,
+        size: 12px,
+        line-height: 110%,
 );
 $link-3: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
+        font-weight: 400,
+        size: 12px,
+        line-height: 110%,
 );
 $button: (
-  font-weight: 600,
-  size: 2rem,
-  line-height: 140%,
-  text-transform: uppercase,
+        font-weight: 600,
+        size: 2rem,
+        line-height: 140%,
+        text-transform: uppercase,
 );
 $button-s: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 22.4px,
-  text-align: center,
+        font-weight: 600,
+        size: 16px,
+        line-height: 22.4px,
+        text-align: center,
 );
 $running-line: (
-  font-weight: 300,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
+        font-weight: 300,
+        size: 20px,
+        line-height: 120%,
+        text-transform: uppercase,
 );
 $tab-bars: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 140%,
-  text-transform: uppercase,
+        font-weight: 600,
+        size: 16px,
+        line-height: 140%,
+        text-transform: uppercase,
 );
 $breadcrumb: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
-  text-transform: none,
+        font-weight: 400,
+        size: 16px,
+        line-height: 140%,
+        text-transform: none,
 );
 $discount-price: (
-  font-weight: 500,
-  size: 16px,
-  line-height: 140%,
-  text-transform: uppercase,
+        font-weight: 500,
+        size: 16px,
+        line-height: 140%,
+        text-transform: uppercase,
 );
 $label: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
+        font-weight: 400,
+        size: 16px,
+        line-height: 140%,
 );
 $input-text: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
+        font-weight: 400,
+        size: 16px,
+        line-height: 140%,
 );
 
 $accent-a-95: #030a07;

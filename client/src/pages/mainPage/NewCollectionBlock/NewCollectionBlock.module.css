@@ -1,21 +1,38 @@
 .newCollectionBlock {
-  height: 84.1rem;
+  max-height: 84.1rem;
+  position: relative;
 }
 
 .newCollectionBlock__image {
+  width: 100%;
+}
+.newCollectionBlock__image img {
+  position: relative;
+  width: 100%;
+}
+.newCollectionBlock__image img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
   background: linear-gradient(90deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0) 45.58%), lightgray 50%/cover no-repeat;
 }
 
 .newCollectionBlock__section {
   display: flex;
   max-width: 57.8rem;
-  position: relative;
-  left: 8rem;
-  bottom: 55.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 4rem;
+  margin-left: 8rem;
 }
 
 .newCollectionBlock__title1 {
@@ -25,10 +42,11 @@
   line-height: 150%;
   letter-spacing: 4%;
   text-transform: uppercase;
+  font-weight: 800;
 }
 
 .newCollectionBlock__text {
-  width: 57.8rem;
+  max-width: 57.8rem;
   color: #000000;
   font-size: 18px;
   line-height: 140%;
@@ -126,6 +144,68 @@
 }
 .newCollectionBlock__button:active::after {
   border: 1px solid #5a9b83;
+}
+
+.newCollectionBlock__image {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.newCollectionBlock__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90.08deg, rgba(222, 222, 222, 0.54) 14.47%, rgba(225, 225, 225, 0) 45.58%);
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .newCollectionBlock {
+    max-height: 91.7rem;
+  }
+  .newCollectionBlock__section {
+    gap: 2.4rem;
+    margin-left: 3.2rem;
+  }
+  .newCollectionBlock__title1 {
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-weight: 800;
+    max-width: 42.4rem;
+  }
+  .newCollectionBlock__text {
+    max-width: 44rem;
+  }
+}
+@media (max-width: 580px) {
+  .newCollectionBlock__section {
+    gap: 2.4rem;
+    margin-left: 1.6rem;
+  }
+  .newCollectionBlock__title1 {
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-weight: 800;
+    max-width: 42.4rem;
+  }
+  .newCollectionBlock__text {
+    max-width: 28.5rem;
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .newCollectionBlock__button {
+    width: 18rem;
+    height: 4.8rem;
+    padding: 1.2rem;
+  }
+  .newCollectionBlock__button span {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
 }
 
 /*# sourceMappingURL=NewCollectionBlock.module.css.map */

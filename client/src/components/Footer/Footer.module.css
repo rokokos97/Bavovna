@@ -120,4 +120,75 @@
   align-items: center;
 }
 
+@media (min-width: 581px) and (max-width: 768px) {
+  .footer {
+    padding: 3.2rem;
+  }
+  .footerTop {
+    height: 100%;
+    flex-direction: column-reverse;
+  }
+  .footerList {
+    gap: 1.2rem;
+  }
+  .footerTopLeft {
+    width: 100%;
+  }
+  .footerTopLeft h3 {
+    padding-bottom: 1.2rem;
+  }
+  .footerTopRight {
+    flex-direction: row;
+    margin-bottom: 2.4rem;
+  }
+  .footerBottom {
+    gap: 2.4rem;
+  }
+  .footerBottomLeft {
+    gap: 0.5rem;
+  }
+  .footerBottomItem {
+    flex-basis: content;
+  }
+}
+@media (max-width: 580px) {
+  .footer {
+    position: relative;
+    padding: 2.4rem 1.6rem;
+    padding-top: 6rem;
+  }
+  .footerTop {
+    display: block;
+    height: 100%;
+    padding-bottom: 1.6rem;
+  }
+  .footerTop h3 {
+    padding-bottom: 1.6rem;
+  }
+  .footerTopRight button {
+    position: absolute;
+    top: 2.2rem;
+  }
+  .footerTopLeft {
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .footerList {
+    flex-direction: row;
+    gap: 0.8rem;
+    flex-basis: content;
+    flex-wrap: wrap;
+  }
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footerBottomLeft {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
 /*# sourceMappingURL=Footer.module.css.map */
