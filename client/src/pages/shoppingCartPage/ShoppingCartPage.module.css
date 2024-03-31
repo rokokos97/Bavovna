@@ -117,6 +117,9 @@
   top: -13.66rem;
   left: -1.1rem;
 }
+.shoppingCartPage__button:focus {
+  border: 3px solid #5a9b83;
+}
 .shoppingCartPage__button:disabled {
   border-color: #868686;
   background: #c3c3c3;

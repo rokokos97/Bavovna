@@ -114,6 +114,9 @@
   top: -7.995rem;
   left: -1.1rem;
 }
+.filterBtn:focus {
+  border: 3px solid #5a9b83;
+}
 .filterBtn:disabled {
   border-color: #868686;
   background: #c3c3c3;

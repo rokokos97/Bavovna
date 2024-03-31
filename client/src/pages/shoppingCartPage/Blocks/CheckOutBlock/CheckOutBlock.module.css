@@ -89,6 +89,9 @@
   top: -17.565rem;
   left: -1.1rem;
 }
+.checkOutBlock__buttonsBlock a:first-child:focus {
+  border: 3px solid #5a9b83;
+}
 .checkOutBlock__buttonsBlock a:first-child:disabled {
   border-color: #868686;
   background: #c3c3c3;
@@ -180,6 +183,9 @@
   position: absolute;
   top: -17.565rem;
   left: -1.1rem;
+}
+.checkOutBlock__buttonsBlock a:last-child:focus {
+  border: 3px solid #5a9b83;
 }
 .checkOutBlock__buttonsBlock a:last-child:disabled {
   border-color: #868686;

@@ -71,6 +71,9 @@
   top: -20.15rem;
   left: -1.1rem;
 }
+.loginFormBlock .loginFormBlock__button:focus {
+  border: 3px solid #5a9b83;
+}
 .loginFormBlock .loginFormBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
@@ -170,6 +173,9 @@
   position: absolute;
   top: -20.15rem;
   left: -1.1rem;
+}
+.loginFormBlock .loginFormBlock__googleButton:focus {
+  border: 3px solid #5a9b83;
 }
 .loginFormBlock .loginFormBlock__googleButton:disabled {
   border-color: #868686;
@@ -299,6 +305,9 @@
   position: absolute;
   top: -20.15rem;
   left: -1.1rem;
+}
+.loginFormBlock .loginFormBlock__button:focus {
+  border: 3px solid #5a9b83;
 }
 .loginFormBlock .loginFormBlock__button:disabled {
   border-color: #868686;
@@ -441,6 +450,9 @@
   top: -26.255rem;
   left: -1.1rem;
 }
+.loginFormBlock[type="1"] .loginFormBlock__button:focus {
+  border: 3px solid #5a9b83;
+}
 .loginFormBlock[type="1"] .loginFormBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
@@ -512,6 +524,9 @@
   position: absolute;
   top: -26.255rem;
   left: -1.1rem;
+}
+.loginFormBlock[type="1"] .loginFormBlock__googleButton:focus {
+  border: 3px solid #5a9b83;
 }
 .loginFormBlock[type="1"] .loginFormBlock__googleButton:disabled {
   border-color: #868686;

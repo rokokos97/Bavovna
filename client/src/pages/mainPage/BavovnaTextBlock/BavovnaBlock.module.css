@@ -96,6 +96,9 @@
   top: -8.325rem;
   left: -1.1rem;
 }
+.bavovnaBlock__button:focus {
+  border: 3px solid #5a9b83;
+}
 .bavovnaBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
