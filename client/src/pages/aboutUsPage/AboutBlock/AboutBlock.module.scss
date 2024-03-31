@@ -60,11 +60,20 @@
   @include fonts($body-3);
   max-width: 60rem;
 }
-@media (min-width: 581px) and (max-width: 950px) {
-.aboutBlock {
-  gap: 1.6rem;
-}
+@media (min-width: 581px) and (max-width: 768px) {
+  .aboutBlock {
+    gap: 1.6rem;
+  }
 }
 @media (max-width: 580px) {
-
+  .aboutBlock {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .description {
+    gap: 0.8rem;
+  }
+  .newsLetterBlock__title2 {
+    padding-bottom: 0.4rem;
+  }
 }
