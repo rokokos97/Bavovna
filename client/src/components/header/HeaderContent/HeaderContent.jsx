@@ -31,7 +31,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
   return (
     <>
       <section className={styles.headerContent__banner}>
-        <Link to='/shop?status=sale_10%'>
+        <Link to='/shop?status=sale_10%' onClick={closeMobileMenu}>
           <p>10% discount on the summer collection</p>
         </Link>
       </section>
@@ -94,9 +94,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
                     aria-label='View your wishlist'
                   >
                     <EmptyHeartIcon />
-                    <p className={styles.headerContent__wishlist}>
-                        Wishlist
-                    </p>
+                    <p className={styles.headerContent__wishlist}>Wishlist</p>
                   </Link>
                   <Link
                     className={`${styles.headerContent__linkBlock} ${styles.headerContent__button}`}
@@ -135,6 +133,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
             className={styles.headerContent__logo}
             aria-label='Go to homepage'
             to='/'
+            onClick={closeMobileMenu}
           >
             <LogoIcon />
           </Link>

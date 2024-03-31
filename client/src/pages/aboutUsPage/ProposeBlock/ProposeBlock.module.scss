@@ -79,3 +79,12 @@
   @include button(16.2rem);
   @include buttonBlack();
 }
+
+@media (min-width: 581px) and (max-width: 950px) {
+.proposeBlock {
+  gap: 1.6rem;
+}
+}
+@media (max-width: 580px) {
+
+}
