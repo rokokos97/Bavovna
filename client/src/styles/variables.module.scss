@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 $headerHeight: 8.6rem;
 $max-width: 144rem;
 $min-width: 112rem;
@@ -7,6 +7,12 @@ $extra-small: 6.4rem;
 $small: 19rem;
 $medium: 41.1rem;
 $large: 63rem;
+
+$xl: 2.4rem;
+$l: 1.6rem;
+$m: 1.2rem;
+$s: 0.8rem;
+$xs: 0.4rem;
 
 $white-color: #ffffff;
 $black-color: #040404;
@@ -19,198 +25,181 @@ $section-bg-color: #f1f1f1;
 $btn-bg-color: #6d6d6d;
 $transparent-30: rgba(169, 223, 203, 0.3);
 
-$headline-1: (
-  font-weight: 800,
+$extraBold: 800;
+$bold: 700;
+$medium: 500;
+$regular: 400;
+$light:300;
+
+$headline-1:(
+  font-weight: extraBold,
   size: 56px,
   line-height: 150%,
   letter-spacing: 4%,
   text-transform: uppercase,
 );
-$tablet-headline-1: (
-  font-weight: 800,
-  size: 48px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-2: (
-  font-weight: 500,
+$headline-2:(
+  font-weight: $medium,
   size: 32px,
   line-height: 120%,
+  letter-spacing: 0%,
+  paragraph-spacing: 0px,
   text-transform: uppercase,
 );
-$tablet-headline-2: (
-  font-weight: 500,
+$headline-3:(
+  font-weight: $bold,
   size: 24px,
   line-height: 120%,
+  letter-spacing: 0%,
+  paragraph-spacing: 0px,
   text-transform: uppercase,
 );
-$headline-3: (
-  font-weight: 700,
+$headline-4:(
+  font-weight: $medium,
   size: 24px,
   line-height: 120%,
+  letter-spacing: 0%,
+  paragraph-spacing: 0px,
   text-transform: uppercase,
 );
-$headline-4: (
-  font-weight: 400,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-5: (
+$headline-5:(
   font-weight: 500,
   size: 20px,
   line-height: 120%,
   text-transform: uppercase,
 );
-$headline-6: (
+$headline-6:(
   font-weight: 400,
   size: 20px,
   line-height: 120%,
   text-transform: uppercase,
 );
-$headline-7: (
+$headline-7:(
   font-weight: 600,
   size: 20px,
   line-height: 120%,
   text-transform: uppercase,
 );
-$headline-8: (
+$headline-8:(
   font-weight: 500,
   size: 18px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$headline-9: (
-  font-weight: 400,
+$headline-9:(
+  font-weight: 500,
   size: 16px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$headline-10: (
+$headline-10:(
   font-weight: 400,
   size: 14px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$headline-11: (
+$headline-11:(
   font-weight: 700,
   size: 8px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$headline-12: (
-  font-weight: 500,
-  size: 14px,
-  line-height: 100%,
-  text-transform: uppercase,
-);
 
-$body-1: (
+$body-1:(
   font-weight: 500,
   size: 20px,
   line-height: 120%,
 );
-$body-2: (
+$body-2:(
   font-weight: 400,
   size: 18px,
   line-height: 140%,
 );
-$body-3: (
+$body-3:(
   font-weight: 400,
   size: 16px,
   line-height: 110%,
   paragraph-spacing: 8px,
 );
-$body-4: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 120%,
-);
-$menu-1: (
+$menu-1:(
   font-weight: 600,
   size: 16px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$menu-2: (
+$menu-2:(
   font-weight: 400,
   size: 14px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$menu-3: (
+$menu-3:(
   font-weight: 400,
   size: 12px,
   line-height: 110%,
 );
-$menu-4: (
+$menu-4:(
   font-weight: 500,
   size: 12px,
   line-height: 110%,
   text-transform: uppercase,
 );
-$menu-5: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
+$menu-5:(
+   font-weight: 400,
+   size: 12px,
+   line-height: 110%,
 );
-$link-1: (
+$link-1:(
   font-weight: 600,
   size: 16px,
   line-height: 110%,
 );
-$link-2: (
+$link-2:(
   font-weight: 600,
   size: 12px,
   line-height: 110%,
 );
-$link-3: (
+$link-3:(
   font-weight: 400,
   size: 12px,
   line-height: 110%,
 );
-$button: (
+$button:(
   font-weight: 600,
   size: 2rem,
   line-height: 140%,
   text-transform: uppercase,
 );
-$button-s: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 22.4px,
-  text-align: center,
-);
-$running-line: (
+$running-line:(
   font-weight: 300,
   size: 20px,
   line-height: 120%,
   text-transform: uppercase,
 );
-$tab-bars: (
+$tab-bars:(
   font-weight: 600,
   size: 16px,
   line-height: 140%,
   text-transform: uppercase,
 );
-$breadcrumb: (
+$breadcrumb:(
   font-weight: 400,
   size: 16px,
   line-height: 140%,
   text-transform: none,
 );
-$discount-price: (
+$discount-price:(
   font-weight: 500,
   size: 16px,
   line-height: 140%,
   text-transform: uppercase,
 );
-$label: (
+$label:(
   font-weight: 400,
   size: 16px,
   line-height: 140%,
 );
-$input-text: (
+$input-text:(
   font-weight: 400,
   size: 16px,
   line-height: 140%,
@@ -229,7 +218,7 @@ $accent-a-2: #79b6a0;
 $accent-a-15: #89c4ae;
 $accent-a-1: #99d2bd;
 $accent-a-05: #a9dfcb;
-$accent-a-0: #b9edda;
+$accent-a-0: #B9EDDA;
 
 $gray-10: #4a4a4a;
 $gray-20: #5d5d5d;
@@ -259,88 +248,6 @@ $light-pink: #dfc5c5;
   letter-spacing: map-get($font-map, letter-spacing);
   text-transform: map-get($font-map, text-transform);
 }
-@mixin buttons(
-  $width,
-  $background-color,
-  $text-color,
-  $hover-color,
-  $active-color
-) {
-  display: flex;
-  width: $width;
-  height: 5.6rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background: $background-color;
-  padding: 1.6rem 2.4rem;
-  span {
-    @include fonts($button);
-    color: $text-color;
-    text-align: center;
-    position: relative;
-    //z-index: 10;
-  }
-  &::before {
-    content: '';
-    background: $hover-color;
-    width: 4.8rem;
-    height: 4.8rem;
-    opacity: 0;
-    line-height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    transition: 300ms ease-in;
-    top: 0.4rem;
-    left: math.div($width, 2)-2.4rem;
-  }
-  &::after {
-    content: '';
-    background: $active-color;
-    width: 0.6rem;
-    height: 0.6rem;
-    opacity: 0;
-    line-height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    transition: 300ms ease-in;
-    top: 2.5rem;
-    left: math.div($width, 2)-0.3rem;
-  }
-  &:hover::before {
-    content: '';
-    width: 1.1 * $width;
-    height: 1.1 * $width;
-    background: $hover-color;
-    opacity: 1;
-    position: absolute;
-    top: (math.div(-1.1 * $width, 2) + 2.4rem);
-    left: -1rem;
-  }
-  &:active::after {
-    content: '';
-    width: 1.1 * $width;
-    height: 1.1 * $width;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid $hover-color;
-    opacity: 1;
-    position: absolute;
-    top: (math.div(-1.1 * $width, 2) + 2.4rem);
-    left: -1.1rem;
-  }
-  &:disabled {
-    border: 1px solid $gray-40;
-    background: $gray-90;
-    pointer-events: none;
-    cursor: not-allowed;
-    span {
-      color: $gray-50;
-    }
-  }
-}
-
 @mixin divider() {
   display: flex;
   justify-content: center;
@@ -364,11 +271,8 @@ $light-pink: #dfc5c5;
   flex-direction: column;
   gap: 2.4rem;
   p {
-    //color: $black;
     @include fonts($body-3);
-
     span {
-      //color: $black;
       @include fonts($link-1);
     }
   }
@@ -387,7 +291,6 @@ $light-pink: #dfc5c5;
     color: $error;
   }
 }
-
 @mixin form-title-block {
   display: flex;
   flex-direction: column;
@@ -443,7 +346,7 @@ $light-pink: #dfc5c5;
     line-height: 40px;
     border-radius: 50%;
     position: absolute;
-    transition: 300ms ease-in;
+    transition:  300ms ease-in;
     top: 0.4rem;
     left: math.div($width, 2)-2.4rem;
   }
@@ -455,29 +358,32 @@ $light-pink: #dfc5c5;
     line-height: 40px;
     border-radius: 50%;
     position: absolute;
-    transition: 300ms ease-in;
+    transition:  300ms ease-in;
     top: 2.5rem;
     left: math.div($width, 2)-0.3rem;
   }
   &:hover::before {
     content: '';
-    width: 1.1 * $width;
-    height: 1.1 * $width;
+    width: 1.1*$width;
+    height: 1.1*$width;
     opacity: 1;
     position: absolute;
-    top: (math.div(-1.1 * $width, 2) + 2.4rem);
+    top: (math.div(-1.1*$width, 2)+2.4rem);
     left: -1rem;
   }
   &:active::after {
     content: '';
-    width: 1.1 * $width;
-    height: 1.1 * $width;
+    width: 1.1*$width;
+    height: 1.1*$width;
     border-radius: 50%;
     background: transparent;
     opacity: 1;
     position: absolute;
-    top: (math.div(-1.1 * $width, 2) + 2.4rem);
+    top: (math.div(-1.1*$width, 2)+2.4rem);
     left: -1.1rem;
+  }
+  &:focus {
+    border: 3px solid $accent-a-3;
   }
   &:disabled {
     border-color: $gray-40;

@@ -9,6 +9,7 @@
 .deliveryOptionsSection__title {
   font-size: 24px;
   line-height: 120%;
+  letter-spacing: 0%;
   text-transform: uppercase;
   text-align: start;
 }
@@ -28,7 +29,6 @@
 .deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
-  width: 19.3rem;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
@@ -122,6 +122,9 @@
   position: absolute;
   top: -8.05rem;
   left: -1.1rem;
+}
+.deliveryOptionsSection__buttonLeft:focus {
+  border: 3px solid #5a9b83;
 }
 .deliveryOptionsSection__buttonLeft:disabled {
   border-color: #868686;
@@ -238,6 +241,9 @@
   position: absolute;
   top: -8.05rem;
   left: -1.1rem;
+}
+.deliveryOptionsSection__buttonRight:focus {
+  border: 3px solid #5a9b83;
 }
 .deliveryOptionsSection__buttonRight:disabled {
   border-color: #868686;

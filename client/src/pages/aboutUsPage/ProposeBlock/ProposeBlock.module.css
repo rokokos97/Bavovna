@@ -35,12 +35,14 @@
   padding-bottom: 0.8rem;
   font-size: 24px;
   line-height: 120%;
+  letter-spacing: 0%;
   text-transform: uppercase;
   border-bottom: 0.1rem solid #000000;
 }
 .newsLetterBlock__title2 span {
   font-size: 24px;
   line-height: 120%;
+  letter-spacing: 0%;
   text-transform: uppercase;
 }
 
@@ -137,6 +139,9 @@
   position: absolute;
   top: -6.51rem;
   left: -1.1rem;
+}
+.newCollectionBlock__button:focus {
+  border: 3px solid #5a9b83;
 }
 .newCollectionBlock__button:disabled {
   border-color: #868686;
