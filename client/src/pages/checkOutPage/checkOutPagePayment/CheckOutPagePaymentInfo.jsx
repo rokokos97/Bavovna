@@ -9,13 +9,12 @@ import {
   addOrder,
   getUserInfo,
   getDeliveryInfo,
-  getOrderAmount,
   getPaymentMethod,
   getPromoCodeSale,
   setOrderToInitialState,
 } from '../../../store/ordersSlice';
 import {customAlphabet} from 'nanoid/non-secure';
-import {clearCart, getNormalizedCart} from '../../../store/cartSlice';
+import {clearCart, getCartTotalPrice, getNormalizedCart} from '../../../store/cartSlice';
 import {getUser, updateUserData} from '../../../store/userSlice';
 import {clearCartSessionStorage} from '../../../services/sessionStorage.service';
 import {useNavigate} from 'react-router-dom';
@@ -24,7 +23,7 @@ const CheckOutPagePaymentInfo = () => {
   const user = useSelector(getUser);
   const cart = useSelector(getNormalizedCart);
   const userInfo = useSelector(getUserInfo);
-  const orderAmount = useSelector(getOrderAmount);
+  const orderAmount = useSelector(getCartTotalPrice);
   const deliveryInfo = useSelector(getDeliveryInfo);
   const promoCodeDiscount = useSelector(getPromoCodeSale);
   const currentPaymentMethod = useSelector(getPaymentMethod);

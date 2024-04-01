@@ -27,49 +27,47 @@ const PaymentMethodSection = ({formik}) => {
       value: <></>,
     },
   ];
-  return currentPaymentMethod && (
-    <div
-      className={styles.userPaymentMethodsList}
-      data-testid="PaymentMethodSection"
+  return <div
+    className={styles.userPaymentMethodsList}
+    data-testid="PaymentMethodSection"
+  >
+    <p className={styles.userPaymentMethodsList__title}>Payment</p>
+    <form
+      onSubmit={formik.handleSubmit}
+      className={styles.userPaymentMethodsList__block}
     >
-      <p className={styles.userPaymentMethodsList__title}>Payment</p>
-      <form
-        onSubmit={formik.handleSubmit}
-        className={styles.userPaymentMethodsList__block}
-      >
-        {paymentMethodsList.map((method)=> (
-          <div
-            style={{display: 'block'}}
-            key={method.id}>
-            <div className={styles.userPaymentMethodsList__radioWrapper}>
-              <button
-                className={styles.userPaymentMethodsList__radioButton}
-                type='button'
-                onClick = {() => dispatch(setPaymentMethod(method.label))}
-              >
-                {currentPaymentMethod === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
-              </button>
-              <label
-                className={styles.userPaymentMethodsList__label}
-              >
-                {method.label}
-              </label>
-            </div>
-          </div>))}
-        {paymentMethodsList.map((method)=> currentPaymentMethod === method.label ? <div key={method.id}>{method.value}</div>: null)}
-      </form>
-      <button
-        type='button'
-        onClick={()=> navigate(-1) }
-        className={styles.userPaymentMethodsList__buttonLeft}
-      >
-        <LeftArrowIcon/>
-        <span>
+      {paymentMethodsList.map((method)=> (
+        <div
+          style={{display: 'block'}}
+          key={method.id}>
+          <div className={styles.userPaymentMethodsList__radioWrapper}>
+            <button
+              className={styles.userPaymentMethodsList__radioButton}
+              type='button'
+              onClick = {() => dispatch(setPaymentMethod(method.label))}
+            >
+              {currentPaymentMethod === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+            </button>
+            <label
+              className={styles.userPaymentMethodsList__label}
+            >
+              {method.label}
+            </label>
+          </div>
+        </div>))}
+      {paymentMethodsList.map((method)=> currentPaymentMethod === method.label ? <div key={method.id}>{method.value}</div>: null)}
+    </form>
+    <button
+      type='button'
+      onClick={()=> navigate(-1) }
+      className={styles.userPaymentMethodsList__buttonLeft}
+    >
+      <LeftArrowIcon/>
+      <span>
                 go back
-        </span>
-      </button>
-    </div>
-  );
+      </span>
+    </button>
+  </div>;
 };
 PaymentMethodSection.propTypes = {
   formik: PropTypes.object.isRequired,

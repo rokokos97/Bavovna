@@ -34,7 +34,7 @@ const OrderSuccessPage = () => {
           </span>
         </Link>
         <Link
-          to={`${user?('/user/'+ user._id): '/login'}`}
+          to={`${user?('/user/'+ user._id): '/signIn'}`}
           aria-label='view order'
         >
           <span>
