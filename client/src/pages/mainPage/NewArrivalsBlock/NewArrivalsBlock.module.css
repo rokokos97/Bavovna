@@ -12,6 +12,7 @@
 }
 
 .newArrivalsBlock__title2 {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -37,6 +38,7 @@
   border: none;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -100,6 +102,7 @@
   fill: #000000;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -109,6 +112,7 @@
   fill: #3a7f66;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:hover span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -118,6 +122,7 @@
   fill: #081e16;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:focus span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -130,6 +135,7 @@
   fill: #868686;
 }
 .newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -159,6 +165,7 @@
     margin-bottom: 2.4rem;
   }
   .newArrivalsBlock__title2 {
+    font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;

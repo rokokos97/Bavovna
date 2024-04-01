@@ -21,13 +21,13 @@
 }
 
 .heroTitle {
-  @include fonts($headline-2);
+  @include headline-2();
 }
 
 .heroText {
   max-width: 60rem;
   width: 100%;
-  @include fonts($body-3);
+ @include body-3();
 }
 
 .heroBtn {

@@ -70,7 +70,7 @@
 }
 .itemPreviewCard__statusText {
   color: white;
-  @include fonts($headline-8);
+ @include headline-8();
   word-wrap: break-word;
 }
 .itemPreviewCard__heart {
@@ -88,13 +88,13 @@
   padding: 0.4rem 0.8rem;
   margin-top: 0.8rem;
   span {
-    @include fonts($body-2);
+   @include body-2();
   }
   .itemPreviewCard__price {
     display: flex;
     flex-direction: row;
     gap: 1.6rem;
-    @include fonts($headline-8);
+   @include headline-8();
   }
 }
 
@@ -109,14 +109,14 @@
   }
   .itemPreviewCard__description {
     span {
-      @include fonts($body-3);
+     @include body-3();
     }
   }
   .itemPreviewCard__status {
     padding: 0.7rem 1rem;
   }
   .itemPreviewCard__statusText {
-    @include fonts($headline-12);
+   @include headline-12();
   }
 }
 @media (max-width: 580px) {
@@ -132,10 +132,10 @@
   .itemPreviewCard__description {
     margin-top: 1rem;
     span {
-      @include fonts($body-4);
+     @include body-4();
     }
     p:last-child {
-      @include fonts($body-4);
+     @include body-4();
     }
   }
   .itemPreviewCard__status {
@@ -149,6 +149,6 @@
     right: 0.8rem;
   }
   .itemPreviewCard__statusText {
-    @include fonts($headline-12);
+   @include headline-12();
   }
 }

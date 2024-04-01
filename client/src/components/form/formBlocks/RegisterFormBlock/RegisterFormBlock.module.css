@@ -4,10 +4,12 @@
   gap: 2.4rem;
 }
 .registerFormBlock .registerFormBlock__form p {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
 .registerFormBlock .registerFormBlock__form p span {
+  font-weight: 600;
   font-size: 16px;
   line-height: 110%;
 }
@@ -26,6 +28,7 @@
   background: #000000;
 }
 .registerFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -86,6 +89,7 @@
   color: #9b9b9b;
 }
 .registerFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -127,6 +131,7 @@
 }
 .registerFormBlock__divider span {
   color: #000000;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
@@ -149,6 +154,7 @@
   border: 0.1rem solid #000000;
 }
 .registerFormBlock__googleButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -209,6 +215,7 @@
   color: #9b9b9b;
 }
 .registerFormBlock__googleButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

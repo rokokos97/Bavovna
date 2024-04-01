@@ -6,7 +6,7 @@
   justify-content: center;
   background-color: $accent-a-3;
   color: $white;
-  @include fonts($menu-2);
+ @include menu-2();
   .newsLetterBlock__closeButton {
     background-color: transparent;
     position: relative;
@@ -35,13 +35,13 @@
   gap: 2.4rem;
 }
 .newsLetterBlock__title2 {
-  @include fonts($headline-2);
+  @include headline-2();
 }
 .content {
   max-width: 51.8rem;
   width: 100%;
   text-align: center;
-  @include fonts($headline-10);
+ @include headline-10();
 }
 .newsLetterBlock__inputSection {
   display: flex;
@@ -77,14 +77,14 @@
     padding: 1.6rem;
   }
   .newsLetterBlock__title2 {
-    @include fonts($tablet-headline-2);
+    @include tablet-headline-2();
     font-weight: 500;
   }
   .newsLetterBlock__button {
     height: 4.8rem;
     padding: 1.2rem;
     span {
-      @include fonts($button-s);
+      @include button-s();
     }
   }
 }

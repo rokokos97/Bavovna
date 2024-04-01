@@ -33,12 +33,14 @@
   max-width: 28rem;
   width: 100%;
   padding-bottom: 0.8rem;
+  font-weight: 400;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
   border-bottom: 0.1rem solid #000000;
 }
 .newsLetterBlock__title2 span {
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -55,6 +57,7 @@
 
 .modalCookies__text {
   width: 100%;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
@@ -88,6 +91,7 @@
   background: #000000;
 }
 .newCollectionBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -148,6 +152,7 @@
   color: #9b9b9b;
 }
 .newCollectionBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -181,11 +186,14 @@
     position: relative;
     overflow: hidden;
     padding: 1.6rem 2.4rem;
+    font-weight: 600;
     font-size: 16px;
     line-height: 140%;
+    text-align: center;
     height: 4.8rem;
   }
   .newCollectionBlock__button span {
+    font-weight: 600;
     font-size: 2rem;
     line-height: 140%;
     text-transform: uppercase;
@@ -276,11 +284,14 @@
     position: relative;
     overflow: hidden;
     padding: 1.6rem 2.4rem;
+    font-weight: 600;
     font-size: 16px;
     line-height: 140%;
+    text-align: center;
     height: 4.8rem;
   }
   .newCollectionBlock__button span {
+    font-weight: 600;
     font-size: 2rem;
     line-height: 140%;
     text-transform: uppercase;

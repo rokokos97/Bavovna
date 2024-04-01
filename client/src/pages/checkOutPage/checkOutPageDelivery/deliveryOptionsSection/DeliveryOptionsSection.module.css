@@ -7,6 +7,7 @@
 }
 
 .deliveryOptionsSection__title {
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -28,6 +29,7 @@
 .deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
+  font-weight: 400;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
@@ -72,6 +74,7 @@
   padding-left: 0;
 }
 .deliveryOptionsSection__buttonLeft span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -135,6 +138,7 @@
   fill: #000000;
 }
 .deliveryOptionsSection__buttonLeft span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -144,6 +148,7 @@
   fill: #3a7f66;
 }
 .deliveryOptionsSection__buttonLeft:hover span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -153,6 +158,7 @@
   fill: #081e16;
 }
 .deliveryOptionsSection__buttonLeft:focus span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -165,6 +171,7 @@
   fill: #868686;
 }
 .deliveryOptionsSection__buttonLeft:disabled span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -188,6 +195,7 @@
   padding-right: 0;
 }
 .deliveryOptionsSection__buttonRight span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -251,6 +259,7 @@
   fill: #000000;
 }
 .deliveryOptionsSection__buttonRight span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -260,6 +269,7 @@
   fill: #3a7f66;
 }
 .deliveryOptionsSection__buttonRight:hover span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -269,6 +279,7 @@
   fill: #081e16;
 }
 .deliveryOptionsSection__buttonRight:focus span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -281,6 +292,7 @@
   fill: #868686;
 }
 .deliveryOptionsSection__buttonRight:disabled span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

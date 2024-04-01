@@ -16,7 +16,7 @@
 }
 .modalVerifyEmail__content {
   width: 40rem;
-  @include fonts($body-3);
+ @include body-3();
   text-align: center;
   margin-top: -3.5rem;
 }

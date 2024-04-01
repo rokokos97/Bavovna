@@ -20,7 +20,7 @@
 
   .categoryPreviewCard__title {
     text-transform: capitalize;
-    @include fonts($body-2);
+   @include body-2();
   }
 }
 @media (min-width: 581px) and (max-width: 1000px) {

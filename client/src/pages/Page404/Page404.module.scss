@@ -9,7 +9,7 @@
   margin: 8.1rem auto;
 
   p {
-    @include fonts($body-2);
+   @include body-2();
   }
   button {
     @include button(18.2rem);

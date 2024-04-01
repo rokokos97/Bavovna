@@ -19,6 +19,7 @@
 }
 
 .heroTitle {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -27,6 +28,7 @@
 .heroText {
   max-width: 60rem;
   width: 100%;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
@@ -45,6 +47,7 @@
   background: #000000;
 }
 .heroBtn span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -105,6 +108,7 @@
   color: #9b9b9b;
 }
 .heroBtn span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

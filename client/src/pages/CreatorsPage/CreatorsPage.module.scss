@@ -4,21 +4,21 @@
   margin: 1.6rem auto 17rem;
 }
 .creatorsPage__navigationBlock {
- @include fonts($breadcrumb);
+ @include breadcrumb();
 }
 .creatorsPage__title {
   margin-top: 2.4rem;
   margin-bottom: 2rem;
-  @include fonts($headline-2)
+  @include headline-2();
 }
 .creatorsPage__text {
-  @include fonts($body-2);
+ @include body-2();
   margin-bottom: 1.6rem;
 }
 .creatorsPage__title2 {
   margin-top: 4rem;
   margin-bottom: 3.2rem;
-  @include fonts($headline-3);
+  @include headline_3();
 }
 .creatorsPage__membersBlock {
   display: grid;
@@ -35,17 +35,17 @@
   flex-direction: column;
   row-gap: 2rem;
   .creatorsPage__department {
-    @include fonts($headline-5);
+    @include headline-5();
   }
   .creatorsPage__member {
     display: flex;
     flex-direction: column;
     row-gap: 1.2rem;
     .creatorsPage__name {
-      @include fonts($headline-7);
+     @include headline-7();
     }
     .creatorsPage__mail {
-      @include fonts($body-3);
+     @include body-3();
     }
     .creatorsPage__social {
       display: flex;

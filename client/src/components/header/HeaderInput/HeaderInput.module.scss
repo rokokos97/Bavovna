@@ -27,7 +27,7 @@
     align-items: center;
     flex: 1 0 auto;
     padding: 0.5rem 0;
-    @include fonts($body-3);
+   @include body-3();
     border: none;
     background-color: inherit;
   }

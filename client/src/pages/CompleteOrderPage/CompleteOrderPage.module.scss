@@ -13,7 +13,7 @@
   margin-bottom: 4rem;
   border-bottom: $gray-30 solid 0.1rem;
   .completeOrderPage__title {
-    @include fonts($headline-2);
+    @include headline-2();
     padding-bottom: 1.2rem;
   }
   .completeOrderPage__backButton {
@@ -22,7 +22,7 @@
     flex-direction: row;
     column-gap: 0.4rem;
     padding: 1.6rem 3.6rem 1.6rem 2.8rem;
-    @include fonts($button);
+    @include buttonFont();
     &:hover {
       color: $accent-a-4;
     }
@@ -37,7 +37,7 @@
   flex-direction: column;
   row-gap: 1.5rem;
   .completeOrderPage__title {
-    @include fonts($headline-8);
+   @include headline-8();
     justify-content: space-between;
   }
   div{
@@ -47,7 +47,7 @@
 }
 .completeOrderPage__totalPrice {
   display: flex;
-  @include fonts($headline-8);
+ @include headline-8();
   justify-content: space-between;
   width: 73.5rem;
   padding: 0.8rem;
@@ -70,5 +70,5 @@
 .completeOrderPage__infoSection {
   width: 20rem;
   align-items: flex-start;
-  @include fonts($body-3);
+ @include body-3();
 }

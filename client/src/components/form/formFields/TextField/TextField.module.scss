@@ -13,7 +13,7 @@
   gap: 0.4rem;
   align-self: stretch;
   color: $accent-a-95;
-  @include fonts($label);
+  @include label();
 
   span {
     color: $error
@@ -42,7 +42,7 @@
     align-self: stretch;
 
     background: $white;
-    @include fonts($input-text);
+    @include input-text();
   }
   input[type='password'] {
     &::placeholder {
@@ -59,7 +59,7 @@
 .error {
   color: $error;
   padding-left: 0.8rem;
-  @include fonts($menu-5);
+ @include menu-5();
 }
 .block {
   display: inline;

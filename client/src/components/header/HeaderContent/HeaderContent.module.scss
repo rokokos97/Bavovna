@@ -10,7 +10,7 @@
   z-index: 100;
   p {
     color: $white;
-    @include fonts($headline-11);
+   @include headline-11();
   }
 }
 .headerContent__header {
@@ -37,7 +37,7 @@
     @include link();
   }
   span {
-    @include fonts($menu-2);
+   @include menu-2();
   }
 }
 .headerContent__headerMenuBar {
@@ -54,7 +54,7 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    @include fonts($menu-4);
+   @include menu-4();
     @include link();
   }
   .headerContent__button {
@@ -62,7 +62,7 @@
     align-items: center;
     gap: 0.4rem;
     background: transparent;
-    @include fonts($menu-4);
+   @include menu-4();
 
     &:hover {
       color: $accent-a-3;
@@ -194,10 +194,10 @@
   .headerContent__headerNavBar span,
   .headerContent__accountName,
   .headerContent__wishlist {
-    @include fonts($headline-9);
+   @include headline-9();
   }
   .headerContent_cart {
-    @include fonts($menu-2);
+   @include menu-2();
   }
   .headerContent__mobileHeaderBlock {
     display: block;

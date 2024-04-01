@@ -14,6 +14,7 @@
   background-color: inherit;
 }
 .checkout h2 {
+  font-weight: 400;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -30,6 +31,7 @@
   object-position: top;
 }
 .checkoutContainer p {
+  font-weight: 400;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
@@ -79,6 +81,7 @@
 }
 
 .paramsBlock {
+  font-weight: 400;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
@@ -107,6 +110,7 @@
 }
 
 .continueBtn {
+  font-weight: 400;
   font-size: 18px;
   line-height: 140%;
   display: flex;
@@ -131,6 +135,7 @@
   text-decoration: none !important;
 }
 .checkoutBtn span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -191,6 +196,7 @@
   color: #9b9b9b;
 }
 .checkoutBtn span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

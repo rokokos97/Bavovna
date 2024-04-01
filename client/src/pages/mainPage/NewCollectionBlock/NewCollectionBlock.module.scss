@@ -41,13 +41,13 @@
 .newCollectionBlock__title1 {
   color: $black;
   word-wrap: break-word;
-  @include fonts($headline-1);
+  @include headline-1();
   font-weight: 800;
 }
 .newCollectionBlock__text {
   max-width: 57.8rem;
   color: $black;
-  @include fonts($body-2);
+ @include body-2();
   word-wrap: break-word;
   text-align: start;
 }
@@ -82,7 +82,7 @@
     margin-left: 3.2rem;
   }
   .newCollectionBlock__title1 {
-    @include fonts($tablet-headline-1);
+    @include tablet-headline-1();
     font-weight: 800;
     max-width: 42.4rem;
   }
@@ -96,20 +96,20 @@
     margin-left: 1.6rem;
   }
   .newCollectionBlock__title1 {
-    @include fonts($tablet-headline-1);
+    @include tablet-headline-1();
     font-weight: 800;
     max-width: 42.4rem;
   }
   .newCollectionBlock__text {
     max-width: 28.5rem;
-    @include fonts($body-3);
+   @include body-3();
   }
   .newCollectionBlock__button {
     width: 18rem;
     height: 4.8rem;
     padding: 1.2rem;
     span {
-      @include fonts($button-s);
+      @include button-s();
     }
   }
 }

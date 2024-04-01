@@ -1,10 +1,10 @@
 @import '../../../styles/variables.module.scss';
 
 .helpTitle {
-  @include fonts($headline-2);
+  @include headline-2();
 }
 .helpParagraph {
-  @include fonts($running_line);
+  @include running_line();
   color: $gray-20;
   margin-top: 2.4rem;
 }
@@ -17,10 +17,10 @@
   margin-top: 3.2rem;
 }
 .detailsTitle {
-  @include fonts($headline-8);
+ @include headline-8();
 }
 .detailsParagraph {
-  @include fonts($body_3);
+  @include body-3();
   margin-top: 0.8rem;
   & p,
   ol,

@@ -38,11 +38,11 @@
   max-width: 28rem;
   width: 100%;
   padding-bottom: 0.8rem;
-  @include fonts($headline-4);
+  @include headline-4();
   border-bottom: 0.1rem solid $black;
 
   span {
-    @include fonts($headline-3);
+    @include headline_3();
   }
 }
 
@@ -57,7 +57,7 @@
 
 .modalCookies__text {
   width: 100%;
-  @include fonts($body-3);
+ @include body-3();
 }
 
 .img {
@@ -86,7 +86,7 @@
   }
   .newCollectionBlock__button {
     @include button(16rem);
-    @include fonts($button-s);
+    @include button-s();
     height: 4.8rem;
   }
   .description {
@@ -111,7 +111,7 @@
   }
   .newCollectionBlock__button {
     @include button(16rem);
-    @include fonts($button-s);
+    @include button-s();
     height: 4.8rem;
   }
 }

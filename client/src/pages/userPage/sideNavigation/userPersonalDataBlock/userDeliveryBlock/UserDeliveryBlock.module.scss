@@ -3,7 +3,7 @@
   width: 100%;
 }
 .userDeliveryBlock__deliveryTitle {
-  @include fonts($headline-3);
+  @include headline_3();
   text-align: start;
   margin-bottom: 2.4rem;
 }
@@ -13,7 +13,7 @@
   column-gap: 13.4rem;
 }
 .userDeliveryBlock__blockLabel {
-  @include fonts($headline-6);
+ @include headline-6();
   text-align: start;
 };
 .userDeliveryBlock__column {

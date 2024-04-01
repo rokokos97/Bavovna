@@ -6,6 +6,7 @@
 }
 
 .wishListBlock__title {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;

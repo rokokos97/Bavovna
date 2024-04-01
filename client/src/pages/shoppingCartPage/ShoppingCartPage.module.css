@@ -12,6 +12,7 @@
 }
 
 .shoppingCartPage__navigation {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   text-transform: none;
@@ -34,12 +35,14 @@
 }
 
 .shoppingCartPage__title {
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
 .shoppingCartPage__text {
+  font-weight: 400;
   font-size: 18px;
   line-height: 140%;
   text-align: start;
@@ -66,6 +69,7 @@
   align-items: center;
 }
 .shoppingCartPage__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -126,6 +130,7 @@
   color: #9b9b9b;
 }
 .shoppingCartPage__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

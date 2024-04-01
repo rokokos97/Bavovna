@@ -11,7 +11,7 @@
   margin-bottom: 4rem;
 }
 .newArrivalsBlock__title2 {
-  @include fonts($headline-2);
+  @include headline-2();
 }
 .newArrivalsBlock__arrowSection {
   display: flex;
@@ -44,7 +44,7 @@
     margin-bottom: 2.4rem;
   }
   .newArrivalsBlock__title2 {
-    @include fonts($tablet-headline-2);
+    @include tablet-headline-2();
   }
   .newArrivalsBlock__arrowSection {
     display: none;

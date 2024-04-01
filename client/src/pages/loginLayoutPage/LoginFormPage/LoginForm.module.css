@@ -4,10 +4,12 @@
   gap: 2.4rem;
 }
 .loginForm p {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
 .loginForm p span {
+  font-weight: 600;
   font-size: 16px;
   line-height: 110%;
 }
@@ -19,12 +21,14 @@
   gap: 1.6rem;
 }
 .loginForm__titleBlock p {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
   color: #040404;
 }
 .loginForm__titleBlock span {
+  font-weight: 400;
   font-size: 18px;
   line-height: 140%;
   color: #4a4a4a;

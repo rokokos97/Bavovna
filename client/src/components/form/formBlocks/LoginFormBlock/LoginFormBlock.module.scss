@@ -35,7 +35,7 @@
   }
   .loginFormBlock__forgotPassword {
     display: block;
-    @include fonts($link-2);
+   @include link-2();
     color: $gray-10;
   }
   .loginFormBlock__form {
@@ -51,7 +51,7 @@
   }
   .errorMessagesBlock {
     @include form-message-block($light-pink, $error);
-    @include fonts($body-3)
+    @include body-3();
   }
   .loader {
     background: conic-gradient($white, $accent-a-2);

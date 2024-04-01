@@ -21,6 +21,7 @@
   background: #000000;
 }
 .loginFormBlock .loginFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -81,6 +82,7 @@
   color: #9b9b9b;
 }
 .loginFormBlock .loginFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -121,6 +123,7 @@
   border: 0.1rem solid #000000;
 }
 .loginFormBlock .loginFormBlock__googleButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -181,6 +184,7 @@
   color: #9b9b9b;
 }
 .loginFormBlock .loginFormBlock__googleButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -213,6 +217,7 @@
 }
 .loginFormBlock .divider span {
   color: #000000;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
@@ -225,6 +230,7 @@
 }
 .loginFormBlock .loginFormBlock__forgotPassword {
   display: block;
+  font-weight: 600;
   font-size: 12px;
   line-height: 110%;
   color: #4a4a4a;
@@ -250,6 +256,7 @@
   background: #000000;
 }
 .loginFormBlock .loginFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -310,6 +317,7 @@
   color: #9b9b9b;
 }
 .loginFormBlock .loginFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -331,10 +339,12 @@
   display: flex;
   align-self: stretch;
   background: #dfc5c5;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
 .loginFormBlock .errorMessagesBlock p {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   width: 100%;
@@ -391,6 +401,7 @@
   padding: 1.6rem 2.4rem;
 }
 .loginFormBlock[type="1"] .loginFormBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -463,6 +474,7 @@
   padding: 1.6rem 2.4rem;
 }
 .loginFormBlock[type="1"] .loginFormBlock__googleButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

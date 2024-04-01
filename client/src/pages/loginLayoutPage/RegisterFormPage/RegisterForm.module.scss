@@ -6,7 +6,7 @@
   @include form-title-block();
 }
 .loginFormBlock__forgotPassword {
-  @include fonts($link-2);
+ @include link-2();
   color: $gray-10;
 }
 .registerForm__errorMessagesBlock {

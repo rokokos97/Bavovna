@@ -23,7 +23,7 @@
     margin-left: 2.4rem;
     margin-top: 2.4rem;
     .productCardInCart__name {
-      @include fonts($headline-9);
+     @include headline-9();
     }
     .productCardInCart__priceSizeColorQuantityBlock {
       width: 51.7rem;
@@ -34,13 +34,13 @@
         display: flex;
         flex-direction: row;
         gap: 1.6rem;
-        @include fonts($headline-8);
+       @include headline-8();
       }
       .productCardInCart__discount {
         display: flex;
         flex-direction: row;
         gap: 1.6rem;
-        @include fonts($headline-8);
+       @include headline-8();
         span:first-child {
           text-decoration: line-through;
           color: $gray-30
@@ -50,7 +50,7 @@
         }
       }
       .productCardInCart__sizeColorQuantityBlock {
-        @include fonts($headline-9);
+       @include headline-9();
         width: 51.7rem;
         display: flex;
         flex-direction: row;
@@ -147,7 +147,7 @@
       width: 24.6rem;
       gap: 1.2rem;
       .productCardInCart__sizeColorQuantityBlock {
-        @include fonts($headline-9);
+       @include headline-9();
         width: 100%;
         display: flex;
         flex-direction: column;

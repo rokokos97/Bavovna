@@ -41,7 +41,7 @@
   }
 }
 .labelText {
-  @include fonts($label);
+  @include label();
   text-align: left;
   word-wrap: inherit;
   margin-left: 0.8rem;

@@ -10,7 +10,7 @@
   row-gap: 2.4rem;
 }
 .navigationBlock__navigation {
-  @include fonts($breadcrumb);
+  @include breadcrumb();
   text-align: start;
 }
 .navigationBlock__navigationContentSide {
@@ -20,7 +20,7 @@
 }
 .navigationBlock__title {
   width: 100%;
-  @include fonts($headline-3);
+  @include headline_3();
   padding: 0 1.6rem 0;
 }
 .navigationBlock__active {
@@ -28,7 +28,7 @@
   cursor: pointer;
   padding: 1.2rem 1.6rem;
   text-align: start;
-  @include fonts($headline-4);
+  @include headline-4();
   background-color: $transparent-30-a-05;
 }
 .navigationBlock__list {
@@ -40,7 +40,7 @@
     cursor: pointer;
     padding: 1.2rem 1.6rem;
     text-align: start;
-    @include fonts($headline-4);
+    @include headline-4();
     &:hover {
       background-color: $transparent-30-a-05;
     }

@@ -35,6 +35,7 @@
   margin: 0 auto;
   color: #000000;
   text-wrap: unset;
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -55,6 +56,7 @@
   border: 0.1rem solid #000000;
 }
 .saleBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -115,6 +117,7 @@
   color: #9b9b9b;
 }
 .saleBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -149,10 +152,13 @@
     padding: 1.2rem;
   }
   .saleBlock__button span {
+    font-weight: 600;
     font-size: 16px;
     line-height: 140%;
+    text-align: center;
   }
   .saleBlock__title2 {
+    font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;

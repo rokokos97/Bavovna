@@ -6,7 +6,7 @@
 }
 
 .navigation{
-  @include fonts($breadcrumb);
+  @include breadcrumb();
   text-align: start;
   margin-bottom: 1.4rem;
   text-transform: capitalize;

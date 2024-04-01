@@ -1,10 +1,10 @@
 @import '../../../styles/variables.module.scss';
 
 .helpTitle {
-  @include fonts($headline-2);
+  @include headline-2();
 }
 .helpParagraph {
-  @include fonts($running_line);
+  @include running_line();
   color: $gray-20;
   margin-top: 2.4rem;
 }
@@ -22,22 +22,22 @@ ul.dropdownList {
   margin-top: 0.8rem;
 }
 .detailsTitle {
-  @include fonts($headline-8);
+ @include headline-8();
 }
 .detailsParagraph {
-  @include fonts($body_3);
+  @include body-3();
   margin-top: 0.8rem;
 }
 @media (min-width: 581px) and (max-width: 768px) {
   .helpParagraph {
-    @include fonts($body-3);
+    @include body-3();
     // color: $gray-20;
     // margin-top: 2.4rem;
   }
 }
 @media (max-width: 580px) {
   .helpTitle {
-    @include fonts($tablet-headline-2);
+    @include tablet-headline-2();
   }
   .helpParagraph {
     margin-top: 0.9rem;

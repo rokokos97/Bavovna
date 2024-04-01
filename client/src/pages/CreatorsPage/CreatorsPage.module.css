@@ -4,6 +4,7 @@
 }
 
 .creatorsPage__navigationBlock {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   text-transform: none;
@@ -12,12 +13,14 @@
 .creatorsPage__title {
   margin-top: 2.4rem;
   margin-bottom: 2rem;
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
 .creatorsPage__text {
+  font-weight: 400;
   font-size: 18px;
   line-height: 140%;
   margin-bottom: 1.6rem;
@@ -26,6 +29,7 @@
 .creatorsPage__title2 {
   margin-top: 4rem;
   margin-bottom: 3.2rem;
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -49,6 +53,7 @@
   row-gap: 2rem;
 }
 .creatorsPage__column .creatorsPage__department {
+  font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
@@ -59,11 +64,13 @@
   row-gap: 1.2rem;
 }
 .creatorsPage__column .creatorsPage__member .creatorsPage__name {
+  font-weight: 600;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
 }
 .creatorsPage__column .creatorsPage__member .creatorsPage__mail {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }

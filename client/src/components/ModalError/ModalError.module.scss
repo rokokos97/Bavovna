@@ -10,9 +10,9 @@
   right: 8rem;
   bottom: 9.2rem;
   z-index: 1001;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
 }
 .container {
   display: flex;
@@ -20,7 +20,7 @@
 }
 .content {
   width: 43.6rem;
-  @include fonts($body-3);
+ @include body-3();
   text-align: start;
 }
 .newsLetterBlock__closeButton {
@@ -36,5 +36,5 @@
   column-gap: 1rem;
   align-items: center;
   color: $error;
-  @include fonts($headline-9);
+ @include headline-9();
 }

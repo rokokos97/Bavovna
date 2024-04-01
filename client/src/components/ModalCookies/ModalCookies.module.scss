@@ -10,16 +10,16 @@
   right: 7rem;
   bottom: 9.2rem;
   z-index: 1001;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
 }
 .modalCookies__container {
   display: flex;
   column-gap: 1.6rem;
 }
 .modalCookies__content {
-  @include fonts($body-3);
+ @include body-3();
   text-align: start;
 }
 .modalCookies__closeButton{

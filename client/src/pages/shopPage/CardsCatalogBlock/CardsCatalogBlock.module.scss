@@ -20,11 +20,11 @@
 }
 
 .noFoundTitle {
-  @include fonts($headline-3);
+  @include headline_3();
 }
 
 .noFoundText {
-  @include fonts($body-2);
+ @include body-2();
   margin-top: 4rem;
 }
 

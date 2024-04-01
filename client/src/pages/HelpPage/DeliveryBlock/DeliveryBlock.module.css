@@ -1,10 +1,12 @@
 .helpTitle {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
 .helpParagraph {
+  font-weight: 300;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
@@ -28,12 +30,14 @@ ul.dropdownList {
 }
 
 .detailsTitle {
+  font-weight: 500;
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
 }
 
 .detailsParagraph {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   margin-top: 0.8rem;
@@ -41,12 +45,14 @@ ul.dropdownList {
 
 @media (min-width: 581px) and (max-width: 768px) {
   .helpParagraph {
+    font-weight: 400;
     font-size: 16px;
     line-height: 140%;
   }
 }
 @media (max-width: 580px) {
   .helpTitle {
+    font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;

@@ -8,6 +8,7 @@
 
 .userPaymentMethodsList__title {
   text-align: start;
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -39,6 +40,7 @@
   display: flex;
   flex-direction: row;
   width: 30rem;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   text-align: start;
@@ -63,6 +65,7 @@
   padding-left: 0;
 }
 .userPaymentMethodsList__buttonLeft span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -126,6 +129,7 @@
   fill: #000000;
 }
 .userPaymentMethodsList__buttonLeft span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -135,6 +139,7 @@
   fill: #3a7f66;
 }
 .userPaymentMethodsList__buttonLeft:hover span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -144,6 +149,7 @@
   fill: #081e16;
 }
 .userPaymentMethodsList__buttonLeft:focus span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -156,6 +162,7 @@
   fill: #868686;
 }
 .userPaymentMethodsList__buttonLeft:disabled span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

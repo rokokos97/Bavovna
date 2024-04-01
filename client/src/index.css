@@ -28,6 +28,7 @@ body {
   padding-left: 1.4rem !important;
 }
 .custom__single-value {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   color: #868686 !important;
@@ -48,6 +49,7 @@ body {
   box-sizing: border-box !important;
 }
 .custom__option {
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   font-size: 16px !important;

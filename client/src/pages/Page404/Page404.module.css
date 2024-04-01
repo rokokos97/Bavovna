@@ -8,6 +8,7 @@
   margin: 8.1rem auto;
 }
 .page404 p {
+  font-weight: 400;
   font-size: 18px;
   line-height: 140%;
 }
@@ -25,6 +26,7 @@
   background: #000000;
 }
 .page404 button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -85,6 +87,7 @@
   color: #9b9b9b;
 }
 .page404 button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
