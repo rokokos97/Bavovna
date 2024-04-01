@@ -1,10 +1,10 @@
 @import '../../styles/variables.module.scss';
 
-.helpPage{
+.helpPage {
   width: 100%;
   padding: 1.6rem 8rem 4rem;
 }
-.navigation{
+.navigation {
   @include fonts($breadcrumb);
   text-align: start;
   margin-bottom: 1.7rem;
@@ -19,4 +19,37 @@
 .helpDescription {
   flex: auto;
   text-align: start;
+}
+@media (max-width: 950px) {
+  .helpPage {
+    padding: 3.6rem 3.2rem 4rem;
+  }
+  .helpPageContainer {
+    gap: 10rem;
+  }
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .navigation {
+    margin-bottom: 2.4rem;
+  }
+  .helpPageContainer {
+    gap: 1.6rem;
+  }
+  .helpAside {
+    max-width: 16.4rem;
+    width: 100%;
+    padding-top: 4rem;
+  }
+}
+@media (max-width: 580px) {
+  .helpPage {
+    padding: 1.6rem 1.6rem 3rem;
+  }
+  .helpPageContainer {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .helpAside {
+    padding-top: 0;
+  }
 }
