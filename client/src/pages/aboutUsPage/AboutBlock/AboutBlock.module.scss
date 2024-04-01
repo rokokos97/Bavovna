@@ -55,13 +55,15 @@
     @include headline_3();
   }
 }
-
 .modalCookies__text {
  @include body-3();
   max-width: 60rem;
 }
 @media (min-width: 581px) and (max-width: 768px) {
   .aboutBlock {
+    gap: 1.6rem;
+  }
+  .description {
     gap: 1.6rem;
   }
 }

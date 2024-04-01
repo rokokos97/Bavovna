@@ -253,6 +253,9 @@
   .newCollectionBlock__button:disabled span {
     color: #9b9b9b;
   }
+  .description {
+    gap: 1.6rem;
+  }
 }
 @media (max-width: 580px) {
   .proposeBlock {

@@ -3,7 +3,6 @@
 .dropdown {
   text-align: start;
 }
-
 .dropdownRightBtn {
   width: 100%;
   display: flex;
@@ -13,7 +12,6 @@
   text-transform: uppercase;
   background-color: inherit;
 }
-
 .dropdownLeftBtn {
   display: flex;
   align-items: center;
@@ -22,11 +20,9 @@
   text-transform: uppercase;
   background-color: inherit;
 }
-
 ul.dropdownList {
   list-style-type: circle;
 }
-
 .description {
   display: inline-flex;
   flex-direction: column;
@@ -34,7 +30,9 @@ ul.dropdownList {
  @include body-3();
   margin-top: 0.8rem;
 }
-
 .icon {
   font-size: 2.4rem;
+}
+.dropdownText {
+  text-align: start;
 }

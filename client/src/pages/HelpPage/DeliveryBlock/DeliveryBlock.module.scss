@@ -28,3 +28,23 @@ ul.dropdownList {
   @include body-3();
   margin-top: 0.8rem;
 }
+@media (min-width: 581px) and (max-width: 768px) {
+  .helpParagraph {
+    @include fonts($body-3);
+    // color: $gray-20;
+    // margin-top: 2.4rem;
+  }
+}
+@media (max-width: 580px) {
+  .helpTitle {
+    @include fonts($tablet-headline-2);
+  }
+  .helpParagraph {
+    margin-top: 0.9rem;
+  }
+  .description {
+    gap: 2.4rem;
+    max-width: unset;
+    margin-top: 2.4rem;
+  }
+}

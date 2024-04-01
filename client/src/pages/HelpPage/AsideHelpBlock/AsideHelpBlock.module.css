@@ -1,28 +1,17 @@
-.aside {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 120%;
-  text-transform: uppercase;
-  text-align: start;
-  white-space: nowrap;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 25 |     @include fonts($headline-5);
+ *    |                    ^^^^^^^^^^^
+ *    '
+ *   AsideHelpBlock.module.scss 25:20  root stylesheet */
 
-.asideList {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3.2rem;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 25 \2502      @include fonts($headline-5);\a    \2502                     ^^^^^^^^^^^\a    \2575 \a   AsideHelpBlock.module.scss 25:20  root stylesheet";
 }
-.asideList li {
-  cursor: pointer;
-}
-
-.unactive {
-  color: #5d5d5d;
-}
-
-.active {
-  color: #000000;
-}
-
-/*# sourceMappingURL=AsideHelpBlock.module.css.map */

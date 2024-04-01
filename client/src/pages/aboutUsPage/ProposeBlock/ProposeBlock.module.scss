@@ -89,6 +89,9 @@
     @include button-s();
     height: 4.8rem;
   }
+  .description {
+    gap: 1.6rem;
+  }
 }
 @media (max-width: 580px) {
   .proposeBlock {

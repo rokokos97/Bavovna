@@ -1,46 +1,17 @@
-.helpTitle {
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 120%;
-  text-transform: uppercase;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 33 |     @include fonts($body-3);
+ *    |                    ^^^^^^^
+ *    '
+ *   DeliveryBlock.module.scss 33:20  root stylesheet */
 
-.helpParagraph {
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 120%;
-  text-transform: uppercase;
-  color: #5d5d5d;
-  margin-top: 2.4rem;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 33 \2502      @include fonts($body-3);\a    \2502                     ^^^^^^^\a    \2575 \a   DeliveryBlock.module.scss 33:20  root stylesheet";
 }
-
-.description {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  max-width: 60rem;
-  width: 100%;
-  margin-top: 3.2rem;
-}
-
-ul.dropdownList {
-  list-style-type: circle;
-  padding-left: 2rem;
-  margin-top: 0.8rem;
-}
-
-.detailsTitle {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 110%;
-  text-transform: uppercase;
-}
-
-.detailsParagraph {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  margin-top: 0.8rem;
-}
-
-/*# sourceMappingURL=DeliveryBlock.module.css.map */
