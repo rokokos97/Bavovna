@@ -12,25 +12,41 @@
   background-position: center;
   padding: 5.4rem 5.4rem 6rem;
 }
-
 .heroActive {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
 }
-
 .heroTitle {
   @include headline-2();
+  text-align: center;
 }
-
 .heroText {
   max-width: 60rem;
   width: 100%;
- @include body-3();
+  @include body-3();
 }
-
 .heroBtn {
   @include button(17.4rem);
   @include buttonBlack();
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .hero {
+    background-image: url('../../../../public/img/images/Catalog/tabletCatalogHero.webp');
+    padding: 5.4rem 5.4rem 2rem;
+  }
+}
+@media (max-width: 580px) {
+  .hero {
+    background-image: url('../../../../public/img/images/Catalog/mobileCatalogHero.webp');
+    padding: 5.1rem 2.6rem;
+  }
+  .heroTitle {
+    max-width: unset;
+    @include tablet-headline-2();
+  }
+  .heroActive {
+    gap: 0.8rem;
+  }
 }

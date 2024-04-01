@@ -7,7 +7,6 @@
   padding-bottom: 0.8rem;
   border-bottom: 0.1rem solid $black;
 }
-
 .iconBtn {
   display: flex;
   align-items: center;
@@ -22,7 +21,6 @@
 .sortBlock {
   position: relative;
 }
-
 .sortPopup {
   position: absolute;
   right: 0;
@@ -34,7 +32,6 @@
   background-color: $white;
   z-index: 2;
 }
-
 .activeName {
   @include body-3();
   height: 4.8rem;
@@ -46,17 +43,24 @@
   &:not(:first-child) {
     border-top: 0.05rem solid $transparent70-gray10;
   }
-
   &:hover {
     background-color: $transparent-30-a-05;
     border-top: none;
-
     & + .activeName {
       border-top: none;
     }
   }
-
   &:active {
     background-color: $accent-a-05;
+  }
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .selection {
+    margin-top: 2.4rem;
+  }
+}
+@media (max-width: 580px) {
+  .selection {
+    margin-top: 2.7rem;
   }
 }
