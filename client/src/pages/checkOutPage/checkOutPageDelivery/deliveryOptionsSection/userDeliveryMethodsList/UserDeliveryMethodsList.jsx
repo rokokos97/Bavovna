@@ -9,9 +9,12 @@ import PropTypes from 'prop-types';
 import {useState} from 'react';
 import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
+import {setDeliveryMethod, setDeliveryPrice} from '../../../../../store/ordersSlice';
+import {useDispatch} from 'react-redux';
 
 const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, warehouseList, formik, type}) => {
-  const [currentValue, setCurrentValue] = useState('1');
+  const [currentValue, setCurrentValue] = useState();
+  const dispatch = useDispatch();
   const deliveryMethods = {
     1: {
       _id: '1',
@@ -39,6 +42,11 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, wareh
       price: 780,
     },
   };
+  const handleChangeCurrentValue = (id) => {
+    setCurrentValue(id);
+    dispatch(setDeliveryMethod(deliveryMethods[id].label));
+    dispatch(setDeliveryPrice(deliveryMethods[id].price));
+  };
   return (
     <div className={styles.userDeliveryMethodsList} data-testid="UserDeliveryMethodsList">
       {Object.values(deliveryMethods).map((method) => {
@@ -49,7 +57,7 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, wareh
             name="customRadio"
             value={method.value}
             checked={currentValue === method._id}
-            onChange={() => setCurrentValue(method._id)}
+            onChange={() => handleChangeCurrentValue(method._id)}
             className={styles.radioInput}
           />
           <label htmlFor={method._id} className={styles.radioLabel}>

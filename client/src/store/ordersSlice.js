@@ -19,14 +19,14 @@ const ordersSlice = createSlice({
   name: 'currentOrder',
   initialState: {
     entities: [],
-    orderAmount: 0,
+    orderAmount: null,
     shippingPrice: null,
     promoCodeSale: null,
     userInfo: {},
     userDeliveryInfo: {},
     deliveryOption: 'new delivery method',
-    deliveryMethod: 'Nova poshta delivery to the post office',
-    paymentMethod: 'Pay by card',
+    deliveryMethod: null,
+    paymentMethod: null,
     isLoading: false,
     error: null,
   },
@@ -62,8 +62,8 @@ const ordersSlice = createSlice({
       state.userInfo = {};
       state.userDeliveryInfo = {};
       state.deliveryOption = 'new delivery method';
-      state.deliveryMethod = 'Nova poshta delivery to the post office';
-      state.paymentMethod = 'Pay by card';
+      state.deliveryMethod = null;
+      state.paymentMethod = null;
       state.error = null;
     },
   },
