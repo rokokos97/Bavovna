@@ -84,6 +84,9 @@
   top: -20.15rem;
   left: -1.1rem;
 }
+.dialogWindowConfirmRegister div button:focus {
+  border: 3px solid #5a9b83;
+}
 .dialogWindowConfirmRegister div button:disabled {
   border-color: #868686;
   background: #c3c3c3;

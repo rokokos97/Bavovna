@@ -203,6 +203,9 @@
   top: -26.035rem;
   left: -1.1rem;
 }
+.formBag .activeBtn:focus {
+  border: 3px solid #5a9b83;
+}
 .formBag .activeBtn:disabled {
   border-color: #868686;
   background: #c3c3c3;

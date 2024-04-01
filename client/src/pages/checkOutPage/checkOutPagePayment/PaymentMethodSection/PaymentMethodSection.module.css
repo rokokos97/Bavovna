@@ -116,6 +116,9 @@
   top: -8.05rem;
   left: -1.1rem;
 }
+.userPaymentMethodsList__buttonLeft:focus {
+  border: 3px solid #5a9b83;
+}
 .userPaymentMethodsList__buttonLeft:disabled {
   border-color: #868686;
   background: #c3c3c3;

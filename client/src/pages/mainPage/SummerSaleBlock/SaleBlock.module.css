@@ -107,6 +107,9 @@
   top: -8.325rem;
   left: -1.1rem;
 }
+.saleBlock__button:focus {
+  border: 3px solid #5a9b83;
+}
 .saleBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
