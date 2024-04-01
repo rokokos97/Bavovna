@@ -91,6 +91,9 @@
         }
       }
     }
+    &:focus {
+      border: 1px solid $accent-a-3;
+    }
   }
 }
 .headerContent__headerSearch {

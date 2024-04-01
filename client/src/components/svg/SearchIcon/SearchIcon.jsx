@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
+import styles from './SearchIcon.scss';
 
 const SearchIcon = () => (
-  <div>
+  <div className={styles.searchIcon}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
