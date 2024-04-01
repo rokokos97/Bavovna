@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["BigLeftArrowIcon.module.scss","../../../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;;AAGE;EACE,MCiPE;;AD/OF;EACE,MC4NK;;AD1NP;EACE,MCuNK;;ADrNP;EACE,MCqOE;EDpOF","file":"BigLeftArrowIcon.module.css"}
+{"version":3,"sourceRoot":"","sources":["BigLeftArrowIcon.module.scss","../../../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE;EACA;;AAGE;EACE,MCuPE;;ADrPF;EACE,MCkOK;;ADhOP;EACE,MC6NK;;AD3NP;EACE,MC2OE;ED1OF","file":"BigLeftArrowIcon.module.css"}

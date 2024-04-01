@@ -22,13 +22,13 @@
 }
 @media (min-width: 581px) and (max-width: 768px) {
   .aside {
-    @include fonts($headline-5);
+    @include headline-5();
     white-space: unset;
   }
 }
 @media (max-width: 580px) {
   .aside {
-    @include fonts($tablet-headline-3);
+    @include tablet-headline-3();
   }
   .asideList {
     gap: 2.4rem;

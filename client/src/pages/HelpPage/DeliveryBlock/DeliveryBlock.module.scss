@@ -30,14 +30,14 @@ ul.dropdownList {
 }
 @media (min-width: 581px) and (max-width: 768px) {
   .helpParagraph {
-    @include fonts($body-3);
+    @include body-3();
     // color: $gray-20;
     // margin-top: 2.4rem;
   }
 }
 @media (max-width: 580px) {
   .helpTitle {
-    @include fonts($tablet-headline-2);
+    @include tablet-headline-2();
   }
   .helpParagraph {
     margin-top: 0.9rem;
