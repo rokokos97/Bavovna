@@ -16,7 +16,7 @@
     align-self: stretch;
     color: $accent-a-95;
     margin-bottom: 0.8rem;
-    @include fonts($label);
+    @include label();
 
     span {
       color: $error
@@ -34,7 +34,7 @@
     padding-left: 6rem !important;
     border: 1px solid $white !important;
     background: $white !important;
-    @include fonts($input-text);
+    @include input-text();
     font-family: 'Lato', sans-serif !important;
     font-size: 1.6rem !important;
     &:hover {
@@ -57,7 +57,7 @@
     margin-top: 0.8rem;
     padding-left: 0.8rem;
     color: var(--error, #EA001B);
-    @include fonts($menu-5);
+   @include menu-5();
     text-align: start;
   }
 }

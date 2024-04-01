@@ -1,33 +1,29 @@
 .fashionBlock {
   display: flex;
+  min-height: 52.5rem;
   gap: 5.2rem;
 }
 
 .imgs {
   display: block;
   position: relative;
-  width: 100%;
-  aspect-ratio: 4/3.2;
   flex: 50% 1 1;
 }
-.imgs img {
-  display: block;
-  aspect-ratio: 4.1/4;
-  width: 95%;
-}
 
-.mainImg {
+.mainImg,
+.secondImg {
   display: block;
-  width: 65.4%;
-  aspect-ratio: 4.1/4;
+  width: 67%;
+}
+.mainImg img,
+.secondImg img {
+  width: 100%;
 }
 
 .secondImg {
-  display: block;
   position: absolute;
-  bottom: 0;
-  right: -2rem;
-  width: 65.4%;
+  top: 12.5rem;
+  right: 0;
 }
 
 .description {
@@ -43,12 +39,14 @@
 .newsLetterBlock__title2 {
   max-width: 28rem;
   padding-bottom: 0.8rem;
+  font-weight: 400;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
   border-bottom: 0.1rem solid #040404;
 }
 .newsLetterBlock__title2 span {
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -56,8 +54,71 @@
 
 .modalCookies__text {
   max-width: 60rem;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
+}
+
+.fashionBlock_innerText {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 0.8rem;
+  width: 100%;
+  padding-bottom: 1.6rem;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .fashionBlock {
+    min-height: 71.5rem;
+    gap: 1.6rem;
+  }
+  .description {
+    gap: 1.6rem;
+  }
+  .imgs {
+    width: 100%;
+    flex: 50% 1 1;
+  }
+  .mainImg,
+  .secondImg {
+    position: absolute;
+    max-width: 78.7%;
+    width: 100%;
+  }
+  .mainImg img,
+  .secondImg img {
+    width: 100%;
+  }
+  .mainImg {
+    position: absolute;
+    right: 0;
+  }
+  .secondImg {
+    left: 0;
+    top: 22.4rem;
+  }
+}
+@media (max-width: 580px) {
+  .fashionBlock {
+    min-height: 112rem;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .description {
+    flex: unset;
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+  .fashionBlock_innerText {
+    padding-bottom: unset;
+  }
+  .imgs {
+    flex: unset;
+  }
+  .secondImg {
+    top: 6.5rem;
+  }
 }
 
 /*# sourceMappingURL=FashionBlock.module.css.map */

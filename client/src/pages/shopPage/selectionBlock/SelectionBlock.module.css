@@ -35,8 +35,9 @@
 }
 
 .activeName {
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
   height: 4.8rem;
   display: flex;
   align-items: center;

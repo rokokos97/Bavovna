@@ -6,7 +6,7 @@
 }
 .emptyBlock__description {
   text-align: start;
-  @include fonts($body-2);
+ @include body-2();
 }
 .emptyBlock__button {
   @include button(22.6rem);

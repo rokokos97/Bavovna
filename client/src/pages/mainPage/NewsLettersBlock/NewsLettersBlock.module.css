@@ -5,6 +5,7 @@
   justify-content: center;
   background-color: #5a9b83;
   color: #fafafa;
+  font-weight: 400;
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
@@ -37,6 +38,7 @@
 }
 
 .newsLetterBlock__title2 {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -46,6 +48,7 @@
   max-width: 51.8rem;
   width: 100%;
   text-align: center;
+  font-weight: 400;
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
@@ -75,6 +78,7 @@
   width: 100%;
 }
 .newsLetterBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -135,6 +139,7 @@
   color: #9b9b9b;
 }
 .newsLetterBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -175,6 +180,7 @@
     padding: 1.6rem;
   }
   .newsLetterBlock__title2 {
+    font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;
@@ -185,8 +191,10 @@
     padding: 1.2rem;
   }
   .newsLetterBlock__button span {
+    font-weight: 600;
     font-size: 16px;
-    line-height: 22.4px;
+    line-height: 140%;
+    text-align: center;
   }
 }
 

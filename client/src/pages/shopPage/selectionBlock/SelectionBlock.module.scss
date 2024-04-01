@@ -36,7 +36,7 @@
 }
 
 .activeName {
-  @include fonts($body_3);
+  @include body-3();
   height: 4.8rem;
   display: flex;
   align-items: center;

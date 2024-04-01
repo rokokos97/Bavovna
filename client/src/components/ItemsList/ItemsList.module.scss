@@ -12,7 +12,7 @@
   gap: 2.4rem;
 }
 .newsLetterBlock__title2 {
-  @include fonts($menu-1);
+ @include menu-1();
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
 }

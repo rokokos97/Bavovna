@@ -9,9 +9,9 @@
   right: 7rem;
   bottom: 9.2rem;
   z-index: 1001;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
 }
 
 .modalCookies__container {
@@ -20,8 +20,9 @@
 }
 
 .modalCookies__content {
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
   text-align: start;
 }
 
@@ -43,6 +44,7 @@
   background: #000000;
 }
 .modalCookies__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -103,6 +105,7 @@
   color: #9b9b9b;
 }
 .modalCookies__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

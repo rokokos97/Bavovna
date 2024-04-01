@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @include fonts($headline-9);
+ @include headline-9();
   text-transform: uppercase;
   background-color: inherit;
 }
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  @include fonts($headline-8);
+ @include headline-8();
   text-transform: uppercase;
   background-color: inherit;
 }
@@ -31,7 +31,7 @@ ul.dropdownList {
   display: inline-flex;
   flex-direction: column;
   gap: 1rem;
-  @include fonts($body-3);
+ @include body-3();
   margin-top: 0.8rem;
 }
 

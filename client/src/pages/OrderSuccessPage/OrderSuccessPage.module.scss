@@ -14,18 +14,18 @@
 }
 .orderCompletePage__title {
   color: $accent-a-5;
-  @include fonts($headline-4)
+  @include headline-4();
 }
 .orderCompletePage__numberBlock {
   display: flex;
   flex-direction: row;
   column-gap: 10.8rem;
-  @include fonts($headline-8)
+  @include headline-8();
 }
 .orderCompletePage__textBlock {
   display: flex;
   flex-direction: column;
-  @include fonts($body-2);
+ @include body-2();
 }
 .orderCompletePage__buttonsBlock {
   display: flex;

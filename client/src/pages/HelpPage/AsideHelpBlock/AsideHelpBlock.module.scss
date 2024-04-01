@@ -1,7 +1,7 @@
 @import '../../../styles/variables.module.scss';
 
 .aside {
-  @include fonts($headline-4);
+  @include headline-4();
   text-align: start;
   white-space: nowrap;
 }

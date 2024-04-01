@@ -18,12 +18,14 @@
   display: flex;
   flex-direction: row;
   column-gap: 1.2rem;
+  font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
 .checkOutShoppingCartBlock__title {
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -51,6 +53,7 @@
   border: none;
 }
 .checkOutShoppingCartBlock__arrowButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -114,6 +117,7 @@
   fill: #000000;
 }
 .checkOutShoppingCartBlock__arrowButton span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -123,6 +127,7 @@
   fill: #3a7f66;
 }
 .checkOutShoppingCartBlock__arrowButton:hover span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -132,6 +137,7 @@
   fill: #081e16;
 }
 .checkOutShoppingCartBlock__arrowButton:focus span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -144,6 +150,7 @@
   fill: #868686;
 }
 .checkOutShoppingCartBlock__arrowButton:disabled span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -154,6 +161,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
@@ -163,8 +171,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
 }
 
 .checkOutShoppingCartBlock__discount {
@@ -172,8 +181,9 @@
   flex-direction: row;
   justify-content: space-between;
   color: #ea001b;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
 }
 
 .checkOutShoppingCartBlock__button {
@@ -190,6 +200,7 @@
   background: #000000;
 }
 .checkOutShoppingCartBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -250,6 +261,7 @@
   color: #9b9b9b;
 }
 .checkOutShoppingCartBlock__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;

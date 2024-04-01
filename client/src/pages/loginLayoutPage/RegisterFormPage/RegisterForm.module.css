@@ -4,10 +4,12 @@
   gap: 2.4rem;
 }
 .registerForm p {
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
 }
 .registerForm p span {
+  font-weight: 600;
   font-size: 16px;
   line-height: 110%;
 }
@@ -19,18 +21,21 @@
   gap: 1.6rem;
 }
 .registerForm__titleBlock p {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
   color: #040404;
 }
 .registerForm__titleBlock span {
+  font-weight: 400;
   font-size: 18px;
   line-height: 140%;
   color: #4a4a4a;
 }
 
 .loginFormBlock__forgotPassword {
+  font-weight: 600;
   font-size: 12px;
   line-height: 110%;
   color: #4a4a4a;
@@ -42,8 +47,9 @@
   background: #dfc5c5;
 }
 .registerForm__errorMessagesBlock p {
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
   width: 100%;
   text-align: start;
   padding: 1.2rem;
@@ -56,8 +62,9 @@
   background: #a9dfcb;
 }
 .registerForm__successMessagesBlock p {
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
   width: 100%;
   text-align: start;
   padding: 1.2rem;

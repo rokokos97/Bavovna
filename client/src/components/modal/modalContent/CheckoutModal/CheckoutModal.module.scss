@@ -17,7 +17,7 @@
   }
 
   h2 {
-    @include fonts($headline-4);
+    @include headline-4();
   }
 }
 
@@ -33,7 +33,7 @@
   }
 
   p {
-    @include fonts($headline-9);
+   @include headline-9();
   }
 }
 
@@ -81,7 +81,7 @@
 }
 
 .paramsBlock {
-  @include fonts($headline-9);
+ @include headline-9();
   display: flex;
   gap: 1.6rem;
 }
@@ -107,7 +107,7 @@
 }
 
 .continueBtn {
-  @include fonts($body-2);
+ @include body-2();
   display: flex;
   align-items: center;
   gap: 0.8rem;

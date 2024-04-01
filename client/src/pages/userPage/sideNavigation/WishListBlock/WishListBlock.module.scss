@@ -6,6 +6,6 @@
   margin-bottom: 10rem;
 }
 .wishListBlock__title {
-  @include fonts($headline-2);
+  @include headline-2();
   text-align: start;
 }

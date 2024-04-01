@@ -8,7 +8,7 @@
 }
 .userPaymentMethodsList__title {
   text-align: start;
-  @include fonts($headline-3);
+  @include headline_3();
 }
 .userPaymentMethodsList__block {
   display: flex;
@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: row;
   width: 30rem;
-  @include fonts($body-3);
+ @include body-3();
   text-align: start;
   word-wrap: inherit;
   margin-left: 0.8rem;

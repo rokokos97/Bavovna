@@ -5,6 +5,7 @@
   align-self: stretch;
   color: #030a07;
   margin-bottom: 0.8rem;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
 }
@@ -17,6 +18,7 @@
 .selectField .error {
   color: #ea001b;
   padding-left: 0.8rem;
+  font-weight: 400;
   font-size: 12px;
   line-height: 110%;
 }

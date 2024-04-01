@@ -7,7 +7,7 @@
     align-self: stretch;
     color: $accent-a-95;
     margin-bottom: 0.8rem;
-    @include fonts($label);
+    @include label();
 
     span {
       color: $error
@@ -19,7 +19,7 @@
   .error {
     color: $error;
     padding-left: 0.8rem;
-    @include fonts($menu-5);
+   @include menu-5();
   }
   .selectField.hasError {
     .label {

@@ -9,6 +9,7 @@
 }
 .headerContent__banner p {
   color: #fafafa;
+  font-weight: 700;
   font-size: 8px;
   line-height: 110%;
   text-transform: uppercase;
@@ -58,6 +59,7 @@
   pointer-events: none;
 }
 .headerContent__headerNavBar span {
+  font-weight: 400;
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
@@ -78,6 +80,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  font-weight: 500;
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
@@ -105,6 +108,7 @@
   align-items: center;
   gap: 0.4rem;
   background: transparent;
+  font-weight: 500;
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
@@ -233,11 +237,13 @@
   .headerContent__headerNavBar span,
   .headerContent__accountName,
   .headerContent__wishlist {
+    font-weight: 400;
     font-size: 16px;
     line-height: 110%;
     text-transform: uppercase;
   }
   .headerContent_cart {
+    font-weight: 400;
     font-size: 14px;
     line-height: 110%;
     text-transform: uppercase;

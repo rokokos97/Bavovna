@@ -5,7 +5,7 @@
   padding: 1.6rem 8rem 4rem;
 }
 .navigation{
-  @include fonts($breadcrumb);
+  @include breadcrumb();
   text-align: start;
   margin-bottom: 1.7rem;
 }

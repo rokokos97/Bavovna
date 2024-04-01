@@ -33,7 +33,7 @@
   margin: 0 auto;
   color: $black;
   text-wrap: unset;
-  @include fonts($headline-2);
+  @include headline-2();
 }
 .saleBlock__button {
   @include button(19.5rem);
@@ -53,11 +53,11 @@
     height: 4.8rem;
     padding: 1.2rem;
     span {
-      @include fonts($button-s);
+      @include button-s();
     }
   }
   .saleBlock__title2 {
-    @include fonts($tablet-headline-2);
+    @include tablet-headline-2();
     font-weight: 500;
   }
   .saleBlock__contentBlock {

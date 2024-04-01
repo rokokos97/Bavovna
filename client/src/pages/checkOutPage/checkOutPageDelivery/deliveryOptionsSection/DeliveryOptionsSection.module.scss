@@ -7,7 +7,7 @@
   row-gap: 3.2rem;
 }
 .deliveryOptionsSection__title {
-  @include fonts($headline-3);
+  @include headline_3();
   text-align: start;
 }
 .deliveryOptionsSection__radioBlock {
@@ -23,7 +23,7 @@
 .deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
-  @include fonts($headline-9);
+ @include headline-9();
   text-align: start;
   word-wrap: inherit;
   margin-left: 0.8rem;

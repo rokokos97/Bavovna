@@ -25,202 +25,201 @@ $section-bg-color: #f1f1f1;
 $btn-bg-color: #6d6d6d;
 $transparent-30: rgba(169, 223, 203, 0.3);
 
-$headline-1: (
-  font-weight: 800,
-  size: 56px,
-  line-height: 150%,
-  letter-spacing: 4%,
-  text-transform: uppercase,
-);
-$tablet-headline-1: (
-  font-weight: 800,
-  size: 48px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-2: (
-  font-weight: 500,
-  size: 32px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$tablet-headline-2: (
-  font-weight: 500,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-3: (
-  font-weight: 700,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-4: (
-  font-weight: 400,
-  size: 24px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-5: (
-  font-weight: 500,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-6: (
-  font-weight: 400,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-7: (
-  font-weight: 600,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$headline-8: (
-  font-weight: 500,
-  size: 18px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$headline-9: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$headline-10: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$headline-11: (
-  font-weight: 700,
-  size: 8px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$headline-12: (
-  font-weight: 500,
-  size: 14px,
-  line-height: 100%,
-  text-transform: uppercase,
-);
-
-$body-1: (
-  font-weight: 500,
-  size: 20px,
-  line-height: 120%,
-);
-$body-2: (
-  font-weight: 400,
-  size: 18px,
-  line-height: 140%,
-);
-$body-3: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
-  paragraph-spacing: 8px,
-);
-$body-4: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 120%,
-);
-$menu-1: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$menu-2: (
-  font-weight: 400,
-  size: 14px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$menu-3: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
-);
-$menu-4: (
-  font-weight: 500,
-  size: 12px,
-  line-height: 110%,
-  text-transform: uppercase,
-);
-$menu-5: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
-);
-$link-1: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 110%,
-);
-$link-2: (
-  font-weight: 600,
-  size: 12px,
-  line-height: 110%,
-);
-$link-3: (
-  font-weight: 400,
-  size: 12px,
-  line-height: 110%,
-);
-$button: (
-  font-weight: 600,
-  size: 2rem,
-  line-height: 140%,
-  text-transform: uppercase,
-);
-$button-s: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 140%,
-  text-align: center,
-);
-$running-line: (
-  font-weight: 300,
-  size: 20px,
-  line-height: 120%,
-  text-transform: uppercase,
-);
-$tab-bars: (
-  font-weight: 600,
-  size: 16px,
-  line-height: 140%,
-  text-transform: uppercase,
-);
-$breadcrumb: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
-  text-transform: none,
-);
-$discount-price: (
-  font-weight: 500,
-  size: 16px,
-  line-height: 140%,
-  text-transform: uppercase,
-);
-$label: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
-);
-$input-text: (
-  font-weight: 400,
-  size: 16px,
-  line-height: 140%,
-);
+@mixin headline-1() {
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 150%;
+  letter-spacing: 2.24px;
+  text-transform: uppercase;
+};
+@mixin tablet-headline-1() {
+  font-weight: 800;
+  font-size: 48px;
+  text-transform: uppercase;
+  line-height: 120%;
+};
+@mixin headline-2() {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin tablet-headline-2() {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin headline-3() {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin headline-4() {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin headline-5() {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin headline-6() {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin headline-7() {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin headline-8() {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin headline-9() {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin headline-10() {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin headline-11() {
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin headline-12() {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+};
+@mixin body-1() {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+};
+@mixin body-2() {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+};
+@mixin body-3() {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  //paragraph-spacing: 8px;
+};
+@mixin body-4() {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+};
+@mixin menu-1() {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin menu-2() {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin menu-3() {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+};
+@mixin menu-4() {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 110%;
+  text-transform: uppercase;
+};
+@mixin menu-5() {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+};
+@mixin link-1() {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+};
+@mixin link-2() {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 110%;
+};
+@mixin link-3() {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+};
+@mixin buttonFont() {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 140%;
+  text-transform: uppercase;
+};
+@mixin button-s() {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+};
+@mixin running-line() {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 120%;
+  text-transform: uppercase;
+};
+@mixin tab-bars() {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: uppercase;
+};
+@mixin breadcrumb() {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+};
+@mixin discount-price() {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: uppercase;
+};
+@mixin label() {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+};
+@mixin input-text() {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+};
 
 $accent-a-95: #030a07;
 $accent-a-9: #05140f;
@@ -282,7 +281,7 @@ $light-pink: #dfc5c5;
   background: $background-color;
   padding: 1.6rem 2.4rem;
   span {
-    @include fonts($button);
+    @include buttonFont();
     color: $text-color;
     text-align: center;
     position: relative;
@@ -361,7 +360,7 @@ $light-pink: #dfc5c5;
   }
   span {
     color: $black;
-    @include fonts($body-3);
+   @include body-3();
   }
 }
 
@@ -371,11 +370,11 @@ $light-pink: #dfc5c5;
   gap: 2.4rem;
   p {
     //color: $black;
-    @include fonts($body-3);
+   @include body-3();
 
     span {
       //color: $black;
-      @include fonts($link-1);
+     @include link-1();
     }
   }
 }
@@ -389,7 +388,7 @@ $light-pink: #dfc5c5;
   background: $light-pink;
 
   span {
-    @include fonts($body-3);
+   @include body-3();
     color: $error;
   }
 }
@@ -401,12 +400,12 @@ $light-pink: #dfc5c5;
   gap: 1.6rem;
 
   p {
-    @include fonts($headline-2);
+    @include headline-2();
     color: $black-color;
   }
 
   span {
-    @include fonts($body-2);
+   @include body-2();
     color: $gray-10;
   }
 }
@@ -416,7 +415,7 @@ $light-pink: #dfc5c5;
   align-self: stretch;
   background: $background-color;
   p {
-    @include fonts($body-3);
+   @include body-3();
     width: 100%;
     text-align: start;
     padding: 1.2rem;
@@ -436,7 +435,7 @@ $light-pink: #dfc5c5;
   overflow: hidden;
   padding: 1.6rem 2.4rem;
   span {
-    @include fonts($button);
+    @include buttonFont();
     text-align: center;
     position: relative;
     //z-index: 10;
@@ -498,7 +497,7 @@ $light-pink: #dfc5c5;
 @mixin buttonBlack {
   background: $black;
   span {
-    @include fonts($button);
+    @include buttonFont();
     color: $white;
   }
   &::before {
@@ -518,7 +517,7 @@ $light-pink: #dfc5c5;
   background: $white;
   border: 0.1rem solid $black;
   span {
-    @include fonts($button);
+    @include buttonFont();
     text-decoration: none;
     color: $black;
   }
@@ -545,7 +544,7 @@ $light-pink: #dfc5c5;
     }
   }
   span {
-    @include fonts($button);
+    @include buttonFont();
     color: $black;
   }
   &:hover {
@@ -555,7 +554,7 @@ $light-pink: #dfc5c5;
       }
     }
     span {
-      @include fonts($button);
+      @include buttonFont();
       color: $accent-a-4;
     }
   }
@@ -566,7 +565,7 @@ $light-pink: #dfc5c5;
       }
     }
     span {
-      @include fonts($button);
+      @include buttonFont();
       color: $accent-a-85;
     }
   }
@@ -579,7 +578,7 @@ $light-pink: #dfc5c5;
       }
     }
     span {
-      @include fonts($button);
+      @include buttonFont();
       color: $gray-40;
     }
   }

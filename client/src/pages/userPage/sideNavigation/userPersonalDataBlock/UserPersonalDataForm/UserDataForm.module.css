@@ -5,6 +5,7 @@
 }
 
 .userDataForm__title {
+  font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
@@ -20,8 +21,9 @@
   background: #a9dfcb;
 }
 .userDataForm__responseMessage p {
+  font-weight: 400;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
   width: 100%;
   text-align: start;
   padding: 1.2rem;
@@ -56,6 +58,7 @@
 }
 
 .userDataForm__deliveryTitle {
+  font-weight: 500;
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
@@ -75,6 +78,7 @@
   flex-grow: 1;
 }
 .userDataForm__deliveryBlockColumn .userDataForm__blockLabel {
+  font-weight: 400;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
@@ -95,6 +99,7 @@
   background: #000000;
 }
 .userDataForm__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
@@ -155,6 +160,7 @@
   color: #9b9b9b;
 }
 .userDataForm__button span {
+  font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
