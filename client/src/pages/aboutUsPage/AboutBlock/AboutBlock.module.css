@@ -57,8 +57,29 @@
 
 .modalCookies__text {
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
   max-width: 60rem;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .aboutBlock {
+    gap: 1.6rem;
+  }
+  .description {
+    gap: 1.6rem;
+  }
+}
+@media (max-width: 580px) {
+  .aboutBlock {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .description {
+    gap: 0.8rem;
+  }
+  .newsLetterBlock__title2 {
+    padding-bottom: 0.4rem;
+  }
 }
 
 /*# sourceMappingURL=AboutBlock.module.css.map */

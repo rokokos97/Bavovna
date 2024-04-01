@@ -24,4 +24,23 @@
   color: #000000;
 }
 
+@media (min-width: 581px) and (max-width: 768px) {
+  .aside {
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: uppercase;
+    white-space: unset;
+  }
+}
+@media (max-width: 580px) {
+  .aside {
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .asideList {
+    gap: 2.4rem;
+  }
+}
+
 /*# sourceMappingURL=AsideHelpBlock.module.css.map */

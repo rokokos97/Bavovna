@@ -5,7 +5,7 @@
 }
 .registerFormBlock .registerFormBlock__form p {
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
 }
 .registerFormBlock .registerFormBlock__form p span {
   font-size: 16px;
@@ -128,7 +128,7 @@
 .registerFormBlock__divider span {
   color: #000000;
   font-size: 16px;
-  line-height: 110%;
+  line-height: 140%;
 }
 
 .registerFormBlock__googleButton {
