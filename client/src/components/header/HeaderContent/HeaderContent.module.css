@@ -132,6 +132,9 @@
 .headerContent__headerMenuBar .headerContent__button:active div svg path {
   stroke: #1a6449;
 }
+.headerContent__headerMenuBar .headerContent__button:focus {
+  border: 1px solid #5a9b83;
+}
 
 .headerContent__headerSearch {
   display: flex;

@@ -263,13 +263,6 @@ $warning: #ffd90f;
 $additional-information: #589bff;
 $light-pink: #dfc5c5;
 
-@mixin fonts($font-map) {
-  font-family: map-get($font-map, family);
-  font-size: map-get($font-map, size);
-  line-height: map-get($font-map, line-height);
-  letter-spacing: map-get($font-map, letter-spacing);
-  text-transform: map-get($font-map, text-transform);
-}
 @mixin buttons(
   $width,
   $background-color,
@@ -490,6 +483,9 @@ $light-pink: #dfc5c5;
     top: (math.div(-1.1 * $width, 2) + 2.4rem);
     left: -1.1rem;
   }
+  &:focus {
+    border: 3px solid $accent-a-3;
+    }
   &:disabled {
     border-color: $gray-40;
     background: $gray-70;
