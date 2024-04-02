@@ -32,6 +32,7 @@
 }
 .headerContent__headerNavBar {
   display: flex;
+  align-items: center;
   gap: 1.6rem;
   a {
     @include link();
@@ -48,6 +49,7 @@
   .headerContent__fixedHeaderMenuBar,
   .headerContent__floatingHeaderMenuBar {
     display: flex;
+    align-items: center;
     gap: 1.6rem;
   }
   .headerContent__linkBlock {
@@ -62,8 +64,7 @@
     align-items: center;
     gap: 0.4rem;
     background: transparent;
-   @include menu-4();
-
+    @include menu-4();
     &:hover {
       color: $accent-a-3;
       span {
@@ -116,6 +117,7 @@
   z-index: 100;
 }
 .headerContent__accountName {
+  margin-right: 1rem;
   width: 6rem;
 }
 .mobileButton {
