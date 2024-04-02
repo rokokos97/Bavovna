@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
 import {
   getDeliveryMethod,
-  getDeliveryOption, getOrderAmount,
+  getDeliveryOption,
   setDeliveryMethod,
   setDeliveryOption, setDeliveryPrice, setUserDeliveryInfo,
 } from '../../../../store/ordersSlice';
@@ -25,11 +25,12 @@ import RadioButtonCheckedIcon
 import RadioButtonEmptyIcon
   from '../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
+import {getCartTotalPrice} from '../../../../store/cartSlice';
 const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(getUser);
-  const orderAmount = useSelector(getOrderAmount);
+  const orderAmount = useSelector(getCartTotalPrice);
   const userCurrentDeliveryOption = useSelector(getDeliveryOption);
   const userCurrentDeliveryMethod = useSelector(getDeliveryMethod);
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ const deliveryOptionsSection = () => {
         });
         newValues.label = createDeliveryLabel(newValues);
         newValues.deliveryMethod = userCurrentDeliveryMethod;
-        newValues.deliveryPrice =orderAmount > 1000 ? deliveryMethodsList[2][userCurrentDeliveryMethod].price : 0;
+        newValues.deliveryPrice =orderAmount < 1000 ? deliveryMethodsList[2][userCurrentDeliveryMethod].price : 0;
         dispatch(setUserDeliveryInfo(newValues));
         navigate('/cart/checkoutPayment');
       } else {

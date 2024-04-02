@@ -22,7 +22,7 @@ const useChangeFavorite = (user, id) => {
         dispatch(updateUserData({...user, favorite: [...user.favorite, id]}));
       }
     } else {
-      navigate('/logIn');
+      navigate('/signIn');
     }
   });
   return [isFavorite, handleIsFavorite];

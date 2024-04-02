@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import styles from './ShoppingCartPage.module.scss';
 import {useNavigate} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getCart, getNormalizedCart} from '../../store/cartSlice';
 import ProductCardInCart from '../../components/ProductCardInCart/ProductCardInCart';
 import {getItemsList, getItemsLoadingStatus} from '../../store/itemsSlice';
@@ -10,6 +10,7 @@ import {Autoplay} from 'swiper/modules';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
 import LeftArrowIcon from '../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
 import CheckOutBlock from './Blocks/CheckOutBlock/CheckOutBlock';
+import {setOrderToInitialState} from '../../store/ordersSlice';
 
 const ShoppingCartPage = () => {
   const cart = useSelector(getCart);
@@ -18,10 +19,14 @@ const ShoppingCartPage = () => {
   const isItemsLoading = useSelector(getItemsLoadingStatus);
   const items = useSelector(getItemsList);
   const normalizedCart = useSelector(getNormalizedCart);
+  const dispatch = useDispatch();
   let sliderItems = [];
   if (!isItemsLoading && items) {
     sliderItems = items.filter((item) => item.status === 'new');
   }
+  useEffect(() => {
+    dispatch(setOrderToInitialState());
+  }, []);
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
       <p className={styles.shoppingCartPage__navigation}>Home / Shopping bag</p>

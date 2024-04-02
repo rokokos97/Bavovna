@@ -41,7 +41,7 @@
 }
 .itemPreviewCard__image {
   width: 100%;
-  height: 100%;
+  //height: 100%;
   height: 50rem;
 
   img {
@@ -95,6 +95,19 @@
     flex-direction: row;
     gap: 1.6rem;
    @include headline-8();
+  }
+  .itemPreviewCard__discount {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    @include headline-8();
+    span:first-child {
+      text-decoration: line-through;
+      color: $gray-30
+    }
+    span:last-child {
+      color: $error;
+    }
   }
 }
 

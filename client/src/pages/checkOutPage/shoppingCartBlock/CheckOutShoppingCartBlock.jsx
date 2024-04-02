@@ -6,6 +6,7 @@ import {useFormik} from 'formik';
 import CheckOutShoppingCartBlockItemsList
   from './CheckOutShoppingCartBlockItemsList/CheckOutShoppingCartBlockItemsList';
 import {
+  getPaymentMethod,
   getPromoCodeSale,
   getShippingPrice,
   setPromoCodeSale,
@@ -20,6 +21,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
   const promoCode = useSelector(getPromoCodeSale);
   const orderAmount = useSelector(getCartTotalPrice);
   const cartLength = useSelector(getCartLength);
+  const paymentMethod = useSelector(getPaymentMethod);
   const deliveryPrice = useSelector(getShippingPrice);
   const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState();
   const finalDiscount = promoCode ? orderAmount * promoCode : null;
@@ -48,8 +50,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
       deliveryPrice ? setCurrentDeliveryPrice(deliveryPrice) : setCurrentDeliveryPrice(null);
     }
   }, [deliveryPrice]);
-
-
+  console.log('paymentMethod', paymentMethod);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
       <div className={styles.checkOutShoppingCartBlock__wrapper}>
@@ -100,7 +101,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         <button
           type='button'
           onClick={()=> formik.handleSubmit()}
-          disabled={!formik?.isValid}
+          disabled={!paymentMethod}
           className={styles.checkOutShoppingCartBlock__button}
         >
           <span>

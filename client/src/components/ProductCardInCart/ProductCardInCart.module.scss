@@ -72,6 +72,7 @@
           .productCardInCart__colorBlock {
             width: 14.2rem;
             display: flex;
+            align-items: center;
             flex-direction: row;
             gap: 1.6rem;
             .productCardInCart__colorRectangle {
@@ -85,10 +86,12 @@
           .productCardInCart__quantityBlock {
             width: 18.4rem;
             display: flex;
+            align-items: center;
             flex-direction: row;
             gap: 1.6rem;
             .productCardInCart__quantity {
               display: flex;
+              align-items: center;
               flex-direction: row;
               gap: 1.2rem;
               .productCardInCart__button {

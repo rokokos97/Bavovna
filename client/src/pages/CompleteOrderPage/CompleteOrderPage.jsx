@@ -44,13 +44,13 @@ const CompleteOrderPage = () => {
         </div>}
         <div className={styles.completeOrderPage__title}>
           <p>delivery</p>
-          <p>{currentOrder.deliveryInfo.deliveryPrice} $</p>
+          <p>{currentOrder.deliveryPrice} $</p>
         </div>
         <div className={styles.completeOrderPage__totalPrice}>
           <p>total</p>
           <p>{currentOrder.promoCodeDiscount?
             currentOrder.orderAmount-(currentOrder.orderAmount * currentOrder.promoCodeDiscount)+currentOrder.deliveryInfo.deliveryPrice:
-            currentOrder.orderAmount+currentOrder.deliveryInfo.deliveryPrice} $</p>
+            currentOrder.orderAmount+currentOrder.deliveryPrice} $</p>
         </div>
         <div className={styles.completeOrderPage__deliveryInfoBlock}>
           <div className={styles.completeOrderPage__infoSection}>
