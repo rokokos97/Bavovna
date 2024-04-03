@@ -122,7 +122,7 @@
   text-decoration: underline;
   color: #5a9b83;
 }
-.headerContent__headerMenuBar .headerContent__button:hover div svg path {
+.headerContent__headerMenuBar .headerContent__button:hover svg path {
   stroke: #5a9b83;
 }
 .headerContent__headerMenuBar .headerContent__button:active {

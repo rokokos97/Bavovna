@@ -71,13 +71,11 @@
         text-decoration: underline;
         color: $accent-a-3;
       }
-      div {
         svg {
           path {
             stroke: $accent-a-3;
           }
         }
-      }
     }
     &:active {
       color: $accent-a-5;
