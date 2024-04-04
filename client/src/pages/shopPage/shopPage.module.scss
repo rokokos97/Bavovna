@@ -4,16 +4,25 @@
   width: 100%;
   margin: 0 auto;
 }
-
 .block {
-  max-width: $max-width;
-  min-width: $min-width;
   width: 100%;
   padding: 1.6rem 8rem 0;
 }
-
-.navigation{
+.navigation {
   @include breadcrumb();
   text-align: start;
   margin-bottom: 1.4rem;
+}
+@media (max-width: 950px) {
+  .block {
+    padding: 4.4rem 3.2rem 0;
+  }
+  .navigation {
+    margin-bottom: 2.4rem;
+  }
+}
+@media (max-width: 580px) {
+  .block {
+    padding: 1.6rem 1.6rem 0;
+  }
 }

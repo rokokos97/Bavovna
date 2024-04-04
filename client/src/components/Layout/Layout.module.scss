@@ -16,8 +16,13 @@
   background-color: $white-color;
   z-index: 100;
 }
-@media (max-width: 580px){
-  .container{
+@media (min-width: 581px) and (max-width: 950px) {
+  .container {
+    padding-top: 10.8rem;
+  }
+}
+@media (max-width: 580px) {
+  .container {
     padding-top: 7.7rem;
   }
 }

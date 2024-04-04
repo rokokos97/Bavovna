@@ -4,7 +4,6 @@
   display: flex;
   gap: 4rem;
 }
-
 .description {
   display: flex;
   flex-direction: column;
@@ -12,28 +11,7 @@
   flex: 50% 1 1;
   align-items: center;
   justify-content: center;
-
-  a {
-    padding: 2.1rem 3.6rem;
-    color: $white;
-    background-color: $black;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background-color 0.3s ease 0s;
-
-    &:hover,
-    &:active {
-      background-color: $accent-a-3;
-      color: $white;
-      text-decoration: none;
-    }
-  }
 }
-
 .newsLetterBlock__title2 {
   max-width: 28rem;
   width: 100%;
@@ -45,7 +23,6 @@
     @include headline_3();
   }
 }
-
 .innerText {
   display: flex;
   flex-direction: column;
@@ -54,12 +31,10 @@
   width: 100%;
   padding-bottom: 1.6rem;
 }
-
 .modalCookies__text {
   width: 100%;
  @include body-3();
 }
-
 .img {
   display: block;
   aspect-ratio: 4/3;
@@ -71,7 +46,6 @@
     width: 100%;
   }
 }
-
 .lastChild {
   order: 2;
 }
