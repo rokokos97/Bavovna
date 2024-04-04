@@ -96,13 +96,12 @@
     margin-left: 1.6rem;
   }
   .newCollectionBlock__title1 {
-    @include tablet-headline-1();
-    font-weight: 800;
-    max-width: 42.4rem;
+    @include tablet-headline-32();
+    max-width: 25rem;
   }
   .newCollectionBlock__text {
     max-width: 28.5rem;
-   @include body-3();
+   @include body-4();
   }
   .newCollectionBlock__button {
     width: 18rem;

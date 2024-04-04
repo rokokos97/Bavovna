@@ -10,7 +10,7 @@
   z-index: 100;
   p {
     color: $white;
-   @include headline-11();
+    @include headline-11();
   }
 }
 .headerContent__header {
@@ -38,7 +38,7 @@
     @include link();
   }
   span {
-   @include menu-2();
+    @include menu-2();
   }
 }
 .headerContent__headerMenuBar {
@@ -56,7 +56,7 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
-   @include menu-4();
+    @include menu-4();
     @include link();
   }
   .headerContent__button {
@@ -71,11 +71,11 @@
         text-decoration: underline;
         color: $accent-a-3;
       }
-        svg {
-          path {
-            stroke: $accent-a-3;
-          }
+      svg {
+        path {
+          stroke: $accent-a-3;
         }
+      }
     }
     &:active {
       color: $accent-a-5;
@@ -197,10 +197,10 @@
   .headerContent__headerNavBar span,
   .headerContent__accountName,
   .headerContent__wishlist {
-   @include headline-9();
+    @include headline-9();
   }
   .headerContent_cart {
-   @include menu-2();
+    @include menu-2();
   }
   .headerContent__mobileHeaderBlock {
     display: block;
@@ -219,5 +219,6 @@
   .active .headerContent__headerNavBar,
   .active .headerContent__headerMenuBar .headerContent__floatingHeaderMenuBar {
     left: 2rem;
+    align-items: flex-start;
   }
 }
