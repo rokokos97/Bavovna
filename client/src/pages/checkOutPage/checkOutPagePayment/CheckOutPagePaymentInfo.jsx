@@ -47,6 +47,7 @@ const CheckOutPagePaymentInfo = () => {
         items: cart,
         userInfo: userInfo,
         orderAmount: orderAmount,
+        deliveryPrice: orderAmount>1000 ? 0 : deliveryInfo.deliveryPrice,
         _id: generateId(),
         date: formatDate(new Date()),
         paymentStatus: currentPaymentMethod ==='Pay by card'? 'paid': 'pending payment',

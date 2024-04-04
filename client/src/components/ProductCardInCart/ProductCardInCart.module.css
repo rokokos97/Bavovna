@@ -88,6 +88,7 @@
 .productCardInCart .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__colorBlock {
   width: 14.2rem;
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 1.6rem;
 }
@@ -101,11 +102,13 @@
 .productCardInCart .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock {
   width: 18.4rem;
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 1.6rem;
 }
 .productCardInCart .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock .productCardInCart__quantity {
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 1.2rem;
 }

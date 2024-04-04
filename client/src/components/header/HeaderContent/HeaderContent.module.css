@@ -36,6 +36,7 @@
 
 .headerContent__headerNavBar {
   display: flex;
+  align-items: center;
   gap: 1.6rem;
 }
 .headerContent__headerNavBar a {
@@ -74,6 +75,7 @@
 .headerContent__headerMenuBar .headerContent__fixedHeaderMenuBar,
 .headerContent__headerMenuBar .headerContent__floatingHeaderMenuBar {
   display: flex;
+  align-items: center;
   gap: 1.6rem;
 }
 .headerContent__headerMenuBar .headerContent__linkBlock {
@@ -120,7 +122,7 @@
   text-decoration: underline;
   color: #5a9b83;
 }
-.headerContent__headerMenuBar .headerContent__button:hover div svg path {
+.headerContent__headerMenuBar .headerContent__button:hover svg path {
   stroke: #5a9b83;
 }
 .headerContent__headerMenuBar .headerContent__button:active {
@@ -158,6 +160,7 @@
 }
 
 .headerContent__accountName {
+  margin-right: 1rem;
   width: 6rem;
 }
 
