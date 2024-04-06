@@ -5,7 +5,7 @@
   padding: 1.6rem 8rem 5.4rem;
 }
 
-.navigation{
+.navigation {
   @include breadcrumb();
   text-align: start;
   margin-bottom: 1.4rem;
@@ -95,6 +95,8 @@
 }
 
 .heart {
+  width: 2.4rem;
+  height: 2.4rem;
   cursor: pointer;
 }
 

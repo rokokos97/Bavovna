@@ -88,7 +88,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
                 </div>
                 <div className={styles.headerContent__floatingHeaderMenuBar}>
                   <Link
-                    className={styles.headerContent__button}
+                    className={`${styles.headerContent__heart} ${styles.headerContent__button}`}
                     to={user ? `/user/${user._id}/wishList` : {}}
                     onClick={closeMobileMenu}
                     aria-label='View your wishlist'

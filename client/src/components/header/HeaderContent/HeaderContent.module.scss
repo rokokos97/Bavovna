@@ -59,6 +59,9 @@
     @include menu-4();
     @include link();
   }
+  .headerContent__heart{
+    width: 2.4rem;
+  }
   .headerContent__button {
     display: flex;
     align-items: center;
