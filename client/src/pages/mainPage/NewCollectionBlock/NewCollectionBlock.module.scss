@@ -47,7 +47,7 @@
 .newCollectionBlock__text {
   max-width: 57.8rem;
   color: $black;
- @include body-2();
+  @include body-2();
   word-wrap: break-word;
   text-align: start;
 }
@@ -65,7 +65,7 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 1px;
     background: linear-gradient(
       90.08deg,
       rgba(222, 222, 222, 0.54) 14.47%,
@@ -101,7 +101,7 @@
   }
   .newCollectionBlock__text {
     max-width: 28.5rem;
-   @include body-4();
+    @include body-4();
   }
   .newCollectionBlock__button {
     width: 18rem;
