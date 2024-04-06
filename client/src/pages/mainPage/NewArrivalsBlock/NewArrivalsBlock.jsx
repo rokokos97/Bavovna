@@ -6,7 +6,8 @@ import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import {Navigation} from 'swiper/modules';
+import 'swiper/css/pagination';
+import {Navigation, Pagination} from 'swiper/modules';
 import BigLeftArrowIcon from '../../../components/svg/arrowIcons/BigLeftArrowIcon/BigLeftArrowIcon';
 
 const NewArrivalsBlock = () => {
@@ -44,13 +45,17 @@ const NewArrivalsBlock = () => {
         <Swiper
           className={styles.newArrivalsSwiper}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          modules={[Navigation]}
+          modules={[Navigation, Pagination]}
           slidesPerView={2}
           spaceBetween={8}
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           }}
+          pagination={{
+            type: 'progressbar',
+          }}
+          // scrollbar={{hide: true}}
           breakpoints={{
             769: {
               slidesPerView: 3,
@@ -59,6 +64,7 @@ const NewArrivalsBlock = () => {
             581: {
               slidesPerView: 2,
               spaceBetween: 16,
+              // pagination: {type: 'progressbar'},
             },
             501: {
               slidesPerView: 3,
