@@ -25,7 +25,7 @@ const CardContext = () => {
   const dispatch = useDispatch();
   const item = useSelector(getItemsById(id));
   if (!item) {
-    return <Loader/>;
+    return <Loader />;
   }
   const user = useSelector(getUser);
   const {itemData, setItemData} = useDataCard();
@@ -48,7 +48,9 @@ const CardContext = () => {
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
 
-  sale ? (currentPrice = parseFloat(price * sale) / 100) : (currentPrice = price);
+  sale ?
+    (currentPrice = parseFloat(price * sale) / 100) :
+    (currentPrice = price);
 
   useEffect(() => {
     setItemData({
@@ -107,6 +109,12 @@ const CardContext = () => {
               </ul>
             </div>
             <div className={styles.mainImg}>
+              <div
+                className={styles.imgHeart}
+                onClick={handleIsFavorite}
+              >
+                {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+              </div>
               <img
                 id='mainImage'
                 src={`${config.apiEndpoint}${images[0]}`}
@@ -116,12 +124,15 @@ const CardContext = () => {
           </div>
           <div className={styles.about}>
             <div className={styles.aboutInner}>
+              <div
+                className={styles.aboutInnerHeart}
+                onClick={handleIsFavorite}
+              >
+                {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
+              </div>
               <form className={styles.buyForm}>
                 <div className={styles.registerForm__titleBlock}>
                   <h2 className={styles.buyFormTitle}>{name}</h2>
-                  <div className={styles.heart} onClick={handleIsFavorite}>
-                    {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
-                  </div>
                 </div>
                 <div className={styles.priceBlock}>
                   {sale ? (
