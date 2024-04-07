@@ -31,207 +31,212 @@ $transparent-30: rgba(169, 223, 203, 0.3);
   line-height: 150%;
   letter-spacing: 2.24px;
   text-transform: uppercase;
-};
+}
 @mixin tablet-headline-1() {
   font-weight: 800;
   font-size: 48px;
   text-transform: uppercase;
   line-height: 120%;
-};
+}
 @mixin headline-2() {
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin tablet-headline-2() {
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin headline-3() {
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin tablet-headline-3() {
   font-weight: 700;
   font-size: 18px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin tablet-headline-32() {
   font-weight: 700;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin headline-4() {
   font-weight: 400;
   font-size: 24px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin headline-5() {
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin headline-6() {
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin headline-7() {
   font-weight: 600;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin headline-8() {
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin headline-9() {
   font-weight: 400;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin headline-10() {
   font-weight: 400;
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin headline-11() {
   font-weight: 700;
   font-size: 8px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin headline-12() {
   font-weight: 500;
   font-size: 14px;
   line-height: 100%;
   text-transform: uppercase;
-};
+}
 @mixin body-1() {
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
-};
+}
 @mixin body-2() {
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
-};
+}
 @mixin body-3() {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   //paragraph-spacing: 8px;
-};
+}
 @mixin body-4() {
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
-};
+}
+@mixin body-5() {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+}
 @mixin menu-1() {
   font-weight: 600;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin menu-2() {
   font-weight: 400;
   font-size: 14px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin menu-3() {
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
-};
+}
 @mixin menu-4() {
   font-weight: 500;
   font-size: 12px;
   line-height: 110%;
   text-transform: uppercase;
-};
+}
 @mixin menu-5() {
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
-};
+}
 @mixin link-1() {
   font-weight: 600;
   font-size: 16px;
   line-height: 110%;
-};
+}
 @mixin link-2() {
   font-weight: 600;
   font-size: 12px;
   line-height: 110%;
-};
+}
 @mixin link-3() {
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
-};
+}
 @mixin buttonFont() {
   font-weight: 600;
   font-size: 2rem;
   line-height: 140%;
   text-transform: uppercase;
-};
+}
 @mixin button-s() {
   font-weight: 600;
   font-size: 16px;
   line-height: 140%;
   text-align: center;
-};
+}
 @mixin running-line() {
   font-weight: 300;
   font-size: 20px;
   line-height: 120%;
   text-transform: uppercase;
-};
+}
 @mixin tab-bars() {
   font-weight: 600;
   font-size: 16px;
   line-height: 140%;
   text-transform: uppercase;
-};
+}
 @mixin breadcrumb() {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   text-transform: none;
-};
+}
 @mixin discount-price() {
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
   text-transform: uppercase;
-};
+}
 @mixin label() {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-};
+}
 @mixin input-text() {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-};
+}
 
 $accent-a-95: #030a07;
 $accent-a-9: #05140f;
@@ -365,7 +370,7 @@ $light-pink: #dfc5c5;
   }
   span {
     color: $black;
-   @include body-3();
+    @include body-3();
   }
 }
 
@@ -375,11 +380,11 @@ $light-pink: #dfc5c5;
   gap: 2.4rem;
   p {
     //color: $black;
-   @include body-3();
+    @include body-3();
 
     span {
       //color: $black;
-     @include link-1();
+      @include link-1();
     }
   }
 }
@@ -393,7 +398,7 @@ $light-pink: #dfc5c5;
   background: $light-pink;
 
   span {
-   @include body-3();
+    @include body-3();
     color: $error;
   }
 }
@@ -410,7 +415,7 @@ $light-pink: #dfc5c5;
   }
 
   span {
-   @include body-2();
+    @include body-2();
     color: $gray-10;
   }
 }
@@ -420,7 +425,7 @@ $light-pink: #dfc5c5;
   align-self: stretch;
   background: $background-color;
   p {
-   @include body-3();
+    @include body-3();
     width: 100%;
     text-align: start;
     padding: 1.2rem;
@@ -491,7 +496,7 @@ $light-pink: #dfc5c5;
   }
   &:focus {
     border: 3px solid $accent-a-3;
-    }
+  }
   &:disabled {
     border-color: $gray-40;
     background: $gray-70;
