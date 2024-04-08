@@ -3,9 +3,10 @@
 .container {
   max-width: $max-width;
   width: 100%;
-  padding-top: $headerHeight;
+  padding-top: 8.9rem;
   margin: auto;
   flex: 1 0 auto;
+  overflow: hidden;
 }
 .marqueeContainer {
   width: 100%;

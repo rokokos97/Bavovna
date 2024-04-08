@@ -14,11 +14,7 @@
   }
 
   h2 {
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.2;
-    text-transform: uppercase;
+    @include headline-4();
     text-align: center;
     margin-bottom: 3.2rem;
   }
@@ -40,12 +36,7 @@
 .guideTable {
   width: 100%;
   table-layout: fixed;
-  font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem;
-  letter-spacing: 0.0144rem;
-  text-transform: uppercase;
+  @include body-3();
   border: 0.1rem solid $black;
   border-right: none;
   border-spacing: 0;
@@ -57,7 +48,55 @@
 
   td,
   th {
+    @include headline-8();
     border-right: 0.1rem solid $black;
     padding: 1.6rem 0;
+  }
+}
+@media (min-width: 581px) and (max-width: 950px) {
+  .guideContainer {
+    padding: 4rem 2.65rem 8rem;
+
+    h2 {
+      @include tablet-headline-2();
+    }
+  }
+  .guideTable {
+    th {
+      @include menu-4();
+    }
+    td {
+      @include body-5();
+    }
+  }
+}
+@media (max-width: 580px) {
+  .guideContainer {
+    padding: 2.4rem 1.6rem;
+
+    h2 {
+      text-align: left;
+      @include tablet-headline-2();
+    }
+    .closeIcon {
+      top: 2rem;
+      right: 1.6rem;
+    }
+  }
+  .guideContent {
+    padding-bottom: 2.4rem;
+    p {
+      @include body-4();
+    }
+  }
+  .guideTable {
+    th {
+      @include menu-4();
+      padding: 0.4rem;
+      vertical-align: middle;
+    }
+    td {
+      @include body-5();
+    }
   }
 }
