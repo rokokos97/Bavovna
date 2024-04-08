@@ -4,8 +4,6 @@
 }
 
 .block {
-  max-width: 144rem;
-  min-width: 112rem;
   width: 100%;
   padding: 1.6rem 8rem 0;
 }
@@ -17,6 +15,20 @@
   text-transform: none;
   text-align: start;
   margin-bottom: 1.4rem;
+}
+
+@media (max-width: 950px) {
+  .block {
+    padding: 4.4rem 3.2rem 0;
+  }
+  .navigation {
+    margin-bottom: 2.4rem;
+  }
+}
+@media (max-width: 580px) {
+  .block {
+    padding: 1.6rem 1.6rem 0;
+  }
 }
 
 /*# sourceMappingURL=shopPage.module.css.map */

@@ -42,7 +42,7 @@ const LoginFormBlock = ({type}) => {
       setIsLoadingGoogle(false);
       setIsRegularLogin(true);
       dispatch(signInUser(values)).then((response)=>{
-        response.type=== 'user/signIn/fulfilled'&& navigate(redirectPath, {replace: true});
+        response.type=== 'user/signIn/fulfilled' && navigate(redirectPath, {replace: true});
         setIsRegularLogin(false);
       });
       formik.resetForm();
@@ -85,6 +85,7 @@ const LoginFormBlock = ({type}) => {
     setErrorMessage(null);
     dispatch(userClearResponse());
   }, []);
+
   return (<>
     <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
       {errorMessage &&

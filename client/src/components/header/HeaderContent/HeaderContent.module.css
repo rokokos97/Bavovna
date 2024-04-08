@@ -105,6 +105,9 @@
   color: #c3c3c3;
   pointer-events: none;
 }
+.headerContent__headerMenuBar .headerContent__heart {
+  width: 2.4rem;
+}
 .headerContent__headerMenuBar .headerContent__button {
   display: flex;
   align-items: center;
@@ -271,6 +274,7 @@
   .active .headerContent__headerNavBar,
   .active .headerContent__headerMenuBar .headerContent__floatingHeaderMenuBar {
     left: 2rem;
+    align-items: flex-start;
   }
 }
 

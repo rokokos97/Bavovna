@@ -5,6 +5,7 @@ import userService from '../services/user.service';
 import localStorageService from '../services/localStorage.service';
 import {createSelector} from '@reduxjs/toolkit';
 import transferDataToSessionStorage from '../utils/transformDataToSessionStorage';
+import Cookies from 'js-cookie';
 
 if (localStorageService.getAccessToken()) {
   transferDataToSessionStorage();
@@ -28,6 +29,7 @@ export const signInUser = createAsyncThunk(
       try {
         const response = await authService.login({email, password});
         if (rememberMe) {
+          Cookies.set('rememberMe', response.rememberMe, {expires: 28});
           localStorageService.setTokens(response);
         } else {
           sessionStorageService.setTokens(response);
@@ -54,8 +56,10 @@ export const signInWithGoogle = createAsyncThunk(
     'user/signInWithGoogle',
     async (userData, {rejectWithValue}) => {
       const {email} = userData;
+
       try {
-        const data = await authService.loginWithGoogle({email});
+        const data = await authService.loginWithGoogle(email);
+
         sessionStorageService.setTokens(data);
         return (data.user);
       } catch (error) {
@@ -89,7 +93,6 @@ export const verifyUserEmail = createAsyncThunk(
 export const recoveryUserPassword = createAsyncThunk(
     'user/recoveryUserPassword',
     async ({payload}, {rejectWithValue}) => {
-      console.log('email', payload);
       try {
         const {response} = await authService.reset(payload);
         return response;
@@ -265,7 +268,6 @@ const usersSlice = createSlice({
           state.response = null;
         })
         .addCase(recoveryUserPassword.fulfilled, (state, action) => {
-          console.log(action.payload);
           state.isLoading = false;
           state.error = null;
           state.response = action.payload;

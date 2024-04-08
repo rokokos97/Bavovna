@@ -157,7 +157,6 @@ router.post('/signUpWithGoogle', [
   }]);
 router.post('/signInWithPassword', [
   check('email', 'email is not correct')
-      .normalizeEmail()
       .isEmail(),
   async (req, res) => {
     try {
@@ -227,7 +226,6 @@ router.post('/signInWithPassword', [
 ]);
 router.post('/signInWithGoogle', [
   check('email', 'email is not correct')
-      .normalizeEmail()
       .isEmail(),
   async (req, res) => {
     try {
@@ -347,7 +345,6 @@ router.post('/resetPassword', async (req, res) => {
   try {
     const {token, email, password} = req.body;
     const currentUser = await User.findOne({email});
-    console.log('currentUser', currentUser);
     const isValidToken = (token === currentUser.emailVerificationToken);
     if (isValidToken) {
       currentUser.password = await bcrypt.hash(password, 12);

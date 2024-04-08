@@ -18,6 +18,28 @@ body {
   margin-left: 3px;
 }
 
+@media (min-width: 581px) {
+  .swiper > .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  .swiper-wrapper {
+    padding-bottom: 16px;
+  }
+  .swiper > .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    top: unset !important;
+    bottom: 0 !important;
+  }
+  .swiper-pagination-progressbar {
+    background: rgb(215, 215, 215) !important;
+  }
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #040404 !important;
+  }
+}
 .custom__control {
   border-radius: 0 !important;
   background-color: #fafafa !important;

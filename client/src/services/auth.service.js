@@ -26,7 +26,7 @@ const authService = {
     return data;
   },
 
-  loginWithGoogle: async ({email}) => {
+  loginWithGoogle: async (email) => {
     const {data} = await httpAuth.post('signInWithGoogle', {
       email,
       returnSecureToken: true,

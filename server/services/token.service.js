@@ -7,13 +7,12 @@ class TokenService {
     return jwt.sign(payload, config.get('verifySecret'), {expiresIn: '1h'});
   }
   generate(payload) {
-    const accessToken = jwt.sign(payload, config.get('accessSecret'), {
-      expiresIn: '1h',
-    });
+    const accessToken = jwt.sign(payload, config.get('accessSecret'), {expiresIn: '1h',});
     const refreshToken = jwt.sign(payload, config.get('refreshSecret'));
     const emailVerificationToken = jwt.sign(payload, config.get('verifySecret'), {expiresIn: '1h'});
+    const rememberMe = jwt.sign(payload, config.get('rememberMeSecret'), {expiresIn: '28d'});
     return {
-      accessToken, refreshToken, emailVerificationToken, expiresIn: 3600,
+      accessToken, refreshToken, emailVerificationToken, rememberMe, expiresIn: 3600,
     };
   }
   createVerify(payload) {
