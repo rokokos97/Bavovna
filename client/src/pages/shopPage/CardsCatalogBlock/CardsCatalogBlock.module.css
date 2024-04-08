@@ -114,10 +114,17 @@
 @media screen and (max-width: 1227px) {
   .cards {
     justify-content: center;
-    gap: 5rem;
+    gap: 1.4rem;
   }
   .card {
-    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 48%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .card {
+    flex-basis: 47%;
   }
 }
 

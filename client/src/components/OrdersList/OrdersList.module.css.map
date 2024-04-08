@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["OrdersList.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE;EC6FA;EACA;EACA;EACA;;;AD7FF;EACE;EACA;EACA;;AACA;EACE;EACA;EACA;;AACA;EACE;;AAGJ;EACE;EACA","file":"OrdersList.module.css"}
+{"version":3,"sourceRoot":"","sources":["OrdersList.module.scss","../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACE;ECmGA;EACA;EACA;EACA;;;ADnGF;EACE;EACA;EACA;;AACA;EACE;EACA;EACA;;AACA;EACE;;AAGJ;EACE;EACA","file":"OrdersList.module.css"}

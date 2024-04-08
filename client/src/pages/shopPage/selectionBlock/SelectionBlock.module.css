@@ -58,4 +58,15 @@
   background-color: #a9dfcb;
 }
 
+@media (min-width: 581px) and (max-width: 768px) {
+  .selection {
+    margin-top: 2.4rem;
+  }
+}
+@media (max-width: 580px) {
+  .selection {
+    margin-top: 2.7rem;
+  }
+}
+
 /*# sourceMappingURL=SelectionBlock.module.css.map */

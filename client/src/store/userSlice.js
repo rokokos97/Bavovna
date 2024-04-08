@@ -5,6 +5,7 @@ import userService from '../services/user.service';
 import localStorageService from '../services/localStorage.service';
 import {createSelector} from '@reduxjs/toolkit';
 import transferDataToSessionStorage from '../utils/transformDataToSessionStorage';
+import Cookies from 'js-cookie';
 
 if (localStorageService.getAccessToken()) {
   transferDataToSessionStorage();
@@ -28,6 +29,7 @@ export const signInUser = createAsyncThunk(
       try {
         const response = await authService.login({email, password});
         if (rememberMe) {
+          Cookies.set('rememberMe', response.rememberMe, {expires: 28});
           localStorageService.setTokens(response);
         } else {
           sessionStorageService.setTokens(response);

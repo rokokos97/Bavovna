@@ -23,6 +23,7 @@
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .heroText {
@@ -128,6 +129,29 @@
 }
 .heroBtn:active::after {
   border: 1px solid #5a9b83;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .hero {
+    background-image: url("../../../../public/img/images/Catalog/tabletCatalogHero.webp");
+    padding: 5.4rem 5.4rem 2rem;
+  }
+}
+@media (max-width: 580px) {
+  .hero {
+    background-image: url("../../../../public/img/images/Catalog/mobileCatalogHero.webp");
+    padding: 5.1rem 2.6rem;
+  }
+  .heroTitle {
+    max-width: unset;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .heroActive {
+    gap: 0.8rem;
+  }
 }
 
 /*# sourceMappingURL=HeadShopPageBlock.module.css.map */

@@ -1,5 +1,6 @@
 @import '../../../styles/variables.module';
 .loginForm {
+  width: 100%;
   @include form();
 }
 .loginForm__titleBlock {

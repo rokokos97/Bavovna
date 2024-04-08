@@ -23,6 +23,7 @@ const authService = {
       password,
       returnSecureToken: true,
     });
+    console.log('data', data);
     return data;
   },
 
