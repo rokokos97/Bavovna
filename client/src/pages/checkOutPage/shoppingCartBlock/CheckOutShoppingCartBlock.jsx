@@ -50,7 +50,6 @@ const CheckOutShoppingCartBlock = ({formik}) => {
       deliveryPrice ? setCurrentDeliveryPrice(deliveryPrice) : setCurrentDeliveryPrice(null);
     }
   }, [deliveryPrice]);
-  console.log('paymentMethod', paymentMethod);
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
       <div className={styles.checkOutShoppingCartBlock__wrapper}>

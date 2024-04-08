@@ -56,8 +56,10 @@ export const signInWithGoogle = createAsyncThunk(
     'user/signInWithGoogle',
     async (userData, {rejectWithValue}) => {
       const {email} = userData;
+
       try {
-        const data = await authService.loginWithGoogle({email});
+        const data = await authService.loginWithGoogle(email);
+
         sessionStorageService.setTokens(data);
         return (data.user);
       } catch (error) {
@@ -91,7 +93,6 @@ export const verifyUserEmail = createAsyncThunk(
 export const recoveryUserPassword = createAsyncThunk(
     'user/recoveryUserPassword',
     async ({payload}, {rejectWithValue}) => {
-      console.log('email', payload);
       try {
         const {response} = await authService.reset(payload);
         return response;
@@ -267,7 +268,6 @@ const usersSlice = createSlice({
           state.response = null;
         })
         .addCase(recoveryUserPassword.fulfilled, (state, action) => {
-          console.log(action.payload);
           state.isLoading = false;
           state.error = null;
           state.response = action.payload;

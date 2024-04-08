@@ -61,7 +61,6 @@ const UserDataForm = () => {
     setMessage(null);
     dispatch(userClearResponse());
   }, []);
-  console.log('user', user);
   return ( user && (
     <article className={styles.userDataForm} data-testid="UserDataForm">
       <p className={styles.userDataForm__title}>personal data</p>

@@ -53,7 +53,7 @@ const CheckOutPagePaymentInfo = () => {
         paymentStatus: currentPaymentMethod ==='Pay by card'? 'paid': 'pending payment',
         deliveryStatus: 'pending',
       };
-      console.log('newOrder', newOrder);
+
       if (user) {
         const newUser = await {
           ...user,

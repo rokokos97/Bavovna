@@ -23,11 +23,10 @@ const authService = {
       password,
       returnSecureToken: true,
     });
-    console.log('data', data);
     return data;
   },
 
-  loginWithGoogle: async ({email}) => {
+  loginWithGoogle: async (email) => {
     const {data} = await httpAuth.post('signInWithGoogle', {
       email,
       returnSecureToken: true,
