@@ -21,10 +21,13 @@
   right: 2.4rem;
   cursor: pointer;
 }
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 581px) and (max-width: 950px) {
   .modalContent {
     max-width: 70.3rem;
   }
 }
 @media (max-width: 580px) {
+  .modalContent {
+    width: 100vw;
+  }
 }

@@ -5,6 +5,7 @@
   padding: 4rem 8rem 8rem;
   position: relative;
   display: flex;
+
   flex-direction: column;
   gap: 3.2rem;
 
@@ -13,11 +14,12 @@
     top: 2.4rem;
     right: 2.4rem;
     cursor: pointer;
-    background-color: inherit
+    background-color: inherit;
   }
 
   h2 {
     @include headline-4();
+    text-align: center;
   }
 }
 
@@ -33,7 +35,7 @@
   }
 
   p {
-   @include headline-9();
+    @include headline-9();
   }
 }
 
@@ -81,7 +83,7 @@
 }
 
 .paramsBlock {
- @include headline-9();
+  @include headline-9();
   display: flex;
   gap: 1.6rem;
 }
@@ -107,7 +109,7 @@
 }
 
 .continueBtn {
- @include body-2();
+  @include body-2();
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -119,4 +121,70 @@
   @include button(30rem);
   @include buttonBlack();
   text-decoration: none !important;
+}
+@media (min-width: 581px) and (max-width: 950px) {
+  .modalContent {
+    max-width: 70.3rem;
+  }
+  .checkout {
+    padding: 4rem 4.9rem 8rem;
+
+    .closeIcon {
+      top: 0.8rem;
+      right: 1.6rem;
+    }
+  }
+  .priceBlock {
+    @include tablet-headline-3();
+  }
+  .paramsBlock {
+    gap: 0.8rem;
+  }
+  .continueBtn {
+    @include button-s();
+  }
+  .checkoutBtn {
+    width: 23.6rem;
+    height: 4.8rem;
+  }
+}
+@media (max-width: 580px) {
+  .checkout {
+    padding: 2.4rem 1.6rem;
+    h2 {
+      max-width: 24rem;
+      text-align: start;
+      @include headline-9();
+    }
+  }
+  .checkoutContainer {
+    gap: 1.6rem;
+    img {
+      max-width: 15.6rem;
+      width: 100%;
+      object-position: center;
+    }
+  }
+  .closeIcon {
+    right: 1.6rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+  .dataBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .btnContainer {
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: center;
+
+    span {
+      @include tablet-headline-3();
+    }
+  }
 }

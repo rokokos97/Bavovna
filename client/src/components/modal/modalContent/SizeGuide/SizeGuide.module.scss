@@ -53,7 +53,7 @@
     padding: 1.6rem 0;
   }
 }
-@media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 581px) and (max-width: 950px) {
   .guideContainer {
     padding: 4rem 2.65rem 8rem;
 
@@ -71,4 +71,32 @@
   }
 }
 @media (max-width: 580px) {
+  .guideContainer {
+    padding: 2.4rem 1.6rem;
+
+    h2 {
+      text-align: left;
+      @include tablet-headline-2();
+    }
+    .closeIcon {
+      top: 2rem;
+      right: 1.6rem;
+    }
+  }
+  .guideContent {
+    padding-bottom: 2.4rem;
+    p {
+      @include body-4();
+    }
+  }
+  .guideTable {
+    th {
+      @include menu-4();
+      padding: 0.4rem;
+      vertical-align: middle;
+    }
+    td {
+      @include body-5();
+    }
+  }
 }
