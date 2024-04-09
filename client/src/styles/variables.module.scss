@@ -193,7 +193,7 @@ $transparent-30: rgba(169, 223, 203, 0.3);
 }
 @mixin buttonFont() {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
 }
@@ -274,87 +274,87 @@ $warning: #ffd90f;
 $additional-information: #589bff;
 $light-pink: #dfc5c5;
 
-@mixin buttons(
-  $width,
-  $background-color,
-  $text-color,
-  $hover-color,
-  $active-color
-) {
-  display: flex;
-  width: $width;
-  height: 5.6rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background: $background-color;
-  padding: 1.6rem 2.4rem;
-  span {
-    @include buttonFont();
-    color: $text-color;
-    text-align: center;
-    position: relative;
-    //z-index: 10;
-  }
-  &::before {
-    content: '';
-    background: $hover-color;
-    width: 4.8rem;
-    height: 4.8rem;
-    opacity: 0;
-    line-height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    transition: 300ms ease-in;
-    top: 0.4rem;
-    left: math.div($width, 2)-2.4rem;
-  }
-  &::after {
-    content: '';
-    background: $active-color;
-    width: 0.6rem;
-    height: 0.6rem;
-    opacity: 0;
-    line-height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    transition: 300ms ease-in;
-    top: 2.5rem;
-    left: math.div($width, 2)-0.3rem;
-  }
-  &:hover::before {
-    content: '';
-    width: 1.1 * $width;
-    height: 1.1 * $width;
-    background: $hover-color;
-    opacity: 1;
-    position: absolute;
-    top: (math.div(-1.1 * $width, 2) + 2.4rem);
-    left: -1rem;
-  }
-  &:active::after {
-    content: '';
-    width: 1.1 * $width;
-    height: 1.1 * $width;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid $hover-color;
-    opacity: 1;
-    position: absolute;
-    top: (math.div(-1.1 * $width, 2) + 2.4rem);
-    left: -1.1rem;
-  }
-  &:disabled {
-    border: 1px solid $gray-40;
-    background: $gray-90;
-    pointer-events: none;
-    cursor: not-allowed;
-    span {
-      color: $gray-50;
-    }
-  }
-}
+//@mixin buttons(
+//  $width,
+//  $background-color,
+//  $text-color,
+//  $hover-color,
+//  $active-color
+//) {
+//  display: flex;
+//  width: $width;
+//  height: 5.6rem;
+//  justify-content: center;
+//  align-items: center;
+//  position: relative;
+//  overflow: hidden;
+//  background: $background-color;
+//  padding: 1.6rem 2.4rem;
+//  span {
+//    @include buttonFont();
+//    color: $text-color;
+//    text-align: center;
+//    position: relative;
+//    //z-index: 10;
+//  }
+//  &::before {
+//    content: '';
+//    background: $hover-color;
+//    width: 4.8rem;
+//    height: 4.8rem;
+//    opacity: 0;
+//    line-height: 40px;
+//    border-radius: 50%;
+//    position: absolute;
+//    transition: 300ms ease-in;
+//    top: 0.4rem;
+//    left: math.div($width, 2)-2.4rem;
+//  }
+//  &::after {
+//    content: '';
+//    background: $active-color;
+//    width: 0.6rem;
+//    height: 0.6rem;
+//    opacity: 0;
+//    line-height: 40px;
+//    border-radius: 50%;
+//    position: absolute;
+//    transition: 300ms ease-in;
+//    top: 2.5rem;
+//    left: math.div($width, 2)-0.3rem;
+//  }
+//  &:hover::before {
+//    content: '';
+//    width: 1.1 * $width;
+//    height: 1.1 * $width;
+//    background: $hover-color;
+//    opacity: 1;
+//    position: absolute;
+//    top: (math.div(-1.1 * $width, 2) + 2.4rem);
+//    left: -1rem;
+//  }
+//  &:active::after {
+//    content: '';
+//    width: 1.1 * $width;
+//    height: 1.1 * $width;
+//    border-radius: 50%;
+//    background: transparent;
+//    border: 1px solid $hover-color;
+//    opacity: 1;
+//    position: absolute;
+//    top: (math.div(-1.1 * $width, 2) + 2.4rem);
+//    left: -1.1rem;
+//  }
+//  &:disabled {
+//    border: 1px solid $gray-40;
+//    background: $gray-90;
+//    pointer-events: none;
+//    cursor: not-allowed;
+//    span {
+//      color: $gray-50;
+//    }
+//  }
+//}
 
 @mixin divider() {
   display: flex;
@@ -419,13 +419,27 @@ $light-pink: #dfc5c5;
     color: $gray-10;
   }
 }
+@mixin form-title-block-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
 
+  p {
+    @include tablet-headline-2();
+    color: $black-color;
+  }
+
+  span {
+    @include body-3();
+    color: $gray-10;
+  }
+}
 @mixin form-message-block($background-color, $text-color) {
   display: flex;
   align-self: stretch;
   background: $background-color;
   p {
-    @include body-3();
     width: 100%;
     text-align: start;
     padding: 1.2rem;
@@ -446,6 +460,80 @@ $light-pink: #dfc5c5;
   padding: 1.6rem 2.4rem;
   span {
     @include buttonFont();
+    text-align: center;
+    position: relative;
+    //z-index: 10;
+  }
+  &::before {
+    content: '';
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: math.div($width, 2)-2.4rem;
+  }
+  &::after {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: math.div($width, 2)-0.3rem;
+  }
+  &:hover::before {
+    content: '';
+    width: 1.1 * $width;
+    height: 1.1 * $width;
+    opacity: 1;
+    position: absolute;
+    top: (math.div(-1.1 * $width, 2) + 2.4rem);
+    left: -1rem;
+  }
+  &:active::after {
+    content: '';
+    width: 1.1 * $width;
+    height: 1.1 * $width;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: (math.div(-1.1 * $width, 2) + 2.4rem);
+    left: -1.1rem;
+  }
+  &:focus {
+    border: 3px solid $accent-a-3;
+  }
+  &:disabled {
+    border-color: $gray-40;
+    background: $gray-70;
+    pointer-events: none;
+    cursor: not-allowed;
+    span {
+      color: $gray-50;
+    }
+  }
+}
+@mixin button-mobile($width) {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: $width;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+  span {
+    @include button-s();
     text-align: center;
     position: relative;
     //z-index: 10;
