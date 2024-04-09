@@ -14,14 +14,25 @@
 
 .modalContent {
   background-color: #fff;
-  max-width: 860px;
+  max-width: 86rem;
 }
 
 .closeIcon {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 2.4rem;
+  right: 2.4rem;
   cursor: pointer;
+}
+
+@media (min-width: 581px) and (max-width: 950px) {
+  .modalContent {
+    max-width: 70.3rem;
+  }
+}
+@media (max-width: 580px) {
+  .modalContent {
+    width: 100vw;
+  }
 }
 
 /*# sourceMappingURL=Modal.module.css.map */

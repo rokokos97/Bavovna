@@ -11,10 +11,9 @@
   background-color: inherit;
 }
 .guideContainer h2 {
-  font-size: 2.4rem;
-  font-style: normal;
   font-weight: 400;
-  line-height: 1.2;
+  font-size: 24px;
+  line-height: 120%;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 3.2rem;
@@ -37,12 +36,9 @@
 .guideTable {
   width: 100%;
   table-layout: fixed;
-  font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2rem;
-  letter-spacing: 0.0144rem;
-  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
   border: 0.1rem solid #000000;
   border-right: none;
   border-spacing: 0;
@@ -53,8 +49,72 @@
 }
 .guideTable td,
 .guideTable th {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
   border-right: 0.1rem solid #000000;
   padding: 1.6rem 0;
+}
+
+@media (min-width: 581px) and (max-width: 950px) {
+  .guideContainer {
+    padding: 4rem 2.65rem 8rem;
+  }
+  .guideContainer h2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .guideTable th {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+  .guideTable td {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+}
+@media (max-width: 580px) {
+  .guideContainer {
+    padding: 2.4rem 1.6rem;
+  }
+  .guideContainer h2 {
+    text-align: left;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .guideContainer .closeIcon {
+    top: 2rem;
+    right: 1.6rem;
+  }
+  .guideContent {
+    padding-bottom: 2.4rem;
+  }
+  .guideContent p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+  }
+  .guideTable th {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110%;
+    text-transform: uppercase;
+    padding: 0.4rem;
+    vertical-align: middle;
+  }
+  .guideTable td {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
 }
 
 /*# sourceMappingURL=SizeGuide.module.css.map */

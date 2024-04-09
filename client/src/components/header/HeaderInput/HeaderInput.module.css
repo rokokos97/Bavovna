@@ -1,6 +1,5 @@
 .inputContainer {
   max-width: 144rem;
-  min-width: 112rem;
   width: 100%;
   padding: 1.2rem 8rem;
   display: flex;
@@ -17,6 +16,7 @@
 .newsLetterBlock__inputSection {
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 1.6rem;
 }
 .newsLetterBlock__inputSection input {
@@ -34,6 +34,35 @@
 .closeIcon {
   background-color: transparent;
   height: 3.2rem;
+}
+
+@media (min-width: 581px) and (max-width: 950px) {
+  .inputContainer {
+    padding: 1.2rem 3.2rem;
+  }
+}
+@media (max-width: 580px) {
+  .inputContainer {
+    padding: 0.8rem 1.6rem;
+  }
+  .inputContainer svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .newsLetterBlock__inputSection {
+    gap: 0.8rem;
+  }
+  .newsLetterBlock__inputSection input {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: 0.8rem;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    border: none;
+    background-color: inherit;
+  }
 }
 
 /*# sourceMappingURL=HeaderInput.module.css.map */

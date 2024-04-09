@@ -45,4 +45,11 @@
   color: #fafafa;
 }
 
+@media (max-width: 580px) {
+  .sizeListItem {
+    width: 4rem;
+    height: 3.4rem;
+  }
+}
+
 /*# sourceMappingURL=SizeList.module.css.map */

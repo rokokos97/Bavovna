@@ -15,9 +15,14 @@
 
 .card {
   display: flex;
-  flex-grow: 1;
   gap: 2.4rem;
   padding-bottom: 4rem;
+}
+
+.imgsContainer {
+  display: flex;
+  gap: 2.4rem;
+  flex: 1 1 50%;
 }
 
 .imgs {
@@ -48,7 +53,7 @@
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   cursor: pointer;
   transition: scale 0.3s ease-in-out 0s;
 }
@@ -57,8 +62,12 @@
 }
 
 .about {
-  max-width: 62.7rem;
+  max-width: 50%;
   width: 100%;
+}
+
+.aboutInner {
+  position: relative;
 }
 
 .mainImg,
@@ -69,7 +78,6 @@
 
 .mainImg img {
   width: 100%;
-  max-width: 52rem;
   height: 68.2rem;
   object-fit: cover;
   object-position: top;
@@ -89,10 +97,22 @@
   margin-bottom: 2.4rem;
 }
 
-.heart {
+.imgHeart,
+.aboutInnerHeart {
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
+  align-self: flex-start;
+}
+
+.aboutInnerHeart {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.imgHeart {
+  display: none;
 }
 
 .buyFormTitle {
@@ -256,6 +276,99 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+}
+
+@media (min-width: 581px) and (max-width: 950px) {
+  .cardSection {
+    width: 100%;
+    padding: 1.6rem 3.2rem 3.5rem;
+  }
+  .imgsContainer {
+    flex-direction: column-reverse;
+    gap: 1.6rem;
+  }
+  .imgsList {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    width: 100%;
+    height: 100%;
+  }
+  .imgs {
+    width: 100%;
+    max-width: unset;
+    max-height: unset;
+  }
+}
+@media (max-width: 775px) {
+  .buyFormTitle {
+    max-width: 20rem;
+  }
+}
+@media (max-width: 580px) {
+  .cardSection {
+    width: 100%;
+    padding: 1.6rem 1.6rem 3.2rem;
+  }
+  .card {
+    flex-direction: column;
+  }
+  .imgsContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  .imgsList {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    width: 100%;
+    height: 100%;
+  }
+  .imgsList li img {
+    object-position: center;
+  }
+  .imgs {
+    width: 100%;
+    max-width: unset;
+    max-height: unset;
+  }
+  .mainImg {
+    max-width: 39rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .mainImg img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  .imgHeart {
+    display: block;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+  }
+  .about,
+  .aboutInner,
+  .buyFormTitle {
+    max-width: unset;
+  }
+  .aboutInnerHeart {
+    display: none;
+  }
+  .formBag .activeBtn {
+    width: 100%;
+  }
+  .color,
+  .size {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
 }
 
 /*# sourceMappingURL=Card.module.css.map */

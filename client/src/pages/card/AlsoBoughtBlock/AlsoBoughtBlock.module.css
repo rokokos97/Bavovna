@@ -17,4 +17,15 @@
   flex: 1 0 0;
 }
 
+@media (min-width: 581px) and (max-width: 768px) {
+  .alsoBoughtList {
+    gap: 1.6rem;
+  }
+}
+@media (max-width: 580px) {
+  .alsoBoughtList {
+    gap: 1rem;
+  }
+}
+
 /*# sourceMappingURL=AlsoBoughtBlock.module.css.map */
