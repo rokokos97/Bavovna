@@ -1,4 +1,5 @@
 .registerForm {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -47,9 +48,6 @@
   background: #dfc5c5;
 }
 .registerForm__errorMessagesBlock p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
   width: 100%;
   text-align: start;
   padding: 1.2rem;
@@ -62,9 +60,6 @@
   background: #a9dfcb;
 }
 .registerForm__successMessagesBlock p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
   width: 100%;
   text-align: start;
   padding: 1.2rem;
@@ -77,6 +72,38 @@
 }
 .toLoginForm a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 36rem) {
+  .registerForm__titleBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  .registerForm__titleBlock p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #040404;
+  }
+  .registerForm__titleBlock span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #4a4a4a;
+  }
+  .registerForm__errorMessagesBlock {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+  .registerForm__successMessagesBlock {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
 }
 
 /*# sourceMappingURL=RegisterForm.module.css.map */

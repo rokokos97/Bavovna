@@ -35,8 +35,8 @@
   }
   .loginFormBlock__forgotPassword {
     display: block;
-   @include link-2();
     color: $gray-10;
+    @include link-2();
   }
   .loginFormBlock__form {
     width: 100%;
@@ -100,6 +100,19 @@
     margin: 0 auto;
   }
 }
-@media screen {
+@media (max-width: 36rem) {
+  .loginFormBlock {
+    .loginFormBlock__button {
+      @include button-mobile(32.8rem);
 
+    }
+    .loginFormBlock__googleButton {
+      @include button(32.8rem);
+    }
+    .errorMessagesBlock {
+      p {
+        @include body-5();
+      }
+    }
+  }
 }

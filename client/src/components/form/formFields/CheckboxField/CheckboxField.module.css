@@ -58,4 +58,12 @@
   color: #ea001b;
 }
 
+@media (max-width: 36rem) {
+  .checkboxField .checkbox label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 110%;
+  }
+}
+
 /*# sourceMappingURL=CheckboxField.module.css.map */

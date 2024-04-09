@@ -15,4 +15,8 @@
     }
   }
 }
-
+@media (max-width: 36rem) {
+  .loginForm__titleBlock {
+    @include form-title-block-mobile();
+  }
+}

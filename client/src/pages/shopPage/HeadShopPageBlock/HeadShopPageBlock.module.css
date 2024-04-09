@@ -49,7 +49,7 @@
 }
 .heroBtn span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -113,7 +113,7 @@
 }
 .heroBtn span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;

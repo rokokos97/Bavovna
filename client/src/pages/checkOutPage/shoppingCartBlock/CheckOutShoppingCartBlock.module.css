@@ -54,7 +54,7 @@
 }
 .checkOutShoppingCartBlock__arrowButton span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -121,7 +121,7 @@
 }
 .checkOutShoppingCartBlock__arrowButton span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #000000;
@@ -131,7 +131,7 @@
 }
 .checkOutShoppingCartBlock__arrowButton:hover span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #3a7f66;
@@ -141,7 +141,7 @@
 }
 .checkOutShoppingCartBlock__arrowButton:focus span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #081e16;
@@ -154,7 +154,7 @@
 }
 .checkOutShoppingCartBlock__arrowButton:disabled span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #868686;
@@ -204,7 +204,7 @@
 }
 .checkOutShoppingCartBlock__button span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -268,7 +268,7 @@
 }
 .checkOutShoppingCartBlock__button span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
