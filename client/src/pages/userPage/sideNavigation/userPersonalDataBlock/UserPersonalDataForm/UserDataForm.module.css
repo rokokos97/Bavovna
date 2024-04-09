@@ -21,9 +21,6 @@
   background: #a9dfcb;
 }
 .userDataForm__responseMessage p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
   width: 100%;
   text-align: start;
   padding: 1.2rem;
@@ -100,7 +97,7 @@
 }
 .userDataForm__button span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -164,7 +161,7 @@
 }
 .userDataForm__button span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;

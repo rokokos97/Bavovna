@@ -17,18 +17,20 @@
 }
 .selectField .error {
   color: #ea001b;
+  margin-top: 0.8rem;
   padding-left: 0.8rem;
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
 }
-.selectField .selectField.hasError .label {
+
+.selectField.hasError .label {
   color: #ea001b;
 }
-.selectField .selectField.hasError div {
+.selectField.hasError div {
   border-color: red !important;
 }
-.selectField .selectField.hasError div div {
+.selectField.hasError div div {
   color: red !important;
 }
 

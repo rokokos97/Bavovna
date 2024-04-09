@@ -58,4 +58,12 @@
     }
   }
 }
-
+@media (max-width: 36rem) {
+  .checkboxField {
+    .checkbox {
+      label {
+        @include menu-5();
+      }
+    }
+  }
+}

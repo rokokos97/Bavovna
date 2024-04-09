@@ -75,7 +75,7 @@
 }
 .newCollectionBlock__button span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -139,7 +139,7 @@
 }
 .newCollectionBlock__button span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
@@ -180,7 +180,7 @@
   }
   .newCollectionBlock__button span {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 20px;
     line-height: 140%;
     text-transform: uppercase;
     text-align: center;
@@ -281,7 +281,7 @@
   }
   .newCollectionBlock__button span {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 20px;
     line-height: 140%;
     text-transform: uppercase;
     text-align: center;

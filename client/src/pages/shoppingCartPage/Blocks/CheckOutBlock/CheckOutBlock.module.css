@@ -40,7 +40,7 @@
 }
 .checkOutBlock__buttonsBlock a:first-child span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -104,7 +104,7 @@
 }
 .checkOutBlock__buttonsBlock a:first-child span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
@@ -137,7 +137,7 @@
 }
 .checkOutBlock__buttonsBlock a:last-child span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-align: center;
@@ -201,7 +201,7 @@
 }
 .checkOutBlock__buttonsBlock a:last-child span {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   text-decoration: none;

@@ -1,5 +1,6 @@
 @import '../../../styles/variables.module';
 .registerForm {
+  width: 100%;
   @include form();
 }
 .registerForm__titleBlock {
@@ -22,5 +23,16 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+@media (max-width: 36rem) {
+  .registerForm__titleBlock {
+    @include form-title-block-mobile();
+  }
+  .registerForm__errorMessagesBlock {
+    @include body-5();
+  }
+  .registerForm__successMessagesBlock {
+    @include body-5();
   }
 }

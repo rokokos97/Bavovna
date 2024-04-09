@@ -9,7 +9,7 @@ const LoginForm = () => {
         <p>
           Sign In
         </p>
-        <span>
+        <span className={styles.loginForm__welcomeMessage}>
             Welcome back! Please enter your details
         </span>
       </section>

@@ -18,18 +18,19 @@
   }
   .error {
     color: $error;
+    margin-top: 0.8rem;
     padding-left: 0.8rem;
-   @include menu-5();
+    @include menu-5();
   }
-  .selectField.hasError {
-    .label {
-      color: $error;
-    }
+}
+.selectField.hasError {
+  .label {
+    color: $error;
+  }
+  div {
+    border-color: red!important;
     div {
-      border-color: red!important;
-      div {
-        color: red!important;
-      }
+      color: red!important;
     }
   }
 }

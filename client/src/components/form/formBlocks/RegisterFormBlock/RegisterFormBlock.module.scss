@@ -26,3 +26,12 @@
   @include button (41rem);
   @include buttonWhite();
 }
+@media (max-width: 36rem) {
+  .registerFormBlock__button {
+    @include button-mobile (32.8rem);
+  }
+  .registerFormBlock__googleButton {
+    @include button (32.8rem);
+
+  }
+}
