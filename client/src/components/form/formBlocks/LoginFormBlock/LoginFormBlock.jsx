@@ -85,7 +85,8 @@ const LoginFormBlock = ({type}) => {
     setErrorMessage(null);
     dispatch(userClearResponse());
   }, []);
-
+  console.log('formik.touched', formik.touched);
+  console.log('formik.errors', formik.errors);
   return (<>
     <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
       {errorMessage &&
