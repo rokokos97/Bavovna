@@ -32,13 +32,8 @@
 @media (max-width: 36rem) {
   .modalCookies {
     width: 100%;
-    position: fixed;
     right: 0;
     bottom: 0;
-    z-index: 1001;
-    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
-    -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
   }
   .modalCookies__content {
     @include body-3();
