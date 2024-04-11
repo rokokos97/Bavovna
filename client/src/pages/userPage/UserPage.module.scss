@@ -2,16 +2,49 @@
 .userPage {
  min-height: 100vh;
  max-width: 128rem;
- margin-top: 3.2rem;
  position: relative;
  left: 50%;
  transform: translateX(-50%);
+
+ .userPage__navigation {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+  text-align: start;
+  @include breadcrumb();
+
+  .userPage__navigationHome {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   svg {
+    display: none;
+    transform: rotate(-90deg);
+   }
+  }
+  .userPage__navigationAccount {
+   display: flex;
+  }
+ }
 }
 @media (min-width: 581px) and (max-width: 768px) {
  .userPage {
-  max-width: 76.8rem;
+   max-width: 76.8rem;
+  .userPage__navigation {
+    .userPage__navigationHome {
+        @include headline-9();
+        svg {
+          display: block;
+          transform: rotate(-90deg);
+        };
+    }
+    .userPage__navigationAccount {
+       display: none;
+    }
+  }
  }
-}
+ }
 @media (max-width: 580px) {
  .userPage {
   max-width: 32.8rem;
