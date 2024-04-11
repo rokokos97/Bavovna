@@ -43,13 +43,13 @@ const NewsLettersBlock = () => {
   });
   return (
     <article className={styles.newsLettersBlock}>
-      <p
+      <section
         className={`${styles.newsLetterBlock__messageLine} ` + (message.isError ? `${styles.newsLetterBlock__messageError}`: '')}
-        style={{display: isMessageShowed ? 'flex' : 'none'}}
+        style={{opacity: isMessageShowed ? '1' : '0'}}
       >
-        <span>
+        <p className={styles.newsLettersBlock__message}>
           {message.message}
-        </span>
+        </p>
         <button
           className={styles.newsLetterBlock__closeButton}
           type='button'
@@ -58,7 +58,7 @@ const NewsLettersBlock = () => {
         >
           <CloseIcon/>
         </button>
-      </p>
+      </section>
       <form
         className={styles.newsLettersBlock_form}
         data-testid="NewsLettersBlock"
@@ -73,12 +73,13 @@ const NewsLettersBlock = () => {
         </p>
         <section className={styles.newsLetterBlock__inputSection}>
           <TextField
-            onChange={formik.handleChange}
             name='email'
             placeholder={'Enter your e-mail'}
-            autoComplete='false'
+            autoComplete='true'
+            onChange={formik.handleChange}
             error={formik.errors.email}
             value={formik.values.email}
+            touched={formik.touched}
           />
           <button
             className={styles.newsLetterBlock__button}

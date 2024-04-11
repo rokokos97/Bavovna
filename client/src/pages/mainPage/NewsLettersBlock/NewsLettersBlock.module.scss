@@ -1,90 +1,135 @@
 @import '../../../styles/variables.module';
-.newsLetterBlock__messageLine {
+.newsLettersBlock {
+  width: 100%;
+  height: 44.3rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  row-gap: 5.6rem;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  background-color: $accent-a-3;
-  color: $white;
- @include menu-2();
-  .newsLetterBlock__closeButton {
-    background-color: transparent;
-    position: relative;
-    left: 5rem;
-    svg {
-      path {
-        stroke: $white;
+  background-image: url('../../../../public/img/images/NewsLetter/newsletterBlock.webp');
+
+  .newsLetterBlock__messageLine {
+    width: 100%;
+    height: 4.4rem;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-a-3;
+    color: $white;
+    @include menu-2();
+    .newsLettersBlock__message {
+      width: 58.4rem;
+      text-align: center;
+      align-items: center;
+    }
+    .newsLetterBlock__closeButton {
+      width: 3.2rem;
+      display: flex;
+      background-color: transparent;
+      position: relative;
+      left: 30rem;
+      svg {
+        align-self: center;
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+  .newsLettersBlock_form {
+    display: flex;
+    flex-direction: column;
+    width: 70.8rem;
+    align-items: center;
+    gap: 2.4rem;
+  }
+  .newsLetterBlock__title2 {
+    @include headline-2();
+  }
+  .content {
+    max-width: 51.8rem;
+    width: 100%;
+    text-align: center;
+   @include headline-10();
+  }
+  .newsLetterBlock__inputSection {
+    display: flex;
+    max-width: 63rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+  }
+  .newsLetterBlock__button {
+    @include button($large);
+    @include buttonBlack();
+    width: 100%;
+  }
+  .newsLetterBlock__messageError {
+    background-color: $error;
+  }
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .newsLettersBlock {
+    height: 32.6rem;
+    row-gap: 1.9rem;
+    background-image: url('../../../../public/img/images/NewsLetter/tabletNewsletterBlock.webp');
+
+    .newsLetterBlock__messageLine {
+      height: 2.4rem;
+
+      .newsLetterBlock__closeButton {
+        width: 2.4rem;
+        left: 2.87rem;
+      }
+
+      .newsLettersBlock_form {
+        max-width: 46.5rem;
+        height: 24.4rem;
+        padding: 0;
       }
     }
   }
 }
-.newsLettersBlock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 44.3rem;
-  padding: 0 4rem;
-  background-image: url('../../../../public/img/images/NewsLetter/newsletterBlock.webp');
-}
-.newsLettersBlock_form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  gap: 2.4rem;
-}
-.newsLetterBlock__title2 {
-  @include headline-2();
-}
-.content {
-  max-width: 51.8rem;
-  width: 100%;
-  text-align: center;
- @include headline-10();
-}
-.newsLetterBlock__inputSection {
-  display: flex;
-  max-width: 63rem;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.4rem;
-}
-.newsLetterBlock__button {
-  @include button($large);
-  @include buttonBlack();
-  width: 100%;
-}
-.newsLetterBlock__messageError {
-  background-color: $error;
-}
-@media (min-width: 581px) and (max-width: 768px) {
-  .newsLettersBlock {
-    width: 100%;
-    height: 32.6rem;
-    padding: 3.6rem 3.2rem;
-    background-image: url('../../../../public/img/images/NewsLetter/tabletNewsletterBlock.webp');
-  }
-  .newsLettersBlock_form {
-    max-width: 46.5rem;
-    height: 24.4rem;
-    padding: 0;
-  }
-}
 @media (max-width: 580px) {
   .newsLettersBlock {
-    padding: 1.6rem;
-  }
-  .newsLetterBlock__title2 {
-    @include tablet-headline-2();
-    font-weight: 500;
-  }
-  .newsLetterBlock__button {
-    height: 4.8rem;
-    padding: 1.2rem;
-    span {
-      @include button-s();
+    height: 36rem;
+    row-gap: 0;
+    background-image: none;
+
+    .newsLetterBlock__messageLine {
+      height: 2.6rem;
+      padding: 1.6rem 0.8rem;
+      justify-content: space-between;
+      .newsLettersBlock__message {
+        width: 25.3rem;
+        text-align: start;
+        @include menu-3();
+      }
+
+      .newsLetterBlock__closeButton {
+        background-color: transparent;
+        width: 2.4rem;
+        position: unset;
+      }
+    }
+    .newsLettersBlock_form {
+      width: 33rem;
+
+      .newsLetterBlock__title2 {
+        @include tablet-headline-2();
+        font-weight: 500;
+      }
+      .newsLetterBlock__button {
+        height: 4.8rem;
+        padding: 1.2rem;
+        span {
+          @include button-s();
+        }
+      }
     }
   }
 }
