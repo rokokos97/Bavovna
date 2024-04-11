@@ -48,5 +48,17 @@
 @media (max-width: 580px) {
  .userPage {
   max-width: 32.8rem;
+   .userPage__navigation {
+     .userPage__navigationHome {
+       @include headline-9();
+       svg {
+         display: block;
+         transform: rotate(-90deg);
+       };
+     }
+     .userPage__navigationAccount {
+       display: none;
+     }
+   }
  }
 }

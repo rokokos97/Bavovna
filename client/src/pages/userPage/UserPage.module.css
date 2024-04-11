@@ -51,6 +51,19 @@
   .userPage {
     max-width: 32.8rem;
   }
+  .userPage .userPage__navigation .userPage__navigationHome {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+  .userPage .userPage__navigation .userPage__navigationHome svg {
+    display: block;
+    transform: rotate(-90deg);
+  }
+  .userPage .userPage__navigation .userPage__navigationAccount {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=UserPage.module.css.map */
