@@ -120,9 +120,6 @@
   text-decoration: line-through;
   color: #727272;
 }
-.itemPreviewCard__description .itemPreviewCard__discount span:last-child {
-  color: #ea001b;
-}
 
 @media (min-width: 581px) and (max-width: 1000px) {
   .itemPreviewCard {
