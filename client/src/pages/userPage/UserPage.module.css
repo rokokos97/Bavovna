@@ -1,6 +1,7 @@
 .userPage {
   min-height: 100vh;
   max-width: 128rem;
+  padding-inline: 3.2rem;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -8,8 +9,8 @@
 .userPage .userPage__navigation {
   display: flex;
   flex-direction: row;
-  margin-top: 2.4rem;
-  margin-bottom: 2.4rem;
+  margin-top: 3.2rem;
+  margin-bottom: 4rem;
   text-align: start;
   font-weight: 400;
   font-size: 16px;
@@ -32,19 +33,6 @@
 @media (min-width: 581px) and (max-width: 768px) {
   .userPage {
     max-width: 76.8rem;
-  }
-  .userPage .userPage__navigation .userPage__navigationHome {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 110%;
-    text-transform: uppercase;
-  }
-  .userPage .userPage__navigation .userPage__navigationHome svg {
-    display: block;
-    transform: rotate(-90deg);
-  }
-  .userPage .userPage__navigation .userPage__navigationAccount {
-    display: none;
   }
 }
 @media (max-width: 580px) {

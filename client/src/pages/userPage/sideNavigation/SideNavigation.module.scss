@@ -5,26 +5,42 @@
   justify-content: space-between;
 
   .navigationBlock__sidebar {
-    width: 25.3rem;
+    width: 22.3rem;
     display: flex;
     flex-direction: column;
-    row-gap: 2.4rem;
+    row-gap: $xl-spacing;
 
     .navigationBlock__title {
       width: 100%;
       @include headline_3();
-      padding: 0 1.6rem 0;
+      padding: 0 $l-spacing 0;
     }
     .navigationBlock__list {
       display: flex;
       flex-direction: column;
-      row-gap: 0.8rem;
-      li {
+      row-gap: $s-spacing;
+      .navigationBlock__button {
         width: 100%;
         cursor: pointer;
-        padding: 1.2rem 1.6rem;
-        text-align: start;
+        padding: $m-spacing $l-spacing;
         @include headline-4();
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        .navigationBlock__chevron {
+          width: 3.2rem;
+          height: 3.2rem;
+          display: none;
+          align-items: center;
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+        .navigationBlock__exitIcon {
+          display: block;
+        }
         &:hover {
           background-color: $transparent-30-a-05;
         }
@@ -38,8 +54,27 @@
   }
 }
 @media (min-width: 581px) and (max-width: 768px) {
-
+  .navigationBlock {
+    max-width: 76.8rem;
+    .navigationBlock__sidebar {
+      width: 25rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: $xl-spacing;
+      .navigationBlock__button {
+        @include headline-8();
+      }
+    }
+    .navigationBlock__navigationContentSide {
+      width: 43.1rem;
+    }
+  }
 }
 @media (max-width: 580px) {
-
+  .navigationBlock {
+    max-width: 32.8rem;
+    .navigationBlock__navigationContentSide {
+      display: none;
+    }
+  }
 }

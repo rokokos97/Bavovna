@@ -36,8 +36,7 @@
   flex-direction: row;
   align-items: flex-end;
 }
-
-.checkOutShoppingCartBlock__arrowButton {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton {
   transform: rotate(180deg);
   display: flex;
   flex-direction: row;
@@ -51,8 +50,12 @@
   padding: 1.6rem 2.4rem;
   background: transparent;
   border: none;
+  padding: 0;
+  height: 4.6rem;
+  justify-content: flex-start;
+  align-items: center;
 }
-.checkOutShoppingCartBlock__arrowButton span {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -60,7 +63,7 @@
   text-align: center;
   position: relative;
 }
-.checkOutShoppingCartBlock__arrowButton::before {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -72,7 +75,7 @@
   top: 0.4rem;
   left: 0.8rem;
 }
-.checkOutShoppingCartBlock__arrowButton::after {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -84,7 +87,7 @@
   top: 2.5rem;
   left: 2.9rem;
 }
-.checkOutShoppingCartBlock__arrowButton:hover::before {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:hover::before {
   content: "";
   width: 7.04rem;
   height: 7.04rem;
@@ -93,7 +96,7 @@
   top: -1.12rem;
   left: -1rem;
 }
-.checkOutShoppingCartBlock__arrowButton:active::after {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:active::after {
   content: "";
   width: 7.04rem;
   height: 7.04rem;
@@ -104,55 +107,55 @@
   top: -1.12rem;
   left: -1.1rem;
 }
-.checkOutShoppingCartBlock__arrowButton:focus {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:focus {
   border: 3px solid #5a9b83;
 }
-.checkOutShoppingCartBlock__arrowButton:disabled {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.checkOutShoppingCartBlock__arrowButton:disabled span {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:disabled span {
   color: #9b9b9b;
 }
-.checkOutShoppingCartBlock__arrowButton svg path {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton svg path {
   fill: #000000;
 }
-.checkOutShoppingCartBlock__arrowButton span {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #000000;
 }
-.checkOutShoppingCartBlock__arrowButton:hover svg path {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:hover svg path {
   fill: #3a7f66;
 }
-.checkOutShoppingCartBlock__arrowButton:hover span {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:hover span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #3a7f66;
 }
-.checkOutShoppingCartBlock__arrowButton:focus svg path {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:focus svg path {
   fill: #081e16;
 }
-.checkOutShoppingCartBlock__arrowButton:focus span {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:focus span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #081e16;
 }
-.checkOutShoppingCartBlock__arrowButton:disabled {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:disabled {
   background: transparent;
 }
-.checkOutShoppingCartBlock__arrowButton:disabled svg path {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:disabled svg path {
   fill: #868686;
 }
-.checkOutShoppingCartBlock__arrowButton:disabled span {
+.checkOutShoppingCartBlock__form .checkOutShoppingCartBlock__arrowButton:disabled span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;

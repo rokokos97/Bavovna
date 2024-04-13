@@ -2,7 +2,7 @@
 .radioOption {
   display: flex;
   flex-direction: column;
-  row-gap: $l;
+  row-gap: $l-spacing;
   justify-content: flex-start;
   }
 .radioInput {

@@ -3,8 +3,7 @@
   min-height: 100vh;
   margin-bottom: 17rem;
 }
-
-.completeOrderPage__titleBlock {
+.completeOrderPage .completeOrderPage__titleBlock {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,14 +12,14 @@
   margin-bottom: 4rem;
   border-bottom: #727272 solid 0.1rem;
 }
-.completeOrderPage__titleBlock .completeOrderPage__title {
+.completeOrderPage .completeOrderPage__titleBlock .completeOrderPage__title {
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
   padding-bottom: 1.2rem;
 }
-.completeOrderPage__titleBlock .completeOrderPage__backButton {
+.completeOrderPage .completeOrderPage__titleBlock .completeOrderPage__backButton {
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -31,11 +30,17 @@
   line-height: 140%;
   text-transform: uppercase;
 }
-.completeOrderPage__titleBlock .completeOrderPage__backButton:hover {
+.completeOrderPage .completeOrderPage__titleBlock .completeOrderPage__backButton:hover {
   color: #3a7f66;
 }
-.completeOrderPage__titleBlock .completeOrderPage__backButton:active {
+.completeOrderPage .completeOrderPage__titleBlock .completeOrderPage__backButton:active {
   color: #15503a;
+}
+.completeOrderPage .completeOrderPage__itemsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .completeOrderPage__orderInfoBlock {
@@ -89,6 +94,12 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .completeOrderPage .completeOrderPage__titleBlock {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=CompleteOrderPage.module.css.map */
