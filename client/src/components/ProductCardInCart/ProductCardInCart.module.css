@@ -220,49 +220,66 @@
 
 @media (min-width: 581px) and (max-width: 768px) {
   .productCardInCart[type="2"] {
+    column-gap: 2.4rem;
     width: 43.3rem;
-    margin-bottom: 2.4rem;
   }
   .productCardInCart[type="2"] .productCardInCart__imageBlock {
     width: 16.3rem;
     height: 13.4rem;
   }
   .productCardInCart[type="2"] .productCardInCart__infoBlock {
-    align-self: flex-start;
-    width: 25.4rem;
-    gap: 0.8rem;
+    width: auto;
+    height: auto;
+    padding: 0;
   }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock {
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__price {
-    width: 11.8rem;
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock {
     display: flex;
     flex-direction: column;
+    row-gap: 0.4rem;
+    justify-content: unset;
   }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock {
-    flex-direction: column;
-    gap: 0.8rem;
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__name {
+    height: auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
   }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block {
-    flex-direction: column;
-    row-gap: 0.8rem;
-    align-items: start;
-  }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__sizeBlock {
-    align-items: start;
-  }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__colorBlock {
-    width: fit-content;
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__price {
+    width: 19rem;
     justify-content: flex-start;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
   }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock {
-    width: fit-content;
-    margin-left: 0;
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
   }
-  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__priceSizeColorQuantityBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__block .productCardInCart__quantityBlock .productCardInCart__quantity .productCardInCart__button {
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount span:first-child {
+    display: none;
+  }
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount span:last-child {
+    color: #000000;
+  }
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock {
+    width: 23.3rem;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    justify-content: unset;
+    align-items: unset;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+  .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__quantityBlock .productCardInCart__quantity .productCardInCart__button {
     display: none;
   }
   .productCardInCart[type="2"] .productCardInCart__buttonBlock {
