@@ -29,3 +29,18 @@
   @include button(19rem);
   @include buttonBlack();
 }
+@media (max-width: 36rem) {
+  .modalCookies {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+  .modalCookies__content {
+    @include body-3();
+    text-align: start;
+  }
+  .modalCookies__button {
+    @include button-mobile(19rem);
+    @include buttonBlack();
+  }
+}

@@ -13,7 +13,6 @@ const TextField = ({label, name, type, value, onChange, onBlur, touched, error, 
   const clearInput = () => {
     onChange({target: {value: '', name: name}});
   };
-  console.log('touched', touched, 'error', error);
   return (
     <div className={`${styles.textField} ${(error && touched)? styles.hasError: ''}`} data-testid="TextField">
       <label
@@ -58,7 +57,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, touched, error, 
         )}
       </div>
       {(error && touched) ? (
-          <div className={styles.error}>{error}</div>
+          <p className={styles.error}>{error}</p>
         ) : null}
     </div>
   );
@@ -73,7 +72,7 @@ TextField.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   onBlur: PropTypes.func,
-  touched: PropTypes.bool,
+  touched: PropTypes.object,
   error: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,

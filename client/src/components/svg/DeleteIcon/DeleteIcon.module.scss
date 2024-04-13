@@ -1,0 +1,33 @@
+@import '../../../styles/variables.module';
+.deleteIcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    &:hover {
+      svg {
+        path {
+          stroke: $accent-a-3
+        }
+      }
+    }
+    &:active {
+      svg {
+        path {
+          stroke: $accent-a-5
+        }
+      }
+    }
+    &:focus {
+      border: 1px solid $accent-a-3;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      svg {
+        path {
+          stroke: $transparent70-gray10
+        }
+      }
+    }
+}

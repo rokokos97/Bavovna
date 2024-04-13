@@ -1,0 +1,11 @@
+.chevronUp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.chevronUp svg {
+  align-items: center;
+}
+
+/*# sourceMappingURL=ChevronUp.module.css.map */

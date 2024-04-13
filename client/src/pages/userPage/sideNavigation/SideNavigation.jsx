@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SideNavigation.module.scss';
 import ExitString from '../../../components/ExitString/ExitString';
-import {Route, Routes, useNavigate} from 'react-router-dom';
+import {Link, Route, Routes} from 'react-router-dom';
 import OrdersBlock from './OrdersBlock/OrdersBlock';
 import WishListBlock from './WishListBlock/WishListBlock';
 import Page404 from '../../Page404/Page404';
@@ -9,29 +9,26 @@ import UserPersonalDataBlock from './userPersonalDataBlock/UserPersonalDataBlock
 import CompleteOrderPage from '../../CompleteOrderPage/CompleteOrderPage';
 
 const SideNavigation = () => {
-  const navigate = useNavigate();
   return (
-    <div className={styles.navigationBlock} data-testid="SideNavigation">
-      <div className={styles.navigationBlock__sidebar}>
-        <p className={styles.navigationBlock__navigation}>Home / My account</p>
-        <p className={styles.navigationBlock__title}>my account</p>
+    <section className={styles.navigationBlock} data-testid="SideNavigation">
+      <nav className={styles.navigationBlock__sidebar}>
+        <h2 className={styles.navigationBlock__title}>my account</h2>
         <ul className={styles.navigationBlock__list}>
-          <li onClick={()=>{
-            navigate('');
-          }}>orders</li>
-          <li
-            onClick={()=>{
-              navigate(`wishList`);
-            }}
-          >wish list</li>
-          <li
-            onClick={()=>{
-              navigate('personalData');
-            }}
-          >personal data</li>
+          <li>
+            <Link to={''}>orders</Link>
+          </li>
+          <li>
+            <Link to={'wishList'}>wish list</Link>
+          </li>
+          <li>
+            <Link
+              to={'personalData'}>
+            personal data
+            </Link>
+          </li>
           <li><ExitString/></li>
         </ul>
-      </div>
+      </nav>
       <div className={styles.navigationBlock__navigationContentSide}>
         <Routes>
           <Route index element={<OrdersBlock/>}/>
@@ -41,7 +38,7 @@ const SideNavigation = () => {
           <Route path="*" element={<Page404/>}/>
         </Routes>
       </div>
-    </div>
+    </section>
   );
 };
 

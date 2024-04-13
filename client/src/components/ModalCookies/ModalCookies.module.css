@@ -127,4 +127,114 @@
   border: 1px solid #5a9b83;
 }
 
+@media (max-width: 36rem) {
+  .modalCookies {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+  .modalCookies__content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: start;
+  }
+  .modalCookies__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+    background: #000000;
+  }
+  .modalCookies__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .modalCookies__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .modalCookies__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .modalCookies__button:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .modalCookies__button:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .modalCookies__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .modalCookies__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .modalCookies__button:disabled span {
+    color: #9b9b9b;
+  }
+  .modalCookies__button span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .modalCookies__button::before {
+    background: #5a9b83;
+  }
+  .modalCookies__button::after {
+    background: #1a6449;
+  }
+  .modalCookies__button:hover::before {
+    background: #5a9b83;
+  }
+  .modalCookies__button:active::after {
+    border: 1px solid #5a9b83;
+  }
+}
+
 /*# sourceMappingURL=ModalCookies.module.css.map */

@@ -1,4 +1,4 @@
-.ModalError {
+.modalError {
   width: 49.9rem;
   display: flex;
   flex-direction: column;
@@ -14,21 +14,33 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
 }
 
-.container {
+.modalError__container {
   display: flex;
   justify-content: space-between;
 }
 
-.content {
+.modalError__titleBlock {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  align-items: center;
+  color: #ea001b;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.modalError__closeButton {
+  background: inherit;
+}
+
+.modalError__content {
   width: 43.6rem;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   text-align: start;
-}
-
-.newsLetterBlock__closeButton {
-  background: inherit;
 }
 
 .newCollectionBlock__button {
@@ -128,16 +140,30 @@
   border: 1px solid #5a9b83;
 }
 
-.registerForm__titleBlock {
-  display: flex;
-  flex-direction: row;
-  column-gap: 1rem;
-  align-items: center;
-  color: #ea001b;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 110%;
-  text-transform: uppercase;
+@media (max-width: 36rem) {
+  .modalError {
+    width: 100%;
+    padding-inline: 1.6rem;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+  .modalError__closeButton {
+    background: inherit;
+  }
+  .modalError__closeButton svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .modalError__content {
+    width: 100%;
+  }
+  .modalError__titleBlock {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
 }
 
 /*# sourceMappingURL=ModalError.module.css.map */
