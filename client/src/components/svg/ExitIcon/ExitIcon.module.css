@@ -1,0 +1,12 @@
+.exitIcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exitIcon svg {
+  align-items: center;
+}
+
+/*# sourceMappingURL=ExitIcon.module.css.map */

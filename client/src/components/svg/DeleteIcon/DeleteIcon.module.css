@@ -1,0 +1,24 @@
+.deleteIcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.deleteIcon:hover svg path {
+  stroke: #5a9b83;
+}
+.deleteIcon:active svg path {
+  stroke: #1a6449;
+}
+.deleteIcon:focus {
+  border: 1px solid #5a9b83;
+}
+.deleteIcon:disabled {
+  cursor: not-allowed;
+}
+.deleteIcon:disabled svg path {
+  stroke: rgba(74, 74, 74, 0.7);
+}
+
+/*# sourceMappingURL=DeleteIcon.module.css.map */
