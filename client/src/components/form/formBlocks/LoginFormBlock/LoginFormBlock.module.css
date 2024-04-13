@@ -561,7 +561,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 1.6rem 2.4rem;
+    padding: 1.2rem 1.2rem;
   }
   .loginFormBlock .loginFormBlock__button span {
     font-weight: 600;
