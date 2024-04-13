@@ -30,7 +30,7 @@ const CompleteOrderPage = () => {
           </span>
         </button>
       </div>
-      <div>
+      <div className={styles.completeOrderPage__itemsList}>
         {currentOrder.items.map((item) =>(<ProductCardInCart key={item._id} item={item} type='2'/>))}
       </div>
       <div className={styles.completeOrderPage__orderInfoBlock}>

@@ -1,22 +1,73 @@
 @import '../../styles/variables.module.scss';
 .ordersList {
   width: 84.3rem;
- @include headline-9();
-}
-.table {
-  border-collapse: collapse;
-  text-align: left;
-  width: 100%;
-  th {
-    width: 18%;
-    padding-bottom: 1.8rem;
-    border-bottom: 1px solid $gray-30;
-    &:last-child {
-      width: 5%;
+  @include headline-9();
+  .orderList__table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    th {
+      width: 18%;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid $gray-30;
+      &:last-child {
+        width: 5%;
+      }
+    }
+    td {
+      padding: 2.4rem 0;
+      border-bottom: 1px solid $gray-30;
+      .orderList__table_tbody_title {
+        display: none;
+      }
+      .orderList__table_tbody_chevronMob {
+        display: none;
+      }
     }
   }
-  td {
-    padding: 2.4rem 0;
-    border-bottom: 1px solid $gray-30;
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .ordersList {
+    width: 100%;
+    .orderList__table {
+      .orderList__table_thead {
+        display: none;
+      }
+      .orderList__table_tbody {
+        display: flex;
+        flex-direction: column;
+        row-gap: $xl-spacing;
+        .orderList__table_tbody_tr {
+          border-bottom: 1px solid $gray-30;
+          padding-bottom: $xl-spacing;
+          display: flex;
+          flex-direction: column;
+          row-gap: $m-spacing;
+
+          td {
+            display: flex;
+            flex-direction: row;
+            column-gap: $s-spacing;
+            align-items: center;
+            border-bottom: none;
+            padding: 0;
+            .orderList__table_tbody_title {
+              display: inline;
+              @include tablet-headline-3();
+            }
+            .orderList__table_tbody_chevronMob {
+              display: flex;
+              margin-left: auto;
+              svg {
+                transform: rotate(-90deg);
+              }
+            }
+          }
+          .orderList__table_tbody_chevron {
+              display: none;
+          }
+        }
+      }
+    }
   }
 }

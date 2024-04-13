@@ -9,8 +9,8 @@ const OrdersList = () => {
   const user = useSelector(getUser);
   return user && (
     <div className={styles.ordersList} data-testid="OrdersList">
-      <table className={styles.table}>
-        <thead>
+      <table className={styles.orderList__table}>
+        <thead className={styles.orderList__table_thead}>
           <tr>
             <th>ORDER</th>
             <th>DATUM</th>
@@ -20,20 +20,33 @@ const OrdersList = () => {
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.orderList__table_tbody}>
           {user.orders.map((order)=>
-            <tr key={order._id} >
-              <td>{`#${order._id}`}</td>
-              <td>{order.date}</td>
-              <td>{order.paymentStatus}</td>
-              <td>{order.deliveryStatus}</td>
-              <td>{`$ ${order.orderAmount}`}</td>
+            <tr
+              className={styles.orderList__table_tbody_tr}
+              key={order._id} >
               <td>
+                <span className={styles.orderList__table_tbody_title}>
+                  order
+                </span>
+                {`#${order._id}`}
+                <Link
+                  className={styles.orderList__table_tbody_chevronMob}
+                  to={`order/${order._id}`}>
+                  {<ChevronDown/>}
+                </Link>
+              </td>
+              <td><span className={styles.orderList__table_tbody_title}>datum</span>{order.date}</td>
+              <td><span className={styles.orderList__table_tbody_title}>payment status</span>{order.paymentStatus}</td>
+              <td><span className={styles.orderList__table_tbody_title}>shipping status</span>{order.deliveryStatus}</td>
+              <td><span className={styles.orderList__table_tbody_title}>total</span>{`$ ${order.orderAmount}`}</td>
+              <td className={styles.orderList__table_tbody_chevron}>
                 <Link to={`order/${order._id}`}>
                   {<ChevronDown/>}
                 </Link>
               </td>
-            </tr>)}
+            </tr>,
+          )}
         </tbody>
       </table>
     </div>

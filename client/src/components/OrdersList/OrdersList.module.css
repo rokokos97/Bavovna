@@ -5,23 +5,74 @@
   line-height: 110%;
   text-transform: uppercase;
 }
-
-.table {
+.ordersList .orderList__table {
   border-collapse: collapse;
   text-align: left;
   width: 100%;
 }
-.table th {
+.ordersList .orderList__table th {
   width: 18%;
   padding-bottom: 1.8rem;
   border-bottom: 1px solid #727272;
 }
-.table th:last-child {
+.ordersList .orderList__table th:last-child {
   width: 5%;
 }
-.table td {
+.ordersList .orderList__table td {
   padding: 2.4rem 0;
   border-bottom: 1px solid #727272;
+}
+.ordersList .orderList__table td .orderList__table_tbody_title {
+  display: none;
+}
+.ordersList .orderList__table td .orderList__table_tbody_chevronMob {
+  display: none;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .ordersList {
+    width: 100%;
+  }
+  .ordersList .orderList__table .orderList__table_thead {
+    display: none;
+  }
+  .ordersList .orderList__table .orderList__table_tbody {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr {
+    border-bottom: 1px solid #727272;
+    padding-bottom: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.8rem;
+    align-items: center;
+    border-bottom: none;
+    padding: 0;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_title {
+    display: inline;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_chevronMob {
+    display: flex;
+    margin-left: auto;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_chevronMob svg {
+    transform: rotate(-90deg);
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr .orderList__table_tbody_chevron {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=OrdersList.module.css.map */

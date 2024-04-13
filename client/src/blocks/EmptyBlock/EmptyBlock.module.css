@@ -3,15 +3,13 @@
   flex-direction: column;
   gap: 2.4rem;
 }
-
-.emptyBlock__description {
+.emptyBlock .emptyBlock__description {
   text-align: start;
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
 }
-
-.emptyBlock__button {
+.emptyBlock .emptyBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -24,7 +22,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.emptyBlock__button span {
+.emptyBlock .emptyBlock__button span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -32,7 +30,7 @@
   text-align: center;
   position: relative;
 }
-.emptyBlock__button::before {
+.emptyBlock .emptyBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -44,7 +42,7 @@
   top: 0.4rem;
   left: 8.9rem;
 }
-.emptyBlock__button::after {
+.emptyBlock .emptyBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -56,7 +54,7 @@
   top: 2.5rem;
   left: 11rem;
 }
-.emptyBlock__button:hover::before {
+.emptyBlock .emptyBlock__button:hover::before {
   content: "";
   width: 24.86rem;
   height: 24.86rem;
@@ -65,7 +63,7 @@
   top: -10.03rem;
   left: -1rem;
 }
-.emptyBlock__button:active::after {
+.emptyBlock .emptyBlock__button:active::after {
   content: "";
   width: 24.86rem;
   height: 24.86rem;
@@ -76,36 +74,147 @@
   top: -10.03rem;
   left: -1.1rem;
 }
-.emptyBlock__button:focus {
+.emptyBlock .emptyBlock__button:focus {
   border: 3px solid #5a9b83;
 }
-.emptyBlock__button:disabled {
+.emptyBlock .emptyBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.emptyBlock__button:disabled span {
+.emptyBlock .emptyBlock__button:disabled span {
   color: #9b9b9b;
 }
-.emptyBlock__button span {
+.emptyBlock .emptyBlock__button span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.emptyBlock__button::before {
+.emptyBlock .emptyBlock__button::before {
   background: #5a9b83;
 }
-.emptyBlock__button::after {
+.emptyBlock .emptyBlock__button::after {
   background: #1a6449;
 }
-.emptyBlock__button:hover::before {
+.emptyBlock .emptyBlock__button:hover::before {
   background: #5a9b83;
 }
-.emptyBlock__button:active::after {
+.emptyBlock .emptyBlock__button:active::after {
   border: 1px solid #5a9b83;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .emptyBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .emptyBlock .emptyBlock__description {
+    text-align: start;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .emptyBlock .emptyBlock__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 22.6rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+    background: #000000;
+  }
+  .emptyBlock .emptyBlock__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .emptyBlock .emptyBlock__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 8.9rem;
+  }
+  .emptyBlock .emptyBlock__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 11rem;
+  }
+  .emptyBlock .emptyBlock__button:hover::before {
+    content: "";
+    width: 24.86rem;
+    height: 24.86rem;
+    opacity: 1;
+    position: absolute;
+    top: -10.03rem;
+    left: -1rem;
+  }
+  .emptyBlock .emptyBlock__button:active::after {
+    content: "";
+    width: 24.86rem;
+    height: 24.86rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -10.03rem;
+    left: -1.1rem;
+  }
+  .emptyBlock .emptyBlock__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .emptyBlock .emptyBlock__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .emptyBlock .emptyBlock__button:disabled span {
+    color: #9b9b9b;
+  }
+  .emptyBlock .emptyBlock__button span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .emptyBlock .emptyBlock__button::before {
+    background: #5a9b83;
+  }
+  .emptyBlock .emptyBlock__button::after {
+    background: #1a6449;
+  }
+  .emptyBlock .emptyBlock__button:hover::before {
+    background: #5a9b83;
+  }
+  .emptyBlock .emptyBlock__button:active::after {
+    border: 1px solid #5a9b83;
+  }
 }
 
 /*# sourceMappingURL=EmptyBlock.module.css.map */

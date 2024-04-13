@@ -3,12 +3,28 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  .emptyBlock__description {
+    text-align: start;
+   @include body-2();
+  }
+  .emptyBlock__button {
+    @include button(22.6rem);
+    @include buttonBlack();
+  }
 }
-.emptyBlock__description {
-  text-align: start;
- @include body-2();
-}
-.emptyBlock__button {
-  @include button(22.6rem);
-  @include buttonBlack();
+@media (min-width: 581px) and (max-width: 768px) {
+  .emptyBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $xl-spacing;
+    .emptyBlock__description {
+      text-align: start;
+      @include body-3();
+    }
+    .emptyBlock__button {
+      @include button-mobile(22.6rem);
+      @include buttonBlack();
+    }
+  }
 }
