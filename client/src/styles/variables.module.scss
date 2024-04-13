@@ -75,10 +75,22 @@ $transparent-30: rgba(169, 223, 203, 0.3);
   line-height: 120%;
   text-transform: uppercase;
 }
+@mixin tablet-headline-4() {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
 @mixin headline-5() {
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
+  text-transform: uppercase;
+}
+@mixin tablet-headline-5() {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
   text-transform: uppercase;
 }
 @mixin headline-6() {
