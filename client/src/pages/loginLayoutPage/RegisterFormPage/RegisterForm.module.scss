@@ -2,6 +2,13 @@
 .registerForm {
   width: 100%;
   @include form();
+
+}
+.registerFormBlock__link {
+  a {
+    @include link-2();
+    color: #ea001b;
+  }
 }
 .registerForm__titleBlock {
   @include form-title-block();
