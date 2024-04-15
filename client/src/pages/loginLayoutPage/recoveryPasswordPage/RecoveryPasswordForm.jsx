@@ -105,14 +105,15 @@ const RecoveryPasswordForm = () => {
         </button>
       </form>
       <p>
-        Do you remember your password?{'  '}
-        <NavLink
-          to="/signIn"
-          role="button"
-        >
-          {' '}
-          <span>Back to sign in</span>
-        </NavLink>
+        Do you remember your password?
+        <span>
+          <NavLink
+            to="/signIn"
+            role="button"
+          >
+            &nbsp;Back to sign in
+          </NavLink>
+        </span>
       </p>
     </div>
   );
