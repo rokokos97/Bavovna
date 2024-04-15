@@ -175,7 +175,7 @@
     height: 10rem;
   }
   .productCardInCart__infoBlock {
-    width: 63.5rem;
+    width: 63rem;
     height: 10rem;
     .productCardInCart__namePriceBlock {
       display: flex;
@@ -215,56 +215,67 @@
 }
 @media (min-width: 581px) and (max-width: 768px) {
   .productCardInCart[type='2'] {
+    column-gap: $xl-spacing;
     width: 43.3rem;
-    margin-bottom: 2.4rem;
     .productCardInCart__imageBlock {
       width: 16.3rem;
       height: 13.4rem;
     }
-    .productCardInCart__infoBlock {
-      align-self: flex-start;
-      width: 25.4rem;
-      gap: $s-spacing;
-      .productCardInCart__priceSizeColorQuantityBlock {
-        width: 100%;
-        flex-direction: column;
-        justify-content: space-between;
-        .productCardInCart__price {
-          width: 11.8rem;
-          display: flex;
-          flex-direction: column;
-        }
-        .productCardInCart__sizeColorQuantityBlock {
-          flex-direction: column;
-          gap: $s-spacing;
-          .productCardInCart__block {
-            flex-direction: column;
-            row-gap: $s-spacing;
-            align-items: start;
-            .productCardInCart__sizeBlock {
-              align-items: start;
-            }
-            .productCardInCart__fakeDiv {
 
-              //display: none;
-            }
-            .productCardInCart__colorBlock {
-              width: fit-content;
-              justify-content: flex-start;
-            }
-            .productCardInCart__quantityBlock {
-              width: fit-content;
-              margin-left: 0;
-              .productCardInCart__quantity {
-                .productCardInCart__button {
-                  display: none;
-                }
-              }
+    .productCardInCart__infoBlock {
+      width: auto;
+      height: auto;
+      padding: 0;
+
+      .productCardInCart__namePriceBlock {
+        display: flex;
+        flex-direction: column;
+        row-gap: $xs-spacing;
+        justify-content: unset;
+        .productCardInCart__name {
+          height: auto;
+          @include tablet-headline-5();
+        }
+        .productCardInCart__price {
+          width: 19rem;
+          justify-content: flex-start;
+          @include tablet-headline-4();
+        }
+
+        .productCardInCart__discount {
+          display: flex;
+          flex-direction: row;
+          gap: 1.6rem;
+          @include tablet-headline-4();
+
+          span:first-child {
+            display: none;
+          }
+
+          span:last-child {
+            color: $black;
+          }
+        }
+      }
+
+      .productCardInCart__sizeColorQuantityBlock {
+        width: 23.3rem;
+        flex-direction: column;
+        row-gap: $xs-spacing;
+        justify-content: unset;
+        align-items: unset;
+        @include tablet-headline-5();
+
+        .productCardInCart__quantityBlock {
+          .productCardInCart__quantity {
+            .productCardInCart__button {
+              display: none;
             }
           }
         }
       }
     }
+
     .productCardInCart__buttonBlock {
       display: none;
     }

@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: column;
 }
-
-.userDataForm__title {
+.userDataForm .userDataForm__title {
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
@@ -12,77 +11,37 @@
   text-align: start;
   padding-bottom: 2.4rem;
 }
-
-.userDataForm__responseMessage {
+.userDataForm .userDataForm__responseMessage {
   width: 51.5rem;
   margin-bottom: 2.4rem;
   display: flex;
   align-self: stretch;
   background: #a9dfcb;
 }
-.userDataForm__responseMessage p {
+.userDataForm .userDataForm__responseMessage p {
   width: 100%;
   text-align: start;
   padding: 1.2rem;
   color: #2ab66a;
 }
-
-.userDataForm__userPersonalDataForm {
+.userDataForm .userDataForm__userPersonalDataForm {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
-
-.userDataForm__submitWrapper {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__submitWrapper {
   width: 62.4rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
-
-.userDataForm__column {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__submitWrapper .userDataForm__column {
   width: 51.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
 }
-
-.userDataForm__deliveryForm {
-  margin-top: 3.5rem;
-  display: flex;
-  flex-direction: column;
-  column-gap: 2.4rem;
-}
-
-.userDataForm__deliveryTitle {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 110%;
-  text-transform: uppercase;
-  text-align: start;
-  margin-bottom: 2.4rem;
-}
-
-.userDataForm__deliveryBlock {
-  display: flex;
-  column-gap: 2.4rem;
-}
-
-.userDataForm__deliveryBlockColumn {
-  display: flex;
-  width: 30rem;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.userDataForm__deliveryBlockColumn .userDataForm__blockLabel {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 120%;
-  text-transform: uppercase;
-  margin-bottom: 1.8rem;
-}
-
-.userDataForm__button {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -95,7 +54,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.userDataForm__button span {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -103,7 +62,7 @@
   text-align: center;
   position: relative;
 }
-.userDataForm__button::before {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -115,7 +74,7 @@
   top: 0.4rem;
   left: 9.6rem;
 }
-.userDataForm__button::after {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -127,7 +86,7 @@
   top: 2.5rem;
   left: 11.7rem;
 }
-.userDataForm__button:hover::before {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:hover::before {
   content: "";
   width: 26.4rem;
   height: 26.4rem;
@@ -136,7 +95,7 @@
   top: -10.8rem;
   left: -1rem;
 }
-.userDataForm__button:active::after {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:active::after {
   content: "";
   width: 26.4rem;
   height: 26.4rem;
@@ -147,36 +106,145 @@
   top: -10.8rem;
   left: -1.1rem;
 }
-.userDataForm__button:focus {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:focus {
   border: 3px solid #5a9b83;
 }
-.userDataForm__button:disabled {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.userDataForm__button:disabled span {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:disabled span {
   color: #9b9b9b;
 }
-.userDataForm__button span {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.userDataForm__button::before {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button::before {
   background: #5a9b83;
 }
-.userDataForm__button::after {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button::after {
   background: #1a6449;
 }
-.userDataForm__button:hover::before {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:hover::before {
   background: #5a9b83;
 }
-.userDataForm__button:active::after {
+.userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:active::after {
   border: 1px solid #5a9b83;
+}
+
+@media (min-width: 581px) and (max-width: 768px) {
+  .userDataForm {
+    width: 43.1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .userDataForm .userDataForm__title {
+    display: none;
+  }
+  .userDataForm .userDataForm__responseMessage {
+    width: 43.1rem;
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-self: stretch;
+    background: #a9dfcb;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+  .userDataForm .userDataForm__responseMessage p {
+    width: 100%;
+    text-align: start;
+    padding: 1.2rem;
+    color: #2ab66a;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__submitWrapper {
+    width: 43.1rem;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__submitWrapper .userDataForm__column {
+    width: 100%;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 18rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 6.6rem;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 8.7rem;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:hover::before {
+    content: "";
+    width: 19.8rem;
+    height: 19.8rem;
+    opacity: 1;
+    position: absolute;
+    top: -7.5rem;
+    left: -1rem;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:active::after {
+    content: "";
+    width: 19.8rem;
+    height: 19.8rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -7.5rem;
+    left: -1.1rem;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .userDataForm .userDataForm__userPersonalDataForm .userDataForm__button:disabled span {
+    color: #9b9b9b;
+  }
 }
 
 /*# sourceMappingURL=UserDataForm.module.css.map */

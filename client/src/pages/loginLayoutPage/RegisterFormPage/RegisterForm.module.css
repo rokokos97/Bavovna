@@ -15,6 +15,13 @@
   line-height: 110%;
 }
 
+.registerFormBlock__link a {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 110%;
+  color: #ea001b;
+}
+
 .registerForm__titleBlock {
   display: flex;
   flex-direction: column;

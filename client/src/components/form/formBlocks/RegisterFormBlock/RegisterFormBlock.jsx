@@ -7,6 +7,7 @@ import {useSelector} from 'react-redux';
 import {getUserLoadingStatus} from '../../../../store/userSlice';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
+import {NavLink} from 'react-router-dom';
 
 const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSignUp}) => {
   const isLoading = useSelector(getUserLoadingStatus);
@@ -74,7 +75,15 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           error={formik.errors.license}
         >
-          I agree to the terms and conditions of use.
+          <p>
+            I agree to the&nbsp;
+            <span>
+              <NavLink
+                to={'/help/faq'}>
+                  Terms and conditions of use.
+              </NavLink>
+            </span>
+          </p>
         </CheckboxField>
         <button
           type='submit'
