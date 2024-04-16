@@ -55,8 +55,8 @@ const ResetPasswordForm = () => {
       <div
         className={styles.resetPasswordForm__titleBlock}
       >
-        <p className={styles.resetPasswordForm__title}>Reset PASSWORD</p>
-        <p>Please enter a new password:</p>
+        <p>Reset password</p>
+        <span>Please enter a new password:</span>
       </div>
       {response ?
         <div className={(response.code !== 200) ? styles.resetPasswordForm__errorMessagesBlock : styles.resetPasswordForm__successMessagesBlock}>
