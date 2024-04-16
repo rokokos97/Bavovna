@@ -21,7 +21,7 @@ const RegisterForm = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [isRegularSignUp, setIsRegularSignUp] = useState(false);
   const [isGoogleSignUp, setIsGoogleSignUp] = useState(false);
-  const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
+  const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(true);
   const [email, setEmail] = useState(null);
   const formik = useFormik({
     initialValues: {
