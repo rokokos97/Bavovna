@@ -3,18 +3,21 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: $xl-spacing;
   .ordersBlock__title {
     @include headline-2();
     text-align: start;
   }
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 1120px) {
   .ordersBlock {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: $xl-spacing;
+    .ordersBlock__title {
+      display: none
+    }
+  }
+}
+@media (max-width: 599px) {
+  .ordersBlock {
     .ordersBlock__title {
       display: none
     }

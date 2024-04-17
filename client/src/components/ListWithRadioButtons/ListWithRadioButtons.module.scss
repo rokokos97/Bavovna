@@ -21,6 +21,9 @@
   cursor: pointer;
   text-align: start;
   @include label();
+  .listWithRadioButtons__radioButton {
+    width: 2.4rem;
+  }
 }
 .deleteButton {
   background: transparent;

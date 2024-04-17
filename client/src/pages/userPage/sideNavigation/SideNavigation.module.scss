@@ -1,5 +1,6 @@
 @import "../../../styles/variables.module";
 .navigationBlock {
+  margin-top: 2.4rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -53,9 +54,9 @@
     flex-direction: row;
   }
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 580px) and (max-width: 1120px) {
   .navigationBlock {
-    max-width: 76.8rem;
+    max-width: 768px;
     .navigationBlock__sidebar {
       width: 25rem;
       display: flex;
@@ -72,8 +73,32 @@
 }
 @media (max-width: 580px) {
   .navigationBlock {
-    max-width: 32.8rem;
+    width: 32.8rem;
+    .navigationBlock__sidebar {
+      width: 100%;
+      .navigationBlock__list {
+        .navigationBlock__button {
+          padding-inline: 0;
+          .navigationBlock__chevron {
+            width: 2.4rem;
+            height: 2.4rem;
+            display: flex;
+            align-items: center;
+            svg {
+              transform: rotate(90deg);
+            }
+          }
+          .navigationBlock__exitIcon {
+            display: none;
+          }
+          &:hover {
+            background-color: $transparent-30-a-05;
+          }
+        }
+      }
+    }
     .navigationBlock__navigationContentSide {
+      width: 32.8rem;
       display: none;
     }
   }

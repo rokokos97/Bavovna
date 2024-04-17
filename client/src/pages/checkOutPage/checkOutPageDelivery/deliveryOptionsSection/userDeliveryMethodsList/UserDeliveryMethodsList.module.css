@@ -27,11 +27,5 @@
   display: flex;
   align-content: flex-start;
 }
-.deleteButton:hover svg path {
-  stroke: #5a9b83;
-}
-.deleteButton:active svg path {
-  stroke: #5a9b83;
-}
 
 /*# sourceMappingURL=UserDeliveryMethodsList.module.css.map */
