@@ -14,6 +14,7 @@
     width: 51.5rem;
     margin-bottom: 2.4rem;
     @include form-message-block($accent-a-05, $success);
+    @include body-2();
   }
 
   .userDataForm__userPersonalDataForm {
@@ -40,7 +41,7 @@
     }
   }
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 581px) and (max-width: 1120px) {
   .userDataForm {
     width: 43.1rem;
     display: flex;
@@ -54,7 +55,35 @@
       width: 43.1rem;;
       margin-bottom: 1.6rem;
       @include form-message-block($accent-a-05, $success);
-      @include body-5();
+      @include body-3();
+    }
+    .userDataForm__userPersonalDataForm {
+      .userDataForm__submitWrapper {
+        width: 43.1rem;
+
+        .userDataForm__column{
+          width: 100%;
+        }
+      }
+      .userDataForm__button {
+        @include button-mobile(18rem);
+      }
+    }
+  }
+}
+@media (max-width: 580px) {
+  .userDataForm {
+    width: 32.8rem;
+
+    .userDataForm__title {
+      display: none;
+    }
+
+    .userDataForm__responseMessage {
+      width: 32.8rem;;
+      margin-bottom: 1.6rem;
+      @include form-message-block($accent-a-05, $success);
+      @include body-3();
     }
     .userDataForm__userPersonalDataForm {
       .userDataForm__submitWrapper {

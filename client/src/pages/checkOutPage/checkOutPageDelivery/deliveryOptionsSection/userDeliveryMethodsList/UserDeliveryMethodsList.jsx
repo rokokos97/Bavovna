@@ -48,24 +48,30 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, wareh
     dispatch(setDeliveryPrice(deliveryMethods[id].price));
   };
   return (
-    <div className={styles.userDeliveryMethodsList} data-testid="UserDeliveryMethodsList">
+    <div className={styles.userDeliveryMethodsList}>
       {Object.values(deliveryMethods).map((method) => {
-        return <section key={method._id} className={styles.radioOption}>
-          <input
-            id={method._id}
-            type="radio"
-            name="customRadio"
-            value={method.value}
-            checked={currentValue === method._id}
-            onChange={() => handleChangeCurrentValue(method._id)}
-            className={styles.radioInput}
-          />
-          <label htmlFor={method._id} className={styles.radioLabel}>
-            {currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
-            <p>{method.label}</p>
-          </label>
-          <div>{currentValue === method._id ? method.value : null}</div>
-        </section>;
+        return (
+          <section
+            key={method._id}
+            className={styles.radioOption}
+            onClick={() => handleChangeCurrentValue(method._id)}
+          >
+            <input
+              id={method._id}
+              type="radio"
+              name="customRadio"
+              value={method.value}
+              checked={currentValue === method._id}
+              className={styles.radioInput}
+            />
+            <label htmlFor={method._id} className={styles.radioLabel}>
+              <button>
+                {currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
+              </button>
+              <p>{method.label}</p>
+            </label>
+            <div>{currentValue === method._id ? method.value : null}</div>
+          </section>);
       },
       )
       }

@@ -22,13 +22,7 @@
 }
 
 .radioButton {
-  background: transparent;
-}
-.radioButton:hover div svg path {
-  fill: #5a9b83;
-}
-.radioButton:active div svg path {
-  fill: #1a6449;
+  width: 2.4rem;
 }
 
 .labelText {
@@ -44,12 +38,6 @@
   background: transparent;
   display: flex;
   align-content: flex-start;
-}
-.deleteButton:hover svg path {
-  stroke: #5a9b83;
-}
-.deleteButton:active svg path {
-  stroke: #5a9b83;
 }
 
 /*# sourceMappingURL=UserDeliveryAddressList.module.css.map */

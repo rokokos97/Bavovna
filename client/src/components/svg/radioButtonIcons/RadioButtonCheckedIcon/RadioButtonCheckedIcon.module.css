@@ -1,7 +1,24 @@
 .radioButtonCheckedIcon {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 100%;
+  height: 100%;
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.radioButtonCheckedIcon:hover svg path {
+  fill: #5a9b83;
+}
+.radioButtonCheckedIcon:active svg path {
+  fill: #1a6449;
+}
+.radioButtonCheckedIcon:disabled svg path {
+  fill: #c3c3c3;
+}
+.radioButtonCheckedIcon:focus {
+  box-sizing: border-box;
+  border: 0.5px solid #5a9b83;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=RadioButtonCheckedIcon.module.css.map */

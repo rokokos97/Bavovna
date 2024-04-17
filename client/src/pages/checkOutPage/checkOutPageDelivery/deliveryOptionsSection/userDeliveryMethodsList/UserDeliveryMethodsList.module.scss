@@ -22,21 +22,5 @@
   background: transparent;
   display: flex;
   align-content: flex-start;
-
-  &:hover {
-    svg {
-      path {
-
-        stroke: $accent-a-3
-      }
-    }
-  }
-  &:active {
-    svg {
-      path {
-        stroke: $accent-a-3
-      }
-    }
-  }
 }
 

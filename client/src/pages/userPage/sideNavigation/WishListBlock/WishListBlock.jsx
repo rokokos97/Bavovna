@@ -6,11 +6,11 @@ import ItemsList from '../../../../components/ItemsList/ItemsList';
 import EmptyBlock from '../../../../blocks/EmptyBlock/EmptyBlock';
 const WishListBlock = () => {
   const user = useSelector(getUser);
-  return (
+  return ( user &&
     <article className={styles.wishListBlock} data-testid="WishListBlock">
       <h2 className={styles.wishListBlock__title}>wishlist</h2>
       <section>
-        {(user.favorite.length > 0) ?
+        {(user.favorite && user.favorite.length > 0) ?
           <ItemsList
             idArray={user.favorite}
           /> :

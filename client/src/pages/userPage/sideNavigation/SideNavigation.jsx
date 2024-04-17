@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './SideNavigation.module.scss';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import OrdersBlock from './OrdersBlock/OrdersBlock';
@@ -14,16 +14,23 @@ import ExitIcon from '../../../components/svg/ExitIcon/ExitIcon';
 const SideNavigation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [hideSideNav, setHideSideNav] = useState(false);
   const handleLogOut = () => {
     dispatch(userLogOut());
     navigate('/');
   };
+
   return (
     <section className={styles.navigationBlock} data-testid="SideNavigation">
-      <nav className={styles.navigationBlock__sidebar}>
+      <nav
+        style={{display: hideSideNav ? 'none': 'flex'}}
+        className={styles.navigationBlock__sidebar}
+      >
         <h2 className={styles.navigationBlock__title}>my account</h2>
         <ul className={styles.navigationBlock__list}>
-          <li>
+          <li
+            onClick={()=> isMobile && setHideSideNav(true)}
+          >
             <button
               onClick={()=> navigate('')}
               className={styles.navigationBlock__button}>
@@ -66,7 +73,10 @@ const SideNavigation = () => {
           </li>
         </ul>
       </nav>
-      <div className={styles.navigationBlock__navigationContentSide}>
+      <div
+        className={styles.navigationBlock__navigationContentSide}
+        style={{display: hideSideNav ? 'flex': 'none'}}
+      >
         <Routes>
           <Route index element={<OrdersBlock/>}/>
           <Route path="wishList" element={<WishListBlock/>}/>
