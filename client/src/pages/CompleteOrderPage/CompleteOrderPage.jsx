@@ -4,6 +4,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getUser} from '../../store/userSlice';
 import ProductCardInCart from '../../components/ProductCardInCart/ProductCardInCart';
+import ArrowBackIcon from '../../components/svg/arrowIcons/ArrowBackIcon/ArrowBackIcon';
 
 
 const CompleteOrderPage = () => {
@@ -24,7 +25,9 @@ const CompleteOrderPage = () => {
           className={styles.completeOrderPage__backButton}
           onClick={()=>navigate(-1)}
         >
-          <span>&larr;</span>
+          <div
+            className={styles.completeOrderPage__backButton__icon}
+          ><ArrowBackIcon/></div>
           <span>
             {`order #${currentOrder._id}`}
           </span>
@@ -55,12 +58,12 @@ const CompleteOrderPage = () => {
         <div className={styles.completeOrderPage__deliveryInfoBlock}>
           <div className={styles.completeOrderPage__infoSection}>
             <p className={styles.completeOrderPage__title}>delivery method</p>
-            <p>{currentOrder.deliveryInfo.deliveryMethod}</p>
+            <div>{currentOrder.deliveryInfo.deliveryMethod}</div>
           </div>
           <div
             className={styles.completeOrderPage__infoSection}>
             <p className={styles.completeOrderPage__title}>selection point</p>
-            <p>{currentOrder.deliveryInfo.label}</p>
+            <div>{currentOrder.deliveryInfo.label}</div>
           </div>
           <div className={styles.completeOrderPage__infoSection}>
             <p className={styles.completeOrderPage__title}>contact details</p>

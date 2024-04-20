@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from './SideNavigation.module.scss';
-import {Route, Routes, useNavigate} from 'react-router-dom';
+import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import OrdersBlock from './OrdersBlock/OrdersBlock';
 import WishListBlock from './WishListBlock/WishListBlock';
 import Page404 from '../../Page404/Page404';
@@ -10,18 +10,48 @@ import {userLogOut} from '../../../store/userSlice';
 import {useDispatch} from 'react-redux';
 import ChevronUp from '../../../components/svg/ChevronUp/ChevronUp';
 import ExitIcon from '../../../components/svg/ExitIcon/ExitIcon';
+import useDeviceDetect from '../../../utils/useDeviceDetect.js';
 
 const SideNavigation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {isMobile} = useDeviceDetect();
   const [hideSideNav, setHideSideNav] = useState(false);
+  const [hideContentSide, setHideContentSide] = useState(isMobile || false);
   const handleLogOut = () => {
     dispatch(userLogOut());
     navigate('/');
   };
-
+  console.log('isMobile', isMobile);
   return (
     <section className={styles.navigationBlock} data-testid="SideNavigation">
+      <nav
+        className={styles.navigationBlock__navigation}>
+        <button
+          className={styles.navigationBlock__navigation__buttonHome}
+          onClick={()=> {
+            setHideSideNav(false);
+            setHideContentSide(true);
+          }}
+          style={{display: hideSideNav ? 'flex' : 'none'}}
+        >
+          <div>
+            <ChevronUp/>
+          </div>
+          Back
+        </button>
+        <Link
+          className={styles.navigationBlock__navigationHome}
+          to={'/'}>
+          <ChevronUp/>
+          Home&nbsp;
+        </Link>
+        <Link
+          li className={styles.navigationBlock__navigationAccount}
+          to={''}>
+          / My account
+        </Link>
+      </nav>
       <nav
         style={{display: hideSideNav ? 'none': 'flex'}}
         className={styles.navigationBlock__sidebar}
@@ -29,7 +59,10 @@ const SideNavigation = () => {
         <h2 className={styles.navigationBlock__title}>my account</h2>
         <ul className={styles.navigationBlock__list}>
           <li
-            onClick={()=> isMobile && setHideSideNav(true)}
+            onClick={isMobile ? ()=> {
+              setHideSideNav(true);
+              setHideContentSide(false);
+            } : null }
           >
             <button
               onClick={()=> navigate('')}
@@ -40,7 +73,12 @@ const SideNavigation = () => {
               </div>
             </button>
           </li>
-          <li>
+          <li
+            onClick={isMobile ? ()=> {
+              setHideSideNav(true);
+              setHideContentSide(false);
+            } : null }
+          >
             <button
               onClick={()=> navigate('wishList')}
               className={styles.navigationBlock__button}>
@@ -50,7 +88,12 @@ const SideNavigation = () => {
               </div>
             </button>
           </li>
-          <li>
+          <li
+            onClick={isMobile ? ()=> {
+              setHideSideNav(true);
+              setHideContentSide(false);
+            } : null }
+          >
             <button
               onClick={()=> navigate('personalData')}
               className={styles.navigationBlock__button}>
@@ -75,7 +118,7 @@ const SideNavigation = () => {
       </nav>
       <div
         className={styles.navigationBlock__navigationContentSide}
-        style={{display: hideSideNav ? 'flex': 'none'}}
+        style={{display: hideContentSide ? 'none': 'flex'}}
       >
         <Routes>
           <Route index element={<OrdersBlock/>}/>

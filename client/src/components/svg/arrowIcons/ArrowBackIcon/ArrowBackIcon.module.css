@@ -1,0 +1,13 @@
+.arrowBackIcon {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.arrowBackIcon svg {
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=ArrowBackIcon.module.css.map */

@@ -71,3 +71,48 @@
     }
   }
 }
+@media (max-width: 580px) {
+  .ordersList {
+    width: 32.8rem;
+    .orderList__table {
+      .orderList__table_thead {
+        display: none;
+      }
+      .orderList__table_tbody {
+        display: flex;
+        flex-direction: column;
+        row-gap: $xl-spacing;
+        .orderList__table_tbody_tr {
+          border-bottom: 1px solid $gray-30;
+          padding-bottom: $xl-spacing;
+          display: flex;
+          flex-direction: column;
+          row-gap: $m-spacing;
+
+          td {
+            display: flex;
+            flex-direction: row;
+            column-gap: $s-spacing;
+            align-items: center;
+            border-bottom: none;
+            padding: 0;
+            .orderList__table_tbody_title {
+              display: inline;
+              @include tablet-headline-3();
+            }
+            .orderList__table_tbody_chevronMob {
+              display: flex;
+              margin-left: auto;
+              svg {
+                transform: rotate(-90deg);
+              }
+            }
+          }
+          .orderList__table_tbody_chevron {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
