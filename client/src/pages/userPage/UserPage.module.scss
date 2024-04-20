@@ -5,28 +5,6 @@
  position: relative;
  left: 50%;
  transform: translateX(-50%);
-
- .userPage__navigation {
-  display: flex;
-  flex-direction: row;
-  margin-top: 3.2rem;
-  margin-bottom: 4rem;
-  text-align: start;
-  @include breadcrumb();
-
-  .userPage__navigationHome {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   svg {
-    display: none;
-    transform: rotate(-90deg);
-   }
-  }
-  .userPage__navigationAccount {
-   display: flex;
-  }
- }
 }
 @media (min-width: 581px) and (max-width: 1120px) {
   .userPage {
@@ -34,13 +12,7 @@
   }
 }
 @media (max-width: 580px) {
- .userPage {
-  max-width: 32.8rem;
-   .userPage__navigation {
-     display: none;
-     .userPage__navigationAccount {
-       display: none;
-     }
-   }
- }
+  .userPage {
+    max-width: 32.8rem;
+  }
 }

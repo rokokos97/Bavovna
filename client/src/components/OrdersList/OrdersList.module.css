@@ -74,5 +74,50 @@
     display: none;
   }
 }
+@media (max-width: 580px) {
+  .ordersList {
+    width: 32.8rem;
+  }
+  .ordersList .orderList__table .orderList__table_thead {
+    display: none;
+  }
+  .ordersList .orderList__table .orderList__table_tbody {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr {
+    border-bottom: 1px solid #727272;
+    padding-bottom: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.8rem;
+    align-items: center;
+    border-bottom: none;
+    padding: 0;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_title {
+    display: inline;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_chevronMob {
+    display: flex;
+    margin-left: auto;
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_chevronMob svg {
+    transform: rotate(-90deg);
+  }
+  .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr .orderList__table_tbody_chevron {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=OrdersList.module.css.map */

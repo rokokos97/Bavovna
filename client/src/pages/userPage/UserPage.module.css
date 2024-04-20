@@ -5,29 +5,6 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.userPage .userPage__navigation {
-  display: flex;
-  flex-direction: row;
-  margin-top: 3.2rem;
-  margin-bottom: 4rem;
-  text-align: start;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  text-transform: none;
-}
-.userPage .userPage__navigation .userPage__navigationHome {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.userPage .userPage__navigation .userPage__navigationHome svg {
-  display: none;
-  transform: rotate(-90deg);
-}
-.userPage .userPage__navigation .userPage__navigationAccount {
-  display: flex;
-}
 
 @media (min-width: 581px) and (max-width: 1120px) {
   .userPage {
@@ -37,12 +14,6 @@
 @media (max-width: 580px) {
   .userPage {
     max-width: 32.8rem;
-  }
-  .userPage .userPage__navigation {
-    display: none;
-  }
-  .userPage .userPage__navigation .userPage__navigationAccount {
-    display: none;
   }
 }
 

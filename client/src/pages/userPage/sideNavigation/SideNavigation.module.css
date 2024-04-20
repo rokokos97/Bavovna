@@ -1,8 +1,42 @@
 .navigationBlock {
   margin-top: 2.4rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+.navigationBlock .navigationBlock__navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.4rem;
+  text-align: start;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+}
+.navigationBlock .navigationBlock__navigation .navigationBlock__navigation__buttonHome {
+  display: none;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.navigationBlock .navigationBlock__navigation .navigationBlock__navigation__buttonHome svg {
+  transform: rotate(-90deg);
+}
+.navigationBlock .navigationBlock__navigation .navigationBlock__navigationHome {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.navigationBlock .navigationBlock__navigation .navigationBlock__navigationHome svg {
+  display: none;
+  transform: rotate(-90deg);
+}
+.navigationBlock .navigationBlock__navigation .navigationBlock__navigationAccount {
+  display: flex;
 }
 .navigationBlock .navigationBlock__sidebar {
   width: 22.3rem;
@@ -59,9 +93,6 @@
 }
 
 @media (min-width: 580px) and (max-width: 1120px) {
-  .navigationBlock {
-    max-width: 768px;
-  }
   .navigationBlock .navigationBlock__sidebar {
     width: 25rem;
     display: flex;
@@ -81,6 +112,13 @@
 @media (max-width: 580px) {
   .navigationBlock {
     width: 32.8rem;
+  }
+  .navigationBlock .navigationBlock__navigation .navigationBlock__navigationHome {
+    align-items: center;
+    display: none;
+  }
+  .navigationBlock .navigationBlock__navigation .navigationBlock__navigationAccount {
+    display: none;
   }
   .navigationBlock .navigationBlock__sidebar {
     width: 100%;
@@ -105,7 +143,6 @@
   }
   .navigationBlock .navigationBlock__navigationContentSide {
     width: 32.8rem;
-    display: none;
   }
 }
 

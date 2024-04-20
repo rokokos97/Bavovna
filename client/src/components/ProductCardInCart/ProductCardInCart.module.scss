@@ -213,7 +213,7 @@
     display: none;
   }
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 581px) and (max-width: 1120px) {
   .productCardInCart[type='2'] {
     column-gap: $xl-spacing;
     width: 43.3rem;
@@ -221,7 +221,6 @@
       width: 16.3rem;
       height: 13.4rem;
     }
-
     .productCardInCart__infoBlock {
       width: auto;
       height: auto;
@@ -281,6 +280,74 @@
     }
   }
 }
+@media (max-width: 580px) {
+  .productCardInCart[type='2'] {
+    column-gap: $xl-spacing;
+    width: 32.2rem;
+    .productCardInCart__imageBlock {
+      width: 15.6rem;
+      height: 15.4rem;
+    }
+    .productCardInCart__infoBlock {
+      width: 12rem;
+      height: 15.4rem;
+      padding: 0;
+      .productCardInCart__namePriceBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: $xs-spacing;
+        justify-content: unset;
+        .productCardInCart__name {
+          width: 100%;
+          height: auto;
+          @include tablet-headline-5();
+        }
+        .productCardInCart__price {
+          width: 100%;
+          justify-content: flex-start;
+          @include tablet-headline-4();
+        }
 
+        .productCardInCart__discount {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          gap: 1.6rem;
+          @include tablet-headline-4();
+
+          span:first-child {
+            display: none;
+          }
+
+          span:last-child {
+            color: $black;
+          }
+        }
+      }
+
+      .productCardInCart__sizeColorQuantityBlock {
+        width: 100%;
+        flex-direction: column;
+        row-gap: $xs-spacing;
+        justify-content: unset;
+        align-items: unset;
+        @include tablet-headline-5();
+
+        .productCardInCart__quantityBlock {
+          .productCardInCart__quantity {
+            .productCardInCart__button {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .productCardInCart__buttonBlock {
+      display: none;
+    }
+  }
+}
 
 

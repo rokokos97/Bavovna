@@ -20,13 +20,11 @@
       display: flex;
       flex-direction: row;
       column-gap: 0.4rem;
-      padding: 1.6rem 3.6rem 1.6rem 2.8rem;
+      @include button(36rem);
+      @include buttonTransparent();
       @include buttonFont();
-      &:hover {
-        color: $accent-a-4;
-      }
-      &:active {
-        color: $accent-a-6;
+      .completeOrderPage__backButton__icon {
+        width: 3.2rem;
       }
     }
   }
@@ -36,52 +34,131 @@
     row-gap: $xs-spacing;
     margin-bottom: $xl-spacing;
   }
-}
-.completeOrderPage__orderInfoBlock {
-  width: 72.8rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
-  .completeOrderPage__title {
-   @include headline-8();
-    justify-content: space-between;
-  }
-  div{
-    display: flex;
-    flex-direction: row;
-  }
-}
-.completeOrderPage__totalPrice {
-  display: flex;
- @include headline-8();
-  justify-content: space-between;
-  width: 73.5rem;
-  padding: 0.8rem;
-  background-color: $gray-80;
-}
-.completeOrderPage__deliveryInfoBlock {
-  width: 73.5rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.6rem;
-  justify-content: space-between;
-  div {
-    padding-right: 0;
-    padding-left: 0;
+  .completeOrderPage__orderInfoBlock {
+    width: 72.8rem;
     display: flex;
     flex-direction: column;
-    row-gap: 1.6rem;
+    row-gap: 1.5rem;
+    .completeOrderPage__title {
+        @include headline-8();
+        justify-content: space-between;
+      }
+      div{
+        display: flex;
+        flex-direction: row;
+      }
+    .completeOrderPage__totalPrice {
+      width: 100%;
+      padding: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      background-color: $gray-80;
+      @include headline-8();
+    }
+    .completeOrderPage__deliveryInfoBlock {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      row-gap: 1.6rem;
+      justify-content: space-between;
+      .completeOrderPage__infoSection {
+        width: 20rem;
+        align-items: flex-start;
+        @include body-3();
+      }
+      div {
+        padding-right: 0;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+      }
+    }
   }
 }
-.completeOrderPage__infoSection {
-  width: 20rem;
-  align-items: flex-start;
- @include body-3();
+@media (min-width: 581px) and (max-width: 1120px) {
+  .completeOrderPage {
+    .completeOrderPage__titleBlock {
+      border-bottom: none;
+
+      .completeOrderPage__title {
+        display: none;
+      }
+      .completeOrderPage__backButton {
+      }
+    }
+    .completeOrderPage__orderInfoBlock {
+      width: 43.3rem;
+      .completeOrderPage__title {
+        @include headline-9();
+      }
+      .completeOrderPage__totalPrice {
+        @include headline-9();
+      }
+      .completeOrderPage__deliveryInfoBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+        justify-content: space-between;
+        .completeOrderPage__infoSection {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          column-gap: $l-spacing;
+
+          .completeOrderPage__title {
+            width: 40%;
+            display: flex;
+          }
+          div {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (max-width: 581px) {
   .completeOrderPage {
     .completeOrderPage__titleBlock {
       display: none;
+      border-bottom: none;
+      .completeOrderPage__title {
+        display: none;
+      }
+    }
+    .completeOrderPage__orderInfoBlock {
+      width: 32.8rem;
+      .completeOrderPage__title {
+        @include headline-9();
+      }
+      .completeOrderPage__totalPrice {
+        @include headline-9();
+      }
+      .completeOrderPage__deliveryInfoBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+        justify-content: space-between;
+        .completeOrderPage__infoSection {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          column-gap: $l-spacing;
+
+          .completeOrderPage__title {
+            width: 100%;
+            display: flex;
+          }
+          div {
+            width: 22.4rem;
+          }
+        }
+      }
     }
   }
 }
