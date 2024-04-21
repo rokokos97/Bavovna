@@ -86,8 +86,9 @@
       @include body-3();
     }
     .userDataForm__userPersonalDataForm {
+      width: 100%;
       .userDataForm__submitWrapper {
-        width: 43.1rem;
+        width: 100%;
 
         .userDataForm__column{
           width: 100%;

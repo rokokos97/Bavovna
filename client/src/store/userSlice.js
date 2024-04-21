@@ -319,9 +319,9 @@ const {
 } = actions;
 
 export const userLogOut = () => (dispatch) => {
+  dispatch(userLoggedOut());
   sessionStorageService.removeAuthData();
   localStorageService.removeAuthData();
-  dispatch(userLoggedOut());
 };
 export const userClearResponse = () => (dispatch) => {
   dispatch(clearedResponse());
