@@ -272,8 +272,11 @@
     padding: 1.2rem;
     color: #2ab66a;
   }
+  .userDataForm .userDataForm__userPersonalDataForm {
+    width: 100%;
+  }
   .userDataForm .userDataForm__userPersonalDataForm .userDataForm__submitWrapper {
-    width: 43.1rem;
+    width: 100%;
   }
   .userDataForm .userDataForm__userPersonalDataForm .userDataForm__submitWrapper .userDataForm__column {
     width: 100%;

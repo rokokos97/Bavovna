@@ -16,6 +16,7 @@
   text-transform: none;
 }
 .navigationBlock .navigationBlock__navigation .navigationBlock__navigation__buttonHome {
+  background: transparent;
   display: none;
   align-items: center;
   font-weight: 400;
@@ -90,6 +91,7 @@
   width: 84.5rem;
   display: flex;
   flex-direction: row;
+  margin-top: -4.4rem;
 }
 
 @media (min-width: 580px) and (max-width: 1120px) {
@@ -106,6 +108,7 @@
     text-transform: uppercase;
   }
   .navigationBlock .navigationBlock__navigationContentSide {
+    margin-top: 0;
     width: 43.1rem;
   }
 }
@@ -143,6 +146,7 @@
   }
   .navigationBlock .navigationBlock__navigationContentSide {
     width: 32.8rem;
+    margin-top: 0;
   }
 }
 

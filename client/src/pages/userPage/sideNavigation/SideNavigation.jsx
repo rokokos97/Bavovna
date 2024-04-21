@@ -6,23 +6,15 @@ import WishListBlock from './WishListBlock/WishListBlock';
 import Page404 from '../../Page404/Page404';
 import UserPersonalDataBlock from './userPersonalDataBlock/UserPersonalDataBlock';
 import CompleteOrderPage from '../../CompleteOrderPage/CompleteOrderPage';
-import {userLogOut} from '../../../store/userSlice';
-import {useDispatch} from 'react-redux';
 import ChevronUp from '../../../components/svg/ChevronUp/ChevronUp';
-import ExitIcon from '../../../components/svg/ExitIcon/ExitIcon';
 import useDeviceDetect from '../../../utils/useDeviceDetect.js';
+import LogOutBlock from './LogOut/LogOutBlock';
 
 const SideNavigation = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {isMobile} = useDeviceDetect();
   const [hideSideNav, setHideSideNav] = useState(false);
   const [hideContentSide, setHideContentSide] = useState(isMobile || false);
-  const handleLogOut = () => {
-    dispatch(userLogOut());
-    navigate('/');
-  };
-  console.log('isMobile', isMobile);
   return (
     <section className={styles.navigationBlock} data-testid="SideNavigation">
       <nav
@@ -103,15 +95,19 @@ const SideNavigation = () => {
               </div>
             </button>
           </li>
-          <li>
+          <li
+            onClick={isMobile ? ()=> {
+              setHideSideNav(true);
+              setHideContentSide(false);
+            } : null }
+          >
             <button
-              onClick={handleLogOut}
+              onClick={()=> navigate('logOut')}
               className={styles.navigationBlock__button}>
               exit
               <div className={styles.navigationBlock__chevron}>
                 <ChevronUp />
               </div>
-              <div className={styles.navigationBlock__exitIcon}><ExitIcon/></div>
             </button>
           </li>
         </ul>
@@ -125,6 +121,7 @@ const SideNavigation = () => {
           <Route path="wishList" element={<WishListBlock/>}/>
           <Route path="personalData" element={<UserPersonalDataBlock/>}/>
           <Route path="order/:id" element={<CompleteOrderPage />} />
+          <Route path="logOut" element={<LogOutBlock />} />
           <Route path="*" element={<Page404/>}/>
         </Routes>
       </div>

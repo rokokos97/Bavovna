@@ -13,6 +13,7 @@
     @include breadcrumb();
 
     .navigationBlock__navigation__buttonHome {
+        background: transparent;
         display: none;
         align-items: center;
         @include headline-9();
@@ -80,6 +81,7 @@
     width: 84.5rem;
     display: flex;
     flex-direction: row;
+    margin-top: -4.4rem;
   }
 }
 @media (min-width: 580px) and (max-width: 1120px) {
@@ -95,6 +97,7 @@
       }
     }
     .navigationBlock__navigationContentSide {
+      margin-top: 0;
       width: 43.1rem;
     }
   }
@@ -136,6 +139,7 @@
     }
     .navigationBlock__navigationContentSide {
       width: 32.8rem;
+      margin-top: 0;
       //display: none;
     }
   }
