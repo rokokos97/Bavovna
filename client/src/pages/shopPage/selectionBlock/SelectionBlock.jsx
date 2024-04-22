@@ -38,19 +38,27 @@ const SelectionBlock = () => {
   return (
     <div className={styles.selection} data-testid='SelectionBlock'>
       <button className={styles.iconBtn} onClick={changeIsFilter}>
-        <FilterIcon />
+        <div className={styles.filterIcon}>
+          <FilterIcon />
+        </div>
         Filter
       </button>
       <div className={styles.sortBlock}>
         <button className={styles.iconBtn} onClick={onToggleIsSort}>
           Sort by
-          <SortIcon />
+          <div className={styles.sortIcon}>
+            <SortIcon />
+          </div>
         </button>
         {isSort && (
           <div className={styles.sortPopup}>
             <ul onMouseLeave={handleMouseLeave}>
               {sortList.map((item, index) => (
-                <li key={index} className={styles.activeName} onClick={() => onClickToSort(Object.keys(item)[0])}>
+                <li
+                  key={index}
+                  className={styles.activeName}
+                  onClick={() => onClickToSort(Object.keys(item)[0])}
+                >
                   {Object.values(item)[0]}
                 </li>
               ))}

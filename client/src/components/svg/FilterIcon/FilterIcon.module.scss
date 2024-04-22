@@ -1,5 +1,9 @@
 .filterIcon {
-  width: 4rem;
-  height: 4rem;
-  font-weight: 700;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }

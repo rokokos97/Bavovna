@@ -11,12 +11,8 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  @include headline-6;
   background-color: inherit;
-  text-transform: uppercase;
 }
 .sortBlock {
   position: relative;
@@ -31,6 +27,11 @@
   border-top: none;
   background-color: $white;
   z-index: 2;
+}
+.filterIcon,
+.sortIcon {
+  width: 4rem;
+  height: 4rem;
 }
 .activeName {
   @include body-3();
@@ -54,13 +55,26 @@
     background-color: $accent-a-05;
   }
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 581px) and (max-width: 950px) {
   .selection {
     margin-top: 2.4rem;
+  }
+  .filterIcon,
+  .sortIcon {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }
 @media (max-width: 580px) {
   .selection {
     margin-top: 2.7rem;
+  }
+  .iconBtn {
+    @include headline-9;
+  }
+  .filterIcon,
+  .sortIcon {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }

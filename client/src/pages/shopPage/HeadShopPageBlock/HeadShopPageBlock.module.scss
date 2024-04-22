@@ -28,13 +28,20 @@
   @include body-3();
 }
 .heroBtn {
-  @include button(17.4rem);
+  @include button(15rem);
   @include buttonBlack();
+  text-wrap: nowrap;
 }
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 581px) and (max-width: 950px) {
   .hero {
     background-image: url('../../../../public/img/images/Catalog/tabletCatalogHero.webp');
-    padding: 5.4rem 5.4rem 2rem;
+    padding: 5.4rem 5.4rem 3.7rem;
+  }
+  .heroBtn {
+    width: 16rem;
+    height: 4.8rem;
+    @include button-s();
+    text-wrap: nowrap;
   }
 }
 @media (max-width: 580px) {
@@ -48,5 +55,11 @@
   }
   .heroActive {
     gap: 0.8rem;
+  }
+  .heroBtn {
+    width: 16rem;
+    height: 4.8rem;
+    @include button-s();
+    text-wrap: nowrap;
   }
 }
