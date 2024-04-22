@@ -32,7 +32,7 @@
   display: flex;
   gap: 2.4rem;
   flex-wrap: wrap;
-  padding-top: 2.4rem;
+  margin-top: 2.4rem;
 
   &.cardsPadding {
     padding-left: 2.4rem;
@@ -115,6 +115,7 @@
 @media screen and (max-width: 1227px) {
   .cards {
     gap: 1.4rem;
+    margin-top: 2rem;
   }
   .card {
     display: flex;
@@ -128,8 +129,10 @@
   }
 }
 @media screen and (max-width: 400px) {
+  .cards {
+    margin-top: 1.6rem;
+  }
   .card {
-    // aspect-ratio: 156/259;
     flex-basis: 47.5%;
     min-height: 25.9rem;
   }

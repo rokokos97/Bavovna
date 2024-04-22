@@ -106,6 +106,9 @@
 .btnContainer {
   display: flex;
   justify-content: space-between;
+  span {
+    text-wrap: nowrap;
+  }
 }
 
 .continueBtn {
@@ -165,6 +168,12 @@
       object-position: center;
     }
   }
+  .checkoutContent {
+    gap: 0.8rem;
+  }
+  .dataBlock {
+    margin-top: 0.8rem;
+  }
   .closeIcon {
     right: 1.6rem;
 
@@ -182,7 +191,6 @@
     flex-direction: column;
     gap: 1.6rem;
     align-items: center;
-
     span {
       @include tablet-headline-3();
     }

@@ -33,7 +33,7 @@
 }
 .modalCookies__text {
   width: 100%;
- @include body-3();
+  @include body-3();
 }
 .img {
   display: block;
@@ -60,8 +60,10 @@
   }
   .newCollectionBlock__button {
     @include button(16rem);
-    @include button-s();
     height: 4.8rem;
+    span {
+      @include button-s();
+    }
   }
   .description {
     gap: 1.6rem;
@@ -85,7 +87,9 @@
   }
   .newCollectionBlock__button {
     @include button(16rem);
-    @include button-s();
     height: 4.8rem;
+    span {
+      @include button-s();
+    }
   }
 }

@@ -40,8 +40,10 @@
   .heroBtn {
     width: 16rem;
     height: 4.8rem;
-    @include button-s();
-    text-wrap: nowrap;
+    span {
+      @include button-s();
+      text-wrap: nowrap;
+    }
   }
 }
 @media (max-width: 580px) {
@@ -59,7 +61,9 @@
   .heroBtn {
     width: 16rem;
     height: 4.8rem;
-    @include button-s();
-    text-wrap: nowrap;
+    span {
+      @include button-s();
+      text-wrap: nowrap;
+    }
   }
 }
