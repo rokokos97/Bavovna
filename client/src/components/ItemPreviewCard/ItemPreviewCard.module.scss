@@ -4,6 +4,7 @@
   max-width: 41rem;
   width: 100%;
   max-height: 57.8rem;
+  height: 100%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -70,7 +71,7 @@
 }
 .itemPreviewCard__statusText {
   color: white;
- @include headline-8();
+  @include headline-8();
   word-wrap: break-word;
 }
 .itemPreviewCard__heart {
@@ -88,13 +89,13 @@
   padding: 0.4rem 0.8rem;
   margin-top: 0.8rem;
   span {
-   @include body-2();
+    @include body-2();
   }
   .itemPreviewCard__price {
     display: flex;
     flex-direction: row;
     gap: 1.6rem;
-   @include headline-8();
+    @include headline-8();
   }
   .itemPreviewCard__discount {
     display: flex;
@@ -103,7 +104,7 @@
     @include headline-8();
     span:first-child {
       text-decoration: line-through;
-      color: $gray-30
+      color: $gray-30;
     }
     //span:last-child {
     //  //color: $error;
@@ -122,36 +123,35 @@
   }
   .itemPreviewCard__description {
     span {
-     @include body-3();
+      @include body-3();
     }
   }
   .itemPreviewCard__status {
     padding: 0.7rem 1rem;
   }
   .itemPreviewCard__statusText {
-   @include headline-12();
+    @include headline-12();
   }
 }
 @media (max-width: 580px) {
   .itemPreviewCard {
-    max-width: 15.6rem;
-    max-height: 26rem;
-    height: 100%;
+    aspect-ratio: 345/486;
   }
   .itemPreviewCard__image {
-    max-height: 18.4rem;
-    max-width: 15.6rem;
+    max-height: 30rem;
   }
   .itemPreviewCard__description {
     margin-top: 1rem;
     span {
-     @include body-4();
+      @include body-4();
     }
     p:last-child {
-     @include body-4();
+      @include body-4();
     }
   }
   .itemPreviewCard__status {
+    width: 5.2rem;
+    height: 2.4rem;
     padding: 0.6rem 1rem;
     top: 0.8rem;
   }
@@ -162,6 +162,11 @@
     right: 0.8rem;
   }
   .itemPreviewCard__statusText {
-   @include headline-12();
+    @include headline-12();
+  }
+}
+@media (max-width: 400px) {
+  .itemPreviewCard__image {
+    max-height: 19rem;
   }
 }

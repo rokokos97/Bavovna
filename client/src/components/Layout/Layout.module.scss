@@ -3,6 +3,7 @@
 .container {
   max-width: $max-width;
   width: 100%;
+  min-width: 36rem;
   padding-top: 8.9rem;
   margin: auto;
   flex: 1 0 auto;
