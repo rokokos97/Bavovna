@@ -1,10 +1,10 @@
 @import "../../styles/variables.module.scss";
 .orderCompletePage {
+  width: 100rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
   row-gap: 2.7rem;
-  width: 128rem;
   margin: 3.2rem auto;
 }
 .orderCompletePage__titleBlock {
@@ -34,12 +34,68 @@
   margin-top: 2.1rem;
 
   a:first-child {
-    @include button(20rem);
-    @include buttonBlack();
+    @include buttonWhite();
+    @include button(21rem);
   }
 
   a:last-child {
+    @include buttonBlack();
     @include button(20rem);
-    @include buttonWhite();
+  }
+}
+@media (min-width: 769px) and (max-width: 1120px) {
+  .orderCompletePage {
+    width: 70.3rem;
+  }
+  .orderCompletePage__titleBlock {
+  }
+  .orderCompletePage__title {
+  }
+  .orderCompletePage__numberBlock {
+  }
+  .orderCompletePage__textBlock {
+  }
+  .orderCompletePage__buttonsBlock {
+    a:first-child {
+      @include button-mobile(20rem);
+      @include buttonBlack();
+      svg {
+        path {
+          fill: white;
+        }
+      }
+    }
+
+    a:last-child {
+      @include button-mobile(20rem);
+      @include buttonWhite();
+    }
+  }
+}
+@media (max-width: 768px) {
+  .orderCompletePage {
+    width: 32.8rem;
+  }
+  .orderCompletePage__titleBlock {
+  }
+  .orderCompletePage__title {
+  }
+  .orderCompletePage__numberBlock {
+    p:last-child {
+      display: none;
+    }
+  }
+  .orderCompletePage__textBlock {
+  }
+  .orderCompletePage__buttonsBlock {
+    a:first-child {
+      @include buttonWhite();
+      @include button-mobile(21rem);
+    }
+
+    a:last-child {
+      @include buttonBlack();
+      @include button-mobile(20rem);
+    }
   }
 }
