@@ -26,16 +26,6 @@
   column-gap: 0.8rem;
 }
 
-.userPaymentMethodsList__radioButton {
-  background: transparent;
-}
-.userPaymentMethodsList__radioButton:hover div svg path {
-  fill: #5a9b83;
-}
-.userPaymentMethodsList__radioButton:active div svg path {
-  fill: #1a6449;
-}
-
 .userPaymentMethodsList__label {
   display: flex;
   flex-direction: row;
@@ -170,6 +160,263 @@
   line-height: 140%;
   text-transform: uppercase;
   color: #868686;
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .userPaymentMethodsList {
+    width: 70.3rem;
+  }
+  .userPaymentMethodsList__buttonLeft {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .userPaymentMethodsList__buttonLeft span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .userPaymentMethodsList__buttonLeft::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .userPaymentMethodsList__buttonLeft::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .userPaymentMethodsList__buttonLeft:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .userPaymentMethodsList__buttonLeft:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .userPaymentMethodsList__buttonLeft:focus {
+    border: 3px solid #5a9b83;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled span {
+    color: #9b9b9b;
+  }
+  .userPaymentMethodsList__buttonLeft svg path {
+    fill: #000000;
+  }
+  .userPaymentMethodsList__buttonLeft span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .userPaymentMethodsList__buttonLeft:hover svg path {
+    fill: #3a7f66;
+  }
+  .userPaymentMethodsList__buttonLeft:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .userPaymentMethodsList__buttonLeft:focus svg path {
+    fill: #081e16;
+  }
+  .userPaymentMethodsList__buttonLeft:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled {
+    background: transparent;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled svg path {
+    fill: #868686;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
+}
+@media (max-width: 768px) {
+  .userPaymentMethodsList {
+    width: 32.8rem;
+  }
+  .userPaymentMethodsList__buttonLeft {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .userPaymentMethodsList__buttonLeft span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .userPaymentMethodsList__buttonLeft::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .userPaymentMethodsList__buttonLeft::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .userPaymentMethodsList__buttonLeft:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .userPaymentMethodsList__buttonLeft:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .userPaymentMethodsList__buttonLeft:focus {
+    border: 3px solid #5a9b83;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled span {
+    color: #9b9b9b;
+  }
+  .userPaymentMethodsList__buttonLeft svg path {
+    fill: #000000;
+  }
+  .userPaymentMethodsList__buttonLeft span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .userPaymentMethodsList__buttonLeft:hover svg path {
+    fill: #3a7f66;
+  }
+  .userPaymentMethodsList__buttonLeft:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .userPaymentMethodsList__buttonLeft:focus svg path {
+    fill: #081e16;
+  }
+  .userPaymentMethodsList__buttonLeft:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled {
+    background: transparent;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled svg path {
+    fill: #868686;
+  }
+  .userPaymentMethodsList__buttonLeft:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
 }
 
 /*# sourceMappingURL=PaymentMethodSection.module.css.map */
