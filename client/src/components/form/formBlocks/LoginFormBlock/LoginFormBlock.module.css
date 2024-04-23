@@ -550,6 +550,320 @@
   margin: 0 auto;
 }
 
+@media (min-width: 361px) and (max-width: 1120px) {
+  .loginFormBlock .loginFormBlock__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 70.3rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .loginFormBlock .loginFormBlock__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .loginFormBlock .loginFormBlock__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 32.75rem;
+  }
+  .loginFormBlock .loginFormBlock__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 34.85rem;
+  }
+  .loginFormBlock .loginFormBlock__button:hover::before {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1rem;
+  }
+  .loginFormBlock .loginFormBlock__button:active::after {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1.1rem;
+  }
+  .loginFormBlock .loginFormBlock__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .loginFormBlock .loginFormBlock__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .loginFormBlock .loginFormBlock__button:disabled span {
+    color: #9b9b9b;
+  }
+  .loginFormBlock .loginFormBlock__googleButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 70.3rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+  }
+  .loginFormBlock .loginFormBlock__googleButton span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  .loginFormBlock .loginFormBlock__googleButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 32.75rem;
+  }
+  .loginFormBlock .loginFormBlock__googleButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 34.85rem;
+  }
+  .loginFormBlock .loginFormBlock__googleButton:hover::before {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1rem;
+  }
+  .loginFormBlock .loginFormBlock__googleButton:active::after {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1.1rem;
+  }
+  .loginFormBlock .loginFormBlock__googleButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .loginFormBlock .loginFormBlock__googleButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .loginFormBlock .loginFormBlock__googleButton:disabled span {
+    color: #9b9b9b;
+  }
+  .loginFormBlock .errorMessagesBlock p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 70.3rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 32.75rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 34.85rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:hover::before {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:active::after {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1.1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:disabled span {
+    color: #9b9b9b;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 70.3rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 32.75rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 34.85rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:hover::before {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:active::after {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1.1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:disabled span {
+    color: #9b9b9b;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__forgotPassword {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 36rem) {
   .loginFormBlock .loginFormBlock__button {
     display: flex;
@@ -707,6 +1021,161 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 120%;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 32.8rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 14rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 16.1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:hover::before {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:active::after {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1.1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__button:disabled span {
+    color: #9b9b9b;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 32.8rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 14rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 16.1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:hover::before {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:active::after {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1.1rem;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__googleButton:disabled span {
+    color: #9b9b9b;
+  }
+  .loginFormBlock[type="1"] .loginFormBlock__forgotPassword {
+    margin: 0 auto;
   }
 }
 

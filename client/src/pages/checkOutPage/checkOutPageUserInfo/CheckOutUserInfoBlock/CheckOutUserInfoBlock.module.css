@@ -425,6 +425,8 @@
     position: relative;
     overflow: hidden;
     padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
     justify-content: flex-start;
     padding-inline: 0;
   }
@@ -492,6 +494,49 @@
   .checkOutUserInfoBlock__buttonLeft:disabled span {
     color: #9b9b9b;
   }
+  .checkOutUserInfoBlock__buttonLeft svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
   .checkOutUserInfoBlock__buttonRight {
     display: flex;
     flex-direction: row;
@@ -503,6 +548,8 @@
     position: relative;
     overflow: hidden;
     padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
     justify-content: flex-end;
     padding-inline: 0;
   }
@@ -569,6 +616,49 @@
   }
   .checkOutUserInfoBlock__buttonRight:disabled span {
     color: #9b9b9b;
+  }
+  .checkOutUserInfoBlock__buttonRight svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
   }
 }
 @media (max-width: 768px) {
@@ -594,6 +684,8 @@
     position: relative;
     overflow: hidden;
     padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
     justify-content: flex-start;
     padding-inline: 0;
   }
@@ -661,6 +753,49 @@
   .checkOutUserInfoBlock__buttonLeft:disabled span {
     color: #9b9b9b;
   }
+  .checkOutUserInfoBlock__buttonLeft svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
   .checkOutUserInfoBlock__buttonRight {
     display: flex;
     flex-direction: row;
@@ -672,6 +807,8 @@
     position: relative;
     overflow: hidden;
     padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
     justify-content: flex-end;
     padding-inline: 0;
   }
@@ -738,6 +875,49 @@
   }
   .checkOutUserInfoBlock__buttonRight:disabled span {
     color: #9b9b9b;
+  }
+  .checkOutUserInfoBlock__buttonRight svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
   }
 }
 

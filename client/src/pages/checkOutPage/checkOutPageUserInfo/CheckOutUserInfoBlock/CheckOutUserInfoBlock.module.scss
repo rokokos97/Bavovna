@@ -87,11 +87,13 @@
   }
   .checkOutUserInfoBlock__buttonLeft {
     @include button-mobile($small);
+    @include buttonTransparent();
     justify-content: flex-start;
     padding-inline: 0;
   }
   .checkOutUserInfoBlock__buttonRight {
     @include button-mobile($small);
+    @include buttonTransparent();
     justify-content: flex-end;
     padding-inline: 0;
   }
@@ -120,11 +122,13 @@
   }
   .checkOutUserInfoBlock__buttonLeft {
     @include button-mobile($small);
+    @include buttonTransparent();
     justify-content: flex-start;
     padding-inline: 0;
   }
   .checkOutUserInfoBlock__buttonRight {
     @include button-mobile($small);
+    @include buttonTransparent();
     justify-content: flex-end;
     padding-inline: 0;
   }

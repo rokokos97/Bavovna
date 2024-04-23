@@ -100,6 +100,33 @@
     margin: 0 auto;
   }
 }
+@media (min-width: 361px) and (max-width: 1120px){
+  .loginFormBlock {
+    .loginFormBlock__button {
+      @include button-mobile(70.3rem);
+
+    }
+    .loginFormBlock__googleButton {
+      @include button(70.3rem);
+    }
+    .errorMessagesBlock {
+      p {
+        @include body-5();
+      }
+    }
+  }
+  .loginFormBlock[type='1'] {
+    .loginFormBlock__button {
+      @include button-mobile(70.3rem);
+    }
+    .loginFormBlock__googleButton {
+      @include button(70.3rem);
+    }
+    .loginFormBlock__forgotPassword {
+      margin: 0 auto;
+    }
+  }
+}
 @media (max-width: 36rem) {
   .loginFormBlock {
     .loginFormBlock__button {
@@ -113,6 +140,17 @@
       p {
         @include body-5();
       }
+    }
+  }
+  .loginFormBlock[type='1'] {
+    .loginFormBlock__button {
+      @include button-mobile(32.8rem);
+    }
+    .loginFormBlock__googleButton {
+      @include button(32.8rem);
+    }
+    .loginFormBlock__forgotPassword {
+      margin: 0 auto;
     }
   }
 }
