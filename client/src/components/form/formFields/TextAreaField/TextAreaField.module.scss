@@ -57,3 +57,68 @@
     color: $error;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .textAreaField {
+  }
+  .label {
+    span {
+    }
+  }
+  .textarea {
+    min-width: 70.3rem;
+    max-width: 70.3rem;
+    min-height: 3rem;
+  }
+  .textarea[type='1'] {
+    min-width: 70.3rem;
+    max-width: 70.3rem;
+  }
+  .error {
+  }
+  .block {
+  }
+
+  .textAreaField.hasError {
+    .label {
+    }
+    .textarea {
+      div {
+      }
+    }
+    .textarea::placeholder {
+    }
+  }
+}
+@media (max-width: 768px) {
+  .textAreaField {
+  }
+  .label {
+    span {
+    }
+  }
+  .textarea {
+    min-width: 32.8rem;
+    max-width: 32.8rem;
+    min-height: 3rem;
+  }
+  .textarea[type='1'] {
+    min-width: 32.8rem;
+    max-width: 32.8rem;
+  }
+  .error {
+  }
+  .block {
+  }
+
+  .textAreaField.hasError {
+    .label {
+    }
+    .textarea {
+      div {
+      }
+    }
+    .textarea::placeholder {
+    }
+  }
+}
