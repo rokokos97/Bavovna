@@ -13,7 +13,7 @@
 .deliveryOptionsSection__radioBlock {
   display: flex;
   flex-direction: row;
-  column-gap: 2.4rem;
+  gap: 2.4rem;
 }
 .deliveryOptionsSection__radioWrapper {
   display: flex;
@@ -29,34 +29,6 @@
   margin-left: 0.8rem;
 }
 .deliveryOptionsSection__radioButton {
-  background: transparent;
-  &:hover {
-    div {
-      svg {
-        path {
-          fill: $accent-a-3
-        }
-      }
-    }
-  }
-  &:active {
-    div {
-      svg {
-        path {
-          fill: $accent-a-5
-        }
-      }
-    }
-  }
-  &:disabled {
-    div {
-      svg {
-        path {
-          fill: $gray-70;
-        }
-      }
-    }
-  }
 }
 .deliveryOptionsSection__navigationButtonsSection {
   display: flex;
@@ -76,5 +48,71 @@
   padding-right: 0;
   div {
     transform: rotate(180deg);
+  }
+}
+@media (min-width: 769px) and (max-width: 1120px) {
+  .deliveryOptionsSection {
+    width: 70.3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.2rem;
+  }
+  .deliveryOptionsSection__title {
+  }
+  .deliveryOptionsSection__radioBlock {
+    flex-direction: column;
+  }
+  .deliveryOptionsSection__radioWrapper {
+  }
+  .deliveryOptionsSection__label {
+  }
+  .deliveryOptionsSection__radioButton {
+  }
+  .deliveryOptionsSection__navigationButtonsSection {
+  }
+  .deliveryOptionsSection__buttonLeft {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .deliveryOptionsSection__buttonRight {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-end;
+    padding-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .deliveryOptionsSection {
+    width: 32.8rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.2rem;
+  }
+  .deliveryOptionsSection__title {
+  }
+  .deliveryOptionsSection__radioBlock {
+    flex-direction: column;
+  }
+  .deliveryOptionsSection__radioWrapper {
+  }
+  .deliveryOptionsSection__label {
+  }
+  .deliveryOptionsSection__radioButton {
+  }
+  .deliveryOptionsSection__navigationButtonsSection {
+  }
+  .deliveryOptionsSection__buttonLeft {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .deliveryOptionsSection__buttonRight {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-end;
+    padding-right: 0;
   }
 }
