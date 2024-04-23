@@ -10,46 +10,45 @@
   flex-direction: column;
   box-sizing: border-box;
   padding-bottom: 25rem;
-}
-.shoppingCartPage__navigation{
-  @include breadcrumb();
-  text-align: start;
-  margin: 1.6rem 0 1.4rem;
-}
-.shoppingCartPage__titleBlock {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.shoppingCartPage__infoBlock {
-  width: 39.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 2.4rem;
-}
-.shoppingCartPage__title {
-  @include headline_3();
-}
-.shoppingCartPage__text {
- @include body-2();
-  text-align: start;
-  text-wrap: none;
-}
-.shoppingCartPage__button {
-  @include button(29.2rem);
-  @include buttonWhite();
-  display: flex;
-  flex-direction: row;
-  column-gap: 0.4rem;
-  justify-content: center;
-  align-items: center;
-  div {
-    position: relative;
-    z-index: 10;
-    width: 2.4rem;
-    svg {
-      width: 2.4rem;
+
+  .shoppingCartPage__navigation{
+    @include breadcrumb();
+    text-align: start;
+    margin: 1.6rem 0 1.4rem;
+  }
+
+  .shoppingCartPage__titleBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .shoppingCartPage__infoBlock {
+      width: 39.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 2.4rem;
+
+      .shoppingCartPage__title {
+        @include headline_3();
+      }
+    }
+    .shoppingCartPage__button {
+      @include button(29.2rem);
+      @include buttonWhite();
+      display: flex;
+      flex-direction: row;
+      column-gap: 0.4rem;
+      justify-content: center;
+      align-items: center;
+      div {
+        position: relative;
+        z-index: 10;
+        width: 2.4rem;
+        svg {
+          width: 2.4rem;
+        }
+      }
     }
   }
 }
@@ -57,6 +56,12 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  .shoppingCartPage__text {
+   @include body-2();
+    text-align: start;
+    text-wrap: none;
+  }
 }
 .shoppingCartPage__fillCartBlock {
   margin-top: 1.6rem;
@@ -65,8 +70,138 @@
   justify-content: space-between;
   gap: 2.4rem;
 
+  .shoppingCartPage__itemsBlock {
+    width: 84.5rem;
+    padding-top: 2.4rem;
+  }
 }
-.shoppingCartPage__itemsBlock {
-  width: 84.5rem;
-  padding-top: 2.4rem;
+@media (min-width: 769px) and (max-width: 1120px) {
+  .shoppingCartPage {
+    width: 70.3rem;
+    padding: 0;
+    .shoppingCartPage__navigation{
+     display: none;
+    }
+    .shoppingCartPage__titleBlock {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+
+      .shoppingCartPage__infoBlock {
+        width: 39.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: $xxl-spacing;
+
+        .shoppingCartPage__title {
+          margin-top: $l-spacing;
+          @include headline_3();
+        }
+      }
+      .shoppingCartPage__button {
+        display: none;
+      }
+    }
+  }
+  .shoppingCartPage__emptyCartBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    .shoppingCartPage__text {
+      @include body-2();
+      text-align: start;
+      text-wrap: none;
+    }
+    .shoppingCartPage__slider {
+      display: none;
+    }
+  }
+  .shoppingCartPage__fillCartBlock {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    gap: 2.4rem;
+
+    .shoppingCartPage__itemsBlock {
+      width: 100%;
+      padding-top: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+    .shoppingCartPage__checkOutBlock {
+      width: 100%;
+    }
+  }
+
+}
+@media (max-width: 768px) {
+  .shoppingCartPage {
+    width: 32.8rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.6rem;
+    row-gap: $xxl-spacing;
+    .shoppingCartPage__navigation{
+      display: none;
+    }
+    .shoppingCartPage__titleBlock {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+
+      .shoppingCartPage__infoBlock {
+        width: 39.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: $xxl-spacing;
+
+        .shoppingCartPage__title {
+          margin-top: $l-spacing;
+          @include headline_3();
+        }
+      }
+      .shoppingCartPage__button {
+        display: none;
+      }
+    }
+  }
+  .shoppingCartPage__emptyCartBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    .shoppingCartPage__text {
+      @include body-2();
+      text-align: start;
+      text-wrap: none;
+    }
+    .shoppingCartPage__slider {
+      display: none;
+    }
+  }
+  .shoppingCartPage__fillCartBlock {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    gap: 2.4rem;
+
+    .shoppingCartPage__itemsBlock {
+      width: 100%;
+      padding-top: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+    .shoppingCartPage__checkOutBlock {
+      width: 100%;
+    }
+  }
+
 }

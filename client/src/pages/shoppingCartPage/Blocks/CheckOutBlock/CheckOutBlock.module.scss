@@ -9,24 +9,97 @@
   row-gap: 4rem;
   padding: 4rem 2.4rem;
   background: $white;
-}
-.checkOutBlock__totalPriceBlock {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  @include headline_3();
-}
-.checkOutBlock__buttonsBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  a:first-child {
-    @include button(36.3rem);
-    @include buttonBlack();
+  //border-radius: 1.6rem;
+
+  .checkOutBlock__totalPriceBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include headline_3();
   }
-  a:last-child {
-    @include button(36.3rem);
-    @include buttonWhite();
+
+  .checkOutBlock__buttonsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    a:first-child {
+      @include button(36.3rem);
+      @include buttonBlack();
+    }
+    a:last-child {
+      @include button(36.3rem);
+      @include buttonWhite();
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutBlock {
+    position: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    padding-inline: 0;
+    padding-top: 2.4rem;
+    padding-bottom: 1.6rem;
+    background: $white;
+    border-radius: 1.6rem;
+
+    .checkOutBlock__totalPriceBlock {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @include headline_3();
+    }
+
+    .checkOutBlock__buttonsBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      a:first-child {
+        @include button(70.3rem);
+        @include buttonBlack();
+      }
+      a:last-child {
+        @include button(70.3rem);
+        @include buttonWhite();
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .checkOutBlock {
+    position: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    padding-inline: 0;
+    padding-top: 2.4rem;
+    padding-bottom: 1.6rem;
+    background: $white;
+
+    .checkOutBlock__totalPriceBlock {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @include headline_3();
+    }
+
+    .checkOutBlock__buttonsBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      a:first-child {
+        @include button-mobile(32.8rem);
+        @include buttonBlack();
+      }
+      a:last-child {
+        @include button-mobile(32.8rem);
+        @include buttonWhite();
+      }
+    }
   }
 }
 
