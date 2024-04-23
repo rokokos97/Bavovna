@@ -1,3 +1,4 @@
+@import "../../../styles/variables.module";
 .checkOutPagePaymentInfo {
   height: 120vh;
   display: flex;
@@ -5,4 +6,23 @@
   column-gap: 2.4rem;
   margin: 6rem 8rem;
   justify-content: space-between;
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutPagePaymentInfo {
+    margin-top: $l-spacing;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 768px) {
+  .checkOutPagePaymentInfo {
+    margin-top: $l-spacing;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
 }

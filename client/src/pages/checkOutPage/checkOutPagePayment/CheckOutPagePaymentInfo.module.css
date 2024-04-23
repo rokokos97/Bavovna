@@ -7,4 +7,23 @@
   justify-content: space-between;
 }
 
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutPagePaymentInfo {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 768px) {
+  .checkOutPagePaymentInfo {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
+}
+
 /*# sourceMappingURL=CheckOutPagePaymentInfo.module.css.map */
