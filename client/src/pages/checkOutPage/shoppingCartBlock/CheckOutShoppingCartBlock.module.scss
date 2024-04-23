@@ -87,7 +87,8 @@
   .checkOutShoppingCartBlock__discount {
   }
   .checkOutShoppingCartBlock__button {
-    display: none;
+    @include button-mobile(67.1rem);
+    padding-inline: 0;
   }
 }
 @media (max-width: 768px) {
@@ -116,6 +117,7 @@
   .checkOutShoppingCartBlock__discount {
   }
   .checkOutShoppingCartBlock__button {
-    display: none;
+    @include button-mobile(29.6rem);
+    padding-inline: 0;
   }
 }

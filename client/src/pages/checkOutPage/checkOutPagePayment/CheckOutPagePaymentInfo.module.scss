@@ -17,7 +17,7 @@
     column-gap: 2.4rem;
   }
 }
-@media (min-width: 768px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .checkOutPagePaymentInfo {
     margin-top: $l-spacing;
     flex-direction: column;
