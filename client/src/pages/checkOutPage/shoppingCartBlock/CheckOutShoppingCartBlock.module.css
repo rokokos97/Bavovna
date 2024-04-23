@@ -289,4 +289,39 @@
   border: 1px solid #5a9b83;
 }
 
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutShoppingCartBlock {
+    width: 70.3rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+  .checkOutShoppingCartBlock__wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .checkOutShoppingCartBlock__titleBlock {
+    display: none;
+  }
+  .checkOutShoppingCartBlock__button {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .checkOutShoppingCartBlock {
+    width: 32.8rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+  .checkOutShoppingCartBlock__wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .checkOutShoppingCartBlock__titleBlock {
+    display: none;
+  }
+  .checkOutShoppingCartBlock__button {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=CheckOutShoppingCartBlock.module.css.map */

@@ -60,3 +60,62 @@
   @include button(41.1rem);
   @include buttonBlack();
 }
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutShoppingCartBlock {
+    width: 70.3rem;
+    padding-top: $l-spacing;
+    padding-bottom: $l-spacing;
+  }
+  .checkOutShoppingCartBlock__wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .checkOutShoppingCartBlock__titleBlock {
+    display: none;
+  }
+  .checkOutShoppingCartBlock__title {
+  }
+  .checkOutShoppingCartBlock__form {
+    .checkOutShoppingCartBlock__arrowButton {
+    }
+  }
+  .checkOutShoppingCartBlock__priceBlock {
+  }
+  .checkOutShoppingCartBlock__price {
+  }
+  .checkOutShoppingCartBlock__discount {
+  }
+  .checkOutShoppingCartBlock__button {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .checkOutShoppingCartBlock {
+    width: 32.8rem;
+    padding-top: $l-spacing;
+    padding-bottom: $l-spacing;
+  }
+  .checkOutShoppingCartBlock__wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .checkOutShoppingCartBlock__titleBlock {
+    display: none;
+  }
+  .checkOutShoppingCartBlock__title {
+  }
+  .checkOutShoppingCartBlock__form {
+    .checkOutShoppingCartBlock__arrowButton {
+    }
+  }
+  .checkOutShoppingCartBlock__priceBlock {
+  }
+  .checkOutShoppingCartBlock__price {
+  }
+  .checkOutShoppingCartBlock__discount {
+  }
+  .checkOutShoppingCartBlock__button {
+    display: none;
+  }
+}
