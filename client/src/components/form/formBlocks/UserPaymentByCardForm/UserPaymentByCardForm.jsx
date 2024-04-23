@@ -38,6 +38,9 @@ const UserPaymentByCardForm = ({formik}) => {
   };
   return (
     <div className={styles.userPaymentByCardForm} data-testid="UserPaymentByCardForm">
+      <p className={styles.userPaymentByCardForm__note}>
+        Please note: this is a training project and you should not enter your real credit card details.
+      </p>
       <TextField
         label='Card number'
         name='cardNumber'
