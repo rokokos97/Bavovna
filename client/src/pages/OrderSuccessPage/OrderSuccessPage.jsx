@@ -5,6 +5,7 @@ import {getOrders, getOrdersLoadingStatus} from '../../store/ordersSlice';
 import ConfirmIcon from '../../components/svg/ConfirmIcon/ConfirmIcon';
 import {Link} from 'react-router-dom';
 import {getUser} from '../../store/userSlice';
+import LeftArrowIcon from '../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
 
 const OrderSuccessPage = () => {
   const isLoadingOrders = useSelector(getOrdersLoadingStatus);
@@ -24,13 +25,14 @@ const OrderSuccessPage = () => {
         <p>Thank you for shopping in our store!</p>
         <p>You will receive an email notification when your order is shipped.</p>
       </div>
-      <div className={styles.orderCompletePage__buttonsBlock}>
+      <b className={styles.orderCompletePage__buttonsBlock}>
         <Link
           to='/shop'
           aria-label='continue shopping'
         >
+          <LeftArrowIcon/>
           <span>
-            &lt;- go to shop
+            go to shop
           </span>
         </Link>
         <Link
@@ -41,7 +43,7 @@ const OrderSuccessPage = () => {
             view order
           </span>
         </Link>
-      </div>
+      </b>
     </div>
   );
 };

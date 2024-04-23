@@ -1,7 +1,13 @@
+@import "../../../../styles/variables.module";
 .userPaymentByCardForm {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  .userPaymentByCardForm__note {
+    @include body-3();
+    color: $error;
+    text-align: start;
+  }
 }
 .block {
   display: flex;

@@ -14,7 +14,7 @@ const CheckOutPageUserInfo = () => {
     }
   }, [cart]);
   return (
-    <div className={styles.checkOutPage} data-testid="CheckOutPageDelivery">
+    <div className={styles.checkOutPageUserInfo} data-testid="CheckOutPageDelivery">
       <CheckOutUserInfoBlock/>
       <CheckOutShoppingCartBlock/>
     </div>

@@ -3,6 +3,13 @@
   flex-direction: column;
   gap: 1.6rem;
 }
+.userPaymentByCardForm .userPaymentByCardForm__note {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ea001b;
+  text-align: start;
+}
 
 .block {
   display: flex;
