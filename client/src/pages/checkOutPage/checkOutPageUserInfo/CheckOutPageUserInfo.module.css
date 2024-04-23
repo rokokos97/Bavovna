@@ -1,10 +1,29 @@
-.checkOutPage {
+.checkOutPageUserInfo {
   height: 120vh;
   display: flex;
   flex-direction: row;
   column-gap: 2.4rem;
   margin: 6rem 8rem;
   justify-content: space-between;
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutPageUserInfo {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .checkOutPageUserInfo {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
 }
 
 /*# sourceMappingURL=CheckOutPageUserInfo.module.css.map */
