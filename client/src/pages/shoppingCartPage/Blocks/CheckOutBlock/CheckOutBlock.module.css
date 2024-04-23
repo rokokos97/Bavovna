@@ -9,8 +9,7 @@
   padding: 4rem 2.4rem;
   background: #fafafa;
 }
-
-.checkOutBlock__totalPriceBlock {
+.checkOutBlock .checkOutBlock__totalPriceBlock {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,13 +18,12 @@
   line-height: 120%;
   text-transform: uppercase;
 }
-
-.checkOutBlock__buttonsBlock {
+.checkOutBlock .checkOutBlock__buttonsBlock {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
-.checkOutBlock__buttonsBlock a:first-child {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -38,7 +36,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.checkOutBlock__buttonsBlock a:first-child span {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -46,7 +44,7 @@
   text-align: center;
   position: relative;
 }
-.checkOutBlock__buttonsBlock a:first-child::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -58,7 +56,7 @@
   top: 0.4rem;
   left: 15.75rem;
 }
-.checkOutBlock__buttonsBlock a:first-child::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -70,7 +68,7 @@
   top: 2.5rem;
   left: 17.85rem;
 }
-.checkOutBlock__buttonsBlock a:first-child:hover::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:hover::before {
   content: "";
   width: 39.93rem;
   height: 39.93rem;
@@ -79,7 +77,7 @@
   top: -17.565rem;
   left: -1rem;
 }
-.checkOutBlock__buttonsBlock a:first-child:active::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:active::after {
   content: "";
   width: 39.93rem;
   height: 39.93rem;
@@ -90,38 +88,38 @@
   top: -17.565rem;
   left: -1.1rem;
 }
-.checkOutBlock__buttonsBlock a:first-child:focus {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:focus {
   border: 3px solid #5a9b83;
 }
-.checkOutBlock__buttonsBlock a:first-child:disabled {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.checkOutBlock__buttonsBlock a:first-child:disabled span {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:disabled span {
   color: #9b9b9b;
 }
-.checkOutBlock__buttonsBlock a:first-child span {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.checkOutBlock__buttonsBlock a:first-child::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child::before {
   background: #5a9b83;
 }
-.checkOutBlock__buttonsBlock a:first-child::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child::after {
   background: #1a6449;
 }
-.checkOutBlock__buttonsBlock a:first-child:hover::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:hover::before {
   background: #5a9b83;
 }
-.checkOutBlock__buttonsBlock a:first-child:active::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:first-child:active::after {
   border: 1px solid #5a9b83;
 }
-.checkOutBlock__buttonsBlock a:last-child {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -135,7 +133,7 @@
   background: #fafafa;
   border: 0.1rem solid #000000;
 }
-.checkOutBlock__buttonsBlock a:last-child span {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -143,7 +141,7 @@
   text-align: center;
   position: relative;
 }
-.checkOutBlock__buttonsBlock a:last-child::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -155,7 +153,7 @@
   top: 0.4rem;
   left: 15.75rem;
 }
-.checkOutBlock__buttonsBlock a:last-child::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -167,7 +165,7 @@
   top: 2.5rem;
   left: 17.85rem;
 }
-.checkOutBlock__buttonsBlock a:last-child:hover::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:hover::before {
   content: "";
   width: 39.93rem;
   height: 39.93rem;
@@ -176,7 +174,7 @@
   top: -17.565rem;
   left: -1rem;
 }
-.checkOutBlock__buttonsBlock a:last-child:active::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:active::after {
   content: "";
   width: 39.93rem;
   height: 39.93rem;
@@ -187,19 +185,19 @@
   top: -17.565rem;
   left: -1.1rem;
 }
-.checkOutBlock__buttonsBlock a:last-child:focus {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:focus {
   border: 3px solid #5a9b83;
 }
-.checkOutBlock__buttonsBlock a:last-child:disabled {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.checkOutBlock__buttonsBlock a:last-child:disabled span {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:disabled span {
   color: #9b9b9b;
 }
-.checkOutBlock__buttonsBlock a:last-child span {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -207,17 +205,461 @@
   text-decoration: none;
   color: #000000;
 }
-.checkOutBlock__buttonsBlock a:last-child::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.checkOutBlock__buttonsBlock a:last-child::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child::after {
   background: #a9dfcb;
 }
-.checkOutBlock__buttonsBlock a:last-child:hover::before {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:hover::before {
   background: rgba(169, 223, 203, 0.3);
 }
-.checkOutBlock__buttonsBlock a:last-child:active::after {
+.checkOutBlock .checkOutBlock__buttonsBlock a:last-child:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutBlock {
+    position: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    padding-inline: 0;
+    padding-top: 2.4rem;
+    padding-bottom: 1.6rem;
+    background: #fafafa;
+    border-radius: 1.6rem;
+  }
+  .checkOutBlock .checkOutBlock__totalPriceBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 70.3rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+    background: #000000;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 32.75rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 34.85rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:hover::before {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:active::after {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1.1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::before {
+    background: #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::after {
+    background: #1a6449;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:hover::before {
+    background: #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:active::after {
+    border: 1px solid #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 70.3rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.6rem 2.4rem;
+    background: #fafafa;
+    border: 0.1rem solid #000000;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 32.75rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 34.85rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:hover::before {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:active::after {
+    content: "";
+    width: 77.33rem;
+    height: 77.33rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -36.265rem;
+    left: -1.1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::before {
+    background: rgba(169, 223, 203, 0.3);
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::after {
+    background: #a9dfcb;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:hover::before {
+    background: rgba(169, 223, 203, 0.3);
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:active::after {
+    border: 1px solid rgba(169, 223, 203, 0.3);
+  }
+}
+@media (max-width: 768px) {
+  .checkOutBlock {
+    position: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    padding-inline: 0;
+    padding-top: 2.4rem;
+    padding-bottom: 1.6rem;
+    background: #fafafa;
+  }
+  .checkOutBlock .checkOutBlock__totalPriceBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 32.8rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: #000000;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 14rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 16.1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:hover::before {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:active::after {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1.1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::before {
+    background: #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child::after {
+    background: #1a6449;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:hover::before {
+    background: #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:first-child:active::after {
+    border: 1px solid #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 32.8rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: #fafafa;
+    border: 0.1rem solid #000000;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 14rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 16.1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:hover::before {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:active::after {
+    content: "";
+    width: 36.08rem;
+    height: 36.08rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -15.64rem;
+    left: -1.1rem;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::before {
+    background: rgba(169, 223, 203, 0.3);
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child::after {
+    background: #a9dfcb;
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:hover::before {
+    background: rgba(169, 223, 203, 0.3);
+  }
+  .checkOutBlock .checkOutBlock__buttonsBlock a:last-child:active::after {
+    border: 1px solid rgba(169, 223, 203, 0.3);
+  }
 }
 
 /*# sourceMappingURL=CheckOutBlock.module.css.map */
