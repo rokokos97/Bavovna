@@ -429,12 +429,11 @@ $light-pink: #dfc5c5;
   align-items: center;
   gap: 1.6rem;
 
-  p {
+  &:first-child {
     @include headline-2();
-    color: $black-color;
   }
 
-  span {
+  &:last-child {
     @include body-2();
     color: $gray-10;
   }
