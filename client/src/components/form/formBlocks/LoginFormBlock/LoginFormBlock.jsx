@@ -1,25 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './LoginFormBlock.module.scss';
-import TextField from '../../formFields/TextField/TextField';
-import CheckboxField from '../../formFields/CheckboxField/CheckboxField';
-import {Link, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
+import useErrorMessage from '../../../../utils/useErrorMessage';
 import {validationSchemaLoginForm} from '../../../../utils/validationSchema';
+import {useLocation} from 'react-router-dom';
+import {useGoogleLogin} from '@react-oauth/google';
 import {
   getUserLoadingStatus,
   signInWithGoogle,
   signInUser,
-  getError, userClearResponse,
+  getError,
 } from '../../../../store/userSlice';
-import {useGoogleLogin} from '@react-oauth/google';
+import {Link, useNavigate} from 'react-router-dom';
+import TextField from '../../formFields/TextField/TextField';
+import CheckboxField from '../../formFields/CheckboxField/CheckboxField';
 import googleService from '../../../../services/google.service';
-import {useLocation} from 'react-router-dom';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 import PropTypes from 'prop-types';
-import generateErrorMessage from '../../../../utils/generateErrorMessage';
-
 
 const LoginFormBlock = ({type}) => {
   const dispatch = useDispatch();
@@ -28,7 +27,7 @@ const LoginFormBlock = ({type}) => {
   const isLoading = useSelector(getUserLoadingStatus);
   const [isRegularLogin, setIsRegularLogin] = useState(false);
   const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const errorMessage = useErrorMessage(authError);
   const location = useLocation();
   const redirectPath = location.pathname ==='/cart/checkoutUserInfo' ? '/cart/checkoutUserInfo' : '/shop/';
   const formik = useFormik({
@@ -66,27 +65,6 @@ const LoginFormBlock = ({type}) => {
     setIsLoadingGoogle(true);
     googleLoginHook();
   };
-  useEffect(() => {
-    const message = authError ? generateErrorMessage[authError.message]:null;
-    setErrorMessage(message);
-  }, [authError]);
-  useEffect(() => {
-    const clearErrorMessage = () => {
-      if (errorMessage ) {
-        setErrorMessage(null);
-      }
-    };
-    window.addEventListener('click', clearErrorMessage);
-    return () => {
-      window.removeEventListener('click', clearErrorMessage);
-    };
-  }, [errorMessage]);
-  useEffect(() => {
-    setErrorMessage(null);
-    dispatch(userClearResponse());
-  }, []);
-  console.log('formik.touched', formik.touched);
-  console.log('formik.errors', formik.errors);
   return (<>
     <section className={styles.loginFormBlock} data-testid="LoginFormBlock" type={type}>
       {errorMessage &&
@@ -127,6 +105,7 @@ const LoginFormBlock = ({type}) => {
         </CheckboxField>
         <button
           type='submit'
+          title = 'Sign in'
           aria-label='button confirm sign in'
           disabled={!formik.isValid || !formik.dirty}
           className={styles.loginFormBlock__button}
@@ -138,6 +117,7 @@ const LoginFormBlock = ({type}) => {
         </button>
         <Link
           to='recoveryPassword'
+          title='Go to recovery password page'
           aria-label='go to recovery password page'
           className={styles.loginFormBlock__forgotPassword}
         >
@@ -156,6 +136,7 @@ const LoginFormBlock = ({type}) => {
           </div>
           <button
             type='button'
+            title='Sign in with Google'
             aria-label='go to sign in with google dialog window'
             className={styles.loginFormBlock__googleButton}
             onClick={googleLogin}

@@ -18,10 +18,27 @@
       border: 1px solid $transparent70-gray10;
       background: $white;
       cursor: pointer;
+      &:hover {
+        border: 1px solid $transparent-30-a-05;
+      }
+      &:focus-within {
+        outline: none;
+        border: 1px solid $transparent-30-a-05;
+        box-shadow: 0 0 0 4px #E7F7F2;
+      }
     }
     input[type=checkbox]:checked {
       background: $white;
       border: 1px solid $transparent70-gray10;
+      &:hover {
+        border: 1px solid $transparent-30-a-05;
+        background-color: $transparent-30-a-05;
+      }
+      &:focus-within {
+        outline: none;
+        border: 1px solid $transparent-30-a-05;
+        box-shadow: 0 0 0 4px #E7F7F2;
+      }
     }
     input[type=checkbox]:checked:after {
       content: '';

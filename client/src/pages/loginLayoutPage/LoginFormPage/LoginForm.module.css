@@ -21,14 +21,13 @@
   align-items: center;
   gap: 1.6rem;
 }
-.loginForm__titleBlock p {
+.loginForm__titleBlock:first-child {
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
-  color: #040404;
 }
-.loginForm__titleBlock span {
+.loginForm__titleBlock:last-child {
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
@@ -39,8 +38,25 @@
   display: flex;
   justify-content: center;
 }
-.toRegisterForm a:hover {
+.toRegisterForm .toSignUpLink {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.toRegisterForm .toSignUpLink:hover {
+  color: #5a9b83;
   text-decoration: underline;
+}
+.toRegisterForm .toSignUpLink:focus {
+  color: #081e16;
+  text-decoration: underline;
+}
+.toRegisterForm .toSignUpLink:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.toRegisterForm .toSignUpLink:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
 }
 
 @media (max-width: 36rem) {
