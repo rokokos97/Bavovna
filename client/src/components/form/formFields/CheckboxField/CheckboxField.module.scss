@@ -21,6 +21,11 @@
       &:hover {
         border: 1px solid $transparent-30-a-05;
       }
+      &:focus-within {
+        outline: none;
+        border: 1px solid $transparent-30-a-05;
+        box-shadow: 0 0 0 4px #E7F7F2;
+      }
     }
     input[type=checkbox]:checked {
       background: $white;

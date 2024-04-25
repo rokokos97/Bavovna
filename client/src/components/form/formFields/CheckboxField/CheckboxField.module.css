@@ -21,6 +21,11 @@
 .checkboxField .checkbox input[type=checkbox]:hover {
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
+.checkboxField .checkbox input[type=checkbox]:focus-within {
+  outline: none;
+  border: 1px solid rgba(169, 223, 203, 0.3);
+  box-shadow: 0 0 0 4px #E7F7F2;
+}
 .checkboxField .checkbox input[type=checkbox]:checked {
   background: #fafafa;
   border: 1px solid rgba(74, 74, 74, 0.7);
