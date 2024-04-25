@@ -19,7 +19,6 @@ const LoginForm = () => {
         <NavLink
           to="signUp"
           aria-label='go to sign up page'
-          role="button"
         >
           <span>&nbsp;Sign up</span>
         </NavLink>
