@@ -21,13 +21,13 @@
   align-items: center;
   gap: 1.6rem;
 }
-.loginForm__titleBlock:first-child {
+.loginForm__titleBlock p:first-child {
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
 }
-.loginForm__titleBlock:last-child {
+.loginForm__titleBlock p:last-child {
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
@@ -66,14 +66,13 @@
     align-items: center;
     gap: 1.6rem;
   }
-  .loginForm__titleBlock p {
+  .loginForm__titleBlock:first-child {
     font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;
-    color: #040404;
   }
-  .loginForm__titleBlock span {
+  .loginForm__titleBlock:last-child {
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
