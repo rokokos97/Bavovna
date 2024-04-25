@@ -59,20 +59,40 @@
   pointer-events: none;
 }
 
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1118px) {
   .loginForm__titleBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.6rem;
   }
-  .loginForm__titleBlock:first-child {
+  .loginForm__titleBlock p:first-child {
     font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;
   }
-  .loginForm__titleBlock:last-child {
+  .loginForm__titleBlock p:last-child {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #4a4a4a;
+  }
+}
+@media (max-width: 768px) {
+  .loginForm__titleBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  .loginForm__titleBlock p:first-child {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .loginForm__titleBlock p:last-child {
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;

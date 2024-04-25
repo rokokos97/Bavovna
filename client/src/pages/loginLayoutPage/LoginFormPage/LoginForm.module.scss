@@ -13,7 +13,13 @@
     @include link();
   }
 }
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1118px) {
+  .loginForm__titleBlock {
+    @include form-title-block-mobile();
+  }
+}
+
+@media (max-width: 768px) {
   .loginForm__titleBlock {
     @include form-title-block-mobile();
   }
