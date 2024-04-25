@@ -9,10 +9,8 @@
 .toRegisterForm {
   display: flex;
   justify-content: center;
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
+  .toSignUpLink {
+    @include link();
   }
 }
 @media (max-width: 36rem) {
