@@ -2,11 +2,14 @@
   width: 41rem;
   display: flex;
   margin: 4rem auto 17rem;
-  min-height: 100vh
+}
+@media (min-width: 769px) and (max-width: 1120px){
+  .loginLayout {
+    width: 70.3rem;
+  }
 }
 @media (max-width: 580px) {
   .loginLayout {
     width: 32.5rem;
-    //min-height: 100vh
   }
 }
