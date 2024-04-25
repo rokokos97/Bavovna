@@ -37,6 +37,7 @@
     display: block;
     color: $gray-10;
     @include link-2();
+    @include link();
   }
   .loginFormBlock__form {
     width: 100%;
@@ -100,14 +101,14 @@
     margin: 0 auto;
   }
 }
-@media (min-width: 361px) and (max-width: 1120px){
+@media (min-width: 769px) and (max-width: 1120px){
   .loginFormBlock {
     .loginFormBlock__button {
-      @include button-mobile(70.3rem);
+      @include button-mobile(41rem);
 
     }
     .loginFormBlock__googleButton {
-      @include button(70.3rem);
+      @include button-mobile(41rem);
     }
     .errorMessagesBlock {
       p {
@@ -127,14 +128,14 @@
     }
   }
 }
-@media (max-width: 36rem) {
+@media (max-width: 768px) {
   .loginFormBlock {
     .loginFormBlock__button {
       @include button-mobile(32.8rem);
 
     }
     .loginFormBlock__googleButton {
-      @include button(32.8rem);
+      @include button-mobile(32.8rem);
     }
     .errorMessagesBlock {
       p {
