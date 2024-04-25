@@ -1,17 +1,18 @@
+@import "../../styles/variables.module";
 .loginLayout {
   display: flex;
   width: 41rem;
-  margin: 4rem auto 17rem;
+  margin: $xl-spacing auto 17rem;
 }
 @media (min-width: 769px) and (max-width: 1120px){
   .loginLayout {
     width: 41rem;
-    margin: 2.4rem auto 5.6rem;
+    margin: $xl-spacing auto 5.6rem;
   }
 }
 @media (max-width: 768px) {
   .loginLayout {
     width: 32.5rem;
-    margin: 2.4rem auto 2rem;
+    margin: $xl-spacing auto 2rem;
   }
 }
