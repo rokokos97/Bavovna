@@ -1,27 +1,35 @@
 import {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import generateErrorMessage from './generateErrorMessage';
+import {userClearResponse} from '../store/userSlice';
 
 function useErrorMessage(authError) {
   const [errorMessage, setErrorMessage] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const message = authError ? generateErrorMessage[authError.message] : null;
-    setErrorMessage(message);
-  }, [authError]);
+    // Встановлює повідомлення про помилку, якщо воно існує
+    setErrorMessage(authError ? generateErrorMessage[authError.message] : null);
 
-  useEffect(() => {
+    // Функція для очищення помилок
     const clearErrorMessage = () => {
       if (errorMessage) {
         setErrorMessage(null);
+        dispatch(userClearResponse());
       }
     };
+
+    // Очищення помилок при кліці або натисканні клавіш
     window.addEventListener('click', clearErrorMessage);
+    window.addEventListener('keydown', clearErrorMessage);
+
     return () => {
       window.removeEventListener('click', clearErrorMessage);
+      window.removeEventListener('keydown', clearErrorMessage);
     };
-  }, [errorMessage]);
+  }, [authError, errorMessage, dispatch]);
 
-  return [errorMessage, setErrorMessage];
+  return errorMessage;
 }
 
 export default useErrorMessage;
