@@ -1,18 +1,22 @@
 .page404 {
-  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 4.8rem;
   margin: 8.1rem auto;
 }
-.page404 p {
+.page404 .page404__image {
+  width: fit-content;
+  height: fit-content;
+}
+.page404 .page404__text {
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
+  text-align: center;
 }
-.page404 button {
+.page404 .page404__goToShopButton {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -25,7 +29,7 @@
   padding: 1.6rem 2.4rem;
   background: #000000;
 }
-.page404 button span {
+.page404 .page404__goToShopButton span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -33,7 +37,7 @@
   text-align: center;
   position: relative;
 }
-.page404 button::before {
+.page404 .page404__goToShopButton::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -45,7 +49,7 @@
   top: 0.4rem;
   left: 6.7rem;
 }
-.page404 button::after {
+.page404 .page404__goToShopButton::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -57,7 +61,7 @@
   top: 2.5rem;
   left: 8.8rem;
 }
-.page404 button:hover::before {
+.page404 .page404__goToShopButton:hover::before {
   content: "";
   width: 20.02rem;
   height: 20.02rem;
@@ -66,7 +70,7 @@
   top: -7.61rem;
   left: -1rem;
 }
-.page404 button:active::after {
+.page404 .page404__goToShopButton:active::after {
   content: "";
   width: 20.02rem;
   height: 20.02rem;
@@ -77,36 +81,252 @@
   top: -7.61rem;
   left: -1.1rem;
 }
-.page404 button:focus {
+.page404 .page404__goToShopButton:focus {
   border: 3px solid #5a9b83;
 }
-.page404 button:disabled {
+.page404 .page404__goToShopButton:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.page404 button:disabled span {
+.page404 .page404__goToShopButton:disabled span {
   color: #9b9b9b;
 }
-.page404 button span {
+.page404 .page404__goToShopButton span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #fafafa;
 }
-.page404 button::before {
+.page404 .page404__goToShopButton::before {
   background: #5a9b83;
 }
-.page404 button::after {
+.page404 .page404__goToShopButton::after {
   background: #1a6449;
 }
-.page404 button:hover::before {
+.page404 .page404__goToShopButton:hover::before {
   background: #5a9b83;
 }
-.page404 button:active::after {
+.page404 .page404__goToShopButton:active::after {
   border: 1px solid #5a9b83;
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .page404 {
+    margin-top: 4.8rem;
+  }
+  .page404 .page404__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+  }
+  .page404 .page404__goToShopButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 18.2rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: #000000;
+  }
+  .page404 .page404__goToShopButton span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .page404 .page404__goToShopButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 6.7rem;
+  }
+  .page404 .page404__goToShopButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 8.8rem;
+  }
+  .page404 .page404__goToShopButton:hover::before {
+    content: "";
+    width: 20.02rem;
+    height: 20.02rem;
+    opacity: 1;
+    position: absolute;
+    top: -7.61rem;
+    left: -1rem;
+  }
+  .page404 .page404__goToShopButton:active::after {
+    content: "";
+    width: 20.02rem;
+    height: 20.02rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -7.61rem;
+    left: -1.1rem;
+  }
+  .page404 .page404__goToShopButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .page404 .page404__goToShopButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .page404 .page404__goToShopButton:disabled span {
+    color: #9b9b9b;
+  }
+  .page404 .page404__goToShopButton span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .page404 .page404__goToShopButton::before {
+    background: #5a9b83;
+  }
+  .page404 .page404__goToShopButton::after {
+    background: #1a6449;
+  }
+  .page404 .page404__goToShopButton:hover::before {
+    background: #5a9b83;
+  }
+  .page404 .page404__goToShopButton:active::after {
+    border: 1px solid #5a9b83;
+  }
+}
+@media (max-width: 768px) {
+  .page404 {
+    margin-top: 3.2rem;
+  }
+  .page404 .page404__image {
+    width: 32.8rem;
+  }
+  .page404 .page404__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+  }
+  .page404 .page404__goToShopButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 16rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: #000000;
+  }
+  .page404 .page404__goToShopButton span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .page404 .page404__goToShopButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 5.6rem;
+  }
+  .page404 .page404__goToShopButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 7.7rem;
+  }
+  .page404 .page404__goToShopButton:hover::before {
+    content: "";
+    width: 17.6rem;
+    height: 17.6rem;
+    opacity: 1;
+    position: absolute;
+    top: -6.4rem;
+    left: -1rem;
+  }
+  .page404 .page404__goToShopButton:active::after {
+    content: "";
+    width: 17.6rem;
+    height: 17.6rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -6.4rem;
+    left: -1.1rem;
+  }
+  .page404 .page404__goToShopButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .page404 .page404__goToShopButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .page404 .page404__goToShopButton:disabled span {
+    color: #9b9b9b;
+  }
+  .page404 .page404__goToShopButton span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .page404 .page404__goToShopButton::before {
+    background: #5a9b83;
+  }
+  .page404 .page404__goToShopButton::after {
+    background: #1a6449;
+  }
+  .page404 .page404__goToShopButton:hover::before {
+    background: #5a9b83;
+  }
+  .page404 .page404__goToShopButton:active::after {
+    border: 1px solid #5a9b83;
+  }
 }
 
 /*# sourceMappingURL=Page404.module.css.map */

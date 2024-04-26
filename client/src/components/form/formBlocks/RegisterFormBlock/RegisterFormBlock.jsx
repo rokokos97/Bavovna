@@ -75,15 +75,15 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           error={formik.errors.license}
         >
-          <p>
             I agree to the&nbsp;
-            <span>
-              <NavLink
-                to={'/help/faq'}>
+          <NavLink
+            className={styles.termsLink}
+            target={'_blank'}
+            title = 'terms and conditions'
+            aria-label='open terms and conditions'
+            to={'/help/faq'}>
                   Terms and conditions of use.
-              </NavLink>
-            </span>
-          </p>
+          </NavLink>
         </CheckboxField>
         <button
           type='submit'

@@ -7,12 +7,18 @@ const Page404 = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.page404} data-testid="Page404">
-      <NotFoundPageImage />
-      <p>
+      <div className={styles.page404__image}>
+        <NotFoundPageImage />
+      </div>
+      <p className={styles.page404__text}>
         The page you are looking for does not exist or has been moved.
       </p>
       <button
-        onClick={()=> navigate(('/'))}
+        className={styles.page404__goToShopButton}
+        type='button'
+        title='go to shop'
+        aria-label='go to shop'
+        onClick={()=> navigate(('/shop'))}
       >
         <span>
         go to shop
