@@ -18,6 +18,7 @@ const LoginForm = () => {
         Don’t have an account?&nbsp;
         <NavLink
           to="signUp"
+          title='go to sign up page'
           aria-label='go to sign up page'
           className={styles.toSignUpLink}
         >
