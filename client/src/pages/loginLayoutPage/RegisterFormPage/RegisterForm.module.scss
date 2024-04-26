@@ -32,7 +32,18 @@
     }
   }
 }
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1120px) {
+  .registerForm__titleBlock {
+    @include form-title-block-mobile();
+  }
+  .registerForm__errorMessagesBlock {
+    @include body-5();
+  }
+  .registerForm__successMessagesBlock {
+    @include body-5();
+  }
+}
+@media (max-width: 768px) {
   .registerForm__titleBlock {
     @include form-title-block-mobile();
   }

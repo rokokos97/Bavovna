@@ -80,7 +80,37 @@
   text-decoration: underline;
 }
 
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1120px) {
+  .registerForm__titleBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  .registerForm__titleBlock p:first-child {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .registerForm__titleBlock p:last-child {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #4a4a4a;
+  }
+  .registerForm__errorMessagesBlock {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+  .registerForm__successMessagesBlock {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+  }
+}
+@media (max-width: 768px) {
   .registerForm__titleBlock {
     display: flex;
     flex-direction: column;
