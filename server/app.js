@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const compression = require('compression');
 const config = require('config');
 const chalk = require('chalk');
 const routes = require('./routes');
@@ -7,16 +8,17 @@ const cors = require('cors');
 const initDatabase = require('./startUp/initDatabase');
 const path = require('path');
 const app = express();
+
 mongoose.set('strictQuery', false);
 
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
-app.use('/api/uploads', express.static(
-    'uploads'));
+app.use('/api/uploads', express.static('uploads'));
 app.use('/api', routes);
 
-const PORT = config.get('port') ?? 8080;
+const PORT = config.get('port') || 8080;
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(
