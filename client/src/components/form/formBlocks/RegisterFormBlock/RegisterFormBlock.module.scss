@@ -2,6 +2,15 @@
 .registerFormBlock {
   .registerFormBlock__form {
     @include form();
+    .termsLink {
+      @include link-3();
+      text-decoration: underline;
+      &:hover {
+        @include link();
+        text-decoration: underline;
+      }
+
+    }
   }
 }
 .registerFormBlock__button {
@@ -31,7 +40,7 @@
     @include button-mobile (32.8rem);
   }
   .registerFormBlock__googleButton {
-    @include button (32.8rem);
+    @include button-mobile (32.8rem);
 
   }
 }

@@ -13,6 +13,33 @@
   font-size: 16px;
   line-height: 110%;
 }
+.registerFormBlock .registerFormBlock__form .termsLink {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form .termsLink:hover {
+  text-decoration: none;
+  transition: color 0.3s;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form .termsLink:hover:hover {
+  color: #5a9b83;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form .termsLink:hover:focus {
+  color: #081e16;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form .termsLink:hover:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form .termsLink:hover:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
+}
 
 .registerFormBlock__button {
   display: flex;
@@ -328,13 +355,13 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 1.6rem 2.4rem;
+    padding: 1.2rem 1.2rem;
   }
   .registerFormBlock__googleButton span {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 140%;
-    text-transform: uppercase;
+    text-align: center;
     text-align: center;
     position: relative;
   }
