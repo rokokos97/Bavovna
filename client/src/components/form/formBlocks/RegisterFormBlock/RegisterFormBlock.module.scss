@@ -9,13 +9,12 @@
         @include link();
         text-decoration: underline;
       }
-
+    }
+    .registerFormBlock__button {
+      @include button (41rem);
+      @include buttonBlack();
     }
   }
-}
-.registerFormBlock__button {
-  @include button (41rem);
-  @include buttonBlack();
 }
 .registerFormBlock__socialButtonsBlock {
   display: flex;
@@ -23,24 +22,96 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1.6rem;
-}
-.registerFormBlock__divider {
-  margin-top: 3.2rem;
-  @include divider();
-}
-.registerFormBlock__googleButton {
-  display: flex;
-  gap: 1.2rem;
-  border: 1px solid $black;
-  @include button (41rem);
-  @include buttonWhite();
-}
-@media (max-width: 36rem) {
-  .registerFormBlock__button {
-    @include button-mobile (32.8rem);
-  }
-  .registerFormBlock__googleButton {
-    @include button-mobile (32.8rem);
 
+  .registerFormBlock__divider {
+    margin-top: 3.2rem;
+    @include divider();
+  }
+
+  .registerFormBlock__googleButton {
+    display: flex;
+    gap: 1.2rem;
+    border: 1px solid $black;
+    @include button (41rem);
+    @include buttonWhite();
   }
 }
+@media (min-width: 769px) and (max-width: 1120px) {
+  .registerFormBlock {
+    .registerFormBlock__form {
+      @include form();
+      .termsLink {
+        @include link-3();
+        text-decoration: underline;
+        &:hover {
+          @include link();
+          text-decoration: underline;
+        }
+      }
+      .registerFormBlock__button {
+        @include button (41rem);
+        @include buttonBlack();
+      }
+    }
+  }
+  .registerFormBlock__socialButtonsBlock {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+
+    .registerFormBlock__divider {
+      margin-top: 3.2rem;
+      @include divider();
+    }
+
+    .registerFormBlock__googleButton {
+      display: flex;
+      gap: 1.2rem;
+      border: 1px solid $black;
+      @include button (41rem);
+      @include buttonWhite();
+    }
+  }
+}
+@media (max-width: 768px) {
+  .registerFormBlock {
+    .registerFormBlock__form {
+      @include form();
+      .termsLink {
+        @include link-3();
+        text-decoration: underline;
+        &:hover {
+          @include link();
+          text-decoration: underline;
+        }
+      }
+      .registerFormBlock__button {
+        @include buttonBlack();
+        @include button-mobile(32.8rem);
+      }
+    }
+  }
+  .registerFormBlock__socialButtonsBlock {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+
+    .registerFormBlock__divider {
+      margin-top: 3.2rem;
+      @include divider();
+    }
+
+    .registerFormBlock__googleButton {
+      display: flex;
+      gap: 1.2rem;
+      border: 1px solid $black;
+      @include buttonWhite();
+      @include button-mobile(32.8rem);
+    }
+  }
+}
+
