@@ -3,43 +3,29 @@
   width: 100%;
   @include form();
 
-}
-.registerFormBlock__link {
-  a {
-    @include link-2();
-    color: #ea001b;
+  .registerForm__titleBlock {
+    @include form-title-block();
   }
-}
-.registerForm__titleBlock {
-  @include form-title-block();
-}
-.loginFormBlock__forgotPassword {
- @include link-2();
-  color: $gray-10;
-}
-.registerForm__errorMessagesBlock {
-  @include form-message-block($light-pink, $error);
-}
-.registerForm__successMessagesBlock {
-  @include form-message-block($accent-a-05, $success);
-}
-.toLoginForm {
-  display: flex;
-  justify-content: center;
-  a {
-    &:hover {
-      text-decoration: underline;
+
+  .registerForm__errorMessagesBlock {
+    @include form-message-block($light-pink, $error);
+  }
+
+  .registerForm__toLoginFormLink {
+    display: flex;
+    justify-content: center;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (max-width: 1120px) {
   .registerForm__titleBlock {
     @include form-title-block-mobile();
   }
   .registerForm__errorMessagesBlock {
-    @include body-5();
-  }
-  .registerForm__successMessagesBlock {
     @include body-5();
   }
 }
@@ -48,9 +34,6 @@
     @include form-title-block-mobile();
   }
   .registerForm__errorMessagesBlock {
-    @include body-5();
-  }
-  .registerForm__successMessagesBlock {
     @include body-5();
   }
 }
