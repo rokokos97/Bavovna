@@ -9,11 +9,11 @@
   gap: 0.8rem;
 }
 .checkboxField .checkbox input[type=checkbox] {
+  width: 1.6rem;
+  height: 1.6rem;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 1.6rem;
-  height: 1.6rem;
   border: 1px solid rgba(74, 74, 74, 0.7);
   background: #fafafa;
   cursor: pointer;
@@ -52,8 +52,8 @@
 }
 .checkboxField .checkbox label {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
+  font-size: 12px;
+  line-height: 110%;
   color: #030a07;
 }
 
@@ -75,7 +75,14 @@
   color: #ea001b;
 }
 
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkboxField .checkbox label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 110%;
+  }
+}
+@media (max-width: 768px) {
   .checkboxField .checkbox label {
     font-weight: 400;
     font-size: 12px;

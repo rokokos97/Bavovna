@@ -10,11 +10,11 @@
     gap: 0.8rem;
 
     input[type=checkbox] {
+      width: 1.6rem;
+      height: 1.6rem;
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      width: 1.6rem;
-      height: 1.6rem;
       border: 1px solid $transparent70-gray10;
       background: $white;
       cursor: pointer;
@@ -52,7 +52,7 @@
       height: 100%;
     }
     label {
-      @include label();
+      @include menu-5();
       color: $accent-a-95;
     }
   }
@@ -60,7 +60,7 @@
 .error {
   color: $error;
   padding-left: 0.8rem;
- @include menu-5();
+  @include menu-5();
 }
 .checkboxField.hasError {
   .checkbox {
@@ -75,7 +75,16 @@
     }
   }
 }
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkboxField {
+    .checkbox {
+      label {
+        @include menu-5();
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
   .checkboxField {
     .checkbox {
       label {
