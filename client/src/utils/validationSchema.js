@@ -118,7 +118,7 @@ export const validationSchemaCardPayment = Yup.object().shape({
       .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
 });
-export const validationSchemaNewsletterForm = Yup.object().shape({
+export const validationSchemaEmail = Yup.object().shape({
   email: Yup.string()
       .matches(emailRegex, 'Invalid email address'),
 });
