@@ -16,9 +16,9 @@ import LoaderIconSmall from '../../../components/svg/loaderIcons/LoaderSmallIcon
 const RecoveryPasswordForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getUserLoadingStatus);
-  const [message, setMessage] = useState();
   const response = useSelector(getResponse);
   const error = useSelector(getError);
+  const [message, setMessage] = useState();
   const [isLoaderRun, setIsLoaderRun] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -69,9 +69,9 @@ const RecoveryPasswordForm = () => {
         <p>
           recover password
         </p>
-        <span>
+        <p>
           Please enter your e-mail address:
-        </span>
+        </p>
       </div>
       {message ?
         <div className={(message.code !== 200) ? styles.forgotPasswordForm__errorMessagesBlock : styles.forgotPasswordForm__successMessagesBlock}>
@@ -104,16 +104,15 @@ const RecoveryPasswordForm = () => {
           }
         </button>
       </form>
-      <p>
-        Do you remember your password?
-        <span>
-          <NavLink
-            to="/signIn"
-            role="button"
-          >
-            &nbsp;Back to sign in
-          </NavLink>
-        </span>
+      <p className={styles.forgotPasswordForm__backToSignIn}>
+        Do you remember your password?&nbsp;
+        <NavLink
+          to="/signIn"
+          role="button"
+          className={styles.forgotPasswordForm__backToSignInLink}
+        >
+          <span>Back to sign in</span>
+        </NavLink>
       </p>
     </div>
   );
