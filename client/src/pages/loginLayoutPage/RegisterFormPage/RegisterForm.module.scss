@@ -11,29 +11,37 @@
     @include form-message-block($light-pink, $error);
   }
 
-  .registerForm__toLoginFormLink {
+  .registerForm__backToSignIn {
     display: flex;
     justify-content: center;
-    a {
-      &:hover {
-        text-decoration: underline;
-      }
+    .registerForm__backToSignInLink {
+      @include link-1();
     }
   }
 }
 @media (max-width: 1120px) {
-  .registerForm__titleBlock {
-    @include form-title-block-mobile();
-  }
-  .registerForm__errorMessagesBlock {
-    @include body-5();
+  .registerForm {
+    @include form-mobile();
+
+    .registerForm__titleBlock {
+      @include form-title-block-mobile();
+    }
+
+    .registerForm__errorMessagesBlock {
+      @include body-5();
+    }
   }
 }
 @media (max-width: 768px) {
-  .registerForm__titleBlock {
-    @include form-title-block-mobile();
-  }
-  .registerForm__errorMessagesBlock {
-    @include body-5();
+  .registerForm {
+    @include form-mobile();
+
+    .registerForm__titleBlock {
+      @include form-title-block-mobile();
+    }
+
+    .registerForm__errorMessagesBlock {
+      @include body-5();
+    }
   }
 }

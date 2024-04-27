@@ -192,6 +192,7 @@ $transparent-30: rgba(169, 223, 203, 0.3);
   font-weight: 600;
   font-size: 16px;
   line-height: 110%;
+  text-decoration: underline;
 }
 @mixin link-2() {
   font-weight: 600;
@@ -319,9 +320,22 @@ $light-pink: #dfc5c5;
   gap: 2.4rem;
   p {
     @include body-3();
-
     span {
       @include link-1();
+      @include link();
+    }
+  }
+}
+@mixin form-mobile() {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  p {
+    @include body-4();
+    justify-self: center;
+    span {
+      @include link-1();
+      @include link();
     }
   }
 }

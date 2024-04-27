@@ -2,25 +2,35 @@
 .loginForm {
   width: 100%;
   @include form();
-}
-.loginForm__titleBlock {
-  @include form-title-block();
-}
-.toRegisterForm {
-  display: flex;
-  justify-content: center;
-  .toSignUpLink {
-    @include link();
+
+  .loginForm__titleBlock {
+    @include form-title-block();
+  }
+
+  .loginForm__backToSignUp {
+    display: flex;
+    justify-content: center;
+    .loginForm__backToSignUpLink {
+      @include link-1();
+    }
   }
 }
 @media (min-width: 769px) and (max-width: 1118px) {
-  .loginForm__titleBlock {
-    @include form-title-block-mobile();
+  .loginForm {
+    @include form-mobile();
+
+    .loginForm__titleBlock {
+      @include form-title-block-mobile();
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .loginForm__titleBlock {
-    @include form-title-block-mobile();
+  .loginForm {
+    @include form-mobile();
+
+    .loginForm__titleBlock {
+      @include form-title-block-mobile();
+    }
   }
 }
