@@ -108,7 +108,8 @@ const RecoveryPasswordForm = () => {
         Do you remember your password?&nbsp;
         <NavLink
           to="/signIn"
-          role="button"
+          title='go to sign in page'
+          aria-label='go to sign in page'
           className={styles.forgotPasswordForm__backToSignInLink}
         >
           <span>Back to sign in</span>
