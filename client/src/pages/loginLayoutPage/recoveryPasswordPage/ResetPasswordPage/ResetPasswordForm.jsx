@@ -4,9 +4,9 @@ import TextField from '../../../../components/form/formFields/TextField/TextFiel
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
 import {userClearResponse, getResponse, getUserLoadingStatus, setNewUserPassword} from '../../../../store/userSlice';
-import * as Yup from 'yup';
 import transformErrorMessage from '../../../../utils/generateErrorMessage';
 import LoaderIconSmall from '../../../../components/svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
+import {validationSchemaPasswords} from '../../../../utils/validationSchema';
 
 const ResetPasswordForm = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -21,20 +21,7 @@ const ResetPasswordForm = () => {
       password: '',
       confirmPassword: '',
     },
-    validationSchema: Yup.object().shape({
-      confirmPassword: Yup.string()
-          .required('Password confirmation is required')
-          .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-      password: Yup.string()
-          .required('Password is required')
-          .min(8, 'Password has to be longer than 8 characters')
-          .matches(/(?=.*[0-9])/, 'Password must contain at least one number')
-          .matches(/(?=.*[!_$%&*"])/, 'Password must contain at ' +
-            'least one of symbols !_$%&*')
-          .matches(/(?=.*[A-Z])/, 'Password must contain at' +
-            ' least one capital letter')
-          .max(16, 'Password hasn\'t\' to be longer than 16 characters'),
-    }),
+    validationSchema: validationSchemaPasswords,
     onSubmit: (values) => {
       dispatch(setNewUserPassword({token, email, values}));
       formik.resetForm();
@@ -51,17 +38,17 @@ const ResetPasswordForm = () => {
     }
   }, [isLoading]);
   return (
-    <div className={styles.resetPasswordForm} data-testid="ResetPasswordForm">
-      <div
+    <article className={styles.resetPasswordForm} data-testid="ResetPasswordForm">
+      <section
         className={styles.resetPasswordForm__titleBlock}
       >
         <p>Reset password</p>
-        <span>Please enter a new password:</span>
-      </div>
+        <p>Please enter a new password:</p>
+      </section>
       {response ?
-        <div className={(response.code !== 200) ? styles.resetPasswordForm__errorMessagesBlock : styles.resetPasswordForm__successMessagesBlock}>
+        <section className={(response.code !== 200) ? styles.resetPasswordForm__errorMessagesBlock : styles.resetPasswordForm__successMessagesBlock}>
           <p>{transformErrorMessage[response.message]}</p>
-        </div> : null}
+        </section> : null}
       <form
         className={styles.resetPasswordForm__form}
         onSubmit={formik.handleSubmit}
@@ -101,7 +88,7 @@ const ResetPasswordForm = () => {
           }
         </button>
       </form>
-    </div>
+    </article>
   );
 };
 
