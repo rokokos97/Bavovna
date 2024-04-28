@@ -38,8 +38,7 @@ export const validationSchemaUserDataForm = Yup.object().shape({
   newPassword: Yup.string()
       .max(16, 'Password hasn\'t\' to be longer than 16 characters')
       .matches(passwordRegex,
-          'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&* and no spaces')
-      .required('Field is required'),
+          'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&* and no spaces'),
   phoneNumber: Yup.string()
       .matches(/^\d{12}$/, 'Phone number must be 12 digits'),
   email: Yup.string()
