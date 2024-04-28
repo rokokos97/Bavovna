@@ -81,7 +81,7 @@ const RecoveryPasswordForm = () => {
           label='Email'
           name='email'
           placeholder={'example@ex.com'}
-          value={formik.values.email}
+          value={formik.values.email.toLowerCase()}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.email}

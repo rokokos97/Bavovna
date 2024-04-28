@@ -1,6 +1,7 @@
 .shoppingCartPage {
   min-height: 100vh;
-  width: 128rem;
+  padding-inline: 8rem;
+  width: 100%;
   display: flex;
   position: relative;
   top: 0;
