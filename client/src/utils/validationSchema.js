@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 
 const streetNameRegex = /^[A-Z][a-z'-]*\s?([A-Z]?[a-z'-]*)?$/;
 const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-const passwordRegex = /^(?=.*[0-9])(?=.*[!_$%&*"])(?=.*[A-Z]).{8,}$/;
+const passwordRegex = /^(?=.*[0-9])(?=.*[!_$%&*])(?=.*[A-Z])(?!.*\s).{8,}$/;
 const nameRegex = /^[A-Z][a-z]{1,14}$/;
 
 export const validationSchemaRegisterForm = Yup.object().shape({
@@ -13,7 +13,8 @@ export const validationSchemaRegisterForm = Yup.object().shape({
       .required('Field is required'),
   password: Yup.string()
       .max(16, 'Password hasn\'t\' to be longer than 16 characters')
-      .matches(passwordRegex, 'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&*')
+      .matches(passwordRegex,
+          'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&* and no spaces')
       .required('Field is required'),
   email: Yup.string()
       .matches(emailRegex, 'Invalid email address')
@@ -35,8 +36,10 @@ export const validationSchemaLoginForm = Yup.object().shape({
 export const validationSchemaUserDataForm = Yup.object().shape({
   currentPassword: Yup.string(),
   newPassword: Yup.string()
-      .matches(passwordRegex, 'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&*')
-      .max(16, 'Password can\'t be longer than 16 characters'),
+      .max(16, 'Password hasn\'t\' to be longer than 16 characters')
+      .matches(passwordRegex,
+          'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&* and no spaces')
+      .required('Field is required'),
   phoneNumber: Yup.string()
       .matches(/^\d{12}$/, 'Phone number must be 12 digits'),
   email: Yup.string()
@@ -118,9 +121,19 @@ export const validationSchemaCardPayment = Yup.object().shape({
       .matches(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, 'Card number must be 16 numbers long')
       .required('Card number is required'),
 });
-export const validationSchemaNewsletterForm = Yup.object().shape({
+export const validationSchemaEmail = Yup.object().shape({
   email: Yup.string()
       .matches(emailRegex, 'Invalid email address'),
 });
 
+export const validationSchemaPasswords = Yup.object().shape({
+  confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Field is required'),
+  password: Yup.string()
+      .max(16, 'Password hasn\'t\' to be longer than 16 characters')
+      .matches(passwordRegex,
+          'Password must contain at least 8 symbols long, include number, capital letter, special characters !_$%&* and no spaces')
+      .required('Field is required'),
+});
 

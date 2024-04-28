@@ -85,13 +85,15 @@ const RegisterForm = () => {
           </div> : null
       }
       <RegisterFormBlock formik={formik} googleRegister={googleRegister} isRegularSignUp={isRegularSignUp} isGoogleSignUp={isGoogleSignUp}/>
-      <p className={styles.toLoginForm}>
-        Already have an account?
+      <p className={styles.registerForm__backToSignIn}>
+        Already have an account?&nbsp;
         <NavLink
           to="/signIn"
-          role="button"
+          title='go to sign in page'
+          aria-label='go to sign ip page'
+          className={styles.registerForm__backToSignInLink}
         >
-          <span>&nbsp;Sign in</span>
+          <span>Sign in</span>
         </NavLink>
       </p>
       <Modal

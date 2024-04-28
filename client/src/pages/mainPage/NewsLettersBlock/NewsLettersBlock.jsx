@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './NewsLettersBlock.module.scss';
 import {useFormik} from 'formik';
-import {validationSchemaNewsletterForm} from '../../../utils/validationSchema';
+import {validationSchemaEmail} from '../../../utils/validationSchema';
 import TextField from '../../../components/form/formFields/TextField/TextField';
 import CloseIcon from '../../../components/svg/CloseIcon/CloseIcon';
 import newsletterService from '../../../services/newsletter.service';
@@ -17,7 +17,7 @@ const NewsLettersBlock = () => {
     initialValues: {
       email: '',
     },
-    validationSchema: validationSchemaNewsletterForm,
+    validationSchema: validationSchemaEmail,
     onSubmit: () => {
       formik.resetForm();
       newsletterService.add({email: formik.values.email})

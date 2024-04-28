@@ -12,6 +12,25 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 110%;
+  text-decoration: underline;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.registerFormBlock .registerFormBlock__form p span:hover {
+  color: #5a9b83;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form p span:focus {
+  color: #081e16;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form p span:active {
+  color: #1a6449;
+  text-decoration: underline;
+}
+.registerFormBlock .registerFormBlock__form p span:disabled {
+  color: #c3c3c3;
+  pointer-events: none;
 }
 .registerFormBlock .registerFormBlock__form .termsLink {
   font-weight: 400;
@@ -280,6 +299,25 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 110%;
+    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .registerFormBlock .registerFormBlock__form p span:hover {
+    color: #5a9b83;
+    text-decoration: underline;
+  }
+  .registerFormBlock .registerFormBlock__form p span:focus {
+    color: #081e16;
+    text-decoration: underline;
+  }
+  .registerFormBlock .registerFormBlock__form p span:active {
+    color: #1a6449;
+    text-decoration: underline;
+  }
+  .registerFormBlock .registerFormBlock__form p span:disabled {
+    color: #c3c3c3;
+    pointer-events: none;
   }
   .registerFormBlock .registerFormBlock__form .termsLink {
     font-weight: 400;
@@ -547,6 +585,25 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 110%;
+    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .registerFormBlock .registerFormBlock__form p span:hover {
+    color: #5a9b83;
+    text-decoration: underline;
+  }
+  .registerFormBlock .registerFormBlock__form p span:focus {
+    color: #081e16;
+    text-decoration: underline;
+  }
+  .registerFormBlock .registerFormBlock__form p span:active {
+    color: #1a6449;
+    text-decoration: underline;
+  }
+  .registerFormBlock .registerFormBlock__form p span:disabled {
+    color: #c3c3c3;
+    pointer-events: none;
   }
   .registerFormBlock .registerFormBlock__form .termsLink {
     font-weight: 400;
