@@ -118,6 +118,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
               type='button'
               onClick={() => setIsMenu(!isMenu)}
               className={styles.mobileButton}
+              aria-label='Mobile menu switch'
             >
               {isMenu ? <CloseIcon /> : <MenuIcon />}
             </button>

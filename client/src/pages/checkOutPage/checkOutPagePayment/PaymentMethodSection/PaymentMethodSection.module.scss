@@ -21,31 +21,12 @@
   column-gap: 0.8rem;
 }
 .userPaymentMethodsList__radioButton {
-  background: transparent;
-  &:hover {
-    div {
-      svg {
-        path {
-          fill: $accent-a-3
-        }
-      }
-    }
-  }
-  &:active {
-    div {
-      svg {
-        path {
-          fill: $accent-a-5
-        }
-      }
-    }
-  }
 }
 .userPaymentMethodsList__label {
   display: flex;
   flex-direction: row;
   width: 30rem;
- @include body-3();
+  @include body-3();
   text-align: start;
   word-wrap: inherit;
   margin-left: 0.8rem;
@@ -55,4 +36,48 @@
   @include buttonTransparent();
   justify-content: flex-start;
   padding-left: 0;
+}
+@media (min-width: 769px) and (max-width: 1120px) {
+  .userPaymentMethodsList {
+    width: 70.3rem;
+  }
+  .userPaymentMethodsList__title {
+  }
+  .userPaymentMethodsList__block {
+  }
+  .userPaymentMethodsList__radioWrapper {
+  }
+  .userPaymentMethodsList__radioButton {
+  }
+  .userPaymentMethodsList__label {
+
+  }
+  .userPaymentMethodsList__buttonLeft {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .userPaymentMethodsList {
+    width: 32.8rem;
+  }
+  .userPaymentMethodsList__title {
+  }
+  .userPaymentMethodsList__block {
+  }
+  .userPaymentMethodsList__radioWrapper {
+  }
+  .userPaymentMethodsList__radioButton {
+  }
+  .userPaymentMethodsList__label {
+
+  }
+  .userPaymentMethodsList__buttonLeft {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-start;
+    padding-left: 0;
+  }
 }

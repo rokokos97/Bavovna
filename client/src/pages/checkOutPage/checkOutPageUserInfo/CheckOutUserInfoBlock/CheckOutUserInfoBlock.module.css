@@ -3,7 +3,7 @@
   width: 52.1rem;
   display: flex;
   flex-direction: column;
-  row-gap: 3.2rem;
+  gap: 2.4rem;
 }
 
 .checkOutUserInfoBlock__title {
@@ -38,19 +38,6 @@
   text-align: start;
   word-wrap: inherit;
   margin-left: 0.8rem;
-}
-
-.checkOutUserInfoBlock__radioButton {
-  background: transparent;
-}
-.checkOutUserInfoBlock__radioButton:hover div svg path {
-  fill: #5a9b83;
-}
-.checkOutUserInfoBlock__radioButton:active div svg path {
-  fill: #1a6449;
-}
-.checkOutUserInfoBlock__radioButton:disabled div svg path {
-  fill: #c3c3c3;
 }
 
 .checkOutUserInfoBlock__userPaymentMethodsList {
@@ -413,6 +400,525 @@
 }
 .checkOutUserInfoBlock__buttonRight div {
   transform: rotate(180deg);
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutUserInfoBlock {
+    box-sizing: border-box;
+    width: 70.3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .checkOutUserInfoBlock__radioBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
+    justify-content: flex-start;
+    padding-inline: 0;
+  }
+  .checkOutUserInfoBlock__buttonLeft span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutUserInfoBlock__buttonLeft::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutUserInfoBlock__buttonLeft svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
+  .checkOutUserInfoBlock__buttonRight {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
+    justify-content: flex-end;
+    padding-inline: 0;
+  }
+  .checkOutUserInfoBlock__buttonRight span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutUserInfoBlock__buttonRight::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .checkOutUserInfoBlock__buttonRight::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .checkOutUserInfoBlock__buttonRight:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutUserInfoBlock__buttonRight svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
+}
+@media (max-width: 768px) {
+  .checkOutUserInfoBlock {
+    box-sizing: border-box;
+    width: 32.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .checkOutUserInfoBlock__radioBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
+    justify-content: flex-start;
+    padding-inline: 0;
+  }
+  .checkOutUserInfoBlock__buttonLeft span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutUserInfoBlock__buttonLeft::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutUserInfoBlock__buttonLeft svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonLeft:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
+  .checkOutUserInfoBlock__buttonRight {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 19rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+    background: transparent;
+    border: none;
+    justify-content: flex-end;
+    padding-inline: 0;
+  }
+  .checkOutUserInfoBlock__buttonRight span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .checkOutUserInfoBlock__buttonRight::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 7.1rem;
+  }
+  .checkOutUserInfoBlock__buttonRight::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 9.2rem;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover::before {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1rem;
+  }
+  .checkOutUserInfoBlock__buttonRight:active::after {
+    content: "";
+    width: 20.9rem;
+    height: 20.9rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -8.05rem;
+    left: -1.1rem;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus {
+    border: 3px solid #5a9b83;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled span {
+    color: #9b9b9b;
+  }
+  .checkOutUserInfoBlock__buttonRight svg path {
+    fill: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover svg path {
+    fill: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:hover span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #3a7f66;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus svg path {
+    fill: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:focus span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #081e16;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled {
+    background: transparent;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled svg path {
+    fill: #868686;
+  }
+  .checkOutUserInfoBlock__buttonRight:disabled span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #868686;
+  }
 }
 
 /*# sourceMappingURL=CheckOutUserInfoBlock.module.css.map */

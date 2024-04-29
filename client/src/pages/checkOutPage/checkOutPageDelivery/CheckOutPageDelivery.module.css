@@ -1,4 +1,4 @@
-.checkOutPage {
+.checkOutPageDeliveryInfo {
   min-height: 120vh;
   height: fit-content;
   display: flex;
@@ -6,6 +6,25 @@
   column-gap: 2.4rem;
   margin: 6rem 8rem;
   justify-content: space-between;
+}
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutPageDeliveryInfo {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .checkOutPageDeliveryInfo {
+    margin-top: 1.6rem;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    column-gap: 2.4rem;
+  }
 }
 
 /*# sourceMappingURL=CheckOutPageDelivery.module.css.map */

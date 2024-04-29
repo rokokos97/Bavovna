@@ -3,7 +3,7 @@ import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getError, getResponse, signUpUser, signUpWithGoogle, userClearResponse} from '../../../store/userSlice';
+import {getError, getResponse, signUpUser, signUpWithGoogle} from '../../../store/userSlice';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../../utils/validationSchema';
 import googleService from '../../../services/google.service';
@@ -11,14 +11,14 @@ import {Modal} from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
 import {showBodyOverflow, hideBodyOverflow} from '../../../utils/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/RegisterFormBlock/RegisterFormBlock';
-import generateErrorMessage from '../../../utils/generateErrorMessage';
+import useErrorMessage from '../../../utils/useErrorMessage';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const authError = useSelector(getError);
   const response = useSelector(getResponse);
   const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState(null);
+  const errorMessage = useErrorMessage(authError);
   const [isRegularSignUp, setIsRegularSignUp] = useState(false);
   const [isGoogleSignUp, setIsGoogleSignUp] = useState(false);
   const [showVerifyEmailModal, setShowVerifyEmailModal] = useState(false);
@@ -69,34 +69,15 @@ const RegisterForm = () => {
       }
     }
   }, [response]);
-  useEffect(() => {
-    const message = authError ? generateErrorMessage[authError.message]:null;
-    setErrorMessage(message);
-  }, [authError]);
-  useEffect(() => {
-    const clearErrorMessage = () => {
-      if (errorMessage ) {
-        setErrorMessage(null);
-      }
-    };
-    window.addEventListener('click', clearErrorMessage);
-    return () => {
-      window.removeEventListener('click', clearErrorMessage);
-    };
-  }, [errorMessage]);
-  useEffect(() => {
-    setErrorMessage(null);
-    dispatch(userClearResponse());
-  }, []);
   return (
     <article className={styles.registerForm}>
       <section className={styles.registerForm__titleBlock}>
         <p>
           Sign up
         </p>
-        <span>
+        <p>
           Welcome! Please enter your details
-        </span>
+        </p>
       </section>
       {errorMessage ?
           <div className={styles.registerForm__errorMessagesBlock}>
@@ -104,13 +85,15 @@ const RegisterForm = () => {
           </div> : null
       }
       <RegisterFormBlock formik={formik} googleRegister={googleRegister} isRegularSignUp={isRegularSignUp} isGoogleSignUp={isGoogleSignUp}/>
-      <p className={styles.toLoginForm}>
-        Already have an account?
+      <p className={styles.registerForm__backToSignIn}>
+        Already have an account?&nbsp;
         <NavLink
           to="/signIn"
-          role="button"
+          title='go to sign in page'
+          aria-label='go to sign ip page'
+          className={styles.registerForm__backToSignInLink}
         >
-          <span>&nbsp;Sign in</span>
+          <span>Sign in</span>
         </NavLink>
       </p>
       <Modal

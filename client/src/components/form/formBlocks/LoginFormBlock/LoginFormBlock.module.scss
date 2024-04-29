@@ -37,6 +37,7 @@
     display: block;
     color: $gray-10;
     @include link-2();
+    @include link();
   }
   .loginFormBlock__form {
     width: 100%;
@@ -100,19 +101,57 @@
     margin: 0 auto;
   }
 }
-@media (max-width: 36rem) {
+@media (min-width: 769px) and (max-width: 1120px){
+  .loginFormBlock {
+    .loginFormBlock__button {
+      @include button-mobile(41rem);
+
+    }
+    .loginFormBlock__googleButton {
+      @include button-mobile(41rem);
+    }
+    .errorMessagesBlock {
+      p {
+        @include body-5();
+      }
+    }
+  }
+  .loginFormBlock[type='1'] {
+    .loginFormBlock__button {
+      @include button-mobile(70.3rem);
+    }
+    .loginFormBlock__googleButton {
+      @include button(70.3rem);
+    }
+    .loginFormBlock__forgotPassword {
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 768px) {
   .loginFormBlock {
     .loginFormBlock__button {
       @include button-mobile(32.8rem);
 
     }
     .loginFormBlock__googleButton {
-      @include button(32.8rem);
+      @include button-mobile(32.8rem);
     }
     .errorMessagesBlock {
       p {
         @include body-5();
       }
+    }
+  }
+  .loginFormBlock[type='1'] {
+    .loginFormBlock__button {
+      @include button-mobile(32.8rem);
+    }
+    .loginFormBlock__googleButton {
+      @include button(32.8rem);
+    }
+    .loginFormBlock__forgotPassword {
+      margin: 0 auto;
     }
   }
 }

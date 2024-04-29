@@ -19,7 +19,7 @@ const CheckOutPageDeliveryInfo = () => {
     }
   }, [cart]);
   return (
-    <div className={styles.checkOutPage} data-testid="CheckOutPageDelivery">
+    <div className={styles.checkOutPageDeliveryInfo} data-testid="CheckOutPageDelivery">
       <DeliveryOptionsSection/>
       <CheckOutShoppingCartBlock/>
     </div>

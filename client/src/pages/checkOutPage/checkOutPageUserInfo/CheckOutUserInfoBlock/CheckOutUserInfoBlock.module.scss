@@ -4,7 +4,7 @@
   width: 52.1rem;
   display: flex;
   flex-direction: column;
-  row-gap: 3.2rem;
+  gap: $xl-spacing
 }
 .checkOutUserInfoBlock__title {
   @include headline_3();
@@ -31,34 +31,6 @@
   margin-left: 0.8rem;
 }
 .checkOutUserInfoBlock__radioButton {
-  background: transparent;
-  &:hover {
-    div {
-      svg {
-        path {
-          fill: $accent-a-3
-        }
-      }
-    }
-  }
-  &:active {
-    div {
-      svg {
-        path {
-          fill: $accent-a-5
-        }
-      }
-    }
-  }
-  &:disabled {
-    div {
-      svg {
-        path {
-          fill: $gray-70;
-        }
-      }
-    }
-  }
 }
 .checkOutUserInfoBlock__userPaymentMethodsList {
   display: flex;
@@ -91,3 +63,74 @@
     transform: rotate(180deg);
   }
 }
+@media (min-width: 769px) and (max-width: 1120px) {
+  .checkOutUserInfoBlock {
+    box-sizing: border-box;
+    width: 70.3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .checkOutUserInfoBlock__title {
+  }
+  .checkOutUserInfoBlock__radioBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: $xl-spacing;
+  }
+  .checkOutUserInfoBlock__radioWrapper {
+  }
+  .checkOutUserInfoBlock__label {
+  }
+  .checkOutUserInfoBlock__radioButton {
+  }
+  .checkOutUserInfoBlock__navigationButtonsSection {
+  }
+  .checkOutUserInfoBlock__buttonLeft {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-start;
+    padding-inline: 0;
+  }
+  .checkOutUserInfoBlock__buttonRight {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-end;
+    padding-inline: 0;
+  }
+}
+@media (max-width: 768px) {
+  .checkOutUserInfoBlock {
+    box-sizing: border-box;
+    width: 32.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .checkOutUserInfoBlock__title {
+  }
+  .checkOutUserInfoBlock__radioBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: $xl-spacing;
+  }
+  .checkOutUserInfoBlock__radioWrapper {
+  }
+  .checkOutUserInfoBlock__label {
+  }
+  .checkOutUserInfoBlock__radioButton {
+  }
+  .checkOutUserInfoBlock__navigationButtonsSection {
+  }
+  .checkOutUserInfoBlock__buttonLeft {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-start;
+    padding-inline: 0;
+  }
+  .checkOutUserInfoBlock__buttonRight {
+    @include button-mobile($small);
+    @include buttonTransparent();
+    justify-content: flex-end;
+    padding-inline: 0;
+  }
+}
+

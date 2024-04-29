@@ -39,7 +39,7 @@
 .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__price {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-weight: 500;
   font-size: 18px;
   line-height: 110%;
@@ -144,7 +144,7 @@
 .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock {
   width: 20.4rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 0.4rem;
 }
 .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__sizeBlock {
@@ -153,8 +153,8 @@
 .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__quantityBlock {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: row;
-  gap: 1.6rem;
 }
 .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__quantityBlock .productCardInCart__quantity .productCardInCart__button {
   display: none;
@@ -219,6 +219,30 @@
 }
 
 @media (min-width: 581px) and (max-width: 1120px) {
+  .productCardInCart {
+    width: 70.3rem;
+    height: 12rem;
+  }
+  .productCardInCart .productCardInCart__imageBlock {
+    width: 12rem;
+    height: 12rem;
+  }
+  .productCardInCart .productCardInCart__infoBlock {
+    width: 45rem;
+    height: 100%;
+    padding-left: 1.6rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock {
+    width: 19.3rem;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock {
+    width: 100%;
+  }
+  .productCardInCart .productCardInCart__buttonBlock {
+    padding-bottom: 0;
+  }
   .productCardInCart[type="2"] {
     column-gap: 2.4rem;
     width: 43.3rem;
@@ -287,9 +311,143 @@
   }
 }
 @media (max-width: 580px) {
+  .productCardInCart {
+    column-gap: 2.4rem;
+    width: 32.8rem;
+  }
+  .productCardInCart .productCardInCart__imageBlock {
+    width: 15.6rem;
+    height: 15.4rem;
+  }
+  .productCardInCart .productCardInCart__infoBlock {
+    width: 12rem;
+    height: 15.4rem;
+    padding: 0;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    justify-content: unset;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__name {
+    width: 100%;
+    height: auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__price {
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount span:first-child {
+    display: none;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount span:last-child {
+    color: #000000;
+  }
+  .productCardInCart .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock {
+    width: 100%;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    justify-content: unset;
+    align-items: unset;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+  .productCardInCart .productCardInCart__buttonBlock .productCardInCart__buttonDelete {
+    width: 1.8rem;
+    align-self: center;
+  }
+  .productCardInCart[type="1"] {
+    column-gap: 2.4rem;
+    width: 36rem;
+  }
+  .productCardInCart[type="1"] .productCardInCart__imageBlock {
+    width: 10rem;
+    height: 10rem;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock {
+    justify-content: space-between;
+    padding: 0;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    justify-content: unset;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__name {
+    width: 100%;
+    height: auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__price {
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount span:first-child {
+    display: none;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__discount span:last-child {
+    color: #000000;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock {
+    width: 100%;
+    row-gap: 0.4rem;
+    justify-content: unset;
+    align-items: unset;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+  .productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityBlock .productCardInCart__quantityBlock .productCardInCart__quantity .productCardInCart__button {
+    display: none;
+  }
+  .productCardInCart[type="1"] .productCardInCart__buttonBlock {
+    display: none;
+  }
   .productCardInCart[type="2"] {
     column-gap: 2.4rem;
-    width: 32.2rem;
+    width: 32.8rem;
   }
   .productCardInCart[type="2"] .productCardInCart__imageBlock {
     width: 15.6rem;

@@ -3,43 +3,45 @@
   width: 100%;
   @include form();
 
-}
-.registerFormBlock__link {
-  a {
-    @include link-2();
-    color: #ea001b;
+  .registerForm__titleBlock {
+    @include form-title-block();
   }
-}
-.registerForm__titleBlock {
-  @include form-title-block();
-}
-.loginFormBlock__forgotPassword {
- @include link-2();
-  color: $gray-10;
-}
-.registerForm__errorMessagesBlock {
-  @include form-message-block($light-pink, $error);
-}
-.registerForm__successMessagesBlock {
-  @include form-message-block($accent-a-05, $success);
-}
-.toLoginForm {
-  display: flex;
-  justify-content: center;
-  a {
-    &:hover {
-      text-decoration: underline;
+
+  .registerForm__errorMessagesBlock {
+    @include form-message-block($light-pink, $error);
+  }
+
+  .registerForm__backToSignIn {
+    display: flex;
+    justify-content: center;
+    .registerForm__backToSignInLink {
+      @include link-1();
     }
   }
 }
-@media (max-width: 36rem) {
-  .registerForm__titleBlock {
-    @include form-title-block-mobile();
+@media (max-width: 1120px) {
+  .registerForm {
+    @include form-mobile();
+
+    .registerForm__titleBlock {
+      @include form-title-block-mobile();
+    }
+
+    .registerForm__errorMessagesBlock {
+      @include body-5();
+    }
   }
-  .registerForm__errorMessagesBlock {
-    @include body-5();
-  }
-  .registerForm__successMessagesBlock {
-    @include body-5();
+}
+@media (max-width: 768px) {
+  .registerForm {
+    @include form-mobile();
+
+    .registerForm__titleBlock {
+      @include form-title-block-mobile();
+    }
+
+    .registerForm__errorMessagesBlock {
+      @include body-5();
+    }
   }
 }

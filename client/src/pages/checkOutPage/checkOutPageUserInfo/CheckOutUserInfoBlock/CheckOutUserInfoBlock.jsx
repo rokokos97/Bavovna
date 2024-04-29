@@ -87,29 +87,30 @@ const CheckOutUserInfoBlock = () => {
       {userCurrentDetails === '2' && userCurrentDetailsList[1].value}
       <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock__checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
         {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
-        <div className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
-          <button
-            type='button'
-            onClick={()=> navigate(-1) }
-            className={styles.checkOutUserInfoBlock__buttonLeft}
-          >
-            <LeftArrowIcon/>
-            <span>
-              go back
-            </span>
-          </button>
-          <button
-            className={styles.checkOutUserInfoBlock__buttonRight}
-            type='submit'
-            disabled={!formik.isValid || !formik.dirty}
-          >
-            <span>
-              next step
-            </span>
-            <LeftArrowIcon/>
-          </button>
-        </div>
       </form>
+      <div className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
+        <button
+          type='button'
+          onClick={()=> navigate(-1) }
+          className={styles.checkOutUserInfoBlock__buttonLeft}
+        >
+          <LeftArrowIcon/>
+          <span>
+              go back
+          </span>
+        </button>
+        <button
+          className={styles.checkOutUserInfoBlock__buttonRight}
+          type='button'
+          onClick={formik.submitForm}
+          disabled={!formik.isValid || !formik.dirty}
+        >
+          <span>
+              next step
+          </span>
+          <LeftArrowIcon/>
+        </button>
+      </div>
     </div>
   );
 };

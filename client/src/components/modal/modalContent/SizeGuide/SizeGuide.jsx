@@ -6,7 +6,12 @@ import styles from './SizeGuide.module.scss';
 const SizeGuide = ({handleCloseModal}) => {
   return (
     <section className={styles.guideContainer} data-testid='SizeGuide'>
-      <button type='button' aria-label='close modal window' className={styles.closeIcon} onClick={handleCloseModal}>
+      <button
+        type='button'
+        aria-label='close modal window'
+        className={styles.closeIcon}
+        onClick={handleCloseModal}
+      >
         <CloseIcon />
       </button>
       <h2>Size Guide</h2>
@@ -57,6 +62,13 @@ const SizeGuide = ({handleCloseModal}) => {
             <td>99 - 104</td>
             <td>80 - 87,5</td>
             <td>107 - 112</td>
+          </tr>
+          <tr>
+            <td>xl</td>
+            <td>16 - 18</td>
+            <td>105 - 110</td>
+            <td>90 - 96</td>
+            <td>113 - 118</td>
           </tr>
         </tbody>
       </table>

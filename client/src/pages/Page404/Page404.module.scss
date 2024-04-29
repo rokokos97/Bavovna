@@ -1,18 +1,50 @@
 @import "../../styles/variables.module.scss";
 .page404 {
-  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 4.8rem;
   margin: 8.1rem auto;
-
-  p {
-   @include body-2();
+  .page404__image {
+    width: fit-content;
+    height: fit-content;
   }
-  button {
+  .page404__text {
+   @include body-2();
+    text-align: center;
+  }
+  .page404__goToShopButton{
     @include button(18.2rem);
     @include buttonBlack()
   }
 }
+
+@media (min-width: 769px) and (max-width: 1120px) {
+  .page404 {
+    margin-top: 4.8rem;
+    .page404__text {
+      @include body-2();
+    }
+    .page404__goToShopButton{
+      @include button-mobile(18.2rem);
+      @include buttonBlack()
+    }
+  }
+}
+@media (max-width: 768px) {
+  .page404 {
+    margin-top: $xxl-spacing;
+    .page404__image {
+      width: 32.8rem;
+    }
+    .page404__text {
+      @include body-2();
+    }
+    .page404__goToShopButton{
+      @include button-mobile(16rem);
+      @include buttonBlack()
+    }
+  }
+}
+

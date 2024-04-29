@@ -63,4 +63,27 @@
   color: #ea001b;
 }
 
+@media (min-width: 769px) and (max-width: 1120px) {
+  .textarea {
+    min-width: 70.3rem;
+    max-width: 70.3rem;
+    min-height: 3rem;
+  }
+  .textarea[type="1"] {
+    min-width: 70.3rem;
+    max-width: 70.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .textarea {
+    min-width: 32.8rem;
+    max-width: 32.8rem;
+    min-height: 3rem;
+  }
+  .textarea[type="1"] {
+    min-width: 32.8rem;
+    max-width: 32.8rem;
+  }
+}
+
 /*# sourceMappingURL=TextAreaField.module.css.map */

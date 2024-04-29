@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './RecoveryPasswordForm.module.scss';
 import TextField from '../../../components/form/formFields/TextField/TextField';
 import {useFormik} from 'formik';
 import {NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import * as Yup from 'yup';
 import {
   getError,
   getResponse, getUserLoadingStatus,
@@ -12,23 +11,21 @@ import {
 } from '../../../store/userSlice';
 import transformErrorMessage from '../../../utils/generateErrorMessage';
 import LoaderIconSmall from '../../../components/svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
+import {validationSchemaEmail} from '../../../utils/validationSchema';
 
 const RecoveryPasswordForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getUserLoadingStatus);
-  const [message, setMessage] = useState();
   const response = useSelector(getResponse);
   const error = useSelector(getError);
+  const [message, setMessage] = useState();
   const [isLoaderRun, setIsLoaderRun] = useState(false);
+  const emailRef = useRef(null);
   const formik = useFormik({
     initialValues: {
       email: '',
     },
-    validationSchema: Yup.object().shape({
-      email: Yup.string()
-          .required('Email is required')
-          .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Invalid email address'),
-    }),
+    validationSchema: validationSchemaEmail,
     onSubmit: (values) => {
       if (!formik.isValid) return;
       dispatch(recoveryUserPassword({payload: values}));
@@ -42,6 +39,7 @@ const RecoveryPasswordForm = () => {
     }
     if (error) {
       setMessage(error);
+      emailRef.current.focus();
     }
   }, [error, response]);
   useEffect(() => {
@@ -69,9 +67,9 @@ const RecoveryPasswordForm = () => {
         <p>
           recover password
         </p>
-        <span>
+        <p>
           Please enter your e-mail address:
-        </span>
+        </p>
       </div>
       {message ?
         <div className={(message.code !== 200) ? styles.forgotPasswordForm__errorMessagesBlock : styles.forgotPasswordForm__successMessagesBlock}>
@@ -90,6 +88,7 @@ const RecoveryPasswordForm = () => {
           onBlur={formik.handleBlur}
           error={formik.errors.email}
           touched={formik.touched.email}
+          ref={emailRef}
         />
         <button
           className={styles.forgotPasswordForm__button}
@@ -104,16 +103,16 @@ const RecoveryPasswordForm = () => {
           }
         </button>
       </form>
-      <p>
-        Do you remember your password?
-        <span>
-          <NavLink
-            to="/signIn"
-            role="button"
-          >
-            &nbsp;Back to sign in
-          </NavLink>
-        </span>
+      <p className={styles.forgotPasswordForm__backToSignIn}>
+        Do you remember your password?&nbsp;
+        <NavLink
+          to="/signIn"
+          title='go to sign in page'
+          aria-label='go to sign in page'
+          className={styles.forgotPasswordForm__backToSignInLink}
+        >
+          <span>Back to sign in</span>
+        </NavLink>
       </p>
     </div>
   );

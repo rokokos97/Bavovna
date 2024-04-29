@@ -58,7 +58,7 @@ const ShoppingCartPage = () => {
         <div className={styles.shoppingCartPage__emptyCartBlock}>
           <p className={styles.shoppingCartPage__text}>Your shopping bag is empty</p>
           {!isItemsLoading && sliderItems &&
-            <div>
+            <div className={styles.shoppingCartPage__slider}>
               <Swiper
                 onSwiper={(swiper) => swiperRef.current = swiper? swiper : null}
                 slidesPerView={3}

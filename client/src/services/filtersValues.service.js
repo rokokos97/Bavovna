@@ -1,6 +1,10 @@
 export const filtersValues = {
   sizeValues: [
     {
+      value: 'xs',
+      label: 'XS',
+    },
+    {
       value: 's',
       label: 'S',
     },

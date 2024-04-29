@@ -9,19 +9,20 @@ const LoginForm = () => {
         <p>
           Sign In
         </p>
-        <span className={styles.loginForm__welcomeMessage}>
+        <p>
             Welcome back! Please enter your details
-        </span>
+        </p>
       </section>
       <LoginFormBlock/>
-      <p className={styles.toRegisterForm}>
-        Don’t have an account?
+      <p className={styles.loginForm__backToSignUp}>
+        Don’t have an account?&nbsp;
         <NavLink
           to="signUp"
+          title='go to sign up page'
           aria-label='go to sign up page'
-          role="button"
+          className={styles.loginForm__backToSignUpLink}
         >
-          <span>&nbsp;Sign up</span>
+          <span>Sign up</span>
         </NavLink>
       </p>
     </article>
