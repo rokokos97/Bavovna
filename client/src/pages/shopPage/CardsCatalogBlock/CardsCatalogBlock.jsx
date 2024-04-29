@@ -17,7 +17,7 @@ const CardsCatalogBlock = () => {
   let endIndex = null;
   let visibleItems = [];
   const [currentPage, setCurrentPage] = useState(1);
-
+  console.log(isFilter);
 
   useEffect(() => {
     if (sortedItems) {
@@ -60,15 +60,15 @@ const CardsCatalogBlock = () => {
 
   return (
     <div className={styles.catalog} data-testid='CardsCatalogBlock'>
-      {isFilter ? <FilterSelectionBlock /> : null}
+      <div className={isFilter ? styles.filterBlock : `${styles.filterBlock} ${styles.visibleFilterBlock}`}>
+        <FilterSelectionBlock />
+      </div>
       <div className={styles.cardsContainer}>
         <ul
-          className={
-            !isFilter ? styles.cards : `${styles.cards} ${styles.cardsPadding}`
-          }
+          className={styles.cards}
         >
           {visibleItems.length ? visibleItems.map((item) => (
-            <li key={item._id} className={!isFilter ? styles.card : `${styles.card} ${styles.doubleColumn}`}>
+            <li key={item._id} className={styles.card}>
               <ItemPreviewCard id={item._id} />
             </li>
           )) :

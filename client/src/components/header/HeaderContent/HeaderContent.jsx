@@ -9,7 +9,7 @@ import styles from './HeaderContent.module.scss';
 import HeaderInput from '../HeaderInput/HeaderInput';
 import EmptyHeartIcon from '../../svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 import MenuIcon from '../../svg/MobileIcons/MenuIcon/MenuIcon';
-import CloseIcon from '../../svg/MobileIcons/CloseIcon/CloseIcon';
+import CloseIcon from '../../svg/CloseIcon/CloseIcon';
 
 const HeaderContent = ({isLoggedIn, user, cart}) => {
   const location = useLocation();

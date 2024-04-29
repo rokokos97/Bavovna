@@ -1,6 +1,7 @@
 @import '../../../styles/variables.module.scss';
 
 .catalog {
+  position: relative;
   display: flex;
   width: 100%;
 }
@@ -18,6 +19,19 @@
   text-align: center;
   margin: 2.4rem auto;
 }
+.filterBlock {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 33%;
+  height: 100%;
+  border-right: 0.1rem solid $black;
+  z-index: 100;
+}
+.visibleFilterBlock {
+  display: block;
+  left: 0;
+}
 
 .noFoundTitle {
   @include headline_3();
@@ -30,21 +44,17 @@
 
 .cards {
   display: flex;
-  gap: 2.4rem;
+  row-gap: 2.4rem;
   flex-wrap: wrap;
   margin-top: 2.4rem;
-
-  &.cardsPadding {
-    padding-left: 2.4rem;
-  }
+  justify-content: space-between;
 }
 
 .card {
-  width: 32%;
-  &.doubleColumn {
-    width: 48.5%;
-    max-width: 41rem;
-  }
+  display: flex;
+  justify-content: center;
+  max-width: 32.5%;
+  width: 100%;
 }
 
 .disabledCard {
@@ -102,33 +112,30 @@
   }
 }
 
-@media screen and (max-width: 1416px) {
+@media (max-width: 800px) {
   .cards {
-    gap: 2.2rem;
-  }
-}
-@media screen and (max-width: 1311px) {
-  .cards {
-    gap: 2.1rem;
-  }
-}
-@media screen and (max-width: 1227px) {
-  .cards {
-    gap: 1.4rem;
-    margin-top: 2rem;
+    row-gap: 1.4rem;
   }
   .card {
-    display: flex;
-    justify-content: center;
-    flex: 0 1 48.5%;
+    max-width: unset;
+    flex: 0 1 49.5%;
+  }
+  .filterBlock {
+    width: 49.5%;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 580px) {
   .card {
     flex-basis: 48%;
   }
 }
-@media screen and (max-width: 400px) {
+@media (max-width: 480px) {
+  .catalog {
+    position: unset;
+  }
+  .filterBlock {
+    width: 100%;
+  }
   .cards {
     margin-top: 1.6rem;
   }
