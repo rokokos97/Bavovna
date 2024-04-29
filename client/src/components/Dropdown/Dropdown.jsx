@@ -20,7 +20,9 @@ const Dropdown = ({id, placeholder, name, inner}) => {
         className={styles.dropdownRightBtn}
       >
         <span className={styles.dropdownText}>{placeholder}</span>
-        {!isOpen ? <ChevronDown /> : <ChevronUp />}
+        <div className={styles.chevron}>
+          {!isOpen ? <ChevronDown /> : <ChevronUp />}
+        </div>
       </button>
       {isOpen && (
         <div data-target={name} className={styles.description}>

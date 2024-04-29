@@ -20,6 +20,9 @@
   text-transform: uppercase;
   background-color: inherit;
 }
+.chevron{
+  width: 2.4rem;
+}
 ul.dropdownList {
   list-style-type: circle;
 }
@@ -35,7 +38,6 @@ ul.dropdownList {
 }
 .dropdownText {
   text-align: start;
-  flex: 1 0 93%;
 }
 @media (max-width: 950px) {
   .dropdownText {

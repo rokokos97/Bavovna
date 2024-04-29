@@ -51,10 +51,8 @@
     font-size: 18px;
   }
 }
-@media (min-width: 581px) and (max-width: 950px) {
+@media (max-width: 950px) {
   .filterSelection {
     padding: 8rem 1.6rem;
   }
-}
-@media (max-width: 580px) {
 }
