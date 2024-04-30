@@ -17,6 +17,9 @@
   cursor: pointer;
   text-align: start;
   @include label();
+  .radioLabel__radioButton {
+    width: 2.4rem;
+  }
 }
 .deleteButton {
   background: transparent;

@@ -54,7 +54,6 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, wareh
           <section
             key={method._id}
             className={styles.radioOption}
-            onClick={() => handleChangeCurrentValue(method._id)}
           >
             <input
               id={method._id}
@@ -63,11 +62,15 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, wareh
               value={method.value}
               checked={currentValue === method._id}
               className={styles.radioInput}
+              onChange={() => handleChangeCurrentValue(method._id)}
             />
-            <label htmlFor={method._id} className={styles.radioLabel}>
-              <button>
-                {currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
-              </button>
+            <label
+              htmlFor={method._id} className={styles.radioLabel}
+              onChange={() => handleChangeCurrentValue(method._id)}
+            >
+              <div
+                className={styles.radioLabel__radioButton}
+              >{currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}</div>
               <p>{method.label}</p>
             </label>
             <div>{currentValue === method._id ? method.value : null}</div>
