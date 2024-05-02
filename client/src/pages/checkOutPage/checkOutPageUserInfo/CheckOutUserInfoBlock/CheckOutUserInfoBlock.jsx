@@ -37,12 +37,12 @@ const CheckOutUserInfoBlock = () => {
   const userCurrentDetailsList = [
     {
       id: '1',
-      label: 'new user',
+      label: 'NEW USER',
       value: <UnknownUserContactFormBlock formik={formik}/>,
     },
     {
       id: '2',
-      label: 'registered user',
+      label: 'REGISTERED USER',
       value: <LoginFormBlock type='1'/>,
     },
   ];
@@ -66,22 +66,30 @@ const CheckOutUserInfoBlock = () => {
         style={{display: isLoggedIn ? 'none' : 'flex'}}
         className={styles.checkOutUserInfoBlock__radioBlock}>
         {userCurrentDetailsList.map((detail, index)=> <div key={index}>
-          <div
+          <section
+            key={detail.id}
             className={styles.checkOutUserInfoBlock__radioWrapper}
           >
-            <button
-              className={styles.checkOutUserInfoBlock__radioButton}
-              type='button'
-              onClick = {()=> setUserCurrentDetails(detail.id) }
-            >
-              {userCurrentDetails === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
-            </button>
+            <input
+              id={detail.id}
+              type="radio"
+              name="customRadio"
+              value={detail.value}
+              className={styles.checkOutUserInfoBlock__radioInput}
+              onChange = {()=> setUserCurrentDetails(detail.id) }
+            />
             <label
               className={styles.checkOutUserInfoBlock__label}
             >
+              <div
+                className={styles.checkOutUserInfoBlock__radioButton}
+                onClick = {()=> setUserCurrentDetails(detail.id)}
+              >
+                {userCurrentDetails === detail.id ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+              </div>
               {detail.label}
             </label>
-          </div>
+          </section>
         </div>)}
       </div>
       {userCurrentDetails === '2' && userCurrentDetailsList[1].value}
@@ -91,7 +99,7 @@ const CheckOutUserInfoBlock = () => {
       <div className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
         <button
           type='button'
-          onClick={()=> navigate(-1) }
+          onChange={()=> navigate(-1) }
           className={styles.checkOutUserInfoBlock__buttonLeft}
         >
           <LeftArrowIcon/>

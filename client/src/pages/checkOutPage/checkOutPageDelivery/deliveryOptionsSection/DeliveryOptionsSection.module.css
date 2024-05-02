@@ -23,19 +23,22 @@
 .deliveryOptionsSection__radioWrapper {
   display: flex;
   flex-direction: row;
-  column-gap: 0.8rem;
 }
 
 .deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
+  gap: 0.4rem;
+  align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
   text-align: start;
-  word-wrap: inherit;
-  margin-left: 0.8rem;
+}
+
+.deliveryOptionsSection__radioInput {
+  appearance: none;
 }
 
 .deliveryOptionsSection__navigationButtonsSection {

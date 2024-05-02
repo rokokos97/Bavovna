@@ -1,7 +1,5 @@
 .checkOutBlock {
   width: 41.1rem;
-  position: absolute;
-  right: 0;
   height: 28.5rem;
   display: flex;
   flex-direction: column;
@@ -218,9 +216,8 @@
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
 
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 960px) {
   .checkOutBlock {
-    position: unset;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -243,6 +240,7 @@
   .checkOutBlock .checkOutBlock__buttonsBlock {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2.4rem;
   }
   .checkOutBlock .checkOutBlock__buttonsBlock a:first-child {
@@ -440,7 +438,7 @@
     border: 1px solid rgba(169, 223, 203, 0.3);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .checkOutBlock {
     position: unset;
     width: 100%;
@@ -464,6 +462,7 @@
   .checkOutBlock .checkOutBlock__buttonsBlock {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2.4rem;
   }
   .checkOutBlock .checkOutBlock__buttonsBlock a:first-child {

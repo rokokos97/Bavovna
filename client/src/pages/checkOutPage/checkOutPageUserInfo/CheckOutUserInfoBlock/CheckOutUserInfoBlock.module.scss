@@ -19,17 +19,20 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  column-gap: 0.8rem;
+  .checkOutUserInfoBlock__radioInput {
+    appearance: none;
+  }
+  .checkOutUserInfoBlock__label {
+    display: flex;
+    flex-direction: row;
+    width: 19.3rem;
+    align-items: center;
+    gap: $xs-spacing;
+    @include headline-9();
+    text-align: start;
+  }
 }
-.checkOutUserInfoBlock__label {
-  display: flex;
-  flex-direction: row;
-  width: 19.3rem;
- @include headline-9();
-  text-align: start;
-  word-wrap: inherit;
-  margin-left: 0.8rem;
-}
+
 .checkOutUserInfoBlock__radioButton {
 }
 .checkOutUserInfoBlock__userPaymentMethodsList {

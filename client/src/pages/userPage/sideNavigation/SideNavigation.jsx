@@ -34,13 +34,15 @@ const SideNavigation = () => {
         </button>
         <Link
           className={styles.navigationBlock__navigationHome}
-          to={'/'}>
+          to={'/'}
+        >
           <ChevronUp/>
           Home&nbsp;
         </Link>
         <Link
-          li className={styles.navigationBlock__navigationAccount}
-          to={''}>
+          className={styles.navigationBlock__navigationAccount}
+          to={''}
+        >
           / My account
         </Link>
       </nav>

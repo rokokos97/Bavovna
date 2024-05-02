@@ -1,0 +1,23 @@
+@import "../../styles/variables.module";
+.radioOption {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .radioInput {
+    appearance: none;
+  }
+  .radioLabel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.7rem;
+    align-items: center;
+    cursor: pointer;
+    text-align: start;
+    @include label();
+    .radioLabel__radioButton {
+      width: 2.4rem;
+    }
+  }
+}

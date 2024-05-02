@@ -1,6 +1,7 @@
 .shoppingCartPage {
   min-height: 100vh;
-  width: 128rem;
+  padding-inline: 8rem;
+  width: 100%;
   display: flex;
   position: relative;
   top: 0;
@@ -9,6 +10,7 @@
   flex-direction: column;
   box-sizing: border-box;
   padding-bottom: 25rem;
+  row-gap: 2.4rem;
 }
 .shoppingCartPage .shoppingCartPage__navigation {
   font-weight: 400;
@@ -21,6 +23,7 @@
 .shoppingCartPage .shoppingCartPage__titleBlock {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__infoBlock {
@@ -28,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  row-gap: 2.4rem;
+  gap: 2.4rem;
 }
 .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__infoBlock .shoppingCartPage__title {
   font-weight: 700;
@@ -149,6 +152,7 @@
 }
 
 .shoppingCartPage__emptyCartBlock {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -165,7 +169,6 @@
   margin-top: 1.6rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   gap: 2.4rem;
 }
 .shoppingCartPage__fillCartBlock .shoppingCartPage__itemsBlock {
@@ -173,10 +176,92 @@
   padding-top: 2.4rem;
 }
 
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 951px) and (max-width: 960px) {
   .shoppingCartPage {
-    width: 70.3rem;
-    padding: 0;
+    left: 0;
+    transform: translateX(0%);
+    flex-direction: column;
+  }
+  .shoppingCartPage .shoppingCartPage__navigation {
+    display: none;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock {
+    justify-content: start;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__infoBlock {
+    gap: 2.4rem;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__infoBlock .shoppingCartPage__title {
+    margin-top: 1.6rem;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__button {
+    display: none;
+  }
+  .shoppingCartPage__emptyCartBlock .shoppingCartPage__slider {
+    display: none;
+  }
+  .shoppingCartPage__fillCartBlock {
+    flex-direction: column;
+    justify-content: unset;
+  }
+  .shoppingCartPage__fillCartBlock .shoppingCartPage__itemsBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .shoppingCartPage__fillCartBlock .shoppingCartPage__checkOutBlock {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 950px) {
+  .shoppingCartPage {
+    padding-inline: 3.2rem;
+    left: 0;
+    transform: translateX(0%);
+    flex-direction: column;
+  }
+  .shoppingCartPage .shoppingCartPage__navigation {
+    display: none;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock {
+    justify-content: start;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__infoBlock {
+    gap: 2.4rem;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__infoBlock .shoppingCartPage__title {
+    margin-top: 1.6rem;
+  }
+  .shoppingCartPage .shoppingCartPage__titleBlock .shoppingCartPage__button {
+    display: none;
+  }
+  .shoppingCartPage__emptyCartBlock .shoppingCartPage__slider {
+    display: none;
+  }
+  .shoppingCartPage__fillCartBlock {
+    flex-direction: column;
+    justify-content: unset;
+  }
+  .shoppingCartPage__fillCartBlock .shoppingCartPage__itemsBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .shoppingCartPage__fillCartBlock .shoppingCartPage__checkOutBlock {
+    width: 100%;
+  }
+}
+@media (min-width: 581px) and (max-width: 767px) {
+  .shoppingCartPage {
+    padding-inline: 3.2rem;
+    left: 0;
+    transform: translateX(0%);
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.6rem;
+    row-gap: 2.4rem;
   }
   .shoppingCartPage .shoppingCartPage__navigation {
     display: none;
@@ -236,14 +321,15 @@
     width: 100%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 580px) {
   .shoppingCartPage {
-    width: 32.8rem;
-    padding: 0;
+    padding-inline: 1.6rem;
+    left: 0;
+    transform: translateX(0%);
     display: flex;
     flex-direction: column;
     margin-top: 2.6rem;
-    row-gap: 3.2rem;
+    row-gap: 2.4rem;
   }
   .shoppingCartPage .shoppingCartPage__navigation {
     display: none;

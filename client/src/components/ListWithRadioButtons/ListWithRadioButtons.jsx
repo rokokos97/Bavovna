@@ -42,9 +42,9 @@ const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) =>
               className={styles.radioInput}
             />
             <label htmlFor={option._id} className={styles.radioLabel}>
-              <button className={styles.listWithRadioButtons__radioButton}>
+              <div className={styles.listWithRadioButtons__radioButton}>
                 {currentValue === option._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
-              </button>
+              </div>
               <div>{option.label}</div>
             </label>
             {isList && <div
