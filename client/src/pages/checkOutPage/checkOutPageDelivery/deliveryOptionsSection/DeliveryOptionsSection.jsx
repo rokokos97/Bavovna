@@ -133,25 +133,30 @@ const deliveryOptionsSection = () => {
         style={{display: !isLoggedIn ?'none': 'flex'}}
         className={styles.deliveryOptionsSection__radioBlock}
       >
-        {deliveryOptionsList.map((method, index)=> <div key={index}>
-          <div
+        {deliveryOptionsList.map((method, index)=>
+          <section
+            key={method.id}
             className={styles.deliveryOptionsSection__radioWrapper}
           >
-            <button
-              className={styles.deliveryOptionsSection__radioButton}
-              type='button'
-              disabled={!isLoggedIn || user?.deliveryAddress.length === 0}
-              onClick = {()=> dispatch(setDeliveryOption(method.label))}
-            >
-              {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
-            </button>
+            <input
+              id={method.id}
+              type='radio'
+              name='customRadio'
+              className={styles.deliveryOptionsSection__radioInput}
+              onChange = {() => dispatch(setDeliveryOption(method.label))}
+            />
             <label
               className={styles.deliveryOptionsSection__label}
             >
+              <div
+                onClick = {() => dispatch(setDeliveryOption(method.label))}
+                disabled={!isLoggedIn || user?.deliveryAddress.length === 0}
+              >
+                {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+              </div>
               {method.label}
             </label>
-          </div>
-        </div>)}
+          </section>)}
       </div>
       <form
         onSubmit={formik.handleSubmit}
@@ -170,7 +175,7 @@ const deliveryOptionsSection = () => {
           </button>
           <button
             className={styles.deliveryOptionsSection__buttonRight}
-            type='submit'
+            type={'submit'}
             disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:false}
           >
             <span>
