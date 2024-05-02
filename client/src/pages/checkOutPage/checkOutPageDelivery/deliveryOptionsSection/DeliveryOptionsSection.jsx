@@ -133,7 +133,7 @@ const deliveryOptionsSection = () => {
         style={{display: !isLoggedIn ?'none': 'flex'}}
         className={styles.deliveryOptionsSection__radioBlock}
       >
-        {deliveryOptionsList.map((method, index)=>
+        {deliveryOptionsList.map((method)=>
           <section
             key={method.id}
             className={styles.deliveryOptionsSection__radioWrapper}
