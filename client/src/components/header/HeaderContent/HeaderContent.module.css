@@ -165,6 +165,9 @@
 .headerContent__accountName {
   margin-right: 1rem;
   width: 6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mobileButton {
