@@ -4,3 +4,8 @@
   @include headline_3();
   margin-right: 2rem;
 }
+@media (max-width: 768px) {
+  .text {
+    @include tablet-headline-3();
+  }
+}

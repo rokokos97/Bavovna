@@ -55,7 +55,7 @@
     background-color: $accent-a-05;
   }
 }
-@media (min-width: 581px) and (max-width: 950px) {
+@media (max-width: 950px) {
   .selection {
     margin-top: 2.4rem;
   }
@@ -66,15 +66,7 @@
   }
 }
 @media (max-width: 580px) {
-  .selection {
-    margin-top: 2.7rem;
-  }
   .iconBtn {
     @include headline-9;
-  }
-  .filterIcon,
-  .sortIcon {
-    width: 2.4rem;
-    height: 2.4rem;
   }
 }

@@ -19,7 +19,7 @@ const FilterSelectionBlock = () => {
           <CloseIcon />
         </div>
         <div className={styles.selectsContainer}>
-          <Dropdown
+          {categories && <Dropdown
             id='category'
             placeholder='Category'
             name='category'
@@ -32,8 +32,8 @@ const FilterSelectionBlock = () => {
                 option='category'
               />
             ))}
-          />
-          <Dropdown
+          />}
+          {sizeValues && <Dropdown
             id='size'
             placeholder='Size'
             name='size'
@@ -46,8 +46,8 @@ const FilterSelectionBlock = () => {
                 option='size'
               />
             ))}
-          />
-          <Dropdown
+          />}
+          {colors && <Dropdown
             id='color'
             placeholder='Color'
             name='color'
@@ -60,7 +60,7 @@ const FilterSelectionBlock = () => {
                 option='color'
               />
             ))}
-          />
+          />}
           {/* <Dropdown
             id='availability'
             placeholder='Availability'

@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
- @include headline-9();
+  @include headline-9();
   text-transform: uppercase;
   background-color: inherit;
 }
@@ -16,9 +16,12 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
- @include headline-8();
+  @include headline-8();
   text-transform: uppercase;
   background-color: inherit;
+}
+.chevron{
+  width: 2.4rem;
 }
 ul.dropdownList {
   list-style-type: circle;
@@ -27,7 +30,7 @@ ul.dropdownList {
   display: inline-flex;
   flex-direction: column;
   gap: 1rem;
- @include body-3();
+  @include body-3();
   margin-top: 0.8rem;
 }
 .icon {
@@ -35,4 +38,9 @@ ul.dropdownList {
 }
 .dropdownText {
   text-align: start;
+}
+@media (max-width: 950px) {
+  .dropdownText {
+    @include headline-9();
+  }
 }

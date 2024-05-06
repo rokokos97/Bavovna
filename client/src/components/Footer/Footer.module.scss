@@ -18,7 +18,7 @@
   max-width: $max-width;
   width: 100%;
   color: $white;
-  padding: 7rem 8rem 4rem;
+  padding: 7rem 8rem 5rem;
   margin: auto;
   z-index: 10000;
 }
@@ -112,6 +112,7 @@
 @media (min-width: 581px) and (max-width: 768px) {
   .footer {
     padding: 3.2rem;
+    padding-bottom: 5rem;
   }
   .footerTop {
     height: 100%;

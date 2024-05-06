@@ -1,7 +1,9 @@
 import React from 'react';
+import styles from './CloseIcon.module.scss';
+
 const CloseIcon = () => {
   return (
-    <>
+    <div className={styles.closeIcon}>
       <svg
         width='32'
         height='32'
@@ -17,7 +19,7 @@ const CloseIcon = () => {
           strokeLinejoin='round'
         />
       </svg>
-    </>
+    </div>
   );
 };
 

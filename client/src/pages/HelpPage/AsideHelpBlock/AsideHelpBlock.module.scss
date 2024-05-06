@@ -20,6 +20,13 @@
 .active {
   color: $black;
 }
+.helpField {
+  display: flex;
+  justify-content: space-between;
+}
+.helpChevron {
+  transform: rotate(90deg);
+}
 @media (min-width: 581px) and (max-width: 768px) {
   .aside {
     @include headline-5();
@@ -31,6 +38,10 @@
     @include tablet-headline-3();
   }
   .asideList {
+    width: 100%;
     gap: 2.4rem;
+    li {
+      width: 100%;
+    }
   }
 }
