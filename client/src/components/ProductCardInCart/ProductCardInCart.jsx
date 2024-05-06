@@ -75,7 +75,7 @@ const ProductCardInCart = ({item, type}) => {
             <button
               onClick={handleItemDelete}
               className={styles.productCardInCart__buttonDelete}
-              disabled={type==='1'}
+              disabled={type === '1'}
             >
               <DeleteIcon />
             </button>
