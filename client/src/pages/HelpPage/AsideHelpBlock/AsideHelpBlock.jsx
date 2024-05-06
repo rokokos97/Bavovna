@@ -1,9 +1,12 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {helps} from '../helps.service';
+import ChevronUp from '../../../components/svg/ChevronUp/ChevronUp';
+import useDeviceDetect from '../../../utils/useDeviceDetect';
 import styles from './AsideHelpBlock.module.scss';
 
 const AsideHelpBlock = () => {
+  const {isMobile} = useDeviceDetect();
   return (
     <div className={styles.aside}>
       <ul className={styles.asideList}>
@@ -15,7 +18,14 @@ const AsideHelpBlock = () => {
                 isActive ? styles.active : styles.unactive
               }
             >
-              {help.name}
+              <div className={styles.helpField}>
+                {help.name}
+                {isMobile && (
+                  <div className={styles.helpChevron}>
+                    <ChevronUp />
+                  </div>
+                )}
+              </div>
             </NavLink>
           </li>
         ))}
