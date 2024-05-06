@@ -94,7 +94,7 @@
   margin-top: -4.4rem;
 }
 
-@media (min-width: 580px) and (max-width: 1120px) {
+@media (min-width: 580px) and (max-width: 1250px) {
   .navigationBlock .navigationBlock__sidebar {
     width: 25rem;
     display: flex;
@@ -109,7 +109,7 @@
   }
   .navigationBlock .navigationBlock__navigationContentSide {
     margin-top: 0;
-    width: 43.1rem;
+    width: 70rem;
   }
 }
 @media (max-width: 580px) {

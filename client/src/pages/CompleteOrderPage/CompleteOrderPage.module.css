@@ -152,6 +152,7 @@
   width: 3.2rem;
 }
 .completeOrderPage .completeOrderPage__itemsList {
+  width: 72.8rem;
   display: flex;
   flex-direction: column;
   row-gap: 0.4rem;
