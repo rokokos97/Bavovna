@@ -42,43 +42,45 @@ const ProductCardInCart = ({item, type}) => {
             </span>
           </p>
         </section>
-        <section className={styles.productCardInCart__sizeColorQuantityBlock}>
-          <div className={styles.productCardInCart__sizeBlock}>
-            <p>size: </p>
-            <p>{item.itemSize}</p>
-          </div>
-          <div className={styles.productCardInCart__colorBlock}>
-            <p>color:</p>
-            <div style={{'backgroundColor': `${item.itemColor}`}} className={styles.productCardInCart__colorRectangle}></div>
-          </div>
-          <div className={styles.productCardInCart__quantityBlock}>
-            <p>quantity:</p>
-            <div className={styles.productCardInCart__quantity}>
-              <button
-                onClick={handleQuantityLess}
-                className={styles.productCardInCart__button}>
-                      -
-              </button>
-              <p>
-                {item.itemQuantity}
-              </p>
-              <button
-                onClick={handleQuantityAdd}
-                className={styles.productCardInCart__button}>
-                      +
-              </button>
+        <section className={styles.productCardInCart__sizeColorQuantityDeleteBlock}>
+          <div className={styles.productCardInCart__sizeColorQuantityBlock}>
+            <div className={styles.productCardInCart__sizeBlock}>
+              <p>size: </p>
+              <p>{item.itemSize}</p>
+            </div>
+            <div className={styles.productCardInCart__colorBlock}>
+              <p>color:</p>
+              <div style={{'backgroundColor': `${item.itemColor}`}} className={styles.productCardInCart__colorRectangle}></div>
+            </div>
+            <div className={styles.productCardInCart__quantityBlock}>
+              <p>quantity:</p>
+              <div className={styles.productCardInCart__quantity}>
+                <button
+                  onClick={handleQuantityLess}
+                  className={styles.productCardInCart__button}>
+                        -
+                </button>
+                <p>
+                  {item.itemQuantity}
+                </p>
+                <button
+                  onClick={handleQuantityAdd}
+                  className={styles.productCardInCart__button}>
+                        +
+                </button>
+              </div>
             </div>
           </div>
+          <div className={styles.productCardInCart__buttonBlock}>
+            <button
+              onClick={handleItemDelete}
+              className={styles.productCardInCart__buttonDelete}
+              disabled={type === '1'}
+            >
+              <DeleteIcon />
+            </button>
+          </div>
         </section>
-      </div>
-      <div className={styles.productCardInCart__buttonBlock}>
-        <button
-          onClick={handleItemDelete}
-          className={styles.productCardInCart__buttonDelete}
-          disabled={type==='1'}
-        >
-          <DeleteIcon />
-        </button>
       </div>
     </div>
   );

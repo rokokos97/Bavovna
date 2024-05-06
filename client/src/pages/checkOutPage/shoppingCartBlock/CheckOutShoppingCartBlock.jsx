@@ -41,8 +41,6 @@ const CheckOutShoppingCartBlock = ({formik}) => {
       }
     },
   });
-
-
   useEffect(()=>{
     if (orderAmount > 1000) {
       setCurrentDeliveryPrice('Free');

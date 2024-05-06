@@ -54,7 +54,7 @@ const CheckoutModal = ({handleCloseModal}) => {
           onClick={handleCloseModal}
         >
           <ArrowBackIcon />
-          <span>Сontinue shopping</span>
+          <span>Continue shopping</span>
         </button>
         <Link
           to='/cart'

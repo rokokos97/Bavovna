@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './RecoveryPasswordForm.module.scss';
 import TextField from '../../../components/form/formFields/TextField/TextField';
 import {useFormik} from 'formik';
@@ -20,7 +20,6 @@ const RecoveryPasswordForm = () => {
   const error = useSelector(getError);
   const [message, setMessage] = useState();
   const [isLoaderRun, setIsLoaderRun] = useState(false);
-  const emailRef = useRef(null);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -39,7 +38,6 @@ const RecoveryPasswordForm = () => {
     }
     if (error) {
       setMessage(error);
-      emailRef.current.focus();
     }
   }, [error, response]);
   useEffect(() => {
@@ -83,12 +81,11 @@ const RecoveryPasswordForm = () => {
           label='Email'
           name='email'
           placeholder={'example@ex.com'}
-          value={formik.values.email}
+          value={formik.values.email.toLowerCase()}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.email}
           touched={formik.touched.email}
-          ref={emailRef}
         />
         <button
           className={styles.forgotPasswordForm__button}

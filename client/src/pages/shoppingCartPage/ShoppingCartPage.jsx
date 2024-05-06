@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import styles from './ShoppingCartPage.module.scss';
-import {useNavigate} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCart, getNormalizedCart} from '../../store/cartSlice';
 import ProductCardInCart from '../../components/ProductCardInCart/ProductCardInCart';
@@ -29,7 +29,14 @@ const ShoppingCartPage = () => {
   }, []);
   return (
     <div className={styles.shoppingCartPage} data-testid="ShoppingCartPage">
-      <p className={styles.shoppingCartPage__navigation}>Home / Shopping bag</p>
+      <nav className={styles.shoppingCartPage__navigation}>
+        <NavLink to={'/shop'}>
+          Home /
+        </NavLink>
+        <NavLink to={'/'}>
+           Shopping bag
+        </NavLink>
+      </nav>
       <div className={styles.shoppingCartPage__titleBlock}>
         <div className={styles.shoppingCartPage__infoBlock}>
           <p className={styles.shoppingCartPage__title}>{`shopping bag (${cart.length} items)`}</p>

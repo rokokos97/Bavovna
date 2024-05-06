@@ -7,10 +7,9 @@ import NovaPostInternationalDeliveryFormCheckout
   from './userDeliveryMethods/NovaPostInternationalDeliveryFormCheckout/NovaPostInternationalDeliveryFormCheckout';
 import PropTypes from 'prop-types';
 import {useState} from 'react';
-import RadioButtonCheckedIcon from '../../../../../components/svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
-import RadioButtonEmptyIcon from '../../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import {setDeliveryMethod, setDeliveryPrice} from '../../../../../store/ordersSlice';
 import {useDispatch} from 'react-redux';
+import RadioInput from '../../../../../components/RadioInput/RadioInput';
 
 const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, warehouseList, formik, type}) => {
   const [currentValue, setCurrentValue] = useState();
@@ -51,30 +50,13 @@ const UserDeliveryMethodsList = ({handleCityChange, handleWarehouseChange, wareh
     <div className={styles.userDeliveryMethodsList}>
       {Object.values(deliveryMethods).map((method) => {
         return (
-          <section
+          <RadioInput
             key={method._id}
-            className={styles.radioOption}
-            onClick={() => handleChangeCurrentValue(method._id)}
-          >
-            <input
-              id={method._id}
-              type="radio"
-              name="customRadio"
-              value={method.value}
-              checked={currentValue === method._id}
-              className={styles.radioInput}
-            />
-            <label htmlFor={method._id} className={styles.radioLabel}>
-              <button>
-                {currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
-              </button>
-              <p>{method.label}</p>
-            </label>
-            <div>{currentValue === method._id ? method.value : null}</div>
-          </section>);
-      },
-      )
-      }
+            method={method}
+            currentValue={currentValue}
+            handleChangeCurrentValue={handleChangeCurrentValue}/>
+        );
+      })}
     </div>
   );
 };

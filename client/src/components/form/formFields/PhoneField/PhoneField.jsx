@@ -35,7 +35,7 @@ PhoneField.propTypes = {
   phoneNumber: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
-  touched: PropTypes.object,
+  touched: PropTypes.bool,
   error: PropTypes.string,
 };
 

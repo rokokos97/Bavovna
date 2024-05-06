@@ -1,15 +1,12 @@
 @import '../../../../styles/variables.module';
 .checkOutBlock {
   width: 41.1rem;
-  position: absolute;
-  right:0;
   height: 28.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
   padding: 4rem 2.4rem;
   background: $white;
-  //border-radius: 1.6rem;
 
   .checkOutBlock__totalPriceBlock {
     display: flex;
@@ -33,9 +30,8 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 960px) {
   .checkOutBlock {
-    position: unset;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -56,6 +52,7 @@
     .checkOutBlock__buttonsBlock {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 2.4rem;
       a:first-child {
         @include button(70.3rem);
@@ -68,7 +65,7 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .checkOutBlock {
     position: unset;
     width: 100%;
@@ -90,6 +87,7 @@
     .checkOutBlock__buttonsBlock {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 2.4rem;
       a:first-child {
         @include button-mobile(32.8rem);

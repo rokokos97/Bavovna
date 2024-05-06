@@ -18,17 +18,17 @@
 .deliveryOptionsSection__radioWrapper {
   display: flex;
   flex-direction: row;
-  column-gap: 0.8rem;
 }
 .deliveryOptionsSection__label {
   display: flex;
   flex-direction: row;
- @include headline-9();
+  gap: $xs-spacing;
+  align-items: center;
+  @include headline-9();
   text-align: start;
-  word-wrap: inherit;
-  margin-left: 0.8rem;
 }
-.deliveryOptionsSection__radioButton {
+.deliveryOptionsSection__radioInput {
+  appearance: none;
 }
 .deliveryOptionsSection__navigationButtonsSection {
   display: flex;

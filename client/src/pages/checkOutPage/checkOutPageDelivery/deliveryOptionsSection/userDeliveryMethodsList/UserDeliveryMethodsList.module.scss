@@ -1,26 +1,28 @@
 @import '../../../../../styles/variables.module.scss';
-.radioOption {
-  display: flex;
-  flex-direction: column;
-  row-gap: $l-spacing;
-  justify-content: flex-start;
-  }
-.radioInput {
-  appearance: none;
+.userDeliveryMethodsList {
+    display: flex;
+    flex-direction: column;
+    row-gap: $l-spacing;
+
+    .radioOption {
+      display: flex;
+
+      .radioInput {
+        appearance: none;
+      }
+      .radioLabel {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.7rem;
+        align-items: center;
+        cursor: pointer;
+        text-align: start;
+        @include label();
+        .radioLabel__radioButton {
+          width: 2.4rem;
+        }
+    }
 }
-.radioLabel {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  column-gap: 0.7rem;
-  align-items: center;
-  cursor: pointer;
-  text-align: start;
-  @include label();
-}
-.deleteButton {
-  background: transparent;
-  display: flex;
-  align-content: flex-start;
 }
 
