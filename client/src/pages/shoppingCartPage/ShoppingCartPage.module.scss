@@ -1,6 +1,6 @@
 @import '../../styles/variables.module';
 .shoppingCartPage {
-  min-height: 100vh;
+  min-height: 76rem;
   padding-inline: 8rem;
   width: 100% ;
   display: flex;
@@ -71,12 +71,14 @@
   margin-top: 1.6rem;
   display: flex;
   flex-direction: row;
-  //justify-content: space-between;
   gap: $xl-spacing;
 
   .shoppingCartPage__itemsBlock {
     width: 84.5rem;
     padding-top: $xl-spacing;
+    display: flex;
+    flex-direction: column;
+    gap: $xl-spacing;
   }
 }
 @media (min-width: 951px) and (max-width: 960px) {
