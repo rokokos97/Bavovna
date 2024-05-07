@@ -27,23 +27,28 @@
     color: $gray-20!important;
   }
   &__menu {
+    height:17rem!important;
     padding-top: 0.8rem!important;
     box-shadow: none!important;
     margin-top: 0!important;
     border: 1px solid $black!important;
     border-radius: 0!important;
     box-sizing: border-box!important;
+    z-index: 2000!important;
   }
-  &__option {
-    @include input-text();
-    font-size: 16px!important;
-    text-align: start!important;
-    text-wrap: none!important;
-    border-bottom: 0.5px solid $gray-30!important;
-    overflow: hidden!important;
-    white-space: nowrap!important;
-    text-overflow: ellipsis!important;
-  }
+    &__menu-list {
+      height:16rem!important;
+    }
+      &__option {
+        @include input-text();
+        font-size: 16px!important;
+        text-align: start!important;
+        text-wrap: none!important;
+        border-bottom: 0.5px solid $gray-30!important;
+        overflow: hidden!important;
+        white-space: nowrap!important;
+        text-overflow: ellipsis!important;
+      }
   &__menu-noties--no--options {
     text-align: start!important;
   }

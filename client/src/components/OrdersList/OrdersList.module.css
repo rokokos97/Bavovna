@@ -50,6 +50,7 @@
   }
   .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td {
     display: flex;
+    flex-grow: 1;
     flex-direction: row;
     column-gap: 0.8rem;
     align-items: center;

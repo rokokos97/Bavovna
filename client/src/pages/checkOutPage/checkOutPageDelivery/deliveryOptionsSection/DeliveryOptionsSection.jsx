@@ -162,29 +162,30 @@ const deliveryOptionsSection = () => {
         onSubmit={formik.handleSubmit}
       >
         {deliveryOptionsList.map((method)=>userCurrentDeliveryOption === method.label ? <div key={method.id}>{method.value}</div> : null)}
-        <div className={styles.deliveryOptionsSection__navigationButtonsSection}>
-          <button
-            type='button'
-            onClick={()=> navigate(-1) }
-            className={styles.deliveryOptionsSection__buttonLeft}
-          >
-            <LeftArrowIcon/>
-            <span>
-                go back
-            </span>
-          </button>
-          <button
-            className={styles.deliveryOptionsSection__buttonRight}
-            type={'submit'}
-            disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:false}
-          >
-            <span>
-                next step
-            </span>
-            <LeftArrowIcon/>
-          </button>
-        </div>
       </form>
+      <div className={styles.deliveryOptionsSection__navigationButtonsSection}>
+        <button
+          type='button'
+          onClick={()=> navigate(-1) }
+          className={styles.deliveryOptionsSection__buttonLeft}
+        >
+          <LeftArrowIcon/>
+          <span>
+                go back
+          </span>
+        </button>
+        <button
+          className={styles.deliveryOptionsSection__buttonRight}
+          type='button'
+          onClick={formik.submitForm}
+          disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:false}
+        >
+          <span>
+                next step
+          </span>
+          <LeftArrowIcon/>
+        </button>
+      </div>
     </div>
   );
 };

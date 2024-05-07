@@ -63,12 +63,17 @@ body {
   color: #5d5d5d !important;
 }
 .custom__menu {
+  height: 17rem !important;
   padding-top: 0.8rem !important;
   box-shadow: none !important;
   margin-top: 0 !important;
   border: 1px solid #000000 !important;
   border-radius: 0 !important;
   box-sizing: border-box !important;
+  z-index: 2000 !important;
+}
+.custom__menu-list {
+  height: 16rem !important;
 }
 .custom__option {
   font-weight: 400;

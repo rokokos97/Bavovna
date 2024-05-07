@@ -11,7 +11,7 @@
 }
 @media (max-width: 580px) {
   .userPage {
-    max-width: 32.8rem;
+    padding-inline: 3.2rem;
   }
 }
 

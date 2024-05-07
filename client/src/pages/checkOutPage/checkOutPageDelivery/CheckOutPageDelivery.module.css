@@ -1,5 +1,5 @@
 .checkOutPageDeliveryInfo {
-  min-height: 120vh;
+  min-height: 100vh;
   height: fit-content;
   display: flex;
   flex-direction: row;
