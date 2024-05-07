@@ -1,6 +1,7 @@
 .shoppingCartPage {
   min-height: 100vh;
   padding-inline: 8rem;
+  padding-bottom: 8rem;
   width: 100%;
   display: flex;
   position: relative;
@@ -9,7 +10,6 @@
   transform: translateX(-50%);
   flex-direction: column;
   box-sizing: border-box;
-  padding-bottom: 25rem;
   row-gap: 2.4rem;
 }
 .shoppingCartPage .shoppingCartPage__navigation {
