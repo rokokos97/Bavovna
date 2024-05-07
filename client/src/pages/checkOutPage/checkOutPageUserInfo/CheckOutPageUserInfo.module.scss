@@ -1,6 +1,6 @@
 @import '../../../styles/variables.module.scss';
 .checkOutPageUserInfo {
-  height: 150vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   column-gap: 2.4rem;
