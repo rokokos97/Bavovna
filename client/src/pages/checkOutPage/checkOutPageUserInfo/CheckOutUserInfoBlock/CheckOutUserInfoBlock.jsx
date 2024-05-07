@@ -4,7 +4,7 @@ import LoginFormBlock from '../../../../components/form/formBlocks/LoginFormBloc
 import {useFormik} from 'formik';
 import UnknownUserContactFormBlock
   from '../../../../components/form/formBlocks/UnknownUserContactFormBlock/UnknownUserContactFormBlock';
-import {useNavigate} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
 import {validationSchemaCheckOutUserInfo} from '../../../../utils/validationSchema';
@@ -96,17 +96,19 @@ const CheckOutUserInfoBlock = () => {
       <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock__checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
         {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
       </form>
-      <div className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
-        <button
-          type='button'
-          onChange={()=> navigate(-1) }
+      <NavLink
+        aria-label='go back'
+        title='go back'
+        to={'/cart'}
+        className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
+        <div
           className={styles.checkOutUserInfoBlock__buttonLeft}
         >
           <LeftArrowIcon/>
           <span>
               go back
           </span>
-        </button>
+        </div>
         <button
           className={styles.checkOutUserInfoBlock__buttonRight}
           type='button'
@@ -118,7 +120,7 @@ const CheckOutUserInfoBlock = () => {
           </span>
           <LeftArrowIcon/>
         </button>
-      </div>
+      </NavLink>
     </div>
   );
 };
