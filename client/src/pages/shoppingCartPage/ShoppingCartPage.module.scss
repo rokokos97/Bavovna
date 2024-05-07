@@ -1,6 +1,6 @@
 @import '../../styles/variables.module';
 .shoppingCartPage {
-  min-height: 76rem;
+  min-height: 100vh;
   padding-inline: 8rem;
   width: 100% ;
   display: flex;
@@ -170,7 +170,6 @@
     }
   }
 }
-
 @media (min-width: 581px) and (max-width: 767px) {
   .shoppingCartPage {
     padding-inline: 3.2rem;
