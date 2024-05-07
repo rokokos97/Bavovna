@@ -46,6 +46,7 @@
 
           td {
             display: flex;
+            flex-grow: 1;
             flex-direction: row;
             column-gap: $s-spacing;
             align-items: center;
