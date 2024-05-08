@@ -124,7 +124,7 @@
   border: 1px solid #5a9b83;
 }
 
-@media (min-width: 581px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .userDeliveryBlock {
     width: 43.1rem;
   }
@@ -240,7 +240,7 @@
     border: 1px solid #5a9b83;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .userDeliveryBlock {
     width: 32.8rem;
   }

@@ -1,11 +1,11 @@
 @import "../../styles/variables.module.scss";
 .orderCompletePage {
-  width: 100rem;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   row-gap: 2.7rem;
-  margin: 3.2rem auto;
+  margin: 3.2rem 8rem;
 }
 .orderCompletePage__titleBlock {
   display: flex;
@@ -34,18 +34,52 @@
   margin-top: 2.1rem;
 
   a:first-child {
-    @include buttonWhite();
+    @include buttonBlack();
     @include button(21rem);
+    svg {
+      path {
+        fill: white;
+      }
+    }
   }
 
   a:last-child {
-    @include buttonBlack();
+    @include buttonWhite();
     @include button(20rem);
   }
 }
-@media (min-width: 768px) and (max-width: 1280px) {
+@media (min-width: 951px) and (max-width: 1280px) {
   .orderCompletePage {
-    width: 70.3rem;
+    margin-inline: 8rem;
+  }
+  .orderCompletePage__titleBlock {
+  }
+  .orderCompletePage__title {
+  }
+  .orderCompletePage__numberBlock {
+  }
+  .orderCompletePage__textBlock {
+  }
+  .orderCompletePage__buttonsBlock {
+    a:first-child {
+      @include button-mobile(20rem);
+      @include buttonBlack();
+      svg {
+        path {
+          fill: white;
+        }
+      }
+    }
+
+    a:last-child {
+      @include button-mobile(20rem);
+      @include buttonWhite();
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 950px) {
+  .orderCompletePage {
+    margin-inline: 3.2rem;
   }
   .orderCompletePage__titleBlock {
   }
@@ -74,6 +108,7 @@
 }
 @media (max-width: 767px) {
   .orderCompletePage {
+    margin-inline: 3.2rem;
     width: 32.8rem;
   }
   .orderCompletePage__titleBlock {
@@ -91,6 +126,11 @@
     a:first-child {
       @include buttonWhite();
       @include button-mobile(21rem);
+      svg {
+        path {
+          fill: $black;
+        }
+      }
     }
 
     a:last-child {
