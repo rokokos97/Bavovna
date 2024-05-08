@@ -63,7 +63,7 @@
   color: #ea001b;
 }
 
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .textarea {
     min-width: 70.3rem;
     max-width: 70.3rem;
@@ -74,7 +74,7 @@
     max-width: 70.3rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .textarea {
     min-width: 32.8rem;
     max-width: 32.8rem;

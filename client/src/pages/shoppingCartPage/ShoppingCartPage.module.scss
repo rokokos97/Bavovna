@@ -81,7 +81,7 @@
     gap: $xl-spacing;
   }
 }
-@media (min-width: 951px) and (max-width: 960px) {
+@media (min-width: 767px) and (max-width: 1280px) {
   .shoppingCartPage {
     left: 0;
     transform: translateX(0%);
@@ -103,15 +103,14 @@
         display: none;
       }
     }
-  }
-  .shoppingCartPage__emptyCartBlock {
+    .shoppingCartPage__emptyCartBlock {
     .shoppingCartPage__text {
     }
     .shoppingCartPage__slider {
       display: none;
     }
   }
-  .shoppingCartPage__fillCartBlock {
+    .shoppingCartPage__fillCartBlock {
     flex-direction: column;
     justify-content: unset;
     .shoppingCartPage__itemsBlock {
@@ -123,6 +122,7 @@
     .shoppingCartPage__checkOutBlock {
       width: 100%;
     }
+  }
   }
 }
 @media (min-width: 768px) and (max-width: 950px) {
@@ -148,25 +148,25 @@
         display: none;
       }
     }
-  }
-  .shoppingCartPage__emptyCartBlock {
-    .shoppingCartPage__text {
+    .shoppingCartPage__emptyCartBlock {
+      .shoppingCartPage__text {
+      }
+      .shoppingCartPage__slider {
+        display: none;
+      }
     }
-    .shoppingCartPage__slider {
-      display: none;
-    }
-  }
-  .shoppingCartPage__fillCartBlock {
-    flex-direction: column;
-    justify-content: unset;
-    .shoppingCartPage__itemsBlock {
-      width: 100%;
-      display: flex;
+    .shoppingCartPage__fillCartBlock {
       flex-direction: column;
-      gap: $xl-spacing;
-    }
-    .shoppingCartPage__checkOutBlock {
-      width: 100%;
+      justify-content: unset;
+      .shoppingCartPage__itemsBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: $xl-spacing;
+      }
+      .shoppingCartPage__checkOutBlock {
+        width: 100%;
+      }
     }
   }
 }
@@ -203,37 +203,37 @@
         display: none;
       }
     }
-  }
-  .shoppingCartPage__emptyCartBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-
-    .shoppingCartPage__text {
-      @include body-2();
-      text-align: start;
-      text-wrap: none;
-    }
-    .shoppingCartPage__slider {
-      display: none;
-    }
-  }
-  .shoppingCartPage__fillCartBlock {
-    margin-top: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: unset;
-    gap: 2.4rem;
-
-    .shoppingCartPage__itemsBlock {
-      width: 100%;
-      padding-top: 2.4rem;
+    .shoppingCartPage__emptyCartBlock {
       display: flex;
       flex-direction: column;
       gap: 2.4rem;
+
+      .shoppingCartPage__text {
+        @include body-2();
+        text-align: start;
+        text-wrap: none;
+      }
+      .shoppingCartPage__slider {
+        display: none;
+      }
     }
-    .shoppingCartPage__checkOutBlock {
-      width: 100%;
+    .shoppingCartPage__fillCartBlock {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: unset;
+      gap: 2.4rem;
+
+      .shoppingCartPage__itemsBlock {
+        width: 100%;
+        padding-top: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+      }
+      .shoppingCartPage__checkOutBlock {
+        width: 100%;
+      }
     }
   }
 }
@@ -270,38 +270,37 @@
         display: none;
       }
     }
-  }
-  .shoppingCartPage__emptyCartBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-
-    .shoppingCartPage__text {
-      @include body-2();
-      text-align: start;
-      text-wrap: none;
-    }
-    .shoppingCartPage__slider {
-      display: none;
-    }
-  }
-  .shoppingCartPage__fillCartBlock {
-    margin-top: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: unset;
-    gap: 2.4rem;
-
-    .shoppingCartPage__itemsBlock {
-      width: 100%;
-      padding-top: 2.4rem;
+    .shoppingCartPage__emptyCartBlock {
       display: flex;
       flex-direction: column;
       gap: 2.4rem;
+
+      .shoppingCartPage__text {
+        @include body-2();
+        text-align: start;
+        text-wrap: none;
+      }
+      .shoppingCartPage__slider {
+        display: none;
+      }
     }
-    .shoppingCartPage__checkOutBlock {
-      width: 100%;
+    .shoppingCartPage__fillCartBlock {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: unset;
+      gap: 2.4rem;
+
+      .shoppingCartPage__itemsBlock {
+        width: 100%;
+        padding-top: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+      }
+      .shoppingCartPage__checkOutBlock {
+        width: 100%;
+      }
     }
   }
-
 }

@@ -50,7 +50,7 @@
     transform: rotate(180deg);
   }
 }
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .deliveryOptionsSection {
     width: 70.3rem;
     display: flex;
@@ -83,7 +83,7 @@
     padding-right: 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .deliveryOptionsSection {
     width: 32.8rem;
     display: flex;

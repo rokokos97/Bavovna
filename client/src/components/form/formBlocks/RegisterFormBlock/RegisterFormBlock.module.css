@@ -570,7 +570,7 @@
     border: 1px solid rgba(169, 223, 203, 0.3);
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .registerFormBlock .registerFormBlock__form {
     display: flex;
     flex-direction: column;
