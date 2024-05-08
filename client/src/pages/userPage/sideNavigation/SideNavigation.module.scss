@@ -79,17 +79,18 @@
     }
   }
   .navigationBlock__navigationContentSide {
-    grid-column: 2 / 4;
-    width: 84.5rem;
-    display: flex;
-    flex-direction: row;
     margin-top: -4.4rem;
   }
 }
-@media (min-width: 1150px) and (max-width: 1250px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .navigationBlock {
-    justify-content: unset;
-    column-gap: 1.8rem;
+    .navigationBlock__navigation {
+      .navigationBlock__navigationHome {
+      }
+      .navigationBlock__navigationAccount {
+        //display: none;
+      }
+    }
     .navigationBlock__sidebar {
       display: flex;
       flex-direction: column;
@@ -101,46 +102,14 @@
     .navigationBlock__navigationContentSide {
       margin-top: 0;
       flex-grow: 1;
-      width: 70rem;
-    }
-  }
-}
-@media (min-width: 1050px) and (max-width: 1250px) {
-  .navigationBlock {
-    .navigationBlock__sidebar {
-      .navigationBlock__button {
-      }
-    }
-    .navigationBlock__navigationContentSide {
-      width: 60rem;
-    }
-  }
-}
-@media (min-width: 850px) and (max-width: 1049px) {
-  .navigationBlock {
-    .navigationBlock__sidebar {
-      .navigationBlock__button {
-      }
-    }
-    .navigationBlock__navigationContentSide {
-      width: 50rem;
-    }
-  }
-}
-@media (min-width: 740px) and (max-width: 849px) {
-  .navigationBlock {
-    .navigationBlock__sidebar {
-      .navigationBlock__button {
-      }
-    }
-    .navigationBlock__navigationContentSide {
       width: 40rem;
     }
   }
 }
-@media (max-width: 739px) {
+
+@media (max-width: 767px) {
   .navigationBlock {
-    width: 32.8rem;
+    width: 100%;
     .navigationBlock__navigation {
       .navigationBlock__navigationHome {
         align-items: center;
