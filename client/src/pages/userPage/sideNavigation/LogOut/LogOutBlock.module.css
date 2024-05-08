@@ -1,6 +1,7 @@
 .logOutBlock {
   width: 48.3rem;
   padding: 1.6rem;
+  margin: -4.4rem 21.2rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -221,7 +222,10 @@
   border: 1px solid #5a9b83;
 }
 
-@media (min-width: 581px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1280px) {
+  .logOutBlock {
+    margin: -1.6rem 1.6rem;
+  }
   .logOutBlock .logOutBlock__buttonStay {
     display: flex;
     flex-direction: row;
@@ -375,8 +379,9 @@
     color: #9b9b9b;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .logOutBlock {
+    margin: unset;
     width: 32.8rem;
     padding: 0;
   }

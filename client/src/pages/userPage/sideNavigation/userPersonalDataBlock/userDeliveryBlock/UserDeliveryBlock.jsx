@@ -107,6 +107,7 @@ const UserDeliveryBlock = () => {
           <button
             className={styles.userDeliveryBlock__button}
             type='submit'
+            disabled={!formik.isValid || !formik.dirty}
           >
             <span>
               add address
