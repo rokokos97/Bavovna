@@ -31,7 +31,7 @@ const RadioInput = ({method, currentValue, handleChangeCurrentValue}) => {
         >{currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}</div>
         <p>{method.label}</p>
       </label>
-      <div className={styles.radioInput__value}>{currentValue === method._id ? method.value : null}</div>
+      {currentValue === method._id ? <p className={styles.radioInput__value}>{method.value}</p> : null}
     </section>
   );
 };
