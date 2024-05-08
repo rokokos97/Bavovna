@@ -73,7 +73,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .registerForm {
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@
     line-height: 120%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .registerForm {
     display: flex;
     flex-direction: column;

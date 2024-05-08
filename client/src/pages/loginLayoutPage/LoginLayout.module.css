@@ -4,13 +4,13 @@
   margin: 2.4rem auto 17rem;
 }
 
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .loginLayout {
     width: 41rem;
     margin: 2.4rem auto 5.6rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .loginLayout {
     width: 32.5rem;
     margin: 2.4rem auto 2rem;
