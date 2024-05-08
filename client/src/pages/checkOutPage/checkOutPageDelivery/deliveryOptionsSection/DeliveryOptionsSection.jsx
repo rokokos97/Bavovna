@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from './DeliveryOptionsSection.module.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
@@ -12,7 +12,6 @@ import UserDeliveryAddressList
   from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
 import UserDeliveryMethodsList from './userDeliveryMethodsList/UserDeliveryMethodsList';
 import {useFormik} from 'formik';
-import npService from '../../../../services/np.service';
 import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
 import {
   validationSchemaNPDeliveryAddress, validationSchemaNPDeliveryInternational,
@@ -26,6 +25,7 @@ import RadioButtonEmptyIcon
   from '../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
 import {getCartTotalPrice} from '../../../../store/cartSlice';
+import useDeliveryData from '../../../../utils/useDeliveryData';
 const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -89,24 +89,11 @@ const deliveryOptionsSection = () => {
     dispatch(setDeliveryMethod(deliveryMethodsList[1][id].label));
     dispatch(setDeliveryPrice(deliveryMethodsList[1][id].price));
   };
-  useEffect(()=>{
-    if (selectedCity) {
-      npService.post({cityRef: selectedCity?.value}).then(async (data)=> {
-        setWarehousesList(await data);
-      });
-    }
-  }, [selectedCity]);
-  useEffect(()=>{
-    formik.resetForm({
-      values: {
-        city: {},
-        warehouse: {},
-        street: '',
-        houseNumber: '',
-        flatNumber: '',
-      },
-    });
-  }, [userCurrentDeliveryMethod, formik.resetForm]);
+  const setDeliveryOptionHandler = (method) => {
+    dispatch(setDeliveryOption(method.label));
+    formik.resetForm();
+  };
+  useDeliveryData(selectedCity, userCurrentDeliveryMethod, formik, setWarehousesList);
   const deliveryOptionsList = [
     {
       id: '1',
@@ -143,13 +130,14 @@ const deliveryOptionsSection = () => {
               type='radio'
               name='customRadio'
               className={styles.deliveryOptionsSection__radioInput}
-              onChange = {() => dispatch(setDeliveryOption(method.label))}
+              onChange = {() => {}}
             />
             <label
               className={styles.deliveryOptionsSection__label}
+              onClick ={() => setDeliveryOptionHandler(method)}
             >
               <div
-                onClick = {() => dispatch(setDeliveryOption(method.label))}
+                onClick = {() => setDeliveryOptionHandler(method)}
                 disabled={!isLoggedIn || user?.deliveryAddress.length === 0}
               >
                 {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
@@ -178,7 +166,7 @@ const deliveryOptionsSection = () => {
           className={styles.deliveryOptionsSection__buttonRight}
           type='button'
           onClick={formik.submitForm}
-          disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:false}
+          disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:!user.currentDeliveryAddress}
         >
           <span>
                 next step

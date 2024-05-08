@@ -21,5 +21,8 @@
 .radioOption .radioLabel .radioLabel__radioButton {
   width: 2.4rem;
 }
+.radioOption .radioInput__value {
+  padding-top: 1.6rem;
+}
 
 /*# sourceMappingURL=RadioInput.module.css.map */

@@ -11,10 +11,10 @@ import {
 import {useFormik} from 'formik';
 import {getDeliveryMethod, setDeliveryMethod} from '../../../../../store/ordersSlice';
 import deliveryMethodsList from '../../../../../utils/deliveryMethodsList';
-import npService from '../../../../../services/np.service';
 import {nanoid} from 'nanoid/non-secure';
 import {getUser, updateUserData} from '../../../../../store/userSlice';
 import createDeliveryLabel from '../../../../../utils/createDeliveryLabel';
+import useDeliveryData from '../../../../../utils/useDeliveryData';
 const UserDeliveryBlock = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
@@ -78,24 +78,7 @@ const UserDeliveryBlock = () => {
   const selectedValue = (id) => {
     dispatch(setDeliveryMethod(deliveryMethodsList[1][id].label));
   };
-  useEffect(()=>{
-    if (selectedCity) {
-      npService.post({cityRef: selectedCity?.value}).then(async (data)=> {
-        setWarehousesList(await data);
-      });
-    }
-  }, [selectedCity]);
-  useEffect(()=>{
-    formik.resetForm({
-      values: {
-        city: {},
-        warehouse: {},
-        street: '',
-        houseNumber: '',
-        flatNumber: '',
-      },
-    });
-  }, [userCurrentDeliveryMethod, formik.resetForm]);
+  useDeliveryData(selectedCity, userCurrentDeliveryMethod, formik, setWarehousesList);
   useEffect(()=>{
     dispatch(setDeliveryMethod('Nova post delivery to the post office'));
   }, []);

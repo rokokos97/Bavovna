@@ -289,7 +289,7 @@
   border: 1px solid #5a9b83;
 }
 
-@media (min-width: 769px) and (max-width: 1120px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .checkOutShoppingCartBlock {
     width: 70.3rem;
     padding-top: 1.6rem;

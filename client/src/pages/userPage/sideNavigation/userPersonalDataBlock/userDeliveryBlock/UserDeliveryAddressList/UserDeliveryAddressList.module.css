@@ -40,4 +40,12 @@
   align-content: flex-start;
 }
 
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: left;
+  word-wrap: inherit;
+}
+
 /*# sourceMappingURL=UserDeliveryAddressList.module.css.map */

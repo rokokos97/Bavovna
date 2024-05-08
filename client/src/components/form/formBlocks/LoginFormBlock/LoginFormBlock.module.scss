@@ -128,7 +128,7 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .loginFormBlock {
     .loginFormBlock__button {
       @include button-mobile(32.8rem);

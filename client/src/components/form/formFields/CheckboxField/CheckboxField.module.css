@@ -82,7 +82,7 @@
     line-height: 110%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .checkboxField .checkbox label {
     font-weight: 400;
     font-size: 12px;

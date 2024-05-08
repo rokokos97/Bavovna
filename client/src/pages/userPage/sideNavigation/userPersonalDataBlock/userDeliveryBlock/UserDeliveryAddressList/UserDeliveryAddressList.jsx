@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 
 const UserDeliveryAddressList = ({hiddenButton}) => {
   const user = useSelector(getUser);
-  return ( user &&
+  return ( user.currentDeliveryAddress ?
     <div className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList"
     >
       <ListWithRadioButtons options={{...user.deliveryAddress}} isList={true} deleteButton={hiddenButton}/>
-    </div>
+    </div> : <p className={styles.text}>You don&apos;t have any  saved delivery address</p>
   );
 };
 UserDeliveryAddressList.propTypes = {
