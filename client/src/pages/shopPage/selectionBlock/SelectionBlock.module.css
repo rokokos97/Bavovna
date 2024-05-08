@@ -10,12 +10,11 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: 2rem;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  background-color: inherit;
+  font-size: 20px;
+  line-height: 120%;
   text-transform: uppercase;
+  background-color: inherit;
 }
 
 .sortBlock {
@@ -32,6 +31,12 @@
   border-top: none;
   background-color: #fafafa;
   z-index: 2;
+}
+
+.filterIcon,
+.sortIcon {
+  width: 4rem;
+  height: 4rem;
 }
 
 .activeName {
@@ -58,14 +63,22 @@
   background-color: #a9dfcb;
 }
 
-@media (min-width: 581px) and (max-width: 768px) {
+@media (max-width: 950px) {
   .selection {
     margin-top: 2.4rem;
   }
+  .filterIcon,
+  .sortIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 @media (max-width: 580px) {
-  .selection {
-    margin-top: 2.7rem;
+  .iconBtn {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: uppercase;
   }
 }
 

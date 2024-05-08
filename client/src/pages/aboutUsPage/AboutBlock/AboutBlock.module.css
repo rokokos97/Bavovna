@@ -72,6 +72,11 @@
     gap: 1.6rem;
   }
 }
+@media (max-width: 650px) {
+  .secondImg {
+    top: 11rem;
+  }
+}
 @media (max-width: 580px) {
   .aboutBlock {
     flex-direction: column;
@@ -82,6 +87,9 @@
   }
   .newsLetterBlock__title2 {
     padding-bottom: 0.4rem;
+  }
+  .secondImg {
+    top: unset;
   }
 }
 

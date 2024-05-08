@@ -1,6 +1,10 @@
 .fillHeartIcon {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 100%;
+  height: 100%;
+}
+.fillHeartIcon svg {
+  width: 100%;
+  height: 100%;
 }
 .fillHeartIcon:hover svg path[stroke] {
   stroke: #3a7f66;

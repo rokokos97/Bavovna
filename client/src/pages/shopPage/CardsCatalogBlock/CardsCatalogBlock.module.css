@@ -1,4 +1,5 @@
 .catalog {
+  position: relative;
   display: flex;
   width: 100%;
 }
@@ -17,6 +18,21 @@
   margin: 2.4rem auto;
 }
 
+.filterBlock {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 33%;
+  height: 100%;
+  border-right: 0.1rem solid #000000;
+  z-index: 100;
+}
+
+.visibleFilterBlock {
+  display: block;
+  left: 0;
+}
+
 .noFoundTitle {
   font-weight: 700;
   font-size: 24px;
@@ -33,20 +49,17 @@
 
 .cards {
   display: flex;
-  gap: 2.4rem;
+  row-gap: 2.4rem;
   flex-wrap: wrap;
-  padding-top: 2.4rem;
-}
-.cards.cardsPadding {
-  padding-left: 2.4rem;
+  margin-top: 2.4rem;
+  justify-content: space-between;
 }
 
 .card {
-  width: 32%;
-}
-.card.doubleColumn {
-  width: 48.5%;
-  max-width: 41rem;
+  display: flex;
+  justify-content: center;
+  max-width: 32.5%;
+  width: 100%;
 }
 
 .disabledCard {
@@ -101,30 +114,36 @@
   background-color: rgba(169, 223, 203, 0.3);
 }
 
-@media screen and (max-width: 1416px) {
+@media (max-width: 800px) {
   .cards {
-    gap: 2.2rem;
-  }
-}
-@media screen and (max-width: 1311px) {
-  .cards {
-    gap: 2.1rem;
-  }
-}
-@media screen and (max-width: 1227px) {
-  .cards {
-    justify-content: center;
-    gap: 1.4rem;
+    row-gap: 1.4rem;
   }
   .card {
-    display: flex;
-    justify-content: center;
-    flex: 1 1 48%;
+    max-width: unset;
+    flex: 0 1 49.5%;
+  }
+  .filterBlock {
+    width: 49.5%;
   }
 }
-@media screen and (max-width: 380px) {
+@media (max-width: 580px) {
   .card {
-    flex-basis: 47%;
+    flex-basis: 48%;
+  }
+}
+@media (max-width: 480px) {
+  .catalog {
+    position: unset;
+  }
+  .filterBlock {
+    width: 100%;
+  }
+  .cards {
+    margin-top: 1.6rem;
+  }
+  .card {
+    flex-basis: 47.5%;
+    min-height: 25.9rem;
   }
 }
 

@@ -1,6 +1,7 @@
 .container {
   max-width: 144rem;
   width: 100%;
+  min-width: 36rem;
   padding-top: 8.9rem;
   margin: auto;
   flex: 1 0 auto;
@@ -14,12 +15,18 @@
   height: 4.9rem;
   padding: 1rem 0;
   background-color: #ffffff;
-  z-index: 100;
+  opacity: 0.8;
+  z-index: 10001;
 }
 
 @media (min-width: 581px) and (max-width: 950px) {
   .container {
     padding-top: 10.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .marqueeContainer {
+    height: 4rem;
   }
 }
 @media (max-width: 580px) {

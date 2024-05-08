@@ -38,7 +38,7 @@
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
-  width: 17.4rem;
+  width: 15rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
@@ -46,6 +46,7 @@
   overflow: hidden;
   padding: 1.6rem 2.4rem;
   background: #000000;
+  text-wrap: nowrap;
 }
 .heroBtn span {
   font-weight: 600;
@@ -65,7 +66,7 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 0.4rem;
-  left: 6.3rem;
+  left: 5.1rem;
 }
 .heroBtn::after {
   content: "";
@@ -77,26 +78,26 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 2.5rem;
-  left: 8.4rem;
+  left: 7.2rem;
 }
 .heroBtn:hover::before {
   content: "";
-  width: 19.14rem;
-  height: 19.14rem;
+  width: 16.5rem;
+  height: 16.5rem;
   opacity: 1;
   position: absolute;
-  top: -7.17rem;
+  top: -5.85rem;
   left: -1rem;
 }
 .heroBtn:active::after {
   content: "";
-  width: 19.14rem;
-  height: 19.14rem;
+  width: 16.5rem;
+  height: 16.5rem;
   border-radius: 50%;
   background: transparent;
   opacity: 1;
   position: absolute;
-  top: -7.17rem;
+  top: -5.85rem;
   left: -1.1rem;
 }
 .heroBtn:focus {
@@ -131,10 +132,21 @@
   border: 1px solid #5a9b83;
 }
 
-@media (min-width: 581px) and (max-width: 768px) {
+@media (min-width: 581px) and (max-width: 950px) {
   .hero {
     background-image: url("../../../../public/img/images/Catalog/tabletCatalogHero.webp");
-    padding: 5.4rem 5.4rem 2rem;
+    padding: 5.4rem 5.4rem 3.7rem;
+  }
+  .heroBtn {
+    width: 16rem;
+    height: 4.8rem;
+  }
+  .heroBtn span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-wrap: nowrap;
   }
 }
 @media (max-width: 580px) {
@@ -151,6 +163,17 @@
   }
   .heroActive {
     gap: 0.8rem;
+  }
+  .heroBtn {
+    width: 16rem;
+    height: 4.8rem;
+  }
+  .heroBtn span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-wrap: nowrap;
   }
 }
 

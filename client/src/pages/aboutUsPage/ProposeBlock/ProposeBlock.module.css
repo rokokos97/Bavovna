@@ -172,10 +172,6 @@
     position: relative;
     overflow: hidden;
     padding: 1.6rem 2.4rem;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 140%;
-    text-align: center;
     height: 4.8rem;
   }
   .newCollectionBlock__button span {
@@ -241,6 +237,12 @@
   }
   .newCollectionBlock__button:disabled span {
     color: #9b9b9b;
+  }
+  .newCollectionBlock__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
   }
   .description {
     gap: 1.6rem;
@@ -273,10 +275,6 @@
     position: relative;
     overflow: hidden;
     padding: 1.6rem 2.4rem;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 140%;
-    text-align: center;
     height: 4.8rem;
   }
   .newCollectionBlock__button span {
@@ -342,6 +340,12 @@
   }
   .newCollectionBlock__button:disabled span {
     color: #9b9b9b;
+  }
+  .newCollectionBlock__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
   }
 }
 

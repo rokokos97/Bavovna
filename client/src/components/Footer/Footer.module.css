@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: center;
+  min-width: 36rem;
   width: 100%;
   background-color: #000000;
   z-index: 1000;
@@ -15,7 +16,7 @@
   max-width: 144rem;
   width: 100%;
   color: #fafafa;
-  padding: 7rem 8rem 4rem;
+  padding: 7rem 8rem 5rem;
   margin: auto;
   z-index: 10000;
 }
@@ -127,6 +128,7 @@
 @media (min-width: 581px) and (max-width: 768px) {
   .footer {
     padding: 3.2rem;
+    padding-bottom: 5rem;
   }
   .footerTop {
     height: 100%;

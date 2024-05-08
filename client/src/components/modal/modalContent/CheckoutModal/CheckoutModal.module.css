@@ -109,6 +109,9 @@
   display: flex;
   justify-content: space-between;
 }
+.btnContainer span {
+  text-wrap: nowrap;
+}
 
 .continueBtn {
   font-weight: 400;
@@ -269,6 +272,12 @@
     max-width: 15.6rem;
     width: 100%;
     object-position: center;
+  }
+  .checkoutContent {
+    gap: 0.8rem;
+  }
+  .dataBlock {
+    margin-top: 0.8rem;
   }
   .closeIcon {
     right: 1.6rem;
