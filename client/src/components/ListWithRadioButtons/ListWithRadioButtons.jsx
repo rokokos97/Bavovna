@@ -31,7 +31,6 @@ const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) =>
           <div
             key={option._id}
             className={styles.radioOption}
-            onClick={() => handleChange(option._id)}
           >
             <input
               id={option._id}
@@ -39,10 +38,14 @@ const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) =>
               name="customRadio"
               value={option.value}
               checked={currentValue === option._id}
+              onChange={() => handleChange(option._id)}
               className={styles.radioInput}
             />
             <label htmlFor={option._id} className={styles.radioLabel}>
-              <div className={styles.listWithRadioButtons__radioButton}>
+              <div
+                className={styles.listWithRadioButtons__radioButton}
+                onClick={() => handleChange(option._id)}
+              >
                 {currentValue === option._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
               </div>
               <div>{option.label}</div>

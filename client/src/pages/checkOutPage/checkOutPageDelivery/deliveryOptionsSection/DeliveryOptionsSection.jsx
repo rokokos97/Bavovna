@@ -143,10 +143,11 @@ const deliveryOptionsSection = () => {
               type='radio'
               name='customRadio'
               className={styles.deliveryOptionsSection__radioInput}
-              onChange = {() => dispatch(setDeliveryOption(method.label))}
+              onChange = {() => {}}
             />
             <label
               className={styles.deliveryOptionsSection__label}
+              onClick = {() => dispatch(setDeliveryOption(method.label))}
             >
               <div
                 onClick = {() => dispatch(setDeliveryOption(method.label))}
@@ -178,7 +179,7 @@ const deliveryOptionsSection = () => {
           className={styles.deliveryOptionsSection__buttonRight}
           type='button'
           onClick={formik.submitForm}
-          disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:false}
+          disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:!user.currentDeliveryAddress}
         >
           <span>
                 next step

@@ -106,7 +106,7 @@
   border: 1px solid #5a9b83;
 }
 
-@media (min-width: 581px) and (max-width: 768px) {
+@media (max-width: 1280px) {
   .emptyBlock {
     width: 100%;
     display: flex;
