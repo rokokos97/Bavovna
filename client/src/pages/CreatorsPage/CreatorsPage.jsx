@@ -74,6 +74,15 @@ const CreatorsPage = () => {
             gitHub: 'https://github.com/BogdanKoshkarov',
           },
         },
+        viorika: {
+          name: 'Viorika Kalpakchy',
+          email: 'kalpakchy@gmail.com',
+          social: {
+            // eslint-disable-next-line max-len
+            linkedIn: 'https://www.linkedin.com/in/viorika-kalpakchy-29926b289?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bl8Z3O37GRx2LrcqbwhCNlQ%3D%3D',
+            telegram: 'https://t.me/Viori',
+          },
+        },
       },
     },
     {
