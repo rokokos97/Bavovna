@@ -2,9 +2,9 @@
 .navigationBlock {
   margin-top: 2.4rem;
   display: grid;
-  grid-template-columns: 25.3rem 1fr;
-  column-gap: 21rem;
-  row-gap: $xxl-spacing;
+  grid-template-columns: 22.3rem 84.3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
   .navigationBlock__navigation {
     width: 100%;
     display: flex;
@@ -37,7 +37,6 @@
   }
   .navigationBlock__sidebar {
     grid-column: 1 / 1;
-    width: 25.3rem;
     display: flex;
     flex-direction: column;
     row-gap: $xl-spacing;
@@ -84,6 +83,7 @@
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   .navigationBlock {
+    grid-template-columns: 22.3rem 43.1rem;
     .navigationBlock__navigation {
       .navigationBlock__navigationHome {
       }
