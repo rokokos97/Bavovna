@@ -1,8 +1,6 @@
 @import '../../../../styles/variables.module.scss';
 .logOutBlock {
   width: 48.3rem;
-  padding: $l-spacing;
-  margin: -4.4rem 21.2rem;
   display: flex;
   flex-direction: column;
   gap: $xl-spacing;
@@ -39,7 +37,6 @@
 
 @media (min-width: 768px) and (max-width: 1280px) {
   .logOutBlock {
-    margin: -1.6rem 1.6rem;
     .logOutBlock__buttonStay {
       @include button-mobile(22rem);
     }
