@@ -3,30 +3,40 @@
 .section {
   width: 100%;
   margin: 0 auto;
-}
-.block {
-  width: 100%;
-  padding: 1.6rem 8rem 0;
-}
-.navigation {
-  @include breadcrumb();
-  text-align: start;
-  margin-bottom: 1.4rem;
+
+  .block {
+    width: 100%;
+    padding: 1.6rem 8rem 0;
+
+    .navigation {
+      @include breadcrumb();
+      text-align: start;
+      margin-bottom: 1.4rem;
+    }
+  }
 }
 @media (max-width: 950px) {
-  .block {
-    padding: 2.4rem 3.2rem 0;
-  }
-  .navigation {
-    margin-bottom: 2.4rem;
+  .section {
+
+    .block {
+      padding: 2.4rem 3.2rem 0;
+
+      .navigation {
+        margin-bottom: 2.4rem;
+      }
+    }
   }
 }
 @media (max-width: 580px) {
-  .block {
-    position: relative;
-    padding: 1.6rem 1.6rem 0;
-  }
-  .navigation {
-    margin-bottom: 1.6rem;
+  .section {
+
+    .block {
+      position: relative;
+      padding: 1.6rem 1.6rem 0;
+
+      .navigation {
+        margin-bottom: 1.6rem;
+      }
+    }
   }
 }

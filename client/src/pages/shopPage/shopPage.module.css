@@ -2,13 +2,11 @@
   width: 100%;
   margin: 0 auto;
 }
-
-.block {
+.section .block {
   width: 100%;
   padding: 1.6rem 8rem 0;
 }
-
-.navigation {
+.section .block .navigation {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -18,19 +16,19 @@
 }
 
 @media (max-width: 950px) {
-  .block {
+  .section .block {
     padding: 2.4rem 3.2rem 0;
   }
-  .navigation {
+  .section .block .navigation {
     margin-bottom: 2.4rem;
   }
 }
 @media (max-width: 580px) {
-  .block {
+  .section .block {
     position: relative;
     padding: 1.6rem 1.6rem 0;
   }
-  .navigation {
+  .section .block .navigation {
     margin-bottom: 1.6rem;
   }
 }
