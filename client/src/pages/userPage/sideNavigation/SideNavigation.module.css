@@ -1,8 +1,9 @@
 .navigationBlock {
   margin-top: 2.4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 25.3rem 1fr;
+  column-gap: 21rem;
+  row-gap: 3.2rem;
 }
 .navigationBlock .navigationBlock__navigation {
   width: 100%;
@@ -88,10 +89,6 @@
 .navigationBlock .navigationBlock__sidebar .navigationBlock__list .navigationBlock__button:hover {
   background-color: rgba(169, 223, 203, 0.3);
 }
-.navigationBlock .navigationBlock__navigationContentSide {
-  margin-top: -4.4rem;
-}
-
 @media (min-width: 768px) and (max-width: 1280px) {
   .navigationBlock .navigationBlock__sidebar {
     display: flex;

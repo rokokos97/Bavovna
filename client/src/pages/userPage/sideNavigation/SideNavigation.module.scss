@@ -1,9 +1,10 @@
 @import "../../../styles/variables.module";
 .navigationBlock {
   margin-top: 2.4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 25.3rem 1fr;
+  column-gap: 21rem;
+  row-gap: $xxl-spacing;
   .navigationBlock__navigation {
     width: 100%;
     display: flex;
@@ -79,7 +80,6 @@
     }
   }
   .navigationBlock__navigationContentSide {
-    margin-top: -4.4rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
