@@ -1,0 +1,43 @@
+.breadcrumbsNavigation {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.breadcrumbsNavigation .navigationBlock__navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.4rem;
+  text-align: start;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+}
+.breadcrumbsNavigation .navigationBlock__navigation .navigationBlock__navigation__buttonHome {
+  background: transparent;
+  display: none;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.breadcrumbsNavigation .navigationBlock__navigation .navigationBlock__navigation__buttonHome svg {
+  transform: rotate(-90deg);
+}
+.breadcrumbsNavigation .navigationBlock__navigation .navigationBlock__navigationHome {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.breadcrumbsNavigation .navigationBlock__navigation .navigationBlock__navigationHome svg {
+  display: none;
+  transform: rotate(-90deg);
+}
+.breadcrumbsNavigation .navigationBlock__navigation .navigationBlock__navigationAccount {
+  display: flex;
+}
+
+/*# sourceMappingURL=BreadcrumbsNavigation.module.css.map */
