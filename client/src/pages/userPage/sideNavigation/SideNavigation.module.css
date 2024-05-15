@@ -1,9 +1,9 @@
 .navigationBlock {
   margin-top: 2.4rem;
   display: grid;
-  grid-template-columns: 25.3rem 1fr;
-  column-gap: 21rem;
-  row-gap: 3.2rem;
+  grid-template-columns: 22.3rem 84.3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .navigationBlock .navigationBlock__navigation {
   width: 100%;
@@ -42,7 +42,6 @@
 }
 .navigationBlock .navigationBlock__sidebar {
   grid-column: 1/1;
-  width: 25.3rem;
   display: flex;
   flex-direction: column;
   row-gap: 2.4rem;
@@ -90,6 +89,9 @@
   background-color: rgba(169, 223, 203, 0.3);
 }
 @media (min-width: 768px) and (max-width: 1280px) {
+  .navigationBlock {
+    grid-template-columns: 22.3rem 43.1rem;
+  }
   .navigationBlock .navigationBlock__sidebar {
     display: flex;
     flex-direction: column;
