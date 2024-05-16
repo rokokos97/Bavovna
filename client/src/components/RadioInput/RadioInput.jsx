@@ -5,8 +5,6 @@ import RadioButtonEmptyIcon from '../svg/radioButtonIcons/RadioButtonEmptyIcon/R
 import PropTypes from 'prop-types';
 
 const RadioInput = ({method, currentValue, handleChangeCurrentValue}) => {
-  console.log('method', method);
-  console.log(currentValue);
   return (
     <section
       key={method._id}

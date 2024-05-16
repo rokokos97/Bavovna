@@ -45,14 +45,19 @@
 .filterBtn {
   margin: 0 auto;
   border: 1px solid $black;
-  @include button(16.5rem);
-  text-wrap: nowrap;
-  span {
-    font-size: 18px;
-  }
+  @include button(22rem);
+  @include buttonWhite()
 }
-@media (max-width: 950px) {
+.filterButtonMobile {
+  @include button-mobile(32.8rem);
+  @include buttonBlack();
+
+}
+@media (max-width: 767px) {
   .filterSelection {
-    padding: 8rem 1.6rem;
+    padding: 7.2rem 0;
+  }
+  .closeIcon {
+    right: 0;
   }
 }

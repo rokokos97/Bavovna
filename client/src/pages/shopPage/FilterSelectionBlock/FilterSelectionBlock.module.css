@@ -53,14 +53,15 @@
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
-  width: 16.5rem;
+  width: 22rem;
   height: 5.6rem;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
   padding: 1.6rem 2.4rem;
-  text-wrap: nowrap;
+  background: #fafafa;
+  border: 0.1rem solid #000000;
 }
 .filterBtn span {
   font-weight: 600;
@@ -80,7 +81,7 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 0.4rem;
-  left: 5.85rem;
+  left: 8.6rem;
 }
 .filterBtn::after {
   content: "";
@@ -92,26 +93,26 @@
   position: absolute;
   transition: 300ms ease-in;
   top: 2.5rem;
-  left: 7.95rem;
+  left: 10.7rem;
 }
 .filterBtn:hover::before {
   content: "";
-  width: 18.15rem;
-  height: 18.15rem;
+  width: 24.2rem;
+  height: 24.2rem;
   opacity: 1;
   position: absolute;
-  top: -6.675rem;
+  top: -9.7rem;
   left: -1rem;
 }
 .filterBtn:active::after {
   content: "";
-  width: 18.15rem;
-  height: 18.15rem;
+  width: 24.2rem;
+  height: 24.2rem;
   border-radius: 50%;
   background: transparent;
   opacity: 1;
   position: absolute;
-  top: -6.675rem;
+  top: -9.7rem;
   left: -1.1rem;
 }
 .filterBtn:focus {
@@ -127,12 +128,129 @@
   color: #9b9b9b;
 }
 .filterBtn span {
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+.filterBtn::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.filterBtn::after {
+  background: #a9dfcb;
+}
+.filterBtn:hover::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.filterBtn:active::after {
+  border: 1px solid rgba(169, 223, 203, 0.3);
 }
 
-@media (max-width: 950px) {
+.filterButtonMobile {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 32.8rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem 1.2rem;
+  background: #000000;
+}
+.filterButtonMobile span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-align: center;
+  position: relative;
+}
+.filterButtonMobile::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 14rem;
+}
+.filterButtonMobile::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 16.1rem;
+}
+.filterButtonMobile:hover::before {
+  content: "";
+  width: 36.08rem;
+  height: 36.08rem;
+  opacity: 1;
+  position: absolute;
+  top: -15.64rem;
+  left: -1rem;
+}
+.filterButtonMobile:active::after {
+  content: "";
+  width: 36.08rem;
+  height: 36.08rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -15.64rem;
+  left: -1.1rem;
+}
+.filterButtonMobile:focus {
+  border: 3px solid #5a9b83;
+}
+.filterButtonMobile:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.filterButtonMobile:disabled span {
+  color: #9b9b9b;
+}
+.filterButtonMobile span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.filterButtonMobile::before {
+  background: #5a9b83;
+}
+.filterButtonMobile::after {
+  background: #1a6449;
+}
+.filterButtonMobile:hover::before {
+  background: #5a9b83;
+}
+.filterButtonMobile:active::after {
+  border: 1px solid #5a9b83;
+}
+
+@media (max-width: 767px) {
   .filterSelection {
-    padding: 8rem 1.6rem;
+    padding: 7.2rem 0;
+  }
+  .closeIcon {
+    right: 0;
   }
 }
 

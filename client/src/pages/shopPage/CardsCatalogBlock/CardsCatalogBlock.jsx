@@ -17,7 +17,7 @@ const CardsCatalogBlock = () => {
   let endIndex = null;
   let visibleItems = [];
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(isFilter);
+  console.log('isFilter', isFilter);
 
   useEffect(() => {
     if (sortedItems) {
@@ -62,15 +62,11 @@ const CardsCatalogBlock = () => {
   });
 
   return (
-    <div className={styles.catalog} data-testid='CardsCatalogBlock'>
+    <div className={!isFilter ? styles.catalog : styles.catalogFilter} data-testid='CardsCatalogBlock'>
       <div
-        className={
-          !isFilter ?
-            styles.filterBlock :
-            `${styles.filterBlock} ${styles.visibleFilterBlock}`
-        }
+        className={styles.filterBlock}
       >
-        <FilterSelectionBlock />
+        <FilterSelectionBlock isFilter={isFilter} />
       </div>
       <div className={styles.cardsContainer}>
         <ul className={styles.cards}>
@@ -81,9 +77,9 @@ const CardsCatalogBlock = () => {
               </li>
             ))
           ) : (
-            <div className={styles.noFound}>
-              <h2 className={styles.noFoundTitle}>No Results Found</h2>
-              <p className={styles.noFoundText}>
+            <div className={styles.notFound}>
+              <h2 className={styles.notFoundTitle}>No Results Found</h2>
+              <p className={styles.notFoundText}>
                 Unfortunately, nothing could be found for your search. Please
                 try altering your search criteria or using less specific
                 filters. We are always here to help you find what you need.

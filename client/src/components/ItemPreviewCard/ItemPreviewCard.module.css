@@ -49,6 +49,9 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .itemPreviewCard .itemPreviewCard__description .itemPreviewCard__price {
   display: flex;
@@ -134,7 +137,7 @@
     line-height: 140%;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .itemPreviewCard {
     width: 15.6rem;
     row-gap: 0.6rem;
@@ -152,9 +155,6 @@
     font-size: 14px;
     line-height: 100%;
     text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .itemPreviewCard .itemPreviewCard__description {
     padding: 0 0.8rem;

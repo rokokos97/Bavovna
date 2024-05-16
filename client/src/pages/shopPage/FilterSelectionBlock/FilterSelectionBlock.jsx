@@ -5,13 +5,15 @@ import CheckboxBlock from '../CheckboxBlock/CheckboxBlock';
 import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 import {filtersValues} from '../../../services/filtersValues.service';
 import styles from './FilterSelectionBlock.module.scss';
+import useDeviceDetect from '../../../utils/useDeviceDetect';
+import PropTypes from 'prop-types';
 
-const FilterSelectionBlock = () => {
+const FilterSelectionBlock = ({isFilter}) => {
+  const {isMobile} = useDeviceDetect();
   const {changeIsFilter, handleCleanFilter, categories, colors} =
     useDataShopPage();
 
   const {sizeValues, statusValues} = filtersValues;
-
   return (
     <div className={styles.filterContainer} data-testid='FilterSelectionBlock'>
       <div className={styles.filterSelection}>
@@ -81,16 +83,28 @@ const FilterSelectionBlock = () => {
             <CheckboxBlock key={statusValue.value} id={statusValue.value} value={statusValue.value} label={statusValue.label} option='status'/>
           ))}
         </div>
+        {isFilter && isMobile ? <button
+          type='button'
+          className={styles.filterButtonMobile}
+          onClick={changeIsFilter}
+        >
+          <span>view products</span>
+        </button> :
         <button
           type='button'
           className={styles.filterBtn}
           onClick={handleCleanFilter}
         >
-          <span>Clean filter</span>
+          <span>clean filter</span>
         </button>
+        }
       </div>
     </div>
   );
+};
+
+FilterSelectionBlock.propTypes = {
+  isFilter: PropTypes.bool,
 };
 
 export default FilterSelectionBlock;

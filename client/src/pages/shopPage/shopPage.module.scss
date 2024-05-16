@@ -1,12 +1,12 @@
 @import '../../styles/variables.module.scss';
 
 .section {
-  width: 100%;
+  width: 128rem;
   margin: 0 auto;
 
   .block {
     width: 100%;
-    padding: 1.6rem 8rem 0;
+    padding-top: 1.6rem;
 
     .navigation {
       @include breadcrumb();
@@ -15,24 +15,23 @@
     }
   }
 }
-@media (max-width: 950px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .section {
-
+    width: 70.6rem;
     .block {
-      padding: 2.4rem 3.2rem 0;
-
+      padding-top: 2.4rem;
       .navigation {
         margin-bottom: 2.4rem;
       }
     }
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .section {
-
+    width: 32.8rem;
     .block {
       position: relative;
-      padding: 1.6rem 1.6rem 0;
+      padding-top: 1.6rem;
 
       .navigation {
         margin-bottom: 1.6rem;
