@@ -57,11 +57,15 @@ const NewArrivalsBlock = () => {
           }}
           // scrollbar={{hide: true}}
           breakpoints={{
-            769: {
+            1440: {
               slidesPerView: 3,
               spaceBetween: 24,
             },
-            581: {
+            1280: {
+              slidesPerView: 2,
+              spaceBetween: 24,
+            },
+            768: {
               slidesPerView: 2,
               spaceBetween: 16,
               // pagination: {type: 'progressbar'},
