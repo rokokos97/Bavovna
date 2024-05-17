@@ -137,11 +137,11 @@ const CardContext = () => {
                 <div className={styles.priceBlock}>
                   {sale ? (
                     <span className={styles.unCurrentPrice}>
-                      ${price.toFixed(2)}
+                      ₴{price.toFixed(2)}
                     </span>
                   ) : null}
                   <span className={styles.buyFormPrice}>
-                    ${currentPrice.toFixed(2)}
+                    ₴{currentPrice.toFixed(2)}
                   </span>
                 </div>
                 <dir className={styles.color}>

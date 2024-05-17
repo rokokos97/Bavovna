@@ -63,10 +63,10 @@ const ItemPreviewCard = ({id}) => {
           <p className={styles.itemPreviewCard__name}>{item.name}</p>
           <p className={(discountPrice === 0)? styles.itemPreviewCard__price : styles.itemPreviewCard__discount}>
             <span>
-              ${item.price}
+              ₴ {item.price}
             </span>
             {
-              item.sale !==0 && <span>${discountPrice}</span>
+              item.sale !==0 && <span>₴ {discountPrice}</span>
             }
           </p>
         </div>

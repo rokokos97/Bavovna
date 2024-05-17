@@ -39,21 +39,21 @@ const CompleteOrderPage = () => {
       <div className={styles.completeOrderPage__orderInfoBlock}>
         <div className={styles.completeOrderPage__title}>
           <p>order amount</p>
-          <p>{currentOrder.orderAmount} $</p>
+          <p>{currentOrder.orderAmount} ₴</p>
         </div>
         {currentOrder.promoCodeDiscount && <div className={styles.completeOrderPage__title}>
           <p>Promo code discount</p>
-          <p>{`-${parseFloat((currentOrder.orderAmount * currentOrder.promoCodeDiscount).toFixed(1))} $`}</p>
+          <p>{`-${parseFloat((currentOrder.orderAmount * currentOrder.promoCodeDiscount).toFixed(1))} ₴`}</p>
         </div>}
         <div className={styles.completeOrderPage__title}>
           <p>delivery</p>
-          <p>{currentOrder.deliveryPrice} $</p>
+          <p>{currentOrder.deliveryPrice} ₴</p>
         </div>
         <div className={styles.completeOrderPage__totalPrice}>
           <p>total</p>
           <p>{currentOrder.promoCodeDiscount?
             currentOrder.orderAmount-(currentOrder.orderAmount * currentOrder.promoCodeDiscount)+currentOrder.deliveryInfo.deliveryPrice:
-            currentOrder.orderAmount+currentOrder.deliveryPrice} $</p>
+            currentOrder.orderAmount+currentOrder.deliveryPrice} ₴</p>
         </div>
         <div className={styles.completeOrderPage__deliveryInfoBlock}>
           <div className={styles.completeOrderPage__infoSection}>

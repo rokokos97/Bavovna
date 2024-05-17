@@ -10,7 +10,7 @@ const CheckOutBlock = () => {
     <div className={styles.checkOutBlock} data-testid="CheckOutBlock">
       <div className={styles.checkOutBlock__totalPriceBlock}>
         <p>total</p>
-        {totalPrice}$
+        {totalPrice}₴
       </div>
       <div className={styles.checkOutBlock__buttonsBlock}>
         <Link
