@@ -26,6 +26,9 @@
       .productCardInCart__name {
         width: 19rem;
         @include headline-9();
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         }
         .productCardInCart__price {
           display: flex;
@@ -338,7 +341,7 @@
     .productCardInCart__infoBlock {
       padding: 0 0 0 $l-spacing;
       height: 13.4rem;
-      row-gap: $l-spacing;
+      row-gap: $s-spacing;
       .productCardInCart__namePriceBlock {
         display: flex;
         flex-direction: column;

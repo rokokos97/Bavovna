@@ -1,14 +1,12 @@
 .section {
-  width: 100%;
+  width: 128rem;
   margin: 0 auto;
 }
-
-.block {
+.section .block {
   width: 100%;
-  padding: 1.6rem 8rem 0;
+  padding-top: 1.6rem;
 }
-
-.navigation {
+.section .block .navigation {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -17,20 +15,26 @@
   margin-bottom: 1.4rem;
 }
 
-@media (max-width: 950px) {
-  .block {
-    padding: 2.4rem 3.2rem 0;
+@media (min-width: 768px) and (max-width: 1280px) {
+  .section {
+    width: 70.6rem;
   }
-  .navigation {
+  .section .block {
+    padding-top: 2.4rem;
+  }
+  .section .block .navigation {
     margin-bottom: 2.4rem;
   }
 }
-@media (max-width: 580px) {
-  .block {
-    position: relative;
-    padding: 1.6rem 1.6rem 0;
+@media (max-width: 767px) {
+  .section {
+    width: 32.8rem;
   }
-  .navigation {
+  .section .block {
+    position: relative;
+    padding-top: 1.6rem;
+  }
+  .section .block .navigation {
     margin-bottom: 1.6rem;
   }
 }

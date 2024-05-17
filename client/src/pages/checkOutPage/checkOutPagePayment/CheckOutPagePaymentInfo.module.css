@@ -1,5 +1,4 @@
 .checkOutPagePaymentInfo {
-  height: 120vh;
   display: flex;
   flex-direction: row;
   column-gap: 2.4rem;

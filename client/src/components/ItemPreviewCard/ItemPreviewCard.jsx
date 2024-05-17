@@ -60,7 +60,7 @@ const ItemPreviewCard = ({id}) => {
           className={styles.itemPreviewCard__description}
           onClick={() => navigate(`/shop/${item._id}`)}
         >
-          <span>{item.name}</span>
+          <p className={styles.itemPreviewCard__name}>{item.name}</p>
           <p className={(discountPrice === 0)? styles.itemPreviewCard__price : styles.itemPreviewCard__discount}>
             <span>
               ${item.price}
