@@ -67,7 +67,7 @@ const CardContext = () => {
     if (selectedColor && selectedSize) {
       const newItemData = {
         ...itemData,
-        itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,
+        itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemColor}`,
       };
       dispatch(addItemToCart(newItemData));
       setShowCheckoutModal(true);
