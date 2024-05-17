@@ -6,9 +6,11 @@ import ItemsList from '../../../../components/ItemsList/ItemsList';
 import EmptyBlock from '../../../../blocks/EmptyBlock/EmptyBlock';
 const WishListBlock = () => {
   const user = useSelector(getUser);
+  const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
+  console.log(isDesktop);
   return ( user &&
     <article className={styles.wishListBlock} data-testid="WishListBlock">
-      <h2 className={styles.wishListBlock__title}>wishlist</h2>
+      {isDesktop && <h2 className={styles.wishListBlock__title}>wishlist</h2>}
       <section>
         {(user.favorite && user.favorite.length > 0) ?
           <ItemsList
