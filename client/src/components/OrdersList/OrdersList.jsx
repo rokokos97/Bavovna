@@ -39,7 +39,7 @@ const OrdersList = () => {
               <td><span className={styles.orderList__table_tbody_title}>datum</span>{order.date}</td>
               <td><span className={styles.orderList__table_tbody_title}>payment status</span>{order.paymentStatus}</td>
               <td><span className={styles.orderList__table_tbody_title}>shipping status</span>{order.deliveryStatus}</td>
-              <td><span className={styles.orderList__table_tbody_title}>total</span>{`$ ${order.orderAmount}`}</td>
+              <td><span className={styles.orderList__table_tbody_title}>total</span>{`₴ ${order.orderAmount}`}</td>
               <td className={styles.orderList__table_tbody_chevron}>
                 <Link to={`order/${order._id}`}>
                   {<ChevronDown/>}
