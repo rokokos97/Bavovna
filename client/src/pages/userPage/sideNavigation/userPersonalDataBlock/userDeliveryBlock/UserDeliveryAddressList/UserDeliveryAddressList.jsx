@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 const UserDeliveryAddressList = ({hiddenButton}) => {
   const user = useSelector(getUser);
-  return ( user.currentDeliveryAddress ?
+  return ( user && user.deliveryAddress ?
     <div className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList"
     >
       <ListWithRadioButtons options={{...user.deliveryAddress}} isList={true} deleteButton={hiddenButton}/>
