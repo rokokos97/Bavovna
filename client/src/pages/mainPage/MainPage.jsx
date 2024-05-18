@@ -70,7 +70,7 @@ const MainPage = () => {
       {showErrorModal && <ModalError error={error} handleCloseModal={closeErrorModal}/>}
       {showCookiesModal && <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>}
       <NewCollectionBlock />
-      <NewArrivalsBlock />
+      <NewArrivalsBlock title={'new arrivals'}/>
       <SaleBlock />
       <BavovnaBlock />
       <BavovnaCoverImageBlock />

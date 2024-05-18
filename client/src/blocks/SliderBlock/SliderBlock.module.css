@@ -1,29 +1,28 @@
-.newArrivalsBlock {
+.sliderBlock {
   position: relative;
-  padding: 0 8rem;
   width: 100%;
 }
 
-.newArrivalsBlock__titleSection {
+.sliderBlock__titleSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4rem;
 }
 
-.newArrivalsBlock__title2 {
+.sliderBlock__title2 {
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   text-transform: uppercase;
 }
 
-.newArrivalsBlock__arrowSection {
+.sliderBlock__arrowSection {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button {
+.sliderBlock__arrowSection .sliderBlock__button {
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -37,7 +36,7 @@
   background: transparent;
   border: none;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button span {
+.sliderBlock__arrowSection .sliderBlock__button span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
@@ -45,7 +44,7 @@
   text-align: center;
   position: relative;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button::before {
+.sliderBlock__arrowSection .sliderBlock__button::before {
   content: "";
   width: 4.8rem;
   height: 4.8rem;
@@ -57,7 +56,7 @@
   top: 0.4rem;
   left: -0.4rem;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button::after {
+.sliderBlock__arrowSection .sliderBlock__button::after {
   content: "";
   width: 0.6rem;
   height: 0.6rem;
@@ -69,7 +68,7 @@
   top: 2.5rem;
   left: 1.7rem;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:hover::before {
+.sliderBlock__arrowSection .sliderBlock__button:hover::before {
   content: "";
   width: 4.4rem;
   height: 4.4rem;
@@ -78,7 +77,7 @@
   top: 0.2rem;
   left: -1rem;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:active::after {
+.sliderBlock__arrowSection .sliderBlock__button:active::after {
   content: "";
   width: 4.4rem;
   height: 4.4rem;
@@ -89,101 +88,87 @@
   top: 0.2rem;
   left: -1.1rem;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:focus {
+.sliderBlock__arrowSection .sliderBlock__button:focus {
   border: 3px solid #5a9b83;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled {
+.sliderBlock__arrowSection .sliderBlock__button:disabled {
   border-color: #868686;
   background: #c3c3c3;
   pointer-events: none;
   cursor: not-allowed;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled span {
+.sliderBlock__arrowSection .sliderBlock__button:disabled span {
   color: #9b9b9b;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button svg path {
+.sliderBlock__arrowSection .sliderBlock__button svg path {
   fill: #000000;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button span {
+.sliderBlock__arrowSection .sliderBlock__button span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #000000;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:hover svg path {
+.sliderBlock__arrowSection .sliderBlock__button:hover svg path {
   fill: #3a7f66;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:hover span {
+.sliderBlock__arrowSection .sliderBlock__button:hover span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #3a7f66;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:focus svg path {
+.sliderBlock__arrowSection .sliderBlock__button:focus svg path {
   fill: #081e16;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:focus span {
+.sliderBlock__arrowSection .sliderBlock__button:focus span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #081e16;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled {
+.sliderBlock__arrowSection .sliderBlock__button:disabled {
   background: transparent;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled svg path {
+.sliderBlock__arrowSection .sliderBlock__button:disabled svg path {
   fill: #868686;
 }
-.newArrivalsBlock__arrowSection .newArrivalsBlock__button:disabled span {
+.sliderBlock__arrowSection .sliderBlock__button:disabled span {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   text-transform: uppercase;
   color: #868686;
 }
-.newArrivalsBlock__arrowSection .buttonRight {
+.sliderBlock__arrowSection .sliderBlock__buttonRight {
   transform: rotate(180deg);
 }
 
-.newArrivalsSwiper {
+.sliderBlock__Swiper {
   text-align: -webkit-center;
 }
 
-@media (min-width: 950px) and (max-width: 1279px) {
-  .newArrivalsBlock {
-    padding: 0 3.2rem;
-  }
-  .newArrivalsBlock__titleSection {
-    margin-bottom: 2.4rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1280px) {
-  .newArrivalsBlock {
-    padding: 0 3.2rem;
-  }
-  .newArrivalsBlock__titleSection {
+@media (min-width: 768px) and (max-width: 1279px) {
+  .sliderBlock__titleSection {
     margin-bottom: 2.4rem;
   }
 }
 @media (max-width: 767px) {
-  .newArrivalsBlock {
-    padding: 0 1.6rem;
-  }
-  .newArrivalsBlock__titleSection {
+  .sliderBlock__titleSection {
     margin-bottom: 2.4rem;
   }
-  .newArrivalsBlock__title2 {
+  .sliderBlock__title2 {
     font-weight: 500;
     font-size: 24px;
     line-height: 120%;
     text-transform: uppercase;
   }
-  .newArrivalsBlock__arrowSection {
+  .sliderBlock__arrowSection {
     display: none;
   }
 }
 
-/*# sourceMappingURL=NewArrivalsBlock.module.css.map */
+/*# sourceMappingURL=SliderBlock.module.css.map */

@@ -7,7 +7,6 @@ import {addItemToCart} from '../../store/cartSlice';
 import {getUser} from '../../store/userSlice';
 import {useDataCard} from '../../providers/CardMasterProvider';
 import {SizesList} from '../../components/SizeList/SizesList';
-import AlsoBoughtBlock from './AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
@@ -17,13 +16,19 @@ import styles from './Card.module.scss';
 import FillHeartIcon from '../../components/svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
 import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 import {useParams} from 'react-router-dom';
-import {getItemsById} from '../../store/itemsSlice';
+import {getItemsById, getItemsList} from '../../store/itemsSlice';
 import Loader from '../../components/Loader/Loader';
+import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
 
 const CardContext = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
   const item = useSelector(getItemsById(id));
+  const items = useSelector(getItemsList);
+  let sortedItems = [];
+  if (items) {
+    sortedItems = items.filter((item) => item.status === 'sale');
+  }
   if (!item) {
     return <Loader />;
   }
@@ -207,7 +212,7 @@ const CardContext = () => {
             </div>
           </div>
         </div>
-        <AlsoBoughtBlock />
+        <SliderBlock title={'You might also like'} itemsList={sortedItems} />
         <Modal isOpen={showCheckoutModal} handleCloseModal={closeModal}>
           <CheckoutModal handleCloseModal={closeModal} />
         </Modal>

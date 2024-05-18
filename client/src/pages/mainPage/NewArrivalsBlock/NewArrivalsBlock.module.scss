@@ -28,15 +28,15 @@
 .newArrivalsSwiper {
   text-align: -webkit-center;
 }
-@media (min-width: 950px) and (max-width: 1280px) {
+@media (min-width: 950px) and (max-width: 1279px) {
   .newArrivalsBlock {
-    padding: 0 8rem;
+    padding: 0 3.2rem;
   }
   .newArrivalsBlock__titleSection {
     margin-bottom: 2.4rem;
   }
 }
-@media (min-width: 768px) and (max-width: 949px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .newArrivalsBlock {
     padding: 0 3.2rem;
   }
