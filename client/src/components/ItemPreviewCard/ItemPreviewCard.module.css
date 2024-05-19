@@ -136,6 +136,18 @@
     font-size: 16px;
     line-height: 140%;
   }
+  .itemPreviewCard .itemPreviewCard__description .itemPreviewCard__price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+  .itemPreviewCard .itemPreviewCard__description .itemPreviewCard__discount {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
 }
 @media (max-width: 767px) {
   .itemPreviewCard {
@@ -169,13 +181,13 @@
     flex-direction: row;
     gap: 1.6rem;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     text-transform: uppercase;
   }
   .itemPreviewCard .itemPreviewCard__description .itemPreviewCard__discount {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     text-transform: uppercase;
   }

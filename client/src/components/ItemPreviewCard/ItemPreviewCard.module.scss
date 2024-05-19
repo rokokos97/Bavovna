@@ -128,8 +128,10 @@
         @include body-3();
       }
       .itemPreviewCard__price {
+        @include tablet-headline-3();
       }
       .itemPreviewCard__discount {
+        @include tablet-headline-3();
         span:first-child {
         }
       }
