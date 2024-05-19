@@ -17,8 +17,6 @@ const CardsCatalogBlock = () => {
   let endIndex = null;
   let visibleItems = [];
   const [currentPage, setCurrentPage] = useState(1);
-  console.log('isFilter', isFilter);
-
   useEffect(() => {
     if (sortedItems) {
       return setItems([...sortedItems]);

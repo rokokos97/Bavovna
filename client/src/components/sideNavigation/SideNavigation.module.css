@@ -1,0 +1,151 @@
+.navigationBlock {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: 30.6rem 84.3rem;
+  column-gap: 3.2rem;
+}
+.navigationBlock .navigationBlock__navigation__buttonHome {
+  background: transparent;
+  display: none;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.navigationBlock .navigationBlock__navigation__buttonHome svg {
+  transform: rotate(-90deg);
+}
+.navigationBlock .navigationBlock__navigationHome {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.navigationBlock .navigationBlock__navigationHome svg {
+  display: none;
+  transform: rotate(-90deg);
+}
+.navigationBlock .navigationBlock__navigationAccount {
+  display: flex;
+}
+
+.navigationBlock__sidebar {
+  grid-column: 1/1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+}
+.navigationBlock__sidebar .navigationBlock__title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+  padding: 0 1.6rem 0;
+}
+.navigationBlock__sidebar .navigationBlock__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+.navigationBlock__sidebar .navigationBlock__list .navigationBlock__button {
+  width: 100%;
+  cursor: pointer;
+  padding: 1.2rem 1.6rem;
+  text-align: start;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+.navigationBlock__sidebar .navigationBlock__list .navigationBlock__button .navigationBlock__chevron {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: none;
+  align-items: center;
+}
+.navigationBlock__sidebar .navigationBlock__list .navigationBlock__button .navigationBlock__chevron svg {
+  transform: rotate(90deg);
+}
+.navigationBlock__sidebar .navigationBlock__list .navigationBlock__button .navigationBlock__exitIcon {
+  display: block;
+}
+.navigationBlock__sidebar .navigationBlock__list .navigationBlock__button:hover {
+  background-color: rgba(169, 223, 203, 0.3);
+}
+
+.navigationBlock__navigationContentSide {
+  margin-top: -4.4rem;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .navigationBlock {
+    grid-template-columns: 22.3rem 83.1rem;
+    column-gap: 3.2rem;
+  }
+  .navigationBlock .navigationBlock__sidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+  }
+  .navigationBlock .navigationBlock__sidebar .navigationBlock__button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+  .navigationBlock .navigationBlock__navigationContentSide {
+    margin-top: 0;
+    flex-grow: 1;
+    width: 40rem;
+  }
+}
+@media (max-width: 767px) {
+  .navigationBlock {
+    width: 32.2rem;
+    grid-template-columns: 32.2rem;
+    row-gap: 2.4rem;
+  }
+  .navigationBlock .navigationBlock__navigation__buttonHome {
+    display: flex;
+  }
+  .navigationBlock .navigationBlock__navigation .navigationBlock__navigationHome {
+    align-items: center;
+    display: none;
+  }
+  .navigationBlock .navigationBlock__navigation .navigationBlock__navigationAccount {
+    display: none;
+  }
+  .navigationBlock .navigationBlock__sidebar {
+    width: 100%;
+  }
+  .navigationBlock .navigationBlock__sidebar .navigationBlock__list .navigationBlock__button {
+    padding-inline: 0;
+  }
+  .navigationBlock .navigationBlock__sidebar .navigationBlock__list .navigationBlock__button .navigationBlock__chevron {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+  }
+  .navigationBlock .navigationBlock__sidebar .navigationBlock__list .navigationBlock__button .navigationBlock__chevron svg {
+    transform: rotate(90deg);
+  }
+  .navigationBlock .navigationBlock__sidebar .navigationBlock__list .navigationBlock__button .navigationBlock__exitIcon {
+    display: none;
+  }
+  .navigationBlock .navigationBlock__sidebar .navigationBlock__list .navigationBlock__button:hover {
+    background-color: rgba(169, 223, 203, 0.3);
+  }
+  .navigationBlock .navigationBlock__navigationContentSide {
+    width: 32.8rem;
+    margin-top: 0;
+  }
+}
+
+/*# sourceMappingURL=SideNavigation.module.css.map */

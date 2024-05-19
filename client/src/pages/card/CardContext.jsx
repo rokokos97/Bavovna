@@ -15,14 +15,18 @@ import ColorsList from '../../components/ColorsList/ColorsList';
 import styles from './Card.module.scss';
 import FillHeartIcon from '../../components/svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
 import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {getItemsById, getItemsList} from '../../store/itemsSlice';
 import Loader from '../../components/Loader/Loader';
 import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
+import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
+import useDeviceDetect from '../../utils/useDeviceDetect';
 
 const CardContext = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isMobile = useDeviceDetect();
   const item = useSelector(getItemsById(id));
   const items = useSelector(getItemsList);
   let sortedItems = [];
@@ -52,6 +56,10 @@ const CardContext = () => {
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
+  const options = [
+    {label: '/ Shop', to: '/shop'},
+    {label: `/ ${item.name}`, to: `/shop/${item._id}`},
+  ];
 
   sale ?
     (currentPrice = parseFloat(price * sale) / 100) :
@@ -95,10 +103,17 @@ const CardContext = () => {
     setShowCheckoutModal(false);
     showBodyOverflow();
   };
+  const handleSideNavigationClose = () => {
+    if (isMobile) {
+      navigate('/shop');
+    }
+  };
   return (
     <>
       <section className={styles.cardSection}>
-        <p className={styles.navigation}>{`Home / Shop / ${name}`}</p>
+        <div className={styles.navigation}>
+          <BreadcrumbsNavigation options={options} handleSideNavigationClose={handleSideNavigationClose}/>
+        </div>
         <div className={styles.card}>
           <div className={styles.imgsContainer}>
             <div className={styles.imgs}>

@@ -1,0 +1,13 @@
+@import "../../../styles/variables.module";
+.mobileBreadcrumbsNavigation__navigation {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: transparent;
+  @include breadcrumb();
+  svg {
+    transform: rotate(-90deg);
+  }
+}

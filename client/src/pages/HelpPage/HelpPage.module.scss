@@ -1,56 +1,17 @@
 @import '../../styles/variables.module.scss';
 
 .helpPage {
-  width: 100%;
-  padding: 1.6rem 8rem 4rem;
+  padding-inline: 8rem;
+  margin-top: 2.4rem;
+  margin-bottom: 40rem;
 }
-.navigation {
-  @include breadcrumb();
-  text-align: start;
-  margin-bottom: 1.7rem;
-}
-.helpPageContainer {
-  display: flex;
-  gap: 15.9rem;
-}
-.helpAside {
-  padding-top: 6rem;
-}
-.helpDescription {
-  flex: auto;
-  text-align: start;
-}
-@media (max-width: 950px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .helpPage {
-    padding: 3.6rem 3.2rem 4rem;
-  }
-  .helpPageContainer {
-    gap: 5rem;
+    padding-inline: 3.2rem;
   }
 }
-@media (min-width: 581px) and (max-width: 768px) {
-  .navigation {
-    margin-bottom: 2.4rem;
-  }
-  .helpPageContainer {
-    gap: 1.6rem;
-  }
-  .helpAside {
-    max-width: 16.4rem;
-    width: 100%;
-    padding-top: 4rem;
-  }
-}
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .helpPage {
-    padding: 1.6rem 1.6rem 3rem;
-  }
-  .helpPageContainer {
-    flex-direction: column;
-    gap: 2.4rem;
-  }
-  .helpAside {
-    height: 100vh;
-    padding-top: 0;
+    padding-inline: 3.2rem;
   }
 }

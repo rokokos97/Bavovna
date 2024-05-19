@@ -4,7 +4,7 @@ import styles from './PaymentBlock.module.scss';
 
 const PaymentBlock = () => {
   return (
-    <>
+    <div className={styles.paymentBlock}>
       <h2 className={styles.helpTitle}>Payment</h2>
       <p className={styles.helpParagraph}>
         This site was created solely as part of training and to acquire
@@ -133,7 +133,7 @@ const PaymentBlock = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
