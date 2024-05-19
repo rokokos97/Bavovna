@@ -12,7 +12,7 @@ const CategoryPreviewCard = ({item}) => {
       data-testid="CategoryPreviewCard"
       to={item.status ? `/shop?status=${item.status}`: `/shop?status=${item._id}`}
     >
-      <img src={`${config.apiEndpoint}${item.image}`} loading='lazy' alt="category cover image"/>
+      <img src={`${config.apiEndpoint}${item.image}`} width='193' height='140' loading='lazy' alt="category cover image"/>
       <p className={styles.categoryPreviewCard__title}>{item.name}</p>
     </Link>
   );
