@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './UserPage.module.scss';
-import SideNavigation from './sideNavigation/SideNavigation';
 import {useDispatch} from 'react-redux';
 import {verifyUserEmail} from '../../store/userSlice';
+import {options} from './user.service';
+import SideNavigation from '../../components/sideNavigation/SideNavigation';
 const UserPage = () => {
   const dispatch = useDispatch();
   const urlParams = new URLSearchParams(window.location.search);
@@ -11,9 +12,12 @@ const UserPage = () => {
     const token = urlParams.get('token');
     dispatch(verifyUserEmail({token, email}));
   }
+  const navOptions = [
+    {label: '/ my account', to: ''},
+  ];
   return (
     <section className={styles.userPage} data-testid="UserPage">
-      <SideNavigation/>
+      <SideNavigation options={options} navOptions={navOptions}/>
     </section>
   );
 };

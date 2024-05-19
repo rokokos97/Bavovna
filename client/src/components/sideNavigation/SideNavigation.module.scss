@@ -1,0 +1,148 @@
+@import "../../styles/variables.module";
+.navigationBlock {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: 30.6rem 84.3rem;
+  column-gap: $xxl-spacing;
+    .navigationBlock__navigation__buttonHome {
+        background: transparent;
+        display: none;
+        align-items: center;
+        @include headline-9();
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+      .navigationBlock__navigationHome {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        svg {
+          display: none;
+          transform: rotate(-90deg);
+        }
+      }
+      .navigationBlock__navigationAccount {
+        display: flex;
+      }
+  }
+  .navigationBlock__sidebar {
+    grid-column: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: $xl-spacing;
+
+    .navigationBlock__title {
+      width: 100%;
+      @include headline_3();
+      padding: 0 $l-spacing 0;
+    }
+    .navigationBlock__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: $s-spacing;
+      .navigationBlock__button {
+        width: 100%;
+        cursor: pointer;
+        padding: $m-spacing $l-spacing;
+        text-align: start;
+        @include headline-4();
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        .navigationBlock__chevron {
+          width: 3.2rem;
+          height: 3.2rem;
+          display: none;
+          align-items: center;
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+        .navigationBlock__exitIcon {
+          display: block;
+        }
+        &:hover {
+          background-color: $transparent-30-a-05;
+        }
+      }
+    }
+  }
+  .navigationBlock__navigationContentSide {
+    margin-top: -4.4rem;
+  }
+@media (min-width: 768px) and (max-width: 1280px) {
+  .navigationBlock {
+    grid-template-columns: 22.3rem 83.1rem;
+    column-gap: $xxl-spacing;
+    .navigationBlock__navigation {
+      .navigationBlock__navigationHome {
+      }
+      .navigationBlock__navigationAccount {
+        //display: none;
+      }
+    }
+    .navigationBlock__sidebar {
+      display: flex;
+      flex-direction: column;
+      row-gap: $xl-spacing;
+      .navigationBlock__button {
+        @include headline-8();
+      }
+    }
+    .navigationBlock__navigationContentSide {
+      margin-top: 0;
+      flex-grow: 1;
+      width: 40rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navigationBlock {
+    width: 32.2rem;
+    grid-template-columns: 32.2rem;
+    row-gap: $xl-spacing;
+    .navigationBlock__navigation__buttonHome {
+      display: flex;
+    }
+    .navigationBlock__navigation {
+      .navigationBlock__navigationHome {
+        align-items: center;
+        display: none;
+      }
+      .navigationBlock__navigationAccount {
+        display: none;
+      }
+    }
+    .navigationBlock__sidebar {
+      width: 100%;
+      .navigationBlock__list {
+        .navigationBlock__button {
+          padding-inline: 0;
+          .navigationBlock__chevron {
+            width: 2.4rem;
+            height: 2.4rem;
+            display: flex;
+            align-items: center;
+            svg {
+              transform: rotate(90deg);
+            }
+          }
+          .navigationBlock__exitIcon {
+            display: none;
+          }
+          &:hover {
+            background-color: $transparent-30-a-05;
+          }
+        }
+      }
+    }
+    .navigationBlock__navigationContentSide {
+      width: 32.8rem;
+      margin-top: 0;
+    }
+  }
+}

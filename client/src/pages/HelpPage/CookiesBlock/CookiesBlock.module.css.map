@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["CookiesBlock.module.scss","../../../styles/variables.module.scss"],"names":[],"mappings":"AAEA;ECwCE;EACA;EACA;EACA;;;ADxCF;ECsNE;EACA;EACA;EACA;EDvNA,OCsQQ;EDrQR","file":"CookiesBlock.module.css"}
+{"version":3,"sourceRoot":"","sources":["CookiesBlock.module.scss","../../../styles/variables.module.scss"],"names":[],"mappings":"AACA;EACI;EACA;EACA;;;AAEJ;ECoCE;EACA;EACA;EACA;;;ADpCF;ECkNE;EACA;EACA;EACA;EDnNA,OCkQQ;EDjQR","file":"CookiesBlock.module.css"}

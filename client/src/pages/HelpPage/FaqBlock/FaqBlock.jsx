@@ -4,7 +4,7 @@ import styles from './FaqBlock.module.scss';
 
 const FaqBlock = () => {
   return (
-    <>
+    <div className={styles.faqBlock}>
       <h2 className={styles.helpTitle}>FAQ</h2>
       <p className={styles.helpParagraph}>
         This site was created solely as part of training and to acquire
@@ -230,7 +230,7 @@ const FaqBlock = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
