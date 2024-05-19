@@ -36,6 +36,8 @@ const ItemPreviewCard = ({id}) => {
         >
           <img
             src={`${config.apiEndpoint}${item.images[0]}`}
+            width='410'
+            height='500'
             loading='lazy'
             alt='clothes item image'
           />
