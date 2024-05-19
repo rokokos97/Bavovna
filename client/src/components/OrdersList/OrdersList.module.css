@@ -60,7 +60,7 @@
   .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_title {
     display: inline;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     text-transform: uppercase;
   }
@@ -105,7 +105,7 @@
   .ordersList .orderList__table .orderList__table_tbody .orderList__table_tbody_tr td .orderList__table_tbody_title {
     display: inline;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     text-transform: uppercase;
   }
