@@ -7,7 +7,7 @@ import ListWithRadioButtons from '../../../../ListWithRadioButtons/ListWithRadio
 
 const UserDeliveryAddressList = ({hiddenButton}) => {
   const user = useSelector(getUser);
-  return ( user && user.deliveryAddress ?
+  return ( user && user.deliveryAddress[0] ?
     <div className={styles.userDeliveryAddressList} data-testid="UserDeliveryAddressList"
     >
       <ListWithRadioButtons options={{...user.deliveryAddress}} isList={true} deleteButton={hiddenButton}/>
