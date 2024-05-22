@@ -10,12 +10,10 @@ import styles from './HeaderInput.module.scss';
 const HeaderInput = ({handleIsSearch}) => {
   const {searchValue, setSearchValue} = useContext(SearchContext);
   const {isMobile} = useDeviceDetect();
-  console.log(searchValue);
 
   const onCloseSearch = () => {
     handleIsSearch();
     setSearchValue('');
-    console.log('close search');
   };
 
   return (
