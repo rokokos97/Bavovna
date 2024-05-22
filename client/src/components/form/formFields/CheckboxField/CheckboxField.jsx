@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './CheckboxField.module.scss';
 import PropTypes from 'prop-types';
+import {useDataShopPage} from '../../../../providers/ShopPageMasterProvider';
 
-const CheckboxField = ({name, value, onChange, error, children}) => {
+const CheckboxField = ({name, value, onChange, error, children, id, option, label}) => {
+  const {handleFilterChange, selectedFilters} = useDataShopPage();
+  const handleOnChange = (e) => {
+    handleFilterChange(option, e.target.id);
+  };
   return (
     <section className={`${styles.checkboxField} ${error? styles.hasError: ''}`} data-testid="CheckboxField">
       <div className={styles.checkbox}>
@@ -10,13 +15,15 @@ const CheckboxField = ({name, value, onChange, error, children}) => {
           title = {name}
           aria-label={`checkbox ${name}`}
           type='checkbox'
-          id={name}
+          id={id || name}
           name={name}
-          onChange={onChange}
+          checked={selectedFilters[option].includes(id)}
+          onChange={onChange && ((e) => handleOnChange(e))}
           value={value}/>
         <label
           htmlFor="license"
         >
+          {label}
           {children}
         </label>
       </div>
@@ -27,6 +34,9 @@ const CheckboxField = ({name, value, onChange, error, children}) => {
   );
 };
 CheckboxField.propTypes = {
+  label: PropTypes.string,
+  option: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.bool,
   onChange: PropTypes.func,

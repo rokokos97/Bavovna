@@ -19,24 +19,26 @@
   cursor: pointer;
 }
 .checkboxField .checkbox input[type=checkbox]:hover {
-  border: 1px solid rgba(169, 223, 203, 0.3);
+  border: 1px solid #89c4ae;
+  background-color: #fafafa;
 }
 .checkboxField .checkbox input[type=checkbox]:focus-within {
   outline: none;
-  border: 1px solid rgba(169, 223, 203, 0.3);
+  border: 1px solid #89c4ae;
+  background-color: #fafafa;
   box-shadow: 0 0 0 4px #E7F7F2;
 }
 .checkboxField .checkbox input[type=checkbox]:checked {
   background: #fafafa;
-  border: 1px solid rgba(74, 74, 74, 0.7);
+  border: 1px solid #89c4ae;
 }
 .checkboxField .checkbox input[type=checkbox]:checked:hover {
-  border: 1px solid rgba(169, 223, 203, 0.3);
-  background-color: rgba(169, 223, 203, 0.3);
+  border: 1px solid #89c4ae;
+  background-color: #89c4ae;
 }
 .checkboxField .checkbox input[type=checkbox]:checked:focus-within {
   outline: none;
-  border: 1px solid rgba(169, 223, 203, 0.3);
+  border: 1px solid #89c4ae;
   box-shadow: 0 0 0 4px #E7F7F2;
 }
 .checkboxField .checkbox input[type=checkbox]:checked:after {
@@ -51,6 +53,12 @@
   height: 100%;
 }
 .checkboxField .checkbox label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+  color: #030a07;
+}
+.checkboxField .checkbox .checkboxLabel {
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
