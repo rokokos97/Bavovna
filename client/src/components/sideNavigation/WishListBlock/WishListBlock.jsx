@@ -7,7 +7,6 @@ import EmptyBlock from '../../../blocks/EmptyBlock/EmptyBlock';
 const WishListBlock = () => {
   const user = useSelector(getUser);
   const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
-  console.log(isDesktop);
   return ( user &&
     <article className={styles.wishListBlock} data-testid="WishListBlock">
       {isDesktop && <h2 className={styles.wishListBlock__title}>wishlist</h2>}

@@ -8,7 +8,6 @@ const HelpPage = () => {
   const navOptions = [
     {label: '/ help', to: 'help'},
   ];
-  console.log(helps);
   return (
     <section className={styles.helpPage}>
       <SideNavigation options={helps} navOptions={navOptions}/>

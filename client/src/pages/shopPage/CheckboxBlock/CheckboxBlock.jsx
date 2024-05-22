@@ -5,7 +5,6 @@ import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
 import styles from './CheckboxBlock.module.scss';
 
 const CheckboxBlock = ({value, label, option, id}) => {
-  console.log(value, label, option, id);
   const {handleFilterChange, selectedFilters} = useDataShopPage();
 
   const handleOnChange = (e) => {
