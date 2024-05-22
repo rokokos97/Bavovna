@@ -19,24 +19,26 @@
       background: $white;
       cursor: pointer;
       &:hover {
-        border: 1px solid $transparent-30-a-05;
+        border: 1px solid $accent-a-15;
+        background-color: $white;
       }
       &:focus-within {
         outline: none;
-        border: 1px solid $transparent-30-a-05;
+        border: 1px solid $accent-a-15;
+        background-color: $white;
         box-shadow: 0 0 0 4px #E7F7F2;
       }
     }
     input[type=checkbox]:checked {
       background: $white;
-      border: 1px solid $transparent70-gray10;
+      border: 1px solid $accent-a-15;;
       &:hover {
-        border: 1px solid $transparent-30-a-05;
-        background-color: $transparent-30-a-05;
+        border: 1px solid $accent-a-15;;
+        background-color: $accent-a-15;;
       }
       &:focus-within {
         outline: none;
-        border: 1px solid $transparent-30-a-05;
+        border: 1px solid $accent-a-15;;
         box-shadow: 0 0 0 4px #E7F7F2;
       }
     }
@@ -52,6 +54,10 @@
       height: 100%;
     }
     label {
+      @include menu-5();
+      color: $accent-a-95;
+    }
+    .checkboxLabel {
       @include menu-5();
       color: $accent-a-95;
     }
