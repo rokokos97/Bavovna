@@ -18,7 +18,8 @@
   width: 100%;
 }
 .catalog .cardsContainer .cards .notFound {
-  max-width: 62.8rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
   width: 100%;
   text-align: center;
   margin: 2.4rem auto;
@@ -60,7 +61,8 @@
   width: 100%;
 }
 .catalogFilter .cardsContainer .cards .notFound {
-  max-width: 62.8rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
   width: 100%;
   text-align: center;
   margin: 2.4rem auto;
