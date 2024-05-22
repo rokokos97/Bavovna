@@ -31,6 +31,9 @@
   font-size: 16px;
   line-height: 110%;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .productCardInCart .productCardInCart__infoBlock .productCardInCart__namePriceBlock .productCardInCart__price {
   display: flex;
@@ -236,7 +239,7 @@
   .productCardInCart[type="2"] .productCardInCart__infoBlock {
     padding: 0 0 0 1.6rem;
     height: 13.4rem;
-    row-gap: 1.6rem;
+    row-gap: 0.8rem;
   }
   .productCardInCart[type="2"] .productCardInCart__infoBlock .productCardInCart__namePriceBlock {
     display: flex;

@@ -1,0 +1,17 @@
+.mobileBreadcrumbsNavigation__navigation {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+}
+.mobileBreadcrumbsNavigation__navigation svg {
+  transform: rotate(-90deg);
+}
+
+/*# sourceMappingURL=MobileBreadcrumbsNavigation.module.css.map */

@@ -81,11 +81,11 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         </form>
         <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Order value</p>
-          <p>{`${orderAmount} $`}</p>
+          <p>{`${orderAmount} ₴`}</p>
         </div>
         {finalDiscount && <div className={styles.checkOutShoppingCartBlock__discount}>
           <p>Promo code</p>
-          <p>{`-${finalDiscount} $`}</p>
+          <p>{`-${finalDiscount} ₴`}</p>
         </div>}
         <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Shipping</p>
@@ -93,7 +93,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         </div>
         <div className={styles.checkOutShoppingCartBlock__priceBlock}>
           <p>total</p>
-          <p>{`${finalPrice} $`}</p>
+          <p>{`${finalPrice} ₴`}</p>
         </div>
         <button
           type='button'

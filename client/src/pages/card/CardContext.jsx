@@ -7,7 +7,6 @@ import {addItemToCart} from '../../store/cartSlice';
 import {getUser} from '../../store/userSlice';
 import {useDataCard} from '../../providers/CardMasterProvider';
 import {SizesList} from '../../components/SizeList/SizesList';
-import AlsoBoughtBlock from './AlsoBoughtBlock/AlsoBoughtBlock';
 import {Modal} from '../../components/modal';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
@@ -16,14 +15,24 @@ import ColorsList from '../../components/ColorsList/ColorsList';
 import styles from './Card.module.scss';
 import FillHeartIcon from '../../components/svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
 import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
-import {useParams} from 'react-router-dom';
-import {getItemsById} from '../../store/itemsSlice';
+import {useNavigate, useParams} from 'react-router-dom';
+import {getItemsById, getItemsList} from '../../store/itemsSlice';
 import Loader from '../../components/Loader/Loader';
+import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
+import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
+import useDeviceDetect from '../../utils/useDeviceDetect';
 
 const CardContext = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isMobile = useDeviceDetect();
   const item = useSelector(getItemsById(id));
+  const items = useSelector(getItemsList);
+  let sortedItems = [];
+  if (items) {
+    sortedItems = items.filter((item) => item.status === 'sale');
+  }
   if (!item) {
     return <Loader />;
   }
@@ -47,6 +56,10 @@ const CardContext = () => {
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
+  const options = [
+    {label: '/ Shop', to: '/shop'},
+    {label: `/ ${item.name}`, to: `/shop/${item._id}`},
+  ];
 
   sale ?
     (currentPrice = parseFloat(price * sale) / 100) :
@@ -67,7 +80,7 @@ const CardContext = () => {
     if (selectedColor && selectedSize) {
       const newItemData = {
         ...itemData,
-        itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemSize}`,
+        itemIdentifier: `${itemData._id}-${itemData.itemSize}-${itemData.itemColor}`,
       };
       dispatch(addItemToCart(newItemData));
       setShowCheckoutModal(true);
@@ -90,10 +103,17 @@ const CardContext = () => {
     setShowCheckoutModal(false);
     showBodyOverflow();
   };
+  const handleSideNavigationClose = () => {
+    if (isMobile) {
+      navigate('/shop');
+    }
+  };
   return (
     <>
       <section className={styles.cardSection}>
-        <p className={styles.navigation}>{`Home / Shop / ${name}`}</p>
+        <div className={styles.navigation}>
+          <BreadcrumbsNavigation options={options} handleSideNavigationClose={handleSideNavigationClose}/>
+        </div>
         <div className={styles.card}>
           <div className={styles.imgsContainer}>
             <div className={styles.imgs}>
@@ -137,11 +157,11 @@ const CardContext = () => {
                 <div className={styles.priceBlock}>
                   {sale ? (
                     <span className={styles.unCurrentPrice}>
-                      ${price.toFixed(2)}
+                      ₴{price.toFixed(2)}
                     </span>
                   ) : null}
                   <span className={styles.buyFormPrice}>
-                    ${currentPrice.toFixed(2)}
+                    ₴{currentPrice.toFixed(2)}
                   </span>
                 </div>
                 <dir className={styles.color}>
@@ -207,7 +227,7 @@ const CardContext = () => {
             </div>
           </div>
         </div>
-        <AlsoBoughtBlock />
+        <SliderBlock title={'You might also like'} itemsList={sortedItems} />
         <Modal isOpen={showCheckoutModal} handleCloseModal={closeModal}>
           <CheckoutModal handleCloseModal={closeModal} />
         </Modal>

@@ -152,7 +152,7 @@
   text-align: -webkit-center;
 }
 
-@media (min-width: 581px) and (max-width: 1000px) {
+@media (min-width: 950px) and (max-width: 1279px) {
   .newArrivalsBlock {
     padding: 0 3.2rem;
   }
@@ -160,7 +160,15 @@
     margin-bottom: 2.4rem;
   }
 }
-@media (max-width: 580px) {
+@media (min-width: 768px) and (max-width: 1280px) {
+  .newArrivalsBlock {
+    padding: 0 3.2rem;
+  }
+  .newArrivalsBlock__titleSection {
+    margin-bottom: 2.4rem;
+  }
+}
+@media (max-width: 767px) {
   .newArrivalsBlock {
     padding: 0 1.6rem;
   }

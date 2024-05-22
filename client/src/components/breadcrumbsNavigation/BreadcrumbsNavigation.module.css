@@ -1,0 +1,25 @@
+.breadcrumbsNavigation__navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.4rem;
+  text-align: start;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: none;
+}
+.breadcrumbsNavigation__navigation .breadcrumbsNavigation__navigationHome {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.breadcrumbsNavigation__navigation .breadcrumbsNavigation__navigationHome svg {
+  display: none;
+  transform: rotate(-90deg);
+}
+.breadcrumbsNavigation__navigation .breadcrumbsNavigation__navigationAccount {
+  display: flex;
+}
+
+/*# sourceMappingURL=BreadcrumbsNavigation.module.css.map */

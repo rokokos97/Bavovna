@@ -4,7 +4,7 @@ import styles from './ReturnBlock.module.scss';
 
 const ReturnBlock = () => {
   return (
-    <>
+    <div className={styles.returnBlock}>
       <h2 className={styles.helpTitle}>Return information</h2>
       <p className={styles.helpParagraph}>
         This site was created solely as part of training and to acquire
@@ -121,7 +121,7 @@ const ReturnBlock = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,12 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import styles from './MainPage.module.scss';
-import NewArrivalsBlock from './NewArrivalsBlock/NewArrivalsBlock';
-import NewCollectionBlock from './NewCollectionBlock/NewCollectionBlock';
-import SaleBlock from './SummerSaleBlock/SaleBlock';
-import BavovnaBlock from './BavovnaTextBlock/BavovnaBlock';
-import NewsLettersBlock from './NewsLettersBlock/NewsLettersBlock';
-import BavovnaCoverImageBlock from './BavovnaCoverImageBlock/BavovnaCoverImageBlock';
-import CategoriesBlock from './CategoriesBlock/CategoriesBlock';
 import Cookies from 'js-cookie';
 import {getCategoriesError, getCategoriesLoadingStatus} from '../../store/categorySlice';
 import {useSelector} from 'react-redux';
@@ -16,6 +9,13 @@ import {getItemsError, getItemsLoadingStatus} from '../../store/itemsSlice';
 import ModalError from '../../components/ModalError/ModalError';
 import ModalCookies from '../../components/ModalCookies/ModalCookies';
 import Loader from '../../components/Loader/Loader';
+const NewCollectionBlock = React.lazy(() => import('./NewCollectionBlock/NewCollectionBlock'));
+const NewArrivalsBlock = React.lazy(() => import('./NewArrivalsBlock/NewArrivalsBlock'));
+const SaleBlock = React.lazy(() => import('./SummerSaleBlock/SaleBlock'));
+const BavovnaBlock = React.lazy(() => import('./BavovnaTextBlock/BavovnaBlock'));
+const NewsLettersBlock = React.lazy(() => import('./NewsLettersBlock/NewsLettersBlock'));
+const BavovnaCoverImageBlock = React.lazy(()=>import('./BavovnaCoverImageBlock/BavovnaCoverImageBlock'));
+const CategoriesBlock = React.lazy(() => import('./CategoriesBlock/CategoriesBlock'));
 // import ModalEducationProject from '../../components/modal/modalContent/ModalEducationProject/ModalEducationProject';
 // import sessionStorageService from '../../services/sessionStorage.service';
 const MainPage = () => {
@@ -33,7 +33,7 @@ const MainPage = () => {
   const [showCookiesModal, setShowCookiesModal] = useState(false);
   useEffect(() => {
     const userConsent = Cookies.get('userConsent');
-    if (!userConsent) {
+    if (!userConsent && !categoriesListIsLoading && !colorsListIsLoading && !itemsListIsLoading && !citiesIsLoading) {
       setShowCookiesModal(true);
     //    const userModal = sessionStorageService.getModalConfirm();
     //    if (!userModal) {
@@ -62,21 +62,23 @@ const MainPage = () => {
   //    setShowEducationModal(false);
   //  };
   return (
-    <section className={styles.mainPage}>
-      {
-        (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>
-      }
-      {/* {showEducationModal && <ModalEducationProject handleConfirmModal={confirmModal}/>}*/}
-      {showErrorModal && <ModalError error={error} handleCloseModal={closeErrorModal}/>}
-      {showCookiesModal && <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>}
-      <NewCollectionBlock />
-      <NewArrivalsBlock />
-      <SaleBlock />
-      <BavovnaBlock />
-      <BavovnaCoverImageBlock />
-      <CategoriesBlock />
-      <NewsLettersBlock />
-    </section>
+    <Suspense fallback={<Loader/>}>
+      <section className={styles.mainPage}>
+        {/* {*/}
+        {/*  (categoriesListIsLoading || colorsListIsLoading || citiesIsLoading || itemsListIsLoading) && <Loader/>*/}
+        {/* }*/}
+        {/* {showEducationModal && <ModalEducationProject handleConfirmModal={confirmModal}/>}*/}
+        {showErrorModal && <ModalError error={error} handleCloseModal={closeErrorModal}/>}
+        {showCookiesModal && <ModalCookies handleCloseModal={closeCookiesModal} handleConfirmModal={confirmCookies}/>}
+        <NewCollectionBlock />
+        <NewArrivalsBlock title={'new arrivals'}/>
+        <SaleBlock />
+        <BavovnaBlock />
+        <BavovnaCoverImageBlock />
+        <CategoriesBlock />
+        <NewsLettersBlock />
+      </section>
+    </Suspense>
   );
 };
 

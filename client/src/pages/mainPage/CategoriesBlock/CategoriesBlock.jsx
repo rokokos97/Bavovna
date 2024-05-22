@@ -9,12 +9,12 @@ const CategoriesBlock = () => {
   const categoryNew = {
     name: 'new',
     status: 'new',
-    image: 'uploads/categoryNew.jpeg',
+    image: 'uploads/Desktop/categoryNew.webp',
   };
   const categorySale = {
     name: 'sale',
     status: 'sale',
-    image: 'uploads/categorySale.jpeg',
+    image: 'uploads/Desktop/categorySale.webp',
   };
   return (
     <article className={styles.categoriesBlock} data-testid="CategoriesBlock">

@@ -35,10 +35,10 @@ const ProductCardInCart = ({item, type}) => {
           <p className={styles.productCardInCart__name}>{item.itemName}</p>
           <p className={(item.discountPrice===item.itemPrice)? styles.productCardInCart__price : styles.productCardInCart__discount}>
             <span>
-              {item.itemPrice} $
+              {item.itemPrice} ₴
             </span>
             <span>
-              {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + ' $'}
+              {(item.discountPrice===item.itemPrice) ? '' : item.discountPrice + ' ₴'}
             </span>
           </p>
         </section>

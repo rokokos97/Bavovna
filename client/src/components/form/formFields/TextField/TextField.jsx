@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import CleatFormIcon from '../../../svg/CleatFormIcon/CleatFormIcon';
 import ShowPasswordIcon from '../../../svg/passwordIcons/ShowPasswordIcon/ShowPasswordIcon';
 import HidePasswordIcon from '../../../svg/passwordIcons/HidePasswordIcon/HidePasswordIcon';
-const TextField = ({label, name, type, value, onChange, onBlur, touched, error, placeholder, disabled}) => {
+const TextField = ({label, name, type, value, onChange, onBlur, error, placeholder, disabled, touched}) => {
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -13,8 +13,11 @@ const TextField = ({label, name, type, value, onChange, onBlur, touched, error, 
   const clearInput = () => {
     onChange({target: {value: '', name: name}});
   };
+  const isFieldTouched = () => {
+    return touched && touched[name];
+  };
   return (
-    <div className={`${styles.textField} ${(error && touched)? styles.hasError: ''}`} data-testid="TextField">
+    <div className={`${styles.textField} ${(error && isFieldTouched())? styles.hasError: ''}`} data-testid="TextField">
       <label
         htmlFor={name}
         className={disabled? disabledStyles.label : styles.label}
@@ -56,7 +59,7 @@ const TextField = ({label, name, type, value, onChange, onBlur, touched, error, 
           </button>
         )}
       </div>
-      {(error && touched) ? (
+      {(error && isFieldTouched()) ? (
           <p className={styles.error}>{error}</p>
         ) : null}
     </div>
@@ -72,7 +75,7 @@ TextField.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   onBlur: PropTypes.func,
-  touched: PropTypes.bool,
+  touched: PropTypes.object,
   error: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,

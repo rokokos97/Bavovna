@@ -174,15 +174,24 @@ const Footer = () => {
           <section className={styles.footerBottomRight}>
             <img
               src='/img/svg/liqpay.png'
+              width='71'
+              height='15'
               loading='lazy'
               alt='liqpay logo image'
             />
             <img
               src='/img/svg/mastercard.svg'
+              width='71'
+              height='15'
               alt='mastercard logo image'
               loading='lazy'
             />
-            <img src='/img/svg/visa.svg' alt='visa logo image' loading='lazy' />
+            <img
+              src='/img/svg/visa.svg'
+              alt='visa logo image'
+              width='71'
+              height='15'
+              loading='lazy' />
           </section>
         </section>
       </article>

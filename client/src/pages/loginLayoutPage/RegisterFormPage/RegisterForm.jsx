@@ -43,6 +43,7 @@ const RegisterForm = () => {
       formik.resetForm();
     },
   });
+
   const googleRegister = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
@@ -84,7 +85,12 @@ const RegisterForm = () => {
             <p>{errorMessage}</p>
           </div> : null
       }
-      <RegisterFormBlock formik={formik} googleRegister={googleRegister} isRegularSignUp={isRegularSignUp} isGoogleSignUp={isGoogleSignUp}/>
+      <RegisterFormBlock
+        formik={formik}
+        googleRegister={googleRegister}
+        isRegularSignUp={isRegularSignUp}
+        isGoogleSignUp={isGoogleSignUp}
+      />
       <p className={styles.registerForm__backToSignIn}>
         Already have an account?&nbsp;
         <NavLink

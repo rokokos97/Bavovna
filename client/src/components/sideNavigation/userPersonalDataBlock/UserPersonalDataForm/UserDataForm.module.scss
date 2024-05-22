@@ -1,0 +1,104 @@
+@import "../../../../styles/variables.module.scss";
+.userDataForm {
+  width: 73.5rem;
+  display: flex;
+  flex-direction: column;
+
+  .userDataForm__title {
+    @include headline-2();
+    text-align: start;
+    padding-bottom: 2.4rem;
+  }
+
+  .userDataForm__responseMessage {
+    width: 51.5rem;
+    margin-bottom: 2.4rem;
+    @include form-message-block($accent-a-05, $success);
+    @include body-2();
+  }
+
+  .userDataForm__userPersonalDataForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    .userDataForm__submitWrapper {
+      width: 62.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      .userDataForm__column{
+        width: 51.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+      }
+    }
+    .userDataForm__button {
+      @include button(24rem);
+      @include buttonBlack();
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .userDataForm {
+    width: 43.1rem;
+    display: flex;
+    flex-direction: column;
+
+    .userDataForm__title {
+      display: none;
+    }
+
+    .userDataForm__responseMessage {
+      width: 43.1rem;;
+      margin-bottom: 1.6rem;
+      @include form-message-block($accent-a-05, $success);
+      @include body-3();
+    }
+    .userDataForm__userPersonalDataForm {
+      .userDataForm__submitWrapper {
+        width: 43.1rem;
+
+        .userDataForm__column{
+          width: 100%;
+        }
+      }
+      .userDataForm__button {
+        @include button-mobile(18rem);
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .userDataForm {
+    width: 32.8rem;
+
+    .userDataForm__title {
+      display: none;
+    }
+
+    .userDataForm__responseMessage {
+      width: 32.8rem;;
+      margin-bottom: 1.6rem;
+      @include form-message-block($accent-a-05, $success);
+      @include body-3();
+    }
+    .userDataForm__userPersonalDataForm {
+      width: 100%;
+      .userDataForm__submitWrapper {
+        width: 100%;
+
+        .userDataForm__column{
+          width: 100%;
+        }
+      }
+      .userDataForm__button {
+        @include button-mobile(18rem);
+      }
+    }
+  }
+}
+
+

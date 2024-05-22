@@ -36,6 +36,8 @@ const ItemPreviewCard = ({id}) => {
         >
           <img
             src={`${config.apiEndpoint}${item.images[0]}`}
+            width='410'
+            height='500'
             loading='lazy'
             alt='clothes item image'
           />
@@ -60,13 +62,13 @@ const ItemPreviewCard = ({id}) => {
           className={styles.itemPreviewCard__description}
           onClick={() => navigate(`/shop/${item._id}`)}
         >
-          <span>{item.name}</span>
+          <p className={styles.itemPreviewCard__name}>{item.name}</p>
           <p className={(discountPrice === 0)? styles.itemPreviewCard__price : styles.itemPreviewCard__discount}>
             <span>
-              ${item.price}
+              ₴ {item.price}
             </span>
             {
-              item.sale !==0 && <span>${discountPrice}</span>
+              item.sale !==0 && <span>₴ {discountPrice}</span>
             }
           </p>
         </div>

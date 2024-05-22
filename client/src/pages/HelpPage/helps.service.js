@@ -7,10 +7,10 @@ import PaymentBlock from './PaymentBlock/PaymentBlock';
 import PolicyBlock from './PolicyBlock/PolicyBlock';
 
 export const helps = [
-  {id: 0, path: 'delivery', name: 'Delivery information', description: <DeliveryBlock />},
-  {id: 1, path: 'return', name: 'Return information', description: <ReturnBlock />},
-  {id: 2, path: 'payment', name: 'Payment', description: <PaymentBlock />},
-  {id: 3, path: 'faq', name: 'FAQ', description: <FaqBlock />},
-  {id: 4, path: 'cookies', name: 'Cookies settings', description: <CookiesBlock />},
-  {id: 5, path: 'privacy', name: 'Privacy policy', description: <PolicyBlock />},
+  {path: 'delivery', label: 'Delivery information', element: <DeliveryBlock />},
+  {path: 'return', label: 'Return information', element: <ReturnBlock />},
+  {path: 'payment', label: 'Payment', element: <PaymentBlock />},
+  {path: 'faq', label: 'FAQ', element: <FaqBlock />},
+  {path: 'cookies', label: 'Cookies settings', element: <CookiesBlock />},
+  {path: 'privacy', label: 'Privacy policy', element: <PolicyBlock />},
 ];

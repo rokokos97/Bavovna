@@ -1,46 +1,19 @@
-import React, {useState, useEffect} from 'react';
-import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
-import AsideHelpBlock from './AsideHelpBlock/AsideHelpBlock';
-import DeliveryBlock from './DeliveryBlock/DeliveryBlock';
-import ReturnBlock from './ReturnBlock/ReturnBlock';
-import PaymentBlock from './PaymentBlock/PaymentBlock';
-import FaqBlock from './FaqBlock/FaqBlock';
-import PolicyBlock from './PolicyBlock/PolicyBlock';
-import CookiesBlock from './CookiesBlock/CookiesBlock';
+import React from 'react';
 import styles from './HelpPage.module.scss';
+import {helps} from './helps.service';
+import SideNavigation from '../../components/sideNavigation/SideNavigation';
+
 
 const HelpPage = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [selectedLink, setSelectedLink] = useState(null);
-
-  useEffect(() => {
-    const defaultLink = 'delivery';
-    if (location.pathname === '/help' && selectedLink !== defaultLink) {
-      setSelectedLink(defaultLink);
-      navigate(defaultLink);
-    }
-  }, [location, selectedLink, navigate]);
-
+  const navOptions = [
+    {label: '/ help', to: 'help'},
+  ];
+  console.log(helps);
   return (
-    <div className={styles.helpPage}>
-      <p className={styles.navigation}>Home / Help</p>
-      <div className={styles.helpPageContainer}>
-        <div className={styles.helpAside}>
-          <AsideHelpBlock />
-        </div>
-        <div className={styles.helpDescription}>
-          <Routes>
-            <Route path='delivery' element={<DeliveryBlock />} />
-            <Route path='return' element={<ReturnBlock />} />
-            <Route path='payment' element={<PaymentBlock />} />
-            <Route path='faq' element={<FaqBlock />} />
-            <Route path='cookies' element={<CookiesBlock />} />
-            <Route path='privacy' element={<PolicyBlock />} />
-          </Routes>
-        </div>
-      </div>
-    </div>
+    <section className={styles.helpPage}>
+      <SideNavigation options={helps} navOptions={navOptions}/>
+    </section>
+
   );
 };
 

@@ -6,17 +6,17 @@ import CloseIcon from '../svg/CloseIcon/CloseIcon';
 const ModalCookies = ({handleCloseModal, handleConfirmModal}) => (
   <article className={styles.modalCookies} data-testid="ModalEducationProject">
     <section className={styles.modalCookies__container}>
-      <p className={styles.modalCookies__content}>BAVOVNA uses cookies to give you the best
-          shopping experience. If you continue to use
-          our services, we will assume that you agree
-          to the use of such cookies. Find out more <
-        a
-        href={'https://www.aboutcookies.org/'}
-        target='_blank'
-        rel="noreferrer"
-        aria-label='Learn about cookies'
-      >about cookies</a> and how
-          you can refuse them</p>
+      <p className={styles.modalCookies__content}>
+        BAVOVNA uses cookies to give you the best<br/>
+        shopping experience. If you continue to use our<br/>
+        services, we will assume that you agree to the use of<br/>
+        such cookies. Find out more <
+          a
+          href={'https://www.aboutcookies.org/'}
+          target='_blank'
+          rel="noreferrer"
+          aria-label='Learn about cookies'
+        >about cookies</a> and how<br/>you can refuse them</p>
       <button
         className={styles.modalCookies__closeButton}
         type='button'

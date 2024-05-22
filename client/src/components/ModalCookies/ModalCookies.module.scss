@@ -13,17 +13,22 @@
   -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
-}
-.modalCookies__container {
-  display: flex;
-  column-gap: 1.6rem;
-}
-.modalCookies__content {
- @include body-3();
-  text-align: start;
-}
-.modalCookies__closeButton{
-  background: inherit;
+
+  .modalCookies__container {
+    display: flex;
+    column-gap: 1.2rem;
+
+    .modalCookies__content {
+      width: 43.6rem;
+     @include body-3();
+      text-align: start;
+    }
+
+    .modalCookies__closeButton{
+      width: 2.4rem;
+      background: inherit;
+    }
+  }
 }
 .modalCookies__button {
   @include button(19rem);

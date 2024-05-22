@@ -4,7 +4,7 @@ import Dropdown from '../../../components/Dropdown/Dropdown';
 
 const DeliveryBlock = () => {
   return (
-    <>
+    <div className={styles.deliveryBlock}>
       <h2 className={styles.helpTitle}>Delivery information</h2>
       <p className={styles.helpParagraph}>
         This site was created solely as part of training and to acquire
@@ -38,7 +38,7 @@ const DeliveryBlock = () => {
                   <h4>Cost:</h4>
                   <ul className={styles.dropdownList}>
                     <li>Standard Delivery Fee: 80 UAH.</li>
-                    <li>Free for orders over 1500 UAH.</li>
+                    <li>Free for orders over 1000 UAH.</li>
                   </ul>
                 </div>
                 <div>
@@ -76,8 +76,8 @@ const DeliveryBlock = () => {
                 <div>
                   <h4>Cost:</h4>
                   <ul className={styles.dropdownList}>
-                    <li>Standard Delivery Fee: 80 UAH.</li>
-                    <li>Free for orders over 1500 UAH.</li>
+                    <li>Standard Delivery Fee: 120 UAH.</li>
+                    <li>Free for orders over 1000 UAH.</li>
                   </ul>
                 </div>
                 <div>
@@ -113,8 +113,7 @@ const DeliveryBlock = () => {
                 <div>
                   <h4>Cost:</h4>
                   <ul className={styles.dropdownList}>
-                    <li>International Shipping Fee: 100 UAH.</li>
-                    <li>Free for international orders over 3000 UAH.</li>
+                    <li>International Shipping Fee: 780 UAH.</li>
                   </ul>
                 </div>
                 <div>
@@ -134,7 +133,7 @@ const DeliveryBlock = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

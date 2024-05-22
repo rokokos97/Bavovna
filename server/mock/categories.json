@@ -1,6 +1,6 @@
 [
-  {"name": "dresses", "image":"uploads/categoryDresses.jpeg"},
-  {"name": "skirts", "image":"uploads/categorySkirts.jpeg"},
-  {"name": "pants", "image":"uploads/categoryPants.jpeg"},
-  {"name": "t-shirts", "image":"uploads/categoryTShirts.jpeg"}
+  {"name": "dresses", "image":"uploads/Desktop/categoryDresses.webp"},
+  {"name": "skirts", "image":"uploads/Desktop/categorySkirts.webp"},
+  {"name": "pants", "image":"uploads/Desktop/categoryPants.webp"},
+  {"name": "t-shirts", "image":"uploads/Desktop/categoryTShirts.webp"}
 ]

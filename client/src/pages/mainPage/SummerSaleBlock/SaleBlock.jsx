@@ -8,14 +8,19 @@ const SaleBlock = () => {
       <picture className={styles.saleBlockBlock__image}>
         <source
           media='(min-width: 769px)'
+          width='1440'
+          height='376'
           srcSet='/img/images/Sale/saleBlockImage.webp'
         />
         <source
           media='(min-width: 581px)'
+          width='768'
           srcSet='/img/images/Sale/tabletSaleBlockImage.webp'
         />
         <img
           src='/img/images/Sale/mobileSaleBlockImage.webp'
+          width='360'
+          height='212'
           loading='lazy'
           alt='Flat lay of a plain white T-shirt,
          a lifestyle magazine with plants on the cover,

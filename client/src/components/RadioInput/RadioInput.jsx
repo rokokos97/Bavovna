@@ -5,8 +5,6 @@ import RadioButtonEmptyIcon from '../svg/radioButtonIcons/RadioButtonEmptyIcon/R
 import PropTypes from 'prop-types';
 
 const RadioInput = ({method, currentValue, handleChangeCurrentValue}) => {
-  console.log('method', method);
-  console.log(currentValue);
   return (
     <section
       key={method._id}
@@ -29,9 +27,9 @@ const RadioInput = ({method, currentValue, handleChangeCurrentValue}) => {
           onClick={() => handleChangeCurrentValue(method._id)}
           className={styles.radioLabel__radioButton}
         >{currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}</div>
-        <p>{method.label}</p>
+        <div>{method.label}</div>
       </label>
-      {currentValue === method._id ? <p className={styles.radioInput__value}>{method.value}</p> : null}
+      {currentValue === method._id ? <div className={styles.radioInput__value}>{method.value}</div> : null}
     </section>
   );
 };

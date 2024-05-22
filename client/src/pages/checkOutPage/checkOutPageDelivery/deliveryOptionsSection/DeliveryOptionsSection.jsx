@@ -8,8 +8,6 @@ import {
   setDeliveryMethod,
   setDeliveryOption, setDeliveryPrice, setUserDeliveryInfo,
 } from '../../../../store/ordersSlice';
-import UserDeliveryAddressList
-  from '../../../userPage/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
 import UserDeliveryMethodsList from './userDeliveryMethodsList/UserDeliveryMethodsList';
 import {useFormik} from 'formik';
 import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
@@ -26,6 +24,8 @@ import RadioButtonEmptyIcon
 import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
 import {getCartTotalPrice} from '../../../../store/cartSlice';
 import useDeliveryData from '../../../../utils/useDeliveryData';
+import UserDeliveryAddressList
+  from '../../../../components/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
 const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
