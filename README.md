@@ -1,11 +1,6 @@
-<!-- Add this to the top of your README.md file -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-  .poppins {
-    font-family: 'Poppins', sans-serif;
-  }
-</style>
+<style>.poppins {font-family: 'Poppins', sans-serif;}</style>
 
 # <span class="poppins">BAVOVNA</span>
 
