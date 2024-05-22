@@ -85,7 +85,7 @@ const RecoveryPasswordForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.email}
-          touched={formik.touched.email}
+          touched={formik.touched}
         />
         <button
           className={styles.forgotPasswordForm__button}

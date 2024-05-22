@@ -82,7 +82,7 @@ const UserDataForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.firstName}
-              touched={formik.touched.firstName}
+              touched={formik.touched}
             />
             <TextField
               label='Last name'
@@ -91,7 +91,7 @@ const UserDataForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.lastName}
-              touched={formik.touched.lastName}
+              touched={formik.touched}
             />
             <TextField
               disabled = {true}
@@ -100,6 +100,7 @@ const UserDataForm = () => {
               placeholder={user.email}
               value={formik.values.email}
               onChange={formik.handleChange}
+              touched={formik.touched}
             />
           </section>
           <section
@@ -109,9 +110,9 @@ const UserDataForm = () => {
               value={formik.values.phoneNumber}
               onChange={(value) => formik.setFieldValue('phoneNumber', value)}
               onBlur={()=> formik.setFieldTouched('phoneNumber', true)}
-              touched={formik.touched.phoneNumber}
               error={formik.errors.phoneNumber}
               phoneNumber={formik.values.phoneNumber}
+              touched={formik.touched.phoneNumber}
             />
             <TextField
               disabled = {!user.isVerified}
@@ -123,7 +124,7 @@ const UserDataForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={error ? message : formik.errors.currentPassword}
-              touched={formik.touched.currentPassword}
+              touched={formik.touched}
             />
             <TextField
               disabled={formik.values.currentPassword.length === 0 || !user.isVerified}
@@ -135,7 +136,7 @@ const UserDataForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.errors.newPassword}
-              touched={formik.touched.newPassword}
+              touched={formik.touched}
             />
           </section>
         </div>

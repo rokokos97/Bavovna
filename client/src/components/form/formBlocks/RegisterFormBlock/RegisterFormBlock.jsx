@@ -25,7 +25,8 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.firstName}
-          touched={formik.touched.firstName}
+          touched={formik.touched}
+          isSubmiting={formik.isSubmitting}
         />
         <TextField
           label='Last name'
@@ -35,7 +36,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.lastName}
-          touched={formik.touched.lastName}
+          touched={formik.touched}
         />
         <TextField
           label='Email'
@@ -45,7 +46,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.email}
-          touched={formik.touched.email}
+          touched={formik.touched}
         />
         <TextField
           type='password'
@@ -56,7 +57,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.password}
-          touched={formik.touched.password}
+          touched={formik.touched}
         />
         <TextField
           type='password'
@@ -67,7 +68,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.confirmPassword}
-          touched={formik.touched.confirmPassword}
+          touched={formik.touched}
         />
         <CheckboxField
           name='license'
@@ -87,7 +88,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
         </CheckboxField>
         <button
           type='submit'
-          disabled={!formik.isValid || !formik.dirty}
+          disabled={!formik.isValid}
           className={styles.registerFormBlock__button}
         >
           {

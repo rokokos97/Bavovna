@@ -48,6 +48,7 @@ const UserPaymentByCardForm = ({formik}) => {
         onChange={handleCardNumberChange}
         value={formik.values.cardNumber}
         error={formik.errors.cardNumber}
+        touched={formik.touched}
       />
       <div className={styles.block}>
         <TextField
@@ -57,6 +58,7 @@ const UserPaymentByCardForm = ({formik}) => {
           onChange={handleValidityDateChange}
           value={formik.values.validityDate}
           error={formik.errors.validityDate}
+          touched={formik.touched}
         />
         <TextField
           label='CVV/CVC'
@@ -65,6 +67,7 @@ const UserPaymentByCardForm = ({formik}) => {
           onChange={handleCvvCvcChange}
           value={formik.values.cvvCvc}
           error={formik.errors.cvvCvc}
+          touched={formik.touched}
         />
       </div>
       <TextField
@@ -74,6 +77,7 @@ const UserPaymentByCardForm = ({formik}) => {
         onChange={formik.handleChange}
         value={formik.values.cardHolderName}
         error={formik.errors.cardHolderName}
+        touched={formik.touched}
       />
     </div>
   );

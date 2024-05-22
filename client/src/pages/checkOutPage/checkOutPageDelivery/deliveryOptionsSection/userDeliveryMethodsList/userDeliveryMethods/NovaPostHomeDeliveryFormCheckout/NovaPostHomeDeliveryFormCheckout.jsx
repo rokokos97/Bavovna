@@ -18,6 +18,7 @@ const NovaPostHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         defaultValue={{label: 'Select a city', value: ''}}
         options={citiesList ? citiesList : []}
         error={formik.errors.city}
+        touched={formik.touched}
       />
       <TextField
         label='Street'
@@ -27,6 +28,7 @@ const NovaPostHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         value={formik.values.street}
         error={formik.errors.street}
         onBlur={formik.handleBlur}
+        touched={formik.touched}
       />
       <TextField
         label='House number'
@@ -36,6 +38,7 @@ const NovaPostHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         value={formik.values.houseNumber}
         error={formik.errors.houseNumber}
         onBlur={formik.handleBlur}
+        touched={formik.touched}
       />
       <TextField
         label='Flat Number'
@@ -45,6 +48,7 @@ const NovaPostHomeDeliveryFormCheckout = ({formik, handleCityChange}) => {
         value={formik.values.flatNumber}
         error={formik.errors.flatNumber}
         onBlur={formik.handleBlur}
+        touched={formik.touched}
       />
     </div>
   );

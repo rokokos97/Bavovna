@@ -79,7 +79,7 @@ const NewsLettersBlock = () => {
             onChange={formik.handleChange}
             error={formik.errors.email}
             value={formik.values.email}
-            touched={formik.touched.email}
+            touched={formik.touched}
           />
           <button
             className={styles.newsLetterBlock__button}

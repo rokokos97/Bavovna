@@ -14,7 +14,7 @@ const UnknownUserContactFormBlock = ({formik}) => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         error={formik.errors.firstName}
-        touched={formik.touched.firstName}
+        touched={formik.touched}
       />
       <TextField
         label='Last name'
@@ -24,7 +24,7 @@ const UnknownUserContactFormBlock = ({formik}) => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         error={formik.errors.lastName}
-        touched={formik.touched.lastName}
+        touched={formik.touched}
       />
       <TextField
         label='Email'
@@ -34,7 +34,7 @@ const UnknownUserContactFormBlock = ({formik}) => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         error={formik.errors.email}
-        touched={formik.touched.email}
+        touched={formik.touched}
       />
       <PhoneField
         value={formik.values.phoneNumber}
@@ -42,7 +42,7 @@ const UnknownUserContactFormBlock = ({formik}) => {
         onBlur={()=> formik.setFieldTouched('phoneNumber', true)}
         error={formik.errors.phoneNumber}
         phoneNumber={formik.values.phoneNumber}
-        touched={formik.touched.phoneNumber}
+        touched={formik.touched}
       />
     </div>
   );
