@@ -62,7 +62,7 @@ const ResetPasswordForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.password}
-          touched={formik.touched.password}
+          touched={formik.touched}
         />
         <TextField
           type='password'
@@ -73,7 +73,7 @@ const ResetPasswordForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.errors.confirmPassword}
-          touched={formik.touched.confirmPassword}
+          touched={formik.touched}
         />
         <button
           className={styles.resetPasswordForm__button}

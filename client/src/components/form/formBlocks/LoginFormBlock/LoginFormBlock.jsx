@@ -82,8 +82,8 @@ const LoginFormBlock = ({type}) => {
           value={formik.values.email.toLowerCase()}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          touched={formik.touched}
           error={formik.errors.email}
-          touched={formik.touched.email}
         />
         <TextField
           type='password'
@@ -93,8 +93,8 @@ const LoginFormBlock = ({type}) => {
           value={formik.values.password}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          touched={formik.touched}
           error={formik.errors.password}
-          touched={formik.touched.password}
         />
         <CheckboxField
           name='rememberMe'
@@ -107,7 +107,7 @@ const LoginFormBlock = ({type}) => {
           type='submit'
           title = 'Sign in'
           aria-label='button confirm sign in'
-          disabled={!formik.isValid || !formik.dirty}
+          disabled={!formik.isValid}
           className={styles.loginFormBlock__button}
         >{
           (isLoading && isRegularLogin) ? <LoaderIconSmall/>:<span>
