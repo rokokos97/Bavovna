@@ -4,9 +4,9 @@ import ProposeBlock from './ProposeBlock/ProposeBlock';
 import FashionBlock from './FashionBlock/FashionBlock';
 
 import styles from './AboutUsPage.module.scss';
-import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
 import {useNavigate} from 'react-router-dom';
 import useDeviceDetect from '../../utils/useDeviceDetect';
+import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
 
 const AboutUsPage = () => {
   const navigate = useNavigate();

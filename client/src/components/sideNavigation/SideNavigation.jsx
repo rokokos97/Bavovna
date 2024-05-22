@@ -3,10 +3,10 @@ import styles from './SideNavigation.module.scss';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useDeviceDetect from '../../utils/useDeviceDetect';
-import BreadcrumbsNavigation from '../breadcrumbsNavigation/BreadcrumbsNavigation';
 import ChevronUp from '../svg/ChevronUp/ChevronUp';
 import Page404 from '../../pages/Page404/Page404';
 import CompleteOrderPage from '../../pages/CompleteOrderPage/CompleteOrderPage';
+import BreadcrumbsNavigation from '../BreadcrumbsNavigation/BreadcrumbsNavigation';
 
 const SideNavigation = ({options, navOptions}) => {
   const navigate = useNavigate();

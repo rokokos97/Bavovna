@@ -19,8 +19,8 @@ import {useNavigate, useParams} from 'react-router-dom';
 import {getItemsById, getItemsList} from '../../store/itemsSlice';
 import Loader from '../../components/Loader/Loader';
 import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
-import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
 import useDeviceDetect from '../../utils/useDeviceDetect';
+import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
 
 const CardContext = () => {
   const {id} = useParams();

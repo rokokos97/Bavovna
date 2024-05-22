@@ -3,9 +3,9 @@ import HeadShopPageBlock from './HeadShopPageBlock/HeadShopPageBlock';
 import SelectionBlock from './selectionBlock/SelectionBlock';
 import CardsCatalogBlock from './CardsCatalogBlock/CardsCatalogBlock';
 import styles from './shopPage.module.scss';
-import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
 import useDeviceDetect from '../../utils/useDeviceDetect';
 import {useNavigate} from 'react-router-dom';
+import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
 
 const ShopPageContext = () => {
   const navigate = useNavigate();
