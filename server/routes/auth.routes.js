@@ -68,17 +68,16 @@ router.post('/signUp', [
           <img width="212" height="15" src="https://anvovab.space/api/uploads/logo.jpg" alt="logo"/>
         </a>
       </section>
-      <section style="padding: 24px;">
+      <section style="padding: 24px;" >
         <h2 style="font-size: 20px; font-weight: 500; font-family: 'Poppins',sans-serif; text-transform: uppercase; text-decoration: none margin-bottom: 20px;">
           HELLO!</h2>
         <p style="font-size: 16px; font-weight: 400; font-family: 'Poppins',sans-serif; line-height: 1.2;">
           Thank you for registering on our website! To complete your registration, please confirm your email address by clicking below.
         </p>
-        <div style="width: 365px; display: block; margin-top: 32px; margin-left:190px;">
-          <a href="${verifyEmailURL}" style="font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; text-transform: uppercase; padding: 16px 24px; background-color: #040404; color: #fafafa; display: inline-block; text-decoration: none;">
-            Confirm Email
-          </a>
-        </div>
+        <a href="${verifyEmailURL}"
+        style="display: inline-block; margin-left: 190px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; text-transform: uppercase; padding: 16px 24px; background-color: #040404; color: #fafafa; text-decoration: none;">
+          Confirm Email
+        </a>
         <p style="font-size: 16px; font-weight: 400; font-family: 'Poppins', sans-serif; line-height: 1.4; margin-bottom: 32px;">
           If you did not create an account with us, please disregard this email.<br/>
           We look forward to having you as part of our community.
