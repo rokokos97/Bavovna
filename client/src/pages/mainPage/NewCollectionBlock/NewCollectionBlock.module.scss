@@ -1,12 +1,15 @@
 @import '../../../styles/variables.module';
 .newCollectionBlock {
-  //max-height: 84.1rem;
+  max-height: 84.1rem;
   position: relative;
 
   .newCollectionBlock__image {
     display: block;
     width: 100%;
     position: relative;
+    img {
+      width: 100%;
+    }
 
     &::after {
       content: '';
@@ -77,6 +80,9 @@
   .newCollectionBlock {
     .newCollectionBlock__image {
       width: 100%;
+      img {
+        width: 100%;
+      }
     }
     .newCollectionBlock__section {
       gap: 2.4rem;
