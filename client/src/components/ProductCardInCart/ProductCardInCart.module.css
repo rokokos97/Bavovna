@@ -159,9 +159,6 @@
   align-self: end;
   background: transparent;
 }
-.productCardInCart[type="1"] .productCardInCart__infoBlock .productCardInCart__sizeColorQuantityDeleteBlock .productCardInCart__buttonBlock div svg path {
-  stroke: #727272;
-}
 
 .productCardInCart[type="2"] {
   width: 100%;
