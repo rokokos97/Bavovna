@@ -25,8 +25,6 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
       setIsSearch(true);
     }
   }, [location]);
-  console.log('pathname', location.pathname);
-  console.log('searsh', location.search);
   const handleIsSearch = () => {
     setIsSearch(!isSearch);
     if (!isSearch) navigate('./shop');
