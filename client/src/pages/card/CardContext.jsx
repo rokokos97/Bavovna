@@ -86,6 +86,8 @@ const CardContext = () => {
       setShowCheckoutModal(true);
       hideBodyOverflow();
     }
+    setSelectedColor('');
+    setSelectedSize('');
   };
 
   const changeImage = (imgUrl) => {
@@ -166,6 +168,7 @@ const CardContext = () => {
                 </div>
                 <dir className={styles.color}>
                   <ColorsList
+                    key={showCheckoutModal}
                     itemColors={color}
                     selectedColor={selectedColor}
                     setSelectedColor={setSelectedColor}
@@ -173,6 +176,7 @@ const CardContext = () => {
                 </dir>
                 <div className={styles.size}>
                   <SizesList
+                    key={showCheckoutModal}
                     sizes={size}
                     selectedSize={selectedSize}
                     setSelectedSize={setSelectedSize}

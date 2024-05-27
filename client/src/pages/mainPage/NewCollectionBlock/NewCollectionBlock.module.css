@@ -1,10 +1,14 @@
 .newCollectionBlock {
+  max-height: 84.1rem;
   position: relative;
 }
 .newCollectionBlock .newCollectionBlock__image {
   display: block;
   width: 100%;
   position: relative;
+}
+.newCollectionBlock .newCollectionBlock__image img {
+  width: 100%;
 }
 .newCollectionBlock .newCollectionBlock__image::after {
   content: "";
@@ -167,6 +171,9 @@
 }
 @media (max-width: 767px) {
   .newCollectionBlock .newCollectionBlock__image {
+    width: 100%;
+  }
+  .newCollectionBlock .newCollectionBlock__image img {
     width: 100%;
   }
   .newCollectionBlock .newCollectionBlock__section {

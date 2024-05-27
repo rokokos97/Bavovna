@@ -36,7 +36,7 @@ const HeaderContent = ({isLoggedIn, user, cart}) => {
         </Link>
       </section>
       {isSearch ? (
-        <HeaderInput handleIsSearch={handleIsSearch} />
+        <HeaderInput handleIsSearch={handleIsSearch}/>
       ) : (
         <>
           <section className={styles.headerContent__header}>
