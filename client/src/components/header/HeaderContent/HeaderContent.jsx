@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import LogoIcon from '../../svg/LogoIcon/LogoIcon';
@@ -10,17 +10,23 @@ import HeaderInput from '../HeaderInput/HeaderInput';
 import EmptyHeartIcon from '../../svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
 import MenuIcon from '../../svg/MobileIcons/MenuIcon/MenuIcon';
 import CloseIcon from '../../svg/CloseIcon/CloseIcon';
+import {SearchContext} from '../../../App/App';
 
 const HeaderContent = ({isLoggedIn, user, cart}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenu, setIsMenu] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
+  const {searchValue} = useContext(SearchContext);
   useEffect(() => {
     if (location.pathname !== '/shop' || location.search !== '') {
       setIsSearch(false);
+    } else if (location.pathname === '/shop' && searchValue!=='') {
+      setIsSearch(true);
     }
   }, [location]);
+  console.log('pathname', location.pathname);
+  console.log('searsh', location.search);
   const handleIsSearch = () => {
     setIsSearch(!isSearch);
     if (!isSearch) navigate('./shop');
