@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {SearchContext} from '../../../App/App';
 import useDeviceDetect from '../../../utils/useDeviceDetect';
@@ -10,12 +10,17 @@ import styles from './HeaderInput.module.scss';
 const HeaderInput = ({handleIsSearch}) => {
   const {searchValue, setSearchValue} = useContext(SearchContext);
   const {isMobile} = useDeviceDetect();
+  const inputRef = useRef(null);
 
   const onCloseSearch = () => {
     handleIsSearch();
     setSearchValue('');
   };
-
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
   return (
     <div className={styles.inputContainer}>
       <div className={styles.newsLetterBlock__inputSection}>
@@ -31,6 +36,7 @@ const HeaderInput = ({handleIsSearch}) => {
           <SearchIcon />
         )}
         <input
+          ref={inputRef}
           value={searchValue}
           type='text'
           placeholder='Search'
@@ -63,6 +69,7 @@ const HeaderInput = ({handleIsSearch}) => {
 };
 
 HeaderInput.propTypes = {
+  inputRef: PropTypes.any,
   handleIsSearch: PropTypes.func,
 };
 
