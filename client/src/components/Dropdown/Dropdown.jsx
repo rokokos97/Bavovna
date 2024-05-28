@@ -6,7 +6,6 @@ import styles from './Dropdown.module.scss';
 
 const Dropdown = ({id, placeholder, name, inner}) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleIsOpen = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
@@ -24,11 +23,13 @@ const Dropdown = ({id, placeholder, name, inner}) => {
           {!isOpen ? <ChevronDown /> : <ChevronUp />}
         </div>
       </button>
-      {isOpen && (
-        <div data-target={name} className={styles.description}>
-          {inner}
-        </div>
-      )}
+      <div
+        data-target={name}
+        //          className={styles.description}
+        className={`${styles.description} ${isOpen ? styles.show : ''}`}
+      >
+        {inner}
+      </div>
     </div>
   );
 };
