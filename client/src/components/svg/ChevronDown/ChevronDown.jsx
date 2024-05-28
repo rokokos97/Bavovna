@@ -1,8 +1,10 @@
 import React from 'react';
+import styles from './ChevronDown.module.scss';
+
 
 const ChevronDown = () => {
   return (
-    <div>
+    <div className={styles.chevronDown}>
       <svg
         width='24'
         height='24'
