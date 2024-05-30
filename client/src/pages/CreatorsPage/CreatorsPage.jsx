@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CreatorsPage.module.scss';
-import LinkedinIcon from '../../components/svg/socialMediaIcons/LinkedinIcon/LinkedinIcon';
+import LinkedinIcon from '../../components/svg/socialMediaIcons/LinkedinIcon/LinkedinGreenIcon/LinkedinIcon';
 import BehanceIcon from '../../components/svg/socialMediaIcons/BehanceIcon/BehanceIcon';
 import GithubIcon from '../../components/svg/socialMediaIcons/GithubIcon/GithubIcon';
 import TelegramIcon from '../../components/svg/socialMediaIcons/TelegramIcon/TelegramIcon';

@@ -8,6 +8,7 @@ import {getUserLoadingStatus} from '../../../../store/userSlice';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 import {NavLink} from 'react-router-dom';
+import LinkedinIcon from '../../../svg/socialMediaIcons/LinkedinIcon/LinkedinBlueIcon/LinkedinIcon';
 
 const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSignUp}) => {
   const isLoading = useSelector(getUserLoadingStatus);
@@ -109,7 +110,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           <span>or</span>
           <div></div>
         </div>
-        <div>
+        <div className={styles.registerFormBlock__buttonsBlock}>
           <div
             id='signUpDiv'>
           </div>
@@ -121,9 +122,28 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
               (isLoading &&isGoogleSignUp) ?
                 <LoaderIconSmall/>:
                 <>
-                  <GoogleIcon />
+                  <div className={styles.registerFormBlock__socialIcon}>
+                    <GoogleIcon />
+                  </div>
                   <span>
                       Sign up with Google
+                  </span>
+                </>
+            }
+          </button>
+          <button className={styles.registerFormBlock__googleButton}
+            type='button'
+            onClick={() => {}}
+          >
+            {
+              (isLoading &&isGoogleSignUp) ?
+                <LoaderIconSmall/>:
+                <>
+                  <div className={styles.registerFormBlock__socialIcon}>
+                    <LinkedinIcon/>
+                  </div>
+                  <span>
+                      Sign up with Linkedin
                   </span>
                 </>
             }

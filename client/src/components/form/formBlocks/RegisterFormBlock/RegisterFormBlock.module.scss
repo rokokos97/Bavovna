@@ -28,12 +28,25 @@
     @include divider();
   }
 
-  .registerFormBlock__googleButton {
+  .registerFormBlock__buttonsBlock {
     display: flex;
-    gap: 1.2rem;
-    border: 1px solid $black;
-    @include button (41rem);
-    @include buttonWhite();
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+
+    .registerFormBlock__googleButton {
+      display: flex;
+      gap: 1.2rem;
+      border: 1px solid $black;
+      @include button (41rem);
+      @include buttonWhite();
+
+      .registerFormBlock__socialIcon {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
   }
 }
 @media (min-width: 769px) and (max-width: 1120px) {
