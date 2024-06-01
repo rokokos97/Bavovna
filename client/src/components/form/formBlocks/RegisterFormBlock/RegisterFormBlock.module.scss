@@ -105,25 +105,25 @@
         @include button-mobile(32.8rem);
       }
     }
-  }
-  .registerFormBlock__socialButtonsBlock {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.6rem;
-
-    .registerFormBlock__divider {
-      margin-top: 3.2rem;
-      @include divider();
-    }
-
-    .registerFormBlock__googleButton {
+    .registerFormBlock__socialButtonsBlock {
       display: flex;
-      gap: 1.2rem;
-      border: 1px solid $black;
-      @include buttonWhite();
-      @include button-mobile(32.8rem);
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.6rem;
+
+      .registerFormBlock__divider {
+        margin-top: 3.2rem;
+        @include divider();
+      }
+
+      .registerFormBlock__googleButton {
+        display: flex;
+        gap: 1.2rem;
+        border: 1px solid $black;
+        @include buttonWhite();
+        @include button-mobile(32.8rem);
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import styles from './RegisterForm.module.scss';
 import {useFormik} from 'formik';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getError, getResponse, signUpUser, signUpWithGoogle} from '../../../store/userSlice';
+import {getError, getResponse, signUpUser, signUpWithGoogle, signUpWithLinkedin} from '../../../store/userSlice';
 import {useGoogleLogin} from '@react-oauth/google';
 import {validationSchemaRegisterForm} from '../../../utils/validationSchema';
 import googleService from '../../../services/google.service';
@@ -56,6 +56,9 @@ const RegisterForm = () => {
       });
     },
   });
+  const linkedinRegister = () => {
+    dispatch(signUpWithLinkedin());
+  };
   const closeModal = () => {
     setShowVerifyEmailModal(false);
     showBodyOverflow();
@@ -90,6 +93,7 @@ const RegisterForm = () => {
         googleRegister={googleRegister}
         isRegularSignUp={isRegularSignUp}
         isGoogleSignUp={isGoogleSignUp}
+        linkedinRegister={linkedinRegister}
       />
       <p className={styles.registerForm__backToSignIn}>
         Already have an account?&nbsp;

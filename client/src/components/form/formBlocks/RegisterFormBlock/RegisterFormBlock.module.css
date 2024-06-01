@@ -739,14 +739,14 @@
   .registerFormBlock .registerFormBlock__form .registerFormBlock__button:disabled span {
     color: #9b9b9b;
   }
-  .registerFormBlock__socialButtonsBlock {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.6rem;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__divider {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__divider {
     margin-top: 3.2rem;
     display: flex;
     justify-content: center;
@@ -754,18 +754,18 @@
     gap: 0.4rem;
     align-self: stretch;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__divider div {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__divider div {
     width: 50%;
     height: 0.1rem;
     background: #d7d7d7;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__divider span {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__divider span {
     color: #000000;
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton {
     display: flex;
     gap: 1.2rem;
     border: 1px solid #000000;
@@ -782,7 +782,7 @@
     overflow: hidden;
     padding: 1.2rem 1.2rem;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton span {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton span {
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
@@ -790,19 +790,19 @@
     text-decoration: none;
     color: #000000;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::before {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::before {
     background: rgba(169, 223, 203, 0.3);
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::after {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::after {
     background: #a9dfcb;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:hover::before {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:hover::before {
     background: rgba(169, 223, 203, 0.3);
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:active::after {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:active::after {
     border: 1px solid rgba(169, 223, 203, 0.3);
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton span {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton span {
     font-weight: 600;
     font-size: 16px;
     line-height: 140%;
@@ -810,7 +810,7 @@
     text-align: center;
     position: relative;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::before {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::before {
     content: "";
     width: 4.8rem;
     height: 4.8rem;
@@ -822,7 +822,7 @@
     top: 0.4rem;
     left: 14rem;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::after {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton::after {
     content: "";
     width: 0.6rem;
     height: 0.6rem;
@@ -834,7 +834,7 @@
     top: 2.5rem;
     left: 16.1rem;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:hover::before {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:hover::before {
     content: "";
     width: 36.08rem;
     height: 36.08rem;
@@ -843,7 +843,7 @@
     top: -15.64rem;
     left: -1rem;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:active::after {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:active::after {
     content: "";
     width: 36.08rem;
     height: 36.08rem;
@@ -854,16 +854,16 @@
     top: -15.64rem;
     left: -1.1rem;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:focus {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:focus {
     border: 3px solid #5a9b83;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:disabled {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:disabled {
     border-color: #868686;
     background: #c3c3c3;
     pointer-events: none;
     cursor: not-allowed;
   }
-  .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:disabled span {
+  .registerFormBlock .registerFormBlock__socialButtonsBlock .registerFormBlock__googleButton:disabled span {
     color: #9b9b9b;
   }
 }

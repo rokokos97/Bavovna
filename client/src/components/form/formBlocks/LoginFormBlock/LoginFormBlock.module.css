@@ -209,6 +209,10 @@
 .loginFormBlock .loginFormBlock__googleButton:active::after {
   border: 1px solid rgba(169, 223, 203, 0.3);
 }
+.loginFormBlock .loginFormBlock__googleButton .loginFormBlock__googleIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
 .loginFormBlock .divider {
   display: flex;
   justify-content: center;
