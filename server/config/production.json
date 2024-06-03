@@ -19,12 +19,6 @@
     "password": "Bavovna_1234",
     "HOST": "bavovna.space",
     "PORT": "465"
-  },
-  "linkedin": {
-    "clientId": "77dtp7s1xxadpq",
-    "PrimaryClientSecret": "WPL_AP0.FPC2Ns7JwbYNWzFR.NDA5OTc1MTAzMQ==",
-    "callbackURL": "https://anvovab/api/auth/linkedin/callback",
-    "URLENCODE": "https%3A%2F%2Fanvovab.space"
   }
 }
 
