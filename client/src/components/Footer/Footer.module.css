@@ -67,14 +67,16 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.footerTopRight button {
+.footerTopRight .footerLogo {
+  width: 21.2rem;
+  height: 1.5rem;
   background: transparent;
   border: none;
 }
-.footerTopRight button div svg path {
+.footerTopRight .footerLogo div svg path {
   fill: #fafafa !important;
 }
-.footerTopRight button:hover {
+.footerTopRight .footerLogo:hover {
   cursor: pointer;
 }
 
@@ -171,7 +173,9 @@
   .footerTop h3 {
     padding-bottom: 1.6rem;
   }
-  .footerTopRight button {
+  .footerTopRight .footerLogo {
+    width: 15.4rem;
+    height: 1.1rem;
     position: absolute;
     top: 2.2rem;
   }

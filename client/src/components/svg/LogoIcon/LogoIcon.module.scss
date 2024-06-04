@@ -1,13 +1,10 @@
 .logoIcon {
-  width: 21.2rem;
-  height: 1.5rem;
-}
-@media (max-width: 430px) {
-  .logoIcon {
-    width: 15.4rem;
-    height: 1.1rem;
-    svg{
-      width: 100%;
-    }
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg{
+    width: 100%;
   }
 }

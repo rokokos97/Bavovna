@@ -116,6 +116,7 @@ const Footer = () => {
           </section>
           <section className={styles.footerTopRight}>
             <button
+              className={styles.footerLogo}
               onClick={navigateToHome}
               type='button'
               aria-label='Return to homepage'

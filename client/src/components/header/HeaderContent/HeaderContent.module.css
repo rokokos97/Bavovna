@@ -155,6 +155,8 @@
 }
 
 .headerContent__logo {
+  width: 21.2rem;
+  height: 1.5rem;
   position: absolute;
   top: 65%;
   left: 50%;
@@ -196,6 +198,8 @@
     position: relative;
   }
   .headerContent__logo {
+    width: 15.4rem;
+    height: 1.1rem;
     left: 0;
     transform: translate(12%, -40%);
     -ms-transform: translate(12%, -40%);
