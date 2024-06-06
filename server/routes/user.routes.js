@@ -72,4 +72,33 @@ router.get('/:userId', auth, async (req, res) => {
     });
   }
 });
+router.delete('/:userId', auth, async (req, res) => {
+  try {
+    const {userId} = req.params;
+    const existingUser = await User.findOne({_id: userId});
+    if (!existingUser) {
+      return res.status(400).json({
+        response: {
+          message: 'USER_NOT_FOUND',
+          code: 400,
+        },
+      });
+    }
+    await User.findByIdAndDelete(userId);
+    res.send({
+      response: {
+        message: 'USER_DELETED',
+        code: 200,
+      }
+    });
+  } catch (error) {
+    return res.status(500).json({
+      response: {
+        errors: error,
+        code: 500,
+        message: 'SERVER_ERROR',
+      },
+    });
+  }
+});
 module.exports = router;
