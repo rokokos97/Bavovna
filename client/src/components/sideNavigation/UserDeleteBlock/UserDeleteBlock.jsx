@@ -1,22 +1,32 @@
 import React, {useState} from 'react';
 import styles from './UserDeleteBlock.module.scss';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {Modal} from '../../modal';
 import {showBodyOverflow} from '../../../utils/modal.service';
 import DeleteUserModal from '../../modal/modalContent/DeleteUserModal/DeleteUserModal';
+import {useDispatch} from 'react-redux';
+import {deleteUser} from '../../../store/userSlice';
+import InformModal from '../../modal/modalContent/informModal/InformModal';
 
 
 const UserDeleteBlock = () => {
+  const dispatch = useDispatch();
+  const {id} = useParams();
+  const navigate = useNavigate();
   const [showConfirmDeleteUserModal, setShowConfirmDeleteUserModal] = useState(false);
   const [showRedirectModal, setShowRedirectModal] = useState(false);
-  const {id} = useParams();
   const handleDeleteUser = () => {
-    console.log('delete user');
-    console.log(id);
+    setShowConfirmDeleteUserModal(false);
+    setShowRedirectModal(true);
+    dispatch(deleteUser(id));
+  };
+  const closeInfoModal = () => {
+    setShowRedirectModal(false);
+    showBodyOverflow();
+    navigate('/');
   };
   const closeModal = () => {
     setShowConfirmDeleteUserModal(false);
-    setShowRedirectModal(false);
     showBodyOverflow();
   };
   return (
@@ -33,7 +43,8 @@ const UserDeleteBlock = () => {
           handleCloseModal={closeModal}
         />
       </Modal>
-      <Modal isOpen={showRedirectModal} handleCloseModal={closeModal}>
+      <Modal isOpen={showRedirectModal} handleCloseModal={closeInfoModal}>
+        <InformModal handleCloseModal={closeInfoModal}/>
       </Modal>
     </div>
   );

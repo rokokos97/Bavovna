@@ -1,0 +1,35 @@
+@import "../../../../styles/variables.module.scss";
+.informModal {
+  width: 70.4rem;
+  height: auto;
+  background-color: $white;
+  padding: $xs-spacing $l-spacing 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  .informModal__closeButton {
+    width: 3.2rem;
+    height: 3.2rem;
+    justify-self: flex-start;
+    align-self: flex-end;
+    background: $white;
+  }
+
+  .informModal__contentBlock {
+    width: 63rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: $xxl-spacing;
+
+    .informModal__content {
+      @include headline-4();
+    }
+
+    .informModal__button {
+      @include buttonBlack();
+      @include button(24rem);
+    }
+  }
+}
