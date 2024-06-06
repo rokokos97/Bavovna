@@ -8,10 +8,10 @@ import {getUserLoadingStatus} from '../../../../store/userSlice';
 import LoaderIconSmall from '../../../svg/loaderIcons/LoaderSmallIcon/LoaderIconSmall';
 import GoogleIcon from '../../../svg/socialMediaIcons/GoogleIcon/GoogleIcon';
 import {NavLink} from 'react-router-dom';
-import LinkedinIcon from '../../../svg/socialMediaIcons/LinkedinIcon/LinkedinBlueIcon/LinkedinIcon';
 
-const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSignUp, linkedinRegister}) => {
+const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSignUp}) => {
   const isLoading = useSelector(getUserLoadingStatus);
+
   return (
     <section className={styles.registerFormBlock} data-testid="RegisterFormBlock">
       <form
@@ -131,23 +131,6 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
                 </>
             }
           </button>
-          <button className={styles.registerFormBlock__googleButton}
-            type='button'
-            onClick={() => linkedinRegister()}
-          >
-            {
-              (isLoading &&isGoogleSignUp) ?
-                <LoaderIconSmall/>:
-                <>
-                  <div className={styles.registerFormBlock__socialIcon}>
-                    <LinkedinIcon/>
-                  </div>
-                  <span>
-                      Sign up with Linkedin
-                  </span>
-                </>
-            }
-          </button>
         </div>
       </div>
     </section>
@@ -156,7 +139,6 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
 RegisterFormBlock.propTypes = {
   formik: PropTypes.object.isRequired,
   googleRegister: PropTypes.func.isRequired,
-  linkedinRegister: PropTypes.func.isRequired,
   isGoogleSignUp: PropTypes.bool,
   isRegularSignUp: PropTypes.bool,
 };
