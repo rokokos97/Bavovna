@@ -10,7 +10,16 @@ import Cookies from 'js-cookie';
 if (localStorageService.getAccessToken()) {
   transferDataToSessionStorage();
 }
-
+export const deleteUser = createAsyncThunk(
+    'user/deleteUser',
+    async (userId, {rejectWithValue}) => {
+      try {
+        return await userService.delete(userId);
+      } catch (error) {
+        return rejectWithValue(error.response.data.response|| 'SERVER_ERROR');
+      }
+    },
+);
 export const signUpUser = createAsyncThunk(
     'user/signUp',
     async (userData, {rejectWithValue})=> {
@@ -159,6 +168,24 @@ const usersSlice = createSlice({
   },
   extraReducers: (builder)=> {
     builder
+        .addCase(deleteUser.pending, (state)=> {
+          state.isLoading = true;
+          state.error = null;
+          state.response = null;
+        })
+        .addCase(deleteUser.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.error = null;
+          state.response = action.payload;
+          state.user = null;
+          state.isLoggedIn = false;
+          state.auth = null;
+        })
+        .addCase(deleteUser.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+          state.response = null;
+        })
         .addCase(signUpUser.pending, (state)=> {
           state.isLoading = true;
           state.error = null;
