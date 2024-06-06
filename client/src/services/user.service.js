@@ -52,6 +52,7 @@ const userService = {
           },
         },
     );
+    sessionStorageService.removeAuthData();
     return data;
   },
 };
