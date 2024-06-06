@@ -11,6 +11,7 @@ import {NavLink} from 'react-router-dom';
 
 const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSignUp}) => {
   const isLoading = useSelector(getUserLoadingStatus);
+
   return (
     <section className={styles.registerFormBlock} data-testid="RegisterFormBlock">
       <form
@@ -109,7 +110,7 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
           <span>or</span>
           <div></div>
         </div>
-        <div>
+        <div className={styles.registerFormBlock__buttonsBlock}>
           <div
             id='signUpDiv'>
           </div>
@@ -121,7 +122,9 @@ const RegisterFormBlock = ({formik, googleRegister, isRegularSignUp, isGoogleSig
               (isLoading &&isGoogleSignUp) ?
                 <LoaderIconSmall/>:
                 <>
-                  <GoogleIcon />
+                  <div className={styles.registerFormBlock__socialIcon}>
+                    <GoogleIcon />
+                  </div>
                   <span>
                       Sign up with Google
                   </span>

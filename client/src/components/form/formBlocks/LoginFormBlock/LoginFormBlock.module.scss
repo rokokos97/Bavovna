@@ -22,6 +22,10 @@
     margin: 0 auto;
     @include button (41rem);
     @include buttonWhite();
+    .loginFormBlock__googleIcon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
   .divider {
     @include divider();

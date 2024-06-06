@@ -145,7 +145,9 @@ const LoginFormBlock = ({type}) => {
               (isLoading && isLoadingGoogle) ?
                 <LoaderIconSmall /> :
                   <>
-                    <GoogleIcon />
+                    <div className={styles.loginFormBlock__googleIcon}>
+                      <GoogleIcon />
+                    </div>
                     <span>
                       Sign in with Google
                     </span>

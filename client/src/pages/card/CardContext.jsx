@@ -21,7 +21,6 @@ import Loader from '../../components/Loader/Loader';
 import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
 import useDeviceDetect from '../../utils/useDeviceDetect';
 import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
-
 const CardContext = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -225,7 +224,14 @@ const CardContext = () => {
                   id='rightArrowDropdown'
                   placeholder='Shipping and returns'
                   name='shipping'
-                  inner='Lorem ipsum dolor sit amen consectetur'
+                  inner=' This site was created solely as part of training and to acquire
+        practical skills. The site does not have a commercial basis and none of
+        the products are for sale.
+        Please note that all delivery fees are subject to change based on
+            location, order value, and any ongoing promotions or discounts. Stay
+            updated on our website for the latest information regarding delivery
+            costs and promotions. At BAVOVNA, we prioritize transparency and
+            strive to provide you with the best shopping experience.'
                 />
               </div>
             </div>

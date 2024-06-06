@@ -7,15 +7,20 @@
   align-items: flex-start;
   gap: 0.8rem;
   cursor: pointer;
+  .imageBox {
+    width: 19.3rem;
+    height: 14rem;
 
-  img {
-    width: 100%;
-    transition: scale 0.3s ease-in-out;
-    object-fit: contain;
-  }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: fill;
+      transition: scale 0.3s ease-in-out;
+    }
 
-  &:hover img {
-    scale: 1.025;
+    &:hover img {
+      scale: 1.025;
+    }
   }
 
   .categoryPreviewCard__title {
@@ -23,15 +28,24 @@
    @include body-2();
   }
 }
-@media (min-width: 581px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .categoryPreviewCard {
     max-width: 22.3rem;
     width: 100%;
+
+    .imageBox {
+      width: 22.3rem;
+      height: 14rem;
+    }
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .categoryPreviewCard {
     max-width: 32.8rem;
     width: 100%;
+    .imageBox {
+      width: 32.8rem;
+      height: 20rem;
+    }
   }
 }

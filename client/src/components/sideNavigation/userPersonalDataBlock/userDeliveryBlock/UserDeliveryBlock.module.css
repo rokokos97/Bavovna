@@ -28,6 +28,7 @@
   text-align: start;
 }
 .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button {
+  background: #000000;
   display: flex;
   flex-direction: row;
   column-gap: 0.4rem;
@@ -38,7 +39,25 @@
   position: relative;
   overflow: hidden;
   padding: 1.6rem 2.4rem;
-  background: #000000;
+}
+.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::before {
+  background: #5a9b83;
+}
+.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::after {
+  background: #1a6449;
+}
+.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:hover::before {
+  background: #5a9b83;
+}
+.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:active::after {
+  border: 1px solid #5a9b83;
 }
 .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
   font-weight: 600;
@@ -104,25 +123,6 @@
 .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:disabled span {
   color: #9b9b9b;
 }
-.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 140%;
-  text-transform: uppercase;
-  color: #fafafa;
-}
-.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::before {
-  background: #5a9b83;
-}
-.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::after {
-  background: #1a6449;
-}
-.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:hover::before {
-  background: #5a9b83;
-}
-.userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:active::after {
-  border: 1px solid #5a9b83;
-}
 
 @media (min-width: 768px) and (max-width: 1280px) {
   .userDeliveryBlock {
@@ -144,6 +144,7 @@
     text-align: start;
   }
   .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button {
+    background: #000000;
     display: flex;
     flex-direction: row;
     column-gap: 0.4rem;
@@ -154,7 +155,25 @@
     position: relative;
     overflow: hidden;
     padding: 1.2rem 1.2rem;
-    background: #000000;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::before {
+    background: #5a9b83;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::after {
+    background: #1a6449;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:hover::before {
+    background: #5a9b83;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:active::after {
+    border: 1px solid #5a9b83;
   }
   .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
     font-weight: 600;
@@ -219,25 +238,6 @@
   }
   .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:disabled span {
     color: #9b9b9b;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 140%;
-    text-transform: uppercase;
-    color: #fafafa;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::before {
-    background: #5a9b83;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::after {
-    background: #1a6449;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:hover::before {
-    background: #5a9b83;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:active::after {
-    border: 1px solid #5a9b83;
   }
 }
 @media (max-width: 767px) {
@@ -260,6 +260,7 @@
     text-align: start;
   }
   .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button {
+    background: #000000;
     display: flex;
     flex-direction: row;
     column-gap: 0.4rem;
@@ -270,7 +271,25 @@
     position: relative;
     overflow: hidden;
     padding: 1.2rem 1.2rem;
-    background: #000000;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #fafafa;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::before {
+    background: #5a9b83;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::after {
+    background: #1a6449;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:hover::before {
+    background: #5a9b83;
+  }
+  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:active::after {
+    border: 1px solid #5a9b83;
   }
   .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
     font-weight: 600;
@@ -335,25 +354,6 @@
   }
   .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:disabled span {
     color: #9b9b9b;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button span {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 140%;
-    text-transform: uppercase;
-    color: #fafafa;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::before {
-    background: #5a9b83;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button::after {
-    background: #1a6449;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:hover::before {
-    background: #5a9b83;
-  }
-  .userDeliveryBlock .userDeliveryBlock__section .userDeliveryBlock__column .userDeliveryBlock__button:active::after {
-    border: 1px solid #5a9b83;
   }
 }
 

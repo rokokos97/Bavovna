@@ -43,5 +43,17 @@ const userService = {
     );
     return data;
   },
+  delete: async (payload) => {
+    const token = sessionStorageService.getAccessToken();
+    const {data} = await httpService.delete(
+        userEndpoint + payload, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+    );
+    sessionStorageService.removeAuthData();
+    return data;
+  },
 };
 export default userService;

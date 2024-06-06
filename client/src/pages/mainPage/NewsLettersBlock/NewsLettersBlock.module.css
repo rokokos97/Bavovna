@@ -195,7 +195,8 @@
   .newsLettersBlock {
     height: 36rem;
     row-gap: 0;
-    background-image: none;
+    background: url("../../../../public/img/images/NewsLetter/mobileNewsletterBlock.png") no-repeat;
+    background-size: cover;
   }
   .newsLettersBlock .newsLetterBlock__messageLine {
     height: 2.6rem;

@@ -1,0 +1,82 @@
+@import "../../../../styles/variables.module.scss";
+
+.deleteUserModal {
+
+  width: 70.4rem;
+  height: auto;
+  background-color: $white;
+  padding: $xs-spacing $l-spacing 8rem 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+
+
+  .deleteUserModal__closeButton {
+    width: 3.2rem;
+    height: 3.2rem;
+    justify-self: flex-start;
+    align-self: flex-end;
+    background: $white;
+  }
+  .deleteUserModal__contentBlock {
+    width: 63rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: $xxl-spacing;
+
+    .deleteUserModal__title {
+      @include headline-4();
+    }
+    .deleteUserModal__text {
+      @include body-3();
+    }
+    .deleteUserModal__buttons {
+      display: flex;
+      align-items: center;
+      gap: 22rem;
+
+      .deleteUserModal__cancelButton {
+        @include buttonTransparent();
+        @include button(14rem);
+      }
+      .deleteUserModal__loginButton {
+        @include buttonBlack();
+        @include button(24rem);
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .deleteUserModal {
+    width: 100%;
+    padding: $l-spacing;
+    .deleteUserModal__closeButton {
+     display: none;
+    }
+    .deleteUserModal__contentBlock {
+      width: 100%;
+
+      .deleteUserModal__title {
+        width: 24rem;
+        @include headline-9();
+      }
+      .deleteUserModal__text {
+      }
+      .deleteUserModal__buttons {
+        display: flex;
+        align-items: center;
+        gap: unset;
+        justify-content: space-between;
+
+        .deleteUserModal__cancelButton {
+          @include button-mobile(10rem);
+        }
+        .deleteUserModal__loginButton {
+          @include button-mobile(10rem);
+        }
+      }
+    }
+  }
+}
+

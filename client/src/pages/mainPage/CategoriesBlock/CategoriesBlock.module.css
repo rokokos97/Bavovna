@@ -22,17 +22,19 @@
   margin: 0 auto;
 }
 
-@media (min-width: 581px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1280px) {
   .categoriesBlock {
     padding: 0 3.2rem;
+    justify-content: center;
   }
   .categoriesBlock__box {
     gap: 1.6rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 767px) {
   .categoriesBlock {
     padding: 0 1.6rem;
     gap: 2.4rem;

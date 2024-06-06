@@ -59,7 +59,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  button {
+  .footerLogo {
+    width: 21.2rem;
+    height: 1.5rem;
     background: transparent;
     border: none;
     div {
@@ -157,7 +159,9 @@
     }
   }
   .footerTopRight {
-    button {
+    .footerLogo {
+      width: 15.4rem;
+      height: 1.1rem;
       position: absolute;
       top: 2.2rem;
     }
