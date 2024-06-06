@@ -33,3 +33,31 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .informModal {
+    width: 100%;
+    padding: $l-spacing;
+    margin-bottom: 4rem;
+
+    .informModal__closeButton {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    .informModal__contentBlock {
+      row-gap: $xl-spacing;
+      width: 100%;
+      align-items: flex-start;
+
+      .informModal__content {
+        width: 24rem;
+        @include headline-9();
+      }
+      .informModal__button {
+        align-self: center;
+        @include button-mobile(18rem);
+      }
+    }
+  }
+}
