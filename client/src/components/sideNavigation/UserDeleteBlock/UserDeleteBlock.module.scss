@@ -5,3 +5,11 @@
         @include button(23rem);
     }
 }
+
+@media (max-width: 767px) {
+    .userDeleteBlock {
+        &__button {
+            @include button-mobile(23rem);
+        }
+    }
+}

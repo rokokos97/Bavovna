@@ -23,8 +23,8 @@
         text-align: start;
       };
       .userDeliveryBlock__button {
-        @include button(19.3rem);
         @include buttonBlack();
+        @include button(19.3rem);
       }
     }
   }
@@ -44,8 +44,8 @@
           text-align: start;
         };
         .userDeliveryBlock__button {
-          @include button-mobile(19.3rem);
           @include buttonBlack();
+          @include button-mobile(19.3rem);
         }
       }
     }
@@ -66,8 +66,8 @@
           text-align: start;
         };
         .userDeliveryBlock__button {
-          @include button-mobile(19.3rem);
           @include buttonBlack();
+          @include button-mobile(19.3rem);
         }
       }
     }
