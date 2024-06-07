@@ -27,10 +27,9 @@
     }
     .newsLetterBlock__closeButton {
       width: 3.2rem;
+      height: 3.2rem;
       display: flex;
       background-color: transparent;
-      position: relative;
-      left: 30rem;
       svg {
         align-self: center;
         path {
@@ -106,7 +105,7 @@
       padding: 1.6rem 0.8rem;
       justify-content: space-between;
       .newsLettersBlock__message {
-        width: 25.3rem;
+        width: 28rem;
         text-align: start;
         @include menu-3();
       }
