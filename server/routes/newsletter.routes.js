@@ -201,4 +201,35 @@ router.post('/', async (req, res) => {
     });
   }
 });
+router.delete('/', async (req, res) => {
+  try {
+    const {email} = req.body;
+    const emailExists = await Newsletter.findOne({email});
+    if (emailExists) {
+      await Newsletter.deleteOne({email});
+      return res.status(200).json({
+        response: {
+          code: 200,
+          message: 'CONFIRM_NEWSLETTER_DELETED',
+        },
+      });
+    }
+    if (!emailExists) {
+      return res.status(400).json({
+        response: {
+          code: 400,
+          message: 'EMAIL_NOT_FOUND',
+        },
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      response: {
+        errors: error,
+        code: 500,
+        message: 'SERVER_ERROR',
+      },
+    });
+  }
+});
 module.exports = router;
