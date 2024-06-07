@@ -13,5 +13,6 @@ const transformErrorMessage = {
   EMAIL_NOT_VERIFIER: 'Please verify your email',
   USER_UPDATE: 'User info has been updated',
   INVALID_TOKEN: 'Token has already been used',
+  CONFIRM_NEWSLETTER_DELETED: 'Your subscription has been canceled',
 };
 export default transformErrorMessage;
