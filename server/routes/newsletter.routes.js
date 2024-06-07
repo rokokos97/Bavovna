@@ -201,7 +201,7 @@ router.post('/', async (req, res) => {
     });
   }
 });
-router.delete('/', async (req, res) => {
+router.post('/unsubscribe/', async (req, res) => {
   try {
     const {email} = req.body;
     const emailExists = await Newsletter.findOne({email});
