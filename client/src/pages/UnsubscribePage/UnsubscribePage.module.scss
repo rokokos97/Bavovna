@@ -1,0 +1,131 @@
+@import "../../styles/variables.module";
+.unsubscribePage {
+  width: 60rem;
+  height: 44.3rem;
+  display: block;
+  margin: 20rem auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 5.6rem;
+  .unsubscribePage__messageLine {
+    width: 100%;
+    height: 4.4rem;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-a-3;
+    color: $white;
+    @include menu-2();
+    .unsubscribePage__message {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+    .unsubscribePage__closeButton {
+      width: 3.2rem;
+      height: 3.2rem;
+      display: flex;
+      background-color: transparent;
+      svg {
+        align-self: center;
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+  .unsubscribePage_form {
+    display: flex;
+    flex-direction: column;
+    width: 60rem;
+    align-items: center;
+    gap: 2.4rem;
+  }
+  .unsubscribePage__title2 {
+    @include headline-2();
+  }
+  .unsubscribePage__content {
+    max-width: 51.8rem;
+    width: 100%;
+    text-align: center;
+    @include headline-10();
+  }
+  .unsubscribePage__inputSection {
+    display: flex;
+    max-width: 63rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+  }
+  .unsubscribePage__button {
+    @include button($large);
+    @include buttonBlack();
+    width: 100%;
+  }
+  .unsubscribePage__messageError {
+    background-color: $error;
+  }
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .unsubscribePage {
+    height: 32.6rem;
+    row-gap: 1.9rem;
+    .unsubscribePage__messageLine {
+      height: 2.4rem;
+
+      .unsubscribePage__closeButton {
+        width: 2.4rem;
+        left: 2.87rem;
+      }
+
+      .unsubscribePage_form {
+        max-width: 46.5rem;
+        height: 24.4rem;
+        padding: 0;
+      }
+    }
+  }
+}
+@media (max-width: 580px) {
+  .unsubscribePage {
+    height: 36rem;
+    row-gap: 0;
+    background-size: cover;
+
+    .unsubscribePage__messageLine {
+      height: 2.6rem;
+      padding: 1.6rem 0.8rem;
+      justify-content: space-between;
+      .unsubscribePage__message {
+        width: 25.3rem;
+        text-align: start;
+        @include menu-3();
+      }
+
+      .unsubscribePage__closeButton {
+        background-color: transparent;
+        width: 2.4rem;
+        position: unset;
+      }
+    }
+    .unsubscribePage_form {
+      width: 33rem;
+
+      .unsubscribePage__title2 {
+        @include tablet-headline-2();
+        font-weight: 500;
+      }
+      .unsubscribePage__button {
+        height: 4.8rem;
+        padding: 1.2rem;
+        span {
+          @include button-s();
+        }
+      }
+    }
+  }
+}
