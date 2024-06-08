@@ -1,0 +1,70 @@
+@import "../../styles/variables.module";
+.subscribeForm {
+  .messageLine {
+    width: 100%;
+    height: 4.4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-a-3;
+    color: $white;
+    @include menu-2();
+
+    .message {
+      max-width: 55rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    .closeButton {
+      width: 3.2rem;
+      height: 3.2rem;
+      background-color: transparent;
+      align-self: center;
+
+      svg {
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 60rem;
+    align-items: center;
+    gap: 2.4rem;
+
+    .title {
+      @include headline-2();
+    }
+
+    .description {
+      width: 50rem;
+      text-align: center;
+      @include headline-10();
+    }
+
+    .inputSection {
+      display: flex;
+      flex-direction: column;
+      gap: $xl-spacing;
+      max-width: 63rem;
+      width: 100%;
+
+      .button {
+        @include button($large);
+        @include buttonBlack();
+        width: 100%;}
+
+    }
+  }
+  .messageError {
+    background-color: $error;
+  }
+
+}
