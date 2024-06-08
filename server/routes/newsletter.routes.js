@@ -218,7 +218,7 @@ router.post('/unsubscribe/', async (req, res) => {
       return res.status(400).json({
         response: {
           code: 400,
-          message: 'EMAIL_NOT_FOUND',
+          message: 'NEWSLETTER_NOT_EXIST',
         },
       });
     }
