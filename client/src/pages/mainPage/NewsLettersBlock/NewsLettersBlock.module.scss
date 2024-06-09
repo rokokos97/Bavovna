@@ -115,7 +115,7 @@
       }
     }
     .newsLettersBlock_form {
-      width: 33rem;
+      width: 32.8rem;
 
       .newsLetterBlock__title2 {
         @include tablet-headline-2();
@@ -123,9 +123,11 @@
       }
       .newsLetterBlock__button {
         height: 4.8rem;
-        padding: 1.2rem;
+        padding: 0.8rem;
         span {
+          @include buttonBlack();
           @include button-s();
+          font-size: 17px!important;
         }
       }
     }

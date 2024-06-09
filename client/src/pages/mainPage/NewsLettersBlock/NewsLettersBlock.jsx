@@ -11,6 +11,7 @@ import newsletterService from '../../../services/newsletter.service';
 import generateErrorMessage from '../../../utils/generateErrorMessage';
 
 const NewsLettersBlock = () => {
+  const isMobile = window.innerWidth <= 768;
   const handleSubmit = (values) => {
     return newsletterService.add({email: values.email})
         .then((result) => ({
@@ -56,7 +57,7 @@ const NewsLettersBlock = () => {
   return (
     <article className={styles.newsLettersBlock}>
       <SubscribeForm
-        buttonText='Subscribe to our newsletter'
+        buttonText={`${isMobile?'Subscribe':'Subscribe to our newsletter'}`}
         validationSchema={validationSchemaEmail}
         onSubmit={handleSubmit}
         description='SIGN UP TO GET 10% OFF ON YOUR FIRST ORDER, RELEASE NOTIFICATIONS AND EXCLUSIVE ACCESS BEFORE EVERYONE ELSE'
