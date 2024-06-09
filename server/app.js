@@ -1,7 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const compression = require('compression');
-const config = require('config');
 const chalk = require('chalk');
 const routes = require('./routes');
 const cors = require('cors');
@@ -18,8 +18,7 @@ app.use(cors());
 app.use('/api/uploads', express.static('uploads'));
 app.use('/api', routes);
 
-const PORT = config.get('port') || 8080;
-
+const PORT = process.env.PORT || 8080;
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(
       path.join(__dirname, 'client')));
@@ -30,13 +29,12 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(indexPath);
   });
 }
-
 async function start() {
   try {
     mongoose.connection.once('open', () => {
       initDatabase();
     });
-    await mongoose.connect(config.get('mongoUri'));
+    await mongoose.connect(process.env.MONGO_DB_URI);
     console.log(chalk.green(
         `MongoDB is connected.`));
     app.listen(PORT, () =>

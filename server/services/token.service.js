@@ -1,26 +1,29 @@
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const config = require('config');
 const Token = require('../models/Token');
-
+const accessSecret = process.env.ACCESS_SECRET;
+const refreshSecret = process.env.REFRESH_SECRET;
+const verifySecret = process.env.VERIFY_SECRET;
+const rememberMeSecret = process.env.REMEMBER_ME_SECRET;
 class TokenService {
   generateVerify(payload) {
-    return jwt.sign(payload, config.get('verifySecret'), {expiresIn: '1h'});
+    return jwt.sign(payload, verifySecret, {expiresIn: '1h'});
   }
   generate(payload) {
-    const accessToken = jwt.sign(payload, config.get('accessSecret'), {expiresIn: '1h',});
-    const refreshToken = jwt.sign(payload, config.get('refreshSecret'));
-    const emailVerificationToken = jwt.sign(payload, config.get('verifySecret'), {expiresIn: '1h'});
-    const rememberMe = jwt.sign(payload, config.get('rememberMeSecret'), {expiresIn: '28d'});
+    const accessToken = jwt.sign(payload, accessSecret, {expiresIn: '1h',});
+    const refreshToken = jwt.sign(payload, refreshSecret);
+    const emailVerificationToken = jwt.sign(payload, verifySecret, {expiresIn: '1h'});
+    const rememberMe = jwt.sign(payload, rememberMeSecret, {expiresIn: '28d'});
     return {
       accessToken, refreshToken, emailVerificationToken, rememberMe, expiresIn: 3600,
     };
   }
-  createVerify(payload) {
-    const verifyToken = jwt.sign(payload, config.get('verifySecret'));
-    return {
-      verifyToken,
-    };
-  }
+//  createVerify(payload) {
+//    const verifyToken = jwt.sign(payload, verifySecret);
+//    return {
+//      verifyToken,
+//    };
+//  }
   async save(userId, refreshToken) {
     const data = await Token.findOne({userId});
     if (data) {
@@ -31,7 +34,7 @@ class TokenService {
   }
   validateRefresh(refreshToken) {
     try {
-      return jwt.verify(refreshToken, config.get('refreshSecret'));
+      return jwt.verify(refreshToken, refreshSecret);
     } catch (e) {
       return null;
     }
@@ -39,7 +42,7 @@ class TokenService {
 
   validateAccess(accessToken) {
     try {
-      return jwt.verify(accessToken, config.get('accessSecret'));
+      return jwt.verify(accessToken, accessSecret);
     } catch (e) {
       return null;
     }

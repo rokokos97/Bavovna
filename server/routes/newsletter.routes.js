@@ -1,18 +1,8 @@
 const express = require('express');
 const Newsletter = require('../models/NewsletterEmail.js');
-const nodemailer = require("nodemailer");
-const config = require("../config/default.json");
 // eslint-disable-next-line new-cap
 const router = express.Router({mergeParams: true});
-
-const transporter = nodemailer.createTransport({
-  host: config.bavovnaSpace.HOST,
-  port: config.bavovnaSpace.PORT,
-  auth: {
-    user: config.bavovnaSpace.login,
-    pass: config.bavovnaSpace.password,
-  },
-});
+const transporter = require("../services/mailer");
 router.post('/', async (req, res) => {
   const {email} = req.body;
   try {

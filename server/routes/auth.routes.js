@@ -1,23 +1,14 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
-const config = require('../config/default.json');
 const {check, validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const tokenService = require('../services/token.service');
 const User = require('../models/User');
+const transporter = require('../services/mailer');
 // eslint-disable-next-line new-cap
 const router = express.Router({mergeParams: true});
 function isTokenInvalid(data, dbToken) {
   return !data||!dbToken||data._id !== dbToken?.user?.toString();
 }
-const transporter = nodemailer.createTransport({
-  host: config.bavovnaSpace.HOST,
-  port: config.bavovnaSpace.PORT,
-  auth: {
-    user: config.bavovnaSpace.login,
-    pass: config.bavovnaSpace.password,
-  },
-});
 router.post('/signUp', [
   check('email', 'email is not correct')
       .isEmail(),
@@ -70,6 +61,7 @@ router.post('/signUp', [
                   <title>Registration Confirmation</title>
                   <style>
                     body {
+                      width: 600px;
                       margin: 30px 0 0;
                       padding: 0;
                       background-color: #FAFAFA;
@@ -114,9 +106,9 @@ router.post('/signUp', [
                   </style>
                 </head>
                 <body>
-                  <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" style="background-color: #FAFAFA;">
+                  <table role="presentation" style="background-color: #FAFAFA;">
                     <tr>
-                      <td align="center" style="padding: 8px;">
+                      <td style="padding: 8px;">
                         <a href="https://anvovab.space" target="_blank" rel="noreferrer">
                           <img width="212" height="15" src="https://anvovab.space/api/uploads/logo.jpg" alt="logo"/>
                         </a>
@@ -129,7 +121,7 @@ router.post('/signUp', [
                           Thank you for registering on our website! To complete your registration, please confirm your email address by clicking below.
                         </p>
                         <a href="${verifyEmailURL}"
-                           style="display: inline-block; margin: 16px auto; font-size: 16px; font-weight: 600; text-transform: uppercase; padding: 16px 24px; background-color: #040404; color: #fafafa; text-decoration: none; margin-left:36%;">
+                           style="display: inline-block; font-size: 16px; font-weight: 600; text-transform: uppercase; padding: 16px 24px; background-color: #040404; color: #fafafa; text-decoration: none; margin: 16px auto 16px 36%;">
                           Confirm Email
                         </a>
                         <p style="font-size: 16px; font-weight: 400; line-height: 1.4; margin-bottom: 32px;">

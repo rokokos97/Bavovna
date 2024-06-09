@@ -1,17 +1,8 @@
 const express = require('express');
 const Order = require('../models/Order');
-const nodemailer = require("nodemailer");
-const config = require("../config/default.json");
 // eslint-disable-next-line new-cap
 const router = express.Router({mergeParams: true});
-const transporter = nodemailer.createTransport({
-  host: config.bavovnaSpace.HOST,
-  port: config.bavovnaSpace.PORT,
-  auth: {
-    user: config.bavovnaSpace.login,
-    pass: config.bavovnaSpace.password,
-  },
-});
+const transporter =  require("../services/mailer");
 router.post('/',
     async (req, res)=> {
       const {userInfo, items, deliveryPrice, orderAmount, deliveryInfo} = req.body;
@@ -25,10 +16,10 @@ router.post('/',
         const totalAmount = orderAmount + deliveryPrice;
         const itemsHTML = items.map(item => `
                 <section style="width: 536px; background-color: #FAFAFA;">
-                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #FFF; border-collapse: collapse;">
+                  <table style="width: 100%; background-color: #FFF; border-collapse: collapse;">
                     <tr>
                       <td style="padding: 16px; border-bottom: 1px solid #D7D7D7;">
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <table style="width:100%; border-collapse: collapse;">
                           <tr>
                             <td style="width: 48px; height: 48px; vertical-align: top;">
                               <img width="48" height="48" src="${item.itemImg}" alt="item image" style="display: block; max-width: 100%; height: auto; object-fit: fill"/>
