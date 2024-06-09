@@ -60,11 +60,11 @@ const SubscribeForm = ({title, description, buttonText, onSubmit, validationSche
             onChange={formik.handleChange}
             error={formik.errors.email}
             value={formik.values.email}
-            touched={formik.touched.email}
+            touched={formik.touched}
           />
           <button
             className={styles.button}
-            disabled={!formik.isValid || !formik.dirty}
+            disabled={!formik.dirty}
             type='submit'
             aria-label='form submit'
           >

@@ -66,5 +66,52 @@
   .messageError {
     background-color: $error;
   }
+}
+@media (min-width: 581px) and (max-width: 768px) {
+  .subscribeForm {
+    .messageLine {
+      height: 2.4rem;
 
+      .closeButton {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+    .form {
+      max-width: 46.6rem;
+      height: 24.4rem;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .subscribeForm {
+    .messageLine {
+      height: 2.6rem;
+      padding: 1.6rem 0.8rem;
+      justify-content: space-between;
+      .message {
+        max-width: 28rem;
+        text-align: start;
+        @include menu-3();
+      }
+    }
+    .form {
+      max-width: 33rem;
+      .title {
+        @include tablet-headline-2();
+      }
+      .description {
+        max-width: 32.8rem;
+        @include headline-10();
+      }
+      .button {
+        height: 4.8rem;
+        padding: 1.2rem;
+        span {
+          @include button-mobile(32.8rem);
+          padding-inline: 1rem;
+        }
+      }
+    }
+  }
 }
