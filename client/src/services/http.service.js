@@ -1,8 +1,7 @@
 import axios from 'axios';
-import configFile from '../config.json';
-
+const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
 const http = axios.create({
-  baseURL: configFile.apiEndpoint,
+  baseURL: apiEndpoint,
 });
 
 const httpService = {

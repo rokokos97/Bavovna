@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ItemPreviewCard.module.scss';
 import PropTypes from 'prop-types';
-import config from '../../config.json';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getItemsById} from '../../store/itemsSlice';
@@ -14,6 +13,7 @@ const ItemPreviewCard = ({id}) => {
   const user = useSelector(getUser);
   const navigate = useNavigate();
   const item = useSelector(getItemsById(id));
+  const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
   const [isFavorite, handleIsFavorite] = useChangeFavorite(user, id);
   const discountPrice = item.price*(item.sale/100);
   return (
@@ -35,7 +35,7 @@ const ItemPreviewCard = ({id}) => {
           onClick={() => navigate(`/shop/${item._id}`)}
         >
           <img
-            src={`${config.apiEndpoint}${item.images[0]}`}
+            src={`${apiEndpoint}${item.images[0]}`}
             width='410'
             height='500'
             loading='lazy'

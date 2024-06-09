@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import useChangeFavorite from '../../utils/useChangeFavorite';
 import {showBodyOverflow, hideBodyOverflow} from '../../utils/modal.service';
-import config from '../../config.json';
 import {addItemToCart} from '../../store/cartSlice';
 import {getUser} from '../../store/userSlice';
 import {useDataCard} from '../../providers/CardMasterProvider';
@@ -28,6 +27,7 @@ const CardContext = () => {
   const isMobile = useDeviceDetect();
   const item = useSelector(getItemsById(id));
   const items = useSelector(getItemsList);
+  const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
   let sortedItems = [];
   if (items) {
     sortedItems = items.filter((item) => item.status === 'sale');
@@ -71,7 +71,7 @@ const CardContext = () => {
       itemName: name,
       itemPrice: price,
       discountPrice: +currentPrice,
-      itemImg: `${config.apiEndpoint}${images[0]}`,
+      itemImg: `${apiEndpoint}${images[0]}`,
     });
   }, [item]);
 
@@ -122,9 +122,9 @@ const CardContext = () => {
                 {images.map((image, index) => (
                   <li
                     key={index}
-                    onClick={() => changeImage(`${config.apiEndpoint}${image}`)}
+                    onClick={() => changeImage(`${apiEndpoint}${image}`)}
                   >
-                    <img src={`${config.apiEndpoint}${image}`} alt='model' />
+                    <img src={`${apiEndpoint}${image}`} alt='model' />
                   </li>
                 ))}
               </ul>
@@ -138,7 +138,7 @@ const CardContext = () => {
               </div>
               <img
                 id='mainImage'
-                src={`${config.apiEndpoint}${images[0]}`}
+                src={`${apiEndpoint}${images[0]}`}
                 alt='model'
               />
             </div>
@@ -161,7 +161,7 @@ const CardContext = () => {
                       ₴{price.toFixed(2)}
                     </span>
                   ) : null}
-                  <span className={styles.buyFormPrice}>
+                  <span>
                     ₴{currentPrice.toFixed(2)}
                   </span>
                 </div>
