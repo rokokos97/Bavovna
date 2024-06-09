@@ -21,7 +21,10 @@ import CreatorsPage from '../pages/CreatorsPage/CreatorsPage';
 import CheckOutPageUserInfo from '../pages/checkOutPage/checkOutPageUserInfo/CheckOutPageUserInfo';
 import CheckOutPageDeliveryInfo from '../pages/checkOutPage/checkOutPageDelivery/CheckOutPageDeliveryInfo';
 import CheckOutPagePaymentInfo from '../pages/checkOutPage/checkOutPagePayment/CheckOutPagePaymentInfo';
+import UnsubscribePage from '../pages/UnsubscribePage/UnsubscribePage';
 export const SearchContext = React.createContext();
+
+
 function App() {
   const [searchValue, setSearchValue] = useState('');
   const cart = useSelector(getCart);
@@ -50,6 +53,7 @@ function App() {
               <Route path='main' element={<MainPage />} />
               <Route path='help/*' element={<HelpPage />} />
               <Route path='user/:id/*' element={<UserPage />} />
+              <Route path='unsubscribe' element={<UnsubscribePage />} />
               <Route path='*' element={<Page404 />} />
             </Route>
           </Routes>

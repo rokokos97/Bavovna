@@ -66,8 +66,7 @@ router.post('/',
           subject: 'Confirm Order at BAVOVNA',
           text: `HELLO! Thank you for your order #${userInfo._id} at BAVOVNA! `,
           html: `
-             <!DOCTYPE html>
-              <html lang="en">
+            <html lang="en">
               <head>
                   <meta charset="UTF-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -268,7 +267,7 @@ router.post('/',
                       </tr>
                   </table>
               </body>
-              </html>
+            </html>
           `,
         };
         await transporter.sendMail(mailOptions, function(error, info) {
