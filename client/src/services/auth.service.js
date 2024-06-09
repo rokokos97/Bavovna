@@ -1,9 +1,9 @@
 import axios from 'axios';
-import config from '../config.json';
 import sessionStorageService from './sessionStorage.service';
 
+const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
 const httpAuth = axios.create({
-  baseURL: config.apiEndpoint + 'auth/',
+  baseURL: apiEndpoint + 'auth/',
 });
 
 const authService = {
