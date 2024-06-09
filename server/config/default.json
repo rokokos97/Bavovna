@@ -1,10 +1,11 @@
 {
   "port": 8080,
   "mongoUri": "mongodb+srv://RostyslavLisovyi:8XhehApZqilGzDXF@cluster.wqp9fw1.mongodb.net/",
-  "accessSecret": "super secret from backend",
-  "refreshSecret": "super refresh key",
-  "verifySecret": "super verify key",
-  "rememberMeSecret": "super remember key",
+  "accessSecret": "super-puper secret from backend",
+  "refreshSecret": "super-puper refresh key",
+  "verifySecret": "super-puper verify key",
+  "sessionSecret": "super-puper session key",
+  "rememberMeSecret": "super-puper remember key",
   "mailTrap": {
     "user": "e8e6c142c269a8",
     "password": "20f109ff9afe59"
@@ -18,5 +19,12 @@
     "password": "Bavovna_1234",
     "HOST": "bavovna.space",
     "PORT": "465"
+  },
+  "linkedin": {
+    "clientId": "77dtp7s1xxadpq",
+    "PrimaryClientSecret": "WPL_AP0.FPC2Ns7JwbYNWzFR.NDA5OTc1MTAzMQ==",
+    "callbackURL": "https://anvovab/api/auth/linkedin/callback",
+    "URLENCODE": "https%3A%2F%2Fanvovab.space"
   }
 }
+
