@@ -5,8 +5,7 @@
   width: 70.4rem;
   height: auto;
   background-color: $white;
-  padding: $xs-spacing $l-spacing 8rem 4rem;
-  margin-bottom: 4rem;
+  padding: $xs-spacing $l-spacing 4rem 4rem;
   display: flex;
   flex-direction: column;
 
@@ -50,7 +49,8 @@
 @media (max-width: 767px) {
   .deleteUserModal {
     width: 100%;
-    padding: $l-spacing;
+    padding: $l-spacing $l-spacing 5rem;
+
     .deleteUserModal__closeButton {
      display: none;
     }

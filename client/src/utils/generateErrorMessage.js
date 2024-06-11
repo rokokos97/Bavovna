@@ -11,7 +11,7 @@ const transformErrorMessage = {
   SERVER_ERROR_MAIL: 'Oops... There was a mail server error, please try again later',
   NEWSLETTER_EMAIL_EXIST: 'You are already subscribed to our updates',
   NEWSLETTER_NOT_EXIST: 'You are not subscribed to our updates',
-  CONFIRM_NEWSLETTER_SENT: 'We have sent you an email with further instructions on how to confirm your subscription',
+  CONFIRM_NEWSLETTER_SENT: 'Thank you for signing up with BAVOVNA newsletter!We have sent you an email with promo-code',
   EMAIL_NOT_VERIFIER: 'Please verify your email',
   USER_UPDATE: 'User info has been updated',
   INVALID_TOKEN: 'Token has already been used',

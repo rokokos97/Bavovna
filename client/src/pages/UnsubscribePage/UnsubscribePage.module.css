@@ -3,8 +3,279 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
   width: 100%;
+}
+.unsubscribePage .unsubscribePage__container {
+  width: 71rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__message {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  align-self: self-start;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__regards {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  align-self: self-start;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__email {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+  text-decoration: underline;
+  text-align: center;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+  justify-content: space-around;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 15rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 5.1rem;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 7.2rem;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:hover::before {
+  content: "";
+  width: 16.5rem;
+  height: 16.5rem;
+  opacity: 1;
+  position: absolute;
+  top: -5.85rem;
+  left: -1rem;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:active::after {
+  content: "";
+  width: 16.5rem;
+  height: 16.5rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -5.85rem;
+  left: -1.1rem;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:focus {
+  border: 3px solid #5a9b83;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:disabled span {
+  color: #9b9b9b;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:first-child {
+  background: #fafafa;
+  border: 0.1rem solid #000000;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:first-child span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:first-child::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:first-child::after {
+  background: #a9dfcb;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:first-child:hover::before {
+  background: rgba(169, 223, 203, 0.3);
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:first-child:active::after {
+  border: 1px solid rgba(169, 223, 203, 0.3);
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:last-child {
+  background: #000000;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:last-child span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:last-child::before {
+  background: #5a9b83;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:last-child::after {
+  background: #1a6449;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:last-child:hover::before {
+  background: #5a9b83;
+}
+.unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:last-child:active::after {
+  border: 1px solid #5a9b83;
+}
+
+@media (max-width: 767px) {
+  .unsubscribePage {
+    min-height: unset;
+    margin: 8.2rem auto;
+  }
+  .unsubscribePage .unsubscribePage__container {
+    width: 32.8rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__title {
+    width: 20rem;
+    text-align: center;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__text {
+    text-align: center;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__message {
+    text-align: center;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__regards {
+    align-self: self-start;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__email {
+    text-align: center;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock {
+    gap: 1.6rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 15rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 5.1rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 7.2rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:hover::before {
+    content: "";
+    width: 16.5rem;
+    height: 16.5rem;
+    opacity: 1;
+    position: absolute;
+    top: -5.85rem;
+    left: -1rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:active::after {
+    content: "";
+    width: 16.5rem;
+    height: 16.5rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -5.85rem;
+    left: -1.1rem;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:focus {
+    border: 3px solid #5a9b83;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .unsubscribePage .unsubscribePage__container .unsubscribePage__buttonsBlock .unsubscribePage__button:disabled span {
+    color: #9b9b9b;
+  }
 }
 
 /*# sourceMappingURL=UnsubscribePage.module.css.map */

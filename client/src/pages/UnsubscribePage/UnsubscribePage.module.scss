@@ -1,8 +1,96 @@
+@import '../../styles/variables.module.scss';
 .unsubscribePage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100%;
+
+   .unsubscribePage__container {
+       width: 71rem;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       gap: $xl-spacing;
+
+       .unsubscribePage__title {
+           @include headline-3();
+       }
+       .unsubscribePage__text {
+           @include body-2();
+       }
+       .unsubscribePage__message {
+           @include body-2();
+           align-self: self-start;
+       }
+       .unsubscribePage__regards {
+           @include body-2();
+           align-self: self-start;
+       }
+       .unsubscribePage__email {
+           @include link-1();
+           text-align: center;
+       }
+       .unsubscribePage__buttonsBlock {
+           display: flex;
+           flex-direction: row;
+           gap: $xl-spacing;
+           justify-content: space-around;
+
+           .unsubscribePage__button {
+               @include button(15rem);
+
+               &:first-child {
+                   @include buttonWhite();
+               }
+               &:last-child {
+                   @include buttonBlack();
+               }
+           }
+       }
+
+   }
+}
+@media (max-width: 767px) {
+    .unsubscribePage {
+        min-height: unset;
+        margin: 8.2rem auto;
+
+        .unsubscribePage__container {
+            width: 32.8rem;
+
+            .unsubscribePage__title {
+                width: 20rem;
+                text-align: center;
+            }
+            .unsubscribePage__text {
+                text-align: center;
+            }
+            .unsubscribePage__message {
+                text-align: center;
+            }
+            .unsubscribePage__regards {
+                align-self: self-start;
+            }
+            .unsubscribePage__email {
+                text-align: center;
+            }
+            .unsubscribePage__buttonsBlock {
+                gap: $l-spacing;
+
+                .unsubscribePage__button {
+                    @include button-mobile(15rem);
+
+                    &:first-child {
+                    }
+                    &:last-child {
+                    }
+                }
+            }
+
+        }
+    }
+
 }
