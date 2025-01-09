@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from './CheckOutPageUserInfo.module.scss';
-import CheckOutUserInfoBlock from './CheckOutUserInfoBlock/CheckOutUserInfoBlock';
+import UserInfoBlock from './UserInfoBlock/UserInfoBlock';
 import CheckOutShoppingCartBlock from '../shoppingCartBlock/CheckOutShoppingCartBlock';
 import {useSelector} from 'react-redux';
 import {getCart} from '../../../store/cartSlice';
@@ -15,7 +15,7 @@ const CheckOutPageUserInfo = () => {
   }, [cart]);
   return (
     <div className={styles.checkOutPageUserInfo} data-testid="CheckOutPageDelivery">
-      <CheckOutUserInfoBlock/>
+      <UserInfoBlock/>
       <CheckOutShoppingCartBlock/>
     </div>
   );

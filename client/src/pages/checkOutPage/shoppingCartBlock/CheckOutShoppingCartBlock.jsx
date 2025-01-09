@@ -15,18 +15,29 @@ import {validationSchemaPromoCode} from '../../../utils/validationSchema';
 import {getCartLength, getCartTotalPrice} from '../../../store/cartSlice';
 import PropTypes from 'prop-types';
 import LeftArrowIcon from '../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
+import {PayPalButtons} from '@paypal/react-paypal-js';
+import {convertPrice} from '../../../services/currency.service';
+import {Modal} from '../../../components/modal';
+import PaymentSuccessModal from '../../../components/modal/modalContent/PaymentSuccessModal/PaymentSuccessModal';
+import {showBodyOverflow} from '../../../utils/modal.service';
+import {useLocation} from 'react-router-dom';
 
 const CheckOutShoppingCartBlock = ({formik}) => {
   const dispatch = useDispatch();
+  const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState(0);
+  const [showPaymentSuccessModal, setShowPaymentSuccessModal] = useState(false);
   const promoCode = useSelector(getPromoCodeSale);
   const orderAmount = useSelector(getCartTotalPrice);
   const cartLength = useSelector(getCartLength);
   const paymentMethod = useSelector(getPaymentMethod);
   const deliveryPrice = useSelector(getShippingPrice);
-  const [currentDeliveryPrice, setCurrentDeliveryPrice] = useState();
   const finalDiscount = promoCode ? orderAmount * promoCode : null;
   const totalPrice = orderAmount - finalDiscount;
   const finalPrice = totalPrice + (orderAmount>1000 ? 0: currentDeliveryPrice);
+  const exchangeRate = 45.5;
+  const convertedPrice = convertPrice(finalPrice, exchangeRate);
+  const path = useLocation().pathname;
+
   const promoCodeFormik = useFormik({
     initialValues: {
       promoCode: '',
@@ -42,12 +53,15 @@ const CheckOutShoppingCartBlock = ({formik}) => {
     },
   });
   useEffect(()=>{
-    if (orderAmount > 1000) {
-      setCurrentDeliveryPrice('Free');
-    } else {
-      deliveryPrice ? setCurrentDeliveryPrice(deliveryPrice) : setCurrentDeliveryPrice(null);
+    if (orderAmount < 1000 && deliveryPrice) {
+      setCurrentDeliveryPrice(deliveryPrice);
     }
   }, [deliveryPrice]);
+  const closeModal = () => {
+    setShowPaymentSuccessModal(false);
+    formik.handleSubmit;
+    showBodyOverflow();
+  };
   return (
     <div className={styles.checkOutShoppingCartBlock} data-testid="CheckOutShoppingCartBlock">
       <div className={styles.checkOutShoppingCartBlock__wrapper}>
@@ -58,6 +72,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
         <div>
           <CheckOutShoppingCartBlockItemsList/>
         </div>
+        {path === '/cart/checkoutPayment' &&
         <form
           onSubmit={promoCodeFormik.handleSubmit}
           className={styles.checkOutShoppingCartBlock__form}>
@@ -79,6 +94,7 @@ const CheckOutShoppingCartBlock = ({formik}) => {
             <LeftArrowIcon/>
           </button>
         </form>
+        }
         <div className={styles.checkOutShoppingCartBlock__price}>
           <p>Order value</p>
           <p>{`${orderAmount} ₴`}</p>
@@ -95,6 +111,31 @@ const CheckOutShoppingCartBlock = ({formik}) => {
           <p>total</p>
           <p>{`${finalPrice} ₴`}</p>
         </div>
+        {paymentMethod === 'Payment by PayPal'?
+          <PayPalButtons
+            style={{layout: 'vertical'}}
+            createOrder={(data, actions) => {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: {
+                      value: convertedPrice,
+                      currency_code: 'USD',
+                    },
+                  },
+                ],
+              });
+            }}
+            onApprove={(data, actions) => {
+              return actions.order.capture().then((details) => {
+                formik.handleSubmit();
+              });
+            }}
+            onError={(err) => {
+              setShowPaymentSuccessModal(true);
+              console.log('err', err);
+            }}
+          />:
         <button
           type='button'
           onClick={()=> formik.handleSubmit()}
@@ -105,7 +146,14 @@ const CheckOutShoppingCartBlock = ({formik}) => {
                   place the order
           </span>
         </button>
+        }
       </div>
+      <Modal isOpen={showPaymentSuccessModal} handleCloseModal={closeModal}>
+        <PaymentSuccessModal
+          handleCloseModal={closeModal}
+          type='success'
+        />
+      </Modal>
     </div>
   );
 };

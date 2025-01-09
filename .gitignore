@@ -1,4 +1,14 @@
 node_modules
 .vscode
 .idea
+server
+client/src
+client/node_modules
+client/.vscode
+client/idea
+client/.env.development
+client/.env.production
+client/.dockerignore
+client/.eslintrc.js
+client/generate-react-cli.json
 

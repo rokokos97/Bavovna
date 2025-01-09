@@ -5,7 +5,7 @@ import ArrowBackIcon from '../../../svg/arrowIcons/ArrowBackIcon/ArrowBackIcon';
 import PropTypes from 'prop-types';
 const DeleteUserModal = ({handleCloseModal, handleDeleteUser}) => {
   return (
-    <div className={styles.deleteUserModal} data-testid="DeleteUserModal">
+    <div className={styles.deleteUserModal} data-testid="PaymentSuccessModal">
       <button
         className={styles.deleteUserModal__closeButton}
         type='button'

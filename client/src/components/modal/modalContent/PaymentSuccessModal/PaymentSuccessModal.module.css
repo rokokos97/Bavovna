@@ -1,0 +1,435 @@
+.deleteUserModal {
+  width: 70.4rem;
+  height: auto;
+  background-color: #fafafa;
+  padding: 0.4rem 1.6rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+}
+.deleteUserModal .deleteUserModal__closeButton {
+  width: 3.2rem;
+  height: 3.2rem;
+  justify-self: flex-start;
+  align-self: flex-end;
+  background: #fafafa;
+}
+.deleteUserModal .deleteUserModal__contentBlock {
+  width: 63rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 3.2rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons {
+  display: flex;
+  align-items: center;
+  gap: 22rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 14rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton svg path {
+  fill: #000000;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:hover svg path {
+  fill: #3a7f66;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:hover span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #3a7f66;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:focus svg path {
+  fill: #081e16;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:focus span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #081e16;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled {
+  background: transparent;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled svg path {
+  fill: #868686;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #868686;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 4.6rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 6.7rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:hover::before {
+  content: "";
+  width: 15.4rem;
+  height: 15.4rem;
+  opacity: 1;
+  position: absolute;
+  top: -5.3rem;
+  left: -1rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:active::after {
+  content: "";
+  width: 15.4rem;
+  height: 15.4rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -5.3rem;
+  left: -1.1rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:focus {
+  border: 3px solid #5a9b83;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled span {
+  color: #9b9b9b;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton {
+  background: #000000;
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.4rem;
+  width: 24rem;
+  height: 5.6rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem 2.4rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton::before {
+  background: #5a9b83;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton::after {
+  background: #1a6449;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:hover::before {
+  background: #5a9b83;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:active::after {
+  border: 1px solid #5a9b83;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton::before {
+  content: "";
+  width: 4.8rem;
+  height: 4.8rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 0.4rem;
+  left: 9.6rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 300ms ease-in;
+  top: 2.5rem;
+  left: 11.7rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:hover::before {
+  content: "";
+  width: 26.4rem;
+  height: 26.4rem;
+  opacity: 1;
+  position: absolute;
+  top: -10.8rem;
+  left: -1rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:active::after {
+  content: "";
+  width: 26.4rem;
+  height: 26.4rem;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: -10.8rem;
+  left: -1.1rem;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:focus {
+  border: 3px solid #5a9b83;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:disabled {
+  border-color: #868686;
+  background: #c3c3c3;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:disabled span {
+  color: #9b9b9b;
+}
+
+@media (max-width: 767px) {
+  .deleteUserModal {
+    width: 100%;
+    padding: 1.6rem 1.6rem 5rem;
+  }
+  .deleteUserModal .deleteUserModal__closeButton {
+    display: none;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock {
+    width: 100%;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__title {
+    width: 24rem;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons {
+    display: flex;
+    align-items: center;
+    gap: unset;
+    justify-content: space-between;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 10rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 2.6rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 4.7rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:hover::before {
+    content: "";
+    width: 11rem;
+    height: 11rem;
+    opacity: 1;
+    position: absolute;
+    top: -3.1rem;
+    left: -1rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:active::after {
+    content: "";
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -3.1rem;
+    left: -1.1rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__cancelButton:disabled span {
+    color: #9b9b9b;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.4rem;
+    width: 10rem;
+    height: 5.6rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem 1.2rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-align: center;
+    position: relative;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton::before {
+    content: "";
+    width: 4.8rem;
+    height: 4.8rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 0.4rem;
+    left: 2.6rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton::after {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    transition: 300ms ease-in;
+    top: 2.5rem;
+    left: 4.7rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:hover::before {
+    content: "";
+    width: 11rem;
+    height: 11rem;
+    opacity: 1;
+    position: absolute;
+    top: -3.1rem;
+    left: -1rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:active::after {
+    content: "";
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: -3.1rem;
+    left: -1.1rem;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:focus {
+    border: 3px solid #5a9b83;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:disabled {
+    border-color: #868686;
+    background: #c3c3c3;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .deleteUserModal .deleteUserModal__contentBlock .deleteUserModal__buttons .deleteUserModal__loginButton:disabled span {
+    color: #9b9b9b;
+  }
+}
+
+/*# sourceMappingURL=DeleteUserModal.module.css.map */

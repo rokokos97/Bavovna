@@ -1,0 +1,82 @@
+@import "../../../../styles/variables.module.scss";
+
+.PaymentSuccessModal {
+
+  width: 70.4rem;
+  height: auto;
+  background-color: $white;
+  padding: $xs-spacing $l-spacing 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+
+  .PaymentSuccessModal__closeButton {
+    width: 3.2rem;
+    height: 3.2rem;
+    justify-self: flex-start;
+    align-self: flex-end;
+    background: $white;
+  }
+  .PaymentSuccessModal__contentBlock {
+    width: 63rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: $xxl-spacing;
+
+    .PaymentSuccessModal__title {
+      @include headline-4();
+    }
+    .PaymentSuccessModal__text {
+      @include body-3();
+    }
+    .PaymentSuccessModal__buttons {
+      display: flex;
+      align-items: center;
+      gap: 22rem;
+
+      .PaymentSuccessModal__cancelButton {
+        @include buttonTransparent();
+        @include button(14rem);
+      }
+      .PaymentSuccessModal__loginButton {
+        @include buttonBlack();
+        @include button(24rem);
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .PaymentSuccessModal {
+    width: 100%;
+    padding: $l-spacing $l-spacing 5rem;
+
+    .PaymentSuccessModal__closeButton {
+     display: none;
+    }
+    .PaymentSuccessModal__contentBlock {
+      width: 100%;
+
+      .PaymentSuccessModal__title {
+        width: 24rem;
+        @include headline-9();
+      }
+      .PaymentSuccessModal__text {
+      }
+      .PaymentSuccessModal__buttons {
+        display: flex;
+        align-items: center;
+        gap: unset;
+        justify-content: space-between;
+
+        .PaymentSuccessModal__cancelButton {
+          @include button-mobile(10rem);
+        }
+        .PaymentSuccessModal__loginButton {
+          @include button-mobile(10rem);
+        }
+      }
+    }
+  }
+}
+

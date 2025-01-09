@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import styles from './CheckOutUserInfoBlock.module.scss';
+import styles from './UserInfoBlock.module.scss';
 import LoginFormBlock from '../../../../components/form/formBlocks/LoginFormBlock/LoginFormBlock';
 import {useFormik} from 'formik';
 import UnknownUserContactFormBlock
@@ -15,7 +15,7 @@ import RadioButtonEmptyIcon
   from '../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
 
-const CheckOutUserInfoBlock = () => {
+const UserInfoBlock = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userCurrentDetails, setUserCurrentDetails] = useState('1');
@@ -93,7 +93,7 @@ const CheckOutUserInfoBlock = () => {
         </div>)}
       </div>
       {userCurrentDetails === '2' && userCurrentDetailsList[1].value}
-      <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock__checkOutUserInfoBlock} data-testid="CheckOutUserInfoBlock">
+      <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock__checkOutUserInfoBlock} data-testid="UserInfoBlock">
         {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
       </form>
       <NavLink
@@ -124,4 +124,4 @@ const CheckOutUserInfoBlock = () => {
     </div>
   );
 };
-export default CheckOutUserInfoBlock;
+export default UserInfoBlock;

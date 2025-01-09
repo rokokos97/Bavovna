@@ -26,7 +26,12 @@ const PaymentMethodSection = ({formik}) => {
       label: 'Payment on receipt',
       value: <></>,
     },
+    {
+      id: '3',
+      label: 'Payment by PayPal',
+    },
   ];
+
   return <div
     className={styles.userPaymentMethodsList}
     data-testid="PaymentMethodSection"
