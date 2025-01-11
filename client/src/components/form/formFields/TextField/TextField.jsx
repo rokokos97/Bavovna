@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './TextField.module.scss';
 import disabledStyles from './TextFieldDisabled.module.scss';
 import PropTypes from 'prop-types';
-import CleatFormIcon from '../../../svg/CleatFormIcon/CleatFormIcon';
+import CleatFormIcon from '../../../svg/ClearFormIcon/CleatFormIcon';
 import ShowPasswordIcon from '../../../svg/passwordIcons/ShowPasswordIcon/ShowPasswordIcon';
 import HidePasswordIcon from '../../../svg/passwordIcons/HidePasswordIcon/HidePasswordIcon';
 const TextField = ({label, name, type, value, onChange, onBlur, error, placeholder, disabled, touched}) => {

@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
+import styles from './ClearFormIcon.module.scss';
 const CleatFormIcon = () => (
-  <div data-testid="CleatFormIcon">
+  <div className={styles.ClearFormIcon}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
