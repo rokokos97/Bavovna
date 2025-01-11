@@ -100,7 +100,7 @@ const getResetPasswordEmail = (email,resetPasswordURL) => {
                     <tr>
                       <td class="header">
                         <a href="https://anvovab.space" target="_blank" rel="noreferrer" aria-label="BAVOVNA logo">
-                          <img width="212" height="15" src="https://anvovab.space/api/uploads/logo.jpg" alt="logo"/>
+                          <img width="212" height="15" src="https://anvovab.space/api/uploads/logo.webp" alt="logo"/>
                         </a>
                       </td>
                     </tr>
