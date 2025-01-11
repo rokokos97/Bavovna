@@ -96,19 +96,21 @@ const UserInfoBlock = () => {
       <form onSubmit={formik.handleSubmit} className={styles.checkOutUserInfoBlock__checkOutUserInfoBlock} data-testid="UserInfoBlock">
         {userCurrentDetails === '1' && userCurrentDetailsList[0].value}
       </form>
-      <NavLink
-        aria-label='go back'
-        title='go back'
-        to={'/cart'}
-        className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
-        <div
-          className={styles.checkOutUserInfoBlock__buttonLeft}
+      <div className={styles.checkOutUserInfoBlock__navigationButtonsSection}>
+        <NavLink
+          aria-label='go back'
+          title='go back'
+          to={'/cart'}
         >
-          <LeftArrowIcon/>
-          <span>
-              go back
-          </span>
-        </div>
+          <div
+            className={styles.checkOutUserInfoBlock__buttonLeft}
+          >
+            <LeftArrowIcon/>
+            <span>
+                go back
+            </span>
+          </div>
+        </NavLink>
         <button
           className={styles.checkOutUserInfoBlock__buttonRight}
           type='button'
@@ -116,11 +118,11 @@ const UserInfoBlock = () => {
           disabled={!formik.isValid || !formik.dirty}
         >
           <span>
-              next step
+                next step
           </span>
           <LeftArrowIcon/>
         </button>
-      </NavLink>
+      </div>
     </div>
   );
 };
