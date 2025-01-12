@@ -3,7 +3,7 @@ import styles from './PaymentMethodSection.module.scss';
 import PropTypes from 'prop-types';
 import {useDispatch, useSelector} from 'react-redux';
 import {getPaymentMethod, setPaymentMethod} from '../../../../store/ordersSlice';
-import UserPaymentByCardForm from '../../../../components/form/formBlocks/UserPaymentByCardForm/UserPaymentByCardForm';
+// import UserPaymentByCardForm from '../../../../components/form/formBlocks/UserPaymentByCardForm/UserPaymentByCardForm';
 import RadioButtonCheckedIcon
   from '../../../../components/svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
 import RadioButtonEmptyIcon
@@ -16,11 +16,11 @@ const PaymentMethodSection = ({formik}) => {
   const navigate = useNavigate();
   const currentPaymentMethod = useSelector(getPaymentMethod);
   const paymentMethodsList = [
-    {
-      id: '1',
-      label: 'Pay by card',
-      value: <UserPaymentByCardForm formik={formik}/>,
-    },
+    //    {
+    //      id: '1',
+    //      label: 'Pay by card',
+    //      value: <UserPaymentByCardForm formik={formik}/>,
+    //    },
     {
       id: '2',
       label: 'Payment on receipt',
