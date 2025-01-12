@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpet_project_frontend=self.webpackChunkpet_project_frontend||[]).push([[976],{8976:(e,t,s)=>{s.r(t),s.d(t,{default:()=>i});s(5043);const r="NewArrivalsBlock_newArrivalsBlock__GKuwm";var l=s(5137),c=s(1856),a=(s(4014),s(3874),s(5084),s(7454)),n=s(579);const i=()=>{const e=(0,l.d4)(c.HH),t=(0,l.d4)(c.Jc);let s=[];return!e&&t&&(s=t.filter((e=>"new"===e.status))),(0,n.jsx)("article",{className:r,"data-testid":"SliderBlock",children:!e&&t&&(0,n.jsx)(a.A,{itemsList:s,title:"new arrivals"})})}}}]);
-//# sourceMappingURL=976.023e637e.chunk.js.map
