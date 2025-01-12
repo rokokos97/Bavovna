@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './UnsubscribePage.module.scss';
 // import SubscribeForm from '../../components/SubscribForm/SubscribeForm';
 // import {validationSchemaEmail} from '../../utils/validationSchema';
 import newsletterService from '../../services/newsletter.service';
 import generateErrorMessage from '../../utils/generateErrorMessage';
-import {NavLink, useNavigate} from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 // const UnsubscribePage = () => {
 //  const handleSubmit = (values) => {
@@ -38,26 +38,27 @@ const UnsubscribePage = () => {
     if (emailParam) {
       setEmail(emailParam);
     } else {
-      navigate('/', {replace: true});
+      navigate('/', { replace: true });
     }
   }, []);
 
   const handleSubmit = () => {
-    newsletterService.unsubscribe({email: email})
-        .then((result) => {
-          if (result) {
-            console.log('result', result);
-            setMessage(generateErrorMessage[result.response.message]);
-          }
-        })
-        .catch((error)=>{
-          if (error) {
-            console.log('error', error);
-            setMessage(generateErrorMessage[error.response.data.response.message]);
-          }
-        });
+    newsletterService
+      .unsubscribe({ email: email })
+      .then((result) => {
+        if (result) {
+          console.log('result', result);
+          setMessage(generateErrorMessage[result.response.message]);
+        }
+      })
+      .catch((error) => {
+        if (error) {
+          console.log('error', error);
+          setMessage(generateErrorMessage[error.response.data.response.message]);
+        }
+      });
   };
-  return (email && !message ?
+  return email && !message ? (
     <article className={styles.unsubscribePage}>
       <section className={styles.unsubscribePage__container}>
         <h2 className={styles.unsubscribePage__title}>Are you sure you want to unsubscribe?</h2>
@@ -65,28 +66,27 @@ const UnsubscribePage = () => {
           <p className={styles.unsubscribePage__text}>
             You are currently subscribed to BAVOVNA store with the following address:
           </p>
-          <br/>
-          <p className={styles.unsubscribePage__email}>
-            {email}
-          </p>
+          <br />
+          <p className={styles.unsubscribePage__email}>{email}</p>
         </div>
         <div className={styles.unsubscribePage__buttonsBlock}>
-          <button
-            onClick={handleSubmit}
-            className={styles.unsubscribePage__button}><span>yes</span></button>
+          <button onClick={handleSubmit} className={styles.unsubscribePage__button}>
+            <span>yes</span>
+          </button>
           <NavLink to={'/'} className={styles.unsubscribePage__button}>
             <span>no</span>
           </NavLink>
         </div>
       </section>
-    </article> : <article className={styles.unsubscribePage}>
+    </article>
+  ) : (
+    <article className={styles.unsubscribePage}>
       <section className={styles.unsubscribePage__container}>
         <h2 className={styles.unsubscribePage__title}>We&#39;re Sorry to See You Go</h2>
-        <p className={styles.unsubscribePage__message}>
-          {message}
-        </p>
+        <p className={styles.unsubscribePage__message}>{message}</p>
         <p className={styles.unsubscribePage__regards}>
-          Best regards,<br/>
+          Best regards,
+          <br />
           <b>BAVOVNA</b> Support Team
         </p>
       </section>

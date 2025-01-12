@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import generateErrorMessage from './generateErrorMessage';
-import {userClearResponse} from '../store/userSlice';
+import { userClearResponse } from '../store/userSlice';
 
 function useErrorMessage(authError) {
   const [errorMessage, setErrorMessage] = useState(null);

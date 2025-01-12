@@ -3,7 +3,7 @@ const express = require('express');
 // const config = require('../config/default.json');
 // const novaPoshta = initNovaPoshta(config.novaPochta.apiKey);
 // eslint-disable-next-line new-cap
-const router = express.Router({mergeParams: true});
+const router = express.Router({ mergeParams: true });
 const warehousesList = require('../mock/novaPoshtaWarehouses.json');
 const citiesList = require('../mock/novaPoshtaCities.json');
 router.get('/', async (req, res) => {
@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 router.post('/', async (req, res) => {
   try {
-    const {cityRef} = req.body;
+    const { cityRef } = req.body;
     //    const data = await novaPoshta.address.getWarehouses({
     //      cityRef: cityRef,
     //      page: 1,

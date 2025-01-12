@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const DataContext = createContext(null);
@@ -14,14 +14,10 @@ const initialItemData = {
   itemQuantity: 1,
 };
 
-export const CardMasterProvider = ({children}) => {
+export const CardMasterProvider = ({ children }) => {
   const [itemData, setItemData] = useState(initialItemData);
 
-  return (
-    <DataContext.Provider value={{itemData, setItemData}}>
-      {children}
-    </DataContext.Provider>
-  );
+  return <DataContext.Provider value={{ itemData, setItemData }}>{children}</DataContext.Provider>;
 };
 
 export const useDataCard = () => {

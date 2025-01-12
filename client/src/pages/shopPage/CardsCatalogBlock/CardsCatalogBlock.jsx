@@ -1,15 +1,15 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import FilterSelectionBlock from '../FilterSelectionBlock/FilterSelectionBlock';
 import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
-import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
-import {SearchContext} from '../../../App/App';
+import { useDataShopPage } from '../../../providers/ShopPageMasterProvider';
+import { SearchContext } from '../../../App/App';
 import styles from './CardsCatalogBlock.module.scss';
 import ArrowBackIcon from '../../../components/svg/arrowIcons/ArrowBackIcon/ArrowBackIcon';
 
 const CardsCatalogBlock = () => {
-  const {filteredItems, sortedItems, isFilter} = useDataShopPage();
+  const { filteredItems, sortedItems, isFilter } = useDataShopPage();
   const [items, setItems] = useState([]);
-  const {searchValue} = useContext(SearchContext);
+  const { searchValue } = useContext(SearchContext);
   const itemsPerPage = 9;
   let totalPages = null;
   let totalItems = null;
@@ -27,9 +27,9 @@ const CardsCatalogBlock = () => {
   useEffect(() => {
     if (searchValue !== '') {
       setItems(
-          filteredItems.filter((item) =>
-            item.description.toLowerCase().includes(searchValue.toLowerCase()),
-          ),
+        filteredItems.filter((item) =>
+          item.description.toLowerCase().includes(searchValue.toLowerCase())
+        )
       );
     } else {
       setItems(filteredItems);
@@ -60,10 +60,11 @@ const CardsCatalogBlock = () => {
   });
 
   return (
-    <div className={!isFilter ? styles.catalog : styles.catalogFilter} data-testid='CardsCatalogBlock'>
-      <div
-        className={styles.filterBlock}
-      >
+    <div
+      className={!isFilter ? styles.catalog : styles.catalogFilter}
+      data-testid="CardsCatalogBlock"
+    >
+      <div className={styles.filterBlock}>
         <FilterSelectionBlock isFilter={isFilter} />
       </div>
       <div className={styles.cardsContainer}>
@@ -78,9 +79,9 @@ const CardsCatalogBlock = () => {
             <div className={styles.notFound}>
               <h2 className={styles.notFoundTitle}>No Results Found</h2>
               <p className={styles.notFoundText}>
-                Unfortunately, nothing could be found for your search. Please
-                try altering your search criteria or using less specific
-                filters. We are always here to help you find what you need.
+                Unfortunately, nothing could be found for your search. Please try altering your
+                search criteria or using less specific filters. We are always here to help you find
+                what you need.
               </p>
             </div>
           )}
@@ -89,25 +90,21 @@ const CardsCatalogBlock = () => {
           <div className={styles.pagination}>
             <div
               className={
-                currentPage !== 1 ?
-                  styles.arrow :
-                  `${styles.arrow} ${styles.arrowDisable}`
+                currentPage !== 1 ? styles.arrow : `${styles.arrow} ${styles.arrowDisable}`
               }
-              onClick={
-                currentPage === 1 ? null : () => setCurrentPage(currentPage - 1)
-              }
+              onClick={currentPage === 1 ? null : () => setCurrentPage(currentPage - 1)}
             >
               <ArrowBackIcon />
               <span>Previous</span>
             </div>
             <div className={styles.btnBlock}>
-              {Array.from({length: totalPages}).map((_, index) => (
+              {Array.from({ length: totalPages }).map((_, index) => (
                 <button
                   key={index}
                   className={
-                    index + 1 === currentPage ?
-                      `${styles.pageButton} ${styles.activeBtn}` :
-                      styles.pageButton
+                    index + 1 === currentPage
+                      ? `${styles.pageButton} ${styles.activeBtn}`
+                      : styles.pageButton
                   }
                   onClick={handlerPageChange}
                 >
@@ -117,15 +114,11 @@ const CardsCatalogBlock = () => {
             </div>
             <div
               className={
-                currentPage !== totalPages ?
-                  `${styles.arrow} ${styles.arrowForward}` :
-                  `${styles.arrow} ${styles.arrowForward} ${styles.arrowDisable}`
+                currentPage !== totalPages
+                  ? `${styles.arrow} ${styles.arrowForward}`
+                  : `${styles.arrow} ${styles.arrowForward} ${styles.arrowDisable}`
               }
-              onClick={
-                currentPage === totalPages ?
-                  null :
-                  () => setCurrentPage(currentPage + 1)
-              }
+              onClick={currentPage === totalPages ? null : () => setCurrentPage(currentPage + 1)}
             >
               <span>Next</span>
               <ArrowBackIcon />

@@ -8,17 +8,17 @@ const httpAuth = axios.create({
 
 const authService = {
   register: async (payload) => {
-    const {data} = await httpAuth.post(`signUp`, payload);
+    const { data } = await httpAuth.post(`signUp`, payload);
     return data;
   },
 
   registerWithGoogle: async (payload) => {
-    const {data} = await httpAuth.post(`signUpWithGoogle`, payload);
+    const { data } = await httpAuth.post(`signUpWithGoogle`, payload);
     return data;
   },
 
-  login: async ({email, password}) => {
-    const {data} = await httpAuth.post(`signInWithPassword`, {
+  login: async ({ email, password }) => {
+    const { data } = await httpAuth.post(`signInWithPassword`, {
       email,
       password,
       returnSecureToken: true,
@@ -27,28 +27,28 @@ const authService = {
   },
 
   loginWithGoogle: async (email) => {
-    const {data} = await httpAuth.post('signInWithGoogle', {
+    const { data } = await httpAuth.post('signInWithGoogle', {
       email,
       returnSecureToken: true,
     });
     return data;
   },
 
-  reset: async ({email}) => {
-    const {data} = await httpAuth.post('forgotPassword', {email});
+  reset: async ({ email }) => {
+    const { data } = await httpAuth.post('forgotPassword', { email });
     return data;
   },
 
   setNewPassword: async (token, email, password) => {
-    const {data} = await httpAuth.post('resetPassword', {token, email, password});
+    const { data } = await httpAuth.post('resetPassword', { token, email, password });
     return data;
   },
   emailVerify: async (token, email) => {
-    const {data} = await httpAuth.post('emailVerification', {token, email});
+    const { data } = await httpAuth.post('emailVerification', { token, email });
     return data;
   },
   refresh: async () => {
-    const {data} = await httpAuth.post('token', {
+    const { data } = await httpAuth.post('token', {
       grant_type: 'refresh_token',
       refresh_token: sessionStorageService.getRefreshToken(),
     });

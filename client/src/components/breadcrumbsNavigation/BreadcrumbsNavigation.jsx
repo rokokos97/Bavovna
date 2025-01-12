@@ -4,14 +4,13 @@ import MobileBreadcrumbsNavigation from './MobileBreadcrumbsNavigation/MobileBre
 import PropTypes from 'prop-types';
 import useDeviceDetect from '../../utils/useDeviceDetect';
 
-const BreadcrumbsNavigation = ({options, handleSideNavigationClose}) => {
-  const {isMobile} = useDeviceDetect();
-  return (
-    !isMobile ? <DesktopBreadcrumbsNavigation
-      options={options}
-    /> : <MobileBreadcrumbsNavigation
-      handleSideNavigationClose={handleSideNavigationClose}
-    />);
+const BreadcrumbsNavigation = ({ options, handleSideNavigationClose }) => {
+  const { isMobile } = useDeviceDetect();
+  return !isMobile ? (
+    <DesktopBreadcrumbsNavigation options={options} />
+  ) : (
+    <MobileBreadcrumbsNavigation handleSideNavigationClose={handleSideNavigationClose} />
+  );
 };
 
 BreadcrumbsNavigation.propTypes = {

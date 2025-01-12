@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './NewArrivalsBlock.module.scss';
-import {useSelector} from 'react-redux';
-import {getItemsList, getItemsLoadingStatus} from '../../../store/itemsSlice';
+import { useSelector } from 'react-redux';
+import { getItemsList, getItemsLoadingStatus } from '../../../store/itemsSlice';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -15,8 +15,10 @@ const NewArrivalsBlock = () => {
     newArrivalItems = items.filter((item) => item.status === 'new');
   }
   return (
-    <article className={styles.newArrivalsBlock} data-testid='SliderBlock'>
-      {!isItemsLoading && items && <SliderBlock itemsList={newArrivalItems} title={'new arrivals'}/>}
+    <article className={styles.newArrivalsBlock} data-testid="SliderBlock">
+      {!isItemsLoading && items && (
+        <SliderBlock itemsList={newArrivalItems} title={'new arrivals'} />
+      )}
     </article>
   );
 };

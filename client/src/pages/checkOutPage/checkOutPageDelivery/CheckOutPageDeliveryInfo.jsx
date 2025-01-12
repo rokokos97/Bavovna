@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import styles from './CheckOutPageDelivery.module.scss';
 import CheckOutShoppingCartBlock from '../shoppingCartBlock/CheckOutShoppingCartBlock';
 import DeliveryOptionsSection from './deliveryOptionsSection/DeliveryOptionsSection';
-import {useSelector} from 'react-redux';
-import {getCart} from '../../../store/cartSlice';
-import {useNavigate} from 'react-router-dom';
-import {getUserInfo} from '../../../store/ordersSlice';
+import { useSelector } from 'react-redux';
+import { getCart } from '../../../store/cartSlice';
+import { useNavigate } from 'react-router-dom';
+import { getUserInfo } from '../../../store/ordersSlice';
 const CheckOutPageDeliveryInfo = () => {
   const cart = useSelector(getCart);
   const navigate = useNavigate();
@@ -20,8 +20,8 @@ const CheckOutPageDeliveryInfo = () => {
   }, [cart]);
   return (
     <div className={styles.checkOutPageDeliveryInfo} data-testid="CheckOutPageDelivery">
-      <DeliveryOptionsSection/>
-      <CheckOutShoppingCartBlock/>
+      <DeliveryOptionsSection />
+      <CheckOutShoppingCartBlock />
     </div>
   );
 };

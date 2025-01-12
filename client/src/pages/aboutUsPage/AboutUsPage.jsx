@@ -4,7 +4,7 @@ import ProposeBlock from './ProposeBlock/ProposeBlock';
 import FashionBlock from './FashionBlock/FashionBlock';
 
 import styles from './AboutUsPage.module.scss';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useDeviceDetect from '../../utils/useDeviceDetect';
 import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
 
@@ -16,13 +16,14 @@ const AboutUsPage = () => {
       navigate('/');
     }
   };
-  const options = [
-    {label: '/ About us', to: ''},
-  ];
+  const options = [{ label: '/ About us', to: '' }];
   return (
-    <section className={styles.aboutUs} data-testid='AboutUsPage'>
+    <section className={styles.aboutUs} data-testid="AboutUsPage">
       <div className={styles.navigation}>
-        <BreadcrumbsNavigation options={options} handleSideNavigationClose={handleSideNavigationClose}/>
+        <BreadcrumbsNavigation
+          options={options}
+          handleSideNavigationClose={handleSideNavigationClose}
+        />
       </div>
       <div className={styles.aboutUsContainer}>
         <AboutBlock />

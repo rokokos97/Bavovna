@@ -1,17 +1,16 @@
 const express = require('express');
-const {check, validationResult} = require('express-validator');
+const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const tokenService = require('../services/token.service');
 const User = require('../models/User');
 const transporter = require('../services/mailer');
 const isTokenInvalid = require('../utils/isTokenValid');
-const {getResetPasswordEmail} = require("../services/mail_options/reset_passvord_option");
-const {getVerificationEmail} = require("../services/mail_options/verify_email_option");
+const { getResetPasswordEmail } = require('../services/mail_options/reset_passvord_option');
+const { getVerificationEmail } = require('../services/mail_options/verify_email_option');
 // eslint-disable-next-line new-cap
-const router = express.Router({mergeParams: true});
+const router = express.Router({ mergeParams: true });
 router.post('/signUp', [
-  check('email', 'email is not correct')
-      .isEmail(),
+  check('email', 'email is not correct').isEmail(),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -24,8 +23,8 @@ router.post('/signUp', [
           },
         });
       }
-      const {email, password} = req.body;
-      const existingUser = await User.findOne({email});
+      const { email, password } = req.body;
+      const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res.status(400).json({
           response: {
@@ -39,33 +38,36 @@ router.post('/signUp', [
         ...req.body,
         password: hashedPassword,
       });
-      const emailVerificationToken = tokenService.generateVerify({_id: newUser._id});
-      const tokens = tokenService.generate({_id: newUser._id});
+      const emailVerificationToken = tokenService.generateVerify({ _id: newUser._id });
+      const tokens = tokenService.generate({ _id: newUser._id });
       await tokenService.save(newUser._id, tokens.refreshToken);
       newUser.emailVerificationToken = emailVerificationToken;
       await newUser.save();
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken);
       const verifyEmailURL = `https://anvovab.space/user/${newUser._id}?token=${encodedToken}&email=${encodedEmail}`;
-      await transporter.sendMail(getVerificationEmail(email, verifyEmailURL), function(error, info) {
-        if (error) {
-          return res.status(500).json({
-            response: {
-              code: 500,
-              message: 'SERVER_ERROR_MAIL',
-            },
-          });
-        } else {
-          if (info.response) {
-            return res.status(200).json({
+      await transporter.sendMail(
+        getVerificationEmail(email, verifyEmailURL),
+        function (error, info) {
+          if (error) {
+            return res.status(500).json({
               response: {
-                code: 200,
-                message: 'VERIFY_EMAIL_SENT',
+                code: 500,
+                message: 'SERVER_ERROR_MAIL',
               },
             });
+          } else {
+            if (info.response) {
+              return res.status(200).json({
+                response: {
+                  code: 200,
+                  message: 'VERIFY_EMAIL_SENT',
+                },
+              });
+            }
           }
         }
-      });
+      );
       res.status(201).send({
         response: {
           message: 'USER_CREATED',
@@ -81,10 +83,10 @@ router.post('/signUp', [
         },
       });
     }
-  }]);
+  },
+]);
 router.post('/signUpWithGoogle', [
-  check('email', 'email is not correct')
-      .isEmail(),
+  check('email', 'email is not correct').isEmail(),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -97,8 +99,8 @@ router.post('/signUpWithGoogle', [
           },
         });
       }
-      const {email} = req.body;
-      const existingUser = await User.findOne({email});
+      const { email } = req.body;
+      const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res.status(400).json({
           response: {
@@ -132,10 +134,10 @@ router.post('/signUpWithGoogle', [
         },
       });
     }
-  }]);
+  },
+]);
 router.post('/signInWithPassword', [
-  check('email', 'email is not correct')
-      .isEmail(),
+  check('email', 'email is not correct').isEmail(),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -148,8 +150,8 @@ router.post('/signInWithPassword', [
           },
         });
       }
-      const {email, password} = req.body;
-      const existingUser = await User.findOne({email});
+      const { email, password } = req.body;
+      const existingUser = await User.findOne({ email });
       if (!existingUser) {
         return res.status(400).json({
           response: {
@@ -174,8 +176,7 @@ router.post('/signInWithPassword', [
           },
         });
       }
-      const isPasswordEqual = await bcrypt.compare(
-          password, existingUser.password);
+      const isPasswordEqual = await bcrypt.compare(password, existingUser.password);
       if (!isPasswordEqual) {
         return res.status(400).json({
           response: {
@@ -184,7 +185,7 @@ router.post('/signInWithPassword', [
           },
         });
       }
-      const tokens = tokenService.generate({_id: existingUser._id});
+      const tokens = tokenService.generate({ _id: existingUser._id });
       await tokenService.save(existingUser._id, tokens.refreshToken);
       res.status(201).send({
         ...tokens,
@@ -203,8 +204,7 @@ router.post('/signInWithPassword', [
   },
 ]);
 router.post('/signInWithGoogle', [
-  check('email', 'email is not correct')
-      .isEmail(),
+  check('email', 'email is not correct').isEmail(),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -217,8 +217,8 @@ router.post('/signInWithGoogle', [
           },
         });
       }
-      const {email} = req.body;
-      const existingUser = await User.findOne({email});
+      const { email } = req.body;
+      const existingUser = await User.findOne({ email });
       if (!existingUser) {
         return res.status(400).json({
           response: {
@@ -227,10 +227,9 @@ router.post('/signInWithGoogle', [
           },
         });
       }
-      const tokens = tokenService.generate({_id: existingUser._id});
+      const tokens = tokenService.generate({ _id: existingUser._id });
       await tokenService.save(existingUser._id, tokens.refreshToken);
-      return res.status(201).send(
-          {...tokens, userId: existingUser._id, user: existingUser});
+      return res.status(201).send({ ...tokens, userId: existingUser._id, user: existingUser });
     } catch (error) {
       return res.status(500).json({
         response: {
@@ -243,8 +242,7 @@ router.post('/signInWithGoogle', [
   },
 ]);
 router.post('/forgotPassword', [
-  check('email', 'email is not correct')
-      .isEmail(),
+  check('email', 'email is not correct').isEmail(),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -257,8 +255,8 @@ router.post('/forgotPassword', [
           },
         });
       }
-      const {email} = req.body;
-      const existingUser = await User.findOne({email});
+      const { email } = req.body;
+      const existingUser = await User.findOne({ email });
       if (!existingUser) {
         return res.status(400).json({
           response: {
@@ -267,31 +265,34 @@ router.post('/forgotPassword', [
           },
         });
       }
-      const emailVerificationToken= tokenService.generate({_id: existingUser._id});
+      const emailVerificationToken = tokenService.generate({ _id: existingUser._id });
       existingUser.emailVerificationToken = emailVerificationToken.accessToken;
       await existingUser.save();
       const encodedEmail = encodeURIComponent(email);
       const encodedToken = encodeURIComponent(emailVerificationToken.accessToken);
       const resetPasswordURL = `https://anvovab.space/signIn/resetPassword?token=${encodedToken}&email=${encodedEmail}`;
-      await transporter.sendMail(getResetPasswordEmail(email, resetPasswordURL), function(error, info) {
-        if (error) {
-          return res.status(500).json({
-            response: {
-              code: 500,
-              message: 'SERVER_ERROR_MAIL',
-            },
-          });
-        } else {
-          if (info.response) {
-            return res.status(200).json({
+      await transporter.sendMail(
+        getResetPasswordEmail(email, resetPasswordURL),
+        function (error, info) {
+          if (error) {
+            return res.status(500).json({
               response: {
-                code: 200,
-                message: 'RESET_EMAIL_SENT',
+                code: 500,
+                message: 'SERVER_ERROR_MAIL',
               },
             });
+          } else {
+            if (info.response) {
+              return res.status(200).json({
+                response: {
+                  code: 200,
+                  message: 'RESET_EMAIL_SENT',
+                },
+              });
+            }
           }
         }
-      });
+      );
     } catch (error) {
       return res.status(500).json({
         response: {
@@ -301,15 +302,16 @@ router.post('/forgotPassword', [
         },
       });
     }
-  }]);
+  },
+]);
 router.post('/resetPassword', async (req, res) => {
   try {
-    const {token, email, password} = req.body;
-    const currentUser = await User.findOne({email});
-    const isValidToken = (token === currentUser.emailVerificationToken);
+    const { token, email, password } = req.body;
+    const currentUser = await User.findOne({ email });
+    const isValidToken = token === currentUser.emailVerificationToken;
     if (isValidToken) {
       currentUser.password = await bcrypt.hash(password, 12);
-      const newToken = tokenService.generate({_id: currentUser._id});
+      const newToken = tokenService.generate({ _id: currentUser._id });
       await tokenService.save(currentUser._id, newToken.refreshToken);
       currentUser.emailVerificationToken = newToken.accessToken;
       await currentUser.save();
@@ -339,8 +341,8 @@ router.post('/resetPassword', async (req, res) => {
 });
 router.post('/emailVerification', async (req, res) => {
   try {
-    const {token, email} = req.body;
-    const currentUser = await User.findOne({email});
+    const { token, email } = req.body;
+    const currentUser = await User.findOne({ email });
     if (!currentUser) {
       return res.status(400).json({
         response: {
@@ -349,11 +351,11 @@ router.post('/emailVerification', async (req, res) => {
         },
       });
     }
-    const isValidToken = (token === currentUser.emailVerificationToken);
+    const isValidToken = token === currentUser.emailVerificationToken;
     if (isValidToken) {
       currentUser.isVerified = true;
       await currentUser.save();
-      const tokens = tokenService.generate({_id: currentUser._id});
+      const tokens = tokenService.generate({ _id: currentUser._id });
       res.status(201).send({
         ...tokens,
         userId: currentUser._id,
@@ -383,7 +385,7 @@ router.post('/emailVerification', async (req, res) => {
 });
 router.post('/token', async (req, res) => {
   try {
-    const {refresh_token: refreshToken} = req.body;
+    const { refresh_token: refreshToken } = req.body;
     const data = tokenService.validateRefresh(refreshToken);
     const dbToken = await tokenService.findToken(refreshToken);
     if (isTokenInvalid(data, dbToken)) {
@@ -394,9 +396,9 @@ router.post('/token', async (req, res) => {
         },
       });
     }
-    const tokens = tokenService.generate({_id: data._id});
+    const tokens = tokenService.generate({ _id: data._id });
     await tokenService.save(data._id, tokens.refreshToken);
-    res.status(201).send({...tokens, userId: data._id});
+    res.status(201).send({ ...tokens, userId: data._id });
   } catch (error) {
     return res.status(500).json({
       response: {

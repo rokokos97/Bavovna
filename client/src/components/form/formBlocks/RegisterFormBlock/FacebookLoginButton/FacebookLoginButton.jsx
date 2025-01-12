@@ -18,10 +18,7 @@ const FacebookLoginButton = () => {
       onSuccess={handleResponse}
       onFail={handleError}
       onProfileSuccess={handleResponse}
-      render={({onClick}) => (
-        <button onClick={onClick}>Sign In with Facebook
-        </button>
-      )}
+      render={({ onClick }) => <button onClick={onClick}>Sign In with Facebook</button>}
     />
   );
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './ExitString.module.scss';
 import ExitIcon from '../svg/ExitIcon/ExitIcon';
-import {useDispatch} from 'react-redux';
-import {userLogOut} from '../../store/userSlice';
-import {useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userLogOut } from '../../store/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const ExitString = () => {
   const dispatch = useDispatch();
@@ -13,13 +13,9 @@ const ExitString = () => {
     navigate('/');
   };
   return (
-    <div
-      className={styles.exitString}
-      data-testid="ExitString"
-      onClick={handleLogOut}
-    >
+    <div className={styles.exitString} data-testid="ExitString" onClick={handleLogOut}>
       <span>exit</span>
-      <ExitIcon/>
+      <ExitIcon />
     </div>
   );
 };

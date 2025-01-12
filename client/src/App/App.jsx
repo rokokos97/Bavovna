@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {Routes, Route} from 'react-router-dom';
-import {useSelector} from 'react-redux';
-import {getCart} from '../store/cartSlice';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getCart } from '../store/cartSlice';
 import sessionStorageService from '../services/sessionStorage.service';
 import styles from './App.module.scss';
 import AppLoader from '../hoc/appLoader';
@@ -22,9 +22,8 @@ import CheckOutPageUserInfo from '../pages/checkOutPage/userContactDetailsPage/C
 import CheckOutPageDeliveryInfo from '../pages/checkOutPage/checkOutPageDelivery/CheckOutPageDeliveryInfo';
 import CheckOutPagePaymentInfo from '../pages/checkOutPage/checkOutPagePayment/CheckOutPagePaymentInfo';
 import UnsubscribePage from '../pages/UnsubscribePage/UnsubscribePage';
-import {PayPalScriptProvider} from '@paypal/react-paypal-js';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 export const SearchContext = React.createContext();
-
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
@@ -38,29 +37,38 @@ function App() {
   return (
     <div className={styles.App}>
       <AppLoader>
-        <PayPalScriptProvider options={{
-          'client-id': payPalKey,
-          'currency': 'USD',
-        }}>
-          <SearchContext.Provider value={{searchValue, setSearchValue}}>
+        <PayPalScriptProvider
+          options={{
+            'client-id': payPalKey,
+            currency: 'USD',
+          }}
+        >
+          <SearchContext.Provider value={{ searchValue, setSearchValue }}>
             <Routes>
-              <Route path='/' element={<Layout />}>
+              <Route path="/" element={<Layout />}>
                 <Route index element={<MainPage />} />
-                <Route path='creators' element={<CreatorsPage />} />
-                <Route path='shop' element={<ShopPage />} />
-                <Route path='aboutus' element={<AboutUsPage />} />
-                <Route path='cart/checkoutUserInfo' element={<CheckOutPageUserInfo />} />
-                <Route path='cart/checkoutDelivery' element={<CheckOutPageDeliveryInfo />} />
-                <Route path='cart/checkoutPayment' element={<CheckOutPagePaymentInfo />} />
-                <Route path='orderSuccess' element={<OrderSuccessPage />} />
-                <Route path='cart' element={<ShoppingCartPage />} />
-                <Route path='shop/:id' element={<Card />} />
-                <Route path='signIn/*' element={<GuestRoutes><LoginLayout/></GuestRoutes>}/>
-                <Route path='main' element={<MainPage />} />
-                <Route path='help/*' element={<HelpPage />} />
-                <Route path='user/:id/*' element={<UserPage />} />
-                <Route path='unsubscribe' element={<UnsubscribePage />} />
-                <Route path='*' element={<Page404 />} />
+                <Route path="creators" element={<CreatorsPage />} />
+                <Route path="shop" element={<ShopPage />} />
+                <Route path="aboutus" element={<AboutUsPage />} />
+                <Route path="cart/checkoutUserInfo" element={<CheckOutPageUserInfo />} />
+                <Route path="cart/checkoutDelivery" element={<CheckOutPageDeliveryInfo />} />
+                <Route path="cart/checkoutPayment" element={<CheckOutPagePaymentInfo />} />
+                <Route path="orderSuccess" element={<OrderSuccessPage />} />
+                <Route path="cart" element={<ShoppingCartPage />} />
+                <Route path="shop/:id" element={<Card />} />
+                <Route
+                  path="signIn/*"
+                  element={
+                    <GuestRoutes>
+                      <LoginLayout />
+                    </GuestRoutes>
+                  }
+                />
+                <Route path="main" element={<MainPage />} />
+                <Route path="help/*" element={<HelpPage />} />
+                <Route path="user/:id/*" element={<UserPage />} />
+                <Route path="unsubscribe" element={<UnsubscribePage />} />
+                <Route path="*" element={<Page404 />} />
               </Route>
             </Routes>
           </SearchContext.Provider>

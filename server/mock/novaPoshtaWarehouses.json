@@ -1,778 +1,2557 @@
-  {
-    "8d5a980d-391c-11dd-90d9-001a92567626": [
-      {
-        "label": "NovaPoshta №1: Pyrohivskyi Way, 135",
-        "value": "1ec09d88-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №2: Bohatyrska Street, 11",
-        "value": "7b422fbe-e1b8-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №3: Kalachivska Street, 13",
-        "value": "7b422fc3-e1b8-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №4: Verkhovynna Street, 69",
-        "value": "7b422fc5-e1b8-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №5: Fedorova Street, 32",
-        "value": "7b422fc6-e1b8-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №6: Mykola Vasylenka Street, 2",
-        "value": "1ec09d8b-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №7: Hnat Khotkevych Street, 8",
-        "value": "1ec09d6b-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №8: Naberezhno-Khreshchatytska Street, 33",
-        "value": "1ec09d6a-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №9: Viacheslava Chornovola Lane, 54a",
-        "value": "511fcfd1-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №10: Vasylia Zhukovskoho Street, 22A",
-        "value": "1972050e-1cc7-11e6-971e-005056887b8d"
-      },
-      {
-        "label": "NovaPoshta №12: Yakutska Street, 8",
-        "value": "731a002c-3ed2-11e6-a9f2-005056887b8d"
-      },
-      {
-        "label": "NovaPoshta №14: Mykola Kibalchych Street, 23/25",
-        "value": "39931b75-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №15: Malynska Street, 18",
-        "value": "39931b76-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №16: Verbova Street, 24",
-        "value": "39931b77-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №17: Novokostiantynivska Street, 22/15",
-        "value": "39931b78-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №18: Molodohvardiiska Street, 22",
-        "value": "1692283d-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №19: Raiduzhna Street, 25A",
-        "value": "1692283e-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №20: Ihoria Branovytskoho Street, 4",
-        "value": "1692283f-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №21: Dmytra Lutsenko Street, 8",
-        "value": "9a552bf4-3ed2-11e6-a9f2-005056887b8d"
-      },
-      {
-        "label": "NovaPoshta №22: Revutskoho Street, 26",
-        "value": "16922841-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №23: M. Bazhana Avenue, 24/1",
-        "value": "16922897-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №24: Dovnar-Zapolskoho Street, 16A",
-        "value": "169227e8-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №25: Levka Lukianenka Street, 9",
-        "value": "16922859-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №26: Boichuka Street, 34",
-        "value": "1692285a-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №27: Vasylia Porika Avenue, 13v",
-        "value": "1692285f-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №28: Simi Sosninykh Street, 7a",
-        "value": "16922860-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №29: Akademika Knyshova Street, 8",
-        "value": "16922861-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №30: Privokzalna Street, 12",
-        "value": "4049833d-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №31: Knyaziv Ostrozkykh Street, 5/2a",
-        "value": "0d545f63-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №32: Darnytskyi Boulevard, 23",
-        "value": "9303ca2e-1cc7-11e6-971e-005056887b8d"
-      },
-      {
-        "label": "NovaPoshta №34: Povitroflotskyi Avenue, 34",
-        "value": "79c06547-c8a7-11e4-a77a-005056887b8d"
-      },
-      {
-        "label": "NovaPoshta №35: Fuchika Street, 3",
-        "value": "511fcfda-e1c2-11e3-8c4a-0050568002cf"
-      },
-      {
-        "label": "NovaPoshta №36: Oleny Telihy Street, 25",
-        "value": "0d545f76-e1c2-11e3-8c4a-0050568002cf"
-      }
-    ],
-    "db5c88e0-391c-11dd-90d9-001a92567626" : [
-      {"label": "NovaPoshta №1: Polova Street, 67", "value": "169227f4-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Heroes of Kharkiv Avenue, 54a", "value": "7b422fba-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Tyurinska Street, 124", "value": "7b422fbb-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Dostoevsky Street, 5", "value": "7b422fb7-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Y. Kononenko Square, 1a", "value": "1ec09d93-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Academician Pavlov Street, 120", "value": "0d545ef0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Ludwig Svoboda Avenue, 35", "value": "0d545ef3-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: M. Honcharivska Street, 28/30", "value": "47402ec5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Roganska Street, 101a", "value": "336de16f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Pushkinska Street, 96", "value": "336de170-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Gagarin Avenue, 41/2", "value": "1692287e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Buchmy Street, 1", "value": "1692287f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Heroes of Kharkiv Avenue, 199b", "value": "0d545f61-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: Petra Svyinarenka Street, 20", "value": "1ec09d4a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Y. Kononenko Square, 1a", "value": "1ec09d51-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №17: 23 Serpnya Street, 67a", "value": "1ec09d52-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №18: Gagarin Avenue, 181", "value": "1ec09d53-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №19: Fonvizina Street, 15", "value": "47402e77-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №20: Klochkivska Street, 197d", "value": "5a39e587-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №21: Academician Proskury Street, 1", "value": "5a39e588-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №22: Chernyshevskaya Street, 1", "value": "40498367-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №23: Academician Pavlov Street, 134/16", "value": "40498368-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №24: Defenders of Ukraine Square, 2", "value": "40498369-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №25: Traktorobudivnykiv Avenue, 57a", "value": "16922836-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №27: Shevchenka Street, 317", "value": "0d545f45-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №28: Traktorobudivnykiv Avenue, 89b", "value": "0d545f48-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №30: Heroes of Kharkiv Avenue, 259", "value": "511fcfe0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №31: Svіtla Street, 19", "value": "169227f5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №32: Gymnasium Quay, 26", "value": "0d545f68-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №33: Sumska Street, 124", "value": "47402ea7-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №34: Rizdviana Street, 14", "value": "16922816-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №36: Moskalivska Street, 91", "value": "16922826-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №37: Klochkivska Street, 244", "value": "01ae2640-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №38: Oleksandrivskyi Avenue, 184", "value": "0d545ec8-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №39: Gagarin Avenue, 54A", "value": "0d545edd-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №40: Tarasivska Street, 3", "value": "47402e88-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №41: Matyushenka Street, 7b", "value": "2bb8ce79-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №43: Jubilee Avenue, 1a", "value": "a0728b93-1cca-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №44: Lev Landau Avenue, 46", "value": "e9010e6e-1cca-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №46: Jasmine Boulevard, 9", "value": "2bb8ce90-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №47: Zolochivska Street, 19", "value": "96b6f06f-844d-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №48: Glory Avenue, 5", "value": "3b2d7e3a-8c17-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №49: Heroes of Kharkiv Avenue, 256", "value": "9670123c-8c17-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №50: Klochkivska Street, 99a", "value": "d1770305-8c17-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №51: Bakulina Street, 14", "value": "d177033f-8c17-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №53: Victory Avenue, 65g", "value": "0b94b90c-8c18-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №55: Gagarin Avenue, 20a", "value": "cfeed0b3-9c9a-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №56: Jubilee Avenue, 48-B", "value": "3471dd61-9c9d-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №57: Science Avenue, 48", "value": "41842c09-9c9d-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №59: Sergii Hrytsevtsya Street, 29", "value": "8ccb38e0-9c9d-11e4-acce-0050568002cf"}
-    ],
-    "db5c88d0-391c-11dd-90d9-001a92567626": [
-    {"label": "NovaPoshta №1: Kyivske Shosse, 27", "value": "1692286e-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №2: Bazova Street, 16", "value": "7b422fc4-e1b8-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №3: Dalnytska Street, 23/4", "value": "169227dc-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №4: Akademika Williamsa Street, 86", "value": "1ec09d63-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №5: Akademika Filatova Street, 24", "value": "40498333-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №7: Zhukovskoho Street, 10", "value": "4049833b-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №8: Generala Tsvetaeva Street, 3/5", "value": "fec179c6-1d90-11e6-971e-005056887b8d"},
-    {"label": "NovaPoshta №9: Segedska Street, 18", "value": "16922801-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №10: Generala Bocharova Street, 28", "value": "16922802-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №11: Mykolaivska Doroha Street, 235", "value": "2bb8cee4-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №12: Sofiivska Street, 34", "value": "336de16a-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №13: Semena Paliia Street, 82", "value": "511fcff4-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №14: Marshal Malynovsky Street, 71", "value": "511fcff5-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №15: Tiraspol Highway, 2", "value": "511fcff6-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №16: Malynovsky Street, 27a", "value": "5a39e54d-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №17: Rozumovska Street, 29", "value": "1ec09d47-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №18: Fontanska Doroha Street, 16/8", "value": "1ec09d48-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №19: Radisna Street, 9", "value": "1ec09d98-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №20: Mala Arnautska Street, 119", "value": "1ec09d99-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №21: Oleksandrivskyi Avenue, 21", "value": "5a39e58e-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №22: Yevreiska Street, 1", "value": "5a39e58f-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №23: Akademika Sakharova Street, 3k, Kryzhanivka", "value": "5a39e590-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №24: Fontanska Doroha Street, 4a", "value": "5a39e591-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №25: Mala Arnautska Street, 45", "value": "5a39e592-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №26: Makhachkalinska Street, 2", "value": "47402e4a-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №27: Novoselskogo Street, 64", "value": "380f0fea-7b42-11e6-a9f2-005056887b8d"},
-    {"label": "NovaPoshta №28: Akademika Koroleva Street, 94", "value": "01ae25ff-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №29: M. Hovorova Street, 7A", "value": "1362b829-9d0f-11e6-a4c1-005056887b8d"},
-    {"label": "NovaPoshta №30: Uspenska Street, 7", "value": "1ec09dc9-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №31: Heroiv Oborony Odesy Street, 52", "value": "1ec09dca-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №32: Fontanska Doroha Street, 58", "value": "01ae25d9-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №33: Romana Karmena Street, 15", "value": "01ae25da-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №34: 7 km Ovidiopilska Doroha Street, 1", "value": "01ae25de-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №35: Kanatna Street, 83", "value": "01ae25df-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №36: Ivan and Yuri Lyp Street, 5", "value": "0d545ee8-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №37: Oleksandra Nevskoho Street, 57", "value": "7b422fac-e1b8-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №38: Dnipropetrovska Doroha Street, 127/3", "value": "2bb8ce84-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №39: Prymorska Street, 49/1", "value": "2bb8ce8d-e1c2-11e3-8c4a-0050568002cf"},
-    {"label": "NovaPoshta №40: Kosmonavtiv Avenue, 1", "value": "7d8d4367-0bf2-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №41: S. Paliia Street, 93a", "value": "9221f87a-1c7b-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №42: Uspenska Street, 54", "value": "c586f951-1c7b-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №44: Pyrohivska Street, 27", "value": "655f779d-8c16-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №45: Admiralskyi Avenue, 1V", "value": "6f7a950c-8c16-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №46: Semena Paliia Street, 108", "value": "7875b688-8c16-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №47: Katerinenska Street, 27/1", "value": "895ca4e0-8c16-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №48: Sviatoslav Richter Street, 127a", "value": "b87f5db7-9bfd-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №49: Baltska Doroha Street, 55", "value": "b87f5df1-9bfd-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №50: Varnenska Street, 29 corp.2, room 3a", "value": "c5374c0b-9bfd-11e4-acce-0050568002cf"},
-    {"label": "NovaPoshta №51: Limanka, Polkovnika Huliaieva Avenue, 99", "value": "cddf2369-9bfd-11e4-acce-0050568002cf"}
+{
+  "8d5a980d-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Pyrohivskyi Way, 135",
+      "value": "1ec09d88-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Bohatyrska Street, 11",
+      "value": "7b422fbe-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Kalachivska Street, 13",
+      "value": "7b422fc3-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Verkhovynna Street, 69",
+      "value": "7b422fc5-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Fedorova Street, 32",
+      "value": "7b422fc6-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Mykola Vasylenka Street, 2",
+      "value": "1ec09d8b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Hnat Khotkevych Street, 8",
+      "value": "1ec09d6b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Naberezhno-Khreshchatytska Street, 33",
+      "value": "1ec09d6a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Viacheslava Chornovola Lane, 54a",
+      "value": "511fcfd1-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Vasylia Zhukovskoho Street, 22A",
+      "value": "1972050e-1cc7-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №12: Yakutska Street, 8",
+      "value": "731a002c-3ed2-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №14: Mykola Kibalchych Street, 23/25",
+      "value": "39931b75-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Malynska Street, 18",
+      "value": "39931b76-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Verbova Street, 24",
+      "value": "39931b77-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Novokostiantynivska Street, 22/15",
+      "value": "39931b78-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Molodohvardiiska Street, 22",
+      "value": "1692283d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №19: Raiduzhna Street, 25A",
+      "value": "1692283e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Ihoria Branovytskoho Street, 4",
+      "value": "1692283f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №21: Dmytra Lutsenko Street, 8",
+      "value": "9a552bf4-3ed2-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №22: Revutskoho Street, 26",
+      "value": "16922841-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №23: M. Bazhana Avenue, 24/1",
+      "value": "16922897-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №24: Dovnar-Zapolskoho Street, 16A",
+      "value": "169227e8-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №25: Levka Lukianenka Street, 9",
+      "value": "16922859-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №26: Boichuka Street, 34",
+      "value": "1692285a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №27: Vasylia Porika Avenue, 13v",
+      "value": "1692285f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №28: Simi Sosninykh Street, 7a",
+      "value": "16922860-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №29: Akademika Knyshova Street, 8",
+      "value": "16922861-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №30: Privokzalna Street, 12",
+      "value": "4049833d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №31: Knyaziv Ostrozkykh Street, 5/2a",
+      "value": "0d545f63-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №32: Darnytskyi Boulevard, 23",
+      "value": "9303ca2e-1cc7-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №34: Povitroflotskyi Avenue, 34",
+      "value": "79c06547-c8a7-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №35: Fuchika Street, 3",
+      "value": "511fcfda-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №36: Oleny Telihy Street, 25",
+      "value": "0d545f76-e1c2-11e3-8c4a-0050568002cf"
+    }
   ],
-    "db5c88f0-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Fortechna Street, 2v", "value": "7b422fbf-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Karpenka-Karoho Street, 58", "value": "7b422fb8-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Aivazovskoho Street, 9", "value": "47402ebd-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Sobornyi Avenue, 141", "value": "511fcfdd-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Hoholia Street, 163", "value": "16922899-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Yuvileinyi Avenue, 12", "value": "1ec09d1a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Muzychna Street, 2", "value": "16922803-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Sobornyi Avenue, 43", "value": "16922862-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Metallurhiv Avenue, 19", "value": "511fcff7-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Vodohrai Street, 7A", "value": "5a39e579-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Sobornyi Avenue, 208", "value": "5a39e57a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Dniprovskе Shosse, 30", "value": "1ec09d9d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Sobornyi Avenue, 24", "value": "47402e79-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: Khortytske Shosse, 24", "value": "5a39e58b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Sobornyi Avenue, 84", "value": "5a39e58c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №17: Avramenka Street, 13", "value": "336de181-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №19: Chumachenka Street, 25", "value": "169227ec-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №20: Vyacheslava Zaitseva Street, 15", "value": "0d545ee7-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №21: Tovaryska Street, 56", "value": "7b422fae-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №22: Charivna Street, 119", "value": "47402e8e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №24: Entuziastiv Street, 3", "value": "2bb8ce6f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №25: Chervona Street, 3", "value": "d0215f61-3150-11e6-9e93-005056887b8d"},
-      {"label": "NovaPoshta №26: Pivnichnokilceva Street, 3", "value": "24dfeda5-1e28-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №27: Sobornyi Avenue, 186", "value": "a0fe71be-8431-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №28: Zaporizka Street, 2", "value": "5f10e016-8432-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №29: Shkilna Street, 10", "value": "83bbdeb3-8c13-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №31: Fortechna Street, 80", "value": "c464f73b-9bfe-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №32: Liza Chaikina Street, 74", "value": "db414622-9c01-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №33: Stalevariv Street, 21", "value": "55c366c8-9c02-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №34: Liza Chaikina Street, 41", "value": "55c36702-9c02-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №35: Novokuznetska Street, 5", "value": "6e2fd5e0-9c02-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №36: 40-richchia Peremohy Avenue, 9a", "value": "775f572a-9c02-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №38: Rekordna Street, 2", "value": "99f12f4f-b36e-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №39: Peremohy Street, 64", "value": "99f12f89-b36e-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №40: Mykhaila Honcharenka Street, 5", "value": "2713d599-cbd9-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №41: Bocharova Street, 3", "value": "3296cf34-cbd9-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №42: Novokuznetska Street, 36B", "value": "3a665f59-cbd9-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №43: Ladozhka Street, 18V", "value": "4cb97493-cc97-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №44: Peremohy Street, 115", "value": "a9537aec-e37f-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №45: Vasylia Serhiienka Street, 13", "value": "49f2ef77-f974-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №46: Talalikhina Street, 46g", "value": "5d4afa7f-f975-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №47: Heroyiv 93-ho Bryhady Street, 15", "value": "c8f41961-0eaa-11e5-add9-005056887b8d"},
-      {"label": "NovaPoshta №50: Fortechna Street, 5", "value": "6ecac884-0eac-11e5-add9-005056887b8d"},
-      {"label": "NovaPoshta №51: Kosmichna Street, 121", "value": "82f38f68-0eac-11e5-add9-005056887b8d"},
-      {"label": "NovaPoshta №52: Peremohy Street, 25", "value": "91d90334-0eac-11e5-add9-005056887b8d"},
-      {"label": "NovaPoshta №53: Dudikina Street, 28", "value": "42c75e8c-1cc6-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №55: Budivelnykiv Boulevard, 11", "value": "29dada94-3e92-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №56: Yatsenka Street, 2", "value": "7a855e0c-3e92-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №59: Sobornyi Avenue, 187", "value": "b8f62ca0-3e92-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №60: Tsentralnyi Boulevard, 3", "value": "d0d9953c-3e92-11e6-a9f2-005056887b8d"}
-    ],
-    "db5c88c6-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Horodotska Street, 359", "value": "1ec09d2e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Plastova Street, 7", "value": "39931b6c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Uhorska Street, 22", "value": "39931b10-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Danylyshyna Street, 6", "value": "16922806-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Sykhivska Street, 8", "value": "16922858-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Hrinchenka Street, 2a", "value": "47402e72-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Kulparkivska Street, 142", "value": "39931b6d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Levytskoho Street, 7", "value": "5a39e5b1-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Horodotska Street, 120", "value": "2bb8cef5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Syayvo Street, 13", "value": "39931aec-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Viacheslava Chornovola Avenue, 16D", "value": "0d545f43-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: Heroyiv UPA Street, 6", "value": "39931b85-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Chervonoi Kalyny Avenue, 76", "value": "01ae2642-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №17: Shevchenka Street, 323", "value": "0d545ed3-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №18: Naukova Street, 12a", "value": "0d545edf-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №19: Boykivska Street, 1", "value": "47402e92-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №20: Medovoi Pechery Street, 7", "value": "2bb8ce9f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №21: Pasichna Street, 93B", "value": "2bb8cea0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №22: Horodotska Street, 174", "value": "612ecca1-0bf3-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №23: Symona Petlyury Street, 2", "value": "612eccd8-0bf3-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №24: Zelena Street, 186", "value": "023b5543-1c7e-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №25: Ryashivska Street, 13", "value": "40fcfb1e-1c7e-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №26: Tarasa Shevchenka Street, 321", "value": "71840ba4-8c14-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №27: Nyzynna Street, 2", "value": "cd3b304f-9bfa-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №28: Yaroslava Mudroho Street, 11", "value": "3e016361-9bfb-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №29: Avraama Linkolna Street, 57", "value": "94e07397-b36a-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №30: Lytvynenka Street, 8", "value": "b9e28375-b36a-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №31: Tershakovtsev Street, 1", "value": "c8025d1c-b36a-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №32: Dragan Street, 34", "value": "20d67c2d-b36b-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №33: Antonovycha Street, 90", "value": "b5d6492f-b36b-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №34: B. Khmelnytskoho Street, 176", "value": "14991cf6-b36c-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №35: Demnyanska Street, 26", "value": "292836f9-b36c-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №37: Shchyretska Street, 36 (TC \"Yevropa\" №17)", "value": "133c1b12-bd90-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №38: Zelena Street, 89", "value": "cc5c2e78-cbd2-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №39: Volodymyra Velykoho Street, 27", "value": "25fa64d7-cbd4-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №40: Lychakivska Street, 139", "value": "2e696b50-cbd4-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №41: Pasichna Street, 84A", "value": "400aa8e3-cbd4-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №42: Viacheslava Chornovola Avenue, 67g", "value": "466e0224-cbd4-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №43: Kulparkivska Street, 131", "value": "c5aa59ae-1746-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №44: Polubotka Street, 31", "value": "6e7401b8-3eb9-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №45: Pasichna Street, 133A", "value": "5ed27527-41f4-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №46: Chervonoi Kalyny Avenue, 109", "value": "57242fd0-3eb9-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №47: V. Chukarina Street, 14", "value": "f2246758-a218-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta №48: Mentsynskoho Street, 10", "value": "a3387b46-a219-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta №49: Ivan Mazepa Street, 1", "value": "aaada564-b04f-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta №50: Torfyana Street, 23", "value": "d20356e1-f217-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta №51: Volodymyra Velykoho Street, 18", "value": "d20356f3-f217-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta №52: Uhorska Street, 14", "value": "dae73075-1a29-11e9-ad0d-005056b24375"},
-      {"label": "NovaPoshta №53: Bohdana Khmelnytskoho Street, 29", "value": "2ccc6526-f96a-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №54: Rusovih Street, 2", "value": "1a3437c0-f970-11e4-8a92-005056887b8d"}
-    ],
-    "db5c88f5-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Kuprina Street, 123b", "value": "169227f9-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Leonida Borodycha Street, 17", "value": "1ec09d2a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Kropyvnytskyi Street, 29v", "value": "644de30b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Stepana Tіlgy Street, 5a", "value": "7b422fa8-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Peremohy Avenue, 32", "value": "169227ff-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Eduarda Fuksa Street, 41", "value": "16922804-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Sviato-Mykolaivska Street, 55", "value": "16922805-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: 200-richchia Kryvoho Rohu Avenue, 24", "value": "16922885-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Peremohy Avenue, 41a", "value": "05d2fc08-1cc8-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №10: Mahistralna Street, 25", "value": "1ec09da4-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Heroiv ATO Street, 61", "value": "47402e68-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Pivdennyi Avenue, 17", "value": "47402e69-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Volodymyra Velykoho Street, 9", "value": "5a39e597-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Lisovoho Street, 45", "value": "5a39e5b3-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: Myru Avenue, 29V", "value": "336de184-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Heroiv ATO Street, 30a", "value": "336de18f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №17: Volodymyra Tereshchenka Street, 1E", "value": "39931aeb-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №18: Lermontova Street, 10a", "value": "8cc275a7-e35f-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №19: Musorskyi Street, 20", "value": "01ae260d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №20: Soniachnyi District, 60/5", "value": "0d545ecc-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №21: Admiral Holovko Street, 14", "value": "511fcfa4-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №22: Almazna Street, 1a", "value": "c146d31d-5618-11e5-8d8d-005056887b8d"},
-      {"label": "NovaPoshta №23: Haharina Avenue, 4", "value": "11879c84-f780-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №24: Myru Avenue, 7", "value": "e6e66b60-9bec-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №25: Metalurhiv Avenue, 36", "value": "7a595cc9-a794-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №26: Vasylevskoho Marshal Boulevard, 22B", "value": "b60ad701-a7a6-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №27: Volodymyra Velykoho Street, 43D", "value": "5bcc0e58-a793-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №28: Sicheslavska Street, 3", "value": "0e4365dd-a794-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №29: Sobornosti Street, 48", "value": "a24d4a9e-3ea5-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №30: Nezalezhnosti Ukrainy Street, 16B", "value": "5ff19920-3ea8-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №31: Lermontova Street, 37", "value": "80c969a4-3ea8-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №32: Ivana Avramenko Street, 3", "value": "a82287e7-3ea8-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №33: Hirnytskyi District, 36B", "value": "e5d0242a-3ea8-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №34: Haharina Avenue, 59", "value": "22e2dc64-376a-11ea-8461-0025b502a04e"},
-      {"label": "NovaPoshta №35: Serafymovycha Street, 64", "value": "e6b36b23-a26a-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta №36: Kryvorizhstali Street, 13", "value": "e7cca25f-3eaf-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №37: 5th Zarichnyi District, 61V", "value": "4ea5e6ea-1a07-11ec-8c00-b8830365bd14"},
-      {"label": "NovaPoshta №39: Vechirnii Boulevard, 33", "value": "2b57aed1-e59d-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №40: Serhiia Kolachevskoho Street, 107", "value": "beef4ee6-38ea-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta Postomat №991: Haharina Avenue, 54v", "value": "dd5c25cb-1b48-11ee-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta Poshtomat №5023: P. Hlazovoho Street, 28a", "value": "214b8ecb-b4a3-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5024: Volodymyra Velykoho Street, 51a", "value": "214ff1c6-b4a3-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5158: 200-richchia Kryvoho Rohu Avenue, 7d", "value": "610a67c4-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5168: Vechirnokutska Street, 54a", "value": "8537eb10-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5169: Eduarda Fuksa Street, 1a", "value": "f0a77217-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5170: Petra Doroshenka Street, 2a", "value": "85422910-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5174: 4th Zarichnyi District, 21a", "value": "a8f3ba67-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5176: Musorskyi Street, 19a", "value": "a900f36d-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5177: Desantna Street, 15", "value": "ccd2e7dd-d22d-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta Poshtomat №5178: 5th Zarichnyi District, 39a", "value": "cccdc920-d22d-11ea-b39d-b8830365bd14"}
-    ],
-    "db5c888c-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Heroes of Ukraine Avenue, 13", "value": "7b422fb4-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Morekhidna Street, 1v/6", "value": "7b422fc1-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Kosmonavtiv Street, 83A", "value": "1ec09d62-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Heroes of Ukraine Avenue, 77/1", "value": "40498336-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Soborna Street, 13/4", "value": "511fcff8-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Kosmonavtiv Street, 60/4", "value": "511fcff9-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Central Avenue, 26 B", "value": "68a89919-1cc8-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №9: Generala Karpenka Street, 2/2 a", "value": "1ec09d96-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Central Avenue, 86/3", "value": "47402e7c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Myru Avenue, 13G", "value": "336de18b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Pushkinska Street, 33", "value": "4049836a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Lazurna Street, 17", "value": "11643e0f-1cc8-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №14: Central Avenue, 173/2", "value": "01ae25fb-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: Kosmonavtiv Street, 53/1", "value": "01ae25fc-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Bogoяavlenskyi Avenue, 234v", "value": "456728e3-0bf3-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №17: Kosmonavtiv Street, 93", "value": "1bec3650-9d56-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №18: Bogoяavlenskyi Avenue, 342/2", "value": "59c40af6-9d74-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №20: Bogoяavlenskyi Avenue, 26/2", "value": "b145d123-cbd9-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №21: Kosmonavtiv Street, 108/1", "value": "9acdfc0d-3ebc-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №22: Central Avenue, 135", "value": "b1c0f7eb-3ebc-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №24: Myru Avenue, 17/3", "value": "a5555bbe-5071-11e9-acea-005056b24375"},
-      {"label": "NovaPoshta №26: Kuznetska Street, 51", "value": "31e69a72-7197-11e9-898c-005056b24375"},
-      {"label": "NovaPoshta №27: Nikolska Street, 17/1", "value": "969d954a-b838-11e9-8c22-005056b24375"},
-      {"label": "NovaPoshta №28: Ozerna Street, 1-V", "value": "b371133d-b855-11e9-8c22-005056b24375"},
-      {"label": "NovaPoshta №29: Dekabristiv Street, 31/1", "value": "bf7760d2-abaf-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta №30: Budivelnykiv Street, 18/6", "value": "1ae9ab67-f1b3-11ea-b49b-b8830365bd14"},
-      {"label": "NovaPoshta №31: Buznyka Street, 14/3", "value": "561dde8a-1507-11eb-babe-b8830365bd14"},
-      {"label": "NovaPoshta №32: Chkalova Street, 108/9", "value": "3dad4671-5e60-11eb-a5a6-b8830365bd14"},
-      {"label": "NovaPoshta №34: Korabeliv Avenue, 12/24G", "value": "d9046c13-2122-11ec-a344-b8830365bd14"},
-      {"label": "NovaPoshta №35: 8 Bereznya Street, 2", "value": "a388e50a-30c7-11ec-b7f0-b8830365bd14"},
-      {"label": "NovaPoshta №36: Chkalova Street, 82", "value": "2b66ca5c-e59d-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №37: Ozerna Street, 17g", "value": "2b68925c-e59d-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №38: Varvarivka, Klubna Street, 106/2", "value": "1ec806f2-ed6f-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №39: Bogoяavlenskyi Avenue, 301", "value": "b08cbab0-70e7-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №40: Arkhitektora Starova Street, 2/1", "value": "25125faa-7f73-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №42: Chkalova Street, 215b", "value": "ef70fe52-f975-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №44: Soborna Street, 4a", "value": "f1ede0bb-c9bb-11e5-8478-005056887b8d"},
-      {"label": "NovaPoshta Point №985: Admiral Makarov Street, 60A", "value": "dd579ef4-1b48-11ee-9eb1-d4f5ef0df2b8"}
-    ],
-    "db5c88de-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Yakova Shepelya Street, 1", "value": "6a13a7f8-94db-11e5-a023-005056887b8d"},
-      {"label": "NovaPoshta №2: Lypovetska Street, 6a (TC 'Vivat')", "value": "6d5731b3-94db-11e5-a023-005056887b8d"},
-      {"label": "NovaPoshta №3: Soborna Street, 89", "value": "df003d13-1cc1-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №4: Maksyma Shymka Street, 7", "value": "1ec09d40-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Keletska Street, 83", "value": "5a39e553-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Gladkova Street, 3", "value": "151d232d-d3e7-11e5-8478-005056887b8d"},
-      {"label": "NovaPoshta №7: Keletska Street, 51a", "value": "5a39e59c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Pushkina Street, 10", "value": "5a39e545-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Kotsyubynskoho Avenue, 32", "value": "5a39e546-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Khmelnytske Shosse, 82", "value": "5a39e547-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Streletska Street, 14", "value": "47402e55-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Pyrohova Street, 31", "value": "6d5731b5-94db-11e5-a023-005056887b8d"},
-      {"label": "NovaPoshta №13: Kyivska Street, 134", "value": "01ae25d0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Sabarivske Shosse, 1b/2d", "value": "01ae25d1-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Kotsyubynskoho Avenue, 70 (TC 'PetroTsentr')", "value": "6ed0dbad-0bf2-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №17: Vasylia Poryka Street, 5a", "value": "5d7c8aac-1c7a-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №18: Knyaziv Koriatovychiv Street, 181a", "value": "effa6110-9bf9-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №20: Chekhova Street, 8a", "value": "a3604d79-0094-11e6-899e-005056887b8d"},
-      {"label": "NovaPoshta №21: Generala Arabeya Street, 2", "value": "98e690ec-5a33-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №22: Haharina Square, 2", "value": "51dbc998-6188-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №23: Vasylia Poryka Street, 46", "value": "37ab41c2-610d-11e9-898c-005056b24375"},
-      {"label": "NovaPoshta №25: Mykolaivska Street, 2 (TC 'Barbara')", "value": "d3528e36-a245-11e9-b790-005056b24375"},
-      {"label": "NovaPoshta №26: Pyrohova Street, 71a", "value": "8b2f1a08-b918-11e9-8c22-005056b24375"},
-      {"label": "NovaPoshta №27: Tramvaina Street, 36", "value": "4647ee86-5e94-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №35: Khmelnytske Shosse, 114-V TC (The Mall)", "value": "da412b32-f953-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №36: Kotsyubynskoho Avenue, 4", "value": "b2c70fb7-f965-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №41: Pyrohova Street, 78a", "value": "90605a48-2122-11ec-a344-b8830365bd14"}
-    ],
-    "db5c8892-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Veterinary Street, 22 (entrance from European Street 'Furniture Quarter')", "value": "7b422fb5-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Kovpaka Street, 26", "value": "7b422fb9-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Lidova Street, 13", "value": "1ec09d90-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Sobornosti Street, 71", "value": "16922880-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Ivana Mazepy Street, 12/8", "value": "1ec09d4b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Marshal Biryuzova Street, 43 a", "value": "47402e74-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Bohdana Khmelnytskoho Boulevard, 21", "value": "47402e75-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Gogol Street, 20", "value": "5a39e5a6-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: European Street, 63", "value": "644de306-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Heroes of ATO Street, 79", "value": "01ae263d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Sinna Street, 2/49", "value": "0d545ee5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Velykotyrnivska Street, 35/2", "value": "511fcfbd-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Symona Petlyury Street, 45", "value": "511fcfbe-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: European Street, 94", "value": "e6e66b9c-9bec-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №16: Myru Avenue, 28", "value": "d8666f77-b35e-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №17: Zinkivska Street, 21", "value": "39518578-b35f-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №18: Gogol Street, 38 (TC 'Metropolitan')", "value": "d8cfe4b6-cbcf-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №19: European Street, 185", "value": "433e7e87-cbd0-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №20: Myru Avenue, 30A", "value": "c5796509-cc83-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №21: Velykotyrnivska Street, 7", "value": "f8da650d-3ec6-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №22: Pavlenkivska Street, 3b", "value": "2497a0fa-b9af-11e9-8c22-005056b24375"},
-      {"label": "NovaPoshta №23: Kotlyarevskoho Street, 10", "value": "f6eb1710-f1b2-11ea-b49b-b8830365bd14"},
-      {"label": "NovaPoshta №24: Steppovoho Frontu Street, 48", "value": "fc17e78c-72f9-11ec-81d3-b8830365bd14"},
-      {"label": "NovaPoshta №25: Pershotravnevyy Avenue, 19", "value": "5f97a577-0ad4-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta №26: European Street, 66", "value": "ae677bcb-7178-11e5-8d8d-005056887b8d"},
-      {"label": "NovaPoshta №27: Zavodska Street, 12", "value": "eb13e50d-3ec4-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №28: Nebesnoi Sotni Street, 74", "value": "cfbb78e9-3ec5-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №29: Sakko Street, 18a", "value": "559fc0c9-3ec6-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №30: Stanislavskoho Street, 14/2", "value": "6e7396a3-3ec6-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №31: Skovorody Street, 2v", "value": "85b2bec1-3ec6-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №32: Kovpaka Street, 21", "value": "015018c5-7f73-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №33: Avtobazivska Street, 7", "value": "9356477a-b845-11ed-9eb1-d4f5ef0df2b8"}
-    ],
-    "db5c897c-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Starobilooska Street, 77", "value": "1ec09d3a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Peremohy Avenue, 50", "value": "336de175-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Peremohy Avenue, 139", "value": "16922852-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Levka Lukyanenka Street, 68", "value": "40498320-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Myru Avenue, 180a", "value": "5a39e5b5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Shevchenka Street, 46", "value": "1ec09dcb-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Myru Avenue, 50", "value": "39931b8b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Pukhova Street, 142", "value": "7b422fab-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Krasnosilska Street, 59a", "value": "6ea56bbd-f859-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Ivan Mazepa Street, 48", "value": "8a09d145-1c7a-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №12: Tsiolkovskoho Street, 4", "value": "106a4660-e404-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №13: Myru Avenue, 49 (TSUM Chernihiv)(1st floor)", "value": "709892d0-0ac8-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta Mobile №14: Starobilooska Street, 16a", "value": "8f7981be-34fb-11e5-add9-005056887b8d"},
-      {"label": "NovaPoshta №15: Mstyslavska Street, 25", "value": "5622dbb2-57b4-11e5-8d8d-005056887b8d"},
-      {"label": "NovaPoshta №16: Myru Avenue, 194, building 10", "value": "64675206-42ab-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №18: Pyatnytska Street, 49", "value": "e54122b8-4292-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №19: Vsihsvyatska Street, 5", "value": "eab850c8-2ba0-11e9-acea-005056b24375"},
-      {"label": "NovaPoshta №20: Shevchenka Street, 112a", "value": "c67441f4-dbde-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta №21: Rokossovskoho Street, 51", "value": "48000dd2-7d91-11eb-983c-b8830365bd14"},
-      {"label": "NovaPoshta №22: 1st of May Street, 167A", "value": "6c3a0956-8668-11eb-945f-b8830365bd14"},
-      {"label": "NovaPoshta №24: Lyubetska Street, 155", "value": "94868863-cf40-11eb-b6ce-b8830365bd14"},
-      {"label": "NovaPoshta №25: Shevchenka Street, 33A", "value": "c6f32edb-5358-11ec-a2db-b8830365bd14"},
-      {"label": "NovaPoshta №26: Drozda Street, 7", "value": "47c9732d-7e8b-11ec-a9b5-b8830365bd14"},
-      {"label": "NovaPoshta №27: Popudrenka Street, 29", "value": "0acb8ec9-8b28-11ec-9f8b-b8830365bd14"},
-      {"label": "NovaPoshta №28: Zakhysnykiv Ukrainy Street, 9 (Silpo store)", "value": "2b6a6074-e59d-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №29: Muzychna Street, 1 building 1 (Silpo store)", "value": "2b6c4ebe-e59d-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №30: Lotna Street, 17", "value": "64be4cc0-ed6f-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №31: Nezalezhnosti Street, 25, unit 17", "value": "86884f86-091e-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "MOYO Point №953: Myru Avenue, 49", "value": "a428b0bc-86d4-11ed-9eb1-d4f5ef0df2b8"}
-    ],
-    "db5c8902-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Khomenka Street, 15", "value": "47402ebb-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Chyhyrynska Street, 11/1", "value": "7b422fb3-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Shevchenko Boulevard, 150", "value": "4049830d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Haharina Street, 77", "value": "336de19d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Vyacheslava Halvy (formerly Rudnieva) Street, 45", "value": "511fd003-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Nyzhnia Horova Street, 44, unit 1", "value": "511fcf95-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Patsaieva Street, 7", "value": "511fcf96-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Nadpilna Street, 326/Kryvalivska Street, 66", "value": "5a39e596-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Ostafiia Dashkevycha Street, 34", "value": "0d545f6e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Odeska Street, 8", "value": "0d545ec5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Nebesnoi Sotni (formerly Lenin) Street, 6", "value": "7b422faa-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Molotkova Street, 20", "value": "2bb8ce9a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Vyacheslav Chornovol Street, 243/1", "value": "2bb8ce9b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Blahovisna Street, 372/Yurii Illienko Street, 59", "value": "2bb8ce9c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: O. Dashkevycha Street, 20", "value": "ecc26677-3151-11e6-9e93-005056887b8d"},
-      {"label": "NovaPoshta №16: Nevskoho O. Street, 15", "value": "aaada553-b04f-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta №17: Blahovisna Street, 269/4", "value": "f6a6ea50-3f68-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №18: Volodymyra Lozheshnikova (formerly Krupska) Street, 52", "value": "42447cdb-6444-11ea-91e8-b8830365bd14"},
-      {"label": "NovaPoshta №19: 30-richchia Peremohy Street, 22/1", "value": "42517724-6444-11ea-91e8-b8830365bd14"},
-      {"label": "NovaPoshta №20: Vitaliia Verhaya Street, 10, unit 156", "value": "6c5d9bc0-a26e-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta №21: Kryvalivska Street, 7", "value": "e2b56d91-e371-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №22: Taras Shevchenko Boulevard, 207 (House of Trade)", "value": "8f5e14ad-0b7c-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta №23: Smylyanska Street, 149", "value": "c42523bd-2ada-11e5-add9-005056887b8d"},
-      {"label": "NovaPoshta №25: Shevchenko Boulevard/Mitnytska Street, 274/13 (Pioneer Mall)", "value": "b4326f52-d306-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta №26: Serzhant Zhuzhomy Street, 6", "value": "51a1f90d-3cbe-11ec-90c4-b8830365bd14"},
-      {"label": "NovaPoshta №28: Sumhait Street, 24 (Thrash store)", "value": "1ee2057b-ed6f-11ec-9eb1-d4f5ef0df2b8"},
-      {"label": "Business Branch №700: Rusko-Polianska Village Council, Shchedre area, land plot 4", "value": "d87064f3-4240-11ec-b731-b8830365bd14"},
-      {"label": "MOYO Point №980: Shevchenko Boulevard, 208/1", "value": "53dec41e-e8a6-11ed-9eb1-d4f5ef0df2b8"}
-    ],
-    "db5c88e5-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Linijna Street, 15", "value": "336de177-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Petropavlivska Street, 62", "value": "4049830c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Heroiv Krut Street, 60/3", "value": "7b422faf-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Hetmana Pavla Skoropadskoho (formerly Levanevskoho) Street, 10", "value": "4049830a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Yuriia Vietrova (formerly Vorovskoho) Street, 20", "value": "0d545f70-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Voskresenska Street, 13a", "value": "39931b6a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Bilopilskyi Shliakh Street, 30/3", "value": "39931b6b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Mykhaila Lushpy Avenue, 13", "value": "47402ec0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Ukrainskoi Narodnoi Respubliky Street, 4", "value": "511fcfb2-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Romenska Street, 81", "value": "2bb8cec4-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Peremohy Avenue (formerly Kurskyi), 103", "value": "f085618b-0be4-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №13: Yaroslava Mudroho (formerly Proletarska) Street, 50", "value": "60062941-b36a-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №14: Herasyma Kondratieva Street,146/1", "value": "c3f1f0ca-cbd1-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №16: M. Lushpy Avenue, 5, building 10", "value": "02151e6c-3f60-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №17: Nyzhnosyrova Street, 60", "value": "36ed49c4-3f60-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №18: Illinska Street, 56", "value": "4964e316-3f60-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №19: Peremohy Avenue (formerly Kurskyi), 111", "value": "5643728c-3f60-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №22: M. Lushpy Avenue, 31B", "value": "2fa218d8-54dd-11eb-9289-b8830365bd14"},
-      {"label": "NovaPoshta №23: Kharkivska Street, 2/2 (Silpo store, 1st floor)", "value": "7c292648-70b3-11e5-8d8d-005056887b8d"},
-      {"label": "NovaPoshta №24: Troitska Street, 9", "value": "d2739baf-0b48-11ec-83de-b8830365bd14"}
-    ],
-    "db5c88c4-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Hranitna Street, 16", "value": "5a39e5af-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Nebesnoi Sotni Street, 52", "value": "1ec09d29-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Maidan Peremohy, 10", "value": "40498331-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Chudnivska Street, 113A", "value": "5a39e554-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: B. Tena Street, 9", "value": "5a39e555-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Metalistiv Street, 2 (entrance from Serhiia Paradzhanova 66)", "value": "50f839fb-1cc5-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №9: Vitruka Street, 9a", "value": "5a39e5b0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Myru Avenue, 37", "value": "01ae2605-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Vils'kyi Shliakh Street, 14", "value": "01ae2606-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Smolianska Square, 3", "value": "01ae2607-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Lvivska Street, 11", "value": "01ae2608-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Vokzalna, 10", "value": "01ae2609-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №16: Yevhena Rykhlika Street, 11A", "value": "cf1c51dd-b918-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №17: Kyivska Street, 77 (TRC 'Global UA')", "value": "cf1c5217-b918-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №18: Shevchenka Street, 18a", "value": "f27b6d25-b918-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №19: Chudnivska Street (formerly Chernyakhovskoho), 92 (TC'Okean')", "value": "196e0a59-bd8f-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №20: Borysa Tena Street, 83/38", "value": "a6678966-bd8f-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №23: Baseina Street, 2A", "value": "06e7211d-5614-11e5-8d8d-005056887b8d"},
-      {"label": "NovaPoshta №25: Peremohy Street, 53", "value": "5e78584a-3e8f-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №27: Borysa Liatoshynskoho Street, 18", "value": "236ceba4-3e90-11e6-a9f2-005056887b8d"}
-    ],
-    "db5c88ac-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta №1: Trudova Street, 5/4 (near the Shell gas station)", "value": "511fd00e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №2: Geologiv Street, 2 (territory of the 'Pan Kabluk' market)", "value": "1692286c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №3: Sitsinskoho Street (formerly Vatutina), 11", "value": "1ec09d34-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №4: Myru Avenue, 76", "value": "1ec09dae-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №5: Kamyanecka Street, 52/2", "value": "16922850-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №6: Podilska Street, 73/1", "value": "0d545f5f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №7: Romana Shukhevycha Street, 20 (formerly Kurchatova)", "value": "0d545f60-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №8: Knyazia Sviatoslava Khorobroho Street, 5", "value": "1ec09d9f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №9: Khotovytskoho Street, 7", "value": "47402e70-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №10: Starokonstantynivske Shose, 5/3-Ж, premises №2K and №3K", "value": "47402e7a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №11: Proskurivskoho pidpillya Street, 71/1", "value": "5a39e59f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №12: Peremohy Street, 11/1", "value": "47402e7e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №13: Chornovola Street, 110", "value": "511fd008-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №14: Instytutska Street, 13A", "value": "7b422f8c-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №15: Starokonstantynivske shose, 2/1b (TC 'Agora')", "value": "20999bc4-8433-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta №16: Geologiv Street, 5/2 (in front of the 'MIVS' market)", "value": "01ae25e9-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta №17: Starymistka Street, 35", "value": "a946c1d7-cbd2-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №18: Svobody Street, 73 (shop 'JYSK')", "value": "c3b199f7-cbd2-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta №19: Lvivske shose, 55/2B", "value": "0c4eb23a-e383-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №20: Chornovola Street, 155/1", "value": "9d7c4bfc-1749-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta №21: Myru Avenue, 80", "value": "cfa959ba-3f67-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №22: Shevchenka Street, 11", "value": "505d1b91-f969-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta №23: Trudova Street, 6-A, premises 133 (TC 'Woodmoll')", "value": "0d33588f-0b63-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta №24: Ternopilska Street, 10/6B", "value": "33109e67-0b80-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta №25: Romana Shukhevycha Street, 5/1 (formerly Kurchatova)", "value": "011fb6fc-5620-11e5-8d8d-005056887b8d"},
-      {"label": "NovaPoshta №26: Kamyanecka Street, 19A", "value": "0abf3677-3f68-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №27: Dovzhenka Street, 4", "value": "3604cd25-3f68-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №28: Panasa Mirnoho Street, 37/3", "value": "522421af-3f68-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta №29: Prybuzka Street, 12/1", "value": "de3b8022-b856-11e9-8c22-005056b24375"},
-      {"label": "NovaPoshta №30: Starokonstantynivske shose, 26, premises 101", "value": "f6897d38-9b69-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta №31: Marshala Krasovskoho Street, 57", "value": "0be04461-abaf-11ea-8d76-b8830365bd14"},
-      {"label": "NovaPoshta №32: Myru Avenue, 44", "value": "1b77ddbc-cc01-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta №33: Bandery Stepana Street, 2/1A, premises 403", "value": "1ebcaea9-f724-11ea-b49b-b8830365bd14"},
-      {"label": "NovaPoshta №34: Romana Shukhevycha Street, 19", "value": "51934859-4ded-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №35: Zarychanska Street, 57/1", "value": "cd34def6-4e32-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №36: Shevchenka Street, 70/1", "value": "93526b14-b845-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta №37: Zalizniaka Street, 4/2", "value": "93549c69-b845-11ed-9eb1-d4f5ef0df2b8"}
-    ],
-    "e221d642-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta No. 1: Ruska Street, 248o", "value": "47402ec4-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 2: Kalynivska Street, 13-A", "value": "7b422fc0-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 3: Kolomyiska Street, 9g", "value": "01ae25c9-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 4: Holovna Street, 200", "value": "7b422fb6-e1b8-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 5: Yasska Street, 3", "value": "2bb8ceed-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 6: Shkilna Street, 1b", "value": "1ec09d55-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 7: Ukrainska Street, 32", "value": "47402e71-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 8: Heroiv Maidanu, 186v", "value": "5a39e5a0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 9: Kalynivska Street, 13V", "value": "5a39e5a1-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 10: Kotliarevskoho Street, 7", "value": "336de187-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 11: Alexandri Vasile, 2v", "value": "336de188-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 12: Parkovyi Drive, 2", "value": "01ae25ea-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 13: Bukovynska Street, 25", "value": "01ae25eb-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 14: Nebesnoi Sotni Street, 20", "value": "01ae25ec-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 15: Skalda Serhiia Street, 9a", "value": "4e2a7da9-cbd4-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta No. 17: Heroiv Maidanu Street, 63", "value": "094e00c9-3153-11e6-9e93-005056887b8d"},
-      {"label": "NovaPoshta No. 18: Bohdana Khmelnytskoho Street, 56", "value": "3d942684-3f6a-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 20: Ruska Street, 88", "value": "c356aab4-3f6a-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 21: Pivdenna-Kiltseva, 4-V", "value": "1fb3b50a-3f6b-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 22: Rivnenska Street, 5a", "value": "32940ba4-3f6b-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 23: Heroiv Maidanu Street, 54", "value": "3c930b3c-3f6b-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 24: Zarozhanska Street, 12a", "value": "2d6a26fb-e9aa-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 25: Khotynska Street, 10a", "value": "8d7ce8ac-e9aa-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 26: Haharina Yuriia Street, 70", "value": "886b2f5e-1ccb-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta No. 28: Poshtova Street, 3", "value": "644f696d-8c44-11e9-898c-005056b24375"},
-      {"label": "NovaPoshta No. 29: Entuziastiv Street, 11", "value": "644f697d-8c44-11e9-898c-005056b24375"},
-      {"label": "NovaPoshta No. 30: Nezalezhnosti Avenue, 125 A", "value": "c814ef94-a244-11e9-b790-005056b24375"},
-      {"label": "NovaPoshta No. 32: Holovna Street, 226", "value": "f17ec4a7-4e32-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "Poshtomat No. 3384: Alma-atynska Street, 6", "value": "ae65f2fc-2aa7-11e9-acea-005056b24375"},
-      {"label": "Poshtomat No. 3385: Ruska Street", "value": "25da39ee-2ba4-11e9-acea-005056b24375"},
-      {"label": "Poshtomat No. 3386: Intersection of Pivdenna-Kiltseva and Heroiv Maidanu Street", "value": "0bc4a08a-2b73-11e9-acea-005056b24375"}
-    ],
-    "db5c896a-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta No. 1: Knyazia Volodymyra Street, 109-K", "value": "1ec09d38-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 2: Chornovola Street, 14/16", "value": "01ae25e5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 4: Vidinska Street, 5v", "value": "40498330-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 5: Mira Avenue, 12", "value": "511fcffd-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 6: Kyivska Street, 44", "value": "5a39e558-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 7: Korolova Street, 5a", "value": "5a39e584-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 8: Kyivska Street, 19", "value": "5a39e59d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 9: Yevhena Konovaltsia Street, 14", "value": "5a39e59e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 10: Shkilna Street, 13", "value": "336de185-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 11: Fabrychna Street, 1", "value": "336de186-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 12: Ulasa Samchuka Street, 14", "value": "16922835-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 13: Pirohova Street, 8", "value": "761d11b1-f781-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 14: Makarova Street, 23", "value": "effa614e-9bf9-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta No. 15: Dubenska Street, 46", "value": "5cd8f3b0-9bfa-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta No. 16: Rad Velykozhytynska Settlement, 43", "value": "f8597a84-e381-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 17: Haharina Street, 16", "value": "f051aff1-e382-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 18: Volodymyra Stel'makha Street, 9B", "value": "32902192-3f5a-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 19: Kyivska Street, 67", "value": "383f1c2c-3f5b-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 20: Viacheslava Chornovola Street, 53", "value": "5ce6e496-3f5b-11e6-a9f2-005056887b8d"}
-    ],
-    "db5c8904-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta No. 1: Maksymovycha Street, 8", "value": "1ec09d32-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 2: Vovchynetska Street, 26", "value": "0d545eef-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 3: Zaliznychna Street, 4", "value": "4049832f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 4: Nezalezhnosti Street, 146", "value": "5a39e574-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 5: Viacheslava Chornovola Street, 3", "value": "5a39e556-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 6: Nadyrichna Street, 6", "value": "5a39e5a2-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 7: B. Lepkoho Street, 6a, premises 1,2", "value": "47402e51-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 8: Mykolaychuka Street, 30", "value": "1ec09dc7-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 9: Pivdennyi Boulevard, 23", "value": "40498322-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 10: Stepana Bandery Street, 10B", "value": "01ae2643-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 11: Hrushevskoho Street, 14", "value": "7bab9adb-0bf3-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta No. 12: Vovchynetska Street, 225m", "value": "192b2bb0-d6a8-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 13: Sorokhteya Street, 41", "value": "bbf8cfec-e384-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 14: Naberezhna im. V. Stefanyka Street, 42", "value": "d3ba3052-33f4-11e8-a3de-005056b2fc3d"},
-      {"label": "NovaPoshta No. 15: V. Ivasyuka Street, 26A", "value": "62d352b2-e93c-11ea-b39d-b8830365bd14"},
-      {"label": "NovaPoshta No. 16: Snizhna Street, 52a, premises 69", "value": "ada3a0c1-f1b2-11ea-b49b-b8830365bd14"},
-      {"label": "NovaPoshta No. 18: Pasichna Street, 15B, premises 24, 25, 26", "value": "03f60af8-7d90-11eb-983c-b8830365bd14"},
-      {"label": "NovaPoshta No. 19: Bohdana Khmelnytskoho Street, 36", "value": "64c0ec0f-ed6f-11ec-9eb1-d4f5ef0df2b8"}
-    ],
-    "db5c8900-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta No. 1: Mykulyneсka Street, 46, premises 1", "value": "511fd000-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 2: Ruska Street, 5", "value": "511fcfed-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 3: Petrykiv Village, Zakhidna Street, 2", "value": "1ec09d2c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 4: Zamis'ka Street, 16", "value": "1ec09d57-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 5: Torgovytsya Street, 1-V, premises 2", "value": "39931b6e-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 6: Myrona Tarnavskoho Lane, 1", "value": "47402e52-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 7: Lesya Kurbasa Street, 5", "value": "01ae25ee-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 8: Medova Street, 6", "value": "01ae2612-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 9: Henerala M. Tarnavskoho Street, 32, premises 146", "value": "0d545ee0-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 10: Maksyma Kryvonosa Street, 3", "value": "45a5cfdf-b36c-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta No. 11: Polkovnyka Danyla Nechaya Street, 25a", "value": "c8ba8c6c-b36c-11e4-a77a-005056887b8d"},
-      {"label": "NovaPoshta No. 12: Chaykovskoho Street, 40", "value": "09277d8f-1749-11e6-971e-005056887b8d"},
-      {"label": "NovaPoshta No. 13: Zbarazka Street, 29A, premises No. 47", "value": "30db959b-b7f3-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta No. 15: S. Petlyury Boulevard, 4a (premises 13)", "value": "c76cb3db-0b69-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 16: Obolonya Street, 49", "value": "cb72c89f-0b6b-11e5-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 17: Anton Monastyrsky Street, 50/1", "value": "7da2249c-d2e4-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta No. 18: Mira Street, 7", "value": "a898544e-ecaa-11e8-ad0d-005056b24375"},
-      {"label": "NovaPoshta No. 19: B. Lepkoho Street, 2B", "value": "709f9cfe-a26d-11ea-8d76-b8830365bd14"}
-    ],
-    "db5c893b-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta No. 1: Karbyshova Street, 1", "value": "40498332-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 2: Shevchenka Street, 88", "value": "0d545f5c-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 3: Sobornosti Avenue, 1-A", "value": "39931b03-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 4: Yaroslava Mudroho Street, 11V", "value": "1ec09d35-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 5: Rivnenska Street, 55", "value": "16922886-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 7: Henerala Shukhevycha Street, 4", "value": "5a39e557-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 8: Kravchuka Street, 42a", "value": "47402e6d-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 9: Zadvoretska Street, 1a", "value": "cf565840-9fd9-11e5-a023-005056887b8d"},
-      {"label": "NovaPoshta No. 10: Voli Avenue, 12", "value": "0d545f50-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 11: Kryvyi Val Street, 24", "value": "0d545f51-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 12: Shota Rustaveli Street, 9", "value": "0d545f52-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 13: Voli Avenue, 35", "value": "0d545f53-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 14: Vidrodzhennia Avenue, 10", "value": "0d545f54-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 15: Chornovola Street, 2v", "value": "0d545f55-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 17: Konyakina Street, 17a", "value": "19456aeb-3eb6-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 18: Molodi Avenue, 9", "value": "565d930f-3eb7-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 19: Rivnenska Street, 109", "value": "6e8f8a11-3eb7-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 20: Franka Street, 61, premises 16, 17", "value": "5c4f4298-f970-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 21: Konyakina Street, 7", "value": "fac8eac9-0b6d-11e5-8a92-005056887b8d"}
-    ],
-    "e221d627-391c-11dd-90d9-001a92567626": [
-      {"label": "NovaPoshta No. 1: Vereshchahina Street, 16", "value": "1ec09d2b-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 2: Svobody Avenue, 63", "value": "4049833a-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 3: Ostrivna Street, 9A", "value": "5a39e538-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 4: Kapushanska Street, 168", "value": "5a39e560-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 5: Hrushevskoho Street, 72a", "value": "47402ea5-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 6: Ivana Franka Street, 1d (office 2)", "value": "01ae261f-e1c2-11e3-8c4a-0050568002cf"},
-      {"label": "NovaPoshta No. 7: Yulii Zhemayte Street, 1a", "value": "542ab50a-0bf3-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta No. 8: Sobranetska Street, 146b", "value": "c8ae88c4-1c7d-11e4-acce-0050568002cf"},
-      {"label": "NovaPoshta No. 9: Lva Tolstoho Street, 31", "value": "7d542d5c-e9bd-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 10: Zankovetskoji Street, 48a", "value": "a9f834ab-e9be-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 11: Haharina Street, 38a", "value": "d9b2ceab-e9be-11e4-8a92-005056887b8d"},
-      {"label": "NovaPoshta No. 12: Sobranetska Street, 46", "value": "ec32f7d7-4b08-11e9-acea-005056b24375"},
-      {"label": "NovaPoshta No. 13: Henerala Svobody Street, 9B", "value": "7706559d-3f61-11e6-a9f2-005056887b8d"},
-      {"label": "NovaPoshta No. 14: Kapushanska (formerly Peremohy) Street, 42", "value": "62c09850-6cb8-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta No. 15: Tymiriazieva Street, 12H", "value": "e31093a0-9282-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta No. 16: Hvardiiska Street, 38B", "value": "4cc9e795-bf4e-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "NovaPoshta No. 17: Babyaka Street, 26", "value": "4b3ff66f-3b65-11ee-9eb1-d4f5ef0df2b8"},
-      {"label": "Point No. 960: Kapushanska Street, 34", "value": "0ccc09b8-cada-11ed-9eb1-d4f5ef0df2b8"},
-      {"label": "Poshtomat NovaPoshta No. 5608: Kapushanska Street, 175a", "value": "55716189-121e-11eb-babe-b8830365bd14"}
-    ]
-  }
+  "db5c88e0-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Polova Street, 67",
+      "value": "169227f4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Heroes of Kharkiv Avenue, 54a",
+      "value": "7b422fba-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Tyurinska Street, 124",
+      "value": "7b422fbb-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Dostoevsky Street, 5",
+      "value": "7b422fb7-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Y. Kononenko Square, 1a",
+      "value": "1ec09d93-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Academician Pavlov Street, 120",
+      "value": "0d545ef0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Ludwig Svoboda Avenue, 35",
+      "value": "0d545ef3-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: M. Honcharivska Street, 28/30",
+      "value": "47402ec5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Roganska Street, 101a",
+      "value": "336de16f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Pushkinska Street, 96",
+      "value": "336de170-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Gagarin Avenue, 41/2",
+      "value": "1692287e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Buchmy Street, 1",
+      "value": "1692287f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Heroes of Kharkiv Avenue, 199b",
+      "value": "0d545f61-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Petra Svyinarenka Street, 20",
+      "value": "1ec09d4a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Y. Kononenko Square, 1a",
+      "value": "1ec09d51-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: 23 Serpnya Street, 67a",
+      "value": "1ec09d52-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Gagarin Avenue, 181",
+      "value": "1ec09d53-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №19: Fonvizina Street, 15",
+      "value": "47402e77-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Klochkivska Street, 197d",
+      "value": "5a39e587-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №21: Academician Proskury Street, 1",
+      "value": "5a39e588-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №22: Chernyshevskaya Street, 1",
+      "value": "40498367-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №23: Academician Pavlov Street, 134/16",
+      "value": "40498368-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №24: Defenders of Ukraine Square, 2",
+      "value": "40498369-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №25: Traktorobudivnykiv Avenue, 57a",
+      "value": "16922836-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №27: Shevchenka Street, 317",
+      "value": "0d545f45-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №28: Traktorobudivnykiv Avenue, 89b",
+      "value": "0d545f48-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №30: Heroes of Kharkiv Avenue, 259",
+      "value": "511fcfe0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №31: Svіtla Street, 19",
+      "value": "169227f5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №32: Gymnasium Quay, 26",
+      "value": "0d545f68-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №33: Sumska Street, 124",
+      "value": "47402ea7-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №34: Rizdviana Street, 14",
+      "value": "16922816-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №36: Moskalivska Street, 91",
+      "value": "16922826-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №37: Klochkivska Street, 244",
+      "value": "01ae2640-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №38: Oleksandrivskyi Avenue, 184",
+      "value": "0d545ec8-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №39: Gagarin Avenue, 54A",
+      "value": "0d545edd-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №40: Tarasivska Street, 3",
+      "value": "47402e88-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №41: Matyushenka Street, 7b",
+      "value": "2bb8ce79-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №43: Jubilee Avenue, 1a",
+      "value": "a0728b93-1cca-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №44: Lev Landau Avenue, 46",
+      "value": "e9010e6e-1cca-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №46: Jasmine Boulevard, 9",
+      "value": "2bb8ce90-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №47: Zolochivska Street, 19",
+      "value": "96b6f06f-844d-11e4-acce-0050568002cf"
+    },
+    { "label": "NovaPoshta №48: Glory Avenue, 5", "value": "3b2d7e3a-8c17-11e4-acce-0050568002cf" },
+    {
+      "label": "NovaPoshta №49: Heroes of Kharkiv Avenue, 256",
+      "value": "9670123c-8c17-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №50: Klochkivska Street, 99a",
+      "value": "d1770305-8c17-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №51: Bakulina Street, 14",
+      "value": "d177033f-8c17-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №53: Victory Avenue, 65g",
+      "value": "0b94b90c-8c18-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №55: Gagarin Avenue, 20a",
+      "value": "cfeed0b3-9c9a-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №56: Jubilee Avenue, 48-B",
+      "value": "3471dd61-9c9d-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №57: Science Avenue, 48",
+      "value": "41842c09-9c9d-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №59: Sergii Hrytsevtsya Street, 29",
+      "value": "8ccb38e0-9c9d-11e4-acce-0050568002cf"
+    }
+  ],
+  "db5c88d0-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Kyivske Shosse, 27",
+      "value": "1692286e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Bazova Street, 16",
+      "value": "7b422fc4-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Dalnytska Street, 23/4",
+      "value": "169227dc-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Akademika Williamsa Street, 86",
+      "value": "1ec09d63-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Akademika Filatova Street, 24",
+      "value": "40498333-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Zhukovskoho Street, 10",
+      "value": "4049833b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Generala Tsvetaeva Street, 3/5",
+      "value": "fec179c6-1d90-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №9: Segedska Street, 18",
+      "value": "16922801-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Generala Bocharova Street, 28",
+      "value": "16922802-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Mykolaivska Doroha Street, 235",
+      "value": "2bb8cee4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Sofiivska Street, 34",
+      "value": "336de16a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Semena Paliia Street, 82",
+      "value": "511fcff4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Marshal Malynovsky Street, 71",
+      "value": "511fcff5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Tiraspol Highway, 2",
+      "value": "511fcff6-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Malynovsky Street, 27a",
+      "value": "5a39e54d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Rozumovska Street, 29",
+      "value": "1ec09d47-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Fontanska Doroha Street, 16/8",
+      "value": "1ec09d48-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №19: Radisna Street, 9",
+      "value": "1ec09d98-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Mala Arnautska Street, 119",
+      "value": "1ec09d99-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №21: Oleksandrivskyi Avenue, 21",
+      "value": "5a39e58e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №22: Yevreiska Street, 1",
+      "value": "5a39e58f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №23: Akademika Sakharova Street, 3k, Kryzhanivka",
+      "value": "5a39e590-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №24: Fontanska Doroha Street, 4a",
+      "value": "5a39e591-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №25: Mala Arnautska Street, 45",
+      "value": "5a39e592-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №26: Makhachkalinska Street, 2",
+      "value": "47402e4a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №27: Novoselskogo Street, 64",
+      "value": "380f0fea-7b42-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №28: Akademika Koroleva Street, 94",
+      "value": "01ae25ff-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №29: M. Hovorova Street, 7A",
+      "value": "1362b829-9d0f-11e6-a4c1-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №30: Uspenska Street, 7",
+      "value": "1ec09dc9-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №31: Heroiv Oborony Odesy Street, 52",
+      "value": "1ec09dca-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №32: Fontanska Doroha Street, 58",
+      "value": "01ae25d9-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №33: Romana Karmena Street, 15",
+      "value": "01ae25da-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №34: 7 km Ovidiopilska Doroha Street, 1",
+      "value": "01ae25de-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №35: Kanatna Street, 83",
+      "value": "01ae25df-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №36: Ivan and Yuri Lyp Street, 5",
+      "value": "0d545ee8-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №37: Oleksandra Nevskoho Street, 57",
+      "value": "7b422fac-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №38: Dnipropetrovska Doroha Street, 127/3",
+      "value": "2bb8ce84-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №39: Prymorska Street, 49/1",
+      "value": "2bb8ce8d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №40: Kosmonavtiv Avenue, 1",
+      "value": "7d8d4367-0bf2-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №41: S. Paliia Street, 93a",
+      "value": "9221f87a-1c7b-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №42: Uspenska Street, 54",
+      "value": "c586f951-1c7b-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №44: Pyrohivska Street, 27",
+      "value": "655f779d-8c16-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №45: Admiralskyi Avenue, 1V",
+      "value": "6f7a950c-8c16-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №46: Semena Paliia Street, 108",
+      "value": "7875b688-8c16-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №47: Katerinenska Street, 27/1",
+      "value": "895ca4e0-8c16-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №48: Sviatoslav Richter Street, 127a",
+      "value": "b87f5db7-9bfd-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №49: Baltska Doroha Street, 55",
+      "value": "b87f5df1-9bfd-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №50: Varnenska Street, 29 corp.2, room 3a",
+      "value": "c5374c0b-9bfd-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №51: Limanka, Polkovnika Huliaieva Avenue, 99",
+      "value": "cddf2369-9bfd-11e4-acce-0050568002cf"
+    }
+  ],
+  "db5c88f0-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Fortechna Street, 2v",
+      "value": "7b422fbf-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Karpenka-Karoho Street, 58",
+      "value": "7b422fb8-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Aivazovskoho Street, 9",
+      "value": "47402ebd-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Sobornyi Avenue, 141",
+      "value": "511fcfdd-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Hoholia Street, 163",
+      "value": "16922899-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Yuvileinyi Avenue, 12",
+      "value": "1ec09d1a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Muzychna Street, 2",
+      "value": "16922803-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Sobornyi Avenue, 43",
+      "value": "16922862-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Metallurhiv Avenue, 19",
+      "value": "511fcff7-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Vodohrai Street, 7A",
+      "value": "5a39e579-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Sobornyi Avenue, 208",
+      "value": "5a39e57a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Dniprovskе Shosse, 30",
+      "value": "1ec09d9d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Sobornyi Avenue, 24",
+      "value": "47402e79-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Khortytske Shosse, 24",
+      "value": "5a39e58b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Sobornyi Avenue, 84",
+      "value": "5a39e58c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Avramenka Street, 13",
+      "value": "336de181-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №19: Chumachenka Street, 25",
+      "value": "169227ec-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Vyacheslava Zaitseva Street, 15",
+      "value": "0d545ee7-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №21: Tovaryska Street, 56",
+      "value": "7b422fae-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №22: Charivna Street, 119",
+      "value": "47402e8e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №24: Entuziastiv Street, 3",
+      "value": "2bb8ce6f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №25: Chervona Street, 3",
+      "value": "d0215f61-3150-11e6-9e93-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №26: Pivnichnokilceva Street, 3",
+      "value": "24dfeda5-1e28-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №27: Sobornyi Avenue, 186",
+      "value": "a0fe71be-8431-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №28: Zaporizka Street, 2",
+      "value": "5f10e016-8432-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №29: Shkilna Street, 10",
+      "value": "83bbdeb3-8c13-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №31: Fortechna Street, 80",
+      "value": "c464f73b-9bfe-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №32: Liza Chaikina Street, 74",
+      "value": "db414622-9c01-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №33: Stalevariv Street, 21",
+      "value": "55c366c8-9c02-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №34: Liza Chaikina Street, 41",
+      "value": "55c36702-9c02-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №35: Novokuznetska Street, 5",
+      "value": "6e2fd5e0-9c02-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №36: 40-richchia Peremohy Avenue, 9a",
+      "value": "775f572a-9c02-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №38: Rekordna Street, 2",
+      "value": "99f12f4f-b36e-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №39: Peremohy Street, 64",
+      "value": "99f12f89-b36e-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №40: Mykhaila Honcharenka Street, 5",
+      "value": "2713d599-cbd9-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №41: Bocharova Street, 3",
+      "value": "3296cf34-cbd9-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №42: Novokuznetska Street, 36B",
+      "value": "3a665f59-cbd9-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №43: Ladozhka Street, 18V",
+      "value": "4cb97493-cc97-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №44: Peremohy Street, 115",
+      "value": "a9537aec-e37f-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №45: Vasylia Serhiienka Street, 13",
+      "value": "49f2ef77-f974-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №46: Talalikhina Street, 46g",
+      "value": "5d4afa7f-f975-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №47: Heroyiv 93-ho Bryhady Street, 15",
+      "value": "c8f41961-0eaa-11e5-add9-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №50: Fortechna Street, 5",
+      "value": "6ecac884-0eac-11e5-add9-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №51: Kosmichna Street, 121",
+      "value": "82f38f68-0eac-11e5-add9-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №52: Peremohy Street, 25",
+      "value": "91d90334-0eac-11e5-add9-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №53: Dudikina Street, 28",
+      "value": "42c75e8c-1cc6-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №55: Budivelnykiv Boulevard, 11",
+      "value": "29dada94-3e92-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №56: Yatsenka Street, 2",
+      "value": "7a855e0c-3e92-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №59: Sobornyi Avenue, 187",
+      "value": "b8f62ca0-3e92-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №60: Tsentralnyi Boulevard, 3",
+      "value": "d0d9953c-3e92-11e6-a9f2-005056887b8d"
+    }
+  ],
+  "db5c88c6-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Horodotska Street, 359",
+      "value": "1ec09d2e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Plastova Street, 7",
+      "value": "39931b6c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Uhorska Street, 22",
+      "value": "39931b10-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Danylyshyna Street, 6",
+      "value": "16922806-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Sykhivska Street, 8",
+      "value": "16922858-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Hrinchenka Street, 2a",
+      "value": "47402e72-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Kulparkivska Street, 142",
+      "value": "39931b6d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Levytskoho Street, 7",
+      "value": "5a39e5b1-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Horodotska Street, 120",
+      "value": "2bb8cef5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Syayvo Street, 13",
+      "value": "39931aec-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Viacheslava Chornovola Avenue, 16D",
+      "value": "0d545f43-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Heroyiv UPA Street, 6",
+      "value": "39931b85-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Chervonoi Kalyny Avenue, 76",
+      "value": "01ae2642-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Shevchenka Street, 323",
+      "value": "0d545ed3-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Naukova Street, 12a",
+      "value": "0d545edf-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №19: Boykivska Street, 1",
+      "value": "47402e92-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Medovoi Pechery Street, 7",
+      "value": "2bb8ce9f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №21: Pasichna Street, 93B",
+      "value": "2bb8cea0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №22: Horodotska Street, 174",
+      "value": "612ecca1-0bf3-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №23: Symona Petlyury Street, 2",
+      "value": "612eccd8-0bf3-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №24: Zelena Street, 186",
+      "value": "023b5543-1c7e-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №25: Ryashivska Street, 13",
+      "value": "40fcfb1e-1c7e-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №26: Tarasa Shevchenka Street, 321",
+      "value": "71840ba4-8c14-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №27: Nyzynna Street, 2",
+      "value": "cd3b304f-9bfa-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №28: Yaroslava Mudroho Street, 11",
+      "value": "3e016361-9bfb-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №29: Avraama Linkolna Street, 57",
+      "value": "94e07397-b36a-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №30: Lytvynenka Street, 8",
+      "value": "b9e28375-b36a-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №31: Tershakovtsev Street, 1",
+      "value": "c8025d1c-b36a-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №32: Dragan Street, 34",
+      "value": "20d67c2d-b36b-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №33: Antonovycha Street, 90",
+      "value": "b5d6492f-b36b-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №34: B. Khmelnytskoho Street, 176",
+      "value": "14991cf6-b36c-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №35: Demnyanska Street, 26",
+      "value": "292836f9-b36c-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №37: Shchyretska Street, 36 (TC \"Yevropa\" №17)",
+      "value": "133c1b12-bd90-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №38: Zelena Street, 89",
+      "value": "cc5c2e78-cbd2-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №39: Volodymyra Velykoho Street, 27",
+      "value": "25fa64d7-cbd4-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №40: Lychakivska Street, 139",
+      "value": "2e696b50-cbd4-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №41: Pasichna Street, 84A",
+      "value": "400aa8e3-cbd4-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №42: Viacheslava Chornovola Avenue, 67g",
+      "value": "466e0224-cbd4-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №43: Kulparkivska Street, 131",
+      "value": "c5aa59ae-1746-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №44: Polubotka Street, 31",
+      "value": "6e7401b8-3eb9-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №45: Pasichna Street, 133A",
+      "value": "5ed27527-41f4-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №46: Chervonoi Kalyny Avenue, 109",
+      "value": "57242fd0-3eb9-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №47: V. Chukarina Street, 14",
+      "value": "f2246758-a218-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №48: Mentsynskoho Street, 10",
+      "value": "a3387b46-a219-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №49: Ivan Mazepa Street, 1",
+      "value": "aaada564-b04f-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №50: Torfyana Street, 23",
+      "value": "d20356e1-f217-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №51: Volodymyra Velykoho Street, 18",
+      "value": "d20356f3-f217-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №52: Uhorska Street, 14",
+      "value": "dae73075-1a29-11e9-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №53: Bohdana Khmelnytskoho Street, 29",
+      "value": "2ccc6526-f96a-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №54: Rusovih Street, 2",
+      "value": "1a3437c0-f970-11e4-8a92-005056887b8d"
+    }
+  ],
+  "db5c88f5-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Kuprina Street, 123b",
+      "value": "169227f9-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Leonida Borodycha Street, 17",
+      "value": "1ec09d2a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Kropyvnytskyi Street, 29v",
+      "value": "644de30b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Stepana Tіlgy Street, 5a",
+      "value": "7b422fa8-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Peremohy Avenue, 32",
+      "value": "169227ff-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Eduarda Fuksa Street, 41",
+      "value": "16922804-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Sviato-Mykolaivska Street, 55",
+      "value": "16922805-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: 200-richchia Kryvoho Rohu Avenue, 24",
+      "value": "16922885-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Peremohy Avenue, 41a",
+      "value": "05d2fc08-1cc8-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №10: Mahistralna Street, 25",
+      "value": "1ec09da4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Heroiv ATO Street, 61",
+      "value": "47402e68-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Pivdennyi Avenue, 17",
+      "value": "47402e69-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Volodymyra Velykoho Street, 9",
+      "value": "5a39e597-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Lisovoho Street, 45",
+      "value": "5a39e5b3-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Myru Avenue, 29V",
+      "value": "336de184-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Heroiv ATO Street, 30a",
+      "value": "336de18f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Volodymyra Tereshchenka Street, 1E",
+      "value": "39931aeb-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Lermontova Street, 10a",
+      "value": "8cc275a7-e35f-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №19: Musorskyi Street, 20",
+      "value": "01ae260d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Soniachnyi District, 60/5",
+      "value": "0d545ecc-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №21: Admiral Holovko Street, 14",
+      "value": "511fcfa4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №22: Almazna Street, 1a",
+      "value": "c146d31d-5618-11e5-8d8d-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №23: Haharina Avenue, 4",
+      "value": "11879c84-f780-11e3-8c4a-0050568002cf"
+    },
+    { "label": "NovaPoshta №24: Myru Avenue, 7", "value": "e6e66b60-9bec-11e4-acce-0050568002cf" },
+    {
+      "label": "NovaPoshta №25: Metalurhiv Avenue, 36",
+      "value": "7a595cc9-a794-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №26: Vasylevskoho Marshal Boulevard, 22B",
+      "value": "b60ad701-a7a6-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №27: Volodymyra Velykoho Street, 43D",
+      "value": "5bcc0e58-a793-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №28: Sicheslavska Street, 3",
+      "value": "0e4365dd-a794-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №29: Sobornosti Street, 48",
+      "value": "a24d4a9e-3ea5-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №30: Nezalezhnosti Ukrainy Street, 16B",
+      "value": "5ff19920-3ea8-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №31: Lermontova Street, 37",
+      "value": "80c969a4-3ea8-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №32: Ivana Avramenko Street, 3",
+      "value": "a82287e7-3ea8-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №33: Hirnytskyi District, 36B",
+      "value": "e5d0242a-3ea8-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №34: Haharina Avenue, 59",
+      "value": "22e2dc64-376a-11ea-8461-0025b502a04e"
+    },
+    {
+      "label": "NovaPoshta №35: Serafymovycha Street, 64",
+      "value": "e6b36b23-a26a-11ea-8d76-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №36: Kryvorizhstali Street, 13",
+      "value": "e7cca25f-3eaf-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №37: 5th Zarichnyi District, 61V",
+      "value": "4ea5e6ea-1a07-11ec-8c00-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №39: Vechirnii Boulevard, 33",
+      "value": "2b57aed1-e59d-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №40: Serhiia Kolachevskoho Street, 107",
+      "value": "beef4ee6-38ea-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta Postomat №991: Haharina Avenue, 54v",
+      "value": "dd5c25cb-1b48-11ee-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5023: P. Hlazovoho Street, 28a",
+      "value": "214b8ecb-b4a3-11ea-8d76-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5024: Volodymyra Velykoho Street, 51a",
+      "value": "214ff1c6-b4a3-11ea-8d76-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5158: 200-richchia Kryvoho Rohu Avenue, 7d",
+      "value": "610a67c4-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5168: Vechirnokutska Street, 54a",
+      "value": "8537eb10-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5169: Eduarda Fuksa Street, 1a",
+      "value": "f0a77217-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5170: Petra Doroshenka Street, 2a",
+      "value": "85422910-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5174: 4th Zarichnyi District, 21a",
+      "value": "a8f3ba67-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5176: Musorskyi Street, 19a",
+      "value": "a900f36d-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5177: Desantna Street, 15",
+      "value": "ccd2e7dd-d22d-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta Poshtomat №5178: 5th Zarichnyi District, 39a",
+      "value": "cccdc920-d22d-11ea-b39d-b8830365bd14"
+    }
+  ],
+  "db5c888c-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Heroes of Ukraine Avenue, 13",
+      "value": "7b422fb4-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Morekhidna Street, 1v/6",
+      "value": "7b422fc1-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Kosmonavtiv Street, 83A",
+      "value": "1ec09d62-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Heroes of Ukraine Avenue, 77/1",
+      "value": "40498336-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Soborna Street, 13/4",
+      "value": "511fcff8-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Kosmonavtiv Street, 60/4",
+      "value": "511fcff9-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Central Avenue, 26 B",
+      "value": "68a89919-1cc8-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №9: Generala Karpenka Street, 2/2 a",
+      "value": "1ec09d96-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Central Avenue, 86/3",
+      "value": "47402e7c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Myru Avenue, 13G",
+      "value": "336de18b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Pushkinska Street, 33",
+      "value": "4049836a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Lazurna Street, 17",
+      "value": "11643e0f-1cc8-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №14: Central Avenue, 173/2",
+      "value": "01ae25fb-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Kosmonavtiv Street, 53/1",
+      "value": "01ae25fc-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Bogoяavlenskyi Avenue, 234v",
+      "value": "456728e3-0bf3-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Kosmonavtiv Street, 93",
+      "value": "1bec3650-9d56-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Bogoяavlenskyi Avenue, 342/2",
+      "value": "59c40af6-9d74-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Bogoяavlenskyi Avenue, 26/2",
+      "value": "b145d123-cbd9-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №21: Kosmonavtiv Street, 108/1",
+      "value": "9acdfc0d-3ebc-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №22: Central Avenue, 135",
+      "value": "b1c0f7eb-3ebc-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №24: Myru Avenue, 17/3",
+      "value": "a5555bbe-5071-11e9-acea-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №26: Kuznetska Street, 51",
+      "value": "31e69a72-7197-11e9-898c-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №27: Nikolska Street, 17/1",
+      "value": "969d954a-b838-11e9-8c22-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №28: Ozerna Street, 1-V",
+      "value": "b371133d-b855-11e9-8c22-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №29: Dekabristiv Street, 31/1",
+      "value": "bf7760d2-abaf-11ea-8d76-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №30: Budivelnykiv Street, 18/6",
+      "value": "1ae9ab67-f1b3-11ea-b49b-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №31: Buznyka Street, 14/3",
+      "value": "561dde8a-1507-11eb-babe-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №32: Chkalova Street, 108/9",
+      "value": "3dad4671-5e60-11eb-a5a6-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №34: Korabeliv Avenue, 12/24G",
+      "value": "d9046c13-2122-11ec-a344-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №35: 8 Bereznya Street, 2",
+      "value": "a388e50a-30c7-11ec-b7f0-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №36: Chkalova Street, 82",
+      "value": "2b66ca5c-e59d-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №37: Ozerna Street, 17g",
+      "value": "2b68925c-e59d-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №38: Varvarivka, Klubna Street, 106/2",
+      "value": "1ec806f2-ed6f-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №39: Bogoяavlenskyi Avenue, 301",
+      "value": "b08cbab0-70e7-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №40: Arkhitektora Starova Street, 2/1",
+      "value": "25125faa-7f73-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №42: Chkalova Street, 215b",
+      "value": "ef70fe52-f975-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №44: Soborna Street, 4a",
+      "value": "f1ede0bb-c9bb-11e5-8478-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta Point №985: Admiral Makarov Street, 60A",
+      "value": "dd579ef4-1b48-11ee-9eb1-d4f5ef0df2b8"
+    }
+  ],
+  "db5c88de-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Yakova Shepelya Street, 1",
+      "value": "6a13a7f8-94db-11e5-a023-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №2: Lypovetska Street, 6a (TC 'Vivat')",
+      "value": "6d5731b3-94db-11e5-a023-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №3: Soborna Street, 89",
+      "value": "df003d13-1cc1-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №4: Maksyma Shymka Street, 7",
+      "value": "1ec09d40-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Keletska Street, 83",
+      "value": "5a39e553-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Gladkova Street, 3",
+      "value": "151d232d-d3e7-11e5-8478-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №7: Keletska Street, 51a",
+      "value": "5a39e59c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Pushkina Street, 10",
+      "value": "5a39e545-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Kotsyubynskoho Avenue, 32",
+      "value": "5a39e546-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Khmelnytske Shosse, 82",
+      "value": "5a39e547-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Streletska Street, 14",
+      "value": "47402e55-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Pyrohova Street, 31",
+      "value": "6d5731b5-94db-11e5-a023-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №13: Kyivska Street, 134",
+      "value": "01ae25d0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Sabarivske Shosse, 1b/2d",
+      "value": "01ae25d1-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Kotsyubynskoho Avenue, 70 (TC 'PetroTsentr')",
+      "value": "6ed0dbad-0bf2-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Vasylia Poryka Street, 5a",
+      "value": "5d7c8aac-1c7a-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №18: Knyaziv Koriatovychiv Street, 181a",
+      "value": "effa6110-9bf9-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №20: Chekhova Street, 8a",
+      "value": "a3604d79-0094-11e6-899e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №21: Generala Arabeya Street, 2",
+      "value": "98e690ec-5a33-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №22: Haharina Square, 2",
+      "value": "51dbc998-6188-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №23: Vasylia Poryka Street, 46",
+      "value": "37ab41c2-610d-11e9-898c-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №25: Mykolaivska Street, 2 (TC 'Barbara')",
+      "value": "d3528e36-a245-11e9-b790-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №26: Pyrohova Street, 71a",
+      "value": "8b2f1a08-b918-11e9-8c22-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №27: Tramvaina Street, 36",
+      "value": "4647ee86-5e94-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №35: Khmelnytske Shosse, 114-V TC (The Mall)",
+      "value": "da412b32-f953-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №36: Kotsyubynskoho Avenue, 4",
+      "value": "b2c70fb7-f965-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №41: Pyrohova Street, 78a",
+      "value": "90605a48-2122-11ec-a344-b8830365bd14"
+    }
+  ],
+  "db5c8892-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Veterinary Street, 22 (entrance from European Street 'Furniture Quarter')",
+      "value": "7b422fb5-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Kovpaka Street, 26",
+      "value": "7b422fb9-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Lidova Street, 13",
+      "value": "1ec09d90-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Sobornosti Street, 71",
+      "value": "16922880-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Ivana Mazepy Street, 12/8",
+      "value": "1ec09d4b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Marshal Biryuzova Street, 43 a",
+      "value": "47402e74-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Bohdana Khmelnytskoho Boulevard, 21",
+      "value": "47402e75-e1c2-11e3-8c4a-0050568002cf"
+    },
+    { "label": "NovaPoshta №9: Gogol Street, 20", "value": "5a39e5a6-e1c2-11e3-8c4a-0050568002cf" },
+    {
+      "label": "NovaPoshta №10: European Street, 63",
+      "value": "644de306-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Heroes of ATO Street, 79",
+      "value": "01ae263d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Sinna Street, 2/49",
+      "value": "0d545ee5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Velykotyrnivska Street, 35/2",
+      "value": "511fcfbd-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Symona Petlyury Street, 45",
+      "value": "511fcfbe-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: European Street, 94",
+      "value": "e6e66b9c-9bec-11e4-acce-0050568002cf"
+    },
+    { "label": "NovaPoshta №16: Myru Avenue, 28", "value": "d8666f77-b35e-11e4-a77a-005056887b8d" },
+    {
+      "label": "NovaPoshta №17: Zinkivska Street, 21",
+      "value": "39518578-b35f-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №18: Gogol Street, 38 (TC 'Metropolitan')",
+      "value": "d8cfe4b6-cbcf-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №19: European Street, 185",
+      "value": "433e7e87-cbd0-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №20: Myru Avenue, 30A",
+      "value": "c5796509-cc83-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №21: Velykotyrnivska Street, 7",
+      "value": "f8da650d-3ec6-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №22: Pavlenkivska Street, 3b",
+      "value": "2497a0fa-b9af-11e9-8c22-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №23: Kotlyarevskoho Street, 10",
+      "value": "f6eb1710-f1b2-11ea-b49b-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №24: Steppovoho Frontu Street, 48",
+      "value": "fc17e78c-72f9-11ec-81d3-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №25: Pershotravnevyy Avenue, 19",
+      "value": "5f97a577-0ad4-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №26: European Street, 66",
+      "value": "ae677bcb-7178-11e5-8d8d-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №27: Zavodska Street, 12",
+      "value": "eb13e50d-3ec4-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №28: Nebesnoi Sotni Street, 74",
+      "value": "cfbb78e9-3ec5-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №29: Sakko Street, 18a",
+      "value": "559fc0c9-3ec6-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №30: Stanislavskoho Street, 14/2",
+      "value": "6e7396a3-3ec6-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №31: Skovorody Street, 2v",
+      "value": "85b2bec1-3ec6-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №32: Kovpaka Street, 21",
+      "value": "015018c5-7f73-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №33: Avtobazivska Street, 7",
+      "value": "9356477a-b845-11ed-9eb1-d4f5ef0df2b8"
+    }
+  ],
+  "db5c897c-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Starobilooska Street, 77",
+      "value": "1ec09d3a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Peremohy Avenue, 50",
+      "value": "336de175-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Peremohy Avenue, 139",
+      "value": "16922852-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Levka Lukyanenka Street, 68",
+      "value": "40498320-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Myru Avenue, 180a",
+      "value": "5a39e5b5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Shevchenka Street, 46",
+      "value": "1ec09dcb-e1c2-11e3-8c4a-0050568002cf"
+    },
+    { "label": "NovaPoshta №7: Myru Avenue, 50", "value": "39931b8b-e1c2-11e3-8c4a-0050568002cf" },
+    {
+      "label": "NovaPoshta №8: Pukhova Street, 142",
+      "value": "7b422fab-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Krasnosilska Street, 59a",
+      "value": "6ea56bbd-f859-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Ivan Mazepa Street, 48",
+      "value": "8a09d145-1c7a-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Tsiolkovskoho Street, 4",
+      "value": "106a4660-e404-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №13: Myru Avenue, 49 (TSUM Chernihiv)(1st floor)",
+      "value": "709892d0-0ac8-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta Mobile №14: Starobilooska Street, 16a",
+      "value": "8f7981be-34fb-11e5-add9-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №15: Mstyslavska Street, 25",
+      "value": "5622dbb2-57b4-11e5-8d8d-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №16: Myru Avenue, 194, building 10",
+      "value": "64675206-42ab-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №18: Pyatnytska Street, 49",
+      "value": "e54122b8-4292-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №19: Vsihsvyatska Street, 5",
+      "value": "eab850c8-2ba0-11e9-acea-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №20: Shevchenka Street, 112a",
+      "value": "c67441f4-dbde-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №21: Rokossovskoho Street, 51",
+      "value": "48000dd2-7d91-11eb-983c-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №22: 1st of May Street, 167A",
+      "value": "6c3a0956-8668-11eb-945f-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №24: Lyubetska Street, 155",
+      "value": "94868863-cf40-11eb-b6ce-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №25: Shevchenka Street, 33A",
+      "value": "c6f32edb-5358-11ec-a2db-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №26: Drozda Street, 7",
+      "value": "47c9732d-7e8b-11ec-a9b5-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №27: Popudrenka Street, 29",
+      "value": "0acb8ec9-8b28-11ec-9f8b-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №28: Zakhysnykiv Ukrainy Street, 9 (Silpo store)",
+      "value": "2b6a6074-e59d-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №29: Muzychna Street, 1 building 1 (Silpo store)",
+      "value": "2b6c4ebe-e59d-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №30: Lotna Street, 17",
+      "value": "64be4cc0-ed6f-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №31: Nezalezhnosti Street, 25, unit 17",
+      "value": "86884f86-091e-11ed-9eb1-d4f5ef0df2b8"
+    },
+    { "label": "MOYO Point №953: Myru Avenue, 49", "value": "a428b0bc-86d4-11ed-9eb1-d4f5ef0df2b8" }
+  ],
+  "db5c8902-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Khomenka Street, 15",
+      "value": "47402ebb-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Chyhyrynska Street, 11/1",
+      "value": "7b422fb3-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Shevchenko Boulevard, 150",
+      "value": "4049830d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Haharina Street, 77",
+      "value": "336de19d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Vyacheslava Halvy (formerly Rudnieva) Street, 45",
+      "value": "511fd003-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Nyzhnia Horova Street, 44, unit 1",
+      "value": "511fcf95-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Patsaieva Street, 7",
+      "value": "511fcf96-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Nadpilna Street, 326/Kryvalivska Street, 66",
+      "value": "5a39e596-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Ostafiia Dashkevycha Street, 34",
+      "value": "0d545f6e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Odeska Street, 8",
+      "value": "0d545ec5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Nebesnoi Sotni (formerly Lenin) Street, 6",
+      "value": "7b422faa-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Molotkova Street, 20",
+      "value": "2bb8ce9a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Vyacheslav Chornovol Street, 243/1",
+      "value": "2bb8ce9b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Blahovisna Street, 372/Yurii Illienko Street, 59",
+      "value": "2bb8ce9c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: O. Dashkevycha Street, 20",
+      "value": "ecc26677-3151-11e6-9e93-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №16: Nevskoho O. Street, 15",
+      "value": "aaada553-b04f-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №17: Blahovisna Street, 269/4",
+      "value": "f6a6ea50-3f68-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №18: Volodymyra Lozheshnikova (formerly Krupska) Street, 52",
+      "value": "42447cdb-6444-11ea-91e8-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №19: 30-richchia Peremohy Street, 22/1",
+      "value": "42517724-6444-11ea-91e8-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №20: Vitaliia Verhaya Street, 10, unit 156",
+      "value": "6c5d9bc0-a26e-11ea-8d76-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №21: Kryvalivska Street, 7",
+      "value": "e2b56d91-e371-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №22: Taras Shevchenko Boulevard, 207 (House of Trade)",
+      "value": "8f5e14ad-0b7c-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №23: Smylyanska Street, 149",
+      "value": "c42523bd-2ada-11e5-add9-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №25: Shevchenko Boulevard/Mitnytska Street, 274/13 (Pioneer Mall)",
+      "value": "b4326f52-d306-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №26: Serzhant Zhuzhomy Street, 6",
+      "value": "51a1f90d-3cbe-11ec-90c4-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №28: Sumhait Street, 24 (Thrash store)",
+      "value": "1ee2057b-ed6f-11ec-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "Business Branch №700: Rusko-Polianska Village Council, Shchedre area, land plot 4",
+      "value": "d87064f3-4240-11ec-b731-b8830365bd14"
+    },
+    {
+      "label": "MOYO Point №980: Shevchenko Boulevard, 208/1",
+      "value": "53dec41e-e8a6-11ed-9eb1-d4f5ef0df2b8"
+    }
+  ],
+  "db5c88e5-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Linijna Street, 15",
+      "value": "336de177-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Petropavlivska Street, 62",
+      "value": "4049830c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Heroiv Krut Street, 60/3",
+      "value": "7b422faf-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Hetmana Pavla Skoropadskoho (formerly Levanevskoho) Street, 10",
+      "value": "4049830a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: Yuriia Vietrova (formerly Vorovskoho) Street, 20",
+      "value": "0d545f70-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Voskresenska Street, 13a",
+      "value": "39931b6a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Bilopilskyi Shliakh Street, 30/3",
+      "value": "39931b6b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Mykhaila Lushpy Avenue, 13",
+      "value": "47402ec0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Ukrainskoi Narodnoi Respubliky Street, 4",
+      "value": "511fcfb2-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Romenska Street, 81",
+      "value": "2bb8cec4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Peremohy Avenue (formerly Kurskyi), 103",
+      "value": "f085618b-0be4-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Yaroslava Mudroho (formerly Proletarska) Street, 50",
+      "value": "60062941-b36a-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №14: Herasyma Kondratieva Street,146/1",
+      "value": "c3f1f0ca-cbd1-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №16: M. Lushpy Avenue, 5, building 10",
+      "value": "02151e6c-3f60-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №17: Nyzhnosyrova Street, 60",
+      "value": "36ed49c4-3f60-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №18: Illinska Street, 56",
+      "value": "4964e316-3f60-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №19: Peremohy Avenue (formerly Kurskyi), 111",
+      "value": "5643728c-3f60-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №22: M. Lushpy Avenue, 31B",
+      "value": "2fa218d8-54dd-11eb-9289-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №23: Kharkivska Street, 2/2 (Silpo store, 1st floor)",
+      "value": "7c292648-70b3-11e5-8d8d-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №24: Troitska Street, 9",
+      "value": "d2739baf-0b48-11ec-83de-b8830365bd14"
+    }
+  ],
+  "db5c88c4-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Hranitna Street, 16",
+      "value": "5a39e5af-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Nebesnoi Sotni Street, 52",
+      "value": "1ec09d29-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Maidan Peremohy, 10",
+      "value": "40498331-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №4: Chudnivska Street, 113A",
+      "value": "5a39e554-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №5: B. Tena Street, 9",
+      "value": "5a39e555-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Metalistiv Street, 2 (entrance from Serhiia Paradzhanova 66)",
+      "value": "50f839fb-1cc5-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №9: Vitruka Street, 9a",
+      "value": "5a39e5b0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    { "label": "NovaPoshta №10: Myru Avenue, 37", "value": "01ae2605-e1c2-11e3-8c4a-0050568002cf" },
+    {
+      "label": "NovaPoshta №11: Vils'kyi Shliakh Street, 14",
+      "value": "01ae2606-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Smolianska Square, 3",
+      "value": "01ae2607-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Lvivska Street, 11",
+      "value": "01ae2608-e1c2-11e3-8c4a-0050568002cf"
+    },
+    { "label": "NovaPoshta №14: Vokzalna, 10", "value": "01ae2609-e1c2-11e3-8c4a-0050568002cf" },
+    {
+      "label": "NovaPoshta №16: Yevhena Rykhlika Street, 11A",
+      "value": "cf1c51dd-b918-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №17: Kyivska Street, 77 (TRC 'Global UA')",
+      "value": "cf1c5217-b918-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №18: Shevchenka Street, 18a",
+      "value": "f27b6d25-b918-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №19: Chudnivska Street (formerly Chernyakhovskoho), 92 (TC'Okean')",
+      "value": "196e0a59-bd8f-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №20: Borysa Tena Street, 83/38",
+      "value": "a6678966-bd8f-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №23: Baseina Street, 2A",
+      "value": "06e7211d-5614-11e5-8d8d-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №25: Peremohy Street, 53",
+      "value": "5e78584a-3e8f-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №27: Borysa Liatoshynskoho Street, 18",
+      "value": "236ceba4-3e90-11e6-a9f2-005056887b8d"
+    }
+  ],
+  "db5c88ac-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta №1: Trudova Street, 5/4 (near the Shell gas station)",
+      "value": "511fd00e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №2: Geologiv Street, 2 (territory of the 'Pan Kabluk' market)",
+      "value": "1692286c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №3: Sitsinskoho Street (formerly Vatutina), 11",
+      "value": "1ec09d34-e1c2-11e3-8c4a-0050568002cf"
+    },
+    { "label": "NovaPoshta №4: Myru Avenue, 76", "value": "1ec09dae-e1c2-11e3-8c4a-0050568002cf" },
+    {
+      "label": "NovaPoshta №5: Kamyanecka Street, 52/2",
+      "value": "16922850-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №6: Podilska Street, 73/1",
+      "value": "0d545f5f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №7: Romana Shukhevycha Street, 20 (formerly Kurchatova)",
+      "value": "0d545f60-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №8: Knyazia Sviatoslava Khorobroho Street, 5",
+      "value": "1ec09d9f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №9: Khotovytskoho Street, 7",
+      "value": "47402e70-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №10: Starokonstantynivske Shose, 5/3-Ж, premises №2K and №3K",
+      "value": "47402e7a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №11: Proskurivskoho pidpillya Street, 71/1",
+      "value": "5a39e59f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №12: Peremohy Street, 11/1",
+      "value": "47402e7e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №13: Chornovola Street, 110",
+      "value": "511fd008-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №14: Instytutska Street, 13A",
+      "value": "7b422f8c-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №15: Starokonstantynivske shose, 2/1b (TC 'Agora')",
+      "value": "20999bc4-8433-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №16: Geologiv Street, 5/2 (in front of the 'MIVS' market)",
+      "value": "01ae25e9-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta №17: Starymistka Street, 35",
+      "value": "a946c1d7-cbd2-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №18: Svobody Street, 73 (shop 'JYSK')",
+      "value": "c3b199f7-cbd2-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №19: Lvivske shose, 55/2B",
+      "value": "0c4eb23a-e383-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №20: Chornovola Street, 155/1",
+      "value": "9d7c4bfc-1749-11e6-971e-005056887b8d"
+    },
+    { "label": "NovaPoshta №21: Myru Avenue, 80", "value": "cfa959ba-3f67-11e6-a9f2-005056887b8d" },
+    {
+      "label": "NovaPoshta №22: Shevchenka Street, 11",
+      "value": "505d1b91-f969-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №23: Trudova Street, 6-A, premises 133 (TC 'Woodmoll')",
+      "value": "0d33588f-0b63-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №24: Ternopilska Street, 10/6B",
+      "value": "33109e67-0b80-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №25: Romana Shukhevycha Street, 5/1 (formerly Kurchatova)",
+      "value": "011fb6fc-5620-11e5-8d8d-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №26: Kamyanecka Street, 19A",
+      "value": "0abf3677-3f68-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №27: Dovzhenka Street, 4",
+      "value": "3604cd25-3f68-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №28: Panasa Mirnoho Street, 37/3",
+      "value": "522421af-3f68-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta №29: Prybuzka Street, 12/1",
+      "value": "de3b8022-b856-11e9-8c22-005056b24375"
+    },
+    {
+      "label": "NovaPoshta №30: Starokonstantynivske shose, 26, premises 101",
+      "value": "f6897d38-9b69-11ea-8d76-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №31: Marshala Krasovskoho Street, 57",
+      "value": "0be04461-abaf-11ea-8d76-b8830365bd14"
+    },
+    { "label": "NovaPoshta №32: Myru Avenue, 44", "value": "1b77ddbc-cc01-11ea-b39d-b8830365bd14" },
+    {
+      "label": "NovaPoshta №33: Bandery Stepana Street, 2/1A, premises 403",
+      "value": "1ebcaea9-f724-11ea-b49b-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta №34: Romana Shukhevycha Street, 19",
+      "value": "51934859-4ded-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №35: Zarychanska Street, 57/1",
+      "value": "cd34def6-4e32-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №36: Shevchenka Street, 70/1",
+      "value": "93526b14-b845-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta №37: Zalizniaka Street, 4/2",
+      "value": "93549c69-b845-11ed-9eb1-d4f5ef0df2b8"
+    }
+  ],
+  "e221d642-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta No. 1: Ruska Street, 248o",
+      "value": "47402ec4-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 2: Kalynivska Street, 13-A",
+      "value": "7b422fc0-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 3: Kolomyiska Street, 9g",
+      "value": "01ae25c9-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 4: Holovna Street, 200",
+      "value": "7b422fb6-e1b8-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 5: Yasska Street, 3",
+      "value": "2bb8ceed-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 6: Shkilna Street, 1b",
+      "value": "1ec09d55-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 7: Ukrainska Street, 32",
+      "value": "47402e71-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 8: Heroiv Maidanu, 186v",
+      "value": "5a39e5a0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 9: Kalynivska Street, 13V",
+      "value": "5a39e5a1-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 10: Kotliarevskoho Street, 7",
+      "value": "336de187-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 11: Alexandri Vasile, 2v",
+      "value": "336de188-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 12: Parkovyi Drive, 2",
+      "value": "01ae25ea-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 13: Bukovynska Street, 25",
+      "value": "01ae25eb-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 14: Nebesnoi Sotni Street, 20",
+      "value": "01ae25ec-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 15: Skalda Serhiia Street, 9a",
+      "value": "4e2a7da9-cbd4-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 17: Heroiv Maidanu Street, 63",
+      "value": "094e00c9-3153-11e6-9e93-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 18: Bohdana Khmelnytskoho Street, 56",
+      "value": "3d942684-3f6a-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 20: Ruska Street, 88",
+      "value": "c356aab4-3f6a-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 21: Pivdenna-Kiltseva, 4-V",
+      "value": "1fb3b50a-3f6b-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 22: Rivnenska Street, 5a",
+      "value": "32940ba4-3f6b-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 23: Heroiv Maidanu Street, 54",
+      "value": "3c930b3c-3f6b-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 24: Zarozhanska Street, 12a",
+      "value": "2d6a26fb-e9aa-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 25: Khotynska Street, 10a",
+      "value": "8d7ce8ac-e9aa-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 26: Haharina Yuriia Street, 70",
+      "value": "886b2f5e-1ccb-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 28: Poshtova Street, 3",
+      "value": "644f696d-8c44-11e9-898c-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 29: Entuziastiv Street, 11",
+      "value": "644f697d-8c44-11e9-898c-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 30: Nezalezhnosti Avenue, 125 A",
+      "value": "c814ef94-a244-11e9-b790-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 32: Holovna Street, 226",
+      "value": "f17ec4a7-4e32-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "Poshtomat No. 3384: Alma-atynska Street, 6",
+      "value": "ae65f2fc-2aa7-11e9-acea-005056b24375"
+    },
+    {
+      "label": "Poshtomat No. 3385: Ruska Street",
+      "value": "25da39ee-2ba4-11e9-acea-005056b24375"
+    },
+    {
+      "label": "Poshtomat No. 3386: Intersection of Pivdenna-Kiltseva and Heroiv Maidanu Street",
+      "value": "0bc4a08a-2b73-11e9-acea-005056b24375"
+    }
+  ],
+  "db5c896a-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta No. 1: Knyazia Volodymyra Street, 109-K",
+      "value": "1ec09d38-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 2: Chornovola Street, 14/16",
+      "value": "01ae25e5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 4: Vidinska Street, 5v",
+      "value": "40498330-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 5: Mira Avenue, 12",
+      "value": "511fcffd-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 6: Kyivska Street, 44",
+      "value": "5a39e558-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 7: Korolova Street, 5a",
+      "value": "5a39e584-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 8: Kyivska Street, 19",
+      "value": "5a39e59d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 9: Yevhena Konovaltsia Street, 14",
+      "value": "5a39e59e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 10: Shkilna Street, 13",
+      "value": "336de185-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 11: Fabrychna Street, 1",
+      "value": "336de186-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 12: Ulasa Samchuka Street, 14",
+      "value": "16922835-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 13: Pirohova Street, 8",
+      "value": "761d11b1-f781-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 14: Makarova Street, 23",
+      "value": "effa614e-9bf9-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 15: Dubenska Street, 46",
+      "value": "5cd8f3b0-9bfa-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 16: Rad Velykozhytynska Settlement, 43",
+      "value": "f8597a84-e381-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 17: Haharina Street, 16",
+      "value": "f051aff1-e382-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 18: Volodymyra Stel'makha Street, 9B",
+      "value": "32902192-3f5a-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 19: Kyivska Street, 67",
+      "value": "383f1c2c-3f5b-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 20: Viacheslava Chornovola Street, 53",
+      "value": "5ce6e496-3f5b-11e6-a9f2-005056887b8d"
+    }
+  ],
+  "db5c8904-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta No. 1: Maksymovycha Street, 8",
+      "value": "1ec09d32-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 2: Vovchynetska Street, 26",
+      "value": "0d545eef-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 3: Zaliznychna Street, 4",
+      "value": "4049832f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 4: Nezalezhnosti Street, 146",
+      "value": "5a39e574-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 5: Viacheslava Chornovola Street, 3",
+      "value": "5a39e556-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 6: Nadyrichna Street, 6",
+      "value": "5a39e5a2-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 7: B. Lepkoho Street, 6a, premises 1,2",
+      "value": "47402e51-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 8: Mykolaychuka Street, 30",
+      "value": "1ec09dc7-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 9: Pivdennyi Boulevard, 23",
+      "value": "40498322-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 10: Stepana Bandery Street, 10B",
+      "value": "01ae2643-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 11: Hrushevskoho Street, 14",
+      "value": "7bab9adb-0bf3-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 12: Vovchynetska Street, 225m",
+      "value": "192b2bb0-d6a8-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 13: Sorokhteya Street, 41",
+      "value": "bbf8cfec-e384-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 14: Naberezhna im. V. Stefanyka Street, 42",
+      "value": "d3ba3052-33f4-11e8-a3de-005056b2fc3d"
+    },
+    {
+      "label": "NovaPoshta No. 15: V. Ivasyuka Street, 26A",
+      "value": "62d352b2-e93c-11ea-b39d-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta No. 16: Snizhna Street, 52a, premises 69",
+      "value": "ada3a0c1-f1b2-11ea-b49b-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta No. 18: Pasichna Street, 15B, premises 24, 25, 26",
+      "value": "03f60af8-7d90-11eb-983c-b8830365bd14"
+    },
+    {
+      "label": "NovaPoshta No. 19: Bohdana Khmelnytskoho Street, 36",
+      "value": "64c0ec0f-ed6f-11ec-9eb1-d4f5ef0df2b8"
+    }
+  ],
+  "db5c8900-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta No. 1: Mykulyneсka Street, 46, premises 1",
+      "value": "511fd000-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 2: Ruska Street, 5",
+      "value": "511fcfed-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 3: Petrykiv Village, Zakhidna Street, 2",
+      "value": "1ec09d2c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 4: Zamis'ka Street, 16",
+      "value": "1ec09d57-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 5: Torgovytsya Street, 1-V, premises 2",
+      "value": "39931b6e-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 6: Myrona Tarnavskoho Lane, 1",
+      "value": "47402e52-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 7: Lesya Kurbasa Street, 5",
+      "value": "01ae25ee-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 8: Medova Street, 6",
+      "value": "01ae2612-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 9: Henerala M. Tarnavskoho Street, 32, premises 146",
+      "value": "0d545ee0-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 10: Maksyma Kryvonosa Street, 3",
+      "value": "45a5cfdf-b36c-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 11: Polkovnyka Danyla Nechaya Street, 25a",
+      "value": "c8ba8c6c-b36c-11e4-a77a-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 12: Chaykovskoho Street, 40",
+      "value": "09277d8f-1749-11e6-971e-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 13: Zbarazka Street, 29A, premises No. 47",
+      "value": "30db959b-b7f3-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 15: S. Petlyury Boulevard, 4a (premises 13)",
+      "value": "c76cb3db-0b69-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 16: Obolonya Street, 49",
+      "value": "cb72c89f-0b6b-11e5-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 17: Anton Monastyrsky Street, 50/1",
+      "value": "7da2249c-d2e4-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 18: Mira Street, 7",
+      "value": "a898544e-ecaa-11e8-ad0d-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 19: B. Lepkoho Street, 2B",
+      "value": "709f9cfe-a26d-11ea-8d76-b8830365bd14"
+    }
+  ],
+  "db5c893b-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta No. 1: Karbyshova Street, 1",
+      "value": "40498332-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 2: Shevchenka Street, 88",
+      "value": "0d545f5c-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 3: Sobornosti Avenue, 1-A",
+      "value": "39931b03-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 4: Yaroslava Mudroho Street, 11V",
+      "value": "1ec09d35-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 5: Rivnenska Street, 55",
+      "value": "16922886-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 7: Henerala Shukhevycha Street, 4",
+      "value": "5a39e557-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 8: Kravchuka Street, 42a",
+      "value": "47402e6d-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 9: Zadvoretska Street, 1a",
+      "value": "cf565840-9fd9-11e5-a023-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 10: Voli Avenue, 12",
+      "value": "0d545f50-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 11: Kryvyi Val Street, 24",
+      "value": "0d545f51-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 12: Shota Rustaveli Street, 9",
+      "value": "0d545f52-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 13: Voli Avenue, 35",
+      "value": "0d545f53-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 14: Vidrodzhennia Avenue, 10",
+      "value": "0d545f54-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 15: Chornovola Street, 2v",
+      "value": "0d545f55-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 17: Konyakina Street, 17a",
+      "value": "19456aeb-3eb6-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 18: Molodi Avenue, 9",
+      "value": "565d930f-3eb7-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 19: Rivnenska Street, 109",
+      "value": "6e8f8a11-3eb7-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 20: Franka Street, 61, premises 16, 17",
+      "value": "5c4f4298-f970-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 21: Konyakina Street, 7",
+      "value": "fac8eac9-0b6d-11e5-8a92-005056887b8d"
+    }
+  ],
+  "e221d627-391c-11dd-90d9-001a92567626": [
+    {
+      "label": "NovaPoshta No. 1: Vereshchahina Street, 16",
+      "value": "1ec09d2b-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 2: Svobody Avenue, 63",
+      "value": "4049833a-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 3: Ostrivna Street, 9A",
+      "value": "5a39e538-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 4: Kapushanska Street, 168",
+      "value": "5a39e560-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 5: Hrushevskoho Street, 72a",
+      "value": "47402ea5-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 6: Ivana Franka Street, 1d (office 2)",
+      "value": "01ae261f-e1c2-11e3-8c4a-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 7: Yulii Zhemayte Street, 1a",
+      "value": "542ab50a-0bf3-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 8: Sobranetska Street, 146b",
+      "value": "c8ae88c4-1c7d-11e4-acce-0050568002cf"
+    },
+    {
+      "label": "NovaPoshta No. 9: Lva Tolstoho Street, 31",
+      "value": "7d542d5c-e9bd-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 10: Zankovetskoji Street, 48a",
+      "value": "a9f834ab-e9be-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 11: Haharina Street, 38a",
+      "value": "d9b2ceab-e9be-11e4-8a92-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 12: Sobranetska Street, 46",
+      "value": "ec32f7d7-4b08-11e9-acea-005056b24375"
+    },
+    {
+      "label": "NovaPoshta No. 13: Henerala Svobody Street, 9B",
+      "value": "7706559d-3f61-11e6-a9f2-005056887b8d"
+    },
+    {
+      "label": "NovaPoshta No. 14: Kapushanska (formerly Peremohy) Street, 42",
+      "value": "62c09850-6cb8-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta No. 15: Tymiriazieva Street, 12H",
+      "value": "e31093a0-9282-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta No. 16: Hvardiiska Street, 38B",
+      "value": "4cc9e795-bf4e-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "NovaPoshta No. 17: Babyaka Street, 26",
+      "value": "4b3ff66f-3b65-11ee-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "Point No. 960: Kapushanska Street, 34",
+      "value": "0ccc09b8-cada-11ed-9eb1-d4f5ef0df2b8"
+    },
+    {
+      "label": "Poshtomat NovaPoshta No. 5608: Kapushanska Street, 175a",
+      "value": "55716189-121e-11eb-babe-b8830365bd14"
+    }
+  ]
+}

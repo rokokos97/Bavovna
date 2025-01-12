@@ -1,16 +1,16 @@
 const express = require('express');
 const Newsletter = require('../models/NewsletterEmail.js');
 // eslint-disable-next-line new-cap
-const router = express.Router({mergeParams: true});
-const transporter = require("../services/mailer");
-const {getPromoCodeEmailOption} = require("../services/mail_options/promocode_email");
-const {getNewsletterEmailOption} = require("../services/mail_options/newsletter_email");
+const router = express.Router({ mergeParams: true });
+const transporter = require('../services/mailer');
+const { getPromoCodeEmailOption } = require('../services/mail_options/promocode_email');
+const { getNewsletterEmailOption } = require('../services/mail_options/newsletter_email');
 router.post('/', async (req, res) => {
-  const {email} = req.body;
+  const { email } = req.body;
   const encodedEmail = encodeURIComponent(email);
-  const unsubscribeUrl = `https://anvovab.space/unsubscribe?email=${encodedEmail}`
+  const unsubscribeUrl = `https://anvovab.space/unsubscribe?email=${encodedEmail}`;
   try {
-    const existingEmail = await Newsletter.findOne({email});
+    const existingEmail = await Newsletter.findOne({ email });
     if (existingEmail) {
       return res.status(400).json({
         response: {
@@ -19,26 +19,29 @@ router.post('/', async (req, res) => {
         },
       });
     }
-    await Newsletter.create({email});
-    await transporter.sendMail(getPromoCodeEmailOption(email, unsubscribeUrl), function(error, info) {
-      if (error) {
-        return res.status(500).json({
-          response: {
-            code: 500,
-            message: 'SERVER_ERROR_MAIL',
-          },
-        });
-      } else {
-        if (info.response) {
-          res.status(200).json({
+    await Newsletter.create({ email });
+    await transporter.sendMail(
+      getPromoCodeEmailOption(email, unsubscribeUrl),
+      function (error, info) {
+        if (error) {
+          return res.status(500).json({
             response: {
-              code: 200,
-              message: 'CONFIRM_NEWSLETTER_SENT',
+              code: 500,
+              message: 'SERVER_ERROR_MAIL',
             },
           });
+        } else {
+          if (info.response) {
+            res.status(200).json({
+              response: {
+                code: 200,
+                message: 'CONFIRM_NEWSLETTER_SENT',
+              },
+            });
+          }
         }
       }
-    });
+    );
     setTimeout(async () => {
       try {
         const info = await transporter.sendMail(getNewsletterEmailOption(email, unsubscribeUrl));
@@ -60,10 +63,10 @@ router.post('/', async (req, res) => {
 });
 router.post('/unsubscribe/', async (req, res) => {
   try {
-    const {email} = req.body;
-    const emailExists = await Newsletter.findOne({email});
+    const { email } = req.body;
+    const emailExists = await Newsletter.findOne({ email });
     if (emailExists) {
-      await Newsletter.deleteOne({email});
+      await Newsletter.deleteOne({ email });
       return res.status(200).json({
         response: {
           code: 200,

@@ -4,7 +4,7 @@ import SelectionBlock from './selectionBlock/SelectionBlock';
 import CardsCatalogBlock from './CardsCatalogBlock/CardsCatalogBlock';
 import styles from './shopPage.module.scss';
 import useDeviceDetect from '../../utils/useDeviceDetect';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
 
 const ShopPageContext = () => {
@@ -15,15 +15,15 @@ const ShopPageContext = () => {
       navigate('/');
     }
   };
-  const options = [
-    {label: '/ Shop', to: ''},
-
-  ];
+  const options = [{ label: '/ Shop', to: '' }];
   return (
     <section className={styles.section}>
       <div className={styles.block}>
         <div className={styles.navigation}>
-          <BreadcrumbsNavigation options={options} handleSideNavigationClose={handleSideNavigationClose}/>
+          <BreadcrumbsNavigation
+            options={options}
+            handleSideNavigationClose={handleSideNavigationClose}
+          />
         </div>
         <HeadShopPageBlock />
         <SelectionBlock />

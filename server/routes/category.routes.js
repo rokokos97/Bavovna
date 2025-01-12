@@ -1,7 +1,7 @@
 const express = require('express');
 const Category = require('../models/Category');
 // eslint-disable-next-line new-cap
-const router = express.Router({mergeParams: true});
+const router = express.Router({ mergeParams: true });
 
 router.get('/', async (req, res) => {
   try {

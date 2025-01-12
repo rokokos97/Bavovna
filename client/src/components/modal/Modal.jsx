@@ -1,11 +1,11 @@
-import React, {useEffect, useMemo} from 'react';
+import React, { useEffect, useMemo } from 'react';
 import styles from './Modal.module.scss';
 import PropTypes from 'prop-types';
-import {createPortal} from 'react-dom';
+import { createPortal } from 'react-dom';
 
 const modalRootElement = document.querySelector('#modal');
 
-const Modal = ({isOpen, handleCloseModal, children}) => {
+const Modal = ({ isOpen, handleCloseModal, children }) => {
   const element = useMemo(() => document.createElement('div'), []);
 
   useEffect(() => {
@@ -29,10 +29,10 @@ const Modal = ({isOpen, handleCloseModal, children}) => {
 
   if (isOpen) {
     return createPortal(
-        <article className={styles.modal}>
-          <section className={styles.modalContent}>{children}</section>
-        </article>,
-        element,
+      <article className={styles.modal}>
+        <section className={styles.modalContent}>{children}</section>
+      </article>,
+      element
     );
   }
 
@@ -45,4 +45,4 @@ Modal.propTypes = {
   children: PropTypes.node,
 };
 
-export {Modal};
+export { Modal };

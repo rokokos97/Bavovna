@@ -8,11 +8,11 @@ const itemService = {
     return request.data;
   },
   create: async (payload) => {
-    const {data} = await httpService.post(itemEndpoint+'create', payload);
+    const { data } = await httpService.post(itemEndpoint + 'create', payload);
     return data;
   },
   delete: async (payload) => {
-    const {data} = await httpService.delete(itemEndpoint+payload);
+    const { data } = await httpService.delete(itemEndpoint + payload);
     return data;
   },
 };

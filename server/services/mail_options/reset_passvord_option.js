@@ -1,10 +1,10 @@
-const getResetPasswordEmail = (email,resetPasswordURL) => {
-	return {
-		from: 'no-repaly@bavovna.space',
-		to: email,
-		subject: 'Reset Your BAVOVNA Account Password',
-		text: 'HELLO! We have received a request to reset the password for your account on our website. To proceed with changing your password, please click  below',
-		html: `
+const getResetPasswordEmail = (email, resetPasswordURL) => {
+  return {
+    from: 'no-repaly@bavovna.space',
+    to: email,
+    subject: 'Reset Your BAVOVNA Account Password',
+    text: 'HELLO! We have received a request to reset the password for your account on our website. To proceed with changing your password, please click  below',
+    html: `
             <!DOCTYPE html>
               <html lang="en">
                 <head>
@@ -151,10 +151,10 @@ const getResetPasswordEmail = (email,resetPasswordURL) => {
                     </tr>
                   </table>
                 </body>
-              </html>`
-	}
-}
+              </html>`,
+  };
+};
 
 module.exports = {
-	getResetPasswordEmail,
-}
+  getResetPasswordEmail,
+};

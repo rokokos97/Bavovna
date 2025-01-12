@@ -15,7 +15,11 @@ describe('deliveryMethodsList', () => {
   });
 
   it('should have correct labels and prices for method 2', () => {
-    const method2Labels = ['Nova post delivery to the post office', 'Nova post delivery to the address', 'International delivery'];
+    const method2Labels = [
+      'Nova post delivery to the post office',
+      'Nova post delivery to the address',
+      'International delivery',
+    ];
     method2Labels.forEach((label) => {
       expect(deliveryMethodsList['2']).toHaveProperty(label);
       expect(deliveryMethodsList['2'][label].label).toBe(label);

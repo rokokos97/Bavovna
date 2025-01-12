@@ -1,12 +1,12 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
-import {useSelector} from 'react-redux';
-import {getItemsList, getItemsLoadingStatus} from '../../store/itemsSlice';
-import {CardMasterProvider} from '../../providers/CardMasterProvider';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getItemsList, getItemsLoadingStatus } from '../../store/itemsSlice';
+import { CardMasterProvider } from '../../providers/CardMasterProvider';
 import CardContext from './CardContext';
 
 const Card = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const items = useSelector(getItemsList);
   const isItemsLoading = useSelector(getItemsLoadingStatus);
 

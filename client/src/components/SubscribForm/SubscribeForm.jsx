@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import TextField from '../../components/form/formFields/TextField/TextField';
 import CloseIcon from '../../components/svg/CloseIcon/CloseIcon';
 import styles from './SubscribeForm.module.scss';
 
-const SubscribeForm = ({title, description, buttonText, onSubmit, validationSchema}) => {
+const SubscribeForm = ({ title, description, buttonText, onSubmit, validationSchema }) => {
   const [isMessageShowed, setIsMessageShowed] = useState(false);
   const [message, setMessage] = useState({
     message: '',
@@ -13,23 +13,23 @@ const SubscribeForm = ({title, description, buttonText, onSubmit, validationSche
   });
 
   const formik = useFormik({
-    initialValues: {email: ''},
+    initialValues: { email: '' },
     validationSchema: validationSchema,
-    onSubmit: (values, {resetForm}) => {
+    onSubmit: (values, { resetForm }) => {
       onSubmit(values)
-          .then((result) => {
-            if (result) {
-              setIsMessageShowed(true);
-              setMessage({message: result.message, isError: false});
-              resetForm();
-            }
-          })
-          .catch((error) => {
-            if (error) {
-              setIsMessageShowed(true);
-              setMessage({message: error.message, isError: true});
-            }
-          });
+        .then((result) => {
+          if (result) {
+            setIsMessageShowed(true);
+            setMessage({ message: result.message, isError: false });
+            resetForm();
+          }
+        })
+        .catch((error) => {
+          if (error) {
+            setIsMessageShowed(true);
+            setMessage({ message: error.message, isError: true });
+          }
+        });
     },
   });
 
@@ -37,13 +37,13 @@ const SubscribeForm = ({title, description, buttonText, onSubmit, validationSche
     <article className={styles.subscribeForm}>
       <section
         className={`${styles.messageLine} ${message.isError ? styles.messageError : ''}`}
-        style={{opacity: isMessageShowed ? '1' : '0'}}
+        style={{ opacity: isMessageShowed ? '1' : '0' }}
       >
         <p className={styles.message}>{message.message}</p>
         <button
           className={styles.closeButton}
-          type='button'
-          aria-label='close message'
+          type="button"
+          aria-label="close message"
           onClick={() => setIsMessageShowed(false)}
         >
           <CloseIcon />
@@ -54,9 +54,9 @@ const SubscribeForm = ({title, description, buttonText, onSubmit, validationSche
         <p className={styles.description}>{description}</p>
         <section className={styles.inputSection}>
           <TextField
-            name='email'
-            placeholder='Enter your e-mail'
-            autoComplete='true'
+            name="email"
+            placeholder="Enter your e-mail"
+            autoComplete="true"
             onChange={formik.handleChange}
             error={formik.errors.email}
             value={formik.values.email}
@@ -65,8 +65,8 @@ const SubscribeForm = ({title, description, buttonText, onSubmit, validationSche
           <button
             className={styles.button}
             disabled={!formik.dirty}
-            type='submit'
-            aria-label='form submit'
+            type="submit"
+            aria-label="form submit"
           >
             <span>{buttonText}</span>
           </button>
