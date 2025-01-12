@@ -1,15 +1,18 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const schema = new Schema({
-  name: {
-    type: String,
-    required: true,
+const schema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+    },
   },
-  image: {
-    type: String,
-  },
-}, {
-  timestamps: true,
-});
+  {
+    timestamps: true,
+  }
+);
 
 module.exports = model('Category', schema);

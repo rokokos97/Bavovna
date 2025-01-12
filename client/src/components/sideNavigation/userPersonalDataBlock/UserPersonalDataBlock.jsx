@@ -7,9 +7,9 @@ import UserDeleteBlock from '../UserDeleteBlock/UserDeleteBlock';
 const UserPersonalDataBlock = () => {
   return (
     <div className={styles.userPersonalDataBlock} data-testid="UserPersonalDataBlock">
-      <UserDataForm/>
-      <UserDeliveryBlock/>
-      <UserDeleteBlock/>
+      <UserDataForm />
+      <UserDeliveryBlock />
+      <UserDeleteBlock />
     </div>
   );
 };

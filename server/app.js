@@ -13,19 +13,18 @@ mongoose.set('strictQuery', false);
 
 app.use(compression());
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use('/api/uploads', express.static('uploads'));
 app.use('/api', routes);
 
 const PORT = process.env.PORT || 8080;
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static(
-      path.join(__dirname, 'client')));
+  app.use('/', express.static(path.join(__dirname, 'client')));
 
   const indexPath = path.join(__dirname, 'client', 'index.html');
 
-  app.get('*', (req, res)=>{
+  app.get('*', (req, res) => {
     res.sendFile(indexPath);
   });
 }
@@ -35,12 +34,9 @@ async function start() {
       initDatabase();
     });
     await mongoose.connect(process.env.MONGO_DB_URI);
-    console.log(chalk.green(
-        `MongoDB is connected.`));
+    console.log(chalk.green(`MongoDB is connected.`));
     app.listen(PORT, () =>
-      console.log(chalk.green(
-          `The server is started on the port ${PORT}...`,
-      )),
+      console.log(chalk.green(`The server is started on the port ${PORT}...`))
     );
   } catch (e) {
     process.exit(1);

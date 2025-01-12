@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
+import { useDataShopPage } from '../../../providers/ShopPageMasterProvider';
 
 import styles from './CheckboxBlock.module.scss';
 
-const CheckboxBlock = ({value, label, option, id}) => {
-  const {handleFilterChange, selectedFilters} = useDataShopPage();
+const CheckboxBlock = ({ value, label, option, id }) => {
+  const { handleFilterChange, selectedFilters } = useDataShopPage();
 
   const handleOnChange = (e) => {
     handleFilterChange(option, e.target.id);
   };
 
   return (
-    <div className={styles.checkbox} data-testid='CheckboxBlock'>
+    <div className={styles.checkbox} data-testid="CheckboxBlock">
       <input
-        type='checkbox'
+        type="checkbox"
         name={value}
         id={id}
         className={styles.checkboxInput}

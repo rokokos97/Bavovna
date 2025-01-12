@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FilterIcon from '../../../components/svg/FilterIcon/FilterIcon';
 import SortIcon from '../../../components/svg/SortIcon/SortIcon';
-import {useDataShopPage} from '../../../providers/ShopPageMasterProvider';
+import { useDataShopPage } from '../../../providers/ShopPageMasterProvider';
 
 import styles from './SelectionBlock.module.scss';
 
 const SelectionBlock = () => {
-  const {changeIsFilter, onSortItems} = useDataShopPage();
+  const { changeIsFilter, onSortItems } = useDataShopPage();
   const [isSort, setIsSort] = useState(false);
 
   const sortList = [
-    {new: 'New Arrivals'},
-    {best: 'Best Selling'},
-    {lowToHigh: 'Price Low to Hight'},
-    {highToLow: 'Price Hight to Low'},
+    { new: 'New Arrivals' },
+    { best: 'Best Selling' },
+    { lowToHigh: 'Price Low to Hight' },
+    { highToLow: 'Price Hight to Low' },
   ];
 
   const onToggleIsSort = () => {
@@ -36,7 +36,7 @@ const SelectionBlock = () => {
   };
 
   return (
-    <div className={styles.selection} data-testid='SelectionBlock'>
+    <div className={styles.selection} data-testid="SelectionBlock">
       <button className={styles.iconBtn} onClick={changeIsFilter}>
         <div className={styles.filterIcon}>
           <FilterIcon />

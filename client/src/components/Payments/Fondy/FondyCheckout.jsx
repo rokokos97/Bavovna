@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FondyCheckout = ({amount, currency, orderId}) => {
+const FondyCheckout = ({ amount, currency, orderId }) => {
   const handlePayment = () => {
     // Ініціалізуємо Fondy Checkout
     const fondy = new window.Fondy();
@@ -26,7 +26,7 @@ const FondyCheckout = ({amount, currency, orderId}) => {
 
   return (
     <button onClick={handlePayment} className="fondy-payment-button">
-	    Оплатити через Fondy
+      Оплатити через Fondy
     </button>
   );
 };

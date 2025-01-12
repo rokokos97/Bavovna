@@ -1,1 +1,1 @@
-export {SizeList} from './SizesList';
+export { SizeList } from './SizesList';

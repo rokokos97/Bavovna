@@ -1,6 +1,6 @@
 const express = require('express');
 // eslint-disable-next-line new-cap
-const router = express.Router({mergeParams: true});
+const router = express.Router({ mergeParams: true });
 
 router.use('/auth', require('./auth.routes'));
 router.use('/category', require('./category.routes'));

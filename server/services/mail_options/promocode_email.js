@@ -1,10 +1,10 @@
 const getPromoCodeEmailOption = (email, unsubscribeUrl) => {
-	return {
-		from: 'no-repaly@bavovna.space',
-		to: email,
-		subject: 'Confirm Newsletter at BAVOVNA',
-		text: `Greetings! Thank you for signing up with BAVOVNA newsletter. `,
-		html: `            <!DOCTYPE html>
+  return {
+    from: 'no-repaly@bavovna.space',
+    to: email,
+    subject: 'Confirm Newsletter at BAVOVNA',
+    text: `Greetings! Thank you for signing up with BAVOVNA newsletter. `,
+    html: `            <!DOCTYPE html>
               <html lang="en">
                 <head>
                   <meta charset="UTF-8">
@@ -159,9 +159,9 @@ const getPromoCodeEmailOption = (email, unsubscribeUrl) => {
                   </table>
                 </body>
               </html>`,
-	}
-}
+  };
+};
 
 module.exports = {
-	getPromoCodeEmailOption,
-}
+  getPromoCodeEmailOption,
+};

@@ -3,25 +3,24 @@ import styles from './SelectField.module.scss';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
-
-const SelectField = ({defaultValue, onChange, options, label, error}) => {
+const SelectField = ({ defaultValue, onChange, options, label, error }) => {
   return (
-    <div className={`${styles.selectField} ${error? styles.hasError: ''}`} data-testid="SelectField">
-      <p className={styles.label}>{label}
-        <span>
-                 *
-        </span>
+    <div
+      className={`${styles.selectField} ${error ? styles.hasError : ''}`}
+      data-testid="SelectField"
+    >
+      <p className={styles.label}>
+        {label}
+        <span>*</span>
       </p>
       <Select
-        autoComplete='off'
-        classNamePrefix='custom'
+        autoComplete="off"
+        classNamePrefix="custom"
         defaultValue={defaultValue}
         onChange={onChange}
         options={options}
       />
-      {error ? (
-        <div className={styles.error}>{error}</div>
-      ) : null}
+      {error ? <div className={styles.error}>{error}</div> : null}
     </div>
   );
 };

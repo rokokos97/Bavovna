@@ -3,9 +3,9 @@ import styles from './UserPaymentByCardForm.module.scss';
 import PropTypes from 'prop-types';
 import TextField from '../../formFields/TextField/TextField';
 
-const UserPaymentByCardForm = ({formik}) => {
+const UserPaymentByCardForm = ({ formik }) => {
   const handleCardNumberChange = (e) => {
-    let {value} = e.target;
+    let { value } = e.target;
 
     // Видаляємо все, крім цифр
     value = value.replace(/\D/g, '');
@@ -19,13 +19,13 @@ const UserPaymentByCardForm = ({formik}) => {
     formik.setFieldValue('cardNumber', value);
   };
   const handleCvvCvcChange = (e) => {
-    let {value} = e.target;
+    let { value } = e.target;
     value = value.replace('\D', '');
     value = value.slice(0, 3);
     formik.setFieldValue('cvvCvc', value);
   };
   const handleValidityDateChange = (e) => {
-    let {value} = e.target;
+    let { value } = e.target;
     value = value.replace(/\D/g, '');
     value = value.slice(0, 4);
     if (value.length > 2) {
@@ -39,12 +39,13 @@ const UserPaymentByCardForm = ({formik}) => {
   return (
     <div className={styles.userPaymentByCardForm} data-testid="UserPaymentByCardForm">
       <p className={styles.userPaymentByCardForm__note}>
-        Please note: this is a training project and you should not enter your real credit card details.
+        Please note: this is a training project and you should not enter your real credit card
+        details.
       </p>
       <TextField
-        label='Card number'
-        name='cardNumber'
-        placeholder='Enter the card number'
+        label="Card number"
+        name="cardNumber"
+        placeholder="Enter the card number"
         onChange={handleCardNumberChange}
         value={formik.values.cardNumber}
         error={formik.errors.cardNumber}
@@ -52,18 +53,18 @@ const UserPaymentByCardForm = ({formik}) => {
       />
       <div className={styles.block}>
         <TextField
-          label='Validity date'
-          name='validityDate'
-          placeholder='MM/YY'
+          label="Validity date"
+          name="validityDate"
+          placeholder="MM/YY"
           onChange={handleValidityDateChange}
           value={formik.values.validityDate}
           error={formik.errors.validityDate}
           touched={formik.touched}
         />
         <TextField
-          label='CVV/CVC'
-          name='cvvCvc'
-          placeholder='3 numbers'
+          label="CVV/CVC"
+          name="cvvCvc"
+          placeholder="3 numbers"
           onChange={handleCvvCvcChange}
           value={formik.values.cvvCvc}
           error={formik.errors.cvvCvc}
@@ -71,9 +72,9 @@ const UserPaymentByCardForm = ({formik}) => {
         />
       </div>
       <TextField
-        label='Name on card'
-        name='cardHolderName'
-        placeholder='Enter the name indicated on the card'
+        label="Name on card"
+        name="cardHolderName"
+        placeholder="Enter the name indicated on the card"
         onChange={formik.handleChange}
         value={formik.values.cardHolderName}
         error={formik.errors.cardHolderName}

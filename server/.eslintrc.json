@@ -3,10 +3,7 @@
     "node": true,
     "es2021": true
   },
-  "extends": [
-    "google",
-    "plugin:node/recommended"
-  ],
+  "extends": ["google", "plugin:node/recommended"],
   "parserOptions": {
     "ecmaVersion": 12
   },

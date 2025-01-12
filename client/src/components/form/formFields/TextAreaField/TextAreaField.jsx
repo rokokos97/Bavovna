@@ -2,18 +2,27 @@ import React from 'react';
 import styles from './TextAreaField.module.scss';
 import PropTypes from 'prop-types';
 
-const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder, disabled, type}) => {
+const TextAreaField = ({
+  label,
+  name,
+  value,
+  onChange,
+  onBlur,
+  error,
+  placeholder,
+  disabled,
+  type,
+}) => {
   return (
-    <div className={`${styles.textAreaField} ${error? styles.hasError: ''}`} data-testid="TextAreaField">
-      <label
-        htmlFor={name}
-        className={styles.label}
-      >
+    <div
+      className={`${styles.textAreaField} ${error ? styles.hasError : ''}`}
+      data-testid="TextAreaField"
+    >
+      <label htmlFor={name} className={styles.label}>
         {label}
         <span>*</span>
       </label>
-      <div
-      >
+      <div>
         <textarea
           type={type}
           className={styles.textarea}
@@ -24,12 +33,10 @@ const TextAreaField = ({label, name, value, onChange, onBlur, error, placeholder
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          autoComplete='off'
+          autoComplete="off"
         />
       </div>
-      {error ? (
-        <div className={styles.error}>{error}</div>
-      ) : null}
+      {error ? <div className={styles.error}>{error}</div> : null}
     </div>
   );
 };

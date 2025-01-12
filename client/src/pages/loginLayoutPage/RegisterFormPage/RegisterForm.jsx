@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './RegisterForm.module.scss';
-import {useFormik} from 'formik';
-import {NavLink, useNavigate} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
-import {getError, getResponse, signUpUser, signUpWithGoogle} from '../../../store/userSlice';
-import {useGoogleLogin} from '@react-oauth/google';
-import {validationSchemaRegisterForm} from '../../../utils/validationSchema';
+import { useFormik } from 'formik';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getError, getResponse, signUpUser, signUpWithGoogle } from '../../../store/userSlice';
+import { useGoogleLogin } from '@react-oauth/google';
+import { validationSchemaRegisterForm } from '../../../utils/validationSchema';
 import googleService from '../../../services/google.service';
-import {Modal} from '../../../components/modal';
+import { Modal } from '../../../components/modal';
 import ModalVerifyEmail from '../../../components/modal/modalContent/ModalVerifyEmail/ModalVerifyEmail';
-import {showBodyOverflow, hideBodyOverflow} from '../../../utils/modal.service';
+import { showBodyOverflow, hideBodyOverflow } from '../../../utils/modal.service';
 import RegisterFormBlock from '../../../components/form/formBlocks/RegisterFormBlock/RegisterFormBlock';
 import useErrorMessage from '../../../utils/useErrorMessage';
 
@@ -37,7 +37,7 @@ const RegisterForm = () => {
       setIsRegularSignUp(true);
       setIsGoogleSignUp(false);
       setEmail(values.email);
-      dispatch(signUpUser({...values, email: values.email.toLowerCase()})).then(()=>{
+      dispatch(signUpUser({ ...values, email: values.email.toLowerCase() })).then(() => {
         setIsRegularSignUp(true);
       });
       formik.resetForm();
@@ -48,11 +48,13 @@ const RegisterForm = () => {
     onSuccess: (tokenResponse) => {
       const accessToken = tokenResponse.access_token;
       googleService.get(accessToken).then((userInfo) => {
-        dispatch(signUpWithGoogle({
-          firstName: userInfo.given_name,
-          lastName: userInfo.family_name,
-          email: userInfo.email,
-        }));
+        dispatch(
+          signUpWithGoogle({
+            firstName: userInfo.given_name,
+            lastName: userInfo.family_name,
+            email: userInfo.email,
+          })
+        );
       });
     },
   });
@@ -61,7 +63,7 @@ const RegisterForm = () => {
     showBodyOverflow();
     navigate('/signIn');
   };
-  useEffect(()=>{
+  useEffect(() => {
     if (response) {
       if (response.code === 201) {
         setShowVerifyEmailModal(true);
@@ -73,18 +75,14 @@ const RegisterForm = () => {
   return (
     <article className={styles.registerForm}>
       <section className={styles.registerForm__titleBlock}>
-        <p>
-          Sign up
-        </p>
-        <p>
-          Welcome! Please enter your details
-        </p>
+        <p>Sign up</p>
+        <p>Welcome! Please enter your details</p>
       </section>
-      {errorMessage ?
-          <div className={styles.registerForm__errorMessagesBlock}>
-            <p>{errorMessage}</p>
-          </div> : null
-      }
+      {errorMessage ? (
+        <div className={styles.registerForm__errorMessagesBlock}>
+          <p>{errorMessage}</p>
+        </div>
+      ) : null}
       <RegisterFormBlock
         formik={formik}
         googleRegister={googleRegister}
@@ -95,18 +93,15 @@ const RegisterForm = () => {
         Already have an account?&nbsp;
         <NavLink
           to="/signIn"
-          title='go to sign in page'
-          aria-label='go to sign ip page'
+          title="go to sign in page"
+          aria-label="go to sign ip page"
           className={styles.registerForm__backToSignInLink}
         >
           <span>Sign in</span>
         </NavLink>
       </p>
-      <Modal
-        isOpen={showVerifyEmailModal}
-        handleCloseModal={closeModal}
-      >
-        <ModalVerifyEmail handleCloseModal={closeModal} email={email}/>
+      <Modal isOpen={showVerifyEmailModal} handleCloseModal={closeModal}>
+        <ModalVerifyEmail handleCloseModal={closeModal} email={email} />
       </Modal>
     </article>
   );

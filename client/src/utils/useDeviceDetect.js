@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 const useDeviceDetect = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 581);
@@ -9,7 +9,7 @@ const useDeviceDetect = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return {isMobile};
+  return { isMobile };
 };
 
 export default useDeviceDetect;

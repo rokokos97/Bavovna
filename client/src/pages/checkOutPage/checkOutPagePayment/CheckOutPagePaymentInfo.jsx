@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import styles from './CheckOutPagePaymentInfo.module.scss';
 import PaymentMethodSection from './PaymentMethodSection/PaymentMethodSection';
 import CheckOutShoppingCartBlock from '../shoppingCartBlock/CheckOutShoppingCartBlock';
-import {useFormik} from 'formik';
-import {validationSchemaCardPayment} from '../../../utils/validationSchema';
-import {useDispatch, useSelector} from 'react-redux';
+import { useFormik } from 'formik';
+import { validationSchemaCardPayment } from '../../../utils/validationSchema';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   addOrder,
   getUserInfo,
@@ -13,11 +13,11 @@ import {
   getPromoCodeSale,
   setOrderToInitialState,
 } from '../../../store/ordersSlice';
-import {customAlphabet} from 'nanoid/non-secure';
-import {clearCart, getCartTotalPrice, getNormalizedCart} from '../../../store/cartSlice';
-import {getUser, updateUserData} from '../../../store/userSlice';
-import {clearCartSessionStorage} from '../../../services/sessionStorage.service';
-import {useNavigate} from 'react-router-dom';
+import { customAlphabet } from 'nanoid/non-secure';
+import { clearCart, getCartTotalPrice, getNormalizedCart } from '../../../store/cartSlice';
+import { getUser, updateUserData } from '../../../store/userSlice';
+import { clearCartSessionStorage } from '../../../services/sessionStorage.service';
+import { useNavigate } from 'react-router-dom';
 
 const CheckOutPagePaymentInfo = () => {
   const user = useSelector(getUser);
@@ -38,8 +38,8 @@ const CheckOutPagePaymentInfo = () => {
       cvvCvc: '',
       cardHolderName: '',
     },
-    validationSchema: currentPaymentMethod === 'Pay by card' ? validationSchemaCardPayment: null,
-    onSubmit: async ()=> {
+    validationSchema: currentPaymentMethod === 'Pay by card' ? validationSchemaCardPayment : null,
+    onSubmit: async () => {
       const newOrder = {
         deliveryInfo: deliveryInfo,
         paymentMethod: currentPaymentMethod,
@@ -47,10 +47,10 @@ const CheckOutPagePaymentInfo = () => {
         items: cart,
         userInfo: userInfo,
         orderAmount: orderAmount,
-        deliveryPrice: orderAmount>1000 ? 0 : deliveryInfo.deliveryPrice,
+        deliveryPrice: orderAmount > 1000 ? 0 : deliveryInfo.deliveryPrice,
         _id: generateId(),
         date: formatDate(new Date()),
-        paymentStatus: currentPaymentMethod ==='Pay by card'? 'paid': 'pending payment',
+        paymentStatus: currentPaymentMethod === 'Pay by card' ? 'paid' : 'pending payment',
         deliveryStatus: 'pending',
       };
 
@@ -66,14 +66,15 @@ const CheckOutPagePaymentInfo = () => {
       clearCartSessionStorage();
       dispatch(setOrderToInitialState());
       navigate('/orderSuccess');
-    }});
+    },
+  });
   function formatDate(date) {
     const day = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
   }
-  useEffect(()=>{
+  useEffect(() => {
     formik.resetForm({
       values: {
         cardNumber: '',
@@ -96,8 +97,8 @@ const CheckOutPagePaymentInfo = () => {
   }, [cart]);
   return (
     <div className={styles.checkOutPagePaymentInfo} data-testid="CheckOutPagePaymentInfo">
-      <PaymentMethodSection formik={formik}/>
-      <CheckOutShoppingCartBlock formik={formik}/>
+      <PaymentMethodSection formik={formik} />
+      <CheckOutShoppingCartBlock formik={formik} />
     </div>
   );
 };

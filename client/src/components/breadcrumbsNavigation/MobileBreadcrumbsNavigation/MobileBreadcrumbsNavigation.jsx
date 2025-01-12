@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './MobileBreadcrumbsNavigation.module.scss';
 import ChevronUp from '../../svg/ChevronUp/ChevronUp';
 import PropTypes from 'prop-types';
-const MobileBreadcrumbsNavigation = ({handleSideNavigationClose}) => {
+const MobileBreadcrumbsNavigation = ({ handleSideNavigationClose }) => {
   return (
     <button
-      onClick={()=>handleSideNavigationClose()}
+      onClick={() => handleSideNavigationClose()}
       className={styles.mobileBreadcrumbsNavigation__navigation}
     >
-      <ChevronUp />BACK
+      <ChevronUp />
+      BACK
     </button>
   );
 };

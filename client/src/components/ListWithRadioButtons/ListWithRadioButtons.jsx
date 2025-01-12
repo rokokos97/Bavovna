@@ -1,37 +1,40 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './ListWithRadioButtons.module.scss';
 import PropTypes from 'prop-types';
 import DeleteIcon from '../svg/DeleteIcon/DeleteIcon';
-import {getUser, updateUserData} from '../../store/userSlice';
-import {useDispatch, useSelector} from 'react-redux';
+import { getUser, updateUserData } from '../../store/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import RadioButtonCheckedIcon from '../svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
 import RadioButtonEmptyIcon from '../svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 
-const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) => {
+const ListWithRadioButtons = ({ options, isList, deleteButton, onSelectValue }) => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  const [currentValue, setCurrentValue] = useState(!isList? '1' : user.currentDeliveryAddress);
+  const [currentValue, setCurrentValue] = useState(!isList ? '1' : user.currentDeliveryAddress);
   const handleChange = (id) => {
     setCurrentValue(id);
     if (onSelectValue) {
       onSelectValue(id);
     }
     if (isList) {
-      dispatch(updateUserData({...user, currentDeliveryAddress: id}));
+      dispatch(updateUserData({ ...user, currentDeliveryAddress: id }));
     }
   };
   const deleteDeliveryAddress = (id) => {
-    const newDeliveryAddressList = user.deliveryAddress.filter((address)=>address._id !== id);
-    dispatch(updateUserData({...user, currentDeliveryAddress: '', deliveryAddress: newDeliveryAddressList}));
+    const newDeliveryAddressList = user.deliveryAddress.filter((address) => address._id !== id);
+    dispatch(
+      updateUserData({
+        ...user,
+        currentDeliveryAddress: '',
+        deliveryAddress: newDeliveryAddressList,
+      })
+    );
   };
   return (
     <div className={styles.listWithRadioButtons}>
       {Object.values(options).map((option) => {
         return (
-          <div
-            key={option._id}
-            className={styles.radioOption}
-          >
+          <div key={option._id} className={styles.radioOption}>
             <input
               id={option._id}
               type="radio"
@@ -46,25 +49,29 @@ const ListWithRadioButtons = ({options, isList, deleteButton, onSelectValue}) =>
                 className={styles.listWithRadioButtons__radioButton}
                 onClick={() => handleChange(option._id)}
               >
-                {currentValue === option._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}
+                {currentValue === option._id ? (
+                  <RadioButtonCheckedIcon />
+                ) : (
+                  <RadioButtonEmptyIcon />
+                )}
               </div>
               <div>{option.label}</div>
             </label>
-            {isList && <div
-              onClick={() => deleteDeliveryAddress(option._id)}
-              style={deleteButton ? {display: 'none'}: {}}
-              role='button'
-              className={styles.deleteButton}
-            >
-              <DeleteIcon/>
-            </div>}
+            {isList && (
+              <div
+                onClick={() => deleteDeliveryAddress(option._id)}
+                style={deleteButton ? { display: 'none' } : {}}
+                role="button"
+                className={styles.deleteButton}
+              >
+                <DeleteIcon />
+              </div>
+            )}
           </div>
         );
       })}
-      {currentValue && !isList &&(
-        <div>
-          {Object.values(options).find((option) => option._id === currentValue).value}
-        </div>
+      {currentValue && !isList && (
+        <div>{Object.values(options).find((option) => option._id === currentValue).value}</div>
       )}
     </div>
   );
@@ -76,5 +83,3 @@ ListWithRadioButtons.propTypes = {
   onSelectValue: PropTypes.func,
 };
 export default ListWithRadioButtons;
-
-

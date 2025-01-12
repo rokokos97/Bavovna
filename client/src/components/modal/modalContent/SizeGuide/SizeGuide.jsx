@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import CloseIcon from '../../../svg/CloseIcon/CloseIcon';
 import styles from './SizeGuide.module.scss';
 
-const SizeGuide = ({handleCloseModal}) => {
+const SizeGuide = ({ handleCloseModal }) => {
   return (
-    <section className={styles.guideContainer} data-testid='SizeGuide'>
+    <section className={styles.guideContainer} data-testid="SizeGuide">
       <button
-        type='button'
-        aria-label='close modal window'
+        type="button"
+        aria-label="close modal window"
         className={styles.closeIcon}
         onClick={handleCloseModal}
       >
@@ -17,13 +17,13 @@ const SizeGuide = ({handleCloseModal}) => {
       <h2>Size Guide</h2>
       <div className={styles.guideContent}>
         <p>
-          When choosing a clothing size, be guided by your own measurements and
-          compare them with the size parameters indicated in our size chart.
+          When choosing a clothing size, be guided by your own measurements and compare them with
+          the size parameters indicated in our size chart.
         </p>
         <p>
-          We recommend choosing a larger size on the borderline parameters.
-          Also, in the product description, for your comfort, we indicate the
-          model{`'`}s parameters and the size it is wearing.
+          We recommend choosing a larger size on the borderline parameters. Also, in the product
+          description, for your comfort, we indicate the model{`'`}s parameters and the size it is
+          wearing.
         </p>
       </div>
       <table className={styles.guideTable}>

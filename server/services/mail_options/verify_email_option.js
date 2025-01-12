@@ -1,10 +1,10 @@
 const getVerificationEmail = (email, verifyEmailURL) => {
-	return {
-		from: 'no-repaly@bavovna.space',
-		to: email,
-		subject: 'Confirm Your Registration at BAVOVNA',
-		text: `Hello! Thank you for signing up with BAVOVNA. To complete your registration process and activate your account, please click on the link below: `,
-		html: `
+  return {
+    from: 'no-repaly@bavovna.space',
+    to: email,
+    subject: 'Confirm Your Registration at BAVOVNA',
+    text: `Hello! Thank you for signing up with BAVOVNA. To complete your registration process and activate your account, please click on the link below: `,
+    html: `
 						<!DOCTYPE html>
               <html lang="en">
                 <head>
@@ -155,10 +155,10 @@ const getVerificationEmail = (email, verifyEmailURL) => {
                     </tr>
                   </table>
                 </body>
-              </html>`
-	}
-}
+              </html>`,
+  };
+};
 
 module.exports = {
-	getVerificationEmail,
-}
+  getVerificationEmail,
+};

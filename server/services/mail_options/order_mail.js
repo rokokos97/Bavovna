@@ -1,5 +1,15 @@
-const getOrderMailOption = (userInfo, items, deliveryInfo, _id, orderAmount, deliveryCost, totalAmount) => {
-	const itemsHTML = items.map(item => `
+const getOrderMailOption = (
+  userInfo,
+  items,
+  deliveryInfo,
+  _id,
+  orderAmount,
+  deliveryCost,
+  totalAmount
+) => {
+  const itemsHTML = items
+    .map(
+      (item) => `
                             <tr style="height: 92px">
                               <td style="height: 60px; vertical-align: middle;">
                                 <table style="width: 205px">
@@ -30,13 +40,15 @@ const getOrderMailOption = (userInfo, items, deliveryInfo, _id, orderAmount, del
                                 </p>
                               </td>
                             </tr>
-        `).join('');
-	return {
-		from: 'no-repaly@bavovna.space',
-		to: userInfo.email,
-		subject: 'Confirm Order at BAVOVNA',
-		text: `HELLO! Thank you for your order #${userInfo._id} at BAVOVNA! `,
-		html: `<!DOCTYPE html>
+        `
+    )
+    .join('');
+  return {
+    from: 'no-repaly@bavovna.space',
+    to: userInfo.email,
+    subject: 'Confirm Order at BAVOVNA',
+    text: `HELLO! Thank you for your order #${userInfo._id} at BAVOVNA! `,
+    html: `<!DOCTYPE html>
               <html lang="en">
                 <head>
                   <meta charset="UTF-8">
@@ -253,9 +265,9 @@ const getOrderMailOption = (userInfo, items, deliveryInfo, _id, orderAmount, del
                   </table>
                 </body>
               </html>`,
-	}
-}
+  };
+};
 
 module.exports = {
-	getOrderMailOption,
-}
+  getOrderMailOption,
+};

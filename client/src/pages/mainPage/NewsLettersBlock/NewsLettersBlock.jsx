@@ -1,10 +1,9 @@
-import React, {
-//  useState
-} from 'react';
+import React from //  useState
+'react';
 import styles from './NewsLettersBlock.module.scss';
 import SubscribeForm from '../../../components/SubscribForm/SubscribeForm';
 // import {useFormik} from 'formik';
-import {validationSchemaEmail} from '../../../utils/validationSchema';
+import { validationSchemaEmail } from '../../../utils/validationSchema';
 // import TextField from '../../../components/form/formFields/TextField/TextField';
 // import CloseIcon from '../../../components/svg/CloseIcon/CloseIcon';
 import newsletterService from '../../../services/newsletter.service';
@@ -13,13 +12,14 @@ import generateErrorMessage from '../../../utils/generateErrorMessage';
 const NewsLettersBlock = () => {
   const isMobile = window.innerWidth <= 768;
   const handleSubmit = (values) => {
-    return newsletterService.add({email: values.email})
-        .then((result) => ({
-          message: generateErrorMessage[result.response.message],
-        }))
-        .catch((error) => {
-          throw new Error(generateErrorMessage[error.response.data.response.message]);
-        });
+    return newsletterService
+      .add({ email: values.email })
+      .then((result) => ({
+        message: generateErrorMessage[result.response.message],
+      }))
+      .catch((error) => {
+        throw new Error(generateErrorMessage[error.response.data.response.message]);
+      });
   };
   //  const [isMessageShowed, setIsMessageShowed] = useState(false);
   //  const [message, setMessage] = useState({
@@ -57,11 +57,11 @@ const NewsLettersBlock = () => {
   return (
     <article className={styles.newsLettersBlock}>
       <SubscribeForm
-        buttonText={`${isMobile?'Subscribe':'Subscribe to our newsletter'}`}
+        buttonText={`${isMobile ? 'Subscribe' : 'Subscribe to our newsletter'}`}
         validationSchema={validationSchemaEmail}
         onSubmit={handleSubmit}
-        description='SIGN UP TO GET 10% OFF ON YOUR FIRST ORDER, RELEASE NOTIFICATIONS AND EXCLUSIVE ACCESS BEFORE EVERYONE ELSE'
-        title='Newsletter'
+        description="SIGN UP TO GET 10% OFF ON YOUR FIRST ORDER, RELEASE NOTIFICATIONS AND EXCLUSIVE ACCESS BEFORE EVERYONE ELSE"
+        title="Newsletter"
       />
       {/* <section*/}
       {/*  className={`${styles.newsLetterBlock__messageLine} ` + (message.isError ? `${styles.newsLetterBlock__messageError}`: '')}*/}

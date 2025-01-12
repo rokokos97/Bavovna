@@ -4,7 +4,7 @@ import LoaderIcon from '../svg/loaderIcons/LoaderBigIcon/LoaderIcon';
 
 const Loader = () => (
   <div className={styles.loader} data-testid="Loader">
-    <LoaderIcon/>
+    <LoaderIcon />
   </div>
 );
 

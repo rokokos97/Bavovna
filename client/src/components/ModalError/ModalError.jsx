@@ -4,20 +4,20 @@ import CloseIcon from '../svg/CloseIcon/CloseIcon';
 import PropTypes from 'prop-types';
 import AlertIcon from '../svg/AlertIcon/AlertIcon';
 
-const ModalError = ({handleCloseModal}) => (
+const ModalError = ({ handleCloseModal }) => (
   <div className={styles.modalError}>
     <div className={styles.modalError__container}>
       <div className={styles.modalError__titleBlock}>
-        <AlertIcon/>
+        <AlertIcon />
         <p>Server Error</p>
       </div>
       <button
         className={styles.modalError__closeButton}
-        type='button'
-        aria-label='close modal window'
+        type="button"
+        aria-label="close modal window"
         onClick={handleCloseModal}
       >
-        <CloseIcon/>
+        <CloseIcon />
       </button>
     </div>
     <p className={styles.modalError__content}>
@@ -25,7 +25,8 @@ const ModalError = ({handleCloseModal}) => (
     </p>
     <p className={styles.modalError__content}>
       We are working to resolve these issues and hope to restore normal service as soon as possible.
-      Please try again later.<br/> We apologize for any inconvenience
+      Please try again later.
+      <br /> We apologize for any inconvenience
     </p>
   </div>
 );

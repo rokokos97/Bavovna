@@ -4,12 +4,9 @@ import RadioButtonCheckedIcon from '../svg/radioButtonIcons/RadioButtonCheckedIc
 import RadioButtonEmptyIcon from '../svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import PropTypes from 'prop-types';
 
-const RadioInput = ({method, currentValue, handleChangeCurrentValue}) => {
+const RadioInput = ({ method, currentValue, handleChangeCurrentValue }) => {
   return (
-    <section
-      key={method._id}
-      className={styles.radioOption}
-    >
+    <section key={method._id} className={styles.radioOption}>
       <input
         id={method._id}
         type="radio"
@@ -20,16 +17,21 @@ const RadioInput = ({method, currentValue, handleChangeCurrentValue}) => {
         onChange={() => {}}
       />
       <label
-        htmlFor={method._id} className={styles.radioLabel}
+        htmlFor={method._id}
+        className={styles.radioLabel}
         onClick={() => handleChangeCurrentValue(method._id)}
       >
         <div
           onClick={() => handleChangeCurrentValue(method._id)}
           className={styles.radioLabel__radioButton}
-        >{currentValue === method._id ? <RadioButtonCheckedIcon/> : <RadioButtonEmptyIcon/>}</div>
+        >
+          {currentValue === method._id ? <RadioButtonCheckedIcon /> : <RadioButtonEmptyIcon />}
+        </div>
         <div>{method.label}</div>
       </label>
-      {currentValue === method._id ? <div className={styles.radioInput__value}>{method.value}</div> : null}
+      {currentValue === method._id ? (
+        <div className={styles.radioInput__value}>{method.value}</div>
+      ) : null}
     </section>
   );
 };

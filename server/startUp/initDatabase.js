@@ -5,7 +5,6 @@ const Items = require('../models/Item');
 const categoriesMock = require('../mock/categories.json');
 const Categories = require('../models/Category');
 
-
 module.exports = async () => {
   const colors = await Colors.find();
   if (colors.length !== colorsMock.length) {
@@ -23,15 +22,15 @@ module.exports = async () => {
 async function createInitialEntity(Model, data) {
   await Model.collection.drop();
   return Promise.all(
-      data.map(async (item) => {
-        try {
-          delete item._id;
-          const newItem = new Model(item);
-          await newItem.save();
-          return newItem;
-        } catch (e) {
-          return e.message;
-        }
-      }),
+    data.map(async (item) => {
+      try {
+        delete item._id;
+        const newItem = new Model(item);
+        await newItem.save();
+        return newItem;
+      } catch (e) {
+        return e.message;
+      }
+    })
   );
 }

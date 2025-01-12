@@ -1,31 +1,31 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './DeliveryOptionsSection.module.scss';
-import {useDispatch, useSelector} from 'react-redux';
-import {getIsLoggedIn, getUser} from '../../../../store/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getIsLoggedIn, getUser } from '../../../../store/userSlice';
 import {
   getDeliveryMethod,
   getDeliveryOption,
   setDeliveryMethod,
-  setDeliveryOption, setDeliveryPrice, setUserDeliveryInfo,
+  setDeliveryOption,
+  setDeliveryPrice,
+  setUserDeliveryInfo,
 } from '../../../../store/ordersSlice';
 import UserDeliveryMethodsList from './userDeliveryMethodsList/UserDeliveryMethodsList';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import deliveryMethodsList from '../../../../utils/deliveryMethodsList';
 import {
-  validationSchemaNPDeliveryAddress, validationSchemaNPDeliveryInternational,
+  validationSchemaNPDeliveryAddress,
+  validationSchemaNPDeliveryInternational,
   validationSchemaNPDeliveryWarehouse,
 } from '../../../../utils/validationSchema';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import createDeliveryLabel from '../../../../utils/createDeliveryLabel';
-import RadioButtonCheckedIcon
-  from '../../../../components/svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
-import RadioButtonEmptyIcon
-  from '../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
+import RadioButtonCheckedIcon from '../../../../components/svg/radioButtonIcons/RadioButtonCheckedIcon/RadioButtonCheckedIcon';
+import RadioButtonEmptyIcon from '../../../../components/svg/radioButtonIcons/RadioButtonEmptyIcon/RadioButtonEmptyIcon';
 import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/LeftArrowIcon';
-import {getCartTotalPrice} from '../../../../store/cartSlice';
+import { getCartTotalPrice } from '../../../../store/cartSlice';
 import useDeliveryData from '../../../../utils/useDeliveryData';
-import UserDeliveryAddressList
-  from '../../../../components/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
+import UserDeliveryAddressList from '../../../../components/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
 const deliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -36,7 +36,7 @@ const deliveryOptionsSection = () => {
   const dispatch = useDispatch();
   const [selectedCity, setSelectedCity] = useState();
   const [warehousesList, setWarehousesList] = useState([]);
-  const initialValues= {
+  const initialValues = {
     city: {},
     warehouse: {},
     street: '',
@@ -58,22 +58,30 @@ const deliveryOptionsSection = () => {
   };
   const formik = useFormik({
     initialValues: initialValues,
-    validationSchema: userCurrentDeliveryOption !== 'saved delivery method'? validationSchema(userCurrentDeliveryMethod): null,
+    validationSchema:
+      userCurrentDeliveryOption !== 'saved delivery method'
+        ? validationSchema(userCurrentDeliveryMethod)
+        : null,
     onSubmit: (values) => {
       if (userCurrentDeliveryOption === 'new delivery method') {
         const newValues = {};
-        Object.keys(values).forEach((key)=> {
-          if (Object.keys(values[key]).length !==0) {
+        Object.keys(values).forEach((key) => {
+          if (Object.keys(values[key]).length !== 0) {
             newValues[key] = values[key];
           }
         });
         newValues.label = createDeliveryLabel(newValues);
         newValues.deliveryMethod = userCurrentDeliveryMethod;
-        newValues.deliveryPrice =orderAmount < 1000 ? deliveryMethodsList[2][userCurrentDeliveryMethod].price : 0;
+        newValues.deliveryPrice =
+          orderAmount < 1000 ? deliveryMethodsList[2][userCurrentDeliveryMethod].price : 0;
         dispatch(setUserDeliveryInfo(newValues));
         navigate('/cart/checkoutPayment');
       } else {
-        dispatch(setUserDeliveryInfo(user.deliveryAddress.find((address)=> address._id === user.currentDeliveryAddress)));
+        dispatch(
+          setUserDeliveryInfo(
+            user.deliveryAddress.find((address) => address._id === user.currentDeliveryAddress)
+          )
+        );
         navigate('/cart/checkoutPayment');
       }
     },
@@ -98,80 +106,86 @@ const deliveryOptionsSection = () => {
     {
       id: '1',
       label: 'new delivery method',
-      value: <UserDeliveryMethodsList
-        type={'1'}
-        formik={formik}
-        warehouseList={warehousesList}
-        selectedValue={selectedValue}
-        handleCityChange={handleCityChange}
-        handleWarehouseChange={handleWarehouseChange}
-      />,
+      value: (
+        <UserDeliveryMethodsList
+          type={'1'}
+          formik={formik}
+          warehouseList={warehousesList}
+          selectedValue={selectedValue}
+          handleCityChange={handleCityChange}
+          handleWarehouseChange={handleWarehouseChange}
+        />
+      ),
     },
     {
       id: '2',
       label: 'saved delivery method',
-      value: <UserDeliveryAddressList hiddenButton={true}/>,
+      value: <UserDeliveryAddressList hiddenButton={true} />,
     },
   ];
   return (
     <div className={styles.deliveryOptionsSection} data-testid="deliveryOptionsSection">
       <p className={styles.deliveryOptionsSection__title}>Delivery</p>
       <div
-        style={{display: !isLoggedIn ?'none': 'flex'}}
+        style={{ display: !isLoggedIn ? 'none' : 'flex' }}
         className={styles.deliveryOptionsSection__radioBlock}
       >
-        {deliveryOptionsList.map((method)=>
-          <section
-            key={method.id}
-            className={styles.deliveryOptionsSection__radioWrapper}
-          >
+        {deliveryOptionsList.map((method) => (
+          <section key={method.id} className={styles.deliveryOptionsSection__radioWrapper}>
             <input
               id={method.id}
-              type='radio'
-              name='customRadio'
+              type="radio"
+              name="customRadio"
               className={styles.deliveryOptionsSection__radioInput}
-              onChange = {() => {}}
+              onChange={() => {}}
             />
             <label
               className={styles.deliveryOptionsSection__label}
-              onClick ={() => setDeliveryOptionHandler(method)}
+              onClick={() => setDeliveryOptionHandler(method)}
             >
               <div
-                onClick = {() => setDeliveryOptionHandler(method)}
+                onClick={() => setDeliveryOptionHandler(method)}
                 disabled={!isLoggedIn || user?.deliveryAddress.length === 0}
               >
-                {userCurrentDeliveryOption === method.label ? <RadioButtonCheckedIcon/>:<RadioButtonEmptyIcon/>}
+                {userCurrentDeliveryOption === method.label ? (
+                  <RadioButtonCheckedIcon />
+                ) : (
+                  <RadioButtonEmptyIcon />
+                )}
               </div>
               {method.label}
             </label>
-          </section>)}
+          </section>
+        ))}
       </div>
-      <form
-        onSubmit={formik.handleSubmit}
-      >
-        {deliveryOptionsList.map((method)=>userCurrentDeliveryOption === method.label ? <div key={method.id}>{method.value}</div> : null)}
+      <form onSubmit={formik.handleSubmit}>
+        {deliveryOptionsList.map((method) =>
+          userCurrentDeliveryOption === method.label ? (
+            <div key={method.id}>{method.value}</div>
+          ) : null
+        )}
       </form>
       <div className={styles.deliveryOptionsSection__navigationButtonsSection}>
         <button
-          type='button'
-          onClick={()=> navigate(-1) }
+          type="button"
+          onClick={() => navigate(-1)}
           className={styles.deliveryOptionsSection__buttonLeft}
         >
-          <LeftArrowIcon/>
-          <span>
-                go back
-          </span>
+          <LeftArrowIcon />
+          <span>go back</span>
         </button>
         <button
           className={styles.deliveryOptionsSection__buttonRight}
-          type='button'
+          type="button"
           onClick={formik.submitForm}
-          disabled={userCurrentDeliveryOption === 'new delivery method'?!formik.isValid || !formik.dirty:!user.currentDeliveryAddress}
+          disabled={
+            userCurrentDeliveryOption === 'new delivery method'
+              ? !formik.isValid || !formik.dirty
+              : !user.currentDeliveryAddress
+          }
         >
-          <span>
-                next step
-          </span>
-          <LeftArrowIcon/>
+          <span>next step</span>
+          <LeftArrowIcon />
         </button>
       </div>
     </div>

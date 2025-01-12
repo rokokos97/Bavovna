@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Page404.module.scss';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import NotFoundPageImage from '../../components/svg/NotFoundPageImage/NotFoundPageImage';
 
 const Page404 = () => {
@@ -15,14 +15,12 @@ const Page404 = () => {
       </p>
       <button
         className={styles.page404__goToShopButton}
-        type='button'
-        title='go to shop'
-        aria-label='go to shop'
-        onClick={()=> navigate(('/shop'))}
+        type="button"
+        title="go to shop"
+        aria-label="go to shop"
+        onClick={() => navigate('/shop')}
       >
-        <span>
-        go to shop
-        </span>
+        <span>go to shop</span>
       </button>
     </div>
   );

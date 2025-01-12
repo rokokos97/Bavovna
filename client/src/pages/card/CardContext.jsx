@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import useChangeFavorite from '../../utils/useChangeFavorite';
-import {showBodyOverflow, hideBodyOverflow} from '../../utils/modal.service';
-import {addItemToCart} from '../../store/cartSlice';
-import {getUser} from '../../store/userSlice';
-import {useDataCard} from '../../providers/CardMasterProvider';
-import {SizesList} from '../../components/SizeList/SizesList';
-import {Modal} from '../../components/modal';
+import { showBodyOverflow, hideBodyOverflow } from '../../utils/modal.service';
+import { addItemToCart } from '../../store/cartSlice';
+import { getUser } from '../../store/userSlice';
+import { useDataCard } from '../../providers/CardMasterProvider';
+import { SizesList } from '../../components/SizeList/SizesList';
+import { Modal } from '../../components/modal';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import CheckoutModal from '../../components/modal/modalContent/CheckoutModal/CheckoutModal';
 import SizeGuide from '../../components/modal/modalContent/SizeGuide/SizeGuide';
@@ -14,14 +14,14 @@ import ColorsList from '../../components/ColorsList/ColorsList';
 import styles from './Card.module.scss';
 import FillHeartIcon from '../../components/svg/favoriteIcons/FillHeartIcon/FillHeartIcon';
 import EmptyHeartIcon from '../../components/svg/favoriteIcons/EmptyHeartIcon/EmptyHeartIcon';
-import {useNavigate, useParams} from 'react-router-dom';
-import {getItemsById, getItemsList} from '../../store/itemsSlice';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getItemsById, getItemsList } from '../../store/itemsSlice';
 import Loader from '../../components/Loader/Loader';
 import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
 import useDeviceDetect from '../../utils/useDeviceDetect';
 import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
 const CardContext = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isMobile = useDeviceDetect();
@@ -36,19 +36,9 @@ const CardContext = () => {
     return <Loader />;
   }
   const user = useSelector(getUser);
-  const {itemData, setItemData} = useDataCard();
-  const {
-    _id,
-    name,
-    price,
-    color,
-    size,
-    images,
-    description,
-    modelParams,
-    composition,
-    sale,
-  } = item;
+  const { itemData, setItemData } = useDataCard();
+  const { _id, name, price, color, size, images, description, modelParams, composition, sale } =
+    item;
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [isFavorite, handleIsFavorite] = useChangeFavorite(user, _id);
@@ -56,13 +46,11 @@ const CardContext = () => {
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   let currentPrice = 0;
   const options = [
-    {label: '/ Shop', to: '/shop'},
-    {label: `/ ${item.name}`, to: `/shop/${item._id}`},
+    { label: '/ Shop', to: '/shop' },
+    { label: `/ ${item.name}`, to: `/shop/${item._id}` },
   ];
 
-  sale ?
-    (currentPrice = parseFloat(price * sale) / 100) :
-    (currentPrice = price);
+  sale ? (currentPrice = parseFloat(price * sale) / 100) : (currentPrice = price);
 
   useEffect(() => {
     setItemData({
@@ -113,42 +101,32 @@ const CardContext = () => {
     <>
       <section className={styles.cardSection}>
         <div className={styles.navigation}>
-          <BreadcrumbsNavigation options={options} handleSideNavigationClose={handleSideNavigationClose}/>
+          <BreadcrumbsNavigation
+            options={options}
+            handleSideNavigationClose={handleSideNavigationClose}
+          />
         </div>
         <div className={styles.card}>
           <div className={styles.imgsContainer}>
             <div className={styles.imgs}>
               <ul className={styles.imgsList}>
                 {images.map((image, index) => (
-                  <li
-                    key={index}
-                    onClick={() => changeImage(`${apiEndpoint}${image}`)}
-                  >
-                    <img src={`${apiEndpoint}${image}`} alt='model' />
+                  <li key={index} onClick={() => changeImage(`${apiEndpoint}${image}`)}>
+                    <img src={`${apiEndpoint}${image}`} alt="model" />
                   </li>
                 ))}
               </ul>
             </div>
             <div className={styles.mainImg}>
-              <div
-                className={styles.imgHeart}
-                onClick={handleIsFavorite}
-              >
+              <div className={styles.imgHeart} onClick={handleIsFavorite}>
                 {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
               </div>
-              <img
-                id='mainImage'
-                src={`${apiEndpoint}${images[0]}`}
-                alt='model'
-              />
+              <img id="mainImage" src={`${apiEndpoint}${images[0]}`} alt="model" />
             </div>
           </div>
           <div className={styles.about}>
             <div className={styles.aboutInner}>
-              <div
-                className={styles.aboutInnerHeart}
-                onClick={handleIsFavorite}
-              >
+              <div className={styles.aboutInnerHeart} onClick={handleIsFavorite}>
                 {isFavorite ? <FillHeartIcon /> : <EmptyHeartIcon />}
               </div>
               <form className={styles.buyForm}>
@@ -156,14 +134,8 @@ const CardContext = () => {
                   <h2 className={styles.buyFormTitle}>{name}</h2>
                 </div>
                 <div className={styles.priceBlock}>
-                  {sale ? (
-                    <span className={styles.unCurrentPrice}>
-                      ₴{price.toFixed(2)}
-                    </span>
-                  ) : null}
-                  <span>
-                    ₴{currentPrice.toFixed(2)}
-                  </span>
+                  {sale ? <span className={styles.unCurrentPrice}>₴{price.toFixed(2)}</span> : null}
+                  <span>₴{currentPrice.toFixed(2)}</span>
                 </div>
                 <dir className={styles.color}>
                   <ColorsList
@@ -182,8 +154,8 @@ const CardContext = () => {
                   />
                   <button
                     className={styles.btnGuide}
-                    type='button'
-                    aria-label='open size guide'
+                    type="button"
+                    aria-label="open size guide"
                     onClick={openShowGuideModal}
                   >
                     Size guide
@@ -192,8 +164,8 @@ const CardContext = () => {
                 <div className={styles.formBag}>
                   <button
                     onClick={handleCollectData}
-                    type='button'
-                    aria-label='add to bag'
+                    type="button"
+                    aria-label="add to bag"
                     className={styles.activeBtn}
                     disabled={!selectedColor || !selectedSize}
                   >
@@ -203,35 +175,35 @@ const CardContext = () => {
               </form>
               <div className={styles.descriptions}>
                 <Dropdown
-                  id='rightArrowDropdown'
-                  placeholder='Details'
-                  name='details'
+                  id="rightArrowDropdown"
+                  placeholder="Details"
+                  name="details"
                   inner={description}
                 />
                 <Dropdown
-                  id='rightArrowDropdown'
-                  placeholder='Model parameters'
-                  name='parameters'
+                  id="rightArrowDropdown"
+                  placeholder="Model parameters"
+                  name="parameters"
                   inner={modelParams}
                 />
                 <Dropdown
-                  id='rightArrowDropdown'
-                  placeholder='Composition and care'
-                  name='composition'
+                  id="rightArrowDropdown"
+                  placeholder="Composition and care"
+                  name="composition"
                   inner={composition.join()}
                 />
                 <Dropdown
-                  id='rightArrowDropdown'
-                  placeholder='Shipping and returns'
-                  name='shipping'
-                  inner=' This site was created solely as part of training and to acquire
+                  id="rightArrowDropdown"
+                  placeholder="Shipping and returns"
+                  name="shipping"
+                  inner=" This site was created solely as part of training and to acquire
         practical skills. The site does not have a commercial basis and none of
         the products are for sale.
         Please note that all delivery fees are subject to change based on
             location, order value, and any ongoing promotions or discounts. Stay
             updated on our website for the latest information regarding delivery
             costs and promotions. At BAVOVNA, we prioritize transparency and
-            strive to provide you with the best shopping experience.'
+            strive to provide you with the best shopping experience."
                 />
               </div>
             </div>

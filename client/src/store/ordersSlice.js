@@ -1,19 +1,17 @@
-import {createAsyncThunk, createSelector, createSlice} from '@reduxjs/toolkit';
+import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
 import ordersService from '../services/orders.service';
 import generateErrorMessage from '../utils/generateErrorMessage';
 
-export const addOrder = createAsyncThunk(
-    'order/addOrder',
-    async (order, {rejectWithValue} ) => {
-      try {
-        return await ordersService.add(order);
-      } catch (error) {
-        if (error.code === 'ERR_NETWORK') {
-          return rejectWithValue(generateErrorMessage[error.code]);
-        }
-        return rejectWithValue(error || 'SERVER_ERROR');
-      }
-    });
+export const addOrder = createAsyncThunk('order/addOrder', async (order, { rejectWithValue }) => {
+  try {
+    return await ordersService.add(order);
+  } catch (error) {
+    if (error.code === 'ERR_NETWORK') {
+      return rejectWithValue(generateErrorMessage[error.code]);
+    }
+    return rejectWithValue(error || 'SERVER_ERROR');
+  }
+});
 
 const ordersSlice = createSlice({
   name: 'currentOrder',
@@ -69,17 +67,17 @@ const ordersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-        .addCase(addOrder.pending, (state) => {
-          state.isLoading = true;
-        })
-        .addCase(addOrder.fulfilled, (state, action) => {
-          state.isLoading = false;
-          state.entities = action.payload;
-        })
-        .addCase(addOrder.rejected, (state, action) => {
-          state.isLoading = false;
-          state.error = action.payload;
-        });
+      .addCase(addOrder.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addOrder.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.entities = action.payload;
+      })
+      .addCase(addOrder.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 export const changeDeliveryOption = (option) => async (dispatch) => {
@@ -87,55 +85,46 @@ export const changeDeliveryOption = (option) => async (dispatch) => {
 };
 
 const selectOrders = (state) => state.orders.entities;
-export const getOrders = createSelector(
-    [selectOrders],
-    (entities) => entities,
-);
+export const getOrders = createSelector([selectOrders], (entities) => entities);
 const selectOrdersLoadingStatus = (state) => state.orders.isLoading;
 export const getOrdersLoadingStatus = createSelector(
-    [selectOrdersLoadingStatus],
-    (isLoading)=> isLoading,
+  [selectOrdersLoadingStatus],
+  (isLoading) => isLoading
 );
-const selectDeliveryOption = (state)=> state.orders.deliveryOption;
-export const getDeliveryOption= createSelector(
-    [selectDeliveryOption],
-    (deliveryOption) => deliveryOption,
+const selectDeliveryOption = (state) => state.orders.deliveryOption;
+export const getDeliveryOption = createSelector(
+  [selectDeliveryOption],
+  (deliveryOption) => deliveryOption
 );
-const selectDeliveryMethod= (state)=> state.orders.deliveryMethod;
+const selectDeliveryMethod = (state) => state.orders.deliveryMethod;
 export const getDeliveryMethod = createSelector(
-    [selectDeliveryMethod],
-    (deliveryMethod) => deliveryMethod,
+  [selectDeliveryMethod],
+  (deliveryMethod) => deliveryMethod
 );
-const selectShippingPrice= (state) => state.orders.shippingPrice;
+const selectShippingPrice = (state) => state.orders.shippingPrice;
 export const getShippingPrice = createSelector(
-    [selectShippingPrice],
-    (shippingPrice)=> shippingPrice,
+  [selectShippingPrice],
+  (shippingPrice) => shippingPrice
 );
-const selectDeliveryInfo=(state) => state.orders.userDeliveryInfo;
+const selectDeliveryInfo = (state) => state.orders.userDeliveryInfo;
 export const getDeliveryInfo = createSelector(
-    [selectDeliveryInfo],
-    (userDeliveryInfo)=> userDeliveryInfo,
+  [selectDeliveryInfo],
+  (userDeliveryInfo) => userDeliveryInfo
 );
 const selectUserInfo = (state) => state.orders.userInfo;
-export const getUserInfo = createSelector(
-    [selectUserInfo],
-    (userInfo)=> userInfo,
-);
-const selectPaymentMethod= (state) => state.orders.paymentMethod;
+export const getUserInfo = createSelector([selectUserInfo], (userInfo) => userInfo);
+const selectPaymentMethod = (state) => state.orders.paymentMethod;
 export const getPaymentMethod = createSelector(
-    [selectPaymentMethod],
-    (paymentMethod)=> paymentMethod,
+  [selectPaymentMethod],
+  (paymentMethod) => paymentMethod
 );
-const selectPromoCodeSale=(state) => state.orders.promoCodeSale;
+const selectPromoCodeSale = (state) => state.orders.promoCodeSale;
 export const getPromoCodeSale = createSelector(
-    [selectPromoCodeSale],
-    (promoCodeSale)=> promoCodeSale,
+  [selectPromoCodeSale],
+  (promoCodeSale) => promoCodeSale
 );
 const selectOrderAmount = (state) => state.orders.orderAmount;
-export const getOrderAmount = createSelector(
-    [selectOrderAmount],
-    (orderAmount)=> orderAmount,
-);
+export const getOrderAmount = createSelector([selectOrderAmount], (orderAmount) => orderAmount);
 export const {
   setOrderToInitialState,
   setUserDeliveryInfo,

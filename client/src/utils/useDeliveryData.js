@@ -1,10 +1,10 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import npService from '../services/np.service';
 
 function useDeliveryData(selectedCity, userCurrentDeliveryMethod, formik, setWarehousesList) {
   useEffect(() => {
     if (selectedCity) {
-      npService.post({cityRef: selectedCity.value}).then(async (data) => {
+      npService.post({ cityRef: selectedCity.value }).then(async (data) => {
         setWarehousesList(await data);
       });
     }

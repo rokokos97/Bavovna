@@ -1,34 +1,33 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import styles from './SliderBlock.module.scss';
 import ItemPreviewCard from '../../components/ItemPreviewCard/ItemPreviewCard';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {Navigation, Pagination} from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import BigLeftArrowIcon from '../../components/svg/arrowIcons/BigLeftArrowIcon/BigLeftArrowIcon';
 import PropTypes from 'prop-types';
 
-
-const SliderBlock = ({itemsList, title}) => {
+const SliderBlock = ({ itemsList, title }) => {
   const swiperRef = useRef();
   return (
-    <article className={styles.sliderBlock} data-testid='SliderBlock'>
+    <article className={styles.sliderBlock} data-testid="SliderBlock">
       <section className={styles.sliderBlock__titleSection}>
         <h2 className={styles.sliderBlock__title2}>{title}</h2>
         <section className={styles.sliderBlock__arrowSection}>
           <button
             className={styles.sliderBlock__button}
-            type='button'
-            aria-label='go to previous slide'
+            type="button"
+            aria-label="go to previous slide"
             onClick={() => swiperRef.current?.slidePrev()}
           >
             <BigLeftArrowIcon />
           </button>
           <button
             className={`${styles.sliderBlock__button} ${styles.sliderBlock__buttonRight}`}
-            type='button'
-            aria-label='go to previous slide'
+            type="button"
+            aria-label="go to previous slide"
             onClick={() => swiperRef.current?.slideNext()}
           >
             <BigLeftArrowIcon />

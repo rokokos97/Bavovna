@@ -1,10 +1,10 @@
-const getNewsletterEmailOption = (email,unsubscribeUrl) => {
-	return {
-		from: 'no-repaly@bavovna.space',
-		to: email,
-		subject: 'TRENDING NOW: SUSTAINABLE FASHION',
-		text: `At BAVOVNA STORE, we’re committed to sustainability. Check out our eco-friendly collection made from organic and recycled materials. Look great and feel good about making a positive impact on the planet.`,
-		html: `<!DOCTYPE html>
+const getNewsletterEmailOption = (email, unsubscribeUrl) => {
+  return {
+    from: 'no-repaly@bavovna.space',
+    to: email,
+    subject: 'TRENDING NOW: SUSTAINABLE FASHION',
+    text: `At BAVOVNA STORE, we’re committed to sustainability. Check out our eco-friendly collection made from organic and recycled materials. Look great and feel good about making a positive impact on the planet.`,
+    html: `<!DOCTYPE html>
               <html lang="en">
                 <head>
                   <meta charset="UTF-8">
@@ -159,10 +159,10 @@ const getNewsletterEmailOption = (email,unsubscribeUrl) => {
                     </tr>
                   </table>
                 </body>
-              </html>`
-	}
-}
+              </html>`,
+  };
+};
 
 module.exports = {
-	getNewsletterEmailOption,
-}
+  getNewsletterEmailOption,
+};

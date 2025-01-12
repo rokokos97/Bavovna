@@ -2,7 +2,9 @@ import transformErrorMessage from './generateErrorMessage';
 
 describe('Error Message Transformations', () => {
   it('should correctly map INVALID_PASSWORD to its message', () => {
-    expect(transformErrorMessage['INVALID_PASSWORD']).toBe('The email address or password is incorrect.');
+    expect(transformErrorMessage['INVALID_PASSWORD']).toBe(
+      'The email address or password is incorrect.'
+    );
   });
 
   it('should correctly map EMAIL_EXIST to its message', () => {

@@ -1,7 +1,7 @@
 [
-  {"name": "black", "value":"#040404"},
-  {"name": "white", "value":"#FFFFFF"},
-  {"name": "indigo", "value":"#4B0082"},
-  {"name": "dark blue", "value":"#00008B"},
-  {"name": "silver", "value":"#COCOCO"}
+  { "name": "black", "value": "#040404" },
+  { "name": "white", "value": "#FFFFFF" },
+  { "name": "indigo", "value": "#4B0082" },
+  { "name": "dark blue", "value": "#00008B" },
+  { "name": "silver", "value": "#COCOCO" }
 ]

@@ -1,6 +1,6 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {getItemsList, getItemsLoadingStatus} from '../../../store/itemsSlice';
+import { useSelector } from 'react-redux';
+import { getItemsList, getItemsLoadingStatus } from '../../../store/itemsSlice';
 import ItemPreviewCard from '../../../components/ItemPreviewCard/ItemPreviewCard';
 import styles from './AlsoBoughtBlock.module.scss';
 
@@ -15,7 +15,7 @@ const AlsoBoughtBlock = () => {
   }
 
   return (
-    <div className={styles.alsoBought} data-testid='AlsoBoughtBlock'>
+    <div className={styles.alsoBought} data-testid="AlsoBoughtBlock">
       <h2 className={styles.alsoBoughtTitle}>You might also like</h2>
       {!isItemsLoading && (
         <ul className={styles.alsoBoughtList}>
