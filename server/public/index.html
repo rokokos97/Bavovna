@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bavovna API Server</title>
+    <style>
+        :root {
+            --white-color: #ffffff;
+            --black-color: #040404;
+            --accent-4: #3a7f66;
+            --header-text-color: #212a2f;
+            --second-color: #f8f8f8;
+            --active-color: #ad1f00;
+            --bg-color: #d9d9d9;
+            --section-bg-color: #f1f1f1;
+            --btn-bg-color: #6d6d6d;
+            --spacing-xl: 2.4rem;
+            --spacing-l: 1.6rem;
+            --spacing-m: 1.2rem;
+            --spacing-s: 0.8rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 10px;
+        }
+        
+        body {
+            font-family: Poppins, Lato, Verdana, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--header-text-color);
+            background: var(--second-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-xl);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            background: var(--white-color);
+            padding: var(--spacing-xl);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 60rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--black-color);
+            margin-bottom: var(--spacing-l);
+            font-size: 3.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .status {
+            display: inline-block;
+            background: var(--accent-4);
+            color: var(--white-color);
+            padding: var(--spacing-s) var(--spacing-l);
+            border-radius: 20px;
+            margin: var(--spacing-l) 0;
+            font-weight: 500;
+            font-size: 1.4rem;
+        }
+        
+        .info {
+            margin: var(--spacing-xl) 0;
+            padding: var(--spacing-l);
+            background: var(--section-bg-color);
+            border-radius: 5px;
+            text-align: left;
+        }
+        
+        .info p {
+            margin: var(--spacing-s) 0;
+            color: var(--header-text-color);
+            font-size: 1.4rem;
+        }
+        
+        .footer {
+            margin-top: var(--spacing-xl);
+            color: var(--header-text-color);
+            font-size: 1.2rem;
+        }
+        
+        .endpoints {
+            text-align: left;
+            margin: var(--spacing-l) 0;
+        }
+        
+        .endpoints h2 {
+            color: var(--black-color);
+            margin-bottom: var(--spacing-m);
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .endpoints ul {
+            list-style: none;
+        }
+        
+        .endpoints li {
+            padding: var(--spacing-s) 0;
+            color: var(--header-text-color);
+            font-size: 1.4rem;
+        }
+        
+        .api-url {
+            background: var(--section-bg-color);
+            padding: var(--spacing-s);
+            border-radius: 4px;
+            font-family: monospace;
+            margin: var(--spacing-s) 0;
+            display: inline-block;
+            font-size: 1.4rem;
+            color: var(--accent-4);
+        }
+        
+        @media (max-width: 580px) {
+            html {
+                font-size: 9px;
+            }
+            
+            .container {
+                padding: var(--spacing-l);
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bavovna API Server</h1>
+        <div class="status">Server is Running</div>
+        
+        <div class="info">
+            <p><strong>Environment:</strong> Production</p>
+            <p><strong>API Base URL:</strong></p>
+            <span class="api-url">https://anvovab.space/api</span>
+        </div>
+
+        <div class="endpoints">
+            <h2>Main Endpoints:</h2>
+            <ul>
+                <li>📦 /api/items - Products management</li>
+                <li>👤 /api/auth - Authentication</li>
+                <li>🛒 /api/cart - Shopping cart</li>
+                <li>💝 /api/favorites - Favorites</li>
+                <li>📦 /api/orders - Orders management</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>© <span id="currentYear"></span> Bavovna. All rights reserved.</p>
+            <script>
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+            </script>
+            <p>For documentation and support, please contact the development team.</p>
+        </div>
+    </div>
+</body>
+</html>

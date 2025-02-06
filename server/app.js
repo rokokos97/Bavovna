@@ -20,12 +20,17 @@ app.use('/api', routes);
 
 const PORT = process.env.PORT || 8080;
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static(path.join(__dirname, 'client')));
+  // Serve static files from the public directory
+  app.use(express.static(path.join(__dirname, 'public')));
 
-  const indexPath = path.join(__dirname, 'client', 'index.html');
+  // Serve our landing page for the root route
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
 
-  app.get('*', (req, res) => {
-    res.sendFile(indexPath);
+  // For all other routes that don't start with /api, serve the landing page
+  app.get(/^(?!\/api).*/, (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
 }
 async function start() {
