@@ -1,6 +1,0 @@
-node_modules
-coverage
-.env
-uploads
-package-lock.json
-*.md
