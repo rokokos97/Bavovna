@@ -20,7 +20,7 @@ import { Modal } from '../../../components/modal';
 import PaymentSuccessModal from '../../../components/modal/modalContent/PaymentSuccessModal/PaymentSuccessModal';
 import { showBodyOverflow } from '../../../utils/modal.service';
 import { useLocation } from 'react-router-dom';
-import FondyCheckout from '../../../components/Payments/Fondy/FondyCheckout';
+// import FondyCheckout from '../../../components/Payments/Fondy/FondyCheckout';
 
 const CheckOutShoppingCartBlock = ({ formik }) => {
   const dispatch = useDispatch();
@@ -158,7 +158,7 @@ const CheckOutShoppingCartBlock = ({ formik }) => {
             <span>place the order</span>
           </button>
         )}
-        <FondyCheckout amount={finalPrice} currency="UAH" orderId="123456" />
+        {/* <FondyCheckout amount={finalPrice} currency="UAH" orderId="123456" /> */}
       </div>
       <Modal isOpen={showPaymentSuccessModal} handleCloseModal={closeModal}>
         <PaymentSuccessModal handleCloseModal={closeModal} type="success" />
