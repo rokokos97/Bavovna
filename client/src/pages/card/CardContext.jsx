@@ -19,7 +19,7 @@ import { getItemsById, getItemsList } from '../../store/itemsSlice';
 import Loader from '../../components/Loader/Loader';
 import SliderBlock from '../../blocks/SliderBlock/SliderBlock';
 import useDeviceDetect from '../../utils/useDeviceDetect';
-import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
+import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
 const CardContext = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -40,30 +40,46 @@ const CardContext = () => {
   if (items) {
     sortedItems = items.filter((item) => item.status === 'sale');
   }
-  
+
+  useEffect(() => {
+    if (item) {
+      const currentPrice = item.sale 
+        ? parseFloat(item.price * item.sale) / 100 
+        : item.price;
+
+      setItemData({
+        ...itemData,
+        _id: item._id,
+        itemName: item.name,
+        itemPrice: item.price,
+        discountPrice: currentPrice,
+        itemImg: `${apiEndpoint}${item.images?.[0] || ''}`,
+      });
+    }
+  }, [item, itemData, apiEndpoint, setItemData]);
+
   if (!item) {
     return <Loader />;
   }
-  
-  const { _id, name, price, color, size, images, description, modelParams, composition, sale } = item;
-  let currentPrice = 0;
+
+  const { 
+    _id,
+    name,
+    price,
+    sale,
+    images = [],
+    color,
+    size,
+    description,
+    modelParams,
+    composition
+  } = item;
+
+  const currentPrice = sale ? parseFloat(price * sale) / 100 : price;
   const options = [
     { label: '/ Shop', to: '/shop' },
-    { label: `/ ${item.name}`, to: `/shop/${item._id}` },
+    { label: `/ ${name}`, to: `/shop/${_id}` }
   ];
-
-  sale ? (currentPrice = parseFloat(price * sale) / 100) : (currentPrice = price);
-
-  useEffect(() => {
-    setItemData({
-      ...itemData,
-      _id,
-      itemName: name,
-      itemPrice: price,
-      discountPrice: +currentPrice,
-      itemImg: `${apiEndpoint}${images[0]}`,
-    });
-  }, [item]);
 
   const handleCollectData = () => {
     if (selectedColor && selectedSize) {
