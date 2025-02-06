@@ -17,7 +17,7 @@ const CategoryPreviewCard = ({ item }) => {
           width="193"
           height="140"
           loading="lazy"
-          alt="category cover image"
+          alt={item.name}
         />
       </picture>
       <p className={styles.categoryPreviewCard__title}>{item.name}</p>

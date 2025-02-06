@@ -160,18 +160,18 @@ const Footer = () => {
               width="71"
               height="15"
               loading="lazy"
-              alt="liqpay logo image"
+              alt="LiqPay"
             />
             <img
               src="/img/svg/mastercard.svg"
               width="71"
               height="15"
-              alt="mastercard logo image"
+              alt="Mastercard"
               loading="lazy"
             />
             <img
               src="/img/svg/visa.svg"
-              alt="visa logo image"
+              alt="Visa"
               width="71"
               height="15"
               loading="lazy"
