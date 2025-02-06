@@ -6,7 +6,7 @@ import useDeviceDetect from '../../utils/useDeviceDetect';
 import ChevronUp from '../svg/ChevronUp/ChevronUp';
 import Page404 from '../../pages/Page404/Page404';
 import CompleteOrderPage from '../../pages/CompleteOrderPage/CompleteOrderPage';
-import BreadcrumbsNavigation from '../BreadcrumbsNavigation/BreadcrumbsNavigation';
+import BreadcrumbsNavigation from '../breadcrumbsNavigation/BreadcrumbsNavigation';
 
 const SideNavigation = ({ options, navOptions }) => {
   const navigate = useNavigate();

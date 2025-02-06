@@ -5,7 +5,7 @@ import CardsCatalogBlock from './CardsCatalogBlock/CardsCatalogBlock';
 import styles from './shopPage.module.scss';
 import useDeviceDetect from '../../utils/useDeviceDetect';
 import { useNavigate } from 'react-router-dom';
-import BreadcrumbsNavigation from '../../components/BreadcrumbsNavigation/BreadcrumbsNavigation';
+import BreadcrumbsNavigation from '../../components/breadcrumbsNavigation/BreadcrumbsNavigation';
 
 const ShopPageContext = () => {
   const navigate = useNavigate();
