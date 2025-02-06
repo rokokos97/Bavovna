@@ -47,16 +47,16 @@ const CardContext = () => {
         ? parseFloat(item.price * item.sale) / 100 
         : item.price;
 
-      setItemData({
-        ...itemData,
+      setItemData(prevData => ({
+        ...prevData,
         _id: item._id,
         itemName: item.name,
         itemPrice: item.price,
         discountPrice: currentPrice,
         itemImg: `${apiEndpoint}${item.images?.[0] || ''}`,
-      });
+      }));
     }
-  }, [item, itemData, apiEndpoint, setItemData]);
+  }, [item, apiEndpoint, setItemData]);
 
   if (!item) {
     return <Loader />;
