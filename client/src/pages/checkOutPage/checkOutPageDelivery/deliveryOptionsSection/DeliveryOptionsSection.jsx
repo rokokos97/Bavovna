@@ -26,7 +26,7 @@ import LeftArrowIcon from '../../../../components/svg/arrowIcons/LeftArrowIcon/L
 import { getCartTotalPrice } from '../../../../store/cartSlice';
 import useDeliveryData from '../../../../utils/useDeliveryData';
 import UserDeliveryAddressList from '../../../../components/sideNavigation/userPersonalDataBlock/userDeliveryBlock/UserDeliveryAddressList/UserDeliveryAddressList';
-const deliveryOptionsSection = () => {
+const DeliveryOptionsSection = () => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(getIsLoggedIn);
   const user = useSelector(getUser);
@@ -191,4 +191,4 @@ const deliveryOptionsSection = () => {
     </div>
   );
 };
-export default deliveryOptionsSection;
+export default DeliveryOptionsSection;

@@ -31,7 +31,7 @@ const FondyCheckout = ({ amount, currency, orderId }) => {
   );
 };
 
-FondyCheckout.PropTypes = {
+FondyCheckout.propTypes = {
   amount: PropTypes.number.isRequired,
   currency: PropTypes.string,
   orderId: PropTypes.string.isRequired,

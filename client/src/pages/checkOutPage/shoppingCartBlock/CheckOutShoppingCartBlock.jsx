@@ -66,7 +66,7 @@ const CheckOutShoppingCartBlock = ({ formik }) => {
   }, [deliveryPrice]);
   const closeModal = () => {
     setShowPaymentSuccessModal(false);
-    formik.handleSubmit;
+    formik.handleSubmit();
     showBodyOverflow();
   };
   return (

@@ -27,23 +27,25 @@ const CardContext = () => {
   const isMobile = useDeviceDetect();
   const item = useSelector(getItemsById(id));
   const items = useSelector(getItemsList);
+  const user = useSelector(getUser);
+  const { itemData, setItemData } = useDataCard();
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+  const [isFavorite, handleIsFavorite] = useChangeFavorite(user, item?._id);
+  const [showGuideModal, setShowGuideModal] = useState(false);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  
   const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
   let sortedItems = [];
   if (items) {
     sortedItems = items.filter((item) => item.status === 'sale');
   }
+  
   if (!item) {
     return <Loader />;
   }
-  const user = useSelector(getUser);
-  const { itemData, setItemData } = useDataCard();
-  const { _id, name, price, color, size, images, description, modelParams, composition, sale } =
-    item;
-  const [selectedColor, setSelectedColor] = useState('');
-  const [selectedSize, setSelectedSize] = useState('');
-  const [isFavorite, handleIsFavorite] = useChangeFavorite(user, _id);
-  const [showGuideModal, setShowGuideModal] = useState(false);
-  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  
+  const { _id, name, price, color, size, images, description, modelParams, composition, sale } = item;
   let currentPrice = 0;
   const options = [
     { label: '/ Shop', to: '/shop' },
