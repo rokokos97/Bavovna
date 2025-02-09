@@ -5,7 +5,7 @@ const tokenService = require('../services/token.service');
 const User = require('../models/User');
 const transporter = require('../services/mailer');
 const isTokenInvalid = require('../utils/isTokenValid');
-const { getResetPasswordEmail } = require('../services/mail_options/reset_passvord_option');
+const { getResetPasswordEmail } = require('../services/mail_options/reset_password_option');
 const { getVerificationEmail } = require('../services/mail_options/verify_email_option');
 // eslint-disable-next-line new-cap
 const router = express.Router({ mergeParams: true });
