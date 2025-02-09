@@ -7,7 +7,7 @@ import styles from './App.module.scss';
 import AppLoader from '../hoc/appLoader';
 import GuestRoutes from '../hoc/guestRoutes';
 import Layout from '../components/Layout/Layout';
-import Card from '../pages/Card/Card';
+import Card from '../pages/card/Card';
 import AboutUsPage from '../pages/aboutUsPage/AboutUsPage';
 import MainPage from '../pages/mainPage/MainPage';
 import ShopPage from '../pages/shopPage/shopPage';
